@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
-import com.trianguloy.urlchecker.dialogs.JsonEditor;
+import com.trianguloy.urlchecker.activities.JsonEditorInterface;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Manages the local catalog with the rules
  */
-public class ClearUrlCatalog {
+public class ClearUrlCatalog implements JsonEditorInterface {
 
     /* ------------------- constants ------------------- */
 
@@ -182,16 +182,33 @@ public class ClearUrlCatalog {
      * Show the rules editor dialog
      */
     public void showEditor() {
-        JsonEditor.show(getCatalog(), getBuiltIn(), cntx.getString(R.string.mClear_editor), cntx, content -> {
-            if (setRules(content, false) != Result.ERROR) {
-                // saved data, close dialog
-                return true;
-            } else {
-                // invalid data, keep dialog and show why
-                Toast.makeText(cntx, R.string.toast_invalid, Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
+        showEditor(cntx);
+    }
+
+    @Override
+    public JSONObject getJson() {
+        return getCatalog();
+    }
+
+    @Override
+    public JSONObject getBuiltInJson() {
+        return getBuiltIn();
+    }
+
+    @Override
+    public String saveJson(JSONObject data) {
+        if (setRules(data, false) != Result.ERROR) {
+            // saved data, close dialog
+            return null;
+        } else {
+            // invalid data, keep dialog and return why
+            return cntx.getString(R.string.invalid);
+        }
+    }
+
+    @Override
+    public String getEditorDescription() {
+        return cntx.getString(R.string.mClear_editor);
     }
 
     /**
@@ -315,7 +332,7 @@ public class ClearUrlCatalog {
             json = new JSONObject(rawRules);
         } catch (JSONException e) {
             e.printStackTrace();
-            return R.string.toast_invalid;
+            return R.string.invalid;
         }
 
         // valid, save and update
@@ -327,7 +344,7 @@ public class ClearUrlCatalog {
                 return R.string.mClear_upToDate;
             case ERROR:
             default:
-                return R.string.toast_invalid;
+                return R.string.invalid;
         }
 
     }

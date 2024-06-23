@@ -82,7 +82,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="toast_noApp">No se puede abrir la aplicación</string>
     <string name="toast_noBrowser">No se puede abrir el navegador</string>
     <string name="title_choose">Elige aplicación</string>
-    <string name="toast_invalid">Invalido</string>
+    <string name="invalid">Invalido</string>
     <string name="save">Guardar</string>
     <string name="reset">Reiniciar</string>
     <string name="close">Cerrar</string>
@@ -99,8 +99,15 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!--
         json
     -->
-    <string name="json_desc">Editor Json: el contenido debe ser Json válido. Puedes pulsar el botón de arriba a la derecha para formatearlo y validarlo.</string>
-    <string name="json_edit">Editor Json</string>
+    <string name="json_editor">Editor Json</string>
+    <string name="json_info">Mostrar información</string>
+    <string name="json_ignore">El contenido no es Json válido. Quieres descartarlo y cerrar el editor?</string>
+    <string name="json_discard_close">Descartar y cerrar</string>
+    <string name="json_save">Hay cambios sin guardar, quieres guardarlos o descartarlos?</string>
+    <string name="json_save_error">No se ha podido guardar: %s</string>
+    <string name="json_format_error">El contenido no es Json válido, no se puede validar.</string>
+    <string name="json_discard">Cuidado, esto reemplazará el contenido del editor con el json guardado. Todos los cambios realizados se perderán. Quieres continuar?</string>
+    <string name="json_reset">Cuidado, esto reemplazará el contenido del editor con el json por defecto. Todos los cambios realizados se perderán, aunque el contenido guardado no se modificará a no ser que se guarde manualmente. Quieres continuar?</string>
     <!--
         shortcuts
     -->
@@ -254,7 +261,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mClear_toggleVerbose">Mostrar información detallada del proceso de limpieza</string>
     <string name="mClear_error">No se pudo comprobar la regla</string>
     <string name="mClear_updater">Actualizador</string>
-    <string name="mClear_sourceDesc">Url del fichero JSON con el catálogo de reglas:</string>
+    <string name="mClear_sourceDesc">Url del fichero Json con el catálogo de reglas:</string>
     <string name="mClear_urlHint">URL del catálogo</string>
     <string name="mClear_hashDesc">Url del hash del fichero del catálogo. Si se omite, la descarga no será comprobada por si ha sido alterada/modificada (no se recomienda)</string>
     <string name="mClear_hashHint">No comprobar hash</string>

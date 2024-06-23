@@ -48,7 +48,7 @@ Traduzioni: %2$s."</string>
     <string name="toast_noApp">Impossibile aprire l\'app</string>
     <string name="toast_noBrowser">Impossibile aprire il browser web</string>
     <string name="title_choose">Scegli app</string>
-    <string name="toast_invalid">Invalido</string>
+    <string name="invalid">Invalido</string>
     <string name="save">Salva</string>
     <string name="reset">Reset</string>
     <string name="close">Chiudi</string>
@@ -57,8 +57,7 @@ Traduzioni: %2$s."</string>
     <string name="share">Condividi</string>
     <string name="canceled">Cancellato</string>
     <string name="deviceDefault">Impostazioni predefinite</string>
-    <string name="json_desc">Editor Json: il contenuto dev\'essere formattato in JSON. Puoi premere il pulsante in alto a destra per formattare e convalidarlo.</string>
-    <string name="json_edit">Editor Json</string>
+    <string name="json_editor">Editor Json</string>
     <!-- modules -->
     <string name="mPttrn_name">Controllo dei pattern</string>
     <string name="mPttrn_desc">Questo modulo controlla l\'url con modelli regex che avvertono, suggeriscono o applicano sostituzioni. Puoi modificare o creare i tuoi modelli, o anche utilizzare quelli creati dagli utenti.\nModelli incorporati includono:\n- Avvisa quando contiene caratteri non ascii come le lettere greche. Questo puo` essere utilizzato per il phishing: googĺe.com vs google.com\n- Suggerisce di sostituire \"http\" con \"https\"\n- Suggerisce di sostituire Youtube, Reddit o Twitter con alternative privacy-friendly [disabilitato di default]</string>

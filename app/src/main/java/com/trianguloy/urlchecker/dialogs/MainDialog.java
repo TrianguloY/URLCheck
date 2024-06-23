@@ -233,7 +233,7 @@ public class MainDialog extends Activity {
         switch (links.size()) {
             case 0:
                 // no links, invalid
-                Toast.makeText(this, R.string.toast_invalid, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case 1:

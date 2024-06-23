@@ -32,7 +32,7 @@
     <string name="tutorial">Vodič</string>
     <string name="txt_tutorial3">Postavite aplikaciju kao podrazumevani veb pregledač da presreće URL-ove kada ih otvarate.
 \n(Nije potrebno ako se URL-ovi preusmeravaju pomoću funkcije „Deli“.)</string>
-    <string name="toast_invalid">Nevažeći</string>
+    <string name="invalid">Nevažeći</string>
     <string name="save">Sačuvaj</string>
     <string name="reset">Resetuj</string>
     <string name="close">Zatvori</string>

@@ -84,7 +84,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="toast_noApp">Impossible d\'ouvrir l\'application</string>
     <string name="toast_noBrowser">Impossible d\'ouvrir le navigateur</string>
     <string name="title_choose">Choisir l\'app</string>
-    <string name="toast_invalid">Invalide</string>
+    <string name="invalid">Invalide</string>
     <string name="save">Sauvegarder</string>
     <string name="reset">Réinitialiser</string>
     <string name="close">Fermer</string>
@@ -97,8 +97,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <!--
         json
     -->
-    <string name="json_desc">Editeur Json: le contenu doit être formaté en JSON valide. Vous pouvez appuyer sur le bouton en haut à droite pour le formater et le valider.</string>
-    <string name="json_edit">Éditeur Json</string>
+    <string name="json_editor">Éditeur Json</string>
     <!--
         shortcuts
     -->
@@ -108,7 +107,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     -->
     <string name="mPttrn_name">Vérificateur de modèle</string>
     <string name="mPttrn_desc">Ce module vérifie l\'URL avec des modèles d\'expression régulière (regex) qui avertissent, suggèrent et/ou appliquent des remplacements. Vous pouvez modifier ou créer vos propres modèles, ou même utiliser ceux créés par d\'autres utilisateurs.
-\nLes modèles intégrés comprennent: 
+\nLes modèles intégrés comprennent:
 \n- Avertissement de la présence de caractères non-ascii comme les lettres grecques. Cela peut être utilisé pour l\'hameçonnage : googĺe.com au lieu de google.com.
 \n- suggestion de remplacement des liens en \'http\' par \'https\'.
 \n- suggestion de remplacement de Youtube, Reddit ou Twitter par des alternatives respectueuses de la vie privée [désactivé par défaut]</string>

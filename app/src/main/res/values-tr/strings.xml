@@ -85,7 +85,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="toast_noApp">Uygulama açılamıyor</string>
     <string name="toast_noBrowser">Tarayıcı açılamıyor</string>
     <string name="title_choose">Uygulama seç</string>
-    <string name="toast_invalid">Geçersiz</string>
+    <string name="invalid">Geçersiz</string>
     <string name="save">Kaydet</string>
     <string name="reset">Sıfırla</string>
     <string name="close">Kapat</string>
@@ -100,8 +100,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <!--
         json
     -->
-    <string name="json_desc">JSON Düzenleyici: İçerik geçerli bir JSON formatına dönüştürülmeli. Formatlama ve doğrulama yapmak için sağ üst düğmeye basabilirsiniz.</string>
-    <string name="json_edit">Json düzenleyici</string>
+    <string name="json_editor">Json düzenleyici</string>
     <!--
         shortcuts
     -->

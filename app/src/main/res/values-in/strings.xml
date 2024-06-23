@@ -40,7 +40,7 @@
     <string name="link_source">Kode sumber</string>
     <string name="txt_tutorial4">Modul berfungsi sebagai pengatur perilaku aplikasi ketika berinteraksi dengan URL. \nMasing-masing modul memiliki fungsi khusus yang spesifik. Biasanya sebagai penampil info dan pemodifikasi URL terkait. \nSilahkan baca informasi terkait modul-modul ini dan atur sesuai kebutuhan. \n \nPenting: Secara bawaan, semua tindakan terkait dilakukan secara manual. Aplikasi ini tidak akan memodifikasi apa pun atau terhubung ke internet kecuali secara spesifik Anda memberikan izin aplikasi. Meski begitu, beberapa tindakan bisa dilakukan secara otomatis sesuai keinginan Anda. \n \nSilakan buka daftar modul pada laman utama atau tekan tombol di bawah ini.</string>
     <string name="mVT_scanning">Memindai…</string>
-    <string name="toast_invalid">Taksahih</string>
+    <string name="invalid">Taksahih</string>
     <string name="close">Tutup</string>
     <string name="save">Simpan</string>
     <string name="mVT_desc">Ketika modul ini diaktifkan, Anda bisa memindai URL menggunakan VirusTotal serta mengecek hasil laporannya. Sebuah kunci API VirusTotal pribadi diperlukan agar modul ini bisa bekerja. Anda bisa mendapatkannya setelah membuat sebuah akun gratis di sini: https://www.virustotal.com/gui/join-us .</string>
@@ -49,7 +49,6 @@
     <string name="mClear_desc">Modul ini menghilangkan pelacakan, perujuk, dan parameter lain yang tidak bermanfaat di URL. Ia juga bisa melacak pengalihan URL luring yang umum digunakan.</string>
     <string name="mVT_connectError">Tidak dapat melakukan koneksi ke VirusTotal. Pastikan Anda terhubung ke internet, atau coba lagi nanti.</string>
     <string name="mPttrn_regexfix">Perbaiki grup regex yang opsional (nonaktifkan jika regex tidak bekerja dengan baik)</string>
-    <string name="json_desc">Penyunting Json: konten terkait harus berupa format JSON yang valid. Anda dapat menekan tombol sebelah kanan atas untuk memformat dan memvalidasi konten.</string>
     <string name="mPttrn_http">Link HTTP. Pertimbangkan untuk beralih ke HTTPS.</string>
     <string name="mStatus_check">Cek status</string>
     <string name="mD_desc">Jika Anda mengubah urutan modul, modul baru yang ditambahkan pada pembaruan selanjutnya akan diletakkan di atas modul ini.
@@ -136,7 +135,7 @@
     <string name="mPttrn_fix">Terapkan</string>
     <string name="mPttrn_noSchemeHttp">Skema HTTP tidak ditemukan.</string>
     <string name="mPttrn_wrongSchemaHttps">Skema https tidak valid.</string>
-    <string name="json_edit">Penyunting Json</string>
+    <string name="json_editor">Penyunting Json</string>
     <string name="mPttrn_fixed">%s - telah diterapkan</string>
     <string name="mD_name">Modul Awakutu/Penanda</string>
     <string name="mOpen_clipboard">URL telah disalin ke papan klip</string>

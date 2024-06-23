@@ -50,7 +50,7 @@ public class Hosts {
                 );
 
         if (showEditor) builder
-                .setNeutralButton(R.string.json_edit, (dialog, which) -> data.showEditor());
+                .setNeutralButton(R.string.json_editor, (dialog, which) -> data.showEditor());
 
         builder.show();
     }

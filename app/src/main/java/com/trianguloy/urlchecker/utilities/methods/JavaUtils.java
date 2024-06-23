@@ -15,9 +15,7 @@ import java.util.List;
  */
 public interface JavaUtils {
 
-    /**
-     * Converts an iterator to a list
-     */
+    /** Converts an iterator to a list */
     static <T> List<T> toList(Iterator<T> iterator) {
         List<T> list = new ArrayList<>();
         while (iterator.hasNext()) {
@@ -35,9 +33,7 @@ public interface JavaUtils {
         return result;
     }
 
-    /**
-     * Converts a string into a json object, returns empty on failure
-     */
+    /**Converts a string into a json object, returns empty on failure */
     static JSONObject toJson(String content) {
         try {
             return new JSONObject(content);
@@ -85,9 +81,7 @@ public interface JavaUtils {
         }
     }
 
-    /**
-     * Clamps a value between two other values.
-     */
+    /** Clamps a value between two other values. */
     static int clamp(int min, int value, int max) {
         return min <= max ? Math.max(min, Math.min(value, max))
                 // just in case
@@ -179,9 +173,7 @@ public interface JavaUtils {
         return t -> !function.apply(t);
     }
 
-    /**
-     * java.util.function.UnaryOperator requires api 24
-     */
+    /** java.util.function.UnaryOperator requires api 24 */
     @FunctionalInterface
     interface UnaryOperator<T> extends Function<T, T> {
     }

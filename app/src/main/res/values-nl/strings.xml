@@ -5,7 +5,7 @@
     <string name="dismiss">Negeren</string>
     <string name="desc_down">Naar beneden verplaatsen</string>
     <string name="mVT_scanning">Scannen…</string>
-    <string name="toast_invalid">Ongeldig</string>
+    <string name="invalid">Ongeldig</string>
     <string name="close">Sluit</string>
     <string name="toast_cantEnable">Kan de module niet inschakelen: %s</string>
     <string name="save">Opslaan</string>
@@ -20,7 +20,6 @@
     <string name="btn_tutorialSettings">Herhaal tutorial</string>
     <string name="mVT_connectError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat u verbonden bent met internet of probeer het later opnieuw.</string>
     <string name="mPttrn_regexfix">Optionele regex-groepen repareren (uitschakelen als regex niet correct werkt)</string>
-    <string name="json_desc">Json-editor: de content moet worden geformatteerd in geldige JSON. U kunt op de knop rechtsboven drukken om het te formatteren en valideren.</string>
     <string name="tutorial">Tutorial</string>
     <string name="toast_defaultSet">De app is nu de standaardwebbrowser</string>
     <string name="mPttrn_http">HTTP-link. Overweeg het gebruik van HTTPS.</string>
@@ -154,7 +153,7 @@
 \n
 \nOpen de lijst met modules vanuit het hoofdscherm of door op de onderstaande knop te tikken.</string>
     <string name="mPttrn_wrongSchemaHttps">Ongeldig hoofdlettergebruik van https-schema.</string>
-    <string name="json_edit">Json editor</string>
+    <string name="json_editor">Json editor</string>
     <string name="mPttrn_fixed">Toegepast - %s</string>
     <string name="mD_name">Debug/Marker-module</string>
     <string name="mOpen_clipboard">URL gekopieerd naar klembord</string>

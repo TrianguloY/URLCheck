@@ -120,7 +120,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="toast_noApp">Can not open the app</string>
     <string name="toast_noBrowser">Can not open the web browser</string>
     <string name="title_choose">Choose app</string>
-    <string name="toast_invalid">Invalid</string>
+    <string name="invalid">Invalid</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
     <string name="close">Close</string>
@@ -142,11 +142,20 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="small">Small</string>
     <string name="normal">Normal</string>
     <string name="big">Big</string>
+    <string name="format">Format</string>
+    <string name="discard">Discard</string>
     <!--
         json
     -->
-    <string name="json_desc">Json editor: the content must be formatted into valid JSON. You can press the top-right button to format and validate it.</string>
-    <string name="json_edit">Json editor</string>
+    <string name="json_editor">Json editor</string>
+    <string name="json_info">Show info</string>
+    <string name="json_ignore">The content is not valid Json. Do you want to discard it and close the editor?</string>
+    <string name="json_discard_close">Discard and close</string>
+    <string name="json_save">There are unsaved changes, do you want to save or discard them?</string>
+    <string name="json_save_error">Unable to save: %s</string>
+    <string name="json_format_error">The content is not valid Json, can\'t be parsed.</string>
+    <string name="json_discard">Warning, this will replace the editor content with the saved json. All changes made will be lost. Do you want to continue?</string>
+    <string name="json_reset">Warning, this will replace the editor content with the built-in json. All editor changes made will be lost, but saved content will not be modified unless manually saved. Do you want to continue?</string>
     <!--
         shortcuts
     -->
@@ -310,7 +319,7 @@ You can hold to select text."</string>
     <string name="mClear_toggleVerbose">Enable verbose info for the matching process</string>
     <string name="mClear_error">Could not check rule</string>
     <string name="mClear_updater">Updater</string>
-    <string name="mClear_sourceDesc">URL of the JSON file catalog with the rules:</string>
+    <string name="mClear_sourceDesc">URL of the Json file catalog with the rules:</string>
     <string name="mClear_urlHint">Catalog URL</string>
     <string name="mClear_hashDesc">URL of the catalog hash file. If omitted, the download will not be checked to see if it was tampered/modified (not recommended)</string>
     <string name="mClear_hashHint">No hash check</string>

@@ -13,7 +13,7 @@
     <string name="spin_lightTheme">ହାଲୁକା</string>
     <string name="auto">ସ୍ୱଚାଳିତ</string>
     <string name="deviceDefault">ଡିଵାଇସ୍ ଡିଫଲ୍ଟ</string>
-    <string name="toast_invalid">ଅଵୈଧ</string>
+    <string name="invalid">ଅଵୈଧ</string>
     <string name="mStatus_checking">ଯାଞ୍ଚ ଚାଲିଛି…</string>
     <string name="mStatus_check">ସ୍ଥିତି ଯାଞ୍ଚ</string>
     <string name="mHist_name">ଇତିଵୃତ୍ତି</string>

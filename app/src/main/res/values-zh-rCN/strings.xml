@@ -73,7 +73,7 @@
     <string name="toast_noApp">无法打开应用</string>
     <string name="toast_noBrowser">无法打开浏览器</string>
     <string name="title_choose">选择应用</string>
-    <string name="toast_invalid">无效</string>
+    <string name="invalid">无效</string>
     <string name="save">保存</string>
     <string name="reset">重置</string>
     <string name="close">关闭</string>
@@ -86,8 +86,7 @@
     <string name="next">下一步</string>
     <string name="back">返回</string>
     <!-- json -->
-    <string name="json_desc">Json 编辑器：内容必须为有效的 JSON 格式。您可以点击右上角的按钮进行格式化与验证。</string>
-    <string name="json_edit">Json 编辑器</string>
+    <string name="json_editor">Json 编辑器</string>
     <!-- shortcuts -->
     <string name="shortcut_checkClipboard">检查剪贴板中的链接</string>
     <!-- modules -->

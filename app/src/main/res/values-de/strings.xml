@@ -20,7 +20,7 @@
     <string name="btn_tutorialSkip">Tutorial überspringen</string>
     <string name="toast_noBrowser">Webbrowser kann nicht geöffnet werden</string>
     <string name="title_choose">App auswählen</string>
-    <string name="toast_invalid">Ungültig</string>
+    <string name="invalid">Ungültig</string>
     <string name="reset">Zurücksetzen</string>
     <string name="clear">Leeren</string>
     <string name="none">Nichts</string>
@@ -34,7 +34,7 @@
     <string name="deviceDefault">Geräte-Standard</string>
     <string name="next">Weiter</string>
     <string name="back">Zurück</string>
-    <string name="json_edit">JSON Editor</string>
+    <string name="json_editor">JSON Editor</string>
     <string name="shortcut_checkClipboard">URLs aus der Zwischenablage prüfen</string>
     <string name="txt_sample">Tippen Sie zum Testen auf folgenden Link:</string>
     <string name="a_modules">Module</string>
@@ -56,7 +56,6 @@
     <string name="translators">T</string>
     <string name="txt_info">Diese App fungiert als Zwischenschritt beim Öffnen angeklickter Links. Wenn diese App zum Öffnen ausgewählt wurde, wird ein Dialog mit einigen Informationen über den Link angezeigt. Über den Module-Button unten können Sie alle verfügbaren Module prüfen und konfigurieren.</string>
     <string name="menu_toggleDecorations">Alle Titel umschalten</string>
-    <string name="json_desc">Json Editor: Der Inhalt muss gültiges JSON sein. Sie können die Schaltfläche oben rechts drücken, um das JSON zu formatieren und zu validieren.</string>
     <string name="mPttrn_name">Muster (RegEx)</string>
     <string name="mOpen_name">Öffnen und Teilen</string>
     <string name="mOpen_ctabs">Benutzerdefinierte Tabs:</string>

@@ -27,7 +27,7 @@
     <string name="deviceDefault">Enhetsforvalg</string>
     <string name="next">Neste</string>
     <string name="back">Tilbake</string>
-    <string name="json_edit">Avansert tekstbehandler</string>
+    <string name="json_editor">Avansert tekstbehandler</string>
     <string name="mPttrn_fix">Bruk</string>
     <string name="shortcut_checkClipboard">Sjekk nettadresser fra utklippstavlen</string>
     <string name="mPttrn_http">HTTP-lenke. Overvei å bruke HTTPS.</string>
@@ -98,7 +98,7 @@
     <string name="clear">Tøm</string>
     <string name="toast_noApp">Kan ikke åpne programmet</string>
     <string name="title_choose">Velg program</string>
-    <string name="toast_invalid">Ugyldig</string>
+    <string name="invalid">Ugyldig</string>
     <string name="save">Lagre</string>
     <string name="auto">Automatisk</string>
     <string name="mClear_name">URL-renser</string>

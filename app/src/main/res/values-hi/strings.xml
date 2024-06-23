@@ -23,7 +23,7 @@
     <string name="link_source">स्रोत कोड</string>
     <string name="txt_openLinks">इस ऐप पर लिंक खोलें: पिछले कुछ वर्षों में एंड्रॉइड ने इसे कॉन्फ़िगर करने का तरीका बदल दिया है, और संस्करणों के बीच अंतर किया है। अपने डिवाइस के लिए सभी उपलब्ध सेटिंग्स नीचे खोजें, यदि इस ऐप पर लिंक नहीं खुल रहे हैं तो उन सभी को आज़माएं।</string>
     <string name="dismiss">ख़ारिज करें</string>
-    <string name="toast_invalid">अमान्य</string>
+    <string name="invalid">अमान्य</string>
     <string name="close">बंद</string>
     <string name="save">सहेजें</string>
     <string name="reset">रीसेट</string>
@@ -50,7 +50,6 @@
     <string name="mPttrn_wrongSchemaHttp">अमान्य http scheme बड़ा किया।</string>
     <string name="mChg_current">वर्तमान संस्करण: %s</string>
     <string name="mPttrn_regexfix">वैकल्पिक regex समूहों को ठीक करें (यदि regex सही ढंग से काम नहीं कर रहा है तो अक्षम करें)</string>
-    <string name="json_desc">[बीटा सुविधा] यह एक उन्नत संपादक है, सामग्री को वैध JSON में स्वरूपित किया जाना चाहिए। आप इसे प्रारूपित करने और सत्यापित करने के लिए शीर्ष-दाएं बटन दबा सकते हैं।</string>
     <string name="mPttrn_http">HTTP लिंक। HTTPS का उपयोग विचारें।</string>
     <string name="next">अगला</string>
     <string name="mPttrn_userContent">उपयोगकर्ता द्वारा बनाए गए अन्य उपयोगी पैटर्न की सूची: %s</string>
@@ -85,7 +84,7 @@
     <string name="mPttrn_fix">लागू</string>
     <string name="mPttrn_noSchemeHttp">HTTP scheme अनुपलब्ध।</string>
     <string name="mPttrn_wrongSchemaHttps">अमान्य https scheme बड़ा किया।</string>
-    <string name="json_edit">उन्नत संपादक</string>
+    <string name="json_editor">उन्नत संपादक</string>
     <string name="mPttrn_fixed">लागू किया - %s</string>
     <string name="mOpen_clipboard">यूआरएल क्लिपबोर्ड पर कॉपी किया गया</string>
     <string name="share">साझा</string>

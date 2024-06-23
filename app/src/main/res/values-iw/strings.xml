@@ -27,12 +27,11 @@
     <string name="toast_noApp">"לא ניתן לפתוח את האפליקציה"</string>
     <string name="toast_noBrowser">"לא מצליח לפתוח את הדפדפן"</string>
     <string name="title_choose">בחר אפליקציה</string>
-    <string name="toast_invalid">לא חוקי</string>
+    <string name="invalid">לא חוקי</string>
     <string name="save">להציל</string>
     <string name="reset">איפוס</string>
     <string name="share">שתף אפליקציה</string>
-    <string name="json_desc">[תכונת בטא] זהו עורך מתקדם, התוכן חייב להיות בפורמט ל-JSON חוקי. אתה יכול ללחוץ על הכפתור הימני העליון כדי לעצב ולאמת אותו.</string>
-    <string name="json_edit">עורך מתקדם</string>
+    <string name="json_editor">עורך מתקדם</string>
     <!-- modules -->
     <string name="mPttrn_name">בודק דפוסים</string>
     <string name="mPttrn_desc">"בודק בעיות נפוצות בכתובת האתר.  דפוסים מובנים:

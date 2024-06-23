@@ -7,7 +7,7 @@
     <string name="tutorial">Tutorial</string>
     <string name="canceled">Cancelado</string>
     <string name="next">Próximo</string>
-    <string name="json_edit">Editor avançado</string>
+    <string name="json_editor">Editor avançado</string>
     <string name="defaultOff">Desabilitado por padrão</string>
     <string name="mClear_clear">Aplicar</string>
     <string name="mLog_empty">Sem dados</string>
@@ -43,7 +43,7 @@
     <string name="desc_up">Mover para cima</string>
     <string name="reset">Redefinir</string>
     <string name="clear">Limpar</string>
-    <string name="toast_invalid">Inválido</string>
+    <string name="invalid">Inválido</string>
     <string name="auto">Automático</string>
     <string name="mHist_name">Histórico</string>
     <string name="mLog_name">Log</string>
@@ -127,7 +127,6 @@
     <string name="mClear_tm">Catálogo embutido copiado do ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
     <string name="mClear_blocked">- BLOQUEADO!</string>
     <string name="mClear_exception">- ignorado devido a exceção %s</string>
-    <string name="json_desc">[Função Beta] Este é um editor avançado, o conteúdo deve ser formatado em JSON válido. Você pode pressionar o botão no canto superior direito para formatá-lo e validá-lo.</string>
     <string name="mPttrn_noSchemeHttps">Esquema HTTPS ausente.</string>
     <string name="mPttrn_ok">Não há padrões correspondentes.</string>
     <string name="mStatus_autoRedirect">Substituir as URLs de redirecionamento automaticamente</string>
