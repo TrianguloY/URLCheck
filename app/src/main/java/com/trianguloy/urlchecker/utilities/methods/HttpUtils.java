@@ -1,5 +1,9 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
+import static java.util.Collections.emptyMap;
+
+import android.util.Pair;
+
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 import java.io.IOException;
@@ -7,6 +11,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -18,9 +23,22 @@ public class HttpUtils {
 
     /** GETs an URL and returns the content as a string. */
     public static String readFromUrl(String url) throws IOException {
-        var connection = new URL(url).openConnection();
-        connection.setConnectTimeout(CONNECT_TIMEOUT);
-        return StreamUtils.inputStream2String(connection.getInputStream());
+        return readFromUrl(url, emptyMap()).second;
+    }
+
+    /** GETs an URL and returns the content as a string. */
+    public static Pair<Integer, String> readFromUrl(String url, Map<String, String> headers) throws IOException {
+        var conn = (HttpURLConnection) new URL(url).openConnection();
+        conn.setConnectTimeout(CONNECT_TIMEOUT);
+        for (var header : headers.entrySet()) {
+            conn.setRequestProperty(header.getKey(), header.getValue());
+        }
+
+        return Pair.create(conn.getResponseCode(), StreamUtils.inputStream2String(
+                conn.getResponseCode() >= 200 && conn.getResponseCode() < 300
+                        ? conn.getInputStream()
+                        : conn.getErrorStream()
+        ));
     }
 
     /** GETs an URL and streams its lines. */
@@ -46,6 +64,27 @@ public class HttpUtils {
                         ? conn.getInputStream()
                         : conn.getErrorStream()
         );
+    }
+
+    /** POSTs a form body to an URL and returns its content as a string. */
+    public static Pair<Integer, String> performPOST(String url, String body, Map<String, String> headers) throws IOException {
+        // Send POST data request
+        var conn = (HttpsURLConnection) new URL(url).openConnection();
+        conn.setDoOutput(true);
+        conn.setConnectTimeout(CONNECT_TIMEOUT);
+        for (var header : headers.entrySet()) {
+            conn.setRequestProperty(header.getKey(), header.getValue());
+        }
+        try (var wr = new OutputStreamWriter(conn.getOutputStream())) {
+            wr.write(body);
+            wr.flush();
+        }
+        // Get the server response
+        return Pair.create(conn.getResponseCode(), StreamUtils.inputStream2String(
+                conn.getResponseCode() >= 200 && conn.getResponseCode() < 300
+                        ? conn.getInputStream()
+                        : conn.getErrorStream()
+        ));
     }
 
     /**

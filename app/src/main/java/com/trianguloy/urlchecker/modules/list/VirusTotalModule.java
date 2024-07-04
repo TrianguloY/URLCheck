@@ -173,7 +173,7 @@ class VirusTotalDialog extends AModuleDialog {
             response = VirusTotalUtility.scanUrl(getUrl(), api_key.get(), getActivity());
 
             // check valid report
-            if (response.detectionsTotal > 0 || response.error != null) {
+            if (response != null) {
                 result = response;
                 scanning = false;
                 getActivity().runOnUiThread(this::updateUI);
