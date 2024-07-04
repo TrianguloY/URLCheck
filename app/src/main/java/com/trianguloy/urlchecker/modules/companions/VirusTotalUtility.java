@@ -1,6 +1,11 @@
 package com.trianguloy.urlchecker.modules.companions;
 
+import static android.util.Base64.NO_PADDING;
+import static android.util.Base64.NO_WRAP;
+
 import android.content.Context;
+import android.util.Base64;
+import android.util.Pair;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -12,6 +17,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * Class that manages the virusTotal connection
@@ -19,7 +27,7 @@ import java.net.URLEncoder;
  */
 public class VirusTotalUtility {
 
-    static private final String urlGetReport = "https://www.virustotal.com/vtapi/v2/url/report";
+    static private final String URLS_ENDPOINT = "https://www.virustotal.com/api/v3/urls";
 
     static public class InternalReponse {
         public String error = "Unknown error";
@@ -30,64 +38,89 @@ public class VirusTotalUtility {
         public String info;
     }
 
+    /** Returns the analysis of an url, or null if the analysis is in progress */
     public static InternalReponse scanUrl(String urlToScan, String key, Context cntx) {
-        InternalReponse result = new InternalReponse();
+        var result = new InternalReponse();
 
-        String responseJSON;
+        // get analysis
+        Pair<Integer, String> responsePair;
         try {
-            responseJSON = HttpUtils.performPOST(urlGetReport, getPOSTparameters(urlToScan, key));
+            responsePair = HttpUtils.readFromUrl(URLS_ENDPOINT + "/" + Base64.encodeToString(urlToScan.getBytes(), NO_PADDING | NO_WRAP), Map.of(
+                    "accept", "application/json",
+                    "x-apikey", key
+            ));
         } catch (IOException e) {
             AndroidUtils.assertError("Can't connect to VirusTotal", e);
             result.error = cntx.getString(R.string.mVT_connectError);
             return result;
         }
 
+        if (responsePair.first == 404) {
+            // not analyzed yet
+            return analyzeUrl(urlToScan, key, cntx);
+        }
+
+        if (responsePair.first != 200) {
+            // error
+            result.error = cntx.getString(R.string.mVT_jsonError);
+            return result;
+        }
+
         // parse response
         try {
-            JSONObject response = new JSONObject(responseJSON);
-
+            JSONObject response = new JSONObject(responsePair.second);
             result.info = response.toString(1);
+            var data = response.getJSONObject("data");
+            result.scanUrl = data.getJSONObject("links").getString("self");
 
-            if (response.getInt("response_code") == 1) {
-                result.detectionsPositive = response.optInt("positives", -1);
-                result.detectionsTotal = response.optInt("total", -1);
-                result.date = response.optString("scan_date", "");
-                result.scanUrl = response.optString("permalink", "");
+            // parse attributes
+            var attributes = data.getJSONObject("attributes");
 
-                result.error = null;
-                return result;
-            } else {
-                result.error = response.getString("verbose_msg"); // untranslated
+            if (!attributes.has("last_analysis_date")) {
+                // still analyzing
+                return null;
             }
+
+            // get stats
+            var stats = attributes.getJSONObject("last_analysis_stats");
+            result.detectionsPositive = stats.optInt("malicious", 0)
+                    + stats.optInt("suspicious", 0);
+            result.detectionsTotal = stats.optInt("undetected", 0)
+                    + stats.optInt("harmless", 0);
+            result.date = DateFormat.getInstance().format(new Date(attributes.getLong("last_analysis_date") * 1000));
+
+            result.error = null;
+            return result;
         } catch (JSONException e) {
             AndroidUtils.assertError("Can't parse VirusTotal response", e);
             result.error = cntx.getString(R.string.mVT_jsonError);
         }
 
         return result;
-
     }
 
-    static private String getPOSTparameters(String url, String key) {
-        String data = null;
+    /** Requests an analysis (if not one already) */
+    static private InternalReponse analyzeUrl(String urlToScan, String key, Context cntx) {
         try {
-            data = URLEncoder.encode("resource", "UTF-8")
-                    + "=" + URLEncoder.encode(url, "UTF-8");
+            var output = HttpUtils.performPOST(URLS_ENDPOINT, "url=" + URLEncoder.encode(urlToScan, "UTF-8"), Map.of(
+                    "accept", "application/json",
+                    "x-apikey", key,
+                    "content-type", "application/x-www-form-urlencoded"
+            ));
 
-            data += "&" + URLEncoder.encode("scan", "UTF-8") + "="
-                    + URLEncoder.encode("1", "UTF-8");
+            if (output.first != 200) {
+                var result = new InternalReponse();
+                result.error = cntx.getString(R.string.mVT_jsonError);
+                return result;
+            }
 
-            data += "&" + URLEncoder.encode("apikey", "UTF-8")
-                    + "=" + URLEncoder.encode(key, "UTF-8");
-
-            data += "&" + URLEncoder.encode("allinfo", "UTF-8")
-                    + "=" + URLEncoder.encode("true", "UTF-8");
-
-        } catch (UnsupportedEncodingException e) {
-            AndroidUtils.assertError("Can't encode url parameters", e);
+            return null;
+        } catch (IOException e) {
+            AndroidUtils.assertError("Can't analyze url", e);
+            var result = new InternalReponse();
+            result.error = cntx.getString(R.string.mVT_jsonError);
+            return result;
         }
-        return data;
     }
-
 
 }
