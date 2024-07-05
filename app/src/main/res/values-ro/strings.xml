@@ -87,7 +87,6 @@
     <string name="btn_tutorialEnd">Termină tutorial-ul</string>
     <string name="toast_noApp">Nu se poate deschide aplicația</string>
     <string name="toast_noBrowser">Nu se poate deschide browser-ul web</string>
-    <string name="title_choose">Alegeți aplicația</string>
     <string name="invalid">Invalid</string>
     <string name="save">Salvează</string>
     <string name="reset">Resetare</string>

@@ -19,7 +19,6 @@
     <string name="tutorial">Tutorial</string>
     <string name="btn_tutorialSkip">Tutorial überspringen</string>
     <string name="toast_noBrowser">Webbrowser kann nicht geöffnet werden</string>
-    <string name="title_choose">App auswählen</string>
     <string name="invalid">Ungültig</string>
     <string name="reset">Zurücksetzen</string>
     <string name="clear">Leeren</string>

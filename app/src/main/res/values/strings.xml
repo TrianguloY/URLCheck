@@ -122,7 +122,6 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     -->
     <string name="toast_noApp">Can not open the app</string>
     <string name="toast_noBrowser">Can not open the web browser</string>
-    <string name="title_choose">Choose app</string>
     <string name="invalid">Invalid</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>

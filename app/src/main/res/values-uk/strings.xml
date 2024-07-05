@@ -35,7 +35,6 @@
     -->
     <string name="toast_noApp">Неможливо відкрити програму</string>
     <string name="toast_noBrowser">Неможливо відкрити переглядач</string>
-    <string name="title_choose">Виберіть програму</string>
     <string name="invalid">Невірний</string>
     <string name="share">Поділитись додатком</string>
     <!--

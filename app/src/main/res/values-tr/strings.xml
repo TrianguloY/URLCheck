@@ -84,7 +84,6 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     -->
     <string name="toast_noApp">Uygulama açılamıyor</string>
     <string name="toast_noBrowser">Tarayıcı açılamıyor</string>
-    <string name="title_choose">Uygulama seç</string>
     <string name="invalid">Geçersiz</string>
     <string name="save">Kaydet</string>
     <string name="reset">Sıfırla</string>

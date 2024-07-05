@@ -47,7 +47,6 @@ Traduzioni: %3$s."</string>
     <!-- generic -->
     <string name="toast_noApp">Impossibile aprire l\'app</string>
     <string name="toast_noBrowser">Impossibile aprire il browser web</string>
-    <string name="title_choose">Scegli app</string>
     <string name="invalid">Invalido</string>
     <string name="save">Salva</string>
     <string name="reset">Reset</string>

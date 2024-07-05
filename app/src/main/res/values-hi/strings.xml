@@ -90,7 +90,6 @@
     <string name="share">साझा</string>
     <string name="mOpen_open">खोलें</string>
     <string name="defaultOff">डिफ़ॉल्ट रूप से अक्षम</string>
-    <string name="title_choose">ऐप चुनें</string>
     <string name="mPttrn_noSchemeHttps">HTTPS scheme अनुपलब्ध।</string>
     <string name="alwaysOff">हमेशा बंद</string>
     <string name="mOpen_perDomain">विभिन्न डोमेन को स्वतंत्र रूप से क्रमबद्ध करें</string>

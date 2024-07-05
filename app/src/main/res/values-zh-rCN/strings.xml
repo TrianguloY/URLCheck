@@ -72,7 +72,6 @@
     <!-- generic -->
     <string name="toast_noApp">无法打开应用</string>
     <string name="toast_noBrowser">无法打开浏览器</string>
-    <string name="title_choose">选择应用</string>
     <string name="invalid">无效</string>
     <string name="save">保存</string>
     <string name="reset">重置</string>

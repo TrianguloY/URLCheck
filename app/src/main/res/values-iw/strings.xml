@@ -26,7 +26,6 @@
     <!-- generic -->
     <string name="toast_noApp">"לא ניתן לפתוח את האפליקציה"</string>
     <string name="toast_noBrowser">"לא מצליח לפתוח את הדפדפן"</string>
-    <string name="title_choose">בחר אפליקציה</string>
     <string name="invalid">לא חוקי</string>
     <string name="save">להציל</string>
     <string name="reset">איפוס</string>

@@ -20,11 +20,10 @@ import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.wrappers.Connection;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -140,19 +139,15 @@ class WebhookDialog extends AModuleDialog {
 
     /** Performs the send action */
     static boolean send(String webhook, String url, String referrer, String body) {
-        try {
-            var json = body
-                    .replace("$URL$", url)
-                    .replace("$TIMESTAMP$", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).format(new Date()))
-                    .replace("$REFERRER$", referrer);
+        var json = body
+                .replace("$URL$", url)
+                .replace("$TIMESTAMP$", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).format(new Date()))
+                .replace("$REFERRER$", referrer);
 
-            var responseCode = HttpUtils.performPOSTJSON(webhook, json);
-            return responseCode >= 200 && responseCode < 300;
-        } catch (IOException e) {
-            AndroidUtils.assertError("Failed to send to webhook", e);
-            return false;
-        }
-
+        var responseCode = Connection.to(webhook)
+                .postJSONString(json)
+                .getStatusCode();
+        return responseCode >= 200 && responseCode < 300;
     }
 }
 

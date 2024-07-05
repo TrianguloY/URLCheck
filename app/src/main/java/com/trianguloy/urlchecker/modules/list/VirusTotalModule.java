@@ -21,7 +21,6 @@ import com.trianguloy.urlchecker.modules.companions.VirusTotalUtility;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.UrlUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
 import java.util.List;
@@ -113,7 +112,7 @@ class VirusTotalDialog extends AModuleDialog {
     private TextView txt_result;
 
     private boolean scanning = false;
-    private VirusTotalUtility.InternalReponse result = null;
+    private VirusTotalUtility.InternalResponse result = null;
 
     private final GenericPref.Str api_key;
 
@@ -167,7 +166,7 @@ class VirusTotalDialog extends AModuleDialog {
 
     /** Manages the scanning in the background */
     private void _scanUrl() {
-        VirusTotalUtility.InternalReponse response;
+        VirusTotalUtility.InternalResponse response;
         while (scanning) {
             // asks for the report
             response = VirusTotalUtility.scanUrl(getUrl(), api_key.get(), getActivity());
@@ -253,7 +252,8 @@ class VirusTotalDialog extends AModuleDialog {
         if (result == null || result.error != null) return;
 
         if (details) {
-            UrlUtils.openUrlRemoveThis(result.scanUrl, getActivity());
+            setUrl(result.scanUrl);
+//            UrlUtils.openUrlRemoveThis(result.scanUrl, getActivity());
         } else {
             // TODO: beautify this
             new AlertDialog.Builder(getActivity())
