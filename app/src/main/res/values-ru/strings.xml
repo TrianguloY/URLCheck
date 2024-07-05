@@ -79,7 +79,6 @@
     <string name="json_editor">Продвинутый редактор</string>
     <string name="share">Поделиться</string>
     <string name="defaultOff">Выключено по умолчанию</string>
-    <string name="title_choose">Выберите приложение</string>
     <string name="alwaysOff">Всегда выключено</string>
     <string name="mClear_exception">- проигнорировано из-за исключения %s</string>
     <string name="mClear_cleared">- Очищено</string>

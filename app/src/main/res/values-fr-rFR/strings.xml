@@ -83,7 +83,6 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     -->
     <string name="toast_noApp">Impossible d\'ouvrir l\'application</string>
     <string name="toast_noBrowser">Impossible d\'ouvrir le navigateur</string>
-    <string name="title_choose">Choisir l\'app</string>
     <string name="invalid">Invalide</string>
     <string name="save">Sauvegarder</string>
     <string name="reset">Réinitialiser</string>

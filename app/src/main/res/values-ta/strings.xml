@@ -80,7 +80,6 @@
     <string name="btn_tutorialEnd">டுடோரியலை முடிக்கவும்</string>
     <string name="toast_noApp">பயன்பாட்டைத் திறக்க முடியாது</string>
     <string name="toast_noBrowser">வலை உலாவியைத் திறக்க முடியாது</string>
-    <string name="title_choose">பயன்பாட்டைத் தேர்வுசெய்க</string>
     <string name="invalid">செல்லுபடியாகாத</string>
     <string name="save">சேமி</string>
     <string name="reset">மீட்டமை</string>

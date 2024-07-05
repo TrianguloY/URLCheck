@@ -85,7 +85,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="btn_tutorialEnd">Terminar tutorial</string>
     <string name="toast_noApp">No se puede abrir la aplicación</string>
     <string name="toast_noBrowser">No se puede abrir el navegador</string>
-    <string name="title_choose">Elige aplicación</string>
     <string name="invalid">Invalido</string>
     <string name="save">Guardar</string>
     <string name="reset">Reiniciar</string>

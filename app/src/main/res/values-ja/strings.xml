@@ -47,7 +47,6 @@
     <!-- generic -->
     <string name="toast_noApp">アプリを開けません</string>
     <string name="toast_noBrowser">Web ブラウザを開けません</string>
-    <string name="title_choose">アプリを選択</string>
     <string name="invalid">無効です</string>
     <string name="save">保存</string>
     <string name="reset">リセット</string>

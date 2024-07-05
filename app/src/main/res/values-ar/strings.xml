@@ -72,7 +72,6 @@
     <string name="txt_tutorial2">يعمل التطبيق كوسيط عند فتح روابط URL أو مشاركتها. بمجرد إرسال URL إلى التطبيق، يمكنك التفاعل معه من خلال الوحدات. بعد ذلك، يمكنك فتح الرابط (في التطبيق الذي تريده)، مشاركته، أو نسخه إلى الحافظة.</string>
     <string name="toast_noApp">لا يمكن فتح التطبيق</string>
     <string name="toast_noBrowser">لا يمكن فتح متصفح الويب</string>
-    <string name="title_choose">اختر التطبيق</string>
     <string name="invalid">غير صالح</string>
     <string name="save">حفظ</string>
     <string name="close">إغلاق</string>

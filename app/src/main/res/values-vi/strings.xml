@@ -154,7 +154,6 @@
     <string name="clear">Dọn</string>
     <string name="auto">Tự động</string>
     <string name="alwaysOn">Luôn mở</string>
-    <string name="title_choose">Chọn ứng dụng</string>
     <string name="invalid">Không hợp lệ</string>
     <string name="save">Lưu</string>
     <string name="toast_noApp">Không thể mở ứng dụng</string>

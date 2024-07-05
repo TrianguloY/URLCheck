@@ -38,7 +38,6 @@
     <string name="btn_tutorialEnd">Uzavřít návod</string>
     <string name="toast_noApp">Aplikaci není možno otevřít</string>
     <string name="toast_noBrowser">Webový prohlížeč není možno otevřít</string>
-    <string name="title_choose">Vyberte aplikaci</string>
     <string name="invalid">Neplatné</string>
     <string name="save">Uložit</string>
     <string name="reset">Obnovit</string>
