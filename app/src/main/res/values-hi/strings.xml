@@ -144,7 +144,6 @@
     <string name="mClear_restore">ClearURLs पथ पुनर्स्थापित करें</string>
     <string name="mHosts_parseError">यूआरएल होस्ट को पार्स नहीं किया जा सका</string>
     <string name="mUnshort_error">सर्वर त्रुटि: %s</string>
-    <string name="mVT_connectError">VirusTotal से कनेक्ट नहीं हो सका। सुनिश्चित करें कि आप इंटरनेट से जुड़े हुए हैं, या बाद में पुनः प्रयास करें।</string>
     <string name="mD_desc">यदि आप मॉड्यूल को पुन: व्यवस्थित करते हैं, तो भविष्य के अपडेट में जोड़े गए नए मॉड्यूल को इसके ऊपर रखा जाएगा।
 \n
 \nयदि आप इसे सक्षम करते हैं तो यह डेवलपर्स के लिए उपयोगी कुछ आंतरिक डिबग डेटा (जैसे मूल इरादा यूआरआई) प्रदर्शित करेगा।
@@ -195,7 +194,7 @@
     <string name="mDrawer_desc">इसके नीचे के सभी मॉड्यूल एक दराज में छिपे होंगे। मॉड्यूल फिर भी काम करेंगे, लेकिन वो दराज में छिपे रहेंगे। अव्यवस्था से बचने के लिए आप यहां ऐसे मॉड्यूल रख सकते हैं जिनका आप शायद ही कभी उपयोग करते हैं।</string>
     <string name="mHosts_fakenews">फर्जी खबर</string>
     <string name="mHosts_buildClear">समाशोधन…</string>
-    <string name="mVT_jsonError">VirusTotal से कनेक्ट नहीं हो सका। सुनिश्चित करें कि एपीआई कुंजी वैध है, या बाद में पुनः प्रयास करें।</string>
+    <string name="mVT_error">VirusTotal से कनेक्ट नहीं हो सका। सुनिश्चित करें कि एपीआई कुंजी वैध है, या बाद में पुनः प्रयास करें।</string>
     <string name="mInput_name">इनपुट टेक्स्ट</string>
     <string name="mParts_empty">(खाली)</string>
     <string name="mRemove_found">%d क्वेरीयां मिली</string>

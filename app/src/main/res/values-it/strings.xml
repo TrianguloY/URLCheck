@@ -128,8 +128,7 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mVT_goodUrl">Nessun %1$d engine ha rilevato qualcosa (ad oggi %2$s)</string>
     <string name="mVT_warningUrl">Attenzione, questi engines: %1$d/%2$d hanno rilevato qualcosa (ad oggi %3$s)</string>
     <string name="mVT_badUrl">Attenzione! %1$d/%2$d engines hanno rilevato qualcosa (ad oggi %3$s)</string>
-    <string name="mVT_connectError">Impossibile connettersi a VirusTotal. Assicuati di essere connesso a internet, oppure riprova più tardi.</string>
-    <string name="mVT_jsonError">Impossibile connettersi a VirusTotal. Controlla che la chiave API inserita sia valida, oppure riprova più tardi.</string>
+    <string name="mVT_error">Impossibile connettersi a VirusTotal. Controlla che la chiave API inserita sia valida, oppure riprova più tardi.</string>
     <string name="mD_name">Modulo di debug</string>
     <string name="mD_desc">Se riorganizzi i moduli, i nuovi aggiunti nei futuri aggiornamenti verranno posizionati sopra quest\'ultimo.\n\nSe attivi questa opzione, verrano visuallizzati alcuni dati di debug interni (come l\'uri dell\'intento originale), utile per gli sviluppatori.\n\nPuoi tenere premuto per selezionare il testo.</string>
     <string name="mD_ctabs">Mostra i messaggi di debug dal serivzio di schede custom.</string>

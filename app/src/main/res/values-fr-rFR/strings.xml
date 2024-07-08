@@ -192,8 +192,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mVT_goodUrl">Aucun des %1$d moteurs n\'a détecté l\'URL (en date du %2$s)</string>
     <string name="mVT_warningUrl">Attention, %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
     <string name="mVT_badUrl">Prudence ! %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
-    <string name="mVT_connectError">Impossible de se connecter à VirusTotal. Assurez-vous d’être connecté à Internet ou réessayez plus tard.</string>
-    <string name="mVT_jsonError">Impossible de se connecter à VirusTotal. Assurez-vous que la clé API est valide ou réessayez plus tard.</string>
+    <string name="mVT_error">Impossible de se connecter à VirusTotal. Assurez-vous que la clé API est valide ou réessayez plus tard.</string>
     <!-- -->
     <string name="mD_name">Module de débogage/marqueur</string>
     <string name="mD_desc">Si vous réorganisez les modules, les nouveaux modules ajoutés dans les mises à jour futures seront placés au-dessus de celui-ci.

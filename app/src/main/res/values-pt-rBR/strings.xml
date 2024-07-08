@@ -77,8 +77,7 @@
     <string name="txt_sample">Clique no link abaixo para testá-lo:</string>
     <string name="mStatus_name">Códigos de status</string>
     <string name="mPttrn_fixed">Aplicado - %s</string>
-    <string name="mVT_connectError">Não foi possível conectar-se ao VirusTotal. Verifique se você está conectado à Internet ou tente novamente mais tarde.</string>
-    <string name="mVT_jsonError">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
+    <string name="mVT_error">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
     <string name="mUnshort_error">Erro de servidor: %s</string>
     <string name="mUnshort_checking">Verificando…</string>
     <string name="mUnshort_internal">Erro interno (%s)</string>

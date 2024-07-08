@@ -120,8 +120,7 @@
     <string name="mVT_goodUrl">Keiner der %1$d Dienste hat die URL als böswillig erkannt (Stand: %2$s)</string>
     <string name="mVT_warningUrl">Warnung, %1$d/%2$d Dienste haben die URL als gefährlich eingestuft (Stand: %3$s)</string>
     <string name="mVT_badUrl">Vorsicht! %1$d/%2$d Dienste haben die URL als gefährlich eingestuft (Stand: %3$s)</string>
-    <string name="mVT_connectError">Verbindung zu VirusTotal nicht möglich. Überprüfen Sie Ihre Internetverbindung oder versuchen Sie es später noch einmal.</string>
-    <string name="mVT_jsonError">Verbindung zu VirusTotal nicht möglich. Überprüfen Sie, dass der API-Key gültig ist oder versuchen Sie es später noch einmal.</string>
+    <string name="mVT_error">Verbindung zu VirusTotal nicht möglich. Überprüfen Sie, dass der API-Key gültig ist oder versuchen Sie es später noch einmal.</string>
     <string name="mD_name">Debug-/Entwickler-Modul</string>
     <string name="mD_desc">Wenn Sie die Reihenfolge der Module verändern, werden zukünftig neue Module über diesem eingefügt.
 \n

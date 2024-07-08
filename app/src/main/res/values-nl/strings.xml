@@ -18,7 +18,6 @@
 \nDit is de tutorial, als je deze wilt overslaan, kun je dat doen met de onderstaande knop. Je kunt altijd terugkeren naar deze tutorial vanuit het instellingenmenu.</string>
     <string name="mClear_desc">Deze module verwijdert tracking, referrer en andere nutteloze parameters uit de URL. Het maakt ook algemene offline URL-omleidingen mogelijk.</string>
     <string name="btn_tutorialSettings">Herhaal tutorial</string>
-    <string name="mVT_connectError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat u verbonden bent met internet of probeer het later opnieuw.</string>
     <string name="mPttrn_regexfix">Optionele regex-groepen repareren (uitschakelen als regex niet correct werkt)</string>
     <string name="tutorial">Tutorial</string>
     <string name="toast_defaultSet">De app is nu de standaardwebbrowser</string>
@@ -133,7 +132,7 @@
     <string name="mClear_clear">Toepassen</string>
     <string name="mOpen_incognito">Incognito modus:</string>
     <string name="desc_decorations">Titel tonen/verbergen</string>
-    <string name="mVT_jsonError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
+    <string name="mVT_error">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
     <string name="auto">Automatisch</string>
     <string name="mInput_name">Voer tekst in</string>
     <string name="txt_tutorial2">De app fungeert als tussenpersoon bij het openen of delen van url-links. Zodra een URL naar de app is verzonden, kunt u ermee communiceren via de modules. Daarna kunt u de link openen (in de gewenste app), delen of naar het klembord kopiëren.</string>

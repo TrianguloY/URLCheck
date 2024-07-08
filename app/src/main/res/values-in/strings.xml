@@ -47,7 +47,6 @@
     <string name="reset">Atur ulang</string>
     <string name="mPttrn_wrongSchemaHttp">Skema http tidak valid.</string>
     <string name="mClear_desc">Modul ini menghilangkan pelacakan, perujuk, dan parameter lain yang tidak bermanfaat di URL. Ia juga bisa melacak pengalihan URL luring yang umum digunakan.</string>
-    <string name="mVT_connectError">Tidak dapat melakukan koneksi ke VirusTotal. Pastikan Anda terhubung ke internet, atau coba lagi nanti.</string>
     <string name="mPttrn_regexfix">Perbaiki grup regex yang opsional (nonaktifkan jika regex tidak bekerja dengan baik)</string>
     <string name="mPttrn_http">Link HTTP. Pertimbangkan untuk beralih ke HTTPS.</string>
     <string name="mStatus_check">Cek status</string>
@@ -127,7 +126,7 @@
     <string name="mOpen_mergeCopy">Satukan tombol Salin dan Bagikan (tekan lama untuk menyalin)</string>
     <string name="mClear_clear">Terapkan</string>
     <string name="mOpen_incognito">Mode inkognito:</string>
-    <string name="mVT_jsonError">Tidak dapat melakukan koneksi ke VirusTotal. Pastikan kunci API valid, atau coba lagi nanti.</string>
+    <string name="mVT_error">Tidak dapat melakukan koneksi ke VirusTotal. Pastikan kunci API valid, atau coba lagi nanti.</string>
     <string name="auto">Otomatis</string>
     <string name="mInput_name">Teks input</string>
     <string name="mPttrn_ok">Pola tidak ditemukan</string>
