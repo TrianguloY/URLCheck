@@ -8,6 +8,7 @@ import android.content.Context;
 import android.util.Base64;
 
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.Connection;
 
@@ -50,6 +51,7 @@ public class VirusTotalUtility {
         public String date;
         public String scanUrl;
         public String info;
+        public String debugData;
     }
 
     /** Returns the analysis of an url, or null if the analysis is in progress */
@@ -77,7 +79,7 @@ public class VirusTotalUtility {
 
         // parse response
         try {
-            result.info = response.toString(1);
+            result.debugData = response.toString(1);
             result.scanUrl = "https://www.virustotal.com/gui/url/" + encodedUrl;
 
             // parse attributes
@@ -95,6 +97,21 @@ public class VirusTotalUtility {
             result.detectionsTotal = stats.optInt("undetected", 0)
                     + stats.optInt("harmless", 0);
             result.date = DateFormat.getInstance().format(new Date(attributes.getLong("last_analysis_date") * 1000));
+
+            // build summary info
+            var info = new StringBuilder();
+            info.append("Title: ").append(attributes.optString("title")).append("\n");
+            info.append("Final url: ").append(attributes.optString("last_final_url")).append("\n");
+            info.append("Reputation: ").append(attributes.optString("reputation")).append("\n");
+            var results = attributes.getJSONObject("last_analysis_results");
+            if (results.length() > 0) info.append("Detections: ");
+            for (var k : JavaUtils.toList(results.keys())) {
+                var engine = results.getJSONObject(k);
+                if ("malicious,suspicious".contains(engine.getString("result"))) {
+                    info.append(engine.getString("engine_name")).append("; ");
+                }
+            }
+            result.info = info.toString();
 
             result.error = null;
         } catch (JSONException e) {
