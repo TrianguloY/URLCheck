@@ -226,7 +226,9 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVT_name">Escáneador de la URL</string>
     <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>
     <string name="mVT_apiKey">Clave de la API</string>
+    <string name="mVT_checkKey">Comprobar</string>
     <string name="mVT_noKey">Falta la clave de la API</string>
+    <string name="mVT_validKey">Clave válida del usuario: %s</string>
     <string name="mVT_tm">VirusTotal™ es una marca registrada de Google, Inc.</string>
     <string name="mVT_scan">Escanear</string>
     <string name="mVT_cancel">Cancelar</string>
@@ -234,8 +236,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVT_goodUrl">Ninguno de los antivirus %1$d detectó la URL (a fecha %2$s)</string>
     <string name="mVT_warningUrl">Advertencia, %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
     <string name="mVT_badUrl">¡Cuidado! %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
-    <string name="mVT_connectError">No se puede conectar a VirusTotal. Asegúrese de que está conectado a Internet o inténtelo más tarde.</string>
-    <string name="mVT_jsonError">No se ha podido conectar con VirusTotal. Comprueba que la clave api es correcta o prueba mas tarde.</string>
+    <string name="mVT_error">No se ha podido obtener una respuesta válida de VirusTotal. Asegúrese de que la clave de la api es correcta y está conectado a Internet, o inténtelo mas tarde.</string>
     <!-- -->
     <string name="mD_name">Módulo debug/marcador</string>
     <string name="mD_desc">Si reordenas los módulos, los nuevos que se añadan en futuras actualizaciones se colocarán encima de éste.

@@ -285,7 +285,9 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mVT_name">URL Scanner</string>
     <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: %s .</string>
     <string name="mVT_apiKey">API key</string>
+    <string name="mVT_checkKey">Check</string>
     <string name="mVT_noKey">Missing API key</string>
+    <string name="mVT_validKey">Valid key from user: %s</string>
     <string name="mVT_tm">VirusTotal™ is a trademark of Google, Inc.</string>
     <string name="mVT_scan">Scan</string>
     <string name="mVT_cancel">Cancel</string>
@@ -293,8 +295,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mVT_goodUrl">None of the %1$d engines detected the URL (as of date %2$s)</string>
     <string name="mVT_warningUrl">Warning, %1$d/%2$d engines detected the URL (as of date %3$s)</string>
     <string name="mVT_badUrl">Careful! %1$d/%2$d engines detected the URL (as of date %3$s)</string>
-    <string name="mVT_connectError">Can not connect to VirusTotal. Ensure you are connected to the Internet, or try again later.</string>
-    <string name="mVT_jsonError">Can not connect to VirusTotal. Ensure the API key is valid, or try again later.</string>
+    <string name="mVT_error">Unable to get a valid answer from VirusTotal. Make sure the api key is valid and that you are connected to the Internet, or try again later.</string>
     <!-- -->
     <string name="mD_name">Debug/Marker module</string>
     <string name="mD_desc">"If you reorder the modules, new ones added in future updates will be placed above this one.

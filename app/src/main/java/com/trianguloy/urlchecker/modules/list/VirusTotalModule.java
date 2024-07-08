@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
@@ -88,13 +89,47 @@ class VirusTotalConfig extends AModuleConfig {
     @Override
     public void onInitialize(View views) {
         var edit_key = views.<TextView>findViewById(R.id.api_key);
-        edit_key.setText(api_key.get());
+        var test = views.<Button>findViewById(R.id.test);
+        var result = views.<TextView>findViewById(R.id.result);
+        var testing = views.<ProgressBar>findViewById(R.id.testing);
+
+        // init output
+        testing.setVisibility(View.GONE);
+
+        // set and configure input
         edit_key.addTextChangedListener(new DefaultTextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
                 api_key.set(s.toString());
-                if (cannotEnableErrorId() != -1) disable();
+                if (cannotEnableErrorId() != -1) {
+                    disable();
+                }
+
+                test.setEnabled(s.length() != 0);
+                result.setText("");
             }
+        });
+        edit_key.setText(api_key.get());
+
+        // set onclick
+        test.setOnClickListener(v -> {
+            // mark as testing
+            testing.setVisibility(View.VISIBLE);
+            test.setEnabled(false);
+            edit_key.setEnabled(false);
+            result.setText("");
+            new Thread(() -> {
+                // check
+                var user = VirusTotalUtility.getUser(api_key.get());
+                getActivity().runOnUiThread(() -> {
+                    // display result
+                    testing.setVisibility(View.GONE);
+                    test.setEnabled(true);
+                    edit_key.setEnabled(true);
+                    if (user == null) result.setText(R.string.mVT_error);
+                    else result.setText(getActivity().getString(R.string.mVT_validKey, user));
+                });
+            }).start();
         });
 
         views.<TextView>findViewById(R.id.label).setText(getStringWithPlaceholder(getActivity(), R.string.mVT_desc, R.string.vtLogin_url));

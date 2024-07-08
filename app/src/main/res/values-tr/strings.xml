@@ -187,8 +187,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mVT_goodUrl">Hiçbir %1$d motoru URL\'yi algılamadı (%2$s tarihi itibariyle)</string>
     <string name="mVT_warningUrl">Uyarı, %1$d/%2$d motorları URL\'yi algıladı (%3$s tarihi itibariyle)</string>
     <string name="mVT_badUrl">Dikkat! %1$d/%2$d motorları URL\'yi algıladı (%3$s tarihi itibariyle)</string>
-    <string name="mVT_connectError">VirusTotal\'a bağlanılamıyor. Aktif bir internet bağlantınız olduğundan emin olun veya daha sonra tekrar deneyin.</string>
-    <string name="mVT_jsonError">VirusTotal\'e bağlanılamıyor. API anahtarının geçerli olduğundan emin olun veya daha sonra tekrar deneyin.</string>
+    <string name="mVT_error">VirusTotal\'e bağlanılamıyor. API anahtarının geçerli olduğundan emin olun veya daha sonra tekrar deneyin.</string>
     <!-- -->
     <string name="mD_name">Hata Ayıklama/İşaretleyici modülü</string>
     <string name="mD_desc">Modülleri yeniden sıralarsanız, gelecekteki güncellemelerde eklenen yenileri bunun üzerine yerleştirilecektir.\n\nBunu etkinleştirirseniz, geliştiriciler için yararlı olan bazı dahili hata ayıklama verilerini (orijinal amaç uri gibi) görüntüler.\n\nMetin seçmek için basılı tutabilirsiniz.</string>

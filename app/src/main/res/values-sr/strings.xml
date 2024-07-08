@@ -245,8 +245,7 @@
     <string name="mVT_scanning">Skeniram…</string>
     <string name="mVT_scan">Skeniraj</string>
     <string name="mVT_goodUrl">Nijedan od %1$d motora nije otkrio URL (od datuma %2$s)</string>
-    <string name="mVT_connectError">Ne mogu da se povežem na VirusTotal. Uverite se da ste povezani na Internet ili pokušajte ponovo kasnije.</string>
-    <string name="mVT_jsonError">Ne mogu da se povežem na VirusTotal. Uverite se da je API ključ važeći ili pokušajte ponovo kasnije.</string>
+    <string name="mVT_error">Ne mogu da se povežem na VirusTotal. Uverite se da je API ključ važeći ili pokušajte ponovo kasnije.</string>
     <string name="mD_desc">Ako promenite redosled modula, novi dodani u budućim ažuriranjima biće postavljeni iznad ovog.
 \n
 \nAko ovo omogućite, prikazaće se neki interni podaci za otklanjanje grešaka (kao što je originalni uri namere), korisno za programere.

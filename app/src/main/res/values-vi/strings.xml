@@ -123,8 +123,7 @@
     <string name="mVT_cancel">Hủy</string>
     <string name="mVT_warningUrl">Cảnh báo, công cụ %1$d/%2$d đã phát hiện ra URL (kể từ ngày %3$s)</string>
     <string name="mVT_badUrl">Cẩn thận! Công cụ %1$d/%2$d đã phát hiện thấy URL (kể từ ngày %3$s)</string>
-    <string name="mVT_connectError">Không thể kết nối với VirusTotal. Đảm bảo bạn đã kết nối với Internet hoặc thử lại sau.</string>
-    <string name="mVT_jsonError">Không thể kết nối với VirusTotal. Đảm bảo khóa API hợp lệ hoặc thử lại sau.</string>
+    <string name="mVT_error">Không thể kết nối với VirusTotal. Đảm bảo khóa API hợp lệ hoặc thử lại sau.</string>
     <string name="mD_name">Mô-đun gỡ lỗi/đánh dấu</string>
     <string name="mD_desc">Nếu bạn sắp xếp lại các mô-đun, những mô-đun mới được thêm vào trong các bản cập nhật trong tương lai sẽ được đặt phía trên mô-đun này.
 \n

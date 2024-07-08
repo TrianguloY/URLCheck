@@ -151,8 +151,7 @@ Translations: %3$s."</string>
     <string name="mVT_goodUrl">Nenhum dos %1$d mecanismos detetou a URL (na data %2$s)</string>
     <string name="mVT_warningUrl">Aviso, %1$d/%2$d mecanismos detetaram a URL (na data %3$s)</string>
     <string name="mVT_badUrl">Cuidado! %1$d/%2$d mecanismos detetaram a URL (na data %3$s)</string>
-    <string name="mVT_connectError">Não foi possível conectar-se ao VirusTotal. Verifique se está conectado à Internet ou tente novamente mais tarde.</string>
-    <string name="mVT_jsonError">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
+    <string name="mVT_error">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
     <!-- -->
     <string name="mD_name">Módulo de depuração/marcador</string>
     <string name="mD_desc">Caso reordene os módulos, os novos adicionados em atualizações futuras serão postos acima desse.

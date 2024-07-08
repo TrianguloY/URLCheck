@@ -134,8 +134,7 @@
     <string name="mVT_badUrl">حذار! اكتشف %1$d/%2$d من محركات البحث عنوان الويب (اعتبارًا من تاريخ %3$s)</string>
     <string name="mVT_warningUrl">تحذير، اكتشف %1$d/%2$d من محركات البحث عنوان الويب (اعتبارًا من تاريخ %3$s)</string>
     <string name="mVT_goodUrl">لم يتم اكتشاف أي من محركات %1$d عنوان الويب (اعتبارًا من تاريخ %2$s)</string>
-    <string name="mVT_connectError">لا يمكن الاتصال بـ VirusTotal. تأكد من الاتصال بالإنترنت، أو حاول مرة أخرى لاحقًا.</string>
-    <string name="mVT_jsonError">لا يمكن الاتصال بـ VirusTotal. تأكد من أن مفتاح API صالح، أو حاول مرة أخرى لاحقًا.</string>
+    <string name="mVT_error">لا يمكن الاتصال بـ VirusTotal. تأكد من أن مفتاح API صالح، أو حاول مرة أخرى لاحقًا.</string>
     <string name="mD_name">وحدة تصحيح الأخطاء/العلامة</string>
     <string name="mD_ctabs">عرض رسائل التصحيح من خدمة علامات التبويب المخصصة</string>
     <string name="mHist_name">السجل</string>

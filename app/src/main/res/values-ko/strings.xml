@@ -92,13 +92,12 @@
     <string name="mVT_tm">VirusTotal™은 Google, Inc.의 트레이드마크입니다.</string>
     <string name="mVT_scanning">스캔 중…</string>
     <string name="mVT_desc">이 모듈이 활성화되어 있을 때 VirusTotal을 이용해 URL을 검사할 수 있습니다. 개인 VirusTotal API 키가 필요하며, 키는 %s 에서 무료로 회원가입 후 받을 수 있습니다.</string>
-    <string name="mVT_connectError">VirusTotal에 연결할 수 없습니다. 인터넷에 연결되어 있는지 확인하거나 나중에 다시 시도하세요.</string>
     <string name="mVT_cancel">취소</string>
     <string name="mVT_name">URL 스캐너</string>
     <string name="mVT_goodUrl">%1$d개의 엔진 중 어떤 엔진도 URL을 감지하지 않았습니다. (%2$s 기준)</string>
     <string name="mVT_apiKey">API 키</string>
     <string name="mVT_badUrl">주의! %1$d/%2$d 엔진이 URL을 감지했습니다. (%3$s 기준)</string>
-    <string name="mVT_jsonError">VirusTotal에 연결할 수 없습니다. API 키가 유효한지 확인하거나 나중에 다시 시도하세요.</string>
+    <string name="mVT_error">VirusTotal에 연결할 수 없습니다. API 키가 유효한지 확인하거나 나중에 다시 시도하세요.</string>
     <string name="mUnshort_tm">unshorten.me 무료 API</string>
     <string name="mUnshort_notFound">리디렉션 발견되지 않음</string>
     <string name="mUnshort_error">서버 오류: %s</string>

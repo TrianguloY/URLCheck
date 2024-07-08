@@ -182,7 +182,7 @@
     <string name="mClear_redirection">- 發現重新導向</string>
     <string name="mClear_hashError">無法取得雜湊檔，請檢查網址是否正確、裝置是否已連上網際網路</string>
     <string name="mHosts_noLabel">未標識</string>
-    <string name="mVT_jsonError">無法連上 VirusTotal。請檢查 API 金鑰是否有效，或稍後再試一次。</string>
+    <string name="mVT_error">無法連上 VirusTotal。請檢查 API 金鑰是否有效，或稍後再試一次。</string>
     <string name="mClear_hashHint">沒有雜湊驗證</string>
     <string name="mClear_restore">重設為 ClearURLs 路徑</string>
     <string name="mClear_hashMismatch">雜湊值不相符，該檔案可能已遭竄改。若欲略過驗證，請將雜湊檔網址留空。</string>
@@ -192,7 +192,6 @@
     <string name="mVT_goodUrl">已通過 %1$d 個掃毒引擎的檢驗 (截至 %2$s)</string>
     <string name="mVT_warningUrl">警告！掃毒引擎偵測率為 %1$d/%2$d (截至 %3$s)</string>
     <string name="mVT_badUrl">危險！掃毒引擎偵測率為 %1$d/%2$d (截至 %3$s)</string>
-    <string name="mVT_connectError">無法連上 VirusTotal。請確保裝置已連上網際網路，或稍後再試一次。</string>
     <string name="mClear_sourceDesc">規則目錄 JSON 檔的網址：</string>
     <string name="mClear_hashDesc">規則目錄雜湊檔的網址。若留空則不會檢查下載的內容是否遭到竄改 (不建議)：</string>
     <string name="mClear_blocked">- 已封鎖！</string>

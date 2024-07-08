@@ -24,6 +24,24 @@ import java.util.Map;
 public class VirusTotalUtility {
 
     static private final String URLS_ENDPOINT = "https://www.virustotal.com/api/v3/urls";
+    static private final String USERS_ENDPOINT = "https://www.virustotal.com/api/v3/users";
+    public static final String HEADER_KEY = "x-apikey";
+
+    /** Returns the username whose owner is the provided key */
+    static public String getUser(String key) {
+        var result = Connection.to(USERS_ENDPOINT + "/" + key)
+                .addHeader(HEADER_KEY, key)
+                .acceptJson()
+                .connect()
+                .getResultAsJson();
+        if (result == null) return null;
+        try {
+            return result.getJSONObject("data").getString("id");
+        } catch (JSONException e) {
+            AndroidUtils.assertError("Unable to parse virustotal user response", e);
+            return null;
+        }
+    }
 
     static public class InternalResponse {
         public String error = "Unknown error";
@@ -40,7 +58,7 @@ public class VirusTotalUtility {
         // connect
         var encodedUrl = Base64.encodeToString(urlToScan.getBytes(), NO_PADDING | NO_WRAP | URL_SAFE);
         var connection = Connection.to(URLS_ENDPOINT + "/" + encodedUrl)
-                .addHeader("x-apikey", key)
+                .addHeader(HEADER_KEY, key)
                 .acceptJson()
                 .connect();
 
@@ -53,7 +71,7 @@ public class VirusTotalUtility {
         var response = connection.getResultAsJson();
         if (response == null || connection.getStatusCode() != 200) {
             // error
-            result.error = cntx.getString(R.string.mVT_jsonError);
+            result.error = cntx.getString(R.string.mVT_error);
             return result;
         }
 
@@ -81,7 +99,7 @@ public class VirusTotalUtility {
             result.error = null;
         } catch (JSONException e) {
             AndroidUtils.assertError("Can't parse VirusTotal response", e);
-            result.error = cntx.getString(R.string.mVT_jsonError);
+            result.error = cntx.getString(R.string.mVT_error);
         }
 
         return result;
@@ -90,7 +108,7 @@ public class VirusTotalUtility {
     /** Requests an analysis (if not done already) */
     static private InternalResponse analyzeUrl(String urlToScan, String key, Context cntx) {
         var code = Connection.to(URLS_ENDPOINT)
-                .addHeader("x-apikey", key)
+                .addHeader(HEADER_KEY, key)
                 .acceptJson()
                 .postFormUrlEncoded(Map.of("url", urlToScan))
                 .getStatusCode();
@@ -98,7 +116,7 @@ public class VirusTotalUtility {
         if (code != 200) {
             // error
             var result = new InternalResponse();
-            result.error = cntx.getString(R.string.mVT_jsonError);
+            result.error = cntx.getString(R.string.mVT_error);
             return result;
         }
 

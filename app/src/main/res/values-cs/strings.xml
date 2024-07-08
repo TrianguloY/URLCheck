@@ -102,7 +102,6 @@
     <string name="mVT_warningUrl">Varování, %1$d/%2$d vyhledávačů tuto adresu URL nahlásilo (k datu %3$s)</string>
     <string name="mVT_badUrl">Opatrně! %1$d/%2$d vyhledávačů tuto adresu URL nahlásilo (k datu %3$s)</string>
     <string name="mVT_goodUrl">Žádný z %1$d vyhledávačů tuto adresu URL nenahlásilo (k datu %2$s)</string>
-    <string name="mVT_connectError">Nelze se připojit k VirusTotal. Ujistěte se, že jste připojeni k internetu, nebo to zkuste znovu později.</string>
     <string name="mD_name">Pro ladění</string>
     <string name="mDrawer_desc">Všechny moduly pod tímto budou skryty v šuplíku. Moduly budou stále fungovat, ale budou skryté, dokud šuplík neotevřete. Zde můžete umístit moduly, které používáte zřídka, abyste se vyhnuli nepořádku.</string>
     <string name="mRemove_desc">[DEPRECATED] Pomocí tohoto modulu můžete odstranit dotazy z adresy URL.
@@ -156,7 +155,7 @@
     <string name="mVT_name">Skener URL</string>
     <string name="mVT_desc">Když je tento modul povolen, můžete naskenovat adresu URL pomocí VirusTotal a zkontrolovat zprávu. K jeho fungování je potřeba osobní VirusTotal API klíč, ten získáte po registraci bezplatného účtu zde: %s .</string>
     <string name="mHosts_desc">Tento modul označuje hostitele, konfigurované buď jejich ručním zadáním, nebo pomocí souboru podobného vzdálenému \'hosts\'. Můžete jej použít k varování před nebezpečnými nebo speciálními stránkami. Vestavěná konfigurace určuje hostitele dle StevenBlack (adware/malware, falešné zprávy, hazardní hry a obsah pro dospělé) z %s</string>
-    <string name="mVT_jsonError">Nelze se připojit k VirusTotal. Ujistěte se, že je klíč API platný, nebo to zkuste znovu později.</string>
+    <string name="mVT_error">Nelze se připojit k VirusTotal. Ujistěte se, že je klíč API platný, nebo to zkuste znovu později.</string>
     <string name="mLog_desc">Tento modul zaznamenává všechny kontrolované adresy URL. Zde můžete zobrazit, vymazat nebo upravit celý protokol (historii), v hlavním dialogu se neobjeví žádná vizuální indikace. Chcete-li zakázat protokolování, deaktivujte modul.</string>
     <string name="mD_desc">Pokud změníte pořadí modulů, nové přidané (z budoucích aktualizací) budou umístěny nad tento modul.
 \n

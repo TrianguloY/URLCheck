@@ -96,8 +96,7 @@
     <string name="mVT_goodUrl">אף אחד מהמנועים %1$d לא זיהה את כתובת האתר (נכון לתאריך %2$s)</string>
     <string name="mVT_warningUrl">אזהרה, מנועי %1$d/%2$d זיהו את כתובת האתר (נכון לתאריך %3$s)</string>
     <string name="mVT_badUrl">זָהִיר! %1$d/%2$d מנועים זיהו את כתובת האתר (נכון לתאריך %3$s)</string>
-    <string name="mVT_connectError">"לא ניתן להתחבר ל-VirusTotal. ודא שיש לך חיבור אינטרנט פעיל או נסה שוב מאוחר יותר."</string>
-    <string name="mVT_jsonError">"לא ניתן להתחבר ל-VirusTotal. ודא שמפתח ה-API חוקי או נסה שוב מאוחר יותר."</string>
+    <string name="mVT_error">"לא ניתן להתחבר ל-VirusTotal. ודא שמפתח ה-API חוקי או נסה שוב מאוחר יותר."</string>
     <string name="mD_name">מודול ניפוי באגים/סמן</string>
     <string name="mD_desc">"אם תסדר מחדש את המודולים, חדשים שנוספו בעדכונים עתידיים יוצבו מעל זה.
 

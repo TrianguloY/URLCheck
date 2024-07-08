@@ -134,8 +134,7 @@ URLコンテンツは取得 (GET) されますが、JavaScript によるリダ�
     <string name="mVT_goodUrl">%1$dつのエンジンのいずれもURLを検出しませんでした (%2$s 時点データ)</string>
     <string name="mVT_warningUrl">警告! %1$dつのエンジンの内、%2$dのエンジンがURLを検出しました (%3$s 時点データ)</string>
     <string name="mVT_badUrl">注意! %1$dつのエンジンの内 %2$dつがURLを検出しました (%3$s 時点データ)</string>
-    <string name="mVT_connectError">VirusTotal に接続できません。インターネット接続が有効であることを確認するか、後でもう一度試してください。</string>
-    <string name="mVT_jsonError">VirusTotal に接続できません。APIキーが有効であることを確認するか、後でもう一度試してください。</string>
+    <string name="mVT_error">VirusTotal に接続できません。APIキーが有効であることを確認するか、後でもう一度試してください。</string>
     <string name="mD_name">デバッグ/マーカー モジュール</string>
     <string name="mD_desc">"モジュールの順序を変更すると、将来のアップデートで追加される新しいモジュールがこのモジュールの上に配置されます。
 

@@ -165,8 +165,7 @@
     <string name="mVT_goodUrl">%1$d 个引擎均未在此链接中发现（截至 %2$s）</string>
     <string name="mVT_warningUrl">警告, %1$d/%2$d 引擎已在该链接中发现（截至 %3$s）</string>
     <string name="mVT_badUrl">注意！%1$d/%2$d 个引擎已在该链接中发现（截至 %3$s）</string>
-    <string name="mVT_connectError">无法连接到 VirusTotal。请确保您已连接互联网或稍后重试。</string>
-    <string name="mVT_jsonError">无法连接到 VirusTotal，请确保您的API key有效或稍后重试。</string>
+    <string name="mVT_error">无法连接到 VirusTotal，请确保您的API key有效或稍后重试。</string>
     <string name="mD_name">调试/标记模块</string>
     <string name="mD_desc">如果您重新排序模块，则未来更新中添加的新模块将放置在此模块之上。
 \n

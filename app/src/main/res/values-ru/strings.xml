@@ -85,7 +85,6 @@
     <string name="mVT_desc">Когда этот модуль включён, вы можете сканировать URL-адрес, используя VirusTotal, и ознакомиться с результатами. Для работы необходим персональный VirusTotal API ключ, который вы можете получить, зарегистрировавшись на %s .</string>
     <string name="mPttrn_wrongSchemaHttp">Неверная высота букв в схеме HTTP.</string>
     <string name="mClear_lastUpdate">Последнее обновление:</string>
-    <string name="mVT_connectError">Невозможно подключиться к VirusTotal. Удостоверьтесь, что вы подключены к интернету, или попробуйте позже.</string>
     <string name="mPttrn_regexfix">Исправить необязательные группы регулярных выражений (отключите, если регулярные выражения работают неправильно)</string>
     <string name="mPttrn_http">HTTP ссылка. Лучше использовать HTTPS.</string>
     <string name="mStatus_check">Проверить состояние</string>
@@ -141,7 +140,7 @@
     <string name="mClear_clear">Применить</string>
     <string name="mOpen_incognito">Режим инкогнито:</string>
     <string name="mClear_redirection">- найдено перенаправление</string>
-    <string name="mVT_jsonError">Невозможно подключиться к VirusTotal. Удостоверьтесь, что API ключ правильный, или попробуйте позже.</string>
+    <string name="mVT_error">Невозможно подключиться к VirusTotal. Удостоверьтесь, что API ключ правильный, или попробуйте позже.</string>
     <string name="mInput_name">Входной текст</string>
     <string name="mClear_autoUpdate">Обновлять периодически</string>
     <string name="mClear_updateNow">Обновить сейчас</string>
