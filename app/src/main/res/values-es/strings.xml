@@ -237,6 +237,12 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVT_warningUrl">Advertencia, %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
     <string name="mVT_badUrl">¡Cuidado! %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
     <string name="mVT_error">No se ha podido obtener una respuesta válida de VirusTotal. Asegúrese de que la clave de la api es correcta y está conectado a Internet, o inténtelo mas tarde.</string>
+    <string name="mVt_title">Título:</string>
+    <string name="mVt_finalUrl">Url destino:</string>
+    <string name="mVt_reputation">Reputación:</string>
+    <string name="mVt_votes">Votos:</string>
+    <string name="mVt_categories">Categorías:</string>
+    <string name="mVt_detections">Detecciones:</string>
     <!-- -->
     <string name="mD_name">Módulo debug/marcador</string>
     <string name="mD_desc">Si reordenas los módulos, los nuevos que se añadan en futuras actualizaciones se colocarán encima de éste.

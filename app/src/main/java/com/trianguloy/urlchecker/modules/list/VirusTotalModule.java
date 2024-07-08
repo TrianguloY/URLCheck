@@ -278,22 +278,16 @@ class VirusTotalDialog extends AModuleDialog {
         }
     }
 
-    /**
-     * Shows the report results
-     *
-     * @param details if true, the virustotal page is opened, if false just a basic dialog with the json
-     */
-    private void showInfo(boolean details) {
+    /** Shows the report results, either a summary or debug details */
+    private void showInfo(boolean debug) {
         if (result == null || result.error != null) return;
 
-        if (details) {
-            setUrl(result.scanUrl);
-//            UrlUtils.openUrlRemoveThis(result.scanUrl, getActivity());
-        } else {
-            // TODO: beautify this
-            new AlertDialog.Builder(getActivity())
-                    .setMessage(result.info)
-                    .show();
-        }
+        new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.mVT_name)
+                .setMessage(debug ? result.debugData : result.info)
+                .setPositiveButton("virustotal.com", (dialog, which) -> setUrl(result.scanUrl))
+                .setNeutralButton(debug ? "Abc: xyz" : "{...}", (dialog, which) -> showInfo(!debug))
+                .setNegativeButton(R.string.close, null)
+                .show();
     }
 }

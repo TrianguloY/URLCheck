@@ -9,17 +9,18 @@ import android.util.Base64;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.Connection;
 
 import org.json.JSONException;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Class that manages the virusTotal connection
- * TODO: replace with generic POST class and move logic to VirusTotalModule
  */
 public class VirusTotalUtility {
 
@@ -44,12 +45,13 @@ public class VirusTotalUtility {
     }
 
     static public class InternalResponse {
-        public String error = "Unknown error";
+        public String error;
         public int detectionsPositive;
         public int detectionsTotal;
         public String date;
         public String scanUrl;
         public String info;
+        public String debugData;
     }
 
     /** Returns the analysis of an url, or null if the analysis is in progress */
@@ -77,7 +79,7 @@ public class VirusTotalUtility {
 
         // parse response
         try {
-            result.info = response.toString(1);
+            result.debugData = response.toString(2);
             result.scanUrl = "https://www.virustotal.com/gui/url/" + encodedUrl;
 
             // parse attributes
@@ -96,6 +98,42 @@ public class VirusTotalUtility {
                     + stats.optInt("harmless", 0);
             result.date = DateFormat.getInstance().format(new Date(attributes.getLong("last_analysis_date") * 1000));
 
+            // build summary info
+            var info = new StringBuilder();
+            info.append(cntx.getString(R.string.mVt_title)).append(" ").append(attributes.optString("title")).append("\n");
+            info.append(cntx.getString(R.string.mVt_finalUrl)).append(" ").append(attributes.optString("last_final_url")).append("\n");
+            info.append(cntx.getString(R.string.mVt_reputation)).append(" ").append(attributes.optString("reputation")).append("\n");
+
+            var votes = attributes.optJSONObject("total_votes");
+            if (votes != null) {
+                info.append(cntx.getString(R.string.mVt_votes)).append(" +").append(votes.optInt("harmless")).append(" / -").append(votes.optInt("malicious")).append("\n");
+            }
+
+            var categories = attributes.optJSONObject("categories");
+            if (categories != null && categories.length() > 0) {
+                info.append(cntx.getString(R.string.mVt_categories)).append("\n");
+                for (var engine : JavaUtils.toList(categories.keys())) {
+                    var category = categories.getString(engine);
+                    info.append(" - ").append(category).append(" (").append(engine).append(")\n");
+                }
+            }
+
+            var results = attributes.getJSONObject("last_analysis_results");
+            var none = true;
+            if (results.length() > 0) {
+                info.append(cntx.getString(R.string.mVt_detections));
+                for (var k : JavaUtils.toList(results.keys())) {
+                    var engine = results.getJSONObject(k);
+                    if (List.of("malicious", "suspicious").contains(engine.getString("category"))) {
+                        info.append("\n - ").append(engine.getString("result")).append(" (").append(engine.getString("engine_name")).append(")");
+                        none = false;
+                    }
+                }
+            }
+            if (none) info.append(" ").append(cntx.getString(R.string.none));
+
+
+            result.info = info.toString();
             result.error = null;
         } catch (JSONException e) {
             AndroidUtils.assertError("Can't parse VirusTotal response", e);

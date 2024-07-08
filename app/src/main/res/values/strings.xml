@@ -296,6 +296,12 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mVT_warningUrl">Warning, %1$d/%2$d engines detected the URL (as of date %3$s)</string>
     <string name="mVT_badUrl">Careful! %1$d/%2$d engines detected the URL (as of date %3$s)</string>
     <string name="mVT_error">Unable to get a valid answer from VirusTotal. Make sure the api key is valid and that you are connected to the Internet, or try again later.</string>
+    <string name="mVt_title">Title:</string>
+    <string name="mVt_finalUrl">Final url:</string>
+    <string name="mVt_reputation">Reputation:</string>
+    <string name="mVt_votes">Votes:</string>
+    <string name="mVt_categories">Categories:</string>
+    <string name="mVt_detections">Detections:</string>
     <!-- -->
     <string name="mD_name">Debug/Marker module</string>
     <string name="mD_desc">"If you reorder the modules, new ones added in future updates will be placed above this one.
