@@ -113,10 +113,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
     <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
-    <string name="auto_editor">"Configuración de automatizaciones. Formato: lista de objectos cuya clave es cualquier nombre único para la automatización y su conntenido incluye los siguientes valores:
-- 'regex': string, requerida: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización.
-- 'action': string, requerida: la clave de la automatización a ejecutar. Debajo se muestra la lista completa de claves disponibles.
-- 'enabled': booleano, opcional: si es falso, la automatización se omitirá. Verdadero (true) por defecto."</string>
+    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objectos cuya clave es cualquier nombre único para la automatización y su conntenido incluye los siguientes valores:\n- \'regex\': string, requerida: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización.\n- \'action\': string, requerida: la clave de la automatización a ejecutar. Debajo se muestra la lista completa de claves disponibles.\n- \'enabled\': booleano, opcional: si es falso, la automatización se omitirá. Verdadero (true) por defecto.</string>
     <string name="auto_available_prefix">Claves de automatizaciones disponibles:</string>
     <string name="auto_available_disabled">"Este módulo está deshabilitado, las automatizaciones no se ejecutarán"</string>
     <!-- -->
