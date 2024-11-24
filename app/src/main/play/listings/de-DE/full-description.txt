@@ -1,4 +1,4 @@
-Diese Anwendung fungiert als Zwischenschritt beim Öffnen von URL-Links. Wenn Sie dies tun, wird ein Fenster mit Informationen über die URL angezeigt, sodass Sie auch Änderungen daran vornehmen können.
+Diese Anwendung fungiert als Zwischenschritt beim Öffnen von URL-Links. Wenn Sie diese App zum Öffnen auswählen, wird ein Fenster mit Informationen über die URL angezeigt, sodass Sie auch Änderungen daran vornehmen können.
 Besonders nützlich, wenn Sie einen externen Link öffnen müssen, sei es aus einer E-Mail, einer App eines sozialen Netzwerks oder anderes.
 
 
