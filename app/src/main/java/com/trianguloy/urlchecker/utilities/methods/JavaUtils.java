@@ -148,6 +148,16 @@ public interface JavaUtils {
     }
 
     /**
+     * Calls the function if obj is not null
+     * java.util.Optional requires api 24
+     */
+    static <T> void ifPresent(T obj, Runnable func){
+        if (obj != null){
+            func.run();
+        }
+    }
+
+    /**
      * if the element is present in the list, removes it
      * if not, adds it
      */
@@ -184,5 +194,40 @@ public interface JavaUtils {
      */
     @FunctionalInterface
     interface UnaryOperator<T> extends Function<T, T> {
+    }
+
+    /**
+     * java.time.Duration requires api 26
+     */
+    static int weeksToMillis(int weeks){
+        return weeks*daysToMillis(7);
+    }
+
+    /**
+     * java.time.Duration requires api 26
+     */
+    static int daysToMillis(int days){
+        return days*hoursToMillis(24);
+    }
+
+    /**
+     * java.time.Duration requires api 26
+     */
+    static int hoursToMillis(int hours){
+        return hours*minutesToMillis(60);
+    }
+
+    /**
+     * java.time.Duration requires api 26
+     */
+    static int minutesToMillis(int minutes){
+        return minutes*secondsToMillis(60);
+    }
+
+    /**
+     * java.time.Duration requires api 26
+     */
+    static int secondsToMillis(int seconds){
+        return seconds*1000;
     }
 }
