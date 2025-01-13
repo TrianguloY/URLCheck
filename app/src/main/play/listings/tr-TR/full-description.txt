@@ -13,7 +13,7 @@ Uygulama modüler bir kurulumla yapılandırılmıştır, modülleri tek tek etk
 
 * Günlük: Görüntüleyebileceğiniz, düzenleyebileceğiniz, kopyalayabileceğiniz, temizleyebileceğiniz tüm kontrol edilen URL'lerin bir günlüğünü tutar...
 
-* Durum kodu: Düğmeye basıldığında, söz konusu URL'yi almak için bir dilekçe verilecek ve durum kodu görüntülenecektir (tamam, sunucu hatası, bulunamadı...). Ek olarak, bir yeniden yönlendirmeye karşılık geliyorsa, yeni url'yi kontrol etmek için mesaja basın. URL getirilir, ancak değerlendirilmez, bu nedenle javascript tabanlı yeniden yönlendirme algılanmaz.
+* Durum kodu: Düğmeye basıldığında, söz konusu URL'yi almak için bir ağ isteği yapılacak ve durum kodu görüntülenecektir (tamam, sunucu hatası, bulunamadı...). Ek olarak, bir yeniden yönlendirmeye karşılık geliyorsa, yeni url'yi kontrol etmek için mesaja basın. URL getirilir, ancak değerlendirilmez, bu nedenle javascript tabanlı yeniden yönlendirme algılanmaz.
 
 * URL Tarayıcı: VirusTotal kullanarak url'yi taramanıza ve raporu kontrol etmenize olanak tanır. Çalışması için ücretsiz bir kişisel VirusTotal API anahtarı gereklidir. VirusTotal™ Google, Inc. şirketinin ticari markasıdır.
 

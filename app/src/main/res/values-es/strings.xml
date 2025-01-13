@@ -113,10 +113,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
     <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
-    <string name="auto_editor">"Configuración de automatizaciones. Formato: lista de objectos cuya clave es cualquier nombre único para la automatización y su conntenido incluye los siguientes valores:
-- 'regex': string, requerida: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización.
-- 'action': string, requerida: la clave de la automatización a ejecutar. Debajo se muestra la lista completa de claves disponibles.
-- 'enabled': booleano, opcional: si es falso, la automatización se omitirá. Verdadero (true) por defecto."</string>
+    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista, obligatorio: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular.\n- \'acción\': cadena, obligatoria: la clave de la automatización que se va a ejecutar. A continuación, se muestra una lista de todas las claves disponibles.\n- \'enabled\': booleano, opcional: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
     <string name="auto_available_prefix">Claves de automatizaciones disponibles:</string>
     <string name="auto_available_disabled">"Este módulo está deshabilitado, las automatizaciones no se ejecutarán"</string>
     <!-- -->
@@ -392,4 +389,21 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="bck_deleteConfirm">Borrar elementos</string>
     <string name="bck_deleteOk">Elementos borrados</string>
     <string name="bck_deleteError">No se han podido borrar los elementos</string>
+    <string name="auto_rule_bitly">Bit.ly no abreviado</string>
+    <string name="auto_rule_webhook">Enviar todo al webhook</string>
+    <string name="auto_clear">Limpiará la URL. Equivale a presionar el botón \"Borrar\". Tenga en cuenta que el módulo en sí contiene una configuración automática que también borrará todas las URL de manera más eficiente y debería ser la preferida.</string>
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mWebhook_auto_send">Enviar a webhook</string>
+    <string name="auto_close">Cerrará la aplicación sin hacer nada más.</string>
+    <string name="mWebhook_url_hint">Url del webhook</string>
+    <string name="mWebhook_body_hint">Cuerpo webhook</string>
+    <string name="mWebhook_send">Enviar a webhook</string>
+    <string name="mWebhook_auto">Enviar URL automáticamente</string>
+    <string name="mWebhook_missing_config">Falta la URL o el cuerpo del webhook</string>
+    <string name="mWebhook_success">Envío a webhook correctamente</string>
+    <string name="mWebhook_error">Error al enviar a webhook</string>
+    <string name="mWebhook_templates">Plantillas</string>
+    <string name="mWebhook_test">Probar webhook</string>
+    <string name="mWebhook_desc">Este módulo envía URLs a un punto final webhook configurado. Cada URL es enviada con una marca de tiempo, permitiéndole recolectar y procesar URLs en su propio servidor.\n¡Gracias a anoop-b por la idea y la implementación base!\n\nConfigura la URL y el cuerpo de tu webhook para empezar a enviar URLs.\nPara el cuerpo, puedes usar los marcadores de posición $URL$ y $TIMESTAMP$.</string>
+    <string name="mWebhook_sending">Enviando a webhook…</string>
 </resources>

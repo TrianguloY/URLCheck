@@ -4,24 +4,21 @@
     <string name="desc_down">Geser ke bawah</string>
     <string name="toast_cantEnable">Modul tidak dapat diaktifkan: %s</string>
     <string name="link_changelog">Daftar perubahan</string>
-    <string name="txt_tutorial1">Terima kasih telah mengunduh aplikasi ini!
-\n
-\nBerikut merupakan sesi tutorial, jika Anda ingin melewatinya, tekan tombol di bawah ini. Anda bisa menjalankan kembali tutorial ini di menu pengaturan.</string>
-    <string name="btn_tutorialSettings">Ulangi tutorial</string>
-    <string name="tutorial">Tutorial</string>
+    <string name="txt_tutorial1">Terima kasih telah mengunduh aplikasi ini! \n \nBerikut ini merupakan sesi panduan. Jika Anda ingin melongkapinya, tekan tombol di bawah ini. Anda dapat menylakan kembali panduan ini di menu pengaturan.</string>
+    <string name="btn_tutorialSettings">Ulangi panduan</string>
+    <string name="tutorial">Panduan</string>
     <string name="toast_defaultSet">Aplikasi ini sekarang menjadi peramban bawaan</string>
     <string name="a_about">Tentang</string>
     <string name="spin_darkTheme">Gelap</string>
-    <string name="txt_conf">Anda dapat memeriksa deskripsi dan pengaturan semua modul berikut. Selain itu, Anda juga bisa menyusun ulang, mengatur visibilitas judul serta mengaktifkan/menonaktifkannya.</string>
+    <string name="txt_conf">Anda dapat memeriksa deskripsi dan pengaturan semua modul yang tersedia. Selain itu, Anda juga dapat menyusun ulang serta mengatur, mengaktifkan atau menonaktifkan visibilitas judul.</string>
     <string name="link_privacy">Kebijakan privasi</string>
-    <string name="desc_enable">Aktifkan/nonaktikkan modul</string>
-    <string name="txt_sample">Tekan link berikut untuk uji coba:</string>
+    <string name="desc_enable">Aktifkan/nonaktifkan modul</string>
+    <string name="txt_sample">Tekan tautan berikut untuk melakukan uji coba:</string>
     <string name="txt_theme">Tema:</string>
     <string name="a_modules">Modul</string>
-    <string name="txt_openLinks">Buka tautan di aplikasi ini: Selama bertahun-tahun, Android berulang kali mengubah metode konfigurasi pengaturan ini, sehingga cara mengaturnya pun berbeda-beda di berbagai versi Android. Silahkan coba pengaturan yang tersedia berikut yang sesuai dengan perangkat Anda, jika tautan tidak dapat dibuka melalui aplikasi ini, coba semuanya.</string>
+    <string name="txt_openLinks">Buka tautan pada aplikasi ini: Selama bertahun-tahun, Android berulang kali mengubah metode konfigurasi pengaturan ini, sehingga cara mengaturnya pun berbeda-beda di berbagai versi Android. Silakan coba pengaturan yang tersedia berikut sesuai dengan perangkat Anda. Bila tautan tidak dapat dibuka melalui aplikasi ini, coba semuanya.</string>
     <string name="translators">CikiMomogi</string>
-    <string name="txt_tutorial3">Atur aplikasi ini sebagai peramban web bawaan untuk mencegat URL ketika dibuka.
-\n(Tidak diperlukan jika URL diteruskan menggunakan fitur \"Bagikan\".)</string>
+    <string name="txt_tutorial3">Atur aplikasi ini sebagai peramban web bawaan untuk mencegat URL ketika dibuka. \n(Pilihan ini tidak diperlukan jika URL diteruskan dengan fitur \"Bagikan\".)</string>
     <string name="btn_configureBrowser">Peramban web bawaan</string>
     <string name="link_blog">Blog TrianguloY</string>
     <string name="btn_linksSettings">Buka tautan yang didukung</string>
@@ -33,32 +30,26 @@
 \nKontributor: %1$s.
 \nPenerjemah: %2$s.</string>
     <string name="txt_locale">Lokal:</string>
-    <string name="txt_info">Aplikasi ini bertindak sebagai perantara saat membuka tautan URL. Ketika tautan dibuka melalui aplikasi ini, sebuah jendela dialog berisi informasi mengenai tautan tersebut akan ditampilkan. Tekan tombol modul di bawah ini untuk memeriksa dan mengatur semua modul yang tersedia.</string>
+    <string name="txt_info">Aplikasi ini bertindak sebagai perantara saat hendak membuka tautan URL. Ketika tautan dibuka melalui aplikasi ini, sebuah jendela dialog berisi informasi mengenai tautan tersebut akan ditampilkan. Tekan tombol modul di bawah ini untuk memeriksa dan mengatur semua modul yang tersedia.</string>
     <string name="desc_up">Geser ke atas</string>
     <string name="desc_decorations">Tampilkan/sembunyikan judul</string>
-    <string name="txt_tutorial2">Aplikasi ini bertindak sebagai perantara, baik ketika membuka ataupun berbagi tautan url. Setelah url dikirim ke aplikasi ini, Anda dapat berinteraksi dengan url terkait melalui modul yang tersedia. Setelah itu Anda dapat membuka tautannya (di aplikasi yang Anda inginkan), membagikannya, atau menyalinnya ke papan klip.</string>
+    <string name="txt_tutorial2">Aplikasi ini bertindak sebagai perantara, baik ketika membuka maupun ketika berbagi tautan URL. Setelah URL dikirim ke aplikasi ini, Anda dapat berinteraksi dengan URL terkait melalui modul yang tersedia. Setelahnya, Anda dapat membuka (di aplikasi yang Anda inginkan), membagikan, atau menyalin tautan tersebut ke papan klip.</string>
     <string name="locale">Bahasa Indonesia</string>
     <string name="spin_lightTheme">Terang</string>
     <string name="menu_toggleDecorations">Alih semua judul</string>
     <string name="link_source">Kode sumber</string>
-    <string name="txt_tutorial4">Modul berfungsi untuk mengatur perilaku aplikasi ketika berinteraksi dengan URL.
-\nMasing-masing modul memiliki fungsi khusus yang spesifik. Biasanya untuk menampilkan info dan memodifikasi URL terkait.
-\nSilahkan baca informasinya dan atur sesuai kebutuhan.
-\n
-\nPenting: Secara bawaan semua tindakan terkait dilakukan secara manual. Aplikasi ini tidak akan memodifikasi apapun maupun terhubung ke internet kecuali secara spesifik Anda memperbolehkannya, meski begitu beberapa tindakan bisa dilakukan secara otomatis jika Anda menginginkannya.
-\n
-\nBuka daftar modulnya di halaman utama, atau tekan tombol di bawah ini.</string>
+    <string name="txt_tutorial4">Modul berfungsi sebagai pengatur perilaku aplikasi ketika berinteraksi dengan URL. \nMasing-masing modul memiliki fungsi khusus yang spesifik. Biasanya sebagai penampil info dan pemodifikasi URL terkait. \nSilahkan baca informasi terkait modul-modul ini dan atur sesuai kebutuhan. \n \nPenting: Secara bawaan, semua tindakan terkait dilakukan secara manual. Aplikasi ini tidak akan memodifikasi apa pun atau terhubung ke internet kecuali secara spesifik Anda memberikan izin aplikasi. Meski begitu, beberapa tindakan bisa dilakukan secara otomatis sesuai keinginan Anda. \n \nSilakan buka daftar modul pada laman utama atau tekan tombol di bawah ini.</string>
     <string name="mVT_scanning">Memindai…</string>
-    <string name="toast_invalid">Tidak valid</string>
+    <string name="toast_invalid">Taksahih</string>
     <string name="close">Tutup</string>
     <string name="save">Simpan</string>
     <string name="mVT_desc">Ketika modul ini diaktifkan, Anda bisa memindai URL menggunakan VirusTotal serta mengecek hasil laporannya. Sebuah kunci API VirusTotal pribadi diperlukan agar modul ini bisa bekerja. Anda bisa mendapatkannya setelah membuat sebuah akun gratis di sini: https://www.virustotal.com/gui/join-us .</string>
-    <string name="reset">Reset</string>
+    <string name="reset">Atur ulang</string>
     <string name="mPttrn_wrongSchemaHttp">Skema http tidak valid.</string>
     <string name="mClear_desc">Modul ini menghilangkan pelacakan, perujuk, dan parameter lain yang tidak bermanfaat di URL. Ia juga bisa melacak pengalihan URL luring yang umum digunakan.</string>
     <string name="mVT_connectError">Tidak dapat melakukan koneksi ke VirusTotal. Pastikan Anda terhubung ke internet, atau coba lagi nanti.</string>
     <string name="mPttrn_regexfix">Perbaiki grup regex yang opsional (nonaktifkan jika regex tidak bekerja dengan baik)</string>
-    <string name="json_desc">[Fitur beta] Berikut ini adalah editor tingkat lanjut, konten terkait harus berupa JSON yang valid. Anda bisa menekan tombol di sebelah kanan atas untuk memformat dan memvalidasinya.</string>
+    <string name="json_desc">Penyunting Json: konten terkait harus berupa format JSON yang valid. Anda dapat menekan tombol sebelah kanan atas untuk memformat dan memvalidasi konten.</string>
     <string name="mPttrn_http">Link HTTP. Pertimbangkan untuk beralih ke HTTPS.</string>
     <string name="mStatus_check">Cek status</string>
     <string name="mD_desc">Jika Anda mengubah urutan modul, modul baru yang ditambahkan pada pembaruan selanjutnya akan diletakkan di atas modul ini.
@@ -67,23 +58,17 @@
 \n
 \nAnda bisa tekan tahan untuk menyeleksi teks.</string>
     <string name="next">Selanjutnya</string>
-    <string name="txt_tutorial5">Selesai. Berikut beberapa tips berguna untuk Anda:
-\n
-\nKetika sebuah aplikasi tertentu tidak menyediakan cara untuk membuka atau membagikan sebuah tautan url, Anda bisa mengatasinya menggunakan aplikasi ini.
-\n
-\nBeberapa tautan tertentu bertujuan hanya untuk mengarahkan Anda dari satu tautan url ke tautan url lainnya. Jika tautan url terakhir ternyata bisa dibuka di aplikasi tersebut, maka Anda tidak perlu membukannya di peramban.
-\n
-\nSemoga Anda terbantu dengan aplikasi ini! Jangan ragu untuk menyarankan fitur, melaporkan bug, atau bahkan mengajukan beberapa perubahan ke kami. Temukan semua tautan terkait di halaman \"tentang\".</string>
+    <string name="txt_tutorial5">Selesai. Berikut beberapa tips yang dapat berguna bagi Anda: \n \nKetika sebuah aplikasi tertentu tidak menyediakan cara untuk membuka atau membagikan sebuah tautan URL, Anda dapat mengatasinya menggunakan aplikasi ini. Selain itu, Anda dapat menylain URL ke papan klip dengan cara menahan tombol \'Bagikan\'. \n \nBeberapa tautan tertentu hanya berfungsi untuk mengarahkan Anda dari satu tautan URL ke tautan URL lainnya. Jika tautan URL terakhir ternyata bisa dibuka di aplikasi tersebut, Anda tidak perlu membuka URL tersebut di peramban. \n \nSemoga Anda terbantu dengan aplikasi ini! Jangan ragu menyarankan fitur, melaporkan kutu, atau bahkan mengajukan beberapa perubahan kepada kami. Temukan semua tautan terkait di laman \"Tentang Kami\".</string>
     <string name="mPttrn_userContent">Daftar pola bermanfaat buatan user lainnya: %s</string>
     <string name="clear">Bersihkan</string>
-    <string name="btn_tutorialEnd">Selesaikan tutorial</string>
+    <string name="btn_tutorialEnd">Selesaikan panduan</string>
     <string name="shortcut_checkClipboard">Periksa URL dari papan klip</string>
     <string name="none">Nihil</string>
-    <string name="defaultOn">Aktif dari bawaan</string>
+    <string name="defaultOn">Aktif secara asali</string>
     <string name="mStatus_recheck">Cek</string>
     <string name="mInput_desc">Menampilkan URL saat ini, yang mana bisa diubah secara manual.</string>
     <string name="mOpen_copyUrl">Salin</string>
-    <string name="toast_noApp">Tidak bisa membuka aplikasi terkait</string>
+    <string name="toast_noApp">Tidak dapat membuka aplikasi terkait</string>
     <string name="mOpen_name">Buka dan bagikan</string>
     <string name="mStatus_name">Kode status</string>
     <string name="mOpen_closeShare">Tutup kotak dialog setelah membagikan tautan</string>
@@ -130,7 +115,7 @@
     <string name="mVT_apiKey">Kunci API</string>
     <string name="mStatus_unknownCode">%d: Kode status tidak diketahui</string>
     <string name="mOpen_incognitoDesc">Alihkan mode inkognito (khusus Firefox)</string>
-    <string name="btn_tutorialSkip">Lewati tutorial</string>
+    <string name="btn_tutorialSkip">Lewati panduan</string>
     <string name="mOpen_noReferrer">Sembunyikan aplikasi asal (perujuk)</string>
     <string name="mClear_name">Pembersih URL</string>
     <string name="canceled">Dibatalkan</string>
@@ -147,18 +132,18 @@
     <string name="auto">Otomatis</string>
     <string name="mInput_name">Teks input</string>
     <string name="mPttrn_ok">Pola tidak ditemukan</string>
-    <string name="toast_noBrowser">Tidak bisa membuka peramban web terkait</string>
+    <string name="toast_noBrowser">Tidak dapat membuka peramban web terkait</string>
     <string name="mPttrn_fix">Terapkan</string>
     <string name="mPttrn_noSchemeHttp">Skema HTTP tidak ditemukan.</string>
     <string name="mPttrn_wrongSchemaHttps">Skema https tidak valid.</string>
-    <string name="json_edit">Editor tingkat lanjut</string>
+    <string name="json_edit">Penyunting Json</string>
     <string name="mPttrn_fixed">%s - telah diterapkan</string>
     <string name="mD_name">Modul Awakutu/Penanda</string>
     <string name="mOpen_clipboard">URL telah disalin ke papan klip</string>
     <string name="share">Bagikan</string>
     <string name="mOpen_open">Buka</string>
     <string name="mHist_name">Riwayat</string>
-    <string name="defaultOff">Nonaktif dari bawaan</string>
+    <string name="defaultOff">Nonaktif dari asali</string>
     <string name="title_choose">Pilih aplikasi</string>
     <string name="mPttrn_noSchemeHttps">Skema HTTPS tidak ditemukan.</string>
     <string name="mStatus_checking">Mengecek…</string>
@@ -274,4 +259,47 @@
     <string name="mChg_updated">Aplikasi telah diperbarui.</string>
     <string name="mChg_current">Versi saat ini: %s</string>
     <string name="mChg_view">Lihat perubahan</string>
+    <string name="bck_mn_advanced">Tampilkan pengaturan lanjut</string>
+    <string name="btn_backupRestore">Cadangkan / Pulihkan</string>
+    <string name="btn_backup">Cadangkan</string>
+    <string name="btn_replace">Gantikan</string>
+    <string name="btn_restore">Pulihkan</string>
+    <string name="btn_delete">Hapus</string>
+    <string name="txt_animation">Nyalakan animasi</string>
+    <string name="bck_restoreError">Tidak dapat memulihkan cadangan. Apakah berkas sahih?</string>
+    <string name="bck_deleteError">Tidak dapat menghapus elemen</string>
+    <string name="bkp_data_prefs">Preferensi: Data tersimpan sebagai preferensi.</string>
+    <string name="bck_backupError">Tidak dapat membuat cadangan. Mohon pilih lokasi berkas yang berbeda.</string>
+    <string name="bck_deleteMessage">PERINGATAN! Pilihan ini akan menghapus elemen-elemen yang dipilih.\nAnda yakin ingin menyalakan pilihan ini?</string>
+    <string name="bkp_data_files">Berkas: Data tersimpan sebagai berkas.</string>
+    <string name="bjp_cache">Tembolok: Data yang dapat diunduh/dibuat dengan mudah, seperti pangkalan data hos. Dengan menyalakan pilihan ini, ukuran data yang dicadangkan akan bertambah.</string>
+    <string name="bck_ignoreNewer">Izinkan proses pencadangan dilakukan dari aplikasi versi terbaru.</string>
+    <string name="bck_restoreTitle">Pulihkan cadangan</string>
+    <string name="bck_restoreMessage">PERHATIAN! Pilihan ini akan mengganti elemen-elemen yang telah Anda pilih dari cadangan.\nAnda yakin ingin tetap menyalakan pilihan ini?</string>
+    <string name="bck_deleteTitle">Hapus elemen</string>
+    <string name="auto_ctabs">Ctabs akan dinyalakan. Pilihan ini setara dengan menekan tombol \'ctabs\' jika dimatikan (bahkan jika tombol disembunyikan).</string>
+    <string name="auto_incognito">Fitur incognito akan dinyalakan. Pilihan ini setara dengan menekan tombol \'incognito\' jika dimatikan (bahkan jika tombol disembunyikan).</string>
+    <string name="small">Kecil</string>
+    <string name="normal">Normal</string>
+    <string name="big">Besar</string>
+    <string name="auto_close">Aplikasi akan dimatikan tanpa melakukan hal lain.</string>
+    <string name="bck_deleteConfirm">Hapus elemen</string>
+    <string name="bck_deleteOk">Elemen dihapus</string>
+    <string name="bck_newer">Dibatalkan. Pencadangan dilakukan dari aplikasi versi terbaru.</string>
+    <string name="bck_chooseFile">Pilih berkas cadangan</string>
+    <string name="bck_backupOk">Cadangan dibuat</string>
+    <string name="bck_restoreConfirm">Gantikan elemen</string>
+    <string name="bck_restoreOk">Cadangan dipulihkan</string>
+    <string name="bkp_secrets">Rahasia: Data yang tergolong sebagai \'rahasia\', seperti kunci API VirusTotal atau lognya.</string>
+    <string name="noLinks">Tidak terdeteksi tautan apa pun</string>
+    <string name="a_automations">Pengotomatisan</string>
+    <string name="auto_desc">Dengan pengotomatisan, Anda dapat menjalankan aksi modul berdasarkan pemicu yang diatur. Konfigurasikan pengotomatisan di sini, atau matikan semua pengotomatisan secara serentak dengan alih di bawah.</string>
+    <string name="auto_copy">URL akan disalin. Pilihan ini setara dengan menekan tombol \'salin\'.</string>
+    <string name="auto_share">URL akan dibagikan. Pilihan ini setara dengan menekan tombol \'bagikan\'.</string>
+    <string name="auto_enabled">Nyalakan fitur pengotomatisan</string>
+    <string name="auto_notFound">Pengotomatisan berkunci \'%s\' tidak ditemukan. Pastikan kunci valid dan modul yang dibutuhkan aktif.</string>
+    <string name="auto_available_disabled">Modul ini dinonaktifkan, sehingga pengotomatisan tidak akan berjalan</string>
+    <string name="auto_open">URL akan terbuka dengan aplikasi pertama yang tersedia. Pilihan ini setara dengan menekan tombol \'buka\'.</string>
+    <string name="auto_rule_bitly">Takpendekkan bit.ly</string>
+    <string name="auto_rule_webhook">Kirim semuanya ke webhook</string>
 </resources>

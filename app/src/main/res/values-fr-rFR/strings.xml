@@ -97,8 +97,8 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <!--
         json
     -->
-    <string name="json_desc">[Fonctionnalité bêta] Il s\'agit d\'un éditeur avancé, le contenu doit être formaté en JSON valide. Vous pouvez appuyer sur le bouton en haut à droite pour le formater et le valider.</string>
-    <string name="json_edit">Éditeur avancé</string>
+    <string name="json_desc">Editeur Json: le contenu doit être formaté en JSON valide. Vous pouvez appuyer sur le bouton en haut à droite pour le formater et le valider.</string>
+    <string name="json_edit">Éditeur Json</string>
     <!--
         shortcuts
     -->
@@ -297,7 +297,7 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mUnshort_checking">Vérification…</string>
     <string name="mUnshort_error">Erreur de serveur : %s</string>
     <string name="mUnshort_internal">Erreur interne (%s)</string>
-    <string name="mUnshort_notFound">Aucune redirection n\'a été trouvée</string>
+    <string name="mUnshort_notFound">Aucune url déraccourcit n\'a été trouvée</string>
     <string name="mUnshort_pending">en attente : %1$d/%2$d</string>
     <string name="mUnshort_ok">Non raccourci</string>
     <string name="mOpen_mergeCopy">Fusionner les boutons Copier et Partager (appuie long pour copier)</string>
@@ -339,7 +339,7 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="big">Grand</string>
     <string name="mOpen_rejected">Masquer l\'application si l\'URL a été rejetée (une application demande immédiatement à ouvrir la même URL que celle avec laquelle elle a été ouverte). N\'affecte pas le partage.</string>
     <string name="mOpen_iconSize">Taille de l\'icône</string>
-    <string name="mD_show">Afficher les données de débogage</string>
+    <string name="mD_show">Charger les données de débogage</string>
     <string name="mParts_desc">Ce module montre toutes les parties de l\'url décodée : schéma, autorité, chemins, requêtes et fragment.
 \nEn cliquant sur une partie, elle sera définie comme la nouvelle url, ce qui est utile par exemple si l\'une des requêtes ou l\'un des chemins était une url de redirection encodée.
 \nSi vous cliquez longuement sur une partie, elle sera copiée dans le presse-papiers.
@@ -376,4 +376,39 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
 \nCe module affichera une liste de drapeaux, vous pouvez changer si le drapeau est activé ou non en appuyant sur l\'icône. Il y a aussi un menu de débordement pour cacher les drapeaux, c\'est juste visuel, les drapeaux utiliseront toujours l\'état assigné.
 \nLes drapeaux ont deux indicateurs de couleur à côté de la case à cocher. Celui de gauche indique la valeur reçue de l\'intention, celui de droite indique l\'état défini par le module lui-même. Le rouge signifie que le drapeau n\'est pas activé et le vert qu\'il l\'est. En outre, l\'indicateur de préférence peut être gris, ce qui signifie que l\'état a été réglé sur automatique.
 \nLe bouton ci-dessous vous permet de modifier l\'état par défaut et la visibilité des drapeaux.</string>
+    <string name="a_automations">Automatisations</string>
+    <string name="auto_desc">Avec les automatisations, vous pouvez effectuer des actions de module en fonction du déclencheur. Vous pouvez les automatisations ici, ou tous les désactiver en cliquant sur le bouton ci-dessous.</string>
+    <string name="auto_enabled">Activer la fonction d\'automatisation</string>
+    <string name="auto_error_toast">Affiche un message flottant si l\'automatisme échou</string>
+    <string name="auto_notFound">Aucun automatisme avec la clef \'%s\' n\'est disponible. Assurez-vous qu\'elle soit valide ou que le module associé est activé.</string>
+    <string name="mWebhook_test">Tester le webhook</string>
+    <string name="mUnshort_to">Déraccourcit en %s</string>
+    <string name="auto_checkStatus">Exécutera la vérification du statut. Cela équivaut à appuyer sur le bouton \'Vérifier\'.</string>
+    <string name="auto_scan">Analysera l\'URL. Cela équivaut à appuyer sur le bouton \'Scan\'.</string>
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mWebhook_url_hint">URL du Webhook</string>
+    <string name="mWebhook_send">Envoyer au Webhook</string>
+    <string name="mWebhook_auto">Envoi automatique d\'URLs</string>
+    <string name="mWebhook_auto_send">Envoyer au webhook</string>
+    <string name="mWebhook_missing_config">Url ou corps du webhook manquant</string>
+    <string name="mWebhook_sending">Envoi vers le webhook…</string>
+    <string name="mWebhook_error">Échec de l\'envoi au webhook</string>
+    <string name="mWebhook_templates">Modèles</string>
+    <string name="auto_clear">Efface l\'url. Cela équivaut à appuyer sur le bouton \'Effacer\'. Notez que le module lui-même contient un réglage automatique qui effacera également toutes les url de manière plus efficace, et qui devrait être préféré.</string>
+    <string name="mWebhook_desc">Ce module envoie des URL à un point de terminaison webhook configuré. Chaque URL est envoyée avec un horodatage, ce qui vous permet de collecter et de traiter les URL sur votre propre serveur.\nMerci à anoop-b pour l\'idée et l\'implémentation de base !\n\nConfigurez l\'URL et le corps de votre webhook ci-dessous pour commencer à envoyer des URL.\nPour le corps, vous pouvez utiliser les caractères génériques $URL$ et $TIMESTAMP$.</string>
+    <string name="auto_editor">Configuration des automatismes. Format : liste d\'objets dont la clé est un nom d\'automatisation unique et dont le contenu comprend les valeurs suivantes :\n- \'regex\' : string|list, required : une regex java valide à laquelle l\'url doit correspondre pour que l\'automatisation s\'exécute. S\'il s\'agit d\'une liste, au moins une regex doit correspondre.\n- \'action\' : string, obligatoire : la clé de l\'automatisation à exécuter. Voir ci-dessous la liste de toutes les clés disponibles.\n- \'enabled\' : boolean, optionnel : si false, l\'automatisation sera ignorée. True par défaut.</string>
+    <string name="auto_unshort">Lance le processus de déraccourcissement. Cela équivaut à appuyer sur le bouton \"Déracourcir\".</string>
+    <string name="auto_close">Fermera l\'application, sans rien faire d\'autre.</string>
+    <string name="mWebhook_success">Envoi au webhook réussi</string>
+    <string name="auto_drawer">Ouvrera le tiroir. Équivalent à appuyer sur le bouton du tiroir s\'il est replié.</string>
+    <string name="mWebhook_body_hint">Corps du Webhook</string>
+    <string name="auto_available_prefix">Actions d\'automatisation disponibles (clés) :</string>
+    <string name="auto_available_disabled">Ce module est désactivé, les automatisations ne fonctionneront pas</string>
+    <string name="auto_open">Ouvre l\'URL avec la première application disponible. Équivaut à appuyer sur le bouton \'ouvrir\'.</string>
+    <string name="auto_share">Partage l\'url. Cela équivaut à appuyer sur le bouton \'partager\'.</string>
+    <string name="auto_copy">Copie l\'url. Cela équivaut à appuyer sur le bouton \'copier\'.</string>
+    <string name="auto_rule_bitly">déraccourcir bit.ly</string>
+    <string name="auto_rule_webhook">Envoyer tout au webhook</string>
+    <string name="auto_ctabs">Active ctabs. Équivalent à appuyer sur le bouton \'ctabs\' s\'il est désactivé (même s\'il est caché).</string>
+    <string name="auto_incognito">Active la navigation privée. Équivalent à appuyer sur le bouton \'Incognito\' s\'il est désactivé (même s\'il est masqué).</string>
 </resources>

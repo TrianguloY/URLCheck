@@ -72,7 +72,7 @@
     <string name="mStatus_desc">Durch drücken des Prüfen-Buttons wird eine Netzwerk-Anfrage ausgeführt, um den Status Code einer Seite abzufragen und anzuzeigen. Wenn das Ergebnis eine Weiterleitung ist, können Sie die Ziel-URL sehen. Der Inhalt einer URL wird geladen (GET), aber nicht ausgewertet, sodass JavaScript-basierte Weiterleitungen nicht erkannt werden können.</string>
     <string name="mStatus_ioerror">Netzwerkfehler beim Prüfen der URL: %s</string>
     <string name="mStatus_error">Interner Fehler beim Prüfen der URL: %s</string>
-    <string name="mStatus_check">Status Prüfen</string>
+    <string name="mStatus_check">Status abfragen</string>
     <string name="mStatus_redir">Leitet weiter nach %s</string>
     <string name="mStatus_autoRedirect">URL-Weiterleitungen automatisch ersetzen</string>
     <string name="txt_tutorial3">Legen Sie die App als Standard-Webbrowser fest, um URLs beim Öffnen abzufangen.
@@ -100,9 +100,9 @@
     <string name="mOpen_share">Teilen</string>
     <string name="mOpen_clipboard">URL in die Zwischenablage kopiert</string>
     <string name="mOpen_noapps">Keine Apps</string>
-    <string name="mStatus_recheck">Prüfen</string>
+    <string name="mStatus_recheck">Abfragen</string>
     <string name="mStatus_unknownCode">%d: Unbekannter Status Code</string>
-    <string name="mStatus_checking">Prüfe…</string>
+    <string name="mStatus_checking">Abfragen…</string>
     <string name="txt_openLinks">Links mit dieser App öffnen: Über die Jahre hat Android die Einstellungen dies anzupassen geändert und ist von Version zu Version unterschiedlich. Im folgenden finden Sie alle für Ihr Gerät verfügbaren Optionen. Wenn Links nicht mit dieser App geöffnet werden, testen Sie sie alle.</string>
     <string name="mPttrn_userContent">Liste nützlicher Muster anderer Nutzer: %s</string>
     <string name="mPttrn_fix">Anwenden</string>
@@ -253,7 +253,7 @@
     <string name="mUnshort_desc">Dieses Modul stellt gekürzte Links wieder her, indem es sie zu https://unshorten.me/ schickt, wo sie auf deren Servern ausgewertet und Weiterleitungen für zukünftige Anfragen gespeichert werden. Vermeiden Sie es, Links mit privaten oder sensiblen Daten an diesen Dienst zu schicken.
 \nDie API dieses Dienstes ist auf 10 Anfragen pro Stunde für neue Anfragen beschränkt. Dieses Modul wird in der Antwort die verbleibende Anzahl an Anfragen anzeigen.</string>
     <string name="mUnshort_internal">Interner Fehler (%s)</string>
-    <string name="mUnshort_notFound">Keine Weiterleitung gefunden</string>
+    <string name="mUnshort_notFound">Keine ent-kürzte URL gefunden</string>
     <string name="mUnshort_ok">Ent-Kürzt</string>
     <string name="mOpen_closeCopy">Dialog nach dem Kopieren schließen</string>
     <string name="mOpen_mergeCopy">Kombinierter Kopieren-/Teilen-Button (Lange drücken zum Kopieren)</string>
@@ -309,9 +309,27 @@
     <string name="noLinks">Keine Links erkannt</string>
     <string name="mVT_noKey">API-Key fehlt</string>
     <string name="mOpen_rejected">App ausblenden, wenn URL abgelehnt wurde (eine App öffnet sofort dieselbe URL, mit der sie geöffnet wurde). Hat keinen Einfluss auf Teilen.</string>
-    <string name="mD_show">Debug-Infos anzeigen</string>
+    <string name="mD_show">Debug-Infos laden</string>
     <string name="small">Klein</string>
     <string name="normal">Normal</string>
     <string name="big">Groß</string>
     <string name="mOpen_iconSize">Symbolgröße</string>
+    <string name="mUnshort_to">Wird zu %s</string>
+    <string name="auto_ctabs">Benutzerdefinierten Tab aktivieren, äquivalent zum entsprechenden Button (auch wenn dieser ausgeblendet ist).</string>
+    <string name="a_automations">Automatisierung</string>
+    <string name="auto_desc">Mit Automatisierungen können Sie Modulaktionen durch bestimme Auslöser starten. Sie können hier die Automatisierungen konfigurieren oder insgesamt deaktivieren.</string>
+    <string name="auto_available_disabled">Dieses Modul ist inaktiv, Automatisierung wird nicht gestartet werden</string>
+    <string name="auto_incognito">Aktiviert den privaten Modus, äquivalent zum entsprechenden Button (auch wenn dieser ausgeblendet ist).</string>
+    <string name="auto_enabled">Automatisierungen aktivieren</string>
+    <string name="auto_error_toast">Hinweis anzeigen, wenn eine Automatisierung fehlschlägt</string>
+    <string name="auto_notFound">Keine Automatisierung mit dem Schlüssel \'%s\' verfügbar. Stellen Sie sicher, dass dieser richtig ist und das entsprechende Modul aktiv ist.</string>
+    <string name="auto_available_prefix">Verfügbare Aktionen zur Automatisierung (keys):</string>
+    <string name="auto_open">Öffnet die URL mit der ersten verfügbaren App äquivalent zum \"Öffnen\"-Button.</string>
+    <string name="auto_share">Teilt die URL äquivalent zum \"Teilen\"-Button.</string>
+    <string name="auto_copy">Kopiert die URL äquivalent zum \"Kopieren\"-Button.</string>
+    <string name="auto_checkStatus">Statuscode abfragen, äquivalent zum entsprechenden Button.</string>
+    <string name="auto_unshort">Ent-Kürzen starten.</string>
+    <string name="auto_scan">URL scannen, entspricht dem Scannen-Button.</string>
+    <string name="auto_drawer">Überhangmenü öffnen.</string>
+    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string, notwendig: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird.\n- \'action\': string, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
 </resources>

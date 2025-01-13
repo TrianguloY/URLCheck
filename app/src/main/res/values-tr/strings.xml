@@ -100,8 +100,8 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <!--
         json
     -->
-    <string name="json_desc">[Beta özelliği] Bu gelişmiş bir düzenleyicidir, içerik geçerli JSON olarak biçimlendirilmelidir. Biçimlendirmek ve doğrulamak için sağ üstteki butona basabilirsiniz.</string>
-    <string name="json_edit">Gelişmiş düzenleyici</string>
+    <string name="json_desc">JSON Düzenleyici: İçerik geçerli bir JSON formatına dönüştürülmeli. Formatlama ve doğrulama yapmak için sağ üst düğmeye basabilirsiniz.</string>
+    <string name="json_edit">Json düzenleyici</string>
     <!--
         shortcuts
     -->
@@ -123,13 +123,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mPttrn_noSchemeHttp">Eksik HTTP şeması.</string>
     <string name="mPttrn_noSchemeHttps">Eksik HTTPS şeması.</string>
     <string name="mPttrn_ok">Eşleşen kalıp yok</string>
-    <string name="mPttrn_editor">"Burada yeni kalıpları düzenleyebilir veya ekleyebilirsiniz. Biçim:
-- 'regex': string: tüm kalıbın eşleşmesi için eşleşmesi gereken geçerli bir java regex'i.
-- 'excludeRegex': string: sağlanırsa, tüm kalıbın eşleşmesi için eşleşmemesi gereken geçerli bir java normal ifadesi.
-- 'replacement': string|list: sağlanırsa, 'düzelt' butonu 'url=url.replaceAll(regex,replacement)' işlevini çalıştırır. Eğer listeyse, değiştirme ondan rastgele bir öğe olacaktır.
-- 'automatic': boolean: kalıbı otomatik olarak uygulamak için true değerine ayarlayın.
-- 'enabled': boolean: kalıbı devre dışı bırakmak için false değerine ayarlayın.
-Not: kalıpları düzenlerseniz, uygulama güncellemelerinden yeni yerleşik kalıplar otomatik olarak eklenmeyecektir (sıfırlama seçeneğiyle bunları geri yükleyebilirsiniz)."</string>
+    <string name="mPttrn_editor">Burada yeni kalıpları düzenleyebilir veya ekleyebilirsiniz. Biçim:\n- \'regex\': string: tüm kalıbın eşleşmesi için eşleşmesi gereken geçerli bir java regex\'i.\n- \'excludeRegex\': string: sağlanırsa, tüm kalıbın eşleşmesi için eşleşmemesi gereken geçerli bir java normal ifadesi.\n- \'replacement\': string|list: sağlanırsa, \'düzelt\' butonu \'url=url.replaceAll(regex,replacement)\' işlevini çalıştırır. Eğer listeyse, değiştirme ondan rastgele bir öğe olacaktır.\n- \'automatic\': boolean: kalıbı otomatik olarak uygulamak için true değerine ayarlayın.\n- \'enabled\': boolean: kalıbı devre dışı bırakmak için false değerine ayarlayın.\nNot: kalıpları düzenlerseniz, uygulama güncellemelerinden yeni yerleşik kalıplar otomatik olarak eklenmeyecektir (sıfırlama seçeneğiyle bunları geri yükleyebilirsiniz).</string>
     <!-- -->
     <string name="mOpen_name">Aç ve paylaş</string>
     <string name="mOpen_desc">Aşağıdaki düğmeleri içerir (soldan sağa):
@@ -155,7 +149,7 @@ Not: kalıpları düzenlerseniz, uygulama güncellemelerinden yeni yerleşik kal
     <string name="mOpen_tabsDesc">Özel Sekmeler özelliğini değiştir</string>
     <!-- -->
     <string name="mStatus_name">Durum kodu</string>
-    <string name="mStatus_desc">Kontrol düğmesine basarak, site durum kodunu almak ve görüntülemek için bir istekte bulunulacaktır. Sonuç bir yeniden yönlendirme ise, hedef URL\'yi görüntüleyebileceksiniz. URL alınır (GET), ancak değerlendirilmez, bu nedenle JavaScript\'e dayalı yönlendirmeler algılanmaz.</string>
+    <string name="mStatus_desc">Kontrol düğmesine basıldığında, site durum kodunu almak ve görüntülemek için bir ağ isteği yapılacaktır. Sonuç bir yeniden yönlendirme ise, hedef URL\'yi görüntüleyebileceksiniz. URL içeriği alınır (GET), ancak değerlendirilmez, bu nedenle JavaScript tabanlı yönlendirmeler algılanmaz.</string>
     <string name="mStatus_ioerror">URL\'yi kontrol etmeye çalışırken ağ hatası: %s</string>
     <string name="mStatus_error">URL\'yi kontrol etmeye çalışırken dahili hata: %s</string>
     <string name="mStatus_check">Kontrol et</string>
@@ -183,7 +177,7 @@ Not: kalıpları düzenlerseniz, uygulama güncellemelerinden yeni yerleşik kal
     <string name="mStatus_autoRedirect">Yönlendirme URL\'lerini otomatik olarak değiştir</string>
     <!-- -->
     <string name="mInput_name">Giriş metni</string>
-    <string name="mInput_desc">Elle düzenlenebilen geçerli URL\'yi görüntüler.</string>
+    <string name="mInput_desc">Geçerli URL\'yi görüntüler. Düzenleme moduna girmek için bas.</string>
     <!-- -->
     <string name="mVT_name">URL Tarayıcı</string>
     <string name="mVT_desc">Bu bileşen etkinleştirildiğinde, VirusTotal kullanarak URL\'yi tarayabilir ve raporu inceleyebilirsiniz. Bunun çalışması için kişisel bir VirusTotal API anahtarı gereklidir, buradan ücretsiz bir hesap için kayıt olduktan sonra bir tane alabilirsiniz: https://www.virustotal.com/gui/join-us .</string>
@@ -199,11 +193,7 @@ Not: kalıpları düzenlerseniz, uygulama güncellemelerinden yeni yerleşik kal
     <string name="mVT_jsonError">VirusTotal\'e bağlanılamıyor. API anahtarının geçerli olduğundan emin olun veya daha sonra tekrar deneyin.</string>
     <!-- -->
     <string name="mD_name">Hata Ayıklama/İşaretleyici modülü</string>
-    <string name="mD_desc">"Modülleri yeniden sıralarsanız, ilerideki güncellemelerde eklenen yeni modüller bunun üzerine yerleştirilecektir.
-
-Bunu etkinleştirirseniz, 'recieved intent' geliştiriciler için yararlı olan uri olarak görüntüler.
-
-Panoya kopyalamak için 'Intent' veya UrlData üzerine dokunun. Her şeyi kopyalamak için basılı tutun."</string>
+    <string name="mD_desc">Modülleri yeniden sıralarsanız, gelecekteki güncellemelerde eklenen yenileri bunun üzerine yerleştirilecektir.\n\nBunu etkinleştirirseniz, geliştiriciler için yararlı olan bazı dahili hata ayıklama verilerini (orijinal amaç uri gibi) görüntüler.\n\nMetin seçmek için basılı tutabilirsiniz.</string>
     <string name="mD_ctabs">Özelleştirilmiş sekmeler hizmetinden gelen hata ayıklama mesajlarını göster</string>
     <!-- -->
     <string name="mHist_name">Geçmiş</string>
@@ -265,7 +255,7 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="mLog_empty">Veri yok</string>
     <!-- -->
     <string name="mHosts_name">Hosts etiketleyici</string>
-    <string name="mHosts_desc">Bu modül, host\'ları manuel olarak belirterek veya uzak hosts benzeri bir dosya kullanarak yapılandırarak etiketler. Tehlikeli veya özel siteler hakkında uyarmak için kullanabilirsiniz. Yerleşik yapılandırma, https://github.com/StevenBlack/hosts adresinden StevenBlack\'in barındırıcılarını (reklam yazılımı/kötü amaçlı yazılım, sahte haberler, kumar ve yetişkinlere uygun içerik) belirtir.</string>
+    <string name="mHosts_desc">Bu modül, manuel olarak belirtilerek veya uzak ana bilgisayar benzeri bir dosya kullanılarak yapılandırılan ana bilgisayarları etiketler. Tehlikeli veya özel siteler hakkında uyarmak için kullanabilirsiniz. Yerleşik yapılandırma, StevenBlack\'in ana bilgisayarlarını (reklam yazılımı / kötü amaçlı yazılım, sahte haberler, kumar ve yetişkinlere yönelik içerik) https://github.com/StevenBlack/hosts adresinden belirtir. Not: alt alan adları da kontrol edilecektir, bu nedenle \'y.z\' girişi için \'x.y.z\' ve \'y.z\' algılanacaktır</string>
     <string name="mHosts_malware">reklam yazılımı/kötü amaçlı yazılım</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">etiket yok</string>
@@ -292,13 +282,12 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <!-- -->
     <string name="mUnshort_name">Kısaltma giderici</string>
     <string name="mUnshort_unshort">Kısaltmayı gider</string>
-    <string name="mUnshort_desc">"Bu modül, bağlantıları kendi sunucularında değerlendiren https://unshorten.me/ adresine göndererek kısaltmayı kaldırır ve yönlendirmeyi gelecekteki istekler için kaydeder. Özel veya hassas veriler içeren bağlantıların kısaltmasını kaldırmaktan kaçının.
-API'leri, yeni kontroller için saatte 10 istek ile sınırlıdır. Modül yanıtı, bekleyen kaç tane isteğiniz olduğunu gösterecektir."</string>
+    <string name="mUnshort_desc">Bu modül, bağlantıları sunucularında değerlendiren ve gelecekteki istekler için yeniden yönlendirmeyi kaydeden https://unshorten.me/ adresine göndererek bağlantıların kısaltmasını kaldıracaktır. Özel veya hassas veriler içeren bağlantıları kısaltmaktan kaçının.\nAPI\'leri yeni kontroller için saatte 10 istekle sınırlıdır. Modül yanıtı, bekleyen kaç isteğiniz olduğunu gösterecektir.</string>
     <string name="mUnshort_tm">Unshorten.me tarafından unshorten.me ücretsiz API</string>
     <string name="mUnshort_checking">Kontrol ediliyor…</string>
     <string name="mUnshort_error">Sunucu hatası: %s</string>
     <string name="mUnshort_internal">Dahili hata (%s)</string>
-    <string name="mUnshort_notFound">Yönlendirme bulunamadı</string>
+    <string name="mUnshort_notFound">Kısaltılmamış url bulunamadı</string>
     <string name="mUnshort_pending">beklemede: %1$d/%2$d</string>
     <string name="mUnshort_ok">Kısaltılmamış</string>
     <!-- -->
@@ -327,11 +316,83 @@ API'leri, yeni kontroller için saatte 10 istek ile sınırlıdır. Modül yanı
     <string name="mDrawer_desc">Bunun altındaki tüm modüller bir çekmecede gizlenecektir. Modüller çalışmaya devam edecek, ancak siz çekmeceyi açana kadar gizli kalacaktır. Dağınıklığı önlemek için nadiren kullandığınız modülleri buraya yerleştirebilirsiniz.</string>
     <string name="dismiss">Reddet</string>
     <string name="mChg_updated">Uygulama güncellendi.</string>
-    <string name="mPttrn_wrongSchemaHttp">Geçersiz http durumu.</string>
+    <string name="mPttrn_wrongSchemaHttp">Geçersiz HTTP şema büyük harf kullanımı.</string>
     <string name="mChg_name">Değişiklik Geçmişi</string>
     <string name="mChg_current">Şu anki sürüm: %s</string>
     <string name="mChg_desc">Uygulama güncellendiğinde bildirimde bulunacaktır.</string>
     <string name="mChg_view">Değişiklikleri görüntüle</string>
     <string name="mLog_limit">Saklanacak maksimum giriş sayısı. Önerilen değer: 100. Sınırsız için boş olarak ayarlayın</string>
     <string name="mPttrn_wrongSchemaHttps">Geçersiz https durumu.</string>
+    <string name="btn_backupRestore">Yedekle / Geri Yükle</string>
+    <string name="btn_restore">Geri Yükle</string>
+    <string name="bck_mn_advanced">Gelişmiş seçenekleri göster</string>
+    <string name="btn_backup">Yedekle</string>
+    <string name="btn_replace">Değiştir</string>
+    <string name="btn_delete">Kaldır</string>
+    <string name="bkp_data">Veri: Standart uygulama verileri. Etkinleştirilmiş modüller, json yapılandırmaları vb. gibi şeyler. Gizli bilgileri veya önbelleği içermez.</string>
+    <string name="bkp_data_prefs">Tercihler: Tercihler olarak kaydedilen veriler.</string>
+    <string name="bkp_data_files">Dosyalar: Dosya olarak kaydedilen veriler.</string>
+    <string name="bck_ignoreNewer">Daha yeni uygulama sürümleriyle oluşturulan yedeklere izin ver.</string>
+    <string name="bck_newer">İptal edildi. Yedekleme daha yeni bir uygulama sürümüyle oluşturulmuş.</string>
+    <string name="bck_chooseFile">Yedekleme dosyasını seç</string>
+    <string name="bck_restoreTitle">Yedeklemeyi geri yükle</string>
+    <string name="bck_restoreMessage">UYARI! Bu işlem, seçilen öğeleri yedekleme ile değiştirecektir.\nDevam etmek istediğinizden emin misiniz?</string>
+    <string name="bck_restoreOk">Yedekleme geri yüklendi</string>
+    <string name="bck_restoreError">Yedekleme geri yüklenemedi. Geçerli bir dosya mı?</string>
+    <string name="bck_deleteError">Öğeler silinemiyor</string>
+    <string name="mWebhook_success">Web Kancası\'na başarıyla gönderildi</string>
+    <string name="small">Küçük</string>
+    <string name="normal">Normal</string>
+    <string name="mOpen_iconSize">Simge boyutu</string>
+    <string name="mVT_noKey">Eksik API anahtarı</string>
+    <string name="auto_close">Başka hiçbir şey yapmadan uygulamayı kapatır.</string>
+    <string name="auto_checkStatus">Durum kontrolünü çalıştırır. \'Kontrol Et\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="auto_unshort">Kısa linki çözme işlemini çalıştırır. \'Unshort\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="auto_scan">URL\'yi tarayacaktır. \'Tara\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="auto_clear">URL\'yi temizler. \'Temizle\' düğmesine basmaya eşdeğerdir. Modülün kendisinin de tüm URL\'leri daha verimli bir şekilde temizleyecek bir otomatik ayar içerdiğini ve tercih edilmesi gerektiğini unutmayın.</string>
+    <string name="auto_drawer">Çekmeceyi açar. Daraltılmışsa çekmece düğmesine basmaya eşdeğerdir.</string>
+    <string name="mOpen_rejected">URL reddedilirse uygulamayı gizle (bir uygulama hemen açıldığı URL\'nin aynısını açmayı ister). Paylaşımı etkilemez.</string>
+    <string name="mWebhook_name">Web Kancası</string>
+    <string name="mWebhook_url_hint">Web Kancası URL\'si</string>
+    <string name="mWebhook_body_hint">Web Kanca\'sı içeriği</string>
+    <string name="mWebhook_send">Web Kancası\'na gönder</string>
+    <string name="mWebhook_auto">URL\'leri otomatik olarak gönder</string>
+    <string name="mWebhook_auto_send">Web Kancası\'na gönder</string>
+    <string name="mWebhook_missing_config">Eksik Web Kancası url\'si veya içeriği</string>
+    <string name="mWebhook_sending">Web kancasına gönderiliyor…</string>
+    <string name="mWebhook_error">Web Kancası\'na gönderilemedi</string>
+    <string name="mWebhook_templates">Şablonlar</string>
+    <string name="mWebhook_test">Web Kancası\'nı test et</string>
+    <string name="bkp_secrets">Gizlenmiş veriler: Gizli sayılan veriler, örneğin VirusTotal API anahtarı veya günlük.</string>
+    <string name="bck_backupOk">Yedekleme oluşturuldu</string>
+    <string name="bck_backupError">Yedekleme oluşturulamıyor, dosya için farklı bir konum seçmeyi dene.</string>
+    <string name="bck_restoreConfirm">Öğeleri değiştir</string>
+    <string name="bck_deleteTitle">Öğeleri sil</string>
+    <string name="bck_deleteMessage">UYARI! Bu işlem, seçili tüm öğeleri silecektir.\nDevam etmek istediğinizden emin misiniz?</string>
+    <string name="bck_deleteConfirm">Öğeleri sil</string>
+    <string name="bck_deleteOk">Öğeler silindi</string>
+    <string name="noLinks">Bağlantı tespit edilmedi</string>
+    <string name="bkp_description">Hangi öğelerin yedekleneceğini/geri yükleneceğini seçin.\nGeri yüklerken, yedekleme onsuz oluşturulmuşsa, mevcut olanlar korunacaktır.</string>
+    <string name="txt_animation">Animasyonları etkinleştir</string>
+    <string name="bjp_cache">Önbellek: Ana bilgisayarlar veritabanı gibi kolayca indirilebilen veya yeniden oluşturulabilen veriler. Bu seçeneğin etkinleştirilmesi, yedekleme boyutunu önemli ölçüde artırabilir.</string>
+    <string name="bck_restoreDelete">Geri yüklemeden önce öğeleri sil. Varsayılan değerlerle bazı dosyalar ve tercihler mevcut olmayabilir, bu yüzden bu seçeneği devre dışı bırakmak, mevcut öğeleri yedekteki öğelerle beklenmedik şekillerde birleştirebilir. Ne yaptığınızı biliyorsanız devre dışı bırakın.</string>
+    <string name="big">Büyük</string>
+    <string name="auto_editor">Otomasyon yapılandırması. Biçim: anahtarın benzersiz bir otomasyon adı olduğu ve içeriğin aşağıdaki değerleri içerdiği nesnelerin listesi:\n- \'regex\': string|list, zorunlu: otomasyonun çalışması için url\'nin eşleşmesi gereken geçerli bir java regex\'i. Liste ise, en az bir regex eşleşmelidir.\n- \'action\': string, zorunlu: çalıştırılacak otomasyonun anahtarı. Kullanılabilir tüm anahtarların bir listesi için aşağıya bakın.\n- \'enabled\': boolean, isteğe bağlı: false ise bu otomasyon atlanacaktır. Varsayılan olarak doğrudur.</string>
+    <string name="mWebhook_desc">Bu modül, yapılandırılmış bir webhook uç noktasına URL\'ler gönderir. Her URL bir zaman damgası ile gönderilir ve URL\'leri kendi sunucunuzda toplamanıza ve işlemenize olanak tanır.\nFikir ve temel uygulama için anoop-b\'ye teşekkürler!\n\nURL\'leri göndermeye başlamak için webhook URL\'nizi ve gövdesini aşağıda yapılandırın.\nGövde için $URL$ ve $TIMESTAMP$ yer tutucularını kullanabilirsiniz.</string>
+    <string name="mD_show">Hata ayıklama verilerini yükle</string>
+    <string name="a_automations">Otomasyonlar</string>
+    <string name="auto_desc">Otomasyonlar ile tetikleyicilere göre modül eylemleri gerçekleştirebilirsiniz. Otomasyonları burada yapılandırabilir veya hepsini aynı anda devre dışı bırakabilirsiniz.</string>
+    <string name="auto_enabled">Otomasyonlar özelliğini etkinleştir</string>
+    <string name="auto_error_toast">Otomasyon başarısız olursa bildirim göster</string>
+    <string name="auto_notFound">\'%s\' anahtarına sahip bir otomasyon mevcut değil. Geçerli olduğundan ve gerekli modülün etkin olduğundan emin ol.</string>
+    <string name="auto_available_prefix">Mevcut otomasyon eylemleri (tuşlar):</string>
+    <string name="auto_available_disabled">Bu modül devre dışı bırakıldığında otomasyonlar çalışmaz</string>
+    <string name="auto_open">URL\'yi mevcut ilk uygulama ile açacaktır. \'Aç\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="auto_share">URL\'yi paylaşacaktır. \'Paylaş\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="auto_copy">URL\'yi kopyalayacaktır. \'Kopyala\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="mUnshort_to">Kısaltmaları %s olarak değiştirir</string>
+    <string name="auto_rule_webhook">Her şeyi webhook\'a gönder</string>
+    <string name="auto_rule_bitly">Bit.ly linklerini çöz</string>
+    <string name="auto_ctabs">Ctabs\'ı etkinleştirir. Devre dışı bırakılmışsa \'ctabs\' düğmesine basmaya eşdeğerdir (gizli olsa bile).</string>
+    <string name="auto_incognito">Gizli modu etkinleştirir. Devre dışı bırakılmışsa (gizli olsa bile) \'gizli\' düğmesine basmaya eşdeğerdir.</string>
 </resources>

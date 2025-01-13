@@ -2,14 +2,14 @@ Aplikasi ini bertindak sebagai perantara saat membuka tautan url. Ketika Anda me
 Sangat berguna ketika Anda perlu membuka tautan eksternal baik dari email, aplikasi jejaring sosial, atau lainnya.
 
 
-URLCheck dikembangkan oleh TrianguloY, yang pada awalnya digunakan untuk penggunaan pribadi. Aplikasi ini memiliki sumber terbuka (di bawah lisensi CC BY 4.0), gratis, tanpa iklan atau pelacak, berukuran kecil dan menggunakan izin sesedikit (hanya izin internet untuk pemeriksaan modul yang hanya dilakukan ketika pengguna memintanya). Kode sumbernya juga tersedia di GitHub, jika Anda ingin menyarankan perubahan, melakukan modifikasi, atau mengusulkan terjemahan baru: https://github.com/TrianguloY/UrlChecker
+URLCheck dikembangkan oleh TrianguloY yang pada awalnya digunakan hanya untuk penggunaan pribadi. Aplikasi ini bersumber terbuka (di bawah lisensi CC BY 4.0), gratis, tanpa iklan atau pelacak, berukuran kecil, dan menggunakan izin sesedikit mungkin (hanya izin internet demi pemeriksaan modul yang hanya dilakukan ketika pengguna memberikan izin). Kode sumber terrsedia di GitHub, sehingga jika Anda ingin memberikan saran perubahan, melakukan modifikasi, atau mengusulkan terjemahan baru, silakan buka: https://github.com/TrianguloY/UrlChecker
 
 
-Aplikasi ini disusun dengan pengaturan modular, Anda dapat mengaktifkan/menonaktifkan dan menyusun ulang masing-masing modul, yang meliputi:
+Aplikasi ini disusun dengan pengaturan modular. Anda dapat mengaktifkan/menonaktifkan dan menyusun ulang masing-masing modul, yang meliputi:
 
-* Teks masukkan: Menampilkan url saat ini yang bisa diedit secara manual. Tidak dapat dinonaktifkan.
+* Teks masukan: Menampilkan URL saat ini yang bisa disunting secara manual. Modul ini tidak dapat dinonaktifkan.
 
-* Riwayat: Melihat dan mengembalikan perubahan dari modul lain, termasuk suntingan dari pengguna (fitur undo/redo yang khas)
+* Riwayat: Melihat dan mengembalikan perubahan modul lain, termasuk suntingan dari pengguna (fitur undo/redo yang khas)
 
 * Log: Menyimpan log semua url yang telah dicek, yang dapat Anda lihat, edit, salin, hapus...
 

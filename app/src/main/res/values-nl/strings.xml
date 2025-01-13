@@ -314,4 +314,21 @@
     <string name="normal">Normaal</string>
     <string name="big">Groot</string>
     <string name="mD_show">Toon debuggegevens</string>
+    <string name="auto_rule_bitly">Unshort bit.ly</string>
+    <string name="auto_rule_webhook">Stuur alles naar webhook</string>
+    <string name="auto_incognito">Zal incognito inschakelen. Gelijk aan het indrukken van de \'incognito\'-knop indien uitgeschakeld (zelfs indien verborgen).</string>
+    <string name="auto_checkStatus">Zal de statuscontrole uitvoeren. Gelijk aan het indrukken van de \'Check\'-knop.</string>
+    <string name="auto_editor">Configuratie van automatiseringen. Formaat: lijst met objecten waarbij de sleutel een unieke automatiseringsnaam is en de inhoud de volgende waarden bevat:\n- \'regex\': string|lijst, vereist: een geldige Java-regex die aan de URL moet voldoen om de automatisering uit te voeren. Als lijst, moet er ten minste één regex overeenkomen.\n- \'actie\': string, vereist: de sleutel van de automatisering die moet worden uitgevoerd. Bekijk hieronder een lijst met alle beschikbare sleutels.\n- \'ingeschakeld\': booleaans, optioneel: als deze optie false is, wordt deze automatisering overgeslagen. Standaard true.</string>
+    <string name="auto_ctabs">Zal ctabs inschakelen. Gelijk aan het indrukken van de \'ctabs\'-knop indien uitgeschakeld (zelfs indien verborgen).</string>
+    <string name="auto_close">Sluit de applicatie en doe verder niets.</string>
+    <string name="a_automations">Automatiseringen</string>
+    <string name="auto_desc">Met automatiseringen kunt u moduleacties uitvoeren op basis van triggers. U kunt de automatiseringen hier configureren of ze allemaal tegelijk uitschakelen met de schakelaar hieronder.</string>
+    <string name="auto_enabled">Functie voor automatisering inschakelen</string>
+    <string name="auto_error_toast">Toon toast als automatisering mislukt</string>
+    <string name="auto_notFound">Er is geen automatisering met sleutel \'%s\' beschikbaar. Controleer of deze geldig is en of de vereiste module actief is.</string>
+    <string name="auto_available_prefix">Beschikbare automatiseringsacties (toetsen):</string>
+    <string name="auto_available_disabled">Deze module is uitgeschakeld, automatiseringen worden niet uitgevoerd</string>
+    <string name="auto_copy">Kopieert de url. Gelijk aan het indrukken van de knop \'kopiëren\'.</string>
+    <string name="auto_share">Zal de url delen. Gelijk aan het indrukken van de \'share\' knop.</string>
+    <string name="auto_open">Opent de url met de eerste beschikbare app. Gelijk aan het indrukken van de \'open\' knop.</string>
 </resources>

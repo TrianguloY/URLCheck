@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="btn_tutorialSettings">Repetir tutorial</string>
-    <string name="btn_tutorialEnd">Terminar tutorial</string>
+    <string name="btn_tutorialEnd">Finalizar tutorial</string>
     <string name="link_source">Código-fonte</string>
     <string name="link_changelog">Novidades</string>
     <string name="tutorial">Tutorial</string>
@@ -12,7 +12,7 @@
     <string name="mClear_clear">Aplicar</string>
     <string name="mLog_empty">Sem dados</string>
     <string name="btn_tutorialSkip">Pular tutorial</string>
-    <string name="title_choose">Escolher aplicativo</string>
+    <string name="title_choose">Escolha o aplicativo</string>
     <string name="a_modules">Módulos</string>
     <string name="close">Fechar</string>
     <string name="mOpen_share">Compartilhar</string>
@@ -38,7 +38,7 @@
     <string name="btn_setBrowser">Definir como navegador padrão</string>
     <string name="save">Salvar</string>
     <string name="back">Voltar</string>
-    <string name="alwaysOn">Sempre ligado</string>
+    <string name="alwaysOn">Sempre ativado</string>
     <string name="desc_decorations">Exibir/ocultar título</string>
     <string name="desc_up">Mover para cima</string>
     <string name="reset">Redefinir</string>
@@ -47,7 +47,7 @@
     <string name="auto">Automático</string>
     <string name="mHist_name">Histórico</string>
     <string name="mLog_name">Log</string>
-    <string name="alwaysOff">Sempre desligado</string>
+    <string name="alwaysOff">Sempre desativado</string>
     <string name="mOpen_with">Abrir com %s</string>
     <string name="mOpen_open">Abrir</string>
     <string name="mStatus_check">Verificar status</string>
@@ -89,9 +89,7 @@
     <string name="menu_toggleDecorations">Alternar todos os títulos</string>
     <string name="txt_openLinks">Abra os links neste aplicativo: Ao longo dos anos, o Android mudou a forma de configurar, variando entre as diferentes versões. Encontre abaixo todas as configurações disponíveis para o seu dispositivo. Se os links não estiverem sendo abertos neste aplicativo, tente todas elas.</string>
     <string name="toast_defaultSet">O aplicativo agora é o navegador padrão</string>
-    <string name="txt_tutorial1">Obrigado por baixar o app!
-\n
-\nEste é o tutorial, você pode pulá-lo com o botão abaixo. Você sempre pode voltar através das configurações.</string>
+    <string name="txt_tutorial1">Obrigado por baixar o app! \n \nEste é o tutorial, se você quiser você pode pulá-lo com o botão abaixo. Você sempre pode voltar para esse tutorial através das configurações.</string>
     <string name="txt_tutorial2">O aplicativo age como intermediário ao abrir links. Assim que um link é aberto com o aplicativo, você pode interagir com ele por meio dos módulos. Depois disso, você pode abrir o link (no aplicativo desejado), compartilhá-lo, ou copiá-lo para a área de transferência.</string>
     <string name="txt_conf">Aqui estão todos os módulos disponíveis, onde você pode checar suas descrições e configurações. Você também pode reordenar, mudar a visibilidade e ativar/desativar eles.</string>
     <string name="mOpen_incognito">Modo anônimo:</string>
@@ -257,4 +255,42 @@
     <string name="mPttrn_wrongSchemaHttp">Esquema de capitalização http inválido.</string>
     <string name="mPttrn_wrongSchemaHttps">Capitalização inválida do esquema https.</string>
     <string name="dismiss">Descartar</string>
+    <string name="btn_backupRestore">Backup / Restaurar</string>
+    <string name="bck_mn_advanced">Mostrar opções avançadas</string>
+    <string name="btn_backup">Backup</string>
+    <string name="btn_replace">Substituir</string>
+    <string name="btn_restore">Restaurar</string>
+    <string name="btn_delete">Deletar</string>
+    <string name="bkp_description">Escolha quais elementos fazer backup/restaurar.\nAo restaurar, se o backup foi criado sem ele, os existentes serão mantidos.</string>
+    <string name="txt_animation">Ativar animações</string>
+    <string name="bck_newer">Cancelado. O backup foi criado com uma versão mais recente do aplicativo.</string>
+    <string name="bck_restoreTitle">Restaurar backup</string>
+    <string name="bck_restoreConfirm">Substituir elementos</string>
+    <string name="a_automations">Automações</string>
+    <string name="auto_desc">Com as automações, você pode executar ações de módulo com base em gatilhos. Você pode configurar as automações aqui ou desabilitar todas elas juntas usando o toggle abaixo.</string>
+    <string name="bkp_data_prefs">Preferências: Dados salvos como preferências.</string>
+    <string name="bkp_data">Dados: Dados de aplicativo padrão. Coisas como módulos habilitados, configurações json, etc. Não incluirá segredos nem cache.</string>
+    <string name="bkp_data_files">Arquivos: Dados salvos como arquivos.</string>
+    <string name="bkp_secrets">Segredos: Dados considerados \'secretos\', como a chave da API do VirusTotal ou o log.</string>
+    <string name="bjp_cache">Cache: Dados que podem ser facilmente baixados/gerados, como o banco de dados de hosts. Habilitar esta opção pode aumentar o tamanho do backup consideravelmente.</string>
+    <string name="bck_restoreDelete">Exclua elementos antes de restaurar. Observe que as preferências e alguns arquivos com valores padrão podem não existir, então desabilitar esta opção mesclará os elementos existentes com os de backup de maneiras inesperadas. Desabilite se você sabe o que está fazendo.</string>
+    <string name="bck_deleteTitle">Excluir elementos</string>
+    <string name="bck_deleteMessage">AVISO! Isso excluirá todos os elementos selecionados.\nVocê realmente quer continuar?</string>
+    <string name="bck_deleteConfirm">Excluir elementos</string>
+    <string name="bck_restoreError">Não é possível restaurar o backup. É um arquivo válido?</string>
+    <string name="small">Pequeno</string>
+    <string name="normal">Normal</string>
+    <string name="big">Grande</string>
+    <string name="bck_deleteError">Não é possível excluir elementos</string>
+    <string name="bck_ignoreNewer">Permitir backups criados a partir de versões mais recentes do aplicativo.</string>
+    <string name="bck_chooseFile">Escolha o arquivo de backup</string>
+    <string name="bck_backupOk">Backup criado</string>
+    <string name="bck_backupError">Não é possível criar o backup, tente escolher um local diferente para o arquivo.</string>
+    <string name="bck_restoreMessage">AVISO! Isso substituirá os elementos selecionados do backup.\nVocê realmente quer continuar?</string>
+    <string name="bck_restoreOk">Backup restaurado</string>
+    <string name="bck_deleteOk">Elementos deletados</string>
+    <string name="noLinks">Nenhum link detectado</string>
+    <string name="auto_enabled">Habilitar recurso de automações</string>
+    <string name="auto_error_toast">Mostrar toast se a automação falhar</string>
+    <string name="auto_notFound">Nenhuma automação com a chave \'%s\' está disponível. Certifique-se de que ela seja válida e que o módulo necessário esteja ativo.</string>
 </resources>

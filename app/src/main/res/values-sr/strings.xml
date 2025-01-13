@@ -80,7 +80,7 @@
     <string name="mVT_badUrl">Pažljivo! %1$d/%2$d mašine su otkrile URL (od datuma %3$s)</string>
     <string name="mD_name">Debug/Marker modul</string>
     <string name="mD_ctabs">Prikaži poruke za otklanjanje grešaka iz usluge prilagođenih kartica</string>
-    <string name="mD_show">Prikaži podatke za otklanjanje grešaka</string>
+    <string name="mD_show">Učitajte podatke za otklanjanje grešaka</string>
     <string name="mHist_name">Istorija</string>
     <string name="mClear_name">URL Čistač</string>
     <string name="mClear_desc">Ovaj modul uklanja praćenje, upućivač i druge beskorisne parametre iz URL-a. Takođe omogućava uobičajena preusmeravanja URL adresa van mreže.</string>
@@ -128,7 +128,7 @@
     <string name="mUnshort_unshort">Uvećaj</string>
     <string name="mUnshort_tm">unshorten.me besplatni API od Unshorten.me</string>
     <string name="mUnshort_checking">Proverava se…</string>
-    <string name="mUnshort_notFound">Nije pronađeno preusmeravanje</string>
+    <string name="mUnshort_notFound">Nije pronađena nekratka URL adresa</string>
     <string name="mUnshort_pending">na čekanju: %1$d/%2$d</string>
     <string name="mUnshort_ok">Neskraćeno</string>
     <string name="mFlags_name">Editor zastava</string>
@@ -200,9 +200,9 @@
 \n
 \nNadamo se da će vam aplikacija biti korisna! I ne ustručavajte se da predložite funkcije, prijavite greške ili čak predložite izmene. Pronađite sve relevantne veze na ekranu o informacijama.</string>
     <string name="canceled">Otkazano</string>
-    <string name="json_desc">[Beta funkcija] Ovo je napredni uređivač, sadržaj mora biti formatiran u važeći JSON. Možete da pritisnete dugme u gornjem desnom uglu da biste ga formatirali i potvrdili.</string>
+    <string name="json_desc">Json editor: sadržaj mora biti formatiran u važeći JSON. Možete da pritisnete dugme u gornjem desnom uglu da biste ga formatirali i potvrdili.</string>
     <string name="shortcut_checkClipboard">Proverite URL-ove iz međuspremnika</string>
-    <string name="json_edit">Napredni uređivač</string>
+    <string name="json_edit">Json editor</string>
     <string name="mPttrn_name">Provera šablona</string>
     <string name="mPttrn_desc">Ovaj modul proverava URL sa obrascima regex šablona koji upozorava, predlaže ili primenjuje zamene. Možete modifikovati ili kreirati sopstvene šablone, ili čak koristiti one koje kreiraju korisnici.
 \nUgrađeni obrasci uključuju:
@@ -314,4 +314,39 @@
     <string name="mDrawer_desc">Svi moduli ispod ovoga biće sakriveni u fioci. Moduli će i dalje raditi, ali će biti skriveni dok ne otvorite fioku. Ovde možete postaviti module koje retko koristite da biste izbegli nered.</string>
     <string name="mChg_name">Dnevnik Promena</string>
     <string name="mChg_desc">Obavestiće kada je aplikacija ažurirana.</string>
+    <string name="auto_rule_webhook">Pošaljite sve na webhook</string>
+    <string name="auto_ctabs">Omogućiće ctabs. Ekvivalentno pritiskanju dugmeta \'ctabs\' ako je onemogućeno (čak i ako je skriveno).</string>
+    <string name="auto_rule_bitly">Unshort bit.ly</string>
+    <string name="auto_checkStatus">Pokrenuće proveru statusa. Ekvivalentno pritisku na dugme \'Proveri\'.</string>
+    <string name="auto_incognito">Omogućiće anonimno. Ekvivalentno pritiskanju dugmeta „bez arhiviranja“ ako je onemogućeno (čak i ako je skriveno).</string>
+    <string name="auto_unshort">Pokrenuće nekratki proces. Ekvivalentno pritisku na dugme \'Unshort\'.</string>
+    <string name="auto_scan">Skeniraće URL. Ekvivalentno pritisku na dugme \'Skeniraj\'.</string>
+    <string name="mWebhook_url_hint">Webhook URL</string>
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mUnshort_to">Poništava skraćivanje na %s</string>
+    <string name="auto_drawer">Otvoriće fioku. Ekvivalentno pritiskanju dugmeta fioke ako je sklopljeno.</string>
+    <string name="mWebhook_send">Pošalji na Webhook</string>
+    <string name="mWebhook_auto_send">Pošalji na webhook</string>
+    <string name="mWebhook_missing_config">Nedostaje URL ili telo web-huka</string>
+    <string name="mWebhook_sending">Slanje na webhook…</string>
+    <string name="mWebhook_success">Uspešno poslato na webhook</string>
+    <string name="mWebhook_error">Slanje na webhook nije uspelo</string>
+    <string name="mWebhook_templates">Šabloni</string>
+    <string name="mWebhook_test">Testiraj webhook</string>
+    <string name="auto_close">Zatvoriće aplikaciju, ne radeći ništa drugo.</string>
+    <string name="auto_editor">Konfiguracija automatizacije. Format: lista objekata gde je ključ jedinstveno ime automatizacije, a sadržaj sadrži sledeće vrednosti:\n- \'regek\': string|list, obavezno: važeći java regularni izraz koji url mora da odgovara da bi se automatizacija pokrenula. Ako je lista, najmanje jedan regularni izraz mora da se podudara.\n- \'action\': string, potrebno: ključ automatizacije za pokretanje. U nastavku pogledajte listu svih dostupnih ključeva.\n- \'enabled\': boolean, opciono: ako je netačno, ova automatizacija će biti preskočena. Podrazumevano tačno.</string>
+    <string name="auto_clear">Očistiće URL. Ekvivalentno pritisku na dugme \'Obriši\'. Imajte na umu da sam modul sadrži automatsku postavku koja će takođe efikasnije obrisati sve URL-ove i trebalo bi da bude poželjna.</string>
+    <string name="mWebhook_body_hint">Webhook tijelo</string>
+    <string name="mWebhook_auto">Automatski pošalji URL-ove</string>
+    <string name="a_automations">Automatizacija</string>
+    <string name="auto_desc">Pomoću automatizacije možete izvršiti radnje modula na osnovu okidača. Ovde možete da konfigurišete automatizaciju ili ih sve zajedno onemogućite pomoću prekidača ispod.</string>
+    <string name="auto_enabled">Omogućite funkciju automatizacije</string>
+    <string name="auto_error_toast">Pokažite zdravicu ako automatizacija ne uspe</string>
+    <string name="auto_notFound">Nije dostupna automatizacija sa ključem \'%s\'. Uverite se da je validan i da je potreban modul aktivan.</string>
+    <string name="auto_available_prefix">Dostupne radnje automatizacije (ključevi):</string>
+    <string name="auto_available_disabled">Ovaj modul je onemogućen, automatizacija se neće pokrenuti</string>
+    <string name="auto_open">Otvoriće URL sa prvom dostupnom aplikacijom. Ekvivalentno pritisku na dugme \'otvori\'.</string>
+    <string name="auto_share">Deliće URL. Ekvivalentno pritisku na dugme \'deli\'.</string>
+    <string name="auto_copy">Kopiraće URL. Ekvivalentno pritisku na dugme \'kopiraj\'.</string>
+    <string name="mWebhook_desc">Ovaj modul šalje URL adrese konfigurisanoj krajnjoj tački veb-huka. Svaki URL se šalje sa vremenskom oznakom, što vam omogućava da prikupljate i obrađujete URL-ove na sopstvenom serveru.\nHvala anoop-b na ideji i osnovnoj implementaciji!\n\nKonfigurišite URL i telo veb-huka ispod da biste počeli da šaljete URL-ove.\nZa telo možete da koristite čuvare mesta $URL$ i $TIMESTAMP$.</string>
 </resources>
