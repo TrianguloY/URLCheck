@@ -182,7 +182,6 @@
     <string name="small">Маленький</string>
     <string name="normal">нормальний</string>
     <string name="big">Великий</string>
-    <string name="json_edit">Json редактор</string>
     <string name="mPttrn_regexfix">Виправте додаткові групи регулярних виразів (вимкніть, якщо регулярні вирази не працюють належним чином)</string>
     <string name="mPttrn_userContent">Список інших корисних шаблонів, створених користувачами: %s</string>
     <string name="mPttrn_wrongSchemaHttps">Недійсне використання великих літер у схемі https.</string>
@@ -245,7 +244,6 @@
     <string name="alwaysOff">Завжди вимкнено</string>
     <string name="hidden">Прихований</string>
     <string name="noLinks">Посилання не виявлено</string>
-    <string name="json_desc">Редактор Json: вміст має бути відформатований у дійсний JSON. Ви можете натиснути верхню праву кнопку, щоб відформатувати та підтвердити його.</string>
     <string name="shortcut_checkClipboard">Перевірте URL-адреси з буфера обміну</string>
     <string name="auto_available_prefix">Доступні дії автоматизації (клавіші):</string>
     <string name="auto_copy">Скопіює URL-адресу. Еквівалент натискання кнопки \"копіювати\".</string>

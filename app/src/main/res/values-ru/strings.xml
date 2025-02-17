@@ -283,4 +283,13 @@
 \nПри восстановлении, если бэкап был создан без него, существующие будут сохранены.</string>
     <string name="btn_replace">Заменить</string>
     <string name="bck_deleteTitle">Удалить элементы</string>
+    <string name="bjp_cache">Кэш: данные, которые легко можно загрузить/сгенерировать, например, база данных хостов. Включение этой опции может значительно увеличить размер резервной копии.</string>
+    <string name="bck_chooseFile">Выберите файл бэкапа</string>
+    <string name="bkp_data">Данные: стандартные данные приложения. Такие как включенные модули, JSON-конфигурации и т.д. Не содержат секреты и кэш.</string>
+    <string name="bck_restoreTitle">Восстановить бэкап</string>
+    <string name="bck_backupOk">Бэкап создан</string>
+    <string name="bkp_data_files">Файлы: данные сохранены как файлы.</string>
+    <string name="bkp_secrets">Секреты: данные, считающиеся «секретными», такие как ключ API Virustotal или журнал.</string>
+    <string name="bck_ignoreNewer">Разрешить резервные копии, созданные в более новых версиях приложения.</string>
+    <string name="bck_newer">Отменено. Резервная копия была создана в более новой версии приложения.</string>
 </resources>

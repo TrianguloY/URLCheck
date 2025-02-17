@@ -200,9 +200,7 @@
 \n
 \nNadamo se da će vam aplikacija biti korisna! I ne ustručavajte se da predložite funkcije, prijavite greške ili čak predložite izmene. Pronađite sve relevantne veze na ekranu o informacijama.</string>
     <string name="canceled">Otkazano</string>
-    <string name="json_desc">Json editor: sadržaj mora biti formatiran u važeći JSON. Možete da pritisnete dugme u gornjem desnom uglu da biste ga formatirali i potvrdili.</string>
     <string name="shortcut_checkClipboard">Proverite URL-ove iz međuspremnika</string>
-    <string name="json_edit">Json editor</string>
     <string name="mPttrn_name">Provera šablona</string>
     <string name="mPttrn_desc">Ovaj modul proverava URL sa obrascima regex šablona koji upozorava, predlaže ili primenjuje zamene. Možete modifikovati ili kreirati sopstvene šablone, ili čak koristiti one koje kreiraju korisnici.
 \nUgrađeni obrasci uključuju:
