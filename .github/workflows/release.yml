@@ -48,6 +48,10 @@ jobs:
           cat - << EOF
           ---
           
+          - App package: `com.trianguloy.urlchecker`
+          - SHA-256 Hash of Signing Certificate:
+            - `BF:1B:69:C1:4D:A2:42:0C:A7:20:11:F7:2C:F4:83:74:58:EC:5D:3C:C4:B5:38:24:34:37:BC:17:C1:92:01:C6`
+
           Note: All three different versions (Play Store, F-droid and Github) are signed with different certificates, so you cannot update one with another unless you uninstall first.
           Remember to use the backup/restore functionality to migrate your data!
           EOF
