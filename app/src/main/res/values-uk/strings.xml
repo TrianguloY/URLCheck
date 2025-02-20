@@ -318,7 +318,7 @@
     <string name="mParts_desc">Цей модуль показує всі декодовані частини URL-адреси: схему, повноваження, шляхи, запити та фрагмент. \nЯкщо клацнути частину, її буде встановлено як нову URL-адресу, корисну, наприклад, якщо один із запитів або шляхів був закодованою URL-адресою переспрямування. \nПри тривалому клацанні частина буде скопійована в буфер обміну. \nВи також можете натиснути кнопку «X», щоб видалити деякі з них. \nЦе розширена версія модуля Queries Remover.</string>
     <string name="mWebhook_desc">Цей модуль надсилає URL-адреси до налаштованої кінцевої точки вебхуку. Кожна URL-адреса надсилається з міткою часу, що дозволяє збирати та обробляти URL-адреси на вашому власному сервері. \nДякуємо anoop-b за ідею та базову реалізацію! \n\nЩоб почати надсилати URL-адреси, налаштуйте URL-адресу та тіло вебхуку нижче. \nДля основного тексту ви можете використовувати заповнювачі $URL$ і $TIMESTAMP$.</string>
     <string name="mClear_hashHint">Без перевірки хешу</string>
-    <string name="mClear_sourceDesc">URL-адреса каталогу файлів JSON із правилами:</string>
+    <string name="mClear_sourceDesc">URL-адреса каталогу файлів Json із правилами:</string>
     <string name="mClear_hashDesc">URL хеш-файлу каталогу. Якщо пропущено, завантаження не перевірятиметься на предмет підробки/зміни (не рекомендовано)</string>
     <string name="mClear_autoUpdate">Оновлювати періодично</string>
     <string name="mClear_upToDate">Каталог актуальний</string>
@@ -342,4 +342,15 @@
     <string name="mUnshort_pending">очікує на розгляд: %1$d/%2$d</string>
     <string name="mFlags_name">Редактор прапорів</string>
     <string name="mLog_edit">Редагувати журнал</string>
+    <string name="format">Формат</string>
+    <string name="discard">Відкинути</string>
+    <string name="json_info">Показати інформацію</string>
+    <string name="json_ignore">Вміст недійсний Json. Відкинути його та закрити редактор?</string>
+    <string name="json_discard_close">Викиньте і закрийте</string>
+    <string name="json_save">Є незбережені зміни. Зберегти чи скасувати їх?</string>
+    <string name="json_save_error">Не вдалося зберегти: %s</string>
+    <string name="json_format_error">Вміст недійсний Json, його неможливо проаналізувати.</string>
+    <string name="json_reset">Попередження: вміст редактора буде замінено вбудованим json. Усі зміни, внесені редактором, буде втрачено, але збережений вміст не буде змінено, якщо його не буде збережено вручну. Ви хочете продовжити?</string>
+    <string name="json_discard">Попередження: вміст редактора буде замінено збереженим json. Усі зроблені зміни буде втрачено. Ви хочете продовжити?</string>
+    <string name="mPttrn_upperDomain">УВАГА! Велика літера в домені.</string>
 </resources>
