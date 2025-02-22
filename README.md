@@ -42,11 +42,7 @@ Note: All three different versions (Play Store, F-droid and Github) are signed w
 Remember to use the backup/restore functionality to migrate your data!
 </details>
 
-</div>
-
-<div align="center">
-
-<hr width="50%">
+<hr width="75%">
 
 <!-- contributors -->
 
