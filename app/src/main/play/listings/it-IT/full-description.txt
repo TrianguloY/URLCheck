@@ -2,7 +2,7 @@ Questa applicazione agisce come un intermediario nell'apertura di link. Quando p
 È particolarmente utile quando ti serve aprire un link da una mail, un social network, od altro.
 
 
-URLChecker è sviluppato da TrianguloY, originalmente per uso personale. È open source (sotto licenza CC BY 4.0), gratis, senza pubblicità o trackers, leggero, ed utilizza meno permessi possibile (solo quello di rete, per controlli che vengono eseguiti solo quando richiesti dall'utente). Il codice sorgente è disponibile anche su Github, se vuoi dare suggerimenti, effettuare modifiche, o proporre nuove traduzioni: https://github.com/TrianguloY/UrlChecker
+URLChecker è sviluppato da TrianguloY, originalmente per uso personale. È open source (sotto licenza CC BY 4.0), gratis, senza pubblicità o trackers, leggero, ed utilizza meno permessi possibile (solo quello di rete, per controlli che vengono eseguiti solo quando richiesti dall'utente). Il codice sorgente è disponibile anche su Github, se vuoi dare suggerimenti, effettuare modifiche, o proporre nuove traduzioni: https://github.com/TrianguloY/URLCheck
 
 
 L'app è costruita in maniera modulare, ed è possibile attivare, disattivare e re-ordinare moduli individuali, inclusi:

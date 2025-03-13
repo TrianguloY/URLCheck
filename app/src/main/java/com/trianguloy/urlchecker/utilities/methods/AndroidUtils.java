@@ -10,12 +10,15 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.style.ClickableSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -238,7 +241,10 @@ public interface AndroidUtils {
 
     String MARKER = "%S$S/S%";
 
-    /** this code replaces the [MARKER] in [textWithMarker] with the underlined [url]. Will call onClick with the url when clicked. */
+    /**
+     * this code replaces the [MARKER] in [textWithMarker] with the underlined [url]. Will call onClick with the url when clicked.
+     * REMEMBER: you need to configure the textview to accept clicks with textview.setMovementMethod(LinkMovementMethod.getInstance());
+     */
     static CharSequence underlineUrl(String textWithMarker, String url, JavaUtils.Consumer<String> onClick) {
         // it does so by using a marker to underline exactly the parameter (wherever it is) and later replace it with the final url
         // all underlined looks bad, and auto-underline may not work with some malformed urls
@@ -257,5 +263,35 @@ public interface AndroidUtils {
         // "Redirects to _{marker}_" -> "Redirects to _{redirectionUrl}_"
         text.replace(start, end, url);
         return text;
+    }
+
+    /** Reduces the height of a view to their children's size (if less) */
+    static void limitHeight(ViewGroup view) {
+        view.post(() -> {
+            int childHeight = 0;
+            for (int i = 0; i < view.getChildCount(); i++) {
+                childHeight += view.getChildAt(i).getHeight();
+            }
+            if (view.getHeight() > childHeight) {
+                view.setLayoutParams(new LinearLayout.LayoutParams(view.getWidth(), childHeight));
+            }
+        });
+    }
+
+    /**
+     * Sets the width of an activity.
+     * width must be either a percentage (>=0) or a special layout value (<0)
+     */
+    static void setActivityWidth(int width, Activity cntx) {
+        var params = cntx.getWindow().getAttributes();
+
+        if (width < 0) {
+            params.width = width;
+        } else {
+            var metrics = new DisplayMetrics();
+            cntx.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            params.width = metrics.widthPixels * width / 100;
+        }
+        cntx.getWindow().setAttributes(params);
     }
 }

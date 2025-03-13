@@ -58,7 +58,7 @@ Translations: %2$s."</string>
     <string name="toast_noApp">Não foi possível abrir a app</string>
     <string name="toast_noBrowser">Não foi possível abrir o navegador</string>
     <string name="title_choose">Escolher aplicação</string>
-    <string name="toast_invalid">Inválido</string>
+    <string name="invalid">Inválido</string>
     <string name="save">Salva</string>
     <string name="reset">Resetar</string>
     <string name="close">Fechar</string>
@@ -68,8 +68,7 @@ Translations: %2$s."</string>
     <!--
         json
     -->
-    <string name="json_desc">[Função Beta] Isto é um editor avançado, o conteudo tem que estar formatado em JSON válido. Podes pressionar o botão no canto superior direito para formatar e validar.</string>
-    <string name="json_edit">Editor Avançado</string>
+    <string name="json_editor">Editor Avançado</string>
     <!--
         modules
     -->

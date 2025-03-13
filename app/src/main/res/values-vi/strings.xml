@@ -156,7 +156,7 @@
     <string name="auto">Tự động</string>
     <string name="alwaysOn">Luôn mở</string>
     <string name="title_choose">Chọn ứng dụng</string>
-    <string name="toast_invalid">Không hợp lệ</string>
+    <string name="invalid">Không hợp lệ</string>
     <string name="save">Lưu</string>
     <string name="toast_noApp">Không thể mở ứng dụng</string>
     <string name="bck_deleteTitle">Xóa các phần tử</string>
@@ -179,8 +179,7 @@
     <string name="mOpen_closeCopy">Đóng hộp thoại sau khi sao chép</string>
     <string name="dismiss">Bỏ qua</string>
     <string name="back">Quay lại</string>
-    <string name="json_desc">[Tính năng Beta] Đây là trình chỉnh sửa nâng cao, nội dung phải được định dạng thành JSON hợp lệ. Bạn có thể nhấn nút trên cùng bên phải để định dạng và xác nhận nó.</string>
-    <string name="json_edit">Trình chỉnh sửa nâng cao</string>
+    <string name="json_editor">Trình chỉnh sửa nâng cao</string>
     <string name="shortcut_checkClipboard">Kiểm tra URL từ clipboard</string>
     <string name="mPttrn_name">Trình kiểm tra mẫu</string>
     <string name="mPttrn_regexfix">Sửa các nhóm biểu thức chính quy tùy chọn (vô hiệu hóa nếu biểu thức chính quy không hoạt động chính xác)</string>

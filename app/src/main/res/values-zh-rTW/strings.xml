@@ -86,7 +86,7 @@
     <string name="mUnshort_checking">檢查中…</string>
     <string name="mClear_updateNow">立即更新</string>
     <string name="mPttrn_fix">套用</string>
-    <string name="json_edit">進階編輯器</string>
+    <string name="json_editor">進階編輯器</string>
     <string name="mOpen_clipboard">已將網址複製到剪貼簿</string>
     <string name="share">分享</string>
     <string name="mLog_edit">編輯記錄檔</string>
@@ -122,7 +122,7 @@
     <string name="mClear_auto">自動套用</string>
     <string name="alwaysOff">一律停用</string>
     <string name="dismiss">關閉</string>
-    <string name="toast_invalid">無效</string>
+    <string name="invalid">無效</string>
     <string name="mChg_updated">本應用程式已更新。</string>
     <string name="mHosts_buildInit">正在初始化</string>
     <string name="mChg_current">目前版本：%s</string>
@@ -138,7 +138,6 @@
     <string name="mUnshort_name">縮址還原器</string>
     <string name="mHosts_malware">廣告/惡意軟體</string>
     <string name="mPttrn_ok">未與任何型樣相符</string>
-    <string name="json_desc">[測試版功能] 此為進階編輯器，輸入的內容必須符合 JSON 的格式規範。點選右上角的按鈕即可自動排版並驗證之。</string>
     <string name="mUnshort_error">伺服器錯誤：%s</string>
     <string name="mClear_noRules">未與任何規則相符</string>
     <string name="mPttrn_name">型樣檢查器</string>

@@ -27,6 +27,9 @@ public class PatternCatalog extends JsonCatalog {
                 .put(cntx.getString(R.string.mPttrn_ascii), new JSONObject()
                         .put("regex", "[^\\p{ASCII}]")
                 )
+                .put(cntx.getString(R.string.mPttrn_upperDomain), new JSONObject()
+                        .put("regex", "^.*?://[^/?#]*[A-Z]")
+                )
                 .put(cntx.getString(R.string.mPttrn_http), new JSONObject()
                         .put("regex", "^http://")
                         .put("replacement", "https://")
@@ -50,7 +53,7 @@ public class PatternCatalog extends JsonCatalog {
                         .put("automatic", "true")
                 )
 
-                // privacy redirections samples (see https://github.com/TrianguloY/UrlChecker/discussions/122)
+                // privacy redirections samples (see https://github.com/TrianguloY/URLCheck/discussions/122)
                 .put("Reddit ➔ Teddit", new JSONObject()
                         .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?reddit.com/(.*)")
                         .put("replacement", "https://teddit.net/$1")

@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 public class RejectionDetector {
 
-    private static final int TIMEFRAME = 5000;
+    private static final long TIMEFRAME = 5000;
     private final GenericPref.LstStr rejectLast; // [openedTimeMillis, component, url]
     private final Activity cntx;
 
@@ -27,7 +27,7 @@ public class RejectionDetector {
 
     /** Marks a url as opened from an intentApp (at this moment) */
     public void markAsOpen(String url, IntentApp intentApp) {
-        rejectLast.set(List.of(Long.toString(System.currentTimeMillis()), intentApp.getComponent().toShortString(), url));
+        rejectLast.set(List.of(Long.toString(System.currentTimeMillis()), intentApp.getComponent().flattenToString(), url));
     }
 
     /**
@@ -41,14 +41,17 @@ public class RejectionDetector {
 
         try {
             var data = rejectLast.get();
+            if (data.isEmpty()) return null;
 
-            return !data.isEmpty()
-                    // checks
-                    && System.currentTimeMillis() - Long.parseLong(data.get(0)) < TIMEFRAME
+            var componentName = ComponentName.unflattenFromString(data.get(1));
+            if (componentName == null) return null;
+
+            // checks
+            return System.currentTimeMillis() - Long.parseLong(data.get(0)) < TIMEFRAME
                     && Objects.equals(data.get(2), url)
-                    && Objects.equals(AndroidUtils.getReferrer(cntx), data.get(1))
+                    && Objects.equals(AndroidUtils.getReferrer(cntx), componentName.getPackageName())
 
-                    ? ComponentName.unflattenFromString(data.get(1))
+                    ? componentName
                     : null;
         } catch (Exception ignore) {
             // just ignore errors while retrieving the data

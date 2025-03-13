@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="0dp"
-        android:src="@android:drawable/ic_media_rew"
+        android:src="@drawable/first"
         android:tint="?attr/colorAccent" />
 
     <ImageButton
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="0dp"
-        android:src="@android:drawable/ic_media_previous"
+        android:src="@drawable/back"
         android:tint="?attr/colorAccent" />
 
     <ImageButton
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="0dp"
-        android:src="@android:drawable/ic_menu_recent_history"
+        android:src="@drawable/history"
         android:tint="?attr/colorAccent" />
 
     <ImageButton
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="0dp"
-        android:src="@android:drawable/ic_media_next"
+        android:src="@drawable/next"
         android:tint="?attr/colorAccent" />
 
     <ImageButton
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="0dp"
-        android:src="@android:drawable/ic_media_ff"
+        android:src="@drawable/last"
         android:tint="?attr/colorAccent" />
 
 </LinearLayout>

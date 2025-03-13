@@ -2,7 +2,7 @@
 Đặc biệt hữu ích khi bạn cần mở một liên kết bên ngoài từ email, ứng dụng mạng xã hội hoặc các liên kết khác.
 
 
-URLCheck được phát triển bởi TrianguloY, ban đầu dành cho mục đích sử dụng cá nhân. Nó là mã nguồn mở (theo giấy phép CC BY 4.0), miễn phí, không có bất kỳ quảng cáo hoặc trình theo dõi nào, kích thước nhẹ và sử dụng ít quyền nếu cần thiết (chỉ có quyền truy cập internet, để kiểm tra mô-đun sẽ chỉ được thực hiện khi người dùng yêu cầu). Mã nguồn cũng có sẵn trên GitHub, nếu bạn muốn đề xuất thay đổi, thực hiện sửa đổi hoặc đề xuất bản dịch mới: https://github.com/TrianguloY/UrlChecker
+URLCheck được phát triển bởi TrianguloY, ban đầu dành cho mục đích sử dụng cá nhân. Nó là mã nguồn mở (theo giấy phép CC BY 4.0), miễn phí, không có bất kỳ quảng cáo hoặc trình theo dõi nào, kích thước nhẹ và sử dụng ít quyền nếu cần thiết (chỉ có quyền truy cập internet, để kiểm tra mô-đun sẽ chỉ được thực hiện khi người dùng yêu cầu). Mã nguồn cũng có sẵn trên GitHub, nếu bạn muốn đề xuất thay đổi, thực hiện sửa đổi hoặc đề xuất bản dịch mới: https://github.com/TrianguloY/URLCheck
 
 
 Ứng dụng được cấu trúc theo thiết lập mô-đun, bạn có thể bật/tắt và sắp xếp lại các mô-đun riêng lẻ, bao gồm:

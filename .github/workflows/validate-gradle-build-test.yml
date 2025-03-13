@@ -51,9 +51,10 @@ jobs:
         if: ${{ github.event_name == 'pull_request_target' }}
         uses: actions/upload-artifact@v4
         with:
-          path: ./app/build/outputs/apk/${{ env.VARIANT }}/app-${{ env.VARIANT }}.apk
+          path: ./app/build/outputs/apk/${{ env.VARIANT }}/*.apk
           name: ${{ env.NAME }}
           retention-days: ${{ env.RETENTION_DAYS }}
+          if-no-files-found: error
 
     outputs:
       artifact-url: ${{ steps.artifact-upload-step.outputs.artifact-url }}

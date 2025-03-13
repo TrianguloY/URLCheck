@@ -3,12 +3,15 @@ package com.trianguloy.urlchecker.utilities.generics;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.Editable;
+import android.util.Pair;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.trianguloy.urlchecker.utilities.Enums;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
@@ -93,6 +96,35 @@ public abstract class GenericPref<T> {
     @Override
     public String toString() {
         return prefName + " = " + get();
+    }
+
+    /**
+     * Attaches this value to a spinner+label.
+     * pref2seekBar must map a pref->(seekBar,label) and seekBar2pref from spinner->pref.
+     */
+    public void attachToSeekBar(SeekBar seekBar, TextView label, JavaUtils.Function<T, Pair<Integer, String>> pref2seekBar, JavaUtils.Function<Integer, T> seekBar2pref) {
+        var valueLabel = pref2seekBar.apply(get());
+        seekBar.setProgress(valueLabel.first);
+        label.setText(valueLabel.second);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                set(seekBar2pref.apply(progress));
+
+                var valueLabel = pref2seekBar.apply(get());
+                seekBar.setProgress(valueLabel.first);
+                label.setText(valueLabel.second);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     // ------------------- Implementations -------------------

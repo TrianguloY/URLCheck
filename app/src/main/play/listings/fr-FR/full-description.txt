@@ -1,7 +1,7 @@
 Cette application agit comme une étape intermédiaire avant l'ouverture de liens URL. Lorsque vous cliquez sur un lien et choisissez cette application pour l'ouvrir, une boîte de dialogue contenant des informations sur le lien s'affiche. Particulièrement utile lorsque vous devez ouvrir un lien externe à partir d'un e-mail, d'une application de réseau social ou similaire.
 
 
-L'application a été développée pour un usage personnel, mais peut être partagée. Elle est gratuit et sans aucune publicité, aussi légère que possible et utilisant le minimum d'autorisation d'accès (uniquement l'autorisation d'accès à Internet, pour les modules de vérifications et uniquement effectuées lorsque l'utilisateur l'exige). Le code source est également disponible sur GitHub, dans le cas où vous voudriez suggérer ou même apporter des modifications à l'application : https://github.com/TrianguloY/UrlChecker
+L'application a été développée pour un usage personnel, mais peut être partagée. Elle est gratuit et sans aucune publicité, aussi légère que possible et utilisant le minimum d'autorisation d'accès (uniquement l'autorisation d'accès à Internet, pour les modules de vérifications et uniquement effectuées lorsque l'utilisateur l'exige). Le code source est également disponible sur GitHub, dans le cas où vous voudriez suggérer ou même apporter des modifications à l'application : https://github.com/TrianguloY/URLCheck
 
 
 L'application est constituée d'une structure modulaire, vous pouvez activer, désactiver et réorganiser les modules, qui incluent :

@@ -1,1 +1,1 @@
-Menganalisa (atau membagikan) URL sebelum membukanya.
+Menganalisis (atau membagikan) URL sebelum dibuka.

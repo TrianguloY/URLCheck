@@ -2,7 +2,7 @@ Esta aplicação atua como intermediário ao abrir links de url. Ao fazer isso, 
 Especialmente útil quando precisa abrir um link externo de um e-mail, um aplicativo de rede social ou outros.
 
 
-O URLCheck é desenvolvido por TrianguloY, originalmente para uso pessoal. É de código aberto (sob licença CC BY 4.0), gratuito, sem anúncios ou rastreadores, de tamanho leve e com o mínimo de permissões necessárias (somente a permissão de internet, para verificações de módulo que só serão realizadas quando o usuário solicitar). O código fonte também está disponível no GitHub, caso queira sugerir alterações, realizar modificações ou propor uma nova tradução: https://github.com/TrianguloY/UrlChecker
+O URLCheck é desenvolvido por TrianguloY, originalmente para uso pessoal. É de código aberto (sob licença CC BY 4.0), gratuito, sem anúncios ou rastreadores, de tamanho leve e com o mínimo de permissões necessárias (somente a permissão de internet, para verificações de módulo que só serão realizadas quando o usuário solicitar). O código fonte também está disponível no GitHub, caso queira sugerir alterações, realizar modificações ou propor uma nova tradução: https://github.com/TrianguloY/URLCheck
 
 
 A aplicaçãp é estruturado com uma configuração modular, pode ativar/desativar e reordenar módulos individuais, que incluem:

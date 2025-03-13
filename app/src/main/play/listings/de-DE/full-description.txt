@@ -1,8 +1,8 @@
-Diese Anwendung fungiert als Zwischenschritt beim Öffnen von URL-Links. Wenn Sie dies tun, wird ein Fenster mit Informationen über die URL angezeigt, sodass Sie auch Änderungen daran vornehmen können.
+Diese Anwendung fungiert als Zwischenschritt beim Öffnen von URL-Links. Wenn Sie diese App zum Öffnen auswählen, wird ein Fenster mit Informationen über die URL angezeigt, sodass Sie auch Änderungen daran vornehmen können.
 Besonders nützlich, wenn Sie einen externen Link öffnen müssen, sei es aus einer E-Mail, einer App eines sozialen Netzwerks oder anderes.
 
 
-URLCheck wird von TrianguloY entwickelt, ursprünglich für den persönlichen Gebrauch. Es ist quelloffen (unter CC BY 4.0-Lizenz), kostenlos, ohne Werbung und Tracker, klein und mit so wenig Berechtigungen wie nötig (nur Internet-Berechtigung, um auf Anfrage des Benutzers bestimmte Tests durchzuführen). Der Quellcode ist auch auf GitHub verfügbar, wenn Sie Änderungen und Modifikationen vorschlagen oder durchführen möchten oder eine neue Übersetzung hinzufügen möchten: https://github.com/TrianguloY/UrlChecker
+URLCheck wird von TrianguloY entwickelt, ursprünglich für den persönlichen Gebrauch. Es ist quelloffen (unter CC BY 4.0-Lizenz), kostenlos, ohne Werbung und Tracker, klein und mit so wenig Berechtigungen wie nötig (nur Internet-Berechtigung, um auf Anfrage des Benutzers bestimmte Tests durchzuführen). Der Quellcode ist auch auf GitHub verfügbar, wenn Sie Änderungen und Modifikationen vorschlagen oder durchführen möchten oder eine neue Übersetzung hinzufügen möchten: https://github.com/TrianguloY/URLCheck
 
 
 Die App ist modular aufgebaut, Sie können einzelne Module aktivieren/deaktivieren und neu anordnen, dazu gehören:

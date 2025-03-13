@@ -2,7 +2,7 @@ Deze applicatie fungeert als tussenpersoon bij het openen van URL-links. Wanneer
 Dit is vooral handig wanneer u een externe link moet openen vanuit een e-mail, een app voor sociale netwerken of andere.
 
 
-URLCheck is ontwikkeld door TrianguloY, oorspronkelijk voor persoonlijk gebruik. Het is open source (onder CC BY 4.0-licentie), gratis, zonder advertenties of trackers, licht van formaat en gebruikt zo weinig machtigingen als nodig is (alleen internettoestemming, voor modulecontroles die alleen worden uitgevoerd wanneer de gebruiker daarom vraagt). De broncode is ook beschikbaar op GitHub, als u wijzigingen wilt voorstellen, aanpassingen wilt uitvoeren of een nieuwe vertaling wilt voorstellen: https://github.com/TrianguloY/UrlChecker
+URLCheck is ontwikkeld door TrianguloY, oorspronkelijk voor persoonlijk gebruik. Het is open source (onder CC BY 4.0-licentie), gratis, zonder advertenties of trackers, licht van formaat en gebruikt zo weinig machtigingen als nodig is (alleen internettoestemming, voor modulecontroles die alleen worden uitgevoerd wanneer de gebruiker daarom vraagt). De broncode is ook beschikbaar op GitHub, als u wijzigingen wilt voorstellen, aanpassingen wilt uitvoeren of een nieuwe vertaling wilt voorstellen: https://github.com/TrianguloY/URLCheck
 
 
 De app is modulair opgebouwd, u kunt individuele modules in-/uitschakelen en opnieuw ordenen, waaronder:

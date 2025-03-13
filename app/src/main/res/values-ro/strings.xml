@@ -88,7 +88,7 @@
     <string name="toast_noApp">Nu se poate deschide aplicația</string>
     <string name="toast_noBrowser">Nu se poate deschide browser-ul web</string>
     <string name="title_choose">Alegeți aplicația</string>
-    <string name="toast_invalid">Invalid</string>
+    <string name="invalid">Invalid</string>
     <string name="save">Salvează</string>
     <string name="reset">Resetare</string>
     <string name="close">Închide</string>
@@ -99,8 +99,7 @@
     <string name="deviceDefault">Dispozitiv implicit</string>
     <string name="next">Următor</string>
     <string name="back">Înapoi</string>
-    <string name="json_desc">[Funcția beta] Acesta este un editor avansat, conținutul trebuie formatat în JSON valid. Puteți apăsa butonul din dreapta sus pentru a-l formata și valida.</string>
-    <string name="json_edit">Editor avansat</string>
+    <string name="json_editor">Editor avansat</string>
     <string name="mPttrn_desc">Acest modul verifică adresa URL cu modele regex care avertizează, sugerează sau aplică înlocuiri. Puteți modifica sau crea propriile modele sau chiar să le utilizați pe cele create de utilizator. 
 \nModelele încorporate includ: 
 \n- Avertizare când conține caractere non-ascii, cum ar fi literele grecești. Acesta poate fi folosit pentru phishing: googĺe.com vs google.com 

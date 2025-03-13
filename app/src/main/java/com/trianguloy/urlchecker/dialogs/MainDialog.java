@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.dialogs;
 
+import static com.trianguloy.urlchecker.activities.SettingsActivity.WIDTH_PREF;
+
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -225,6 +227,9 @@ public class MainDialog extends Activity {
         ll_drawer = findViewById(R.id.drawer);
         ll_drawer.setVisibility(View.GONE);
 
+        // set width
+        AndroidUtils.setActivityWidth(WIDTH_PREF(this).get(), this);
+
         // load helpers
         automationRules = new AutomationRules(this);
 
@@ -233,7 +238,7 @@ public class MainDialog extends Activity {
         switch (links.size()) {
             case 0:
                 // no links, invalid
-                Toast.makeText(this, R.string.toast_invalid, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case 1:

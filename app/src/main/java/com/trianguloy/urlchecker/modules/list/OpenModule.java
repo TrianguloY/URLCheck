@@ -94,7 +94,8 @@ class OpenDialog extends AModuleDialog {
             new AutomationRules.Automation<>("ctabs", R.string.auto_ctabs, dialog ->
                     dialog.cTabs.setState(true)),
             new AutomationRules.Automation<>("incognito", R.string.auto_incognito, dialog ->
-                    dialog.incognito.setState(true))
+                    dialog.incognito.setState(true)),
+            new AutomationRules.Automation<>("close", R.string.auto_close, dialog -> dialog.getActivity().finish())
     );
 
     private final GenericPref.Bool closeOpenPref;

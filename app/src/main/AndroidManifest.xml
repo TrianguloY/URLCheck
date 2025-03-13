@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -27,13 +27,15 @@
         <activity android:name=".activities.ModulesActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.TutorialActivity" />
+        <activity android:name=".activities.JsonEditorActivity" />
         <activity
             android:name=".dialogs.MainDialog"
-            android:excludeFromRecents="true"
             android:clearTaskOnLaunch="true"
-            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
             android:exported="true"
+            android:launchMode="singleInstance"
             android:noHistory="true"
+            android:taskAffinity="com.trianguloy.urlchecker.dialog"
             android:theme="@android:style/Theme.DeviceDefault.Dialog">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -100,12 +102,13 @@
         </activity>
         <activity
             android:name=".activities.ShortcutsActivity"
-            android:label="@string/shortcut_checkClipboard"
-            android:icon="@mipmap/clipboard_launcher"
-            android:exported="true"
             android:documentLaunchMode="always"
             android:excludeFromRecents="true"
+            android:exported="true"
+            android:icon="@mipmap/clipboard_launcher"
+            android:label="@string/shortcut_checkClipboard"
             android:launchMode="singleTask"
+            android:taskAffinity="com.trianguloy.urlchecker.shortcuts"
             android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
@@ -118,8 +121,8 @@
 
         <activity
             android:name=".activities.BackupActivity"
-            android:parentActivityName=".activities.SettingsActivity"
-            android:exported="true">
+            android:exported="true"
+            android:parentActivityName=".activities.SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -144,10 +147,10 @@
 
         <service
             android:name=".activities.ShortcutsActivity$ShortcutsTile"
+            android:exported="true"
             android:icon="@drawable/ic_clipboard"
             android:label="@string/shortcut_checkClipboard"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="true">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>

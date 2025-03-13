@@ -54,10 +54,14 @@ public class AutomationRules extends JsonCatalog {
     @Override
     public JSONObject buildBuiltIn(Context cntx) throws JSONException {
         return new JSONObject()
-
-                .put("Unshort bit.ly", new JSONObject()
+                .put(cntx.getString(R.string.auto_rule_bitly), new JSONObject()
                         .put("regex", "https?://bit\\.ly/.*")
                         .put("action", "unshort")
+                        .put("enabled", false)
+                )
+                .put(cntx.getString(R.string.auto_rule_webhook), new JSONObject()
+                        .put("regex", ".*")
+                        .put("action", "webhook")
                         .put("enabled", false)
                 )
                 ;
@@ -73,11 +77,17 @@ public class AutomationRules extends JsonCatalog {
                 var automation = catalog.getJSONObject(key);
                 if (!automation.optBoolean("enabled", true)) continue;
 
-                if (urlData.url.matches(automation.getString("regex"))) {
-                    matches.add(automation.getString("action"));
+                for (String pattern : JavaUtils.getArrayOrElement(automation.get("regex"), String.class)){
+                    if (urlData.url.matches(pattern)) {
+                        matches.add(automation.getString("action"));
+                        break;
+                    }
                 }
+
             } catch (JSONException e) {
                 AndroidUtils.assertError("Invalid automation rule", e);
+            } catch (ClassCastException e) {
+                AndroidUtils.assertError("Invalid automation regex", e);
             }
         }
         return matches;

@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.modules.list;
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
 
 import android.content.Context;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -118,6 +119,7 @@ class StatusDialog extends AModuleDialog {
         info = views.findViewById(R.id.info);
 
         redirect = views.findViewById(R.id.redirect);
+        redirect.setMovementMethod(LinkMovementMethod.getInstance());
 
         autoRedir = StatusModule.AUTOREDIR_PREF(getActivity());
     }

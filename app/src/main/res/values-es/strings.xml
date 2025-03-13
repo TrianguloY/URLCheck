@@ -51,6 +51,9 @@ Traducciones: %2$s."</string>
     <string name="txt_theme">Tema:</string>
     <string name="spin_darkTheme">Oscuro</string>
     <string name="spin_lightTheme">Claro</string>
+    <string name="txt_width">Ancho del cuadro de diálogo:\n¡Cuidado! Valores pequeños podrían ocultar elementos de la pantalla.</string>
+    <string name="spin_fullWidth">Completo</string>
+    <string name="spin_dynamicWidth">Dinámico</string>
     <string name="txt_locale">Idioma:</string>
     <string name="txt_animation">Activar animaciones</string>
     <!--
@@ -82,7 +85,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="toast_noApp">No se puede abrir la aplicación</string>
     <string name="toast_noBrowser">No se puede abrir el navegador</string>
     <string name="title_choose">Elige aplicación</string>
-    <string name="toast_invalid">Invalido</string>
+    <string name="invalid">Invalido</string>
     <string name="save">Guardar</string>
     <string name="reset">Reiniciar</string>
     <string name="close">Cerrar</string>
@@ -99,8 +102,15 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!--
         json
     -->
-    <string name="json_desc">Editor Json: el contenido debe ser Json válido. Puedes pulsar el botón de arriba a la derecha para formatearlo y validarlo.</string>
-    <string name="json_edit">Editor Json</string>
+    <string name="json_editor">Editor Json</string>
+    <string name="json_info">Mostrar información</string>
+    <string name="json_ignore">El contenido no es Json válido. Quieres descartarlo y cerrar el editor?</string>
+    <string name="json_discard_close">Descartar y cerrar</string>
+    <string name="json_save">Hay cambios sin guardar, quieres guardarlos o descartarlos?</string>
+    <string name="json_save_error">No se ha podido guardar: %s</string>
+    <string name="json_format_error">El contenido no es Json válido, no se puede validar.</string>
+    <string name="json_discard">Cuidado, esto reemplazará el contenido del editor con el json guardado. Todos los cambios realizados se perderán. Quieres continuar?</string>
+    <string name="json_reset">Cuidado, esto reemplazará el contenido del editor con el json por defecto. Todos los cambios realizados se perderán, aunque el contenido guardado no se modificará a no ser que se guarde manualmente. Quieres continuar?</string>
     <!--
         shortcuts
     -->
@@ -113,10 +123,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
     <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
-    <string name="auto_editor">"Configuración de automatizaciones. Formato: lista de objectos cuya clave es cualquier nombre único para la automatización y su conntenido incluye los siguientes valores:
-- 'regex': string, requerida: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización.
-- 'action': string, requerida: la clave de la automatización a ejecutar. Debajo se muestra la lista completa de claves disponibles.
-- 'enabled': booleano, opcional: si es falso, la automatización se omitirá. Verdadero (true) por defecto."</string>
+    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista, obligatorio: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular.\n- \'acción\': cadena, obligatoria: la clave de la automatización que se va a ejecutar. A continuación, se muestra una lista de todas las claves disponibles.\n- \'enabled\': booleano, opcional: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
     <string name="auto_available_prefix">Claves de automatizaciones disponibles:</string>
     <string name="auto_available_disabled">"Este módulo está deshabilitado, las automatizaciones no se ejecutarán"</string>
     <!-- -->
@@ -125,9 +132,9 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
     <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_ctabs">"Activará el modo de custom tabs. Equivalente a pulsar el boton de 'custom tabs' cuando está desactivado (incluso si está oculto)."</string>
-    <string name="auto_checkStatus">"Ejecutará la comprobación del estado. Equivalente a pulsar el botón de 'comprobar'"</string>
-    <string name="auto_unshort">"Ejecutará el proceso de desacortar enlace. Equivalente a pulsar el botón de 'desacortar'."</string>
-    <string name="auto_scan">"Escaneará el enlace. Equivalente a pulsar el botón de escanear."</string>
+    <string name="auto_checkStatus">Ejecutará la comprobación del estado. Equivalente a pulsar el botón de \'comprobar\'.</string>
+    <string name="auto_unshort">Ejecutará el proceso de desacortar enlace. Equivalente a pulsar el botón de \'desacortar\'.</string>
+    <string name="auto_scan">Escaneará el enlace. Equivalente a pulsar el botón \'escanear\'.</string>
     <string name="auto_drawer">"Abrirá el cajón. Equivalente a pulsar el boton del cajón cuando está cerrado."</string>
     <!--
         modules
@@ -141,7 +148,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mPttrn_userContent">Listado de otros patrones útiles creados por usuarios: %s</string>
     <string name="mPttrn_fix">Aplicar</string>
     <string name="mPttrn_fixed">Aplicado - %s</string>
-    <string name="mPttrn_ascii">¡Peligro! Se encontraron caracteres que no son ASCII.</string>
+    <string name="mPttrn_ascii">¡Cuidado! Se encontraron caracteres que no son ASCII.</string>
+    <string name="mPttrn_upperDomain">¡Cuidado! El dominio contiene mayusculas.</string>
     <string name="mPttrn_http">Enlace HTTP. Considera usar HTTPS.</string>
     <string name="mPttrn_noSchemeHttp">Falta esquema HTTP.</string>
     <string name="mPttrn_noSchemeHttps">Falta esquema HTTPS.</string>
@@ -233,7 +241,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
 \n
 \nPuede mantener pulsado para seleccionar el texto.</string>
     <string name="mD_ctabs">Mostrar mensajes de debug del servicio custom tabs</string>
-    <string name="mD_show">Cargar datos de debug</string>
+    <string name="mD_show">Cargar datos de depuración</string>
     <!-- -->
     <string name="mHist_name">Historial</string>
     <string name="mHist_desc">Cuando la URL cambia, tanto manualmente como por otros módulos, éste te permite ver y revertir los cambios.</string>
@@ -257,7 +265,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mClear_toggleVerbose">Mostrar información detallada del proceso de limpieza</string>
     <string name="mClear_error">No se pudo comprobar la regla</string>
     <string name="mClear_updater">Actualizador</string>
-    <string name="mClear_sourceDesc">Url del fichero JSON con el catálogo de reglas:</string>
+    <string name="mClear_sourceDesc">Url del fichero Json con el catálogo de reglas:</string>
     <string name="mClear_urlHint">URL del catálogo</string>
     <string name="mClear_hashDesc">Url del hash del fichero del catálogo. Si se omite, la descarga no será comprobada por si ha sido alterada/modificada (no se recomienda)</string>
     <string name="mClear_hashHint">No comprobar hash</string>
@@ -275,11 +283,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
 \nTen en cuenta que las modificaciones del objeto principal \'providers\' serán sobreescritas al actualizar el catálogo automática o manualmente desde la ventana del actualizador. Para añadir reglas personales inclúyelas en un objeto padre distinto (cualquier nombre).</string>
     <!-- -->
     <string name="mRemove_name">Eliminador de parámetros</string>
-    <string name="mRemove_desc">[OBSOLETO] Con este módulo puede eliminar consultas de la URL.
-\nPresione el botón para eliminarlos todos o presione la flecha para eliminar uno a la vez.
-\n¡Gracias a PabloOQ por la idea y la implementación original!
-\n
-\nEste módulo ha quedado obsoleto en favor del módulo \'Partes de la URI\'</string>
+    <string name="mRemove_desc">[OBSOLETO] Con este módulo puedes eliminar consultas de la URL.\nPresione el botón para eliminarlos todos o presione la flecha para eliminarlos uno a la vez.\n¡Gracias a PabloOQ por la idea y la implementación original!\n\nEste módulo ha quedado obsoleto en favor del módulo \'Partes Uri\'</string>
     <string name="mRemove_found1">1 parámetro encontrado</string>
     <string name="mRemove_found">%d parámetros encontrados</string>
     <string name="mRemove_noQueries">Sin parámetros</string>
@@ -324,14 +328,13 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mUnshort_name">Desacortador</string>
     <string name="mUnshort_unshort">Desacortar</string>
-    <string name="mUnshort_desc">Este módulo desacortará los enlaces enviándolos a https://unshorten.me/, que los evalúa en sus servidores y guarda la url desacortada para futuras solicitudes. Evite desacortar los enlaces con datos privados o confidenciales.
-\nEsta API tiene una tasa limitada a 10 peticiones por hora para nuevas solicitudes. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
-    <string name="mUnshort_tm">unshorten.me API gratuita de Unshorten.me</string>
+    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a https://unshorten.me/, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
+    <string name="mUnshort_tm">API gratuita de Unshorten.me</string>
     <string name="mUnshort_checking">Comprobando…</string>
     <string name="mUnshort_error">Error de servidor: %s</string>
     <string name="mUnshort_internal">Error interno (%s)</string>
-    <string name="mUnshort_to">Se desacorta a %s</string>
-    <string name="mUnshort_notFound">No se ha encontrado desacortación</string>
+    <string name="mUnshort_to">Enlace sin acortar: %s</string>
+    <string name="mUnshort_notFound">No es un enlace acortado</string>
     <string name="mUnshort_pending">quedan: %1$d/%2$d</string>
     <string name="mUnshort_ok">Desacortado</string>
     <!-- -->
@@ -397,4 +400,21 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="bck_deleteConfirm">Borrar elementos</string>
     <string name="bck_deleteOk">Elementos borrados</string>
     <string name="bck_deleteError">No se han podido borrar los elementos</string>
+    <string name="auto_rule_bitly">Bit.ly no abreviado</string>
+    <string name="auto_rule_webhook">Enviar todo al webhook</string>
+    <string name="auto_clear">Limpiará la URL. Equivale a presionar el botón \"Borrar\". Tenga en cuenta que el módulo en sí contiene una configuración automática que también borrará todas las URL de manera más eficiente y debería ser la preferida.</string>
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mWebhook_auto_send">Enviar a webhook</string>
+    <string name="auto_close">Cerrará la aplicación sin hacer nada más.</string>
+    <string name="mWebhook_url_hint">Url del webhook</string>
+    <string name="mWebhook_body_hint">Cuerpo webhook</string>
+    <string name="mWebhook_send">Enviar a webhook</string>
+    <string name="mWebhook_auto">Enviar URL automáticamente</string>
+    <string name="mWebhook_missing_config">Falta la URL o el cuerpo del webhook</string>
+    <string name="mWebhook_success">Envío a webhook correctamente</string>
+    <string name="mWebhook_error">Error al enviar a webhook</string>
+    <string name="mWebhook_templates">Plantillas</string>
+    <string name="mWebhook_test">Probar webhook</string>
+    <string name="mWebhook_desc">Este módulo envía URLs a un punto final webhook configurado. Cada URL es enviada con una marca de tiempo, permitiéndole recolectar y procesar URLs en su propio servidor.\n¡Gracias a anoop-b por la idea y la implementación base!\n\nConfigura la URL y el cuerpo de tu webhook para empezar a enviar URLs.\nPara el cuerpo, puedes usar los marcadores de posición $URL$ y $TIMESTAMP$.</string>
+    <string name="mWebhook_sending">Enviando a webhook…</string>
 </resources>

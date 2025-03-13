@@ -24,11 +24,12 @@ public class AboutActivity extends Activity {
     // ------------------- links -------------------
 
     private static final List<Pair<Integer, String>> LINKS = List.of(
-            Pair.create(R.string.link_changelog, "https://github.com/TrianguloY/UrlChecker/blob/master/app/src/main/play/release-notes/en-US/default.txt"), // TODO: link to the correct translation
-            Pair.create(R.string.link_source, "https://github.com/TrianguloY/UrlChecker"),
-            Pair.create(R.string.link_privacy, "https://github.com/TrianguloY/UrlChecker/blob/master/docs/PRIVACY%20POLICY.md"),
-            Pair.create(R.string.lnk_fDroid, "https://f-droid.org/packages/{package}"),
-            Pair.create(R.string.lnk_playStore, "https://play.google.com/store/apps/details?id={package}"),
+            Pair.create(R.string.link_changelog, "https://github.com/TrianguloY/URLCheck/blob/master/app/src/main/play/release-notes/en-US/default.txt"), // TODO: link to the correct translation
+            Pair.create(R.string.link_source, "https://github.com/TrianguloY/URLCheck"),
+            Pair.create(R.string.link_privacy, "https://github.com/TrianguloY/URLCheck/blob/master/docs/PRIVACY%20POLICY.md"),
+            Pair.create(R.string.lnk_fDroid, "https://f-droid.org/packages/com.trianguloy.urlchecker"),
+            Pair.create(R.string.lnk_playStore, "https://play.google.com/store/apps/details?id=com.trianguloy.urlchecker"),
+            Pair.create(R.string.lnk_izzy, "https://apt.izzysoft.de/fdroid/index/apk/com.trianguloy.urlchecker"),
             Pair.create(R.string.link_blog, "https://triangularapps.blogspot.com/")
     );
 
@@ -65,7 +66,7 @@ public class AboutActivity extends Activity {
             var v_link = Inflater.<TextView>inflate(R.layout.about_link, v_links);
             v_link.setText(link.first);
             AndroidUtils.setAsClickable(v_link);
-            v_link.setTag(link.second.replace("{package}", getPackageName()));
+            v_link.setTag(link.second);
             // click to open, longclick to share
             v_link.setOnClickListener(v -> open(((String) v.getTag())));
             v_link.setOnLongClickListener(v -> {
@@ -88,16 +89,12 @@ public class AboutActivity extends Activity {
 
     // ------------------- actions -------------------
 
-    /**
-     * Open an url in the browser
-     */
+    /** Open a url in the browser */
     private void open(String url) {
         PackageUtils.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)), R.string.toast_noBrowser, this);
     }
 
-    /**
-     * Share an url as plain text
-     */
+    /** Share an url as plain text */
     private void share(String url) {
         Intent share = new Intent(android.content.Intent.ACTION_SEND);
         share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

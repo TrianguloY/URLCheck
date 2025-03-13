@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.modules.list;
 
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
 
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -87,6 +88,7 @@ class UnshortenDialog extends AModuleDialog {
         unshort.setOnClickListener(v -> unshort(false));
 
         info = views.findViewById(R.id.text);
+        info.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     @Override

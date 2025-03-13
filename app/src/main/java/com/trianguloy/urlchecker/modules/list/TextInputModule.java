@@ -90,7 +90,7 @@ class TextInputDialog extends AModuleDialog {
         // init dialog
         var dialog = new AlertDialog.Builder(getActivity())
                 .setView(editText)
-                .setPositiveButton(android.R.string.ok, (d, w) -> setUrl(editText.getText().toString()))
+                .setPositiveButton(android.R.string.ok, (d, w) -> setUrl(new UrlData(editText.getText().toString()).disableUpdates()))
                 .setNegativeButton(android.R.string.cancel, null)
                 .setCancelable(true)
                 .create();

@@ -51,6 +51,9 @@ Translations: %2$s."</string>
     <string name="txt_theme">Theme:</string>
     <string name="spin_darkTheme">Dark</string>
     <string name="spin_lightTheme">Light</string>
+    <string name="txt_width">Dialog width:\nWarning! Small values may hide screen elements.</string>
+    <string name="spin_fullWidth">Full</string>
+    <string name="spin_dynamicWidth">Dynamic</string>
     <string name="txt_locale">Locale:</string>
     <string name="txt_animation">Enable animations</string>
     <string name="btn_tutorialSettings">Repeat tutorial</string>
@@ -120,7 +123,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="toast_noApp">Can not open the app</string>
     <string name="toast_noBrowser">Can not open the web browser</string>
     <string name="title_choose">Choose app</string>
-    <string name="toast_invalid">Invalid</string>
+    <string name="invalid">Invalid</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
     <string name="close">Close</string>
@@ -142,11 +145,20 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="small">Small</string>
     <string name="normal">Normal</string>
     <string name="big">Big</string>
+    <string name="format">Format</string>
+    <string name="discard">Discard</string>
     <!--
         json
     -->
-    <string name="json_desc">Json editor: the content must be formatted into valid JSON. You can press the top-right button to format and validate it.</string>
-    <string name="json_edit">Json editor</string>
+    <string name="json_editor">Json editor</string>
+    <string name="json_info">Show info</string>
+    <string name="json_ignore">The content is not valid Json. Do you want to discard it and close the editor?</string>
+    <string name="json_discard_close">Discard and close</string>
+    <string name="json_save">There are unsaved changes, do you want to save or discard them?</string>
+    <string name="json_save_error">Unable to save: %s</string>
+    <string name="json_format_error">The content is not valid Json, can\'t be parsed.</string>
+    <string name="json_discard">Warning, this will replace the editor content with the saved json. All changes made will be lost. Do you want to continue?</string>
+    <string name="json_reset">Warning, this will replace the editor content with the built-in json. All editor changes made will be lost, but saved content will not be modified unless manually saved. Do you want to continue?</string>
     <!--
         shortcuts
     -->
@@ -160,19 +172,23 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_error_toast">Show toast if automation fails</string>
     <string name="auto_notFound">"No automation with key '%s' is available. Make sure it is valid and the required module is active."</string>
     <string name="auto_editor">"Automations configuration. Format: list of objects where the key is a unique automation name and the content includes the following values:
-- 'regex': string, required: a valid java regex that the url must match for the automation to run.
+- 'regex': string|list, required: a valid java regex that the url must match for the automation to run. If list, at least one regex must match.
 - 'action': string, required: the key of the automation to run. Check below for a list of all the available keys.
 - 'enabled': boolean, optional: if false this automation will be skipped. True by default."</string>
     <string name="auto_available_prefix">Available automation actions (keys):</string>
     <string name="auto_available_disabled">"This module is disabled, automations won't run"</string>
+    <string name="auto_rule_bitly">Unshort bit.ly</string>
+    <string name="auto_rule_webhook">Send everything to webhook</string>
     <string name="auto_open">"Will open the url with the first available app. Equivalent of pressing the 'open' button."</string>
     <string name="auto_share">"Will share the url. Equivalent of pressing the 'share' button."</string>
     <string name="auto_copy">"Will copy the url. Equivalent of pressing the 'copy' button."</string>
     <string name="auto_ctabs">"Will enable ctabs. Equivalent of pressing the 'ctabs' button if disabled (even if hidden)."</string>
     <string name="auto_incognito">"Will enable incognito. Equivalent of pressing the 'incognito' button if disabled (even if hidden)."</string>
+    <string name="auto_close">"Will close the application, doing nothing else."</string>
     <string name="auto_checkStatus">"Will run the status check. Equivalent of pressing the 'Check' button."</string>
     <string name="auto_unshort">"Will run the unshort process. Equivalent of pressing the 'Unshort' button."</string>
     <string name="auto_scan">"Will scan the url. Equivalent of pressing the 'Scan' button."</string>
+    <string name="auto_clear">"Will clear the url. Equivalent of pressing the 'Clear' button. Note that the module itself contains an auto setting that will also clear all urls more efficiently, and should be preferred."</string>
     <string name="auto_drawer">"Will open the drawer. Equivalent of pressing the drawer button if collapsed."</string>
     <!--
         modules
@@ -188,6 +204,7 @@ Built-in patterns include:
     <string name="mPttrn_fix">Apply</string>
     <string name="mPttrn_fixed">Applied - %s</string>
     <string name="mPttrn_ascii">Warning! Non-ASCII characters found.</string>
+    <string name="mPttrn_upperDomain">Warning! Upper case letter in domain.</string>
     <string name="mPttrn_http">HTTP link. Consider using HTTPS.</string>
     <string name="mPttrn_noSchemeHttp">Missing HTTP scheme.</string>
     <string name="mPttrn_noSchemeHttps">Missing HTTPS scheme.</string>
@@ -307,7 +324,7 @@ You can hold to select text."</string>
     <string name="mClear_toggleVerbose">Enable verbose info for the matching process</string>
     <string name="mClear_error">Could not check rule</string>
     <string name="mClear_updater">Updater</string>
-    <string name="mClear_sourceDesc">URL of the JSON file catalog with the rules:</string>
+    <string name="mClear_sourceDesc">URL of the Json file catalog with the rules:</string>
     <string name="mClear_urlHint">Catalog URL</string>
     <string name="mClear_hashDesc">URL of the catalog hash file. If omitted, the download will not be checked to see if it was tampered/modified (not recommended)</string>
     <string name="mClear_hashHint">No hash check</string>
@@ -399,6 +416,20 @@ You can also click the 'X' button to remove some of them.
 This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mParts_empty">(empty)</string>
     <string name="mParts_copy">Part copied to clipboard</string>
+    <!-- -->
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mWebhook_desc">This module sends URLs to a configured webhook endpoint. Each URL is sent with a timestamp, allowing you to collect and process URLs on your own server.\nThanks to anoop-b for the idea and base implementation!\n\nConfigure your webhook URL and body below to start sending URLs.\nFor the body, you can use the placeholders $URL$ and $TIMESTAMP$.</string>
+    <string name="mWebhook_url_hint">Webhook URL</string>
+    <string name="mWebhook_body_hint">Webhook body</string>
+    <string name="mWebhook_send">Send to Webhook</string>
+    <string name="mWebhook_auto">Automatically send URLs</string>
+    <string name="mWebhook_auto_send">Send to webhook</string>
+    <string name="mWebhook_missing_config">Missing webhook url or body</string>
+    <string name="mWebhook_sending">Sending to webhook…</string>
+    <string name="mWebhook_success">Successfully sent to webhook</string>
+    <string name="mWebhook_error">Failed to send to webhook</string>
+    <string name="mWebhook_templates">Templates</string>
+    <string name="mWebhook_test">Test webhook</string>
     <!-- -->
     <string name="mDrawer_name">Drawer</string>
     <string name="mDrawer_desc">All modules below this will be hidden in a drawer. The modules will still work, but will be hidden until you open the drawer. Here you can place modules you rarely use, to avoid clutter.</string>

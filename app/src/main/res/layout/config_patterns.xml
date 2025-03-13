@@ -14,7 +14,7 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/json_edit" />
+        android:text="@string/json_editor" />
 
     <Switch
         android:id="@+id/regex_fix"

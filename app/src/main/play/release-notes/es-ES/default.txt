@@ -1,3 +1,21 @@
+V 3.2
+- Mejora: editor json mejorado (voto segundo lugar)
+- Nuevo: patrón por defecto mayúsculas-en-dominio (gracias Bakr-Ali!)
+- Arreglo: enlaces 'rechazados' ocultan la aplicación abierta
+
+V 3.1
+- Nuevo modulo: Webhook. Gracias a anoop-b!
+- Nuevas automatizaciones: limpiar y cerrar
+- Mejora: Permitir varios regex en las automatizaciones
+- Mejora: estilo del modulo historial
+- Arreglo: Desactivar cambios tras editar con el modulo Entrada de texto
+
+V 3.0
+- Nuevo: automatización (voto ganador)
+- Cambio: El modo edición del modulo de texto es ahora un popup
+- Arreglo: Evaluar URIs ya no decodifican doble
+- Arreglo: Actualizados los iconos de la pantalla principal
+
 V 2.17
 - Mejora: Visualización del módulo Texto de entrada
 - Mejora: El modulo de Hosts comprueba también subdominios

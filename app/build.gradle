@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application'
-    id 'com.github.triplet.play' version '3.8.3'
+    id 'com.github.triplet.play' version '3.10.1'
 }
 
 android {
@@ -10,11 +10,11 @@ android {
         compileSdk 34
         minSdkVersion 19
         targetSdkVersion 34
-        versionCode 35
-        versionName "2.17"
+        versionCode 39
+        versionName "3.2"
 
         buildConfigField("boolean", "IS_INCOGNITO", "false") // default incognito value
-        
+
         resValue "string", "app_name", "URLCheck"
     }
 
@@ -75,6 +75,14 @@ android {
     buildFeatures {
         buildConfig true
     }
+
+    // https://android.izzysoft.de/articles/named/iod-scan-apkchecks?lang=en#blobs
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
+    }
 }
 
 play {
@@ -88,7 +96,9 @@ dependencies {
 }
 
 // configure signing for release
-private String secret(String name) { project.hasProperty(name) ? project.property(name) : System.getenv(name) }
+private String secret(String name) {
+    project.hasProperty(name) ? project.property(name) : System.getenv(name)
+}
 
 if (secret('RELEASE_STORE_FILE')) {
     println("Secrets provided, release will be signed")
@@ -127,7 +137,8 @@ android {
                 .collect { '"' + it + '"' } // convert as 'string'
                 .join(',') // and concatenate with commas
         println "Found locales: $locales"
-        buildConfigField "java.util.List<String>", 'LOCALES', "java.util.List.of($locales)" // create field
+        buildConfigField "java.util.List<String>", 'LOCALES', "java.util.List.of($locales)"
+        // create field
 
         // generate string resource with all translators
         def translators = translations.stream() // for all translations

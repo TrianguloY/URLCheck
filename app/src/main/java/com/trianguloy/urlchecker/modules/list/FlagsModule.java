@@ -437,7 +437,7 @@ class FlagsConfig extends AModuleConfig {
             file.set(newSettings.toString());
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(getActivity(), R.string.toast_invalid, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.invalid, Toast.LENGTH_SHORT).show();
         }
     }
 

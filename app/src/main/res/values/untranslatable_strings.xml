@@ -1,12 +1,14 @@
 <resources>
     <string name="lnk_playStore" translatable="false">Play Store</string>
     <string name="lnk_fDroid" translatable="false">F-Droid</string>
+    <string name="lnk_izzy" translatable="false">IzzyOnDroid</string>
 
 
     <string name="dd" translatable="false">%s:</string>
 
     <string name="trianguloy" translatable="false">TrianguloY</string>
-    <string name="contributors" translatable="false">Ilithy, PabloOQ</string>
+    <string name="contributors" translatable="false">Ilithy, PabloOQ, anoop-b</string>
 
     <string name="sample_url" translatable="false"><![CDATA[http://www.google.com/?ref=referrer&foo=bar#tag]]></string>
+    <string name="json_sample" translatable="false">{…}</string>
 </resources>

@@ -1,22 +1,25 @@
 package com.trianguloy.urlchecker.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.trianguloy.urlchecker.R;
-//import com.trianguloy.urlchecker.fragments.BrowserButtonsFragment;
 import com.trianguloy.urlchecker.fragments.BrowserButtonsFragment;
 import com.trianguloy.urlchecker.fragments.ResultCodeInjector;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
+import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
 
 import java.util.Objects;
@@ -25,6 +28,12 @@ import java.util.Objects;
  * An activity with general app-related settings
  */
 public class SettingsActivity extends Activity {
+
+    /** The width pref */
+    public static GenericPref.Int WIDTH_PREF(Context cntx) {
+        return new GenericPref.Int("width", WindowManager.LayoutParams.WRAP_CONTENT, cntx);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +45,7 @@ public class SettingsActivity extends Activity {
         AndroidUtils.configureUp(this);
 
         configureBrowserButtons();
-        configureDayNight();
+        configureTheme();
         configureLocale();
         Animations.ANIMATIONS(this).attachToSwitch(findViewById(R.id.animations));
 
@@ -69,23 +78,36 @@ public class SettingsActivity extends Activity {
             super.onActivityResult(requestCode, resultCode, data);
     }
 
-    /* ------------------- day/night ------------------- */
+    /* ------------------- theme ------------------- */
 
-    /**
-     * init dayNight spinner
-     */
-    private void configureDayNight() {
+    /** init theme config */
+    private void configureTheme() {
+        // init dayNight spinner
         AndroidSettings.THEME_PREF(this).attachToSpinner(
                 this.findViewById(R.id.theme),
                 v -> AndroidSettings.reload(SettingsActivity.this)
         );
+
+        // init width seekBar
+        // 0      <-> wrap content
+        // [1,99] <-> [1,99]
+        // 100    <-> MATCH_PARENT
+        WIDTH_PREF(this).attachToSeekBar(findViewById(R.id.width_value), findViewById(R.id.width_label),
+                prefValue ->
+                        prefValue == WindowManager.LayoutParams.WRAP_CONTENT ? Pair.create(0, getString(R.string.spin_dynamicWidth))
+                                : prefValue == WindowManager.LayoutParams.MATCH_PARENT ? Pair.create(100, getString(R.string.spin_fullWidth))
+                                : Pair.create(prefValue, prefValue + "%"),
+                seekBarValue ->
+                        seekBarValue == 0 ? WindowManager.LayoutParams.WRAP_CONTENT
+                                : seekBarValue == 100 ? WindowManager.LayoutParams.MATCH_PARENT
+                                : seekBarValue
+        );
+
     }
 
     /* ------------------- locale ------------------- */
 
-    /**
-     * init locale spinner
-     */
+    /** init locale spinner */
     private void configureLocale() {
         // init
         var pref = LocaleUtils.LOCALE_PREF(this);
@@ -138,4 +160,5 @@ public class SettingsActivity extends Activity {
                 this
         );
     }
+
 }

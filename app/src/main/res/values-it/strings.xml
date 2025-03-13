@@ -48,7 +48,7 @@ Traduzioni: %2$s."</string>
     <string name="toast_noApp">Impossibile aprire l\'app</string>
     <string name="toast_noBrowser">Impossibile aprire il browser web</string>
     <string name="title_choose">Scegli app</string>
-    <string name="toast_invalid">Invalido</string>
+    <string name="invalid">Invalido</string>
     <string name="save">Salva</string>
     <string name="reset">Reset</string>
     <string name="close">Chiudi</string>
@@ -57,14 +57,10 @@ Traduzioni: %2$s."</string>
     <string name="share">Condividi</string>
     <string name="canceled">Cancellato</string>
     <string name="deviceDefault">Impostazioni predefinite</string>
-    <string name="json_desc">[Funzionalità beta] Questo è un editor avanzato, il contenuto dev\'essere formattato in JSON. Puoi premere il pulsante in alto a destra per formattare e controllare.</string>
-    <string name="json_edit">Editor avanzato</string>
+    <string name="json_editor">Editor Json</string>
     <!-- modules -->
     <string name="mPttrn_name">Controllo dei pattern</string>
-    <string name="mPttrn_desc">"Controlla cose comuni nell'url. Patterns inclusi:
-* Caratteri non-ascii come lettere greche. Quest'ultimi possono essere usati per phishing: googĺe.com vs google.com
-* Links http
-* Schema http(s) mancante"</string>
+    <string name="mPttrn_desc">Questo modulo controlla l\'url con modelli regex che avvertono, suggeriscono o applicano sostituzioni. Puoi modificare o creare i tuoi modelli, o anche utilizzare quelli creati dagli utenti.\nModelli incorporati includono:\n- Avvisa quando contiene caratteri non ascii come le lettere greche. Questo puo` essere utilizzato per il phishing: googĺe.com vs google.com\n- Suggerisce di sostituire \"http\" con \"https\"\n- Suggerisce di sostituire Youtube, Reddit o Twitter con alternative privacy-friendly [disabilitato di default]</string>
     <string name="mPttrn_userContent">Lista di altri patterns creati dalla community: %s</string>
     <string name="mPttrn_fix">Applica</string>
     <string name="mPttrn_fixed">Applicato - %s</string>
@@ -99,12 +95,11 @@ Traduzioni: %2$s."</string>
     <string name="mOpen_share">Condividi</string>
     <string name="mOpen_clipboard">URL copiato negli appunti</string>
     <string name="mOpen_noapps">Nessuna app</string>
-    <string name="mOpen_tabsDesc">Attiva/disattiva</string>
+    <string name="mOpen_tabsDesc">Attiva/disattiva la funzione schede personalizzate</string>
     <string name="mStatus_name">Status code</string>
-    <string name="mStatus_desc">"Premendo il pulsante di check, una richiesta verrà inviata per recuperare lo status code del sito. Se il risultato è una re-indirizzazione, ti verrà mostrato l'url di destinazione.
-Il contenuto viene recuperato (GET) ma non controllato, quindi re-indirizzamenti basati su javascript non verranno rilevati."</string>
-    <string name="mStatus_ioerror">"Errore di rete durante il controllo dell'url: %s"</string>
-    <string name="mStatus_error">"Errore interno durante il controllo dell'url: %s"</string>
+    <string name="mStatus_desc">Premendo il pulsante di verifica, una richiesta verrà inviata per recuperare lo status code del sito. Se il risultato è una re-indirizzazione, potrai visualizzare l\'url di destinazione. Il contenuto dell\'url viene recuperato (GET), ma non controllato, quindi re-indirizzamenti basati su javascript non verranno rilevati.</string>
+    <string name="mStatus_ioerror">Errore di rete durante il tentativo di controllare l\'URL: %s</string>
+    <string name="mStatus_error">Errore interno durante il tentativo di controllare l\'url: %s</string>
     <string name="mStatus_check">Controlla stato</string>
     <string name="mStatus_recheck">Controlla</string>
     <string name="mStatus_checking">Controllo…</string>
@@ -128,11 +123,11 @@ Il contenuto viene recuperato (GET) ma non controllato, quindi re-indirizzamenti
     <string name="mStatus_unknownCode">%d: Status code sconosciuto</string>
     <string name="mStatus_redir">Re-indirizzazione: %s</string>
     <string name="mInput_name">Modifica link</string>
-    <string name="mInput_desc">Mostra l\'url corrente, che può essere modificato manualmente.</string>
-    <string name="mVT_name">Url Scanner</string>
+    <string name="mInput_desc">Mostra l\'url corrente. Premilo per entrare nella modalita` di modifica.</string>
+    <string name="mVT_name">URL Scanner</string>
     <string name="mVT_desc">"Quando questo modulo è abilitato puoi scansionare l'url utilizzando VirusTotal e visualizzare il report.
 Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi crearne una qui dopo esserti registrato con un account gratuito: https://www.virustotal.com/gui/join-us ."</string>
-    <string name="mVT_apiKey">chiave api</string>
+    <string name="mVT_apiKey">chiave API</string>
     <string name="mVT_tm">VirusTotal™ è un trademark di Google, Inc.</string>
     <string name="mVT_scan">Scansiona</string>
     <string name="mVT_cancel">Cancella</string>
@@ -140,19 +135,15 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mVT_goodUrl">Nessun %1$d engine ha rilevato qualcosa (ad oggi %2$s)</string>
     <string name="mVT_warningUrl">Attenzione, questi engines: %1$d/%2$d hanno rilevato qualcosa (ad oggi %3$s)</string>
     <string name="mVT_badUrl">Attenzione! %1$d/%2$d engines hanno rilevato qualcosa (ad oggi %3$s)</string>
-    <string name="mVT_connectError">"Impossibile connettersi a VirusTotal. Controlla di avere una connessione funzionante e/o riprova più tardi."</string>
-    <string name="mVT_jsonError">"Impossibile connettersi a VirusTotal. Controlla che la chiave API inserita sia valida e/o riprova più tardi."</string>
+    <string name="mVT_connectError">Impossibile connettersi a VirusTotal. Assicuati di essere connesso a internet, oppure riprova più tardi.</string>
+    <string name="mVT_jsonError">Impossibile connettersi a VirusTotal. Controlla che la chiave API inserita sia valida, oppure riprova più tardi.</string>
     <string name="mD_name">Modulo di debug</string>
-    <string name="mD_desc">"Se re-organizzi i moduli, eventuali nuovi aggiunti in futuro tramite aggiornamenti verranno posizionati sopra quest'ultimo.
-
-Se attivi questa funzione, verrà mostrato l'intent come uri, utile per sviluppatori.
-
-Premi su Intent od UrlData per copiare nella clipboard. Tieni premuto per copiare tutto."</string>
+    <string name="mD_desc">Se riorganizzi i moduli, i nuovi aggiunti nei futuri aggiornamenti verranno posizionati sopra quest\'ultimo.\n\nSe attivi questa opzione, verrano visuallizzati alcuni dati di debug interni (come l\'uri dell\'intento originale), utile per gli sviluppatori.\n\nPuoi tenere premuto per selezionare il testo.</string>
     <string name="mD_ctabs">Mostra i messaggi di debug dal serivzio di schede custom.</string>
     <string name="mHist_name">Cronologia</string>
-    <string name="mHist_desc">"Quando l'url viene modificato, sia manualmente o da altri moduli, quest'ultimo ti permette di annullare le modifiche."</string>
+    <string name="mHist_desc">Quando l\'url viene modificato, sia manualmente o da altri moduli, quest\'ultimo ti consente di visualizzare e annullare le modifiche.</string>
     <string name="mClear_name">Pulitore URL</string>
-    <string name="mClear_desc">Questo modulo rimuove parametri inutili e referrals. Inoltre permette una pulizia semplice quando offline.</string>
+    <string name="mClear_desc">Questo modulo rimuove il tracciamento i referrals e altri parametri inutili dall\'URL. Inoltre permette i comuni reindirizzamenti offline.</string>
     <string name="mClear_tm">Lista di default presa da ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
     <string name="mClear_clear">Applica</string>
     <string name="mClear_matches">Corrisponde %s</string>
@@ -168,7 +159,7 @@ Premi su Intent od UrlData per copiare nella clipboard. Tieni premuto per copiar
     <string name="mClear_auto">Applica automaticamente</string>
     <string name="mClear_toggleReferral">"Abilita l'utilizzo dei referrals (link con parametri di referral non verranno puliti)"</string>
     <string name="mClear_toggleVerbose">Attiva verbosità alta per il processo di controllo</string>
-    <string name="mClear_error">"C'è stato un errore nel controllo della regola"</string>
+    <string name="mClear_error">Impossibile controllare la regola</string>
     <string name="mClear_updater">Updater</string>
     <string name="mClear_sourceDesc">URL del file JSON con la lista di regole:</string>
     <string name="mClear_urlHint">URL lista</string>
@@ -180,9 +171,9 @@ Premi su Intent od UrlData per copiare nella clipboard. Tieni premuto per copiar
     <string name="mClear_lastUpdate">Ultimo aggiornamento:</string>
     <string name="mClear_updated">Elenco aggiornato</string>
     <string name="mClear_upToDate">Elenco già aggiornato</string>
-    <string name="mClear_urlError">"Non è stato possibile recuperare le regole, controlla che l'url sia valido e che tu abbia una connessione internet funzionante."</string>
+    <string name="mClear_urlError">Non è stato possibile recuperare le regole, controlla che l\'url sia valido e che tu abbia una connessione internet funzionante</string>
     <string name="mClear_hashError">"Non è stato possibile recuperare l'hash, controlla che l'url sia valido e che tu abbia una connessione internet funzionante."</string>
-    <string name="mClear_hashMismatch">"Gli hash non corrispondono, il file potrebbe essere stato modificato. Se vuoi saltare il check, rimuovi l'url dell'hash."</string>
+    <string name="mClear_hashMismatch">Gli hash non corrispondono, il file potrebbe essere stato modificato. Se vuoi saltare il check, rimuovi l\'url dell\'hash</string>
     <string name="mClear_restore">Ripristina percorsi ClearURLs</string>
     <string name="mClear_editor">"Lista regole: Devono seguire il formato da https://docs.clearurls.xyz/latest/specs/rules/.
 Tieni conto che qualsiasi modifica ai 'providers' verrà sovrscaritta se la lista viene aggiornata automaticamente o manualmente dalla finestra degli aggiornamenti. Per avere regole custom impostale in un parent object diverso."</string>
@@ -214,7 +205,7 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="mHosts_adult">contenuto per adulti</string>
     <string name="mHosts_build">Crea</string>
     <string name="mHosts_uninitialized">Database degli hosts non inizializzato. Premi per crearlo.</string>
-    <string name="mHosts_parseError">"Impossibile recuperare URL host"</string>
+    <string name="mHosts_parseError">Impossibile analizzare URL host</string>
     <string name="mHosts_editor">Configurazione hosts. Formato: Lista di oggetti dove la chiave è l\'etichetta dell\'host ed il contenuto include i seguenti valori opzionali:
 \n- file: un url di un file remoto hosts-file da scaricare. Tutti gli host validi verranno aggiunti.
 \n- hosts: Lista di host grezza (stringhe) da aggiungere.
@@ -252,4 +243,93 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="btn_tutorialSkip">Salta il tutorial</string>
     <string name="btn_tutorialEnd">Termina il tutorial</string>
     <string name="shortcut_checkClipboard">Controlla gli URL dagli appunti</string>
+    <string name="back">Indietro</string>
+    <string name="btn_backupRestore">Backup / Ripristino</string>
+    <string name="btn_delete">Elimina</string>
+    <string name="bkp_data_prefs">Preferenze: Dati salvati come preferenze.</string>
+    <string name="bkp_secrets">Segreti: Dati considerati \'segreti\', come la chiave api VirusTotal oppure i log.</string>
+    <string name="bck_ignoreNewer">Consenti i backup creati da versioni più recenti dell\'app.</string>
+    <string name="bjp_cache">Cache: Dati che possono essere facilmente scaricati/generati, come il database hosts. Abilitare questa opzione potrebbe incrementare la dimensione del backup notevolmente.</string>
+    <string name="bck_restoreDelete">Elimina elementi prima di ripristinare. Nota che le preferenze e altri file con valori default potrebbero non esistere, quindi disabilitare questa opzione unira` gli elementi esistenti con quelli nel backup in modi inaspettati. Disabilita se sai quello che stai facendo.</string>
+    <string name="bck_newer">Annullato. Il backup e` stato creato in una versione dell app piu` recente.</string>
+    <string name="normal">Normale</string>
+    <string name="small">Piccolo</string>
+    <string name="big">Grande</string>
+    <string name="bck_restoreConfirm">Sostituire gli elementi</string>
+    <string name="bck_restoreOk">Backup ripristinato</string>
+    <string name="bck_deleteTitle">Elimina elementi</string>
+    <string name="bck_deleteConfirm">Elimina elementi</string>
+    <string name="bck_deleteOk">Elementi eliminati</string>
+    <string name="bck_deleteError">Impossibile eliminare gli elementi</string>
+    <string name="bck_backupError">Impossibile creare il backup, prova a scegliere una posizione diversa per il file.</string>
+    <string name="bck_chooseFile">Segli il file di backup</string>
+    <string name="bck_backupOk">Backup creato</string>
+    <string name="bck_restoreTitle">Ripristina backup</string>
+    <string name="bck_restoreMessage">ATTENZIONE! Questo sostituira` gli elementi selezionati dal backup\nVuoi veramente continuare?</string>
+    <string name="bck_restoreError">Impossibile ripristinare il backup. E` un file valido?</string>
+    <string name="bck_deleteMessage">ATTENZIONE! Questo eliminera` tutti gli elementi selezionati.\nVuoi veramente continuare?</string>
+    <string name="txt_tutorial2">L\'app agisce come un intermediario quando apri o condividi links. Una volta inviato un URL all\'app, puoi interagire con esso tramite i moduli. Dopodiche` puoi aprire il link (nell\'app che desideri), condividerlo o copiarlo negli appunti.</string>
+    <string name="next">Prossimo</string>
+    <string name="bkp_data_files">Files: Dati salvati come files.</string>
+    <string name="bkp_data">Dati: Dati standard dell\' applicazione. Cose come i moduli abilitati, configurazioni json, etc. Non includera` segreti ne` chace.</string>
+    <string name="btn_replace">Sostituisci</string>
+    <string name="btn_restore">Ripristina</string>
+    <string name="bkp_description">Scegli gli elementi a cui eseguire il backup/ripristino.\nDurante il ripristino, se il backup è stato creato senza di esso, quelli esistenti verranno mantenuti.</string>
+    <string name="txt_animation">Abilita animazioni</string>
+    <string name="bck_mn_advanced">Mostra opzioni avanzate</string>
+    <string name="btn_backup">Backup</string>
+    <string name="hidden">Nascosto</string>
+    <string name="noLinks">Nessun link rilevato</string>
+    <string name="a_automations">Automazioni</string>
+    <string name="auto_desc">Con le automazioni puoi performare aziondi del modulo basati su triggers. Puoi configurare le automazioni qui, oppure disabilitarle tutte usando il pulsante qui sotto.</string>
+    <string name="auto_enabled">Abilita la funzione di automazione</string>
+    <string name="auto_notFound">Nessuna automazione con la chiave \'%s\' e` disponibile. Assicurati che sia valida e il modulo richiesto sia attivo.</string>
+    <string name="mOpen_copyUrl">Copia</string>
+    <string name="mDrawer_name">Cassetto</string>
+    <string name="mParts_empty">(vuoto)</string>
+    <string name="mLog_unlimited">Illimitato</string>
+    <string name="mChg_name">Changelog</string>
+    <string name="mOpen_iconSize">Dimensione dell\'icona</string>
+    <string name="mOpen_incognito">Modalita` in incognito:</string>
+    <string name="mOpen_incognitoDesc">Attiva/disattiva la modalita` incognito (solo per FireFox)</string>
+    <string name="mParts_copy">Parte copiata negli appunti</string>
+    <string name="mChg_desc">Notifichera` quando l\'app e` stata aggiornata.</string>
+    <string name="mChg_updated">L\'app e` stata aggiornata.</string>
+    <string name="mChg_view">Visualizza le modifiche</string>
+    <string name="mPttrn_wrongSchemaHttp">Maiuscole dello schema http non valide.</string>
+    <string name="mPttrn_wrongSchemaHttps">Maiuscole dello schema https non valide.</string>
+    <string name="mOpen_mergeCopy">Unisce i tasti Copia e Condividi (tieni premuto per copiare)</string>
+    <string name="mStatus_autoRedirect">Sostituisci automaticamente gli URLs di reindirizzamento</string>
+    <string name="mPttrn_regexfix">Correggi i gruppi regex facoltativi (disabilita se l\'espressione regolare non funziona correttamente)</string>
+    <string name="mUnshort_ok">Non accorciato</string>
+    <string name="mD_show">Carica i dati di debug</string>
+    <string name="mLog_limit">Numero massimo di voci da tenere. Valore consigliato: 100. Imposta vuoto per un numero illimitato</string>
+    <string name="mUnshort_unshort">Disaccorciare</string>
+    <string name="mUnshort_pending">in attesa: %1$d/%2$d</string>
+    <string name="mOpen_closeCopy">Chiudi dialogo dopo aver copiato</string>
+    <string name="mOpen_rejected">Nascondi app se l\'URL e` stato rifiutato (un app richiede immediatamente di aprire lo stesso URL con cui e` stata aperta). Non influisce sulla condivisione.</string>
+    <string name="mUnshort_name">Disaccorciatore</string>
+    <string name="mUnshort_tm">unshorten.me API gratuita di Unshorten.me</string>
+    <string name="mUnshort_desc">Questo modulo disaccoricia i link inviandoli a https://unshorten.me/, che li valuta sui propri server e salva il reindirizzamento per le richieste future. Evitare di disaccorciare i link con dati privati o sensibili.\nLa loro API è limitata a 10 richieste all\'ora per i nuovi controlli. La risposta del modulo mostrerà il numero di richieste in sospeso.</string>
+    <string name="mUnshort_checking">Controllo…</string>
+    <string name="mUnshort_error">Errore del server: %s</string>
+    <string name="mUnshort_internal">Errore interno (%s)</string>
+    <string name="mUnshort_notFound">Non è stato trovato alcun url non abbreviato</string>
+    <string name="mUnshort_to">Disaccorcia a %s</string>
+    <string name="mParts_name">Parti dell\'Uri</string>
+    <string name="mParts_desc">Questo modulo mostra tutte le parti dell\'url decodificato: schema, autorita`, percorsi, queries e frammenti.\nCliccando una parte verra` impostata come nuovo url, utile per esempio se una della quey o percorsi era un url di reindirizzazzione dedcodificato.\nTenenedo premuto una parte, questa verra` copiata negli appunti.\nPuoi anche cliccare il tasto \'X\' per rimuoreve alcune di loro.\nQuesta e` una versione avanzata del modulo \'Rimozione delle query\'.</string>
+    <string name="mDrawer_desc">Tutti i moduli al di sotto di questo verranno nascosti in un cassetto. I moduli continueranno a funzionare, ma saranno nascosti finche` non aprirai il cassetto. Qui puoi mettere moduli che usi raramente, per evitare disordine.</string>
+    <string name="mChg_current">Versione attuale: %s</string>
+    <string name="mVT_noKey">Chiave API mancante</string>
+    <string name="auto_share">Condividera` l\'url. Equivalente a premre il tasto \'condividi\'.</string>
+    <string name="auto_copy">Copiera` l\'url. Equivalente a premere il tasto \'copia\'.</string>
+    <string name="auto_ctabs">Abilitera` ctabs. Equivalente a premere il tasto \'ctabs\' se disabilitato (anche se nascosto).</string>
+    <string name="auto_incognito">Abilitera` incognito. Equivalente a premere il tasto \'incognito\' se disabilitato (anche se nascosto).</string>
+    <string name="auto_checkStatus">Eseguira` il controllo dello stato. Equivalente a premere il tasto \'Controlla\'.</string>
+    <string name="auto_unshort">Eseguira` il processo di unshort. Equivalente a premere il tasto \'Unshort\'.</string>
+    <string name="auto_scan">Scnasionera` l\'url. Equivalente a premere il tasto \'Scansiona\'.</string>
+    <string name="auto_editor">Configurazione automazioni. Formato: lista di oggetti in cui la chiave e` un nome di automazione univoco e il contenuto include i seguenti valori:\n- \'regex\': stringa, richiesto: un\'espressione java regex valida a cui l\'url deve corrispondere per l\'esecuzione dell\'automazione.\n- \'action\': stringa, richiesto: la chiave dell\'automazione per l\'esecuzione. Controlla sotto per una lista di tutte le chiavi disponibili.\n- \'enabled\': boolean, opzionale: se falso questa automazione verra` saltata. Vero per default.</string>
+    <string name="auto_available_prefix">Azioni di automazione disponibili (chiavi):</string>
+    <string name="auto_available_disabled">Questo modulo e` disabilitato, le automazioni non verrano eseguite</string>
+    <string name="auto_open">Aprira` l\'url con la prima app disponibile. Equivalente a premere il tasto \'apri\'.</string>
 </resources>

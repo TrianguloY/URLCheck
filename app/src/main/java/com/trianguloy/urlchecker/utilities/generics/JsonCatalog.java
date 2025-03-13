@@ -3,7 +3,8 @@ package com.trianguloy.urlchecker.utilities.generics;
 import android.app.Activity;
 import android.content.Context;
 
-import com.trianguloy.urlchecker.dialogs.JsonEditor;
+import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.activities.JsonEditorInterface;
 import com.trianguloy.urlchecker.utilities.wrappers.InternalFile;
 
 import org.json.JSONException;
@@ -12,7 +13,7 @@ import org.json.JSONObject;
 /**
  * Represents a generic catalog
  */
-public abstract class JsonCatalog {
+public abstract class JsonCatalog implements JsonEditorInterface {
 
     private final Activity cntx;
     private final InternalFile custom;
@@ -75,11 +76,30 @@ public abstract class JsonCatalog {
         return custom.set(content.toString());
     }
 
-    /**
-     * Shows a dialog to manually edit the catalog
-     */
+
+    @Override
+    public JSONObject getJson() {
+        return getCatalog();
+    }
+
+    @Override
+    public JSONObject getBuiltInJson() {
+        return getBuiltIn();
+    }
+
+    @Override
+    public String saveJson(JSONObject data) {
+        return save(data) ? null : cntx.getString(R.string.invalid);
+    }
+
+    @Override
+    public String getEditorDescription() {
+        return editorDescription;
+    }
+
+    /** Displays a generic editor for json content. */
     public void showEditor() {
-        JsonEditor.show(getCatalog(), getBuiltIn(), editorDescription, cntx, this::save);
+        showEditor(cntx);
     }
 
 }

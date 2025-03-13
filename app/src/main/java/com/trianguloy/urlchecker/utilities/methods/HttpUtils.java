@@ -1,8 +1,11 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -41,5 +44,23 @@ public class HttpUtils {
                         ? conn.getInputStream()
                         : conn.getErrorStream()
         );
+    }
+
+    /**
+     * Same as performPOST, but for a different module.
+     * TODO: use a unique method for all connections (merge with the virusTotal v3 branch issue)
+     */
+    public static int performPOSTJSON(String url, String body) throws IOException {
+        HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
+
+        try (OutputStream os = conn.getOutputStream()) {
+            byte[] input = body.getBytes(StandardCharsets.UTF_8);
+            os.write(input, 0, input.length);
+        }
+
+        return conn.getResponseCode();
     }
 }

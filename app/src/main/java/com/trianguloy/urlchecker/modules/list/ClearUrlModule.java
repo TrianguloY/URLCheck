@@ -14,6 +14,7 @@ import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
+import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.companions.ClearUrlCatalog;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
@@ -25,7 +26,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -66,6 +66,11 @@ public class ClearUrlModule extends AModuleData {
     public AModuleConfig getConfig(ModulesActivity cntx) {
         return new ClearUrlConfig(cntx);
     }
+
+    @Override
+    public List<AutomationRules.Automation<AModuleDialog>> getAutomations() {
+        return (List<AutomationRules.Automation<AModuleDialog>>) (List<?>) ClearUrlDialog.AUTOMATIONS;
+    }
 }
 
 class ClearUrlConfig extends AModuleConfig {
@@ -102,6 +107,10 @@ class ClearUrlConfig extends AModuleConfig {
 }
 
 class ClearUrlDialog extends AModuleDialog {
+
+    static final List<AutomationRules.Automation<ClearUrlDialog>> AUTOMATIONS = List.of(
+            new AutomationRules.Automation<>("clear", R.string.auto_clear, ClearUrlDialog::clear)
+    );
 
     public static final String CLEARED = "clearUrl.cleared";
 

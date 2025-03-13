@@ -84,13 +84,12 @@
     <string name="back">뒤로</string>
     <string name="mClear_editor">카탈로그 규칙: https://docs.clearurls.xyz/latest/specs/rules/ 의 형식을 따라야 합니다.
 \n부모 객체인 \'providers\'는 업데이트되었을 때 덮어씌어진다는 점을 주의하세요. 만약 개인적으로 규칙을 만들고 싶다면 아무 이름이나로 다른 부모 객체를 만들어서 규칙을 설정하세요.</string>
-    <string name="toast_invalid">유효하지 않음</string>
-    <string name="json_desc">[베타 기능] 이 고급 편집에서는 유효한 JSON 파일이 반드시 포함되어야 합니다. 오른쪽 위 버튼을 눌러서 유효한지 확인하세요.</string>
+    <string name="invalid">유효하지 않음</string>
     <string name="clear">지우기</string>
     <string name="shortcut_checkClipboard">클립보드에서 URL 확인하기</string>
     <string name="mVT_warningUrl">주의: %1$d/%2$d 엔진이 URL을 감지했습니다. (%3$s 기준)</string>
     <string name="mVT_scan">스캔하기</string>
-    <string name="json_edit">고급 편집</string>
+    <string name="json_editor">고급 편집</string>
     <string name="mVT_tm">VirusTotal™은 Google, Inc.의 트레이드마크입니다.</string>
     <string name="mVT_scanning">스캔 중…</string>
     <string name="mVT_desc">이 모듈이 활성화되어 있을 때 VirusTotal을 이용해 URL을 검사할 수 있습니다. 개인 VirusTotal API 키가 필요하며, 키는 https://www.virustotal.com/gui/join-us 에서 무료로 회원가입 후 받을 수 있습니다.</string>

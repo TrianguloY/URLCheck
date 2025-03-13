@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_format"
+        android:icon="@drawable/format"
+        android:showAsAction="ifRoom"
+        android:title="@string/format" />
+    <item
+        android:id="@+id/menu_save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:showAsAction="ifRoom"
+        android:title="@string/save" />
+    <item
+        android:id="@+id/menu_discard"
+        android:showAsAction="ifRoom"
+        android:title="@string/discard" />
+    <item
+        android:id="@+id/menu_reset"
+        android:showAsAction="ifRoom"
+        android:title="@string/reset" />
+    <item
+        android:id="@+id/menu_show_info"
+        android:showAsAction="ifRoom"
+        android:checkable="true"
+        android:checked="true"
+        android:title="@string/json_info" />
+</menu>

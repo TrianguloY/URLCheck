@@ -47,7 +47,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,6 +61,31 @@
                 android:layout_height="wrap_content"
                 android:saveEnabled="false" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_width" />
+
+            <TextView
+                android:id="@+id/width_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/width_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="100" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -101,6 +127,10 @@
             android:id="@+id/animations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/smallPadding"
+            android:paddingLeft="@dimen/smallPadding"
+            android:paddingEnd="@dimen/smallPadding"
+            android:paddingRight="@dimen/smallPadding"
             android:text="@string/txt_animation" />
 
         <FrameLayout

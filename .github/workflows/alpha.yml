@@ -42,7 +42,7 @@ jobs:
 
       - name: Zip ${{ env.VARIANT }} apk as ${{ env.ZIP }}
         # just remove the password here if you want to build the apk yourself instead of sponsoring me and getting it as a benefit :(
-        run: zip -j -P ${{ secrets.ALPHA_PASS }} ${{ env.ZIP }} app/build/outputs/apk/${{ env.VARIANT }}/app-${{ env.VARIANT }}.apk
+        run: zip -j -P ${{ secrets.ALPHA_PASS }} ${{ env.ZIP }} app/build/outputs/apk/${{ env.VARIANT }}/*.apk
 
       - name: Update ${{ env.TAG }} tag to current commit
         run: |

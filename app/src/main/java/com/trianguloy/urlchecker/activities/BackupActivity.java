@@ -26,6 +26,7 @@ import com.trianguloy.urlchecker.modules.companions.Hosts;
 import com.trianguloy.urlchecker.modules.companions.VersionManager;
 import com.trianguloy.urlchecker.modules.list.LogModule;
 import com.trianguloy.urlchecker.modules.list.VirusTotalModule;
+import com.trianguloy.urlchecker.modules.list.WebhookModule;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -437,7 +438,7 @@ public class BackupActivity extends Activity {
     private static final String EMPTY = ".empty";
     private static final String ADVANCED_EXTRA = "advanced";
 
-    private static final Function<String, Boolean> IS_PREF_SECRET = List.of(VirusTotalModule.PREF, LogModule.PREF)::contains;
+    private static final Function<String, Boolean> IS_PREF_SECRET = List.of(VirusTotalModule.PREF, LogModule.PREF, WebhookModule.URL_PREF)::contains;
     private static final Function<String, Boolean> IS_FILE_CACHE = s -> s.startsWith(Hosts.PREFIX);
 
     private void chooseFile(String action, JavaUtils.Consumer<Uri> listener) {
@@ -469,7 +470,7 @@ public class BackupActivity extends Activity {
     }
 
     private String getInitialFile() {
-        return "UrlChecker_" + new SimpleDateFormat("yyyyMMddHHmmss", Locale.US).format(new Date()) + ".ucbckp";
+        return "URLCheck_" + new SimpleDateFormat("yyyyMMddHHmmss", Locale.US).format(new Date()) + ".ucbckp";
     }
 
     private void showAdvanced() {

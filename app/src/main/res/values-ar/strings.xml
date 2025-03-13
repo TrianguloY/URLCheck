@@ -74,7 +74,7 @@
     <string name="toast_noApp">لا يمكن فتح التطبيق</string>
     <string name="toast_noBrowser">لا يمكن فتح متصفح الويب</string>
     <string name="title_choose">اختر التطبيق</string>
-    <string name="toast_invalid">غير صالح</string>
+    <string name="invalid">غير صالح</string>
     <string name="save">حفظ</string>
     <string name="close">إغلاق</string>
     <string name="clear">مسح</string>
@@ -91,7 +91,7 @@
     <string name="next">التالي</string>
     <string name="back">السابق</string>
     <string name="dismiss">تجاهل</string>
-    <string name="json_edit">محرر متقدم</string>
+    <string name="json_editor">محرر متقدم</string>
     <string name="shortcut_checkClipboard">التحقق من عناوين الويب URLs الموجودة في الحافظة</string>
     <string name="mPttrn_name">فحص النمط</string>
     <string name="mPttrn_regexfix">إصلاح مجموعات الفحص النمطية الاختيارية (تعطيلها إذا كان الفحص النمطي لا يعمل بشكل صحيح)</string>
@@ -163,7 +163,6 @@
     <string name="btn_tutorialEnd">إنهاء الدليل التعليمي</string>
     <string name="reset">إعادة الضبط</string>
     <string name="noLinks">لم يتم اكتشاف أي روابط</string>
-    <string name="json_desc">[ميزة تجريبية] هذا محرر متقدم، يجب تنسيق المحتوى إلى JSON صالح. يمكنك الضغط على الزر في الزاوية العلوية اليمنى لتنسيقه والتحقق من صحته.</string>
     <string name="mPttrn_desc">هذه الوحدة تقوم بفحص عنوان الويب باستخدام أنماط الفحص النمطية التي تحذر، تقترح أو تطبق الاستبدالات. يمكنك تعديل أو إنشاء أنماط خاصة بك، أو حتى استخدام أنماط تم إنشاؤها من قبل المستخدمين.
 \nالأنماط المضمنة تشمل:
 \n- تحذير عندما يحتوي على أحرف غير ascii مثل الحروف اليونانية. يمكن استخدام هذا للصيد الاحتيالي: googĺe.com بدلاً من google.com

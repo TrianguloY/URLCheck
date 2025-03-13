@@ -48,7 +48,7 @@
     <string name="toast_noApp">アプリを開けません</string>
     <string name="toast_noBrowser">Web ブラウザを開けません</string>
     <string name="title_choose">アプリを選択</string>
-    <string name="toast_invalid">無効です</string>
+    <string name="invalid">無効です</string>
     <string name="save">保存</string>
     <string name="reset">リセット</string>
     <string name="close">閉じる</string>
@@ -57,8 +57,7 @@
     <string name="share">このアプリを友達に自慢する</string>
     <string name="canceled">キャンセルされました</string>
     <string name="deviceDefault">デバイスの設定に従う</string>
-    <string name="json_desc">[ベータ機能] これは上級者向けのエディタです。内容は有効な JSON にフォーマットされている必要があります。右上のボタンをタップすると、フォーマット・検証ができます。</string>
-    <string name="json_edit">上級者向けエディタ</string>
+    <string name="json_editor">上級者向けエディタ</string>
     <!-- modules -->
     <string name="mPttrn_name">パターンチェッカー</string>
     <string name="mPttrn_desc">"正規表現パターンで URL をチェックし、警告・提案・置換をします。パターンは変更したり、独自に作成したり、あるいは他のユーザーが作成したものを使用することもできます。

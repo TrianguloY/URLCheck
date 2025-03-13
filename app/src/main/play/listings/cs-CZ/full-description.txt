@@ -2,7 +2,7 @@ Tato aplikace funguje jako prostředník při otevírání/sdílení odkazů URL
 Je obzvláště užitečný, když potřebujete otevřít externí odkaz buď z e-mailu, aplikace sociální sítě nebo jiné.
 
 
-URLCheck je vyvinut společností TrianguloY, původně pro osobní použití. Je open source (pod licencí CC BY 4.0), zdarma, bez reklam a sledovačů, má malou velikost a používá tak málo oprávnění, jak je jen třeba (tj. pouze oprávnění pro internet, pro kontroly modulů, které se provedou pouze tehdy, když si je uživatel vyžádá). Zdrojový kód je k dispozici také na GitHubu, pokud chcete navrhnout změny, provést úpravy nebo navrhnout nový překlad: https://github.com/TrianguloY/UrlChecker.
+URLCheck je vyvinut společností TrianguloY, původně pro osobní použití. Je open source (pod licencí CC BY 4.0), zdarma, bez reklam a sledovačů, má malou velikost a používá tak málo oprávnění, jak je jen třeba (tj. pouze oprávnění pro internet, pro kontroly modulů, které se provedou pouze tehdy, když si je uživatel vyžádá). Zdrojový kód je k dispozici také na GitHubu, pokud chcete navrhnout změny, provést úpravy nebo navrhnout nový překlad: https://github.com/TrianguloY/URLCheck.
 
 
 Aplikace je strukturována modulárně, můžete povolovat/zakazovat a měnit pořadí jednotlivých modulů, mezi které patří např:
