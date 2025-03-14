@@ -72,7 +72,7 @@
     <string name="mOpen_clipboard">URL이 복사되었습니다.</string>
     <string name="mOpen_noapps">사용 가능한 앱 없음</string>
     <string name="mOpen_tabsDesc">커스텀 탭 기능 켜거나 끄기</string>
-    <string name="mOpen_incognitoDesc">익명 모드 켜거나 끄기(파이어폭스만 해당)</string>
+    <string name="mOpen_incognitoDesc">익명 모드 켜거나 끄기</string>
     <string name="mStatus_name">상태 코드</string>
     <string name="defaultOff">기본적으로 비활성화</string>
     <string name="alwaysOn">언제나 활성화</string>

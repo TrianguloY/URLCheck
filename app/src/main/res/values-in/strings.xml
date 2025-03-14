@@ -113,7 +113,7 @@
     <string name="alwaysOn">Selalu aktif</string>
     <string name="mVT_apiKey">Kunci API</string>
     <string name="mStatus_unknownCode">%d: Kode status tidak diketahui</string>
-    <string name="mOpen_incognitoDesc">Alihkan mode inkognito (khusus Firefox)</string>
+    <string name="mOpen_incognitoDesc">Alihkan mode inkognito</string>
     <string name="btn_tutorialSkip">Lewati panduan</string>
     <string name="mOpen_noReferrer">Sembunyikan aplikasi asal (perujuk)</string>
     <string name="mClear_name">Pembersih URL</string>

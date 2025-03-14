@@ -83,7 +83,7 @@
     <string name="mOpen_clipboard">URL zkopírována do schránky</string>
     <string name="mOpen_noapps">Žádné aplikace</string>
     <string name="mOpen_tabsDesc">Přepnout funkci Vlastní karty</string>
-    <string name="mOpen_incognitoDesc">Přepnout režim Inkognito (pouze pro Firefox)</string>
+    <string name="mOpen_incognitoDesc">Přepnout režim Inkognito</string>
     <string name="mStatus_name">Stavový kód (HTML)</string>
     <string name="mStatus_ioerror">Chyba sítě při pokusu o kontrolu adresy URL: %s</string>
     <string name="mStatus_error">Vnitřní chyba při pokusu o kontrolu adresy URL: %s</string>

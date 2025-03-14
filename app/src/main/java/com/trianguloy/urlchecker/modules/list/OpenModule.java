@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
+import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.ModulesActivity;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
+import com.trianguloy.urlchecker.flavors.IncognitoDimension;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
@@ -22,6 +24,7 @@ import com.trianguloy.urlchecker.modules.companions.Incognito;
 import com.trianguloy.urlchecker.modules.companions.LastOpened;
 import com.trianguloy.urlchecker.modules.companions.ShareUtility;
 import com.trianguloy.urlchecker.modules.companions.Size;
+import com.trianguloy.urlchecker.modules.companions.OnOffConfig;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -249,17 +252,22 @@ class OpenDialog extends AModuleDialog {
         // ctabs
         cTabs.apply(intent);
 
-        // incognito
-        incognito.apply(intent);
-
         // apply flags from global data (probably set by flags module, if active) or by default
         Flags.applyGlobalFlags(intent, this);
+
+        // incognito
+        // redundant, should not affect result
+        intent.setPackage(chosen.getPackage());
+        incognito.apply(getActivity(), intent, getUrl());
 
         // rejection detector: mark as open
         rejectionDetector.markAsOpen(getUrl(), chosen);
 
         // open
         PackageUtils.startActivity(intent, R.string.toast_noApp, getActivity());
+
+        // FIXME: We borrow the clipboard before launching the activity, if the activity does not
+        //  start, it doesn't make sense that we borrowed the clipboard
 
         // finish activity
         if (closeOpenPref.get()) {
@@ -288,7 +296,7 @@ class OpenConfig extends AModuleConfig {
     @Override
     public void onInitialize(View views) {
         CTabs.PREF(getActivity()).attachToSpinner(views.findViewById(R.id.ctabs_pref), null);
-        Incognito.PREF(getActivity()).attachToSpinner(views.findViewById(R.id.incognito_pref), null);
+        configureIncognito(views);
         OpenModule.CLOSEOPEN_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.closeopen_pref));
         OpenModule.NOREFERRER_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.noReferrer));
         OpenModule.REJECTED_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.rejected));
@@ -297,6 +305,26 @@ class OpenConfig extends AModuleConfig {
 
         // share
         ShareUtility.onInitializeConfig(views, getActivity());
+    }
+
+    // ------------------- incognito dimension -------------------
+    private void configureIncognito(View views) {
+        var incognitoButton = (Button) views.findViewById(R.id.urlHelper_settings);
+        JavaUtils.Consumer<OnOffConfig> buttonEnabled = null;
+        
+        if (BuildConfig.IS_INCOGNITO) {
+            incognitoButton.setOnClickListener(v -> {
+                IncognitoDimension.showSettings(getActivity());
+            });
+            buttonEnabled = onOffConfig -> {
+                incognitoButton.setEnabled(OnOffConfig.ALWAYS_OFF != onOffConfig);
+            };
+            buttonEnabled.accept(Incognito.PREF(getActivity()).get());
+        } else {
+            incognitoButton.setVisibility(View.GONE);
+        }
+
+        Incognito.PREF(getActivity()).attachToSpinner(views.findViewById(R.id.incognito_pref), buttonEnabled);
     }
 }
 
