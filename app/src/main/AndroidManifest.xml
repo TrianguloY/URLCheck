@@ -73,6 +73,64 @@
                 <data android:mimeType="text/plain" />
                 <data android:mimeType="application/xhtml+xml" />
             </intent-filter>
+
+            <!-- Commonly used libredirect URLs -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Instagram -->
+                <data android:host="instagram.com" />
+                <data android:host="www.instagram.com" />
+                <data android:host="m.instagram.com" />
+
+                <!-- Twitter (X) -->
+                <data android:host="twitter.com" />
+                <data android:host="www.twitter.com" />
+                <data android:host="mobile.twitter.com" />
+                <data android:host="pic.twitter.com" />
+                <data android:host="x.com" />
+                <data android:host="www.x.com" />
+                <data android:host="mobile.x.com" />
+                <data android:host="pic.x.com" />
+
+                <!-- YouTube -->
+                <data android:host="www.youtube.com" />
+                <data android:host="m.youtube.com" />
+                <data android:host="youtube.com" />
+                <data android:host="youtu.be" />
+
+                <!-- Reddit -->
+                <data android:host="reddit.com" />
+                <data android:host="www.reddit.com" />
+                <data android:host="i.reddit.com" />
+                <data android:host="i.redd.it" />
+                <data android:host="old.reddit.com" />
+                <data android:host="preview.redd.it" />
+                <data android:host="*.reddit.com" />
+
+                <!-- TikTok -->
+                <data android:host="tiktok.com" />
+                <data android:host="www.tiktok.com" />
+                <data android:host="vm.tiktok.com" />
+                <data android:host="*.tiktok.com" />
+
+                <!-- Medium -->
+                <data android:host="www.medium.com" />
+                <data android:host="medium.com" />
+                <data android:host="*.medium.com" />
+
+                <!-- Wikipedia  -->
+                <data android:host="wikipedia.org" />
+                <data android:host="www.wikipedia.org" />
+                <data android:host="*.wikipedia.org" />
+
+                <data android:pathPattern=".*" />
+                <data android:scheme="https" />
+                <data android:scheme="http" />
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
