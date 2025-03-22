@@ -155,7 +155,7 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mClear_toggleVerbose">Attiva verbosità alta per il processo di controllo</string>
     <string name="mClear_error">Impossibile controllare la regola</string>
     <string name="mClear_updater">Updater</string>
-    <string name="mClear_sourceDesc">URL del file JSON con la lista di regole:</string>
+    <string name="mClear_sourceDesc">URL del file Json con la lista di regole:</string>
     <string name="mClear_urlHint">URL lista</string>
     <string name="mClear_hashDesc">"URL dell'hash della lista. Se non incluso, il file della lista non verrà controllato per modifiche non autorizzate. (non raccomandato)"</string>
     <string name="mClear_hashHint">Nessun check hash</string>
@@ -318,12 +318,24 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="auto_share">Condividera` l\'url. Equivalente a premre il tasto \'condividi\'.</string>
     <string name="auto_copy">Copiera` l\'url. Equivalente a premere il tasto \'copia\'.</string>
     <string name="auto_ctabs">Abilitera` ctabs. Equivalente a premere il tasto \'ctabs\' se disabilitato (anche se nascosto).</string>
-    <string name="auto_incognito">Abilitera` incognito. Equivalente a premere il tasto \'incognito\' se disabilitato (anche se nascosto).</string>
+    <string name="auto_incognito">Abiliterà la modalità incognito. Equivalente a premere il tasto \'incognito\' se disabilitato (anche se nascosto).</string>
     <string name="auto_checkStatus">Eseguira` il controllo dello stato. Equivalente a premere il tasto \'Controlla\'.</string>
-    <string name="auto_unshort">Eseguira` il processo di unshort. Equivalente a premere il tasto \'Unshort\'.</string>
+    <string name="auto_unshort">Eseguirà il processo di unshort. Equivalente a premere il tasto \'Unshort\'.</string>
     <string name="auto_scan">Scnasionera` l\'url. Equivalente a premere il tasto \'Scansiona\'.</string>
     <string name="auto_editor">Configurazione automazioni. Formato: lista di oggetti in cui la chiave e` un nome di automazione univoco e il contenuto include i seguenti valori:\n- \'regex\': stringa: un\'espressione java regex valida a cui l\'url deve corrispondere per l\'esecuzione dell\'automazione.\n- \'action\': stringa, richiesto: la chiave dell\'automazione per l\'esecuzione. Controlla sotto per una lista di tutte le chiavi disponibili.\n- \'enabled\': boolean, opzionale: se falso questa automazione verra` saltata. Vero per default.</string>
     <string name="auto_available_prefix">Azioni di automazione disponibili (chiavi):</string>
     <string name="auto_available_disabled">Questo modulo e` disabilitato, le automazioni non verrano eseguite</string>
     <string name="auto_open">Aprira` l\'url con la prima app disponibile. Equivalente a premere il tasto \'apri\'.</string>
+    <string name="mWebhook_auto">Invia gli URL automaticamente</string>
+    <string name="none">Nessuno</string>
+    <string name="json_info">Mostra informazioni</string>
+    <string name="json_ignore">Questo contenuto non è Json valido. Vuoi scartarlo e chiudere l\'editor?</string>
+    <string name="auto_error_toast">Mostra un avviso se l\'automazione fallisce</string>
+    <string name="discard">Scarta</string>
+    <string name="json_save_error">Impossibile salvare: %s</string>
+    <string name="auto_close">Chiuderà l\'applicazione, senza fare altro.</string>
+    <string name="mPttrn_upperDomain">Attenzione! Il dominio contiene lettere maiuscole.</string>
+    <string name="spin_dynamicWidth">Dinamico</string>
+    <string name="json_save">Ci sono modifiche non salvate, vuoi salvarle o scartarle?</string>
+    <string name="format">Formato</string>
 </resources>

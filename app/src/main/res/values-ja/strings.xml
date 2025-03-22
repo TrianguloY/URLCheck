@@ -236,4 +236,20 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="shortcut_checkClipboard">クリップボードから URL を確認する</string>
     <string name="mChg_desc">アプリが更新されたらお知らせします。</string>
     <string name="mLog_limit">保持するエントリーの最大数。推奨値：100。無制限の場合はUnlimitedに設定</string>
+    <string name="btn_backupRestore">バックアップと復元</string>
+    <string name="btn_backup">バックアップ</string>
+    <string name="bck_restoreOk">バックアップを復元しました</string>
+    <string name="mChg_view">変更を表示</string>
+    <string name="json_info">情報を表示</string>
+    <string name="mChg_name">更新履歴</string>
+    <string name="bck_mn_advanced">高度なオプションを表示</string>
+    <string name="btn_restore">復元</string>
+    <string name="btn_delete">削除</string>
+    <string name="bck_restoreTitle">バックアップを復元</string>
+    <string name="bck_backupOk">バックアップを作成しました</string>
+    <string name="bck_chooseFile">バックアップファイルを選択</string>
+    <string name="btn_replace">置換</string>
+    <string name="txt_animation">アニメーションを有効化</string>
+    <string name="spin_fullWidth">完全</string>
+    <string name="spin_dynamicWidth">ダイナミック</string>
 </resources>
