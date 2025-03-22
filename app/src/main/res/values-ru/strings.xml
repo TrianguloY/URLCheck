@@ -139,7 +139,7 @@
     <string name="mVT_goodUrl">Ни одна из %1$d поисковых систем не распознала URL (на момент %2$s)</string>
     <string name="mVT_apiKey">API ключ</string>
     <string name="mStatus_unknownCode">%d: Неизвестный код состояния</string>
-    <string name="mOpen_incognitoDesc">Включить/выключить режим инкогнито (только для Firefox)</string>
+    <string name="mOpen_incognitoDesc">Включить/выключить режим инкогнито</string>
     <string name="mOpen_noReferrer">Скрыть исходное приложение (referrer)</string>
     <string name="mClear_name">Очиститель URL</string>
     <string name="mOpen_closeCopy">Закрыть диалоговое окно после копирования</string>

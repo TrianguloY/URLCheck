@@ -227,12 +227,13 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_name">Open and share</string>
     <string name="mOpen_desc">"Contains the following buttons (left to right):
 - Custom Tabs button: toggle to enable/disable the custom tab feature. When enabled, the browser should be opened in a 'lite' mode.
-- Incognito button: For Firefox only. Toggle to enable/disable the incognito mode. When enabled, the browser should be opened in incognito.
+- Incognito button: For Firefox only unless configured. Toggle to enable/disable the incognito mode. When enabled, the browser should be opened in incognito.
 - Open button: Press the app name to open the link on that app. If a link can be opened with multiple apps, an arrow will be shown to let you choose.
 - Copy button: Press the button to copy the link into the clipboard.
 - Share button: Press the button to share the link."</string>
     <string name="mOpen_ctabs">Custom tabs:</string>
     <string name="mOpen_incognito">Incognito mode:</string>
+    <string name="mOpen_incognitoSettings">Incognito settings</string>
     <string name="mOpen_closeOpen">Close dialog after opening</string>
     <string name="mOpen_closeShare">Close dialog after sharing</string>
     <string name="mOpen_closeCopy">Close dialog after copying</string>
@@ -248,7 +249,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_clipboard">URL copied to clipboard</string>
     <string name="mOpen_noapps">No apps</string>
     <string name="mOpen_tabsDesc">Toggle Custom Tabs feature</string>
-    <string name="mOpen_incognitoDesc">Toggle incognito mode (for Firefox only)</string>
+    <string name="mOpen_incognitoDesc">Toggle incognito mode</string>
     <!-- -->
     <string name="mStatus_name">Status code</string>
     <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
@@ -441,5 +442,6 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mChg_updated">The app has been updated.</string>
     <string name="mChg_current">Current version: %s</string>
     <string name="mChg_view">View changes</string>
-
+    <!-- -->
+    <string name="clipboard_copyError">Error trying to copy to clipboard</string>
 </resources>

@@ -93,7 +93,7 @@
     <string name="txt_tutorial2">O aplicativo age como intermediário ao abrir links. Assim que um link é aberto com o aplicativo, você pode interagir com ele por meio dos módulos. Depois disso, você pode abrir o link (no aplicativo desejado), compartilhá-lo, ou copiá-lo para a área de transferência.</string>
     <string name="txt_conf">Aqui estão todos os módulos disponíveis, onde você pode checar suas descrições e configurações. Você também pode reordenar, mudar a visibilidade e ativar/desativar eles.</string>
     <string name="mOpen_incognito">Modo anônimo:</string>
-    <string name="mOpen_incognitoDesc">Ativar/desativar modo anônimo (apenas Firefox)</string>
+    <string name="mOpen_incognitoDesc">Ativar/desativar modo anônimo</string>
     <string name="txt_tutorial3">Selecione o aplicativo como navegador padrão para interceptar os links abertos.
 \n(Não é necessário se os links são redirecionados usando a função de compartilhar.)</string>
     <string name="mPttrn_userContent">Lista de outros padrões úteis criados por usuários: %s</string>

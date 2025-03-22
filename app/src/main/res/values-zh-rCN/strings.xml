@@ -283,7 +283,7 @@
     <string name="mPttrn_wrongSchemaHttps">HTTPS 协议大小写不正确。</string>
     <string name="mPttrn_regexfix">修改可选正则表达式组合（如果正则表达式不能正确生效禁用）</string>
     <string name="mOpen_mergeCopy">合并复制和分享按钮（长按复制）</string>
-    <string name="mOpen_incognitoDesc">切换无痕模式（仅用于火狐浏览器）</string>
+    <string name="mOpen_incognitoDesc">切换无痕模式</string>
     <string name="mOpen_closeCopy">复制后关闭对话框</string>
     <string name="mOpen_incognito">隐身模式：</string>
     <string name="mLog_limit">最多保留的记录数，建议值为 100。留空以设置为无限条</string>
