@@ -23,10 +23,12 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
 //            new AutomationRules.Automation<>("clean", R.string.auto_clean, YouTubeLinkCleanerDialog::clean)
     );
 
-    // YouTube domains
-    private static final Set<String> YOUTUBE_DOMAINS = new HashSet<>(Arrays.asList(
-            "youtube.com", "www.youtube.com", "youtu.be"
-    ));
+    // YouTube domain patterns
+    private static final String[] YOUTUBE_PATTERNS = {
+        "youtube.com",
+        "youtu.be",
+        "m.youtube.com"
+    };
 
     // Tracking parameters to remove
     private static final Set<String> TRACKING_PARAMS = new HashSet<>(Arrays.asList(
@@ -93,9 +95,18 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
         try {
             String url = urlData.url;
             Uri uri = Uri.parse(url);
+            String host = uri.getHost().toLowerCase();
             
-            // Check if it's a YouTube URL
-            if (YOUTUBE_DOMAINS.contains(uri.getHost().toLowerCase())) {
+            // Check if it's a YouTube URL using pattern matching
+            boolean isYouTubeUrl = false;
+            for (String pattern : YOUTUBE_PATTERNS) {
+                if (host.equals(pattern) || host.endsWith("." + pattern)) {
+                    isYouTubeUrl = true;
+                    break;
+                }
+            }
+            
+            if (isYouTubeUrl) {
                 originalUrl = url; // Store original URL for comparison
                 Uri.Builder builder = uri.buildUpon();
                 builder.clearQuery();
