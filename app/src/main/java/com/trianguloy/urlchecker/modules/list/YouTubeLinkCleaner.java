@@ -95,6 +95,7 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     private final YouTubeLinkCleanerConfig config;
     private TextView info;
+    private String originalUrl;
 
     public YouTubeLinkCleanerDialog(MainDialog dialog) {
         super(dialog);
@@ -120,6 +121,7 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
         
         // Check if it's a YouTube URL
         if (YOUTUBE_DOMAINS.contains(uri.getHost().toLowerCase())) {
+            originalUrl = url; // Store original URL for comparison
             Uri.Builder builder = uri.buildUpon();
             builder.clearQuery();
             
@@ -139,7 +141,16 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
             
             // Update UI to show it was cleaned
             if (info != null) {
-                info.setText(R.string.mYoutubeCleaner_desc);
+                if (!urlData.url.equals(originalUrl)) {
+                    info.setText(R.string.mYoutubeCleaner_desc);
+                } else {
+                    info.setText(R.string.mYoutubeCleaner_noChange);
+                }
+            }
+        } else {
+            // Not a YouTube URL
+            if (info != null) {
+                info.setText(R.string.mYoutubeCleaner_notYoutube);
             }
         }
     }
