@@ -60,34 +60,6 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
         clean.setOnClickListener(v -> clean());
     }
 
-    private void clean() {
-        if (originalUrl != null) {
-            try {
-                Uri uri = Uri.parse(originalUrl);
-                Uri.Builder builder = uri.buildUpon();
-                builder.clearQuery();
-                
-                // Keep only essential parameters
-                for (String param : uri.getQueryParameterNames()) {
-                    if (!TRACKING_PARAMS.contains(param.toLowerCase())) {
-                        String value = uri.getQueryParameter(param);
-                        if (value != null) {
-                            builder.appendQueryParameter(param, value);
-                        }
-                    }
-                }
-                
-                // Update the URL with cleaned version
-                String cleanedUrl = builder.build().toString();
-                setUrl(cleanedUrl);
-            } catch (Exception e) {
-                if (info != null) {
-                    info.setText(R.string.mYoutubeCleaner_error);
-                }
-            }
-        }
-    }
-
     @Override
     public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
         // Check if module is enabled
@@ -109,31 +81,26 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
             
             if (isYouTubeUrl) {
                 originalUrl = url; // Store original URL for comparison
-                Uri.Builder builder = uri.buildUpon();
-                builder.clearQuery();
                 
-                // Keep only essential parameters
-                for (String param : uri.getQueryParameterNames()) {
-                    if (!TRACKING_PARAMS.contains(param.toLowerCase())) {
-                        String value = uri.getQueryParameter(param);
-                        if (value != null) {
-                            builder.appendQueryParameter(param, value);
+                // Only clean the URL if auto-clean is enabled
+                if (config.isAuto()) {
+                    String cleanedUrl = cleanUrl(uri);
+                    UrlData newUrlData = new UrlData(cleanedUrl);
+                    newUrlData.mergeData(urlData); // Preserve any additional data from original
+                    setNewUrl.apply(newUrlData);
+                    
+                    // Update UI to show it was cleaned
+                    if (info != null) {
+                        if (!cleanedUrl.equals(originalUrl)) {
+                            info.setText(R.string.mYoutubeCleaner_desc);
+                        } else {
+                            info.setText(R.string.mYoutubeCleaner_noChange);
                         }
                     }
-                }
-                
-                // Create new UrlData with cleaned URL
-                String cleanedUrl = builder.build().toString();
-                UrlData newUrlData = new UrlData(cleanedUrl);
-                newUrlData.mergeData(urlData); // Preserve any additional data from original
-                setNewUrl.apply(newUrlData);
-                
-                // Update UI to show it was cleaned
-                if (info != null) {
-                    if (!cleanedUrl.equals(originalUrl)) {
-                        info.setText(R.string.mYoutubeCleaner_desc);
-                    } else {
-                        info.setText(R.string.mYoutubeCleaner_noChange);
+                } else {
+                    // Auto-clean is disabled, show original URL
+                    if (info != null) {
+                        info.setText(R.string.mYoutubeCleaner_autoDisabled);
                     }
                 }
             } else {
@@ -146,6 +113,46 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
             // Handle any errors gracefully
             if (info != null) {
                 info.setText(R.string.mYoutubeCleaner_error);
+            }
+        }
+    }
+
+    private String cleanUrl(Uri uri) {
+        Uri.Builder builder = uri.buildUpon();
+        builder.clearQuery();
+        
+        // Keep only essential parameters
+        for (String param : uri.getQueryParameterNames()) {
+            if (!TRACKING_PARAMS.contains(param.toLowerCase())) {
+                String value = uri.getQueryParameter(param);
+                if (value != null) {
+                    builder.appendQueryParameter(param, value);
+                }
+            }
+        }
+        
+        return builder.build().toString();
+    }
+
+    private void clean() {
+        if (originalUrl != null) {
+            try {
+                Uri uri = Uri.parse(originalUrl);
+                String cleanedUrl = cleanUrl(uri);
+                setUrl(cleanedUrl);
+                
+                // Update UI to show it was cleaned
+                if (info != null) {
+                    if (!cleanedUrl.equals(originalUrl)) {
+                        info.setText(R.string.mYoutubeCleaner_desc);
+                    } else {
+                        info.setText(R.string.mYoutubeCleaner_noChange);
+                    }
+                }
+            } catch (Exception e) {
+                if (info != null) {
+                    info.setText(R.string.mYoutubeCleaner_error);
+                }
             }
         }
     }
