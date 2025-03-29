@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.modules.list;
 import android.content.Context;
 import android.net.Uri;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
@@ -91,6 +92,8 @@ class YouTubeLinkCleanerConfig extends AModuleConfig {
     @Override
     public void onInitialize(View views) {
         enabled.attachToSwitch(views.findViewById(R.id.enabled));
+        verbose.attachToSwitch(views.findViewById(R.id.verbose));
+        auto.attachToSwitch(views.findViewById(R.id.auto));
     }
 
     public boolean isEnabled() {
@@ -107,6 +110,11 @@ class YouTubeLinkCleanerConfig extends AModuleConfig {
 }
 
 class YouTubeLinkCleanerDialog extends AModuleDialog {
+    static final List<AutomationRules.Automation<YouTubeLinkCleanerDialog>> AUTOMATIONS = List.of(
+            // this automation doesn't work yet, as it runs the onNewUrl inside the main loop
+//            new AutomationRules.Automation<>("clean", R.string.auto_clean, YouTubeLinkCleanerDialog::clean)
+    );
+
     // YouTube domains
     private static final Set<String> YOUTUBE_DOMAINS = new HashSet<>(Arrays.asList(
             "youtube.com", "www.youtube.com", "youtu.be"
@@ -121,6 +129,7 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     private final YouTubeLinkCleanerConfig config;
     private TextView info;
+    private Button clean;
     private String originalUrl;
 
     public YouTubeLinkCleanerDialog(MainDialog dialog) {
@@ -130,12 +139,44 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     @Override
     public int getLayoutId() {
-        return R.layout.module_youtube_cleaner;
+        return R.layout.button_text;
     }
 
     @Override
     public void onInitialize(View views) {
         info = views.findViewById(R.id.text);
+        clean = views.findViewById(R.id.button);
+        clean.setText(R.string.mYoutubeCleaner_clean);
+        clean.setOnClickListener(v -> clean());
+    }
+
+    private void clean() {
+        if (originalUrl != null) {
+            try {
+                Uri uri = Uri.parse(originalUrl);
+                Uri.Builder builder = uri.buildUpon();
+                builder.clearQuery();
+                
+                // Keep only essential parameters
+                for (String param : uri.getQueryParameterNames()) {
+                    if (!TRACKING_PARAMS.contains(param.toLowerCase())) {
+                        String value = uri.getQueryParameter(param);
+                        if (value != null) {
+                            builder.appendQueryParameter(param, value);
+                        }
+                    }
+                }
+                
+                // Update the URL with cleaned version
+                UrlData urlData = new UrlData();
+                urlData.url = builder.build().toString();
+                dialog.onNewUrl(urlData);
+            } catch (Exception e) {
+                if (info != null) {
+                    info.setText(R.string.mYoutubeCleaner_error);
+                }
+            }
+        }
     }
 
     @Override
