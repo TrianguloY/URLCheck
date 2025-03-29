@@ -29,10 +29,6 @@ import java.util.Set;
  */
 public class YouTubeLinkCleaner extends AModuleData {
 
-    public static GenericPref.Bool ENABLED_PREF(Context cntx) {
-        return new GenericPref.Bool("youtubeCleaner_enabled", true, cntx);
-    }
-
     public static GenericPref.Bool VERBOSE_PREF(Context cntx) {
         return new GenericPref.Bool("youtubeCleaner_verbose", false, cntx);
     }
