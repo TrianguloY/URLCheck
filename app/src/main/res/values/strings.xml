@@ -249,10 +249,14 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_tabsDesc">Toggle Custom Tabs feature</string>
     <string name="mOpen_incognitoDesc">Toggle incognito mode (for Firefox only)</string>
     <string name="mYoutubeCleaner_name">YouTube Link Cleaner</string>
-    <string name="mYoutubeCleaner_desc">Removes tracking parameters from YouTube links to enhance privacy and reduce tracking.</string>
-    <string name="mYoutubeCleaner_noChange">No tracking parameters found to remove.</string>
-    <string name="mYoutubeCleaner_notYoutube">Not a YouTube URL.</string>
-    <string name="mYoutubeCleaner_error">Error processing URL.</string>
+    <string name="mYoutubeCleaner_desc">Removes tracking parameters from YouTube URLs</string>
+    <string name="mYoutubeCleaner_auto">Auto-clean YouTube URLs</string>
+    <string name="mYoutubeCleaner_verbose">Show detailed information</string>
+    <string name="mYoutubeCleaner_notYoutube">Not a YouTube URL</string>
+    <string name="mYoutubeCleaner_error">Error processing URL</string>
+    <string name="mYoutubeCleaner_noChange">No tracking parameters found</string>
+    <string name="mYoutubeCleaner_autoDisabled">Auto-clean is disabled. Click the clean button to remove tracking parameters.</string>
+    <string name="mYoutubeCleaner_clean">Clean URL</string>
     <!-- -->
     <string name="mStatus_name">Status code</string>
     <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
