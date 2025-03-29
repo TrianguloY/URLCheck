@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.modules.list;
 import android.content.Context;
 import android.net.Uri;
 import android.view.View;
+import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.GuiActivity;
@@ -13,6 +14,8 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.url.UrlData;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -23,6 +26,10 @@ import java.util.Set;
  * Module that cleans YouTube links by removing tracking parameters
  */
 public class YouTubeLinkCleaner extends AModuleData {
+
+    public static GenericPref.Bool ENABLED_PREF(Context cntx) {
+        return new GenericPref.Bool("youtubeCleaner_enabled", true, cntx);
+    }
 
     @Override
     public String getId() {
@@ -51,8 +58,11 @@ public class YouTubeLinkCleaner extends AModuleData {
 }
 
 class YouTubeLinkCleanerConfig extends AModuleConfig {
+    private final GenericPref.Bool enabled;
+
     public YouTubeLinkCleanerConfig(ModulesActivity activity) {
         super(activity);
+        enabled = YouTubeLinkCleaner.ENABLED_PREF(activity);
     }
 
     @Override
@@ -63,6 +73,10 @@ class YouTubeLinkCleanerConfig extends AModuleConfig {
     @Override
     public void onInitialize(View views) {
         // No initialization needed
+    }
+
+    public boolean isEnabled() {
+        return enabled.get();
     }
 }
 
@@ -79,22 +93,28 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
             "mc_eid", "_ga", "gclid", "msclkid", "dclid"
     ));
 
+    private final YouTubeLinkCleanerConfig config;
+    private TextView info;
+
     public YouTubeLinkCleanerDialog(MainDialog dialog) {
         super(dialog);
+        config = new YouTubeLinkCleanerConfig(dialog.getActivity());
     }
 
     @Override
     public int getLayoutId() {
-        return 0; // No layout needed
+        return R.layout.module_youtube_cleaner;
     }
 
     @Override
     public void onInitialize(View views) {
-        // No initialization needed
+        info = views.findViewById(R.id.text);
     }
 
     @Override
     public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
+        if (!config.isEnabled()) return;
+
         String url = urlData.url;
         Uri uri = Uri.parse(url);
         
@@ -116,6 +136,11 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
             // Update the URL with cleaned version
             urlData.url = builder.build().toString();
             setNewUrl.apply(urlData);
+            
+            // Update UI to show it was cleaned
+            if (info != null) {
+                info.setText(R.string.mYoutubeCleaner_desc);
+            }
         }
     }
 } 
