@@ -1,0 +1,4 @@
+V 2.4
+- Added French translation. Thanks to Ilithy!
+- Added Ukrainian translation. Thanks to Idris!
+- Automatic dark/white theme

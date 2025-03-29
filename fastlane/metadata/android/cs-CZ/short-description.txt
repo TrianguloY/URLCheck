@@ -1,0 +1,1 @@
+Umožňuje analyzovat (nebo sdílet) adresy URL před jejich otevřením.

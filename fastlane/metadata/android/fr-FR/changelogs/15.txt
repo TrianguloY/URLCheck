@@ -1,0 +1,8 @@
+V 2.6
+- Couleurs!
+- Amélioration du module de suppression des requêtes
+- Amélioration du module de vérification des modèles
+- Nouveau module : Registre
+- Nouvelle traduction turque. Merci à Metezd !
+- Nouvelle traduction en hébreu. Merci à Nhman Mazuz !
+- Modifications et corrections mineures

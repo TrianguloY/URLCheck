@@ -1,0 +1,4 @@
+V 2.1
+- Module 'Nettoyer l'url' corrigé et amélioré.
+- Amélioration de certains textes et messages.
+- Style ajusté pour être plus compact.

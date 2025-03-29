@@ -1,0 +1,10 @@
+V 2.12
+- Nuevo: abrir Firefox en modo incógnito
+- Nuevo: mejores botones compartir y abrir
+- Nuevo: parámetros para patrones: codificar y descodificar
+- Mejora: mostrar referrer en el módulo de debug
+- Mejora: mantener grupos expandidos en Partes de la uri
+- Arreglo: grupos opcionales 'null' en Android <=10
+- Arreglo: extraer enlaces de texto compartido
+- Arreglo: atajos legados deberían funcionar ya
+- Arreglo: fallo menor en el módulo Desacortador

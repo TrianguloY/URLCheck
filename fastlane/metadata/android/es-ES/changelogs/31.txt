@@ -1,0 +1,4 @@
+V 2.14
+- Nuevo: Copia de seguridad y restauración
+- Quitado soporte a Android 4.3 e inferior
+- Actualizadas versiones internas

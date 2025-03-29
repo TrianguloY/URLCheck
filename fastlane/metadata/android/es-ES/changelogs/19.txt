@@ -1,0 +1,10 @@
+V 2.8
+- Renombrada aplicación de 'Analizador de Urls' a 'URLCheck'
+- Nueva traducción al Japonés. ¡Gracias a 404potato!
+- Nuevos ejemplos y mejoras del Comprobador de patrones
+- Nuevo ajuste para activar la ordenación de aplicaciones por dominio
+- Nuevo ajuste para cerrar después de compartir
+- Nuevo ajuste para ocultar la aplicación de origen (referrer)
+- Se permite deshabilitar todos los módulos
+- Mejoras en la pantalla Acerca de
+- Mejoras en las herramientas internas

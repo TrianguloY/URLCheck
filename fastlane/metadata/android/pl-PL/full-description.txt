@@ -1,0 +1,36 @@
+Ta aplikacja działa jako pośrednik podczas otwierania łączy URL. Po wykonaniu tej czynności wyświetli się okno zawierające informacje o adresie URL, umożliwiające również dokonanie w nim zmian.
+Szczególnie przydatne, gdy trzeba otworzyć link zewnętrzny z wiadomości e-mail, aplikacji sieci społecznościowej lub innych.
+
+
+URLCheck został opracowany przez TrianguloY i pierwotnie przeznaczony do użytku osobistego. Jest oprogramowaniem typu open source (na licencji CC BY 4.0), bezpłatnym, bez reklam i modułów śledzących, niewielkich rozmiarów i wymagającym niewielkiej liczby uprawnień, ile potrzeba (tylko pozwolenie internetowe, w przypadku kontroli modułów, które będą przeprowadzane tylko na żądanie użytkownika). Kod źródłowy jest również dostępny na GitHubie, jeśli chcesz zasugerować zmiany, wprowadzić modyfikacje lub zaproponować nowe tłumaczenie: https://github.com/TrianguloY/URLCheck
+
+
+Aplikacja ma strukturę modułową, możesz włączać/wyłączać i zmieniać kolejność poszczególnych modułów, które obejmują:
+
+* Tekst wejściowy: Wyświetla bieżący adres URL, który można edytować ręcznie. Nie można wyłączyć.
+
+* Historia: przeglądaj i cofaj wszelkie zmiany z innych modułów, w tym zmiany wprowadzone przez użytkownika (typowa funkcja cofania/ponawiania)
+
+* Dziennik: prowadzi rejestr wszystkich sprawdzonych adresów URL, który można przeglądać, edytować, kopiować, usuwać...
+
+* Kod odpowiedzi: Po naciśnięciu przycisku zostanie wysłane żądanie sieciowe pobrania tego adresu URL i wyświetlony zostanie kod odpowiedzi (ok, błąd serwera, nie znaleziono...). Dodatkowo, jeśli dotyczy przekierowania, naciśnij wiadomość, aby sprawdzić nowy adres URL. Adres URL jest pobierany, ale nie oceniany, więc przekierowanie oparte na javascript nie zostanie wykryte.
+
+* Skaner adresów URL: umożliwia skanowanie adresu URL za pomocą programu VirusTotal i sprawdzanie raportu. Do jego działania potrzebny jest bezpłatny, osobisty klucz API VirusTotal. VirusTotal™ jest znakiem towarowym firmy Google, Inc.
+
+* Narzędzie do czyszczenia adresów URL: wykorzystuje katalog ClearURLs do usuwania odsyłaczy i bezużytecznych parametrów z adresu URL. Umożliwia także typowe przekierowania adresów URL w trybie offline. Wbudowany katalog z https://docs.clearurls.xyz/latest/specs/rules/
+
+* Unshortener: Używa https://unshorten.me/ do zdalnego dekodowania skróconych adresów URL.
+
+* Usuwanie zapytań: Wyświetla zdekodowane indywidualne zapytania URL, które możesz usunąć lub sprawdzić.
+
+* Moduł wzorców: sprawdza adres URL za pomocą wzorców wyrażeń regularnych, które ostrzegają, sugerują lub stosują zamienniki. Możesz modyfikować lub tworzyć własne wzory, a nawet korzystać z tych stworzonych przez użytkowników.
+Wbudowane wzorce obejmują:
+	- Ostrzeżenie, jeśli zawiera znaki inne niż ASCII, takie jak litery greckie. Można to wykorzystać do phishingu: googĺe.com vs google.com
+	- Zasugeruj zastąpienie „http” przez „https”
+	- Zasugeruj zastąpienie YouTube, Reddit lub Twittera alternatywami zapewniającymi ochronę prywatności [domyślnie wyłączone]
+
+* Sprawdzanie hostów: ten moduł oznacza hosty skonfigurowane albo poprzez ręczne określenie ich, albo przy użyciu pliku podobnego do zdalnych hostów. Można go używać do ostrzegania o niebezpiecznych lub specjalnych witrynach. Wbudowana konfiguracja określa hosty StevenBlack (adware/malware, fałszywe wiadomości, hazard i treści dla dorosłych) z https://github.com/StevenBlack/hosts
+
+* Moduł debugowania: Wyświetla identyfikator uri intencji i opcjonalnie informacje o usłudze ctabs (karty niestandardowe). Jest to przeznaczone dla programistów.
+
+* Moduł otwarty: zawiera przyciski otwierania i udostępniania. Jeśli łącze można otworzyć w wielu aplikacjach, pojawi się strzałka umożliwiająca dokonanie wyboru. Nie można wyłączyć.

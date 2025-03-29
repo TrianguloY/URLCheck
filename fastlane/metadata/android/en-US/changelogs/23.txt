@@ -1,0 +1,10 @@
+V 2.11
+- New module: Edit Flags
+- New module: Uri parts (substitute of Queries remover)
+- New config: excludeRegex field on Pattern Checker module
+- Change: modules are now hidden when unused
+- Fix: opened apps weren't showing on recents
+- Fix: standard shortcuts weren't available
+- Fix: keyboard was obstructing the dialog
+- Fix: status module wasn't working properly
+- Translations: New and updates from symbuzzer and other from Weblate

@@ -1,0 +1,6 @@
+V 2.13
+- New module: drawer. Hide modules under a toggleable.
+- New module: changelog. Will notify if the app updates.
+- Improvement: Limit number of log entries.
+- Improvement: Missing 'hidden' status for Ctabs and private buttons.
+- Improvement: Try to open more valid urls.

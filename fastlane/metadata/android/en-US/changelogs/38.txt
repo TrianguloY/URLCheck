@@ -1,0 +1,6 @@
+V 3.1
+- New module: Webhook. Thanks to anoop-b!
+- New automations: clear and close
+- Improve: Allow multiple regex on automations
+- Improve: Tweaked style of history module
+- Fix: Disable auto-updates after using the Input module

@@ -1,0 +1,4 @@
+V 2.13.1
+- New: Custom logic to hide rejected urls. Hide referrer is now disabled by default.
+- Fix: Third try to the 'open/share does nothing' bug.
+- Fix: Status module no longer decodes the location.

@@ -1,0 +1,8 @@
+V 2.9
+- Nuevo módulo: Etiquetador de hosts
+- Ocultados los títulos de los módulos (se pueden reactivar)
+- Nueva pantalla de ajustes
+    - Configurar como navegador por defecto
+    - Cambiar tema
+    - Cambiar idioma
+- Estilos y código mejorados

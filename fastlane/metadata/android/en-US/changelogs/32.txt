@@ -1,0 +1,6 @@
+V 2.15
+- New: Animations (can be disabled)
+- Fix: Better rejected detection. And allow to disable.
+- Fix: Custom tabs should work in more situations (links not opening)
+- Fix: Emojis and other non-standard characters on the Uri parts module
+- Improvement: Better error message when a module can't be enabled

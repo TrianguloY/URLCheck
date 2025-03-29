@@ -1,0 +1,10 @@
+V 3.3
+- Nuevo: Ancho configurable
+- Nuevo: Automatizaciones: 'referrer' y 'stop'
+- Nuevo: Abrir y reemplazar texto al mantener pulsado
+- Nuevo: Abrir más intents especiales comunes (gracias ArtikusHG!)
+- Nuevo: Patrón de ejemplo para song.link (gracias shalva-an!)
+- Mejora: Automatizaciones: Permitir varias acciones
+- Mejora: Automatizaciones y patrones: 'regex' es ahora opcional
+- Arreglo: Custom tabs no funcionaban desde algunas aplicaciones
+- Eliminado: Automatización 'clear' (no funcionaba)

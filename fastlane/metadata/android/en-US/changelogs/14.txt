@@ -1,0 +1,5 @@
+V 2.5
+- Advanced JSON editor for ClearURLs and Patterns
+- The ClearURLs database can now be updated
+- Added Spanish translation
+- Styles and texts improvements

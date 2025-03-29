@@ -1,0 +1,4 @@
+V 2.4
+- Ajout de la traduction Française. Merci à Ilithy!
+- Ajout de la traduction Ukrainienne. Merci à Idris!
+- Thème noir/blanc automatique

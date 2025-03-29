@@ -1,0 +1,2 @@
+V 2.2
+- Nouveau module 'Module de suppression des requêtes': supprime toutes les requêtes de l'url. Merci à PabloOQ pour l'idée et la mise en œuvre originale!

@@ -1,0 +1,2 @@
+V 2.2
+- Nuevo módulo 'Eliminar parámetros': elimina los parámetros de la url. ¡Gracias a PabloOQ for la idea e implementación original!

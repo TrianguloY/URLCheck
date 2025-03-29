@@ -1,0 +1,32 @@
+Questa applicazione agisce come un intermediario nell'apertura di link. Quando premi su un link, una finestra contenente informazioni riguardo l'url viene mostrata, permettendoti di modificarlo.
+È particolarmente utile quando ti serve aprire un link da una mail, un social network, od altro.
+
+
+URLChecker è sviluppato da TrianguloY, originalmente per uso personale. È open source (sotto licenza CC BY 4.0), gratis, senza pubblicità o trackers, leggero, ed utilizza meno permessi possibile (solo quello di rete, per controlli che vengono eseguiti solo quando richiesti dall'utente). Il codice sorgente è disponibile anche su Github, se vuoi dare suggerimenti, effettuare modifiche, o proporre nuove traduzioni: https://github.com/TrianguloY/URLCheck
+
+
+L'app è costruita in maniera modulare, ed è possibile attivare, disattivare e re-ordinare moduli individuali, inclusi:
+
+* Input di testo: Visualizza l'url attuale, che può essere modificato manualmente. Non può essere disabilitato.
+
+* Cronologia: Visualizza ed annulla qualsiasi cambiamento da altri moduli, incluse modifiche dell'utente (tipica funzionalità di undo/redo)
+
+* Log: Tiene un log di tutti gli url, che è possibile visualizzare, modificare, copiare, pulire.
+
+* Status code: Premendo un apposito tasto, una richiesta verrà fatta per leggere lo stato dell'url. Quest'ultimo verrà poi mostrato (ok, server error, not found...). In più, se corrisponde ad una reindirizzazione, sarà possibile premere il messaggio per controllare il nuovo url. L'url viene recuperato, ma non controllato, quindi reindirizzazione basata su javascript non verrà rilevata.
+
+* Url Scanner: Ti permette di scansionare l'url utilzzando VirusTotal, e visualizzare il report. È richiesta una chiave API gratuita e personale per utilizzare il modulo. VirusTotal™ è un trademark di Google, Inc.
+
+* Url Cleaner: Utilizza la lista ClearURLs per rimuovere parametri inutili e referrals. Permette anche un re-indirizzamento base offline. Lista built in proveniente da https://docs.clearurls.xyz/latest/specs/rules/
+
+* Rimozione di queries: Mostra le query individuali, permettendoti di rimuoverle o controllarle.
+
+* Modulo Patterns: Esegue diversi controlli basati su patterns. Patterns built-in includono:
+    - Avviso per link http, permettendo di sostituirli con https.
+    - Avviso per caratteri non-ascii come lettere greche. Quest'ultimo è particolarmente importante per evitare tentativi di phishing, come: googĺe.com vs google.com.
+
+* Hosts checker: Questo modulo etichetta gli hosts. È possibile configurarlo manualmente o tramite una lista remota hosts-like. È possibile utilizzarlo per ricevere avvisi su siti pericolosi o speciali. La configurazione di default utilizza la lista hosts di StevenBlack adware/malware, fakenews, gambling and adult content) from https://github.com/StevenBlack/hosts
+
+* Modulo di debug: Mostra informazioni riguardo l'intent uri, ed opzionalmente informazioni riguardo le ctabs (custom tabs). Questo modulo è pensato per gli sviluppatori.
+
+* Modulo Open: Contiene i pulsanti di apertura e condivisione. Se un link può essere aperto con più applicazioni, una freccia verrà mostrata per permetterti di scegliere. Non può essere disabilitato.

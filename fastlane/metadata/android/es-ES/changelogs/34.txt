@@ -1,0 +1,5 @@
+V 2.16
+- Mejora: Detectar varias actividades para la misma aplicación
+- Mejora: Mostrar el icono de la primera aplicación
+- Mejora: Mostrar los patrones aplicados en orden
+- Debug: Añadir el resultado de las query en el modulo debug
