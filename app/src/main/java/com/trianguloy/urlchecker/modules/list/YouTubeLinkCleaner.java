@@ -84,6 +84,13 @@ class YouTubeLinkCleanerConfig extends AModuleConfig {
         auto = YouTubeLinkCleaner.AUTO_PREF(activity);
     }
 
+    public YouTubeLinkCleanerConfig(Context context) {
+        super();
+        enabled = YouTubeLinkCleaner.ENABLED_PREF(context);
+        verbose = YouTubeLinkCleaner.VERBOSE_PREF(context);
+        auto = YouTubeLinkCleaner.AUTO_PREF(context);
+    }
+
     @Override
     public int getLayoutId() {
         return R.layout.config_youtube_cleaner;
@@ -134,7 +141,7 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     public YouTubeLinkCleanerDialog(MainDialog dialog) {
         super(dialog);
-        config = new YouTubeLinkCleanerConfig(dialog.getActivity());
+        config = new YouTubeLinkCleanerConfig(dialog);
     }
 
     @Override
