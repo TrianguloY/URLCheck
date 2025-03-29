@@ -9,20 +9,17 @@ import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 
 public class YouTubeLinkCleanerConfig extends AModuleConfig {
-    private final GenericPref.Bool enabled;
     private final GenericPref.Bool verbose;
     private final GenericPref.Bool auto;
 
     public YouTubeLinkCleanerConfig(ModulesActivity activity) {
         super(activity);
-        enabled = YouTubeLinkCleaner.ENABLED_PREF(activity);
         verbose = YouTubeLinkCleaner.VERBOSE_PREF(activity);
         auto = YouTubeLinkCleaner.AUTO_PREF(activity);
     }
 
     public YouTubeLinkCleanerConfig(Context context) {
         super();
-        enabled = YouTubeLinkCleaner.ENABLED_PREF(context);
         verbose = YouTubeLinkCleaner.VERBOSE_PREF(context);
         auto = YouTubeLinkCleaner.AUTO_PREF(context);
     }
@@ -34,13 +31,8 @@ public class YouTubeLinkCleanerConfig extends AModuleConfig {
 
     @Override
     public void onInitialize(View views) {
-        enabled.attachToSwitch(views.findViewById(R.id.enabled));
         verbose.attachToSwitch(views.findViewById(R.id.verbose));
         auto.attachToSwitch(views.findViewById(R.id.auto));
-    }
-
-    public boolean isEnabled() {
-        return enabled.get();
     }
 
     public boolean isVerbose() {
