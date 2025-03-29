@@ -176,8 +176,7 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
                 
                 // Update the URL with cleaned version
                 String cleanedUrl = builder.build().toString();
-                UrlData urlData = new UrlData(cleanedUrl);
-                dialog.onNewUrl(urlData);
+                setUrl(cleanedUrl);
             } catch (Exception e) {
                 if (info != null) {
                     info.setText(R.string.mYoutubeCleaner_error);
