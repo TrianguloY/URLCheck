@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
 import android.app.Activity;
+import android.view.View;
 
 import com.trianguloy.urlchecker.activities.ModulesActivity;
 import com.trianguloy.urlchecker.fragments.Fragment;
@@ -33,6 +34,18 @@ public abstract class AModuleConfig implements Fragment {
     public int cannotEnableErrorId() {
         return -1;
     }
+
+    /**
+     * @return the layout resource of this module
+     */
+    public abstract int getLayoutId();
+
+    /**
+     * Initializes this module from the given views (generated from {@link #getLayoutId()})
+     *
+     * @param views the inflated views
+     */
+    public abstract void onInitialize(View views);
 
     // ------------------- utilities -------------------
 
