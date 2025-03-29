@@ -27,10 +27,10 @@ Core:
   - changed-files:
       - any-glob-to-any-file: 'app/src/main/java/**'
 
-# Add 'Store file' label to any change within the 'play' dir
+# Add 'Store file' label to any change within the 'fastlane' dir
 Store file:
   - changed-files:
-      - any-glob-to-any-file: 'app/src/main/play/**'
+      - any-glob-to-any-file: 'fastlane/**'
 
 # Add 'assets' label to any change within the 'assets' or 'res' dirs
 Assets:

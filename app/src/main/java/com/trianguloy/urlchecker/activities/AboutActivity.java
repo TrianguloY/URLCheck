@@ -24,7 +24,9 @@ public class AboutActivity extends Activity {
     // ------------------- links -------------------
 
     private static final List<Pair<Integer, String>> LINKS = List.of(
-            Pair.create(R.string.link_changelog, "https://github.com/TrianguloY/URLCheck/blob/master/app/src/main/play/release-notes/en-US/default.txt"), // TODO: link to the correct translation
+            Pair.create(R.string.link_changelog, "https://github.com/TrianguloY/URLCheck/blob/master/fastlane/metadata/android/en-US/changelogs/40.txt"),
+            // TODO: link to the correct translation
+            // TODO: link to latest
             Pair.create(R.string.link_source, "https://github.com/TrianguloY/URLCheck"),
             Pair.create(R.string.link_privacy, "https://github.com/TrianguloY/URLCheck/blob/master/docs/PRIVACY%20POLICY.md"),
             Pair.create(R.string.lnk_fDroid, "https://f-droid.org/packages/com.trianguloy.urlchecker"),

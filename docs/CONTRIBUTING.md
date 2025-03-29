@@ -18,8 +18,8 @@ For manual translation, there are two independent things to translate:
     - Remember to insert a backslash `\` before any apostrophe `'`, or enclose all text in quotes `"`
     - Place the translated file in the corresponding `./app/src/main/res/values-{locale}/` folder
 
-- **Store strings**: the [`title.txt`](../app/src/main/play/listings/en-US/title.txt) [`short-description.txt`](../app/src/main/play/listings/en-US/short-description.txt) and/or [`full-description.txt`](../app/src/main/play/listings/en-US/full-description.txt) files
-    - Place the translated files in the corresponding `./app/src/main/play/listings/{locale}/` folder
+- **Store strings**: the [`title.txt`](../fastlane/metadata/android/en-US/title.txt) [`short-description.txt`](../fastlane/metadata/android/en-US/short-description.txt) and/or [`full-description.txt`](../fastlane/metadata/android/en-US/full-description.txt) files
+    - Place the translated files in the corresponding `./fastlane/metadata/android/{locale}/` folder
 
 Note: if you are unsure the locale prefix of a specific language you can find it [here](https://countrycode.org/).
 
