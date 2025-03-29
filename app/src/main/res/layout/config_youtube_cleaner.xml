@@ -5,6 +5,13 @@
     android:orientation="vertical"
     android:padding="@dimen/padding">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mYoutubeCleaner_desc"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:padding="@dimen/smallPadding" />
+
     <Switch
         android:id="@+id/enabled"
         android:layout_width="match_parent"
@@ -12,12 +19,18 @@
         android:text="@string/mYoutubeCleaner_name"
         android:padding="@dimen/smallPadding" />
 
-    <TextView
+    <Switch
+        android:id="@+id/auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/smallPadding"
-        android:text="@string/mYoutubeCleaner_desc"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/mYoutubeCleaner_auto"
+        android:padding="@dimen/smallPadding" />
+
+    <Switch
+        android:id="@+id/verbose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mYoutubeCleaner_verbose"
         android:padding="@dimen/smallPadding" />
 
 </LinearLayout> 
