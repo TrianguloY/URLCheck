@@ -3,19 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/padding">
 
     <Switch
         android:id="@+id/enabled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/mYoutubeCleaner_name" />
+        android:text="@string/mYoutubeCleaner_name"
+        android:padding="@dimen/smallPadding" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/smallPadding"
         android:text="@string/mYoutubeCleaner_desc"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:padding="@dimen/smallPadding" />
 
 </LinearLayout> 
