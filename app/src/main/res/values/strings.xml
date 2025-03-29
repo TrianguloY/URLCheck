@@ -100,8 +100,7 @@ Do you really want to continue?"</string>
 
 This is the tutorial, if you want to skip it you can do so with the button below. You can always come back to this tutorial from the settings menu."</string>
     <string name="txt_tutorial2">The app acts as an intermediary when opening or sharing url links. Once an url is sent to the app you can interact with it via the modules. After that you can open the link (in the app you want), share it or copy it to the clipboard.</string>
-    <string name="txt_tutorial3">Set the app as the default web browser to intercept URLs when opening them.
-\n(Not needed if URLs are redirected using the “Share” functionality.)</string>
+    <string name="txt_tutorial3">Set the app as the default web browser to intercept URLs when opening them.</string>
     <string name="txt_tutorial4">Modules is how the app interacts with the URLs.
 \nEach of the modules has a specific function. Usually to present info about the URL, or allowing it to be modified.
 \nRead about them and set them up as needed.
@@ -253,8 +252,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mYoutubeCleaner_desc">Removes tracking parameters from YouTube links to enhance privacy and reduce tracking.</string>
     <string name="mYoutubeCleaner_noChange">No tracking parameters found to remove.</string>
     <string name="mYoutubeCleaner_notYoutube">Not a YouTube URL.</string>
-    <string name="mYoutubeCleaner_name">YouTube Link Cleaner</string>
-    <string name="mYoutubeCleaner_desc">Removes tracking parameters from YouTube links to enhance privacy and reduce tracking.</string>
+    <string name="mYoutubeCleaner_error">Error processing URL.</string>
     <!-- -->
     <string name="mStatus_name">Status code</string>
     <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
