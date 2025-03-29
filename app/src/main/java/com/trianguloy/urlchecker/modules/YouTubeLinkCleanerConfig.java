@@ -1,7 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
@@ -13,9 +13,9 @@ import com.trianguloy.urlchecker.modules.list.YouTubeLinkCleaner;
  */
 public class YouTubeLinkCleanerConfig extends AModuleConfig {
 
-    private CheckBox enabled;
-    private CheckBox verbose;
-    private CheckBox auto;
+    private Switch enabled;
+    private Switch verbose;
+    private Switch auto;
 
     public YouTubeLinkCleanerConfig() {
         super();
@@ -42,8 +42,8 @@ public class YouTubeLinkCleanerConfig extends AModuleConfig {
         auto = views.findViewById(R.id.auto);
 
         // Attach preferences to UI elements
-        YouTubeLinkCleaner.ENABLED_PREF(getActivity()).attach(enabled);
-        YouTubeLinkCleaner.VERBOSE_PREF(getActivity()).attach(verbose);
-        YouTubeLinkCleaner.AUTO_PREF(getActivity()).attach(auto);
+        YouTubeLinkCleaner.ENABLED_PREF(getActivity()).attachToSwitch(enabled);
+        YouTubeLinkCleaner.VERBOSE_PREF(getActivity()).attachToSwitch(verbose);
+        YouTubeLinkCleaner.AUTO_PREF(getActivity()).attachToSwitch(auto);
     }
 } 
