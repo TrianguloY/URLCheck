@@ -18,6 +18,7 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -66,7 +67,7 @@ public class YouTubeLinkCleaner extends AModuleData {
 
     @Override
     public List<AutomationRules.Automation<AModuleDialog>> getAutomations() {
-        return null; // No automations needed
+        return Collections.emptyList(); // Return empty list instead of null
     }
 }
 
