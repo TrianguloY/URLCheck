@@ -209,13 +209,15 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
                     }
                 }
                 
-                // Update the URL with cleaned version
-                urlData.url = builder.build().toString();
-                setNewUrl.apply(urlData);
+                // Create new UrlData with cleaned URL
+                String cleanedUrl = builder.build().toString();
+                UrlData newUrlData = new UrlData(cleanedUrl);
+                newUrlData.mergeData(urlData); // Preserve any additional data from original
+                setNewUrl.apply(newUrlData);
                 
                 // Update UI to show it was cleaned
                 if (info != null) {
-                    if (!urlData.url.equals(originalUrl)) {
+                    if (!cleanedUrl.equals(originalUrl)) {
                         info.setText(R.string.mYoutubeCleaner_desc);
                     } else {
                         info.setText(R.string.mYoutubeCleaner_noChange);
