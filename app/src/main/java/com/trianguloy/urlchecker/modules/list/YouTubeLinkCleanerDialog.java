@@ -9,6 +9,7 @@ import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
+import com.trianguloy.urlchecker.modules.ModuleManager;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
@@ -89,6 +90,9 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     @Override
     public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
+        // Check if module is enabled
+        if (!ModuleManager.getEnabledPrefOfModule(new YouTubeLinkCleaner(), getActivity()).get()) return;
+
         try {
             String url = urlData.url;
             Uri uri = Uri.parse(url);
