@@ -31,6 +31,14 @@ public class YouTubeLinkCleaner extends AModuleData {
         return new GenericPref.Bool("youtubeCleaner_enabled", true, cntx);
     }
 
+    public static GenericPref.Bool VERBOSE_PREF(Context cntx) {
+        return new GenericPref.Bool("youtubeCleaner_verbose", false, cntx);
+    }
+
+    public static GenericPref.Bool AUTO_PREF(Context cntx) {
+        return new GenericPref.Bool("youtubeCleaner_auto", false, cntx);
+    }
+
     @Override
     public String getId() {
         return "youtubeCleaner";
@@ -39,6 +47,11 @@ public class YouTubeLinkCleaner extends AModuleData {
     @Override
     public int getName() {
         return R.string.mYoutubeCleaner_name;
+    }
+
+    @Override
+    public boolean isEnabledByDefault() {
+        return true;
     }
 
     @Override
@@ -59,24 +72,36 @@ public class YouTubeLinkCleaner extends AModuleData {
 
 class YouTubeLinkCleanerConfig extends AModuleConfig {
     private final GenericPref.Bool enabled;
+    private final GenericPref.Bool verbose;
+    private final GenericPref.Bool auto;
 
     public YouTubeLinkCleanerConfig(ModulesActivity activity) {
         super(activity);
         enabled = YouTubeLinkCleaner.ENABLED_PREF(activity);
+        verbose = YouTubeLinkCleaner.VERBOSE_PREF(activity);
+        auto = YouTubeLinkCleaner.AUTO_PREF(activity);
     }
 
     @Override
     public int getLayoutId() {
-        return 0; // No layout needed
+        return R.layout.config_youtube_cleaner;
     }
 
     @Override
     public void onInitialize(View views) {
-        // No initialization needed
+        enabled.attachToSwitch(views.findViewById(R.id.enabled));
     }
 
     public boolean isEnabled() {
         return enabled.get();
+    }
+
+    public boolean isVerbose() {
+        return verbose.get();
+    }
+
+    public boolean isAuto() {
+        return auto.get();
     }
 }
 
@@ -116,41 +141,48 @@ class YouTubeLinkCleanerDialog extends AModuleDialog {
     public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
         if (!config.isEnabled()) return;
 
-        String url = urlData.url;
-        Uri uri = Uri.parse(url);
-        
-        // Check if it's a YouTube URL
-        if (YOUTUBE_DOMAINS.contains(uri.getHost().toLowerCase())) {
-            originalUrl = url; // Store original URL for comparison
-            Uri.Builder builder = uri.buildUpon();
-            builder.clearQuery();
+        try {
+            String url = urlData.url;
+            Uri uri = Uri.parse(url);
             
-            // Keep only essential parameters
-            for (String param : uri.getQueryParameterNames()) {
-                if (!TRACKING_PARAMS.contains(param.toLowerCase())) {
-                    String value = uri.getQueryParameter(param);
-                    if (value != null) {
-                        builder.appendQueryParameter(param, value);
+            // Check if it's a YouTube URL
+            if (YOUTUBE_DOMAINS.contains(uri.getHost().toLowerCase())) {
+                originalUrl = url; // Store original URL for comparison
+                Uri.Builder builder = uri.buildUpon();
+                builder.clearQuery();
+                
+                // Keep only essential parameters
+                for (String param : uri.getQueryParameterNames()) {
+                    if (!TRACKING_PARAMS.contains(param.toLowerCase())) {
+                        String value = uri.getQueryParameter(param);
+                        if (value != null) {
+                            builder.appendQueryParameter(param, value);
+                        }
                     }
                 }
-            }
-            
-            // Update the URL with cleaned version
-            urlData.url = builder.build().toString();
-            setNewUrl.apply(urlData);
-            
-            // Update UI to show it was cleaned
-            if (info != null) {
-                if (!urlData.url.equals(originalUrl)) {
-                    info.setText(R.string.mYoutubeCleaner_desc);
-                } else {
-                    info.setText(R.string.mYoutubeCleaner_noChange);
+                
+                // Update the URL with cleaned version
+                urlData.url = builder.build().toString();
+                setNewUrl.apply(urlData);
+                
+                // Update UI to show it was cleaned
+                if (info != null) {
+                    if (!urlData.url.equals(originalUrl)) {
+                        info.setText(R.string.mYoutubeCleaner_desc);
+                    } else {
+                        info.setText(R.string.mYoutubeCleaner_noChange);
+                    }
+                }
+            } else {
+                // Not a YouTube URL
+                if (info != null) {
+                    info.setText(R.string.mYoutubeCleaner_notYoutube);
                 }
             }
-        } else {
-            // Not a YouTube URL
+        } catch (Exception e) {
+            // Handle any errors gracefully
             if (info != null) {
-                info.setText(R.string.mYoutubeCleaner_notYoutube);
+                info.setText(R.string.mYoutubeCleaner_error);
             }
         }
     }
