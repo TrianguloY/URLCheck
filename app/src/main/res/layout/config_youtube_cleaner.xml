@@ -13,13 +13,6 @@
         android:padding="@dimen/smallPadding" />
 
     <Switch
-        android:id="@+id/enabled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mYoutubeCleaner_name"
-        android:padding="@dimen/smallPadding" />
-
-    <Switch
         android:id="@+id/auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
