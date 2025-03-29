@@ -25,9 +25,8 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     // YouTube domain patterns
     private static final String[] YOUTUBE_PATTERNS = {
-        "youtube.com",
-        "youtu.be",
-        "m.youtube.com"
+        "youtube.com",  // This will match all YouTube domains including m.youtube.com and regional variants
+        "youtu.be"     // Short URL domain
     };
 
     // Tracking parameters to remove
@@ -90,8 +89,6 @@ public class YouTubeLinkCleanerDialog extends AModuleDialog {
 
     @Override
     public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
-        if (!config.isEnabled()) return;
-
         try {
             String url = urlData.url;
             Uri uri = Uri.parse(url);
