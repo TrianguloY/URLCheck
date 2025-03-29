@@ -72,7 +72,7 @@ public class YouTubeLinkCleaner extends AModuleData {
     }
 }
 
-class YouTubeLinkCleanerConfig extends AModuleConfig {
+public class YouTubeLinkCleanerConfig extends AModuleConfig {
     private final GenericPref.Bool enabled;
     private final GenericPref.Bool verbose;
     private final GenericPref.Bool auto;
