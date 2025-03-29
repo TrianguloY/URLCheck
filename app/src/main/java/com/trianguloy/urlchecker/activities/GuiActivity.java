@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 /**
@@ -14,12 +15,12 @@ public class GuiActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AndroidUtils.setTheme(this, false);
+        AndroidSettings.setTheme(this, false);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        AndroidUtils.setTheme(this, false);
+        AndroidSettings.setTheme(this, false);
     }
 } 
