@@ -330,7 +330,7 @@
     <string name="auto_unshort">Ent-Kürzen starten.</string>
     <string name="auto_scan">URL scannen, entspricht dem Scannen-Button.</string>
     <string name="auto_drawer">Überhangmenü öffnen.</string>
-    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, notwendig: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
+    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, optional: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'referrer\': string|list, optional: Falls vorhanden, muss der Referrer (die App, die den Link geöffnet hat) genau diesem Wert entsprechen. Bei einer Liste muss der Referrer einer der Werte sein. Sie können das Debug-Modul verwenden, um den tatsächlichen Wert zu überprüfen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'stop\': boolean: Wenn wahr, keine weiteren Automatisierungen für diese URL ausführen. Standardmäßig falsch.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
     <string name="format">Formatieren</string>
     <string name="discard">Verwerfen</string>
     <string name="json_info">Erklärung anzeigen</string>
@@ -359,4 +359,8 @@
     <string name="json_reset">Warnung: Der Inhalt des Editors wird durch das initiale JSON ersetzt. Alle Änderungen im Editor gehen verloren, aber gespeicherte Inhalte werden nicht verändert, bis Sie manuell speichern. Möchten Sie fortfahren?</string>
     <string name="auto_rule_webhook">Alles an den Webhook senden</string>
     <string name="auto_rule_bitly">bit.ly ent-kürzen</string>
+    <string name="txt_processText">Synchronisierung der URL mit editierbarem Text (wenn die App durch langes Tippen auf ein Eingabefeld geöffnet wird)</string>
+    <string name="txt_width">Dialogbreite:\nWarnung: Kleine Werte können Bildschirmelemente verstecken.</string>
+    <string name="spin_fullWidth">Voll</string>
+    <string name="spin_dynamicWidth">Dynamisch</string>
 </resources>
