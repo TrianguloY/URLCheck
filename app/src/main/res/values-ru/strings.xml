@@ -254,7 +254,6 @@
     <string name="btn_restore">Восстановить</string>
     <string name="bkp_description">Выберите элементы для бэкапа/восстановления.
 \nПри восстановлении, если бэкап был создан без него, существующие будут сохранены.</string>
-    <string name="btn_replace">Заменить</string>
     <string name="bck_deleteTitle">Удалить элементы</string>
     <string name="bjp_cache">Кэш: данные, которые можно легко загрузить/сгенерировать, например база данных хостов. Включение этой опции может значительно увеличить размер резервной копии.</string>
     <string name="bck_chooseFile">Выберите файл бэкапа</string>

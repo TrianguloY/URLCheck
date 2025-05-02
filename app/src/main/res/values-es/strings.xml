@@ -379,7 +379,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="btn_backupRestore">Copia de seguridad y restauración</string>
     <string name="bck_mn_advanced">Mostrar opciones avanzadas</string>
     <string name="btn_backup">Hacer copia</string>
-    <string name="btn_replace">Reemplazar</string>
     <string name="btn_restore">Restaurar</string>
     <string name="btn_delete">Borrar</string>
     <string name="bkp_description">Elige los elementos para hacer copia/restaurar.\nAl restaurar, si la copia se creó sin ellos, los existentes se mantendrán.</string>
@@ -413,7 +412,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mWebhook_url_hint">Url del webhook</string>
     <string name="mWebhook_body_hint">Cuerpo webhook</string>
     <string name="mWebhook_send">Enviar a webhook</string>
-    <string name="mWebhook_auto">Enviar URL automáticamente</string>
     <string name="mWebhook_missing_config">Falta la URL o el cuerpo del webhook</string>
     <string name="mWebhook_success">Envío a webhook correctamente</string>
     <string name="mWebhook_error">Error al enviar a webhook</string>

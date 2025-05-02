@@ -7,6 +7,7 @@ import android.util.Pair;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.generics.JsonCatalog;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
@@ -108,7 +109,7 @@ public class Hosts {
                     }
                 }
             } catch (JSONException | IOException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Exception while trying to build database from entry", e);
             }
             progress.increaseProgress();
         }

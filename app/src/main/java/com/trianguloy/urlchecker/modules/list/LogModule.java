@@ -19,6 +19,7 @@ import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 /** A module that logs all urls that passes through it */
@@ -74,7 +75,7 @@ class LogDialog extends AModuleDialog {
     @Override
     public void onInitialize(View views) {
         // new instance, log date
-        addLine("--- " + new Date().toLocaleString() + " ---");
+        addLine("--- " + DateFormat.getDateTimeInstance().format(new Date()) + " ---");
     }
 
     @Override

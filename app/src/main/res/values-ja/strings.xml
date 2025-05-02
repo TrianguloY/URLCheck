@@ -248,7 +248,6 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="bck_restoreTitle">バックアップを復元</string>
     <string name="bck_backupOk">バックアップを作成しました</string>
     <string name="bck_chooseFile">バックアップファイルを選択</string>
-    <string name="btn_replace">置換</string>
     <string name="txt_animation">アニメーションを有効化</string>
     <string name="spin_fullWidth">完全</string>
     <string name="spin_dynamicWidth">ダイナミック</string>

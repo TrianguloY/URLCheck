@@ -284,7 +284,7 @@ class ClearUrlDialog extends AModuleDialog {
                     }
                 }
             } catch (JSONException | UnsupportedEncodingException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid rule", e);
                 if (verbose.get()) {
                     data.addInfo(R.string.mClear_error);
                     data.addDetails(provider);

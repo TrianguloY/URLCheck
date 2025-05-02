@@ -257,7 +257,6 @@
     <string name="btn_backupRestore">Backup / Restaurar</string>
     <string name="bck_mn_advanced">Mostrar opções avançadas</string>
     <string name="btn_backup">Backup</string>
-    <string name="btn_replace">Substituir</string>
     <string name="btn_restore">Restaurar</string>
     <string name="btn_delete">Deletar</string>
     <string name="bkp_description">Escolha quais elementos fazer backup/restaurar.\nAo restaurar, se o backup foi criado sem ele, os existentes serão mantidos.</string>

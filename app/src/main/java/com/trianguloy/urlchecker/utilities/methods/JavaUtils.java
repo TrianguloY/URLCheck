@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -14,6 +15,8 @@ import java.util.List;
  * I prefer smaller and more available apps, even if they require an older API and not using Kotlin
  */
 public interface JavaUtils {
+
+    String sUTF_8 = StandardCharsets.UTF_8.name();
 
     /** Converts an iterator to a list */
     static <T> List<T> toList(Iterator<T> iterator) {

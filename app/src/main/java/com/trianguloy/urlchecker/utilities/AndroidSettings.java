@@ -6,15 +6,9 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.util.Log;
 
-import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.fragments.ResultCodeInjector;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
 
 public interface AndroidSettings {
 
@@ -53,31 +47,23 @@ public interface AndroidSettings {
 
     /** Sets the theme (light/dark mode) to an activity */
     static void setTheme(Context activity, boolean dialog) {
-        int style;
-        switch (THEME_PREF(activity).get()) {
-            case DEFAULT:
-            default:
+        activity.setTheme(switch (THEME_PREF(activity).get()) {
+            case DEFAULT -> {
                 if (!dialog && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     // is dayNight different to manually choosing dark or light? no idea, but it exists so...
-                    style = R.style.ActivityThemeDayNight;
-                    break;
+                    yield R.style.ActivityThemeDayNight;
                 }
 
-                style = (activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_NO
-                        ? (dialog ? R.style.DialogThemeLight : R.style.ActivityThemeLight) // explicit light mode (uiMode=NIGHT_NO)
-                        : (dialog ? R.style.DialogThemeDark : R.style.ActivityThemeDark) // dark mode or device default
-                ;
-                break;
-            case DARK:
-                style = (dialog ? R.style.DialogThemeDark : R.style.ActivityThemeDark);
-                break;
-            case LIGHT:
-                style = (dialog ? R.style.DialogThemeLight : R.style.ActivityThemeLight);
-                break;
-        }
-
-        // set
-        activity.setTheme(style);
+                // explicit light mode (uiMode=NIGHT_NO)
+                // dark mode or device default
+                if ((activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_NO)
+                    yield dialog ? R.style.DialogThemeLight : R.style.ActivityThemeLight;
+                else
+                    yield dialog ? R.style.DialogThemeDark : R.style.ActivityThemeDark;
+            }
+            case DARK -> dialog ? R.style.DialogThemeDark : R.style.ActivityThemeDark;
+            case LIGHT -> dialog ? R.style.DialogThemeLight : R.style.ActivityThemeLight;
+        });
     }
 
     /* ------------------- reloading ------------------- */

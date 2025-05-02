@@ -70,12 +70,12 @@ public interface AndroidUtils {
     static void setRawRoundedColor(int color, View view) {
         var drawable = view.getContext().getResources().getDrawable(R.drawable.round_box);
         drawable.setColorFilter(color, PorterDuff.Mode.SRC);
-        view.setBackgroundDrawable(drawable);
+        view.setBackground(drawable);
     }
 
     /** Clears the background color of a view */
     static void clearRoundedColor(View view) {
-        view.setBackgroundDrawable(null);
+        view.setBackground(null);
     }
 
     /** Makes the text of a textview display as a link (which does nothing when clicked) */

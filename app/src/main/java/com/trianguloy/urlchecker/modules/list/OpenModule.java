@@ -81,7 +81,7 @@ public class OpenModule extends AModuleData {
 
 class OpenDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<OpenDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<OpenDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("open", R.string.auto_open, dialog ->
                     dialog.openUrl(0)),
             new AutomationRules.Automation<>("share", R.string.auto_share, dialog ->

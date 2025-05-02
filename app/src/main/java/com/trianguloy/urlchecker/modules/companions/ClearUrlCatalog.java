@@ -114,7 +114,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
     }
 
     /** For {@link this#setRules(JSONObject, boolean)} return value */
-    enum Result {
+    private enum Result {
         UP_TO_DATE,
         UPDATED,
         ERROR
@@ -124,7 +124,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
      * Saves a new local catalog. Returns if it was up to date, updated or an error happened.
      * When merge is true, only the top-objects with the same key are replaced.
      */
-    public Result setRules(JSONObject rules, boolean merge) {
+    private Result setRules(JSONObject rules, boolean merge) {
         // merge rules if required
         if (merge) {
             try {
@@ -135,7 +135,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
                 }
                 rules = merged;
             } catch (JSONException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid JSON while trying to set rules", e);
                 // can't be parsed
                 return Result.ERROR;
             }
@@ -288,7 +288,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         try {
             rawRules = HttpUtils.readFromUrl(catalogURL.get());
         } catch (IOException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to get remote catalog", e);
             return R.string.mClear_urlError;
         }
 
@@ -300,7 +300,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
             try {
                 hash = HttpUtils.readFromUrl(hashURL.get()).trim();
             } catch (IOException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to fetch remote hash", e);
                 return R.string.mClear_hashError;
             }
 
@@ -315,21 +315,19 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         try {
             json = new JSONObject(rawRules);
         } catch (JSONException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to parse remote JSON", e);
             return R.string.invalid;
         }
 
         // valid, save and update
-        switch (setRules(json, true)) {
-            case UPDATED:
+        return switch (setRules(json, true)) {
+            case UPDATED -> {
                 lastUpdate.set(now);
-                return R.string.mClear_updated;
-            case UP_TO_DATE:
-                return R.string.mClear_upToDate;
-            case ERROR:
-            default:
-                return R.string.invalid;
-        }
+                yield R.string.mClear_updated;
+            }
+            case UP_TO_DATE -> R.string.mClear_upToDate;
+            case ERROR -> R.string.invalid;
+        };
 
     }
 }

@@ -274,7 +274,6 @@
     <string name="mClear_hashError">Kan de hash niet ophalen. Zorg ervoor dat de URL geldig is en dat u een actieve verbinding heeft</string>
     <string name="mClear_lastCheck">Laatste controle:</string>
     <string name="btn_backupRestore">Back-up/herstellen</string>
-    <string name="btn_replace">Vervangen</string>
     <string name="btn_delete">Verwijderen</string>
     <string name="bkp_description">Kies welke elementen je wil back-uppen of herstellen.
 \nAls je een element herstelt en er een back-up van is gemaakt, wordt die behouden.</string>

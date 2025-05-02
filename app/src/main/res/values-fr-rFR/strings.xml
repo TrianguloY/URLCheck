@@ -355,7 +355,6 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="noLinks">Aucun lien détecté</string>
     <string name="txt_animation">Activer animations</string>
     <string name="btn_backup">Sauver</string>
-    <string name="btn_replace">Remplacer</string>
     <string name="btn_restore">Restorer</string>
     <string name="bck_restoreOk">Sauvegarde restorée</string>
     <string name="bck_mn_advanced">Monter les options avancées</string>
@@ -387,7 +386,6 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_url_hint">URL du Webhook</string>
     <string name="mWebhook_send">Envoyer au Webhook</string>
-    <string name="mWebhook_auto">Envoi automatique d\'URLs</string>
     <string name="mWebhook_auto_send">Envoyer au webhook</string>
     <string name="mWebhook_missing_config">Url ou corps du webhook manquant</string>
     <string name="mWebhook_sending">Envoi vers le webhook…</string>

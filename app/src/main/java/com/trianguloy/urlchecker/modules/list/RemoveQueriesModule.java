@@ -189,11 +189,6 @@ class RemoveQueriesDialog extends AModuleDialog {
             return decode(split.get(1));
         }
 
-        /** Returns the full url */
-        public String getUrl() {
-            return getUrlWithoutQuery(-1);
-        }
-
         /** Returns the url without one query (by index) */
         public String getUrlWithoutQuery(int index) {
             var sb = new StringBuilder();

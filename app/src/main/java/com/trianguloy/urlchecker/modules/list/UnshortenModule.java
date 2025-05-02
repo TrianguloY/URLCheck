@@ -62,7 +62,7 @@ public class UnshortenModule extends AModuleData {
 
 class UnshortenDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<UnshortenDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<UnshortenDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("unshort", R.string.auto_unshort, dialog ->
                     dialog.unshort(dialog.getUrlData().disableUpdates))
     );
@@ -186,7 +186,7 @@ class UnshortenDialog extends AModuleDialog {
 
         } catch (IOException | JSONException e) {
             // internal error
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to unshorten url", e);
 
             // exit if was canceled
             if (Thread.currentThread().isInterrupted()) {

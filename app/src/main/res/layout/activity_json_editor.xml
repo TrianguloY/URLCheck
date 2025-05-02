@@ -29,6 +29,7 @@
             android:id="@+id/data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="json"
             android:gravity="top"
             android:hint="@string/json_sample"
             android:inputType="textMultiLine" />

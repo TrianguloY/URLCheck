@@ -266,7 +266,6 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="next">Prossimo</string>
     <string name="bkp_data_files">Files: Dati salvati come files.</string>
     <string name="bkp_data">Dati: Dati standard dell\' applicazione. Cose come i moduli abilitati, configurazioni json, etc. Non includera` segreti ne` chace.</string>
-    <string name="btn_replace">Sostituisci</string>
     <string name="btn_restore">Ripristina</string>
     <string name="bkp_description">Scegli gli elementi a cui eseguire il backup/ripristino.\nDurante il ripristino, se il backup è stato creato senza di esso, quelli esistenti verranno mantenuti.</string>
     <string name="txt_animation">Abilita animazioni</string>
@@ -326,7 +325,6 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="auto_available_prefix">Azioni di automazione disponibili (chiavi):</string>
     <string name="auto_available_disabled">Questo modulo e` disabilitato, le automazioni non verrano eseguite</string>
     <string name="auto_open">Aprira` l\'url con la prima app disponibile. Equivalente a premere il tasto \'apri\'.</string>
-    <string name="mWebhook_auto">Invia gli URL automaticamente</string>
     <string name="none">Nessuno</string>
     <string name="json_info">Mostra informazioni</string>
     <string name="json_ignore">Questo contenuto non è Json valido. Vuoi scartarlo e chiudere l\'editor?</string>

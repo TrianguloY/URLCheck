@@ -64,7 +64,6 @@ Translations: %2$s."</string>
     -->
     <string name="bck_mn_advanced">Show advanced options</string>
     <string name="btn_backup">Backup</string>
-    <string name="btn_replace">Replace</string>
     <string name="btn_restore">Restore</string>
     <string name="btn_delete">Delete</string>
     <string name="bkp_description">"Choose which elements to backup/restore.
@@ -426,7 +425,6 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_body_hint">Webhook body</string>
     <string name="mWebhook_send">Send to Webhook</string>
-    <string name="mWebhook_auto">Automatically send URLs</string>
     <string name="mWebhook_auto_send">Send to webhook</string>
     <string name="mWebhook_missing_config">Missing webhook url or body</string>
     <string name="mWebhook_sending">Sending to webhook…</string>

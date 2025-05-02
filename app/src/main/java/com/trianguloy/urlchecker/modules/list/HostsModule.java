@@ -114,7 +114,7 @@ class HostsDialog extends AModuleDialog {
         try {
             host = new URL(url).getHost();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Invalid url", e);
             text.setText(R.string.mHosts_parseError);
             AndroidUtils.setRoundedColor(R.color.warning, text);
             setVisibility(true);
@@ -127,7 +127,7 @@ class HostsDialog extends AModuleDialog {
             try {
                 AndroidUtils.setRawRoundedColor(Color.parseColor(label.second), text);
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid color", e);
                 AndroidUtils.setRoundedColor(R.color.bad, text);
             }
             setVisibility(true);

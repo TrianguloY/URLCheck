@@ -261,7 +261,6 @@
     <string name="bck_mn_advanced">Tampilkan pengaturan lanjut</string>
     <string name="btn_backupRestore">Cadangkan / Pulihkan</string>
     <string name="btn_backup">Cadangkan</string>
-    <string name="btn_replace">Gantikan</string>
     <string name="btn_restore">Pulihkan</string>
     <string name="btn_delete">Hapus</string>
     <string name="txt_animation">Nyalakan animasi</string>

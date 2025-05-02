@@ -326,7 +326,6 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="btn_restore">Geri Yükle</string>
     <string name="bck_mn_advanced">Gelişmiş seçenekleri göster</string>
     <string name="btn_backup">Yedekle</string>
-    <string name="btn_replace">Değiştir</string>
     <string name="btn_delete">Kaldır</string>
     <string name="bkp_data">Veri: Standart uygulama verileri. Etkinleştirilmiş modüller, json yapılandırmaları vb. gibi şeyler. Gizli bilgileri veya önbelleği içermez.</string>
     <string name="bkp_data_prefs">Tercihler: Tercihler olarak kaydedilen veriler.</string>
@@ -355,7 +354,6 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="mWebhook_url_hint">Web Kancası URL\'si</string>
     <string name="mWebhook_body_hint">Web Kanca\'sı içeriği</string>
     <string name="mWebhook_send">Web Kancası\'na gönder</string>
-    <string name="mWebhook_auto">URL\'leri otomatik olarak gönder</string>
     <string name="mWebhook_auto_send">Web Kancası\'na gönder</string>
     <string name="mWebhook_missing_config">Eksik Web Kancası url\'si veya içeriği</string>
     <string name="mWebhook_sending">Web kancasına gönderiliyor…</string>

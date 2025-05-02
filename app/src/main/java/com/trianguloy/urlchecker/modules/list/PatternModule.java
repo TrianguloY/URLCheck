@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.sUTF_8;
 import static com.trianguloy.urlchecker.utilities.methods.UrlUtils.decode;
 
 import android.view.View;
@@ -127,7 +128,7 @@ class PatternDialog extends AModuleDialog {
 
                 // encode if required
                 if (data.optBoolean("encode")) {
-                    url = URLEncoder.encode(url);
+                    url = URLEncoder.encode(url, sUTF_8);
                 }
 
                 // check matches
@@ -180,8 +181,7 @@ class PatternDialog extends AModuleDialog {
                 if (message.matches) messages.add(message);
 
             } catch (Exception e) {
-                // invalid pattern? ignore
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid pattern", e);
             }
         }
     }

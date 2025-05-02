@@ -144,7 +144,7 @@ public class MainDialog extends Activity {
                 // skip own if required
                 if (!urlData.triggerOwn && module == urlData.trigger) continue;
                 try {
-                    module.onFinishUrl(urlData);
+                    module.onFinishUrl();
                 } catch (Exception e) {
                     AndroidUtils.assertError("Exception in onFinishUrl for module " + module.getClass().getName(), e);
                 }

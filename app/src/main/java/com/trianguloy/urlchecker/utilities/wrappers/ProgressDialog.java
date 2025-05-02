@@ -2,7 +2,6 @@ package com.trianguloy.urlchecker.utilities.wrappers;
 
 import android.app.Activity;
 
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 /**

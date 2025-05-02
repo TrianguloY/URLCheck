@@ -161,12 +161,6 @@ public class BackupActivity extends Activity {
             super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (!resultCodeInjector.onRequestPermissionsResult(requestCode, permissions, grantResults))
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
     /* ------------------- backup ------------------- */
 
     public void backup(View ignored) {
@@ -217,7 +211,7 @@ public class BackupActivity extends Activity {
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_backupOk, Toast.LENGTH_SHORT).show());
 
             } catch (Exception e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to backup", e);
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_backupError, Toast.LENGTH_LONG).show());
             }
         });
@@ -298,7 +292,7 @@ public class BackupActivity extends Activity {
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_restoreOk, Toast.LENGTH_LONG).show());
 
             } catch (Exception e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to restore", e);
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_restoreError, Toast.LENGTH_LONG).show());
             }
 
@@ -399,7 +393,7 @@ public class BackupActivity extends Activity {
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_deleteOk, Toast.LENGTH_SHORT).show());
 
             } catch (Exception e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to delete", e);
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_deleteError, Toast.LENGTH_SHORT).show());
             }
 

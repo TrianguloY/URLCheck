@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.ModulesActivity;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
@@ -125,16 +124,17 @@ class TextInputDialog extends AModuleDialog {
                 str.setSpan(new StyleSpan(BOLD), start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
             }
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) e.printStackTrace();
+            AndroidUtils.assertError("Unable to set host as bold", e);
         }
 
         // italic query+fragment
         try {
             var start = rawUri.indexOf("?");
             if (start == -1) start = rawUri.indexOf("#");
-            if (start != -1) str.setSpan(new StyleSpan(ITALIC), start, rawUri.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+            if (start != -1)
+                str.setSpan(new StyleSpan(ITALIC), start, rawUri.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) e.printStackTrace();
+            AndroidUtils.assertError("Unable to set query+fragment as italic", e);
         }
 
         return str;

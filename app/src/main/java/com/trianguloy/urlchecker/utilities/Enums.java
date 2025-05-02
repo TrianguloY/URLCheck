@@ -1,8 +1,5 @@
 package com.trianguloy.urlchecker.utilities;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public interface Enums {
 
     interface StringEnum {
@@ -28,15 +25,5 @@ public interface Enums {
             }
         }
         return null;
-    }
-
-    /** Get a map of id and enum */
-    static <TE extends IdEnum> Map<Integer, TE> toEnumMap(Class<TE> te) {
-        Map<Integer, TE> res = new HashMap<>();
-        TE[] enumConstants = te.getEnumConstants();
-        for (TE constant : enumConstants) {
-            res.put(constant.getId(), constant);
-        }
-        return res;
     }
 }

@@ -41,36 +41,17 @@ public class CTabs {
     /** Initialization from a given intent and a button to toggle */
     public void initFrom(Intent intent, ImageButton button) {
         this.button = button;
-        boolean visible;
         // configure
-        switch (pref.get()) {
-            default -> {
-                // If auto we get it from the intent
-                state = intent.hasExtra(CTabs.EXTRA);
-                visible = true;
-            }
-            case HIDDEN -> {
-                // If hidden we also get it from the intent
-                state = intent.hasExtra(CTabs.EXTRA);
-                visible = false;
-            }
-            case DEFAULT_ON -> {
-                state = true;
-                visible = true;
-            }
-            case DEFAULT_OFF -> {
-                state = false;
-                visible = true;
-            }
-            case ALWAYS_ON -> {
-                state = true;
-                visible = false;
-            }
-            case ALWAYS_OFF -> {
-                state = false;
-                visible = false;
-            }
-        }
+        state = switch (pref.get()) {
+            // If auto or hidden we get it from the intent
+            case AUTO, HIDDEN -> intent.hasExtra(CTabs.EXTRA);
+            case DEFAULT_ON, ALWAYS_ON -> true;
+            case DEFAULT_OFF, ALWAYS_OFF -> false;
+        };
+        var visible = switch (pref.get()) {
+            case AUTO, DEFAULT_ON, DEFAULT_OFF -> true;
+            case HIDDEN, ALWAYS_ON, ALWAYS_OFF -> false;
+        };
 
         // set
         if (visible) {

@@ -32,7 +32,6 @@
     <string name="btn_backupRestore">Sao lưu / Khôi phục</string>
     <string name="bck_mn_advanced">Hiển thị tùy chọn nâng cao</string>
     <string name="btn_backup">Sao lưu</string>
-    <string name="btn_replace">Thay thế</string>
     <string name="btn_restore">Khôi phục</string>
     <string name="bkp_data_prefs">Tùy chọn: Dữ liệu được lưu dưới dạng tùy chọn.</string>
     <string name="bkp_data_files">Tệp: Dữ liệu được lưu dưới dạng tệp.</string>

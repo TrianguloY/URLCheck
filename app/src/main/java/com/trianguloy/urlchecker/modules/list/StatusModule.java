@@ -82,7 +82,7 @@ class StatusConfig extends AModuleConfig {
 class StatusDialog extends AModuleDialog {
     private static final String PREVIOUS = "redirected.redirected";
 
-    static List<AutomationRules.Automation<StatusDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<StatusDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("checkStatus", R.string.auto_checkStatus, dialog ->
                     dialog.check(dialog.getUrlData().disableUpdates))
     );
@@ -196,16 +196,16 @@ class StatusDialog extends AModuleDialog {
             var location = conn.getHeaderField("Location");
             if (location != null) {
                 // this should be removed, the uri needs to be kept encoded
-                // location = URLDecoder.decode(location, "UTF-8");
+                // location = URLDecoder.decode(location, sUTF-8);
                 redirectionUrl = new URL(new URL(url), location).toExternalForm(); // Deal with relative URLs
             }
         } catch (IOException e) {
             // io error
-            e.printStackTrace();
+            AndroidUtils.assertError("Network error while checking url", e);
             message = getActivity().getString(R.string.mStatus_ioerror, e.getMessage());
         } catch (Exception e) {
             // other error
-            e.printStackTrace();
+            AndroidUtils.assertError("Unknown exception while checking url", e);
             message = getActivity().getString(R.string.mStatus_error, e.getMessage());
         } finally {
             if (conn != null) {

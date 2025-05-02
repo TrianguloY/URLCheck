@@ -3,7 +3,6 @@ package com.trianguloy.urlchecker.modules;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.fragments.Fragment;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 
 import java.util.Map;
@@ -40,7 +39,7 @@ public abstract class AModuleDialog implements Fragment {
     }
 
     /** Last call for any update a module may need (like the drawer module needing to know how many modules are visible). */
-    public void onFinishUrl(UrlData urlData) {
+    public void onFinishUrl() {
     }
 
     // ------------------- utilities -------------------

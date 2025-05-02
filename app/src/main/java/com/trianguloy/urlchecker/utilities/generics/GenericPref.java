@@ -14,7 +14,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.utilities.Enums;
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.UnaryOperator;
@@ -38,7 +37,7 @@ public abstract class GenericPref<T> {
     }
 
     /** android sharedprefs */
-    protected SharedPreferences prefs;
+    protected final SharedPreferences prefs;
 
     /** this preference name */
     protected final String prefName;
@@ -222,11 +221,6 @@ public abstract class GenericPref<T> {
         @Override
         protected void save(String value) {
             prefs.edit().putString(prefName, value).apply();
-        }
-
-        /** Adds the value to the existing content */
-        public void add(String value) {
-            set(get() + value);
         }
 
         /** This editText will be set to the pref value, and when the editText changes the value will too */

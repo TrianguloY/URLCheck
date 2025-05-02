@@ -162,7 +162,6 @@
     <string name="btn_backupRestore">Резервне копіювання / відновлення</string>
     <string name="bck_mn_advanced">Показати додаткові параметри</string>
     <string name="btn_backup">Резервне копіювання</string>
-    <string name="btn_replace">Замінити</string>
     <string name="bkp_data">Дані: стандартні дані програми. Такі речі, як увімкнені модулі, конфігурації json тощо. Не включатимуть секрети та кеш.</string>
     <string name="bck_restoreDelete">Видаліть елементи перед відновленням. Зауважте, що параметри та деякі файли зі значеннями за замовчуванням можуть не існувати, тому вимикання цього параметра призведе до об’єднання існуючих елементів із резервними в неочікуваний спосіб. Вимкніть, якщо знаєте, що робите.</string>
     <string name="bck_restoreMessage">УВАГА! Це замінить вибрані елементи з резервної копії.\nВи дійсно хочете продовжити?</string>
@@ -294,7 +293,6 @@
     <string name="mUnshort_ok">Нескорочений</string>
     <string name="mWebhook_name">Вебхук</string>
     <string name="mWebhook_send">Надіслати до Webhook</string>
-    <string name="mWebhook_auto">Автоматично надсилати URL-адреси</string>
     <string name="mWebhook_auto_send">Надіслати на вебхук</string>
     <string name="mWebhook_sending">Надсилання на вебхук…</string>
     <string name="mWebhook_success">Успішно надіслано на вебхук</string>

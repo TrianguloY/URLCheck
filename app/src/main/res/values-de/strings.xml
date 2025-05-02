@@ -275,7 +275,6 @@
     <string name="mPttrn_wrongSchemaHttps">Ungültige Großschreibung des https-Schemas.</string>
     <string name="btn_backupRestore">Backup und Wiederherstellung</string>
     <string name="bck_mn_advanced">Erweiterte Optionen anzeigen</string>
-    <string name="btn_replace">Ersetzen</string>
     <string name="bkp_data">Daten: Standarddaten der App, z. B. aktivierte Module, JSON-Konfigurationen, etc. Enthält keine geheimen Informationen oder den Cache.</string>
     <string name="bkp_data_prefs">Einstellungen</string>
     <string name="bkp_data_files">Dateien</string>
@@ -347,7 +346,6 @@
     <string name="auto_clear">URL säubern, äquivalent zum entsprechenden Modul. Beachten Sie, dass das Modul selbst eine \"Auto\"-Einstellung enthält, die bevorzugt werden sollte.</string>
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_send">An Webhook senden</string>
-    <string name="mWebhook_auto">URLs automatisch senden</string>
     <string name="mWebhook_desc">Dieses Modul sendet URLs an den einstellten Webhook-Endpunkt. Es wird ein Timestamp mitgesendet und Sie können die URLs auf Ihrem Server verarbeiten.\nDanke an anoop-b für die Idee und Basisimplementierung!\n\nKonfigurieren Sie die Webhook URL und Body um URLs zu senden.\nIm Body können Sie die Platzhalter $URL$ und $TIMESTAMP$ verwenden.</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_body_hint">Webhook body</string>

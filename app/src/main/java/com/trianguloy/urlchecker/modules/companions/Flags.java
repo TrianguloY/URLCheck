@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 
 import com.trianguloy.urlchecker.modules.AModuleDialog;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 import java.util.Map;
 import java.util.Set;
@@ -70,7 +71,7 @@ public class Flags {
                 compatibleFlags.put(flag, (Integer) Intent.class.getField("FLAG_" + flag).get(null));
             } catch (NoSuchFieldException ignored) {
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to get flag field", e);
             }
         }
     }

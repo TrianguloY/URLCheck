@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.JsonEditorInterface;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.InternalFile;
 
 import org.json.JSONException;
@@ -45,7 +46,7 @@ public abstract class JsonCatalog implements JsonEditorInterface {
         try {
             return buildBuiltIn(cntx);
         } catch (JSONException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to get builtIn catalog", e);
             return new JSONObject();
         }
     }

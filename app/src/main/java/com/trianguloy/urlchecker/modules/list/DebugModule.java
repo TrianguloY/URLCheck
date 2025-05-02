@@ -30,7 +30,7 @@ import java.util.List;
  * Allows also to enable/disable ctabs toasts
  */
 public class DebugModule extends AModuleData {
-    public static String ID = "debug";
+    public static final String ID = "debug";
 
     @Override
     public String getId() {

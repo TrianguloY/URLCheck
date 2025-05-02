@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 
@@ -101,11 +102,10 @@ public class LastOpened {
      */
     private String getDomain(String url) {
         try {
-            List<String> domainParts = Arrays.asList(new URL(url).getHost().split("\\."));
+            var domainParts = Arrays.asList(new URL(url).getHost().split("\\."));
             return String.join(".", domainParts.size() <= 1 ? domainParts : domainParts.subList(domainParts.size() - 2, domainParts.size()));
         } catch (Exception e) {
-            // can't get
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to parse domain", e);
             return "";
         }
     }

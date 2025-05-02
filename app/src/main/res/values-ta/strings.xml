@@ -46,7 +46,6 @@
     <string name="btn_backupRestore">காப்புப்பிரதி / மீட்டமை</string>
     <string name="bck_mn_advanced">மேம்பட்ட விருப்பங்களைக் காட்டு</string>
     <string name="btn_backup">காப்புப்பிரதி</string>
-    <string name="btn_replace">மாற்றவும்</string>
     <string name="btn_restore">மீட்டெடு</string>
     <string name="btn_delete">நீக்கு</string>
     <string name="bkp_description">காப்புப்பிரதி/மீட்டமைக்க எந்த கூறுகளைத் தேர்வுசெய்க.\n மீட்டமைக்கும்போது, அது இல்லாமல் காப்புப்பிரதி உருவாக்கப்பட்டால், ஏற்கனவே உள்ளவை வைக்கப்படும்.</string>
@@ -289,7 +288,6 @@
     <string name="mWebhook_url_hint">வெப்ஊக் முகவரி</string>
     <string name="mWebhook_body_hint">வெப்ஊக் உடல்</string>
     <string name="mWebhook_send">வெப்ஊக்கிற்கு அனுப்புங்கள்</string>
-    <string name="mWebhook_auto">தானாக முகவரி களை அனுப்பவும்</string>
     <string name="mWebhook_auto_send">வெப்ஊக்கிற்கு அனுப்புங்கள்</string>
     <string name="mWebhook_missing_config">வெப்ஊக் முகவரி அல்லது உடலை காணவில்லை</string>
     <string name="mWebhook_sending">வெப்ஊக்கிற்கு அனுப்புகிறது…</string>

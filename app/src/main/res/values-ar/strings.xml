@@ -33,7 +33,6 @@
     <string name="btn_backupRestore">النسخ الاحتياطي / استعادة البيانات</string>
     <string name="bck_mn_advanced">عرض الخيارات المتقدمة</string>
     <string name="btn_backup">عمل نسخة احتياطية</string>
-    <string name="btn_replace">استبدال</string>
     <string name="btn_restore">استعادة البيانات</string>
     <string name="btn_delete">حذف</string>
     <string name="bkp_data_prefs">التفضيلات: البيانات المحفوظة كتفضيلات.</string>

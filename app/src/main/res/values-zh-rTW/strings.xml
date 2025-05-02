@@ -250,7 +250,6 @@
 \n- 建議以隱私友善的替代方案取代 YouTube、Reddit 或 Twitter 等網站 [預設為未啟用]</string>
     <string name="mPttrn_editor">此為型樣檢查器設定檔，你可以在此編輯或新增型樣，格式為： \n- encode：布林值。若為「true」，網址會先解碼再檢查。 \n- regex：字串，此項為必填，其應為有效的 Java 規則運算式。網址必須與之匹配，否則將略過該型樣。 \n- excludeRegex：字串，其應為有效的 Java 規則運算式。若填寫此項，網址必須與之「不」匹配，否則將略過該型樣。 \n- replacement：字串或包含字串的陣列。若填寫此項，將顯示一個「套用」按鈕供執行「url=url.replaceAll(regex,replacement)」；若為陣列，將會隨機挑選取代內容。 \n- decode：布林值。若為「true」，將解碼取代後的網址。 \n- automatic：布林值。若為「true」，將自動套用可用的動作。 \n- enabled：布林值。若為「false」，將停用該型樣。 \n注意：一旦編輯了這個設定檔，未來本程式所推出的新型樣將不會被自動加入 (除非重設本設定檔)。</string>
     <string name="mRemove_one">移除 %s</string>
-    <string name="btn_replace">取代</string>
     <string name="btn_backupRestore">備份／還原</string>
     <string name="bck_mn_advanced">顯示進階選項</string>
     <string name="btn_backup">備份</string>

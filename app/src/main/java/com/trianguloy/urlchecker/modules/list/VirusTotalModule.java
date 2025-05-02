@@ -100,7 +100,7 @@ class VirusTotalConfig extends AModuleConfig {
 
 class VirusTotalDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<VirusTotalDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<VirusTotalDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("scan", R.string.auto_scan, VirusTotalDialog::scanOrCancel)
     );
 
@@ -180,7 +180,7 @@ class VirusTotalDialog extends AModuleDialog {
             try {
                 Thread.sleep(RETRY_TIMEOUT);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("You may not rest now, there are monsters nearby", e);
             }
         }
 

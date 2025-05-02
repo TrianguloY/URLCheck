@@ -325,7 +325,6 @@
     <string name="bkp_secrets">秘密：认为是“秘密”的数据，比如 VirusTotal API 密钥或日志。</string>
     <string name="bck_backupOk">已创建备份</string>
     <string name="bck_restoreOk">已恢复备份</string>
-    <string name="btn_replace">替换</string>
     <string name="btn_restore">恢复</string>
     <string name="btn_delete">删除</string>
     <string name="bck_restoreDelete">恢复前删除元素。请注意，备份中可能缺少某些首选项或带默认值的文件，因此禁用此设置后，已有元素会与备份文件以预期外的方式合并。请在知道在做什么的情况下禁用。</string>

@@ -67,6 +67,7 @@ public class RegexFix {
         return matcher.end();
     }
 
+    /** @noinspection UnnecessaryContinue, DataFlowIssue , ConstantValue */
     private static void appendEvaluated(Matcher matcher, StringBuffer buffer, String s) {
         // Copied from https://android.googlesource.com/platform/libcore/+/refs/heads/android13-release/ojluni/src/main/java/java/util/regex/Matcher.java#731
         boolean escape = false;
@@ -122,6 +123,7 @@ public class RegexFix {
         }
     }
 
+    /** @noinspection UnusedReturnValue*/
     private static StringBuffer appendTail(String text, StringBuffer sb, int appendPos) {
         // Copied from https://android.googlesource.com/platform/libcore/+/refs/heads/android13-release/ojluni/src/main/java/java/util/regex/Matcher.java#796
         int to = text.length();

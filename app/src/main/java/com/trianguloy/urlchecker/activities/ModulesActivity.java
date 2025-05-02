@@ -70,22 +70,26 @@ public class ModulesActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+        return switch (item.getItemId()) {
+            case android.R.id.home -> {
                 // press the 'back' button in the action bar to go back
                 onBackPressed();
-                return true;
-            case R.id.menu_reset:
+                yield true;
+            }
+            case R.id.menu_reset -> {
                 // reset order entry
                 resetOrder();
-                return true;
-            case R.id.menu_decorations:
+                yield true;
+            }
+            case R.id.menu_decorations -> {
                 // toggle decorations entry
                 toggleAllDecorations();
-                return true;
-        }
+                yield true;
+            }
 
-        return super.onOptionsItemSelected(item);
+            default -> super.onOptionsItemSelected(item);
+        };
+
     }
 
     // ------------------- actions -------------------
@@ -213,6 +217,7 @@ public class ModulesActivity extends Activity {
 
         // sort views based on the order they should have
         List<String> modules = ModuleManager.getOrderedModulesId(this);
+        //noinspection ComparatorCombinators requires api 24
         Collections.sort(views, (a, b) -> modules.indexOf(a.getTag().toString()) - modules.indexOf(b.getTag().toString()));
 
         // add

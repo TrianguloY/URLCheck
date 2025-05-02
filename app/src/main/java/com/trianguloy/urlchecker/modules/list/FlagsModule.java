@@ -31,7 +31,6 @@ import com.trianguloy.urlchecker.views.CycleImageButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -146,20 +145,6 @@ class FlagsDialog extends AModuleDialog {
         }
     }
 
-    // To get all the groups names
-    private List<String> getGroups() {
-        List<String> res = new ArrayList<>();
-        // Always add FlagsModule.DEFAULT_GROUP first, even if it doesn't exist
-        res.add(FlagsModule.DEFAULT_GROUP);
-        for (Iterator<String> it = groups.keys(); it.hasNext(); ) {
-            String group = it.next();
-            if (!group.equals(FlagsModule.DEFAULT_GROUP)) {
-                res.add(group);
-            }
-        }
-        return res;
-    }
-
     void loadGroup(String group) {
         currentFlags.setFlags(0);
 
@@ -231,18 +216,11 @@ class FlagsDialog extends AModuleDialog {
 
             // Checkbox
             var checkBox = checkbox_text.<ImageView>findViewById(R.id.state);
-            boolean bool;
-            switch (valueOrDefault(flagsStatePref.get(flag), FlagsConfig.FlagState.AUTO)) {
-                case ON:
-                    bool = true;
-                    break;
-                case OFF:
-                    bool = false;
-                    break;
-                case AUTO:
-                default:
-                    bool = defaultFlags.isSet(flag);
-            }
+            var bool = switch (valueOrDefault(flagsStatePref.get(flag), FlagsConfig.FlagState.AUTO)) {
+                case ON -> true;
+                case OFF -> false;
+                case AUTO -> defaultFlags.isSet(flag);
+            };
             currentFlags.setFlag(flag, bool);
 
             checkBox.setTag(R.id.text, flag);
@@ -275,18 +253,11 @@ class FlagsDialog extends AModuleDialog {
     void setColors(String flag, View defaultIndicator, View preferenceIndicator) {
         AndroidUtils.setRoundedColor(defaultFlags.isSet(flag) ? R.color.good : R.color.bad, defaultIndicator);
 
-        int color;
-        switch (valueOrDefault(flagsStatePref.get(flag), FlagsConfig.FlagState.AUTO)) {
-            case ON:
-                color = R.color.good;
-                break;
-            case OFF:
-                color = R.color.bad;
-                break;
-            case AUTO:
-            default:
-                color = R.color.grey;
-        }
+        var color = switch (valueOrDefault(flagsStatePref.get(flag), FlagsConfig.FlagState.AUTO)) {
+            case ON -> R.color.good;
+            case OFF -> R.color.bad;
+            case AUTO -> R.color.grey;
+        };
 
         AndroidUtils.setRoundedColor(color, preferenceIndicator);
     }
@@ -434,7 +405,7 @@ class FlagsConfig extends AModuleConfig {
             // TODO should groups be sorted?
             file.set(newSettings.toString());
         } catch (JSONException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Invalid json flags", e);
             Toast.makeText(getActivity(), R.string.invalid, Toast.LENGTH_SHORT).show();
         }
     }

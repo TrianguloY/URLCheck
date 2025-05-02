@@ -54,7 +54,7 @@ public interface StreamUtils {
                 function.accept(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to consume stream", e);
         }
     }
 
@@ -72,8 +72,7 @@ public interface StreamUtils {
             return hex.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            // this should never happen, all Androids must support sha-256
+            AndroidUtils.assertError("this should never happen, all Androids must support sha-256", e);
             return "";
         }
     }

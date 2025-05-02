@@ -2,7 +2,7 @@ package com.trianguloy.urlchecker.utilities.wrappers;
 
 import android.content.Context;
 
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
@@ -29,13 +29,11 @@ public class InternalFile {
     }
 
     /** Streams the lines */
-    public boolean stream(Consumer<String> function) {
+    public void stream(Consumer<String> function) {
         try {
             StreamUtils.consumeLines(cntx.openFileInput(fileName), function);
-            return true;
         } catch (IOException ignored) {
             // do nothing
-            return false;
         }
     }
 
@@ -52,7 +50,7 @@ public class InternalFile {
             fos.write(content.getBytes(StreamUtils.UTF_8));
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to store file content", e);
             return false;
         }
     }
