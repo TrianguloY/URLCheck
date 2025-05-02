@@ -71,7 +71,6 @@
     <string name="btn_backupRestore">پشتیبان‌گیری / بازیابی</string>
     <string name="bck_mn_advanced">نمایش گزینه‌های پیشرفته</string>
     <string name="btn_backup">پشتیبان‌گیری</string>
-    <string name="btn_replace">جایگزینی</string>
     <string name="btn_restore">بازیابی</string>
     <string name="btn_delete">پاک کردن</string>
     <string name="bkp_data">داده‌ها: داده‌های استاندارد برنامه. مانند ماژول‌های فعال، پیکربندی‌های JSON و غیره. شامل اسرار یا حافظه نهان نمی‌شود.</string>
@@ -274,7 +273,6 @@
     <string name="mParts_name">بخش‌های URI</string>
     <string name="mParts_copy">بخش در بریده‌دان رونویسی شد</string>
     <string name="mWebhook_url_hint">URL وب‌هوک</string>
-    <string name="mWebhook_auto">فرستادن خودکار URLها</string>
     <string name="mWebhook_auto_send">فرستادن به وب‌هوک</string>
     <string name="mWebhook_missing_config">URL یا بدنه وب‌هوک گم شده</string>
     <string name="mWebhook_test">آزمایش وب‌هوک</string>

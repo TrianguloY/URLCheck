@@ -344,7 +344,6 @@
     <string name="mUnshort_to">取消短链接到 %s</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_auto_send">发送到 Webhook</string>
-    <string name="mWebhook_auto">自动发送 URL</string>
     <string name="json_info">显示提示</string>
     <string name="json_discard_close">撤销并关闭</string>
     <string name="json_ignore">内容不是有效的 JSON。想要撤销并关闭编辑器吗？</string>
