@@ -213,15 +213,7 @@
     <string name="mPttrn_ascii">Upozorenje! Pronađeni su znakovi koji nisu u ASCII kodu.</string>
     <string name="mPttrn_http">HTTP link. Razmislite o korišćenju HTTPS-a.</string>
     <string name="mPttrn_ok">Nisu pronađeni podudarajaući šabloni</string>
-    <string name="mPttrn_editor">Ovde možete urediti ili dodati novi obrazac. Format:
-\n- \'encode\': boolean: podesite na tačno da biste kodirali URL pre provere redovnog izraza.
-\n- \'regex\': string: važeći java regularni izraz sa kojim URL mora da odgovara, inače se šablon preskače.
-\n- \'ekcludeRegex\': string: ako je naveden, važeći java regularni izraz sa kojim se URL ne sme podudarati, inače se šablon preskače.
-\n- \'replacement\': string|list: ako je navedeno, dugme \'fix\' će pokrenuti \'url=url.replaceAll(regex,replacement)\'. Ako je lista, zamena će biti nasumični element iz njega.
-\n- \'decode\': boolean: postaviti na tačno da bi se dekodirao zamenjeni URL.
-\n- \'automatski\': boolean: podesite na tačno da biste automatski primenili šablon.
-\n- \'enabled\': boolean: podesite na false da biste onemogućili šablon.
-\nNapomena: ako uredite šablone, novi ugrađeni šabloni iz ažuriranja aplikacija neće biti automatski dodani (možete ih vratiti pomoću opcije resetovanja).</string>
+    <string name="mPttrn_editor">Ovde možete urediti ili dodati novi obrazac. Format: \n- \'encode\': boolean: podesite na tačno da biste kodirali URL pre provere redovnog izraza. \n- \'regex\': string: važeći java regularni izraz sa kojim URL mora da odgovara, inače se šablon preskače. \n- \'ekcludeRegex\': string: ako je naveden, važeći java regularni izraz sa kojim se URL ne sme podudarati, inače se šablon preskače. \n- \'replacement\': string|list: ako je navedeno, dugme \'fix\' će pokrenuti \'url=url.replaceAll(regex,replacement)\'. Ako je lista, zamena će biti nasumični element iz njega. \n- \'decode\': boolean: postaviti na tačno da bi se dekodirao zamenjeni URL. \n- \'automatski\': boolean: podesite na tačno da biste automatski primenili šablon. \n- \'enabled\': boolean: podesite na false da biste onemogućili šablon. \nNapomena: ako uredite šablone, novi ugrađeni šabloni iz ažuriranja aplikacija neće biti automatski dodani (možete ih vratiti pomoću opcije resetovanja).</string>
     <string name="mOpen_name">Otvori i podeli</string>
     <string name="mStatus_check">Proveri status</string>
     <string name="mOpen_desc">Sadrži sledeća dugmad (s leva na desno):
