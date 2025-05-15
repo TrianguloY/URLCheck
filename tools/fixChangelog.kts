@@ -8,7 +8,8 @@ import java.io.File
 
 /* ------------------- settings ------------------- */
 
-val RELEASE_NOTES = "app/src/main/play/release-notes"
+val RELEASE_NOTES = "fastlane/metadata/android"
+val CHANGELOGS = "changelogs"
 val LISTINGS = "app/src/main/play/listings"
 val FILE = "default.txt"
 val DEFAULT = "en-US"
@@ -21,7 +22,7 @@ val PUBLISH = args.contains("publish")
 /* ------------------- utils ------------------- */
 
 /** Returns the default versions */
-val defaultVersions = File(File(RELEASE_NOTES, DEFAULT), FILE).let { file ->
+val defaultVersions = File(File(File(RELEASE_NOTES, DEFAULT), CHANGELOGS), "40.txt").let { file ->
     file.readVersions.also { versions ->
         file.writeText(versions.getFixedVersions(DEFAULT))
     }
