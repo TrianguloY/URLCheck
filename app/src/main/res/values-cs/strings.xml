@@ -111,15 +111,7 @@
 \nDěkujeme PabloOQ za nápad a originální realizaci!
 \n
 \nTento modul byl zastaralý ve prospěch modulu \'Uri parts\'</string>
-    <string name="mPttrn_editor">Zde můžete upravit nebo přidat nový vzor. Formát:
-\n- \'encode\': boolean: Nastavte hodnotu true pro zakódování URL před kontrolou regulárních výrazů (regex).
-\n- \'regex\': řetězec: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen.
-\n- \'excludeRegex\': řetězec: je-li zadán, platný java regex, kterému url nesmí odpovídat – jinak je vzor přeskočen.
-\n- \'replacement\': řetězec|seznam: je-li zadáno, tlačítko \'fix\' spustí \'url=url.replaceAll(regex,replacement)\'. Pokud je uveden seznam, bude náhradou náhodný prvek z něj.
-\n- \'decode\': boolean: nastavte na true pro dekódování nahrazené url.
-\n- \'automatic\': boolean: nastavte na true pro automatické použití vzoru.
-\n- \'enabled\': boolean: nastavte na false, abyste vzor deaktivovali.
-\nPoznámka: Pokud si vzory upravíte, nové výchozí vzory z aktualizací aplikace se automaticky nepřidají (můžete je obnovit pomocí možnosti reset).</string>
+    <string name="mPttrn_editor">Zde můžete upravit nebo přidat nový vzor. Formát: \n- \'encode\': boolean: Nastavte hodnotu true pro zakódování URL před kontrolou regulárních výrazů (regex). \n- \'regex\': řetězec: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen. \n- \'excludeRegex\': řetězec: je-li zadán, platný java regex, kterému url nesmí odpovídat – jinak je vzor přeskočen. \n- \'replacement\': řetězec|seznam: je-li zadáno, tlačítko \'fix\' spustí \'url=url.replaceAll(regex,replacement)\'. Pokud je uveden seznam, bude náhradou náhodný prvek z něj. \n- \'decode\': boolean: nastavte na true pro dekódování nahrazené url. \n- \'automatic\': boolean: nastavte na true pro automatické použití vzoru. \n- \'enabled\': boolean: nastavte na false, abyste vzor deaktivovali. \nPoznámka: Pokud si vzory upravíte, nové výchozí vzory z aktualizací aplikace se automaticky nepřidají (můžete je obnovit pomocí možnosti reset).</string>
     <string name="mOpen_with">Otevřít v %s</string>
     <string name="json_editor">Pokročilý editor</string>
     <string name="link_changelog">Seznam změn</string>

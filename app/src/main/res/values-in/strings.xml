@@ -95,15 +95,7 @@
 \n- Tombol Bagikan: Tekan tombol ini untuk membagikan tautan.</string>
     <string name="mOpen_with">Buka dengan %s</string>
     <string name="mHist_desc">Dengan modul ini, Anda dapat melihat dan mengembalikan perubahan URL yang telah diedit oleh modul lain ataupun secara manual.</string>
-    <string name="mPttrn_editor">Di sini Anda bisa mengubah atau menambahkan pola baru. Format:
-\n- \'encode\': boolean: ubah ke \'true\' untuk mengenkode url sebelum pengecekan regex dilakukan.
-\n- \'regex\': string: sebuah regex java valid untuk dicocokkan dengan url, jika cocok, pola akan dijalankan.
-\n- \'excludeRegex\': string: jika disertakan, sebuah regex java valid untuk dicocokkan dengan url, jika cocok, pola tidak akan dijalankan.
-\n- \'replacement\': string|list: jika diertakan, tombol \'perbaiki\' akan menjalankan \'url=url.replaceAll(regex,replacement)\'. Jika berupa list, penggantinya akan dipilih secara acak dari element list terkait.
-\n- \'decode\': boolean: ubah ke \'true\' untuk mendekode url yang telah digantikan.
-\n- \'automatic\': boolean: ubah ke \'true\' untuk menerapkan pola secara otomatis.
-\n- \'enabled\': boolean: ubah ke \'false\' untuk menonaktifkan pola.
-\nCatatan: Jika Anda mengubah suatu pola, pola bawaan baru yang berasal dari pembaruan aplikasi tidak akan ditambahkan secara otomatis (Anda bisa memulihkannya melalui opsi \'reset\').</string>
+    <string name="mPttrn_editor">Di sini Anda bisa mengubah atau menambahkan pola baru. Format: \n- \'encode\': boolean: ubah ke \'true\' untuk mengenkode url sebelum pengecekan regex dilakukan. \n- \'regex\': string: sebuah regex java valid untuk dicocokkan dengan url, jika cocok, pola akan dijalankan. \n- \'excludeRegex\': string: jika disertakan, sebuah regex java valid untuk dicocokkan dengan url, jika cocok, pola tidak akan dijalankan. \n- \'replacement\': string|list: jika diertakan, tombol \'perbaiki\' akan menjalankan \'url=url.replaceAll(regex,replacement)\'. Jika berupa list, penggantinya akan dipilih secara acak dari element list terkait. \n- \'decode\': boolean: ubah ke \'true\' untuk mendekode url yang telah digantikan. \n- \'automatic\': boolean: ubah ke \'true\' untuk menerapkan pola secara otomatis. \n- \'enabled\': boolean: ubah ke \'false\' untuk menonaktifkan pola. \nCatatan: Jika Anda mengubah suatu pola, pola bawaan baru yang berasal dari pembaruan aplikasi tidak akan ditambahkan secara otomatis (Anda bisa memulihkannya melalui opsi \'reset\').</string>
     <string name="mStatus_autoRedirect">Ganti URL pengalihan secara otomatis</string>
     <string name="mOpen_ctabs">Tab tersuai:</string>
     <string name="mVT_warningUrl">Peringatan, %1$d/%2$d antivirus mendeteksi ancaman dari URL tersebut (pada tanggal %3$s)</string>

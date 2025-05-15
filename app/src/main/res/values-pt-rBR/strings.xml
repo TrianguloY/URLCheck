@@ -229,15 +229,7 @@
 \n- color: A cor do rótulo. Uma string de cores do Android (#AARRGGBB, #RRGGBB ou um nome de cor válido). O padrão é um vermelho de \'perigo\'.
 \n- replace: Se falso, os hosts existentes não serão substituídos. Nota que os objetos são avaliados de cima para baixo. Verdadeiro por padrão.
 \n- enabled: Se falso, todo o objeto será ignorado. Verdadeiro por padrão.</string>
-    <string name="mPttrn_editor">Aqui você pode editar ou adicionar novos padrões. Formato:
-\n- \'encode\': booleano: defina como true para codificar a URL antes de checar o regex.
-\n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Em uma lista, um elemento aleatório é escolhido.
-\n- \'decode\': booleano: defina como true para decodificar a URL substítuida.
-\n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão.
-\n- \'enabled\': booleano: defina como false para desativar o padrão.
-\nNota: se você editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
+    <string name="mPttrn_editor">Aqui você pode editar ou adicionar novos padrões. Formato: \n- \'encode\': booleano: defina como true para codificar a URL antes de checar o regex. \n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado. \n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado. \n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Em uma lista, um elemento aleatório é escolhido. \n- \'decode\': booleano: defina como true para decodificar a URL substítuida. \n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão. \n- \'enabled\': booleano: defina como false para desativar o padrão. \nNota: se você editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
     <string name="mParts_desc">Este módulo mostra todas as partes da url decodificadas: esquema, autoridade, caminhos, parâmetros e fragmento.
 \nAo clicar em uma parte, ela será definida como a nova URL, útil, por exemplo, se uma das consultas ou caminhos for uma URL codificada de redirecionamento.
 \nAo segurar uma parte, ela será copiada para a área de transferência.
