@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableStart="@drawable/arrow_right"
-            android:drawableLeft="@drawable/arrow_right"
             android:drawableTint="?attr/colorAccent"
             android:gravity="center_vertical|start"
             android:padding="5dp"

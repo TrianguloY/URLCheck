@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 
 import com.trianguloy.urlchecker.modules.AModuleDialog;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 import java.util.Map;
 import java.util.Set;
@@ -16,9 +17,7 @@ import java.util.TreeMap;
  */
 public class Flags {
 
-    /**
-     * Default flags (name, on/off). Default visibility is 'hidden'
-     */
+    /** Default flags (name, on/off). Default visibility is 'hidden' */
     public static final Map<String, Boolean> DEFAULT_STATE = Map.of(
             "ACTIVITY_NEW_TASK", true,
             "ACTIVITY_EXCLUDE_FROM_RECENTS", false
@@ -72,7 +71,7 @@ public class Flags {
                 compatibleFlags.put(flag, (Integer) Intent.class.getField("FLAG_" + flag).get(null));
             } catch (NoSuchFieldException ignored) {
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to get flag field", e);
             }
         }
     }
@@ -85,45 +84,33 @@ public class Flags {
 
     private int flags;
 
-    /**
-     * New empty flags
-     */
+    /** New empty flags */
     public Flags() {
         this(0x00000000);
     }
 
-    /**
-     * New flags from existing source
-     */
+    /** New flags from existing source */
     public Flags(int hex) {
         setFlags(hex);
     }
 
-    /**
-     * check if a flag by name is set
-     */
+    /** check if a flag by name is set */
     public boolean isSet(String flagName) {
         var flag = compatibleFlags.get(flagName);
         return flag != null && (flags & flag) != 0;
     }
 
-    /**
-     * get Flags
-     */
+    /** get Flags */
     public int getFlags() {
         return flags;
     }
 
-    /**
-     * Replaces the stored flags with the received hex
-     */
+    /** Replaces the stored flags with the received hex */
     public void setFlags(int hex) {
         this.flags = hex;
     }
 
-    /**
-     * Sets the flag to the received boolean
-     */
+    /** Sets the flag to the received boolean */
     public void setFlag(String flagName, boolean set) {
         var flag = compatibleFlags.get(flagName);
         if (flag != null) {
@@ -149,9 +136,7 @@ public class Flags {
         }
     }
 
-    /**
-     * Converts an int flags to string
-     */
+    /** Converts an int flags to string */
     private static String toHexString(int flags) {
         return "0x" + Integer.toString(flags, BASE);
     }
@@ -164,9 +149,7 @@ public class Flags {
     private static final String REGEX = "(0x)?[a-fA-F\\d]{1,8}";
     private static final int BASE = 16;
 
-    /**
-     * Applies the custom (or default) flags to an intent
-     */
+    /** Applies the custom (or default) flags to an intent */
     @SuppressLint("WrongConstant")
     public static void applyGlobalFlags(Intent intent, AModuleDialog instance) {
         var flags = toInteger(instance.getData(DATA_FLAGS));
@@ -182,9 +165,7 @@ public class Flags {
         intent.setFlags(flags);
     }
 
-    /**
-     * Stores the flags in GlobalData
-     */
+    /** Stores the flags in GlobalData */
     public static void setGlobalFlags(Flags flags, AModuleDialog instance) {
         instance.putData(DATA_FLAGS, flags == null ? null : toHexString(flags.getFlags()));
     }

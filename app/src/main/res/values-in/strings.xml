@@ -20,15 +20,15 @@
     <string name="translators">CikiMomogi</string>
     <string name="txt_tutorial3">Atur aplikasi ini sebagai peramban web bawaan untuk mencegat URL ketika dibuka. \n(Pilihan ini tidak diperlukan jika URL diteruskan dengan fitur \"Bagikan\".)</string>
     <string name="btn_configureBrowser">Peramban web bawaan</string>
-    <string name="link_blog">Blog TrianguloY</string>
+    <string name="link_blog">Blog %s</string>
     <string name="btn_linksSettings">Buka tautan yang didukung</string>
     <string name="menu_resetOrder">Atur ulang urutan</string>
     <string name="btn_setBrowser">Setel sebagai peramban bawaan</string>
     <string name="btn_androidSettings">Pengaturan aplikasi Android</string>
-    <string name="txt_about">Aplikasi dibuat oleh TrianguloY.
+    <string name="txt_about">Aplikasi dibuat oleh %1$s.
 \n
-\nKontributor: %1$s.
-\nPenerjemah: %2$s.</string>
+\nKontributor: %2$s.
+\nPenerjemah: %3$s.</string>
     <string name="txt_locale">Lokal:</string>
     <string name="txt_info">Aplikasi ini bertindak sebagai perantara saat hendak membuka tautan URL. Ketika tautan dibuka melalui aplikasi ini, sebuah jendela dialog berisi informasi mengenai tautan tersebut akan ditampilkan. Tekan tombol modul di bawah ini untuk memeriksa dan mengatur semua modul yang tersedia.</string>
     <string name="desc_up">Geser ke atas</string>
@@ -43,7 +43,7 @@
     <string name="invalid">Taksahih</string>
     <string name="close">Tutup</string>
     <string name="save">Simpan</string>
-    <string name="mVT_desc">Ketika modul ini diaktifkan, Anda bisa memindai URL menggunakan VirusTotal serta mengecek hasil laporannya. Sebuah kunci API VirusTotal pribadi diperlukan agar modul ini bisa bekerja. Anda bisa mendapatkannya setelah membuat sebuah akun gratis di sini: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Ketika modul ini diaktifkan, Anda bisa memindai URL menggunakan VirusTotal serta mengecek hasil laporannya. Sebuah kunci API VirusTotal pribadi diperlukan agar modul ini bisa bekerja. Anda bisa mendapatkannya setelah membuat sebuah akun gratis di sini: %s .</string>
     <string name="reset">Atur ulang</string>
     <string name="mPttrn_wrongSchemaHttp">Skema http tidak valid.</string>
     <string name="mClear_desc">Modul ini menghilangkan pelacakan, perujuk, dan parameter lain yang tidak bermanfaat di URL. Ia juga bisa melacak pengalihan URL luring yang umum digunakan.</string>
@@ -71,7 +71,7 @@
     <string name="mOpen_name">Buka dan bagikan</string>
     <string name="mStatus_name">Kode status</string>
     <string name="mOpen_closeShare">Tutup kotak dialog setelah membagikan tautan</string>
-    <string name="mClear_tm">Katalog bawaan disalin dari ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Katalog bawaan disalin dari ClearURLs: %s</string>
     <string name="back">Kembali</string>
     <string name="hidden">Tersembunyi</string>
     <string name="mPttrn_desc">Modul ini bertugas untuk mengecek url menggunakan pola regex yang akan memberi peringatan, saran ataupun menerapkan perubahan tertentu. Anda bisa membuat atau memodifikasi pola milik Anda sendiri, atau bahkan menggunakan pola dari pengguna lain.
@@ -157,7 +157,7 @@
 \n
 \nModul ini telah usang dan telah digantikan dengan modul \'Potongan uri\'</string>
     <string name="mClear_cleared">- Sudah bersih</string>
-    <string name="mClear_editor">Kriteria katalog: Wajib mengikuti format dari https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Kriteria katalog: Wajib mengikuti format dari %s.
 \nPerlu diketahui bahwa semua modifikasi yang terjadi di objek induk \'providers\' akan ditimpa jika katalog diperbarui baik secara otomatis ataupun manual melalui jendela dialog pemutakhir. Untuk mempertahankan kriteria pribadi, setel di objek induk yang berbeda (apapun namanya).</string>
     <string name="mLog_unlimited">Tidak terbatas</string>
     <string name="mHosts_built">Pangkalan data telah dibuat ulang: %d host</string>
@@ -203,7 +203,7 @@
     <string name="mClear_rule">- parameter tidak bermanfaat ditemukan</string>
     <string name="mLog_limit">Jumlah maksimum percobaan untuk disimpan. Nilai yang disarankan: 100. Kosongkan untuk nilai tak terbatas</string>
     <string name="mClear_forcedRedirection">- pengalihan paksa ditemukan</string>
-    <string name="mUnshort_desc">Modul ini akan mengurai tautan singkat dengan cara mengirimnya ke https://unshorten.me/, yang akan dievaluasi di peladen mereka, kemudian hasil pengalihan tautan tersebut akan disimpan untuk digunakan kembali. Hindari mengurai tautan yang mengandung data sensitif atau data pribadi.
+    <string name="mUnshort_desc">Modul ini akan mengurai tautan singkat dengan cara mengirimnya ke %s, yang akan dievaluasi di peladen mereka, kemudian hasil pengalihan tautan tersebut akan disimpan untuk digunakan kembali. Hindari mengurai tautan yang mengandung data sensitif atau data pribadi.
 \nApi mereka membatasi 10 permintaan per jam untuk pengecekan baru. Respons modul ini akan menunjukkan kuota permintaan yang tersisa.</string>
     <string name="mHosts_build">Buat ulang</string>
     <string name="mRemove_one">Hapus %s</string>
@@ -246,7 +246,7 @@
     <string name="mClear_noRules">Tidak ada kriteria yang cocok</string>
     <string name="mClear_error">Tidak dapat mengecek kriteria</string>
     <string name="mUnshort_tm">API unshorten.me gratis oleh Unshorten.me</string>
-    <string name="mHosts_desc">Modul ini menandai host yang bisa dikonfigurasi baik secara manual ataupun menggunakan berkas host jarak jauh. Anda bisa menggunakan modul ini untuk memberi peringatan mengenai situs berbahaya atau situs khusus tertentu. Konfigurasi bawaan menggunakan host StevenBlack (adware/malware, berita bohong, perjudian, dan konten dewasa) dari https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">Modul ini menandai host yang bisa dikonfigurasi baik secara manual ataupun menggunakan berkas host jarak jauh. Anda bisa menggunakan modul ini untuk memberi peringatan mengenai situs berbahaya atau situs khusus tertentu. Konfigurasi bawaan menggunakan host StevenBlack (adware/malware, berita bohong, perjudian, dan konten dewasa) dari %s</string>
     <string name="mLog_edit">Ubah log</string>
     <string name="mClear_toggleReferral">Aktifkan rujukan promosi (parameter rujukan tidak akan dibersihkan)</string>
     <string name="mClear_auto">Otomatis terapkan</string>
@@ -261,7 +261,6 @@
     <string name="bck_mn_advanced">Tampilkan pengaturan lanjut</string>
     <string name="btn_backupRestore">Cadangkan / Pulihkan</string>
     <string name="btn_backup">Cadangkan</string>
-    <string name="btn_replace">Gantikan</string>
     <string name="btn_restore">Pulihkan</string>
     <string name="btn_delete">Hapus</string>
     <string name="txt_animation">Nyalakan animasi</string>

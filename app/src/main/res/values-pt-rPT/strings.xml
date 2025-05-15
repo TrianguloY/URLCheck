@@ -20,11 +20,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"Aplicação criada por TrianguloY.
+    <string name="txt_about">"Aplicação criada por %1$s.
 
-Contributions: %1$s.
-Translations: %2$s."</string>
-    <string name="link_blog">"Blog do TrianguloY"</string>
+Contributions: %2$s.
+Translations: %3$s."</string>
+    <string name="link_blog">"Blog do %s"</string>
     <string name="link_changelog">Log de alterações</string>
     <string name="link_source">Código fonte</string>
     <string name="link_privacy">Política de privacidade</string>
@@ -143,7 +143,7 @@ Translations: %2$s."</string>
     <string name="mInput_desc">Exibe o URL atual, que pode ser editado manualmente.</string>
     <!-- -->
     <string name="mVT_name">Scanner de URL</string>
-    <string name="mVT_desc">Quando este módulo está ativado, pode verificar o URL usando o VirusTotal e verificar o relatório.\nÉ necessária uma chave de API pessoal do VirusTotal para que funcione, pode obter uma após se registrar para uma conta gratuita aqui: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Quando este módulo está ativado, pode verificar o URL usando o VirusTotal e verificar o relatório.\nÉ necessária uma chave de API pessoal do VirusTotal para que funcione, pode obter uma após se registrar para uma conta gratuita aqui: %s .</string>
     <string name="mVT_apiKey">Chave de API</string>
     <string name="mVT_tm">VirusTotal™ é uma marca comercial da Google, Inc.</string>
     <string name="mVT_scan">Examinar</string>
@@ -168,7 +168,7 @@ Translations: %2$s."</string>
     <!-- -->
     <string name="mClear_name">Limpador de URL</string>
     <string name="mClear_desc">Esse módulo remove rastreamento, referência e outros parâmetros inúteis da URL. Ele também permite redirecionamentos comuns de URL offline.</string>
-    <string name="mClear_tm">Usa o banco de dados ClearURLs de https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Usa o banco de dados ClearURLs de %s</string>
     <string name="mClear_clear">Aplicar</string>
     <string name="mClear_matches">Corresponde %s</string>
     <string name="mClear_blocked">- BLOQUEADO!</string>
@@ -199,7 +199,7 @@ Translations: %2$s."</string>
     <string name="mClear_hashError">Não foi possível buscar o hash, verifique se o URL é válido e se á uma conexão ativa</string>
     <string name="mClear_hashMismatch">Hashes não correspondem, o ficheiro pode ter sido adulterado. Se quiser pular a verificação, remova a URL de hash</string>
     <string name="mClear_restore">Restaurar caminhos de ClearURLs</string>
-    <string name="mClear_editor">"Regras do catálogo: devem seguir o formato de https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Regras do catálogo: devem seguir o formato de %s.
 Observe que qualquer modificação nos 'provedores' do objeto pai será substituída se o catálogo for atualizado automaticamente ou manualmente a partir da caixa de diálogo do atualizador. Para que as regras pessoais as definam em um objeto pai diferente (qualquer nome)."</string>
     <!-- -->
     <string name="mRemove_name">Removedor de Consultas</string>
@@ -228,7 +228,7 @@ Para desabilitar o log, basta desabilitar o módulo."</string>
     <string name="mOpen_perDomain">Ordene domínios diferentes independentemente</string>
     <string name="mOpen_noReferrer">Ocultar o aplicativo de origem (referenciador)</string>
     <string name="mHosts_name">Rotulador de hosts</string>
-    <string name="mHosts_desc">Este módulo rotula hosts, configurados especificando-os manualmente ou usando um arquivo semelhante a hosts remotos. Você pode usá-lo para alertar sobre sites perigosos ou especiais. A configuração interna especifica os hosts de StevenBlack (adware/malware, fakenews, jogos de azar e conteúdo adulto) em https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">Este módulo rotula hosts, configurados especificando-os manualmente ou usando um arquivo semelhante a hosts remotos. Você pode usá-lo para alertar sobre sites perigosos ou especiais. A configuração interna especifica os hosts de StevenBlack (adware/malware, fakenews, jogos de azar e conteúdo adulto) em %s</string>
     <string name="mHosts_info">Anfitrião:</string>
     <string name="mHosts_noLabel">sem rótulo</string>
     <string name="mHosts_adult">conteúdo adulto</string>
@@ -310,4 +310,42 @@ Para desabilitar o log, basta desabilitar o módulo."</string>
     <string name="mParts_empty">(vazio)</string>
     <string name="mChg_name">Novidades</string>
     <string name="mOpen_incognito">Modo anônimo:</string>
+    <string name="btn_backup">Backup</string>
+    <string name="small">Pequeno</string>
+    <string name="big">Grande</string>
+    <string name="normal">Normal</string>
+    <string name="bkp_description">Escolha quais elementos fazer backup/restaurar.\nAo restaurar, se o backup foi criado sem ele, os existentes serão mantidos.</string>
+    <string name="bck_chooseFile">Escolha o ficheiro de backup</string>
+    <string name="bck_backupOk">Backup criado</string>
+    <string name="bck_restoreTitle">Restaurar backup</string>
+    <string name="auto_desc">Com as automações, pode executar ações de módulo com base em gatilhos. Pode configurar as automações aqui ou desativar todas elas juntas usando o toggle abaixo.</string>
+    <string name="a_automations">Automações</string>
+    <string name="bck_restoreOk">Backup restaurado</string>
+    <string name="txt_animation">Ativar animações</string>
+    <string name="btn_backupRestore">Backup / Restaurar</string>
+    <string name="bck_mn_advanced">Mostrar opções avançadas</string>
+    <string name="btn_restore">Restaurar</string>
+    <string name="btn_delete">Deletar</string>
+    <string name="bkp_data">Dados: Dados de aplicação padrão. Coisas como módulos ativados, configurações json, etc. Não incluirá segredos nem cache.</string>
+    <string name="bkp_data_prefs">Preferências: Dados gravados como preferências.</string>
+    <string name="bkp_data_files">Ficheiros: Dados gravados como ficheiros.</string>
+    <string name="bkp_secrets">Segredos: Dados considerados \'secretos\', como a chave da API do VirusTotal ou o log.</string>
+    <string name="bjp_cache">Cache: Dados que podem ser facilmente descarregados/gerados, como o banco de dados de hosts. Ativar esta opção pode aumentar o tamanho do backup consideravelmente.</string>
+    <string name="bck_restoreDelete">Apague elementos antes de restaurar. Observe que as preferências e alguns ficheiros com valores padrão podem não existir, então desativar esta opção mesclará os elementos existentes com os de backup de maneiras inesperadas. Desative so sabe o que faz.</string>
+    <string name="bck_ignoreNewer">Permitir backups criados a partir de versões mais recentes da app.</string>
+    <string name="bck_newer">Cancelado. O backup foi criado com uma versão mais recente da app.</string>
+    <string name="bck_backupError">Não é possível criar o backup, tente escolher um local diferente para o ficheiro.</string>
+    <string name="bck_restoreMessage">AVISO! Isto substituirá os elementos selecionados do backup.\nRealmente quer continuar?</string>
+    <string name="bck_restoreConfirm">Substituir elementos</string>
+    <string name="bck_restoreError">Não é possível restaurar o backup. É um ficheiro válido?</string>
+    <string name="bck_deleteTitle">Apagar elementos</string>
+    <string name="bck_deleteMessage">AVISO! Isto apagará todos os elementos selecionados.\nRealmente quer continuar?</string>
+    <string name="bck_deleteConfirm">Apagar elementos</string>
+    <string name="bck_deleteOk">Elementos deletados</string>
+    <string name="bck_deleteError">Não é possível apagar elementos</string>
+    <string name="auto_enabled">Ativar recurso de automações</string>
+    <string name="auto_error_toast">Mostrar toast se a automação falhar</string>
+    <string name="auto_notFound">Nenhuma automação com a chave \'%s\' está disponível. Certifique-se de que ela seja válida e que o módulo necessário esteja ativo.</string>
+    <string name="mUnshort_desc">Este módulo desencurta ligações enviando-os para %s, que os avalia nos seus servidores e grava o redirecionamento para futuras petições. Evite desencurtar ligações com dados privados ou confidenciais. \nA API é limitada a 10 solicitações por hora para novas verificações. A resposta do módulo mostrará quantas petições tem pendentes.</string>
+    <string name="noLinks">Nenhuma ligação detetada</string>
 </resources>

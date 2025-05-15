@@ -5,9 +5,7 @@ import android.app.Activity;
 import com.trianguloy.urlchecker.activities.ModulesActivity;
 import com.trianguloy.urlchecker.fragments.Fragment;
 
-/**
- * Base class for a module configuration fragment
- */
+/** Base class for a module configuration fragment */
 public abstract class AModuleConfig implements Fragment {
 
     // ------------------- private data -------------------
@@ -36,16 +34,12 @@ public abstract class AModuleConfig implements Fragment {
 
     // ------------------- utilities -------------------
 
-    /**
-     * Disables this module
-     */
+    /** Disables this module */
     public final void disable() {
         if (activity != null) activity.disableModule(this);
     }
 
-    /**
-     * Returns the config activity. Will be null when initialized with empty constructor
-     */
+    /** Returns the config activity. Will be null when initialized with empty constructor */
     public final Activity getActivity() {
         return activity;
     }

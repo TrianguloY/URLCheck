@@ -1,17 +1,13 @@
 package com.trianguloy.urlchecker.utilities.wrappers;
 
-/**
- * A small utility to detect repeated events in a short time
- */
+/** A small utility to detect repeated events in a short time */
 public class DoubleEvent {
 
     private long lastTime;
 
     private final long delay;
 
-    /**
-     * Two events separated by [delayMillis] will be considered equal
-     */
+    /** Two events separated by [delayMillis] will be considered equal */
     public DoubleEvent(long delayMillis) {
         this.delay = delayMillis;
         reset();
@@ -25,9 +21,7 @@ public class DoubleEvent {
         return System.currentTimeMillis() - lastTime < delay;
     }
 
-    /**
-     * Triggers an event
-     */
+    /** Triggers an event */
     public void trigger() {
         lastTime = System.currentTimeMillis();
     }
@@ -42,9 +36,7 @@ public class DoubleEvent {
         return check;
     }
 
-    /**
-     * Resets the event trigger, next check will always return false
-     */
+    /** Resets the event trigger, next check will always return false */
     public void reset() {
         lastTime = -1;
     }

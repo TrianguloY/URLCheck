@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
+import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.sUTF_8;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,7 +13,6 @@ import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 
 import java.net.URLDecoder;
 import java.util.ArrayList;
-import java.util.List;
 
 /** Static utilities related to urls */
 public interface UrlUtils {
@@ -48,10 +49,10 @@ public interface UrlUtils {
     /** Calls URLDecoder.decode but returns the input string if the decoding failed */
     static String decode(String string) {
         try {
-            return URLDecoder.decode(string, "UTF-8");
+            return URLDecoder.decode(string, sUTF_8);
         } catch (Exception e) {
+            AndroidUtils.assertError("Unable to decode string", e);
             // can't decode, just leave it
-            e.printStackTrace();
             return string;
         }
     }

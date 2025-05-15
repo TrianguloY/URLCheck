@@ -8,25 +8,19 @@ import android.view.ViewGroup;
 
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 
-/**
- * Animations-related functionality
- */
+/** Animations-related functionality */
 public interface Animations {
 
     static GenericPref.Bool ANIMATIONS(Context cntx) {
         return new GenericPref.Bool("animations", true, cntx);
     }
 
-    /**
-     * Enables animations on all views from this activity
-     */
+    /** Enables animations on all views from this activity */
     static void enableAnimationsRecursively(Activity cntx) {
         if (ANIMATIONS(cntx).get()) enableAnimationsRecursively(cntx.findViewById(android.R.id.content));
     }
 
-    /**
-     * Enables animations from all views starting from this parent
-     */
+    /** Enables animations from all views starting from this parent */
     static void enableAnimationsRecursively(View parent) {
         if (ANIMATIONS(parent.getContext()).get()) _enableAnimationsRecursively(parent);
     }

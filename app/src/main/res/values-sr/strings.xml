@@ -5,11 +5,11 @@
     <string name="a_modules">Moduli</string>
     <string name="a_about">O Aplikaciji</string>
     <string name="a_settings">Podešavanja</string>
-    <string name="txt_about">Aplikacija koju je napravio TrianguloY.
+    <string name="txt_about">Aplikacija koju je napravio %1$s.
 \n
-\nDoprinosi: %1$s.
-\nPrevodi: %2$s.</string>
-    <string name="link_blog">TrianguloY Blog</string>
+\nDoprinosi: %2$s.
+\nPrevodi: %3$s.</string>
+    <string name="link_blog">%s Blog</string>
     <string name="link_changelog">Dnevnik promena</string>
     <string name="link_source">Otvoreni Kod</string>
     <string name="link_privacy">Politika privatnosti</string>
@@ -146,7 +146,6 @@
     <string name="btn_backupRestore">Pravljenje rezervne kopije / vraćanje u prethodno stanje</string>
     <string name="bck_mn_advanced">Prikaži napredne opcije</string>
     <string name="btn_backup">Rezervna kopija</string>
-    <string name="btn_replace">Zameni</string>
     <string name="btn_restore">Vrati u prethodno stanje</string>
     <string name="bjp_cache">Keš memorija: Podaci koji se lako mogu preuzeti/generisati, poput baze podataka hostova. Omogućavanje ove opcije može značajno povećati veličinu rezervne kopije.</string>
     <string name="btn_androidSettings">Podešavanja Android aplikacije</string>
@@ -240,7 +239,7 @@
     <string name="mStatus_recheck">Proveri</string>
     <string name="mStatus_unknownCode">%d: Nepoznat statusni kod</string>
     <string name="mStatus_redir">Preusmerava na %s</string>
-    <string name="mVT_desc">Kada je ovaj modul omogućen, možete skenirati URL koristeći VirusTotal i proveriti izveštaj. Lični VirusTotal API ključ je potreban da bi funkcionisao, možete ga dobiti nakon registracije za besplatni nalog ovde: https://vvv.virustotal.com/gui/join-us.</string>
+    <string name="mVT_desc">Kada je ovaj modul omogućen, možete skenirati URL koristeći VirusTotal i proveriti izveštaj. Lični VirusTotal API ključ je potreban da bi funkcionisao, možete ga dobiti nakon registracije za besplatni nalog ovde: %s.</string>
     <string name="mVT_noKey">Nedostaje API ključ</string>
     <string name="mVT_tm">VirusTotal™ je zaštitni znak kompanije Google, Inc.</string>
     <string name="mVT_cancel">Odustani</string>
@@ -255,7 +254,7 @@
 \n
 \nMožete da držite da izaberete tekst.</string>
     <string name="mHist_desc">Kada se URL uredi, bilo ručno ili pomoću drugih modula, ovaj vam omogućava da vidite i vratite promene.</string>
-    <string name="mClear_tm">Ugrađeni katalog kopiran sa ClearURL-ova: https://docs.clearurls.kiz/latest/specs/rules/</string>
+    <string name="mClear_tm">Ugrađeni katalog kopiran sa ClearURL-ova: %s</string>
     <string name="mClear_clear">Primeni</string>
     <string name="mClear_rule">- pronađen je beskorisni parametar</string>
     <string name="mClear_rawRule">- pronađen je beskorisni sadržaj</string>
@@ -274,14 +273,14 @@
 \nHvala PabloOK-u na ideji i originalnoj implementaciji!
 \n
 \nOvaj modul je zastareo u korist modula \'Uri parts\'</string>
-    <string name="mClear_editor">Pravila kataloga: Moraju da prate format sa https://docs.clearurls.kiz/latest/specs/rules/.
+    <string name="mClear_editor">Pravila kataloga: Moraju da prate format sa %s.
 \nImajte na umu da će svaka modifikacija nadređenog objekta \'provajderi\' biti prepisana ako se katalog ažurira automatski ili ručno iz dijaloga za ažuriranje. Da ih lična pravila postave u drugom nadređenom objektu (bilo koje ime).</string>
     <string name="mRemove_found">Pronađeno je %d upita</string>
     <string name="mRemove_one">Ukloni %s</string>
     <string name="mRemove_empty">Ukloni prazno</string>
     <string name="mLog_desc">Ovaj modul evidentira sve proverene URL adrese. Ovde možete da pregledate, obrišete ili uredite ceo dnevnik, u glavnom dijalogu se neće pojaviti vizuelna indikacija. Da biste onemogućili evidentiranje, samo onemogućite modul.</string>
     <string name="mLog_limit">Maksimalan broj unosa za čuvanje. Preporučena vrednost: 100. Postavite prazno za neograničeno</string>
-    <string name="mHosts_desc">Ovaj modul označava hostove, konfigurisane ili njihovim navođenjem ručno ili korišćenjem datoteke nalik udaljenom hostu. Možete ga koristiti da upozorite na opasne ili posebne lokacije. Ugrađena konfiguracija navodi StevenBlackove hostove (adver/malver, lažne vesti, kockanje i sadržaj za odrasle) sa https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">Ovaj modul označava hostove, konfigurisane ili njihovim navođenjem ručno ili korišćenjem datoteke nalik udaljenom hostu. Možete ga koristiti da upozorite na opasne ili posebne lokacije. Ugrađena konfiguracija navodi StevenBlackove hostove (adver/malver, lažne vesti, kockanje i sadržaj za odrasle) sa %s</string>
     <string name="mHosts_gambling">kockanje</string>
     <string name="mHosts_uninitialized">Baza podataka hostova nije inicijalizovana. Pritisnite da biste izgradili</string>
     <string name="mHosts_editor">Konfiguracija Hosta. Format: Lista objekata gde je ključ oznaka hosta, a sadržaj uključuje sledeće opcione vrednosti:
@@ -292,7 +291,7 @@
 \n- omogućeno: ako je netačno, ceo ovaj objekat će biti preskočen. Podrazumevano tačno.</string>
     <string name="mHosts_buildDesc">Ovo će obrisati trenutnu bazu podataka hostova i izgraditi je sa trenutnom konfiguracijom, preuzimajući datoteke hostova sa interneta ako je potrebno. Ova radnja može potrajati nekoliko sekundi. Nastaviti?</string>
     <string name="mHosts_buildSave">Čuvanje…</string>
-    <string name="mUnshort_desc">Ovaj modul će poništiti kratke veze tako što će ih poslati na https://unshorten.me/, koji ih procenjuje na svojim serverima i čuva preusmeravanje za buduće zahteve. Izbegavajte ukidanje veza sa privatnim ili osetljivim podacima.
+    <string name="mUnshort_desc">Ovaj modul će poništiti kratke veze tako što će ih poslati na %s, koji ih procenjuje na svojim serverima i čuva preusmeravanje za buduće zahteve. Izbegavajte ukidanje veza sa privatnim ili osetljivim podacima.
 \nNjihov API je ograničen na 10 zahteva na sat za nove provere. Odgovor modula će pokazati koliko zahteva imate na čekanju.</string>
     <string name="mUnshort_error">Greška servera: %s</string>
     <string name="mUnshort_internal">Interna greška (%s)</string>
@@ -336,7 +335,6 @@
     <string name="auto_editor">Konfiguracija automatizacije. Format: lista objekata gde je ključ jedinstveno ime automatizacije, a sadržaj sadrži sledeće vrednosti:\n- \'regex\': string|list, obavezno: važeći java regularni izraz koji url mora da odgovara da bi se automatizacija pokrenula. Ako je lista, najmanje jedan regularni izraz mora da se podudara.\n- \'action\': string|list, potrebno: ključ automatizacije za pokretanje. U nastavku pogledajte listu svih dostupnih ključeva.\n- \'enabled\': boolean, opciono: ako je netačno, ova automatizacija će biti preskočena. Podrazumevano tačno.</string>
     <string name="auto_clear">Očistiće URL. Ekvivalentno pritisku na dugme \'Obriši\'. Imajte na umu da sam modul sadrži automatsku postavku koja će takođe efikasnije obrisati sve URL-ove i trebalo bi da bude poželjna.</string>
     <string name="mWebhook_body_hint">Webhook tijelo</string>
-    <string name="mWebhook_auto">Automatski pošalji URL-ove</string>
     <string name="a_automations">Automatizacija</string>
     <string name="auto_desc">Pomoću automatizacije možete izvršiti radnje modula na osnovu okidača. Ovde možete da konfigurišete automatizaciju ili ih sve zajedno onemogućite pomoću prekidača ispod.</string>
     <string name="auto_enabled">Omogućite funkciju automatizacije</string>

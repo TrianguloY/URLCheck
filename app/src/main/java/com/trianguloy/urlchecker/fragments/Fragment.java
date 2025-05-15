@@ -9,9 +9,7 @@ import android.view.View;
  */
 public interface Fragment {
 
-    /**
-     * @return the layout resource of this module
-     */
+    /** @return the layout resource of this module */
     int getLayoutId();
 
     /**

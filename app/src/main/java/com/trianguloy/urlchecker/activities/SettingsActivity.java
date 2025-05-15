@@ -25,9 +25,7 @@ import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
 
 import java.util.Objects;
 
-/**
- * An activity with general app-related settings
- */
+/** An activity with general app-related settings */
 public class SettingsActivity extends Activity {
 
     /** The width pref */

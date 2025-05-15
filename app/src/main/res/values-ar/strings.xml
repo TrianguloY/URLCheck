@@ -7,11 +7,11 @@
     <string name="a_about">حول التطبيق</string>
     <string name="translators">Magdy Elgendy</string>
     <string name="locale">العربية</string>
-    <string name="txt_about">تم إنشاء التطبيق بواسطة TrianguloY.
+    <string name="txt_about">تم إنشاء التطبيق بواسطة %1$s.
 \n
-\nالمساهمون: %1$s.
-\nالمترجمون: %2$s.</string>
-    <string name="link_blog">مدونة TrianguloY</string>
+\nالمساهمون: %2$s.
+\nالمترجمون: %3s.</string>
+    <string name="link_blog">مدونة %s</string>
     <string name="link_changelog">سجل التغييرات</string>
     <string name="link_source">رمز المصدر</string>
     <string name="link_privacy">سياسة الخصوصية</string>
@@ -33,7 +33,6 @@
     <string name="btn_backupRestore">النسخ الاحتياطي / استعادة البيانات</string>
     <string name="bck_mn_advanced">عرض الخيارات المتقدمة</string>
     <string name="btn_backup">عمل نسخة احتياطية</string>
-    <string name="btn_replace">استبدال</string>
     <string name="btn_restore">استعادة البيانات</string>
     <string name="btn_delete">حذف</string>
     <string name="bkp_data_prefs">التفضيلات: البيانات المحفوظة كتفضيلات.</string>
@@ -192,14 +191,14 @@
     <string name="mOpen_incognitoDesc">تبديل وضع التصفح الخفي (Firefox فقط)</string>
     <string name="mStatus_name">كود الحالة</string>
     <string name="mStatus_desc">من خلال الضغط على زر التحقق، سيتم إجراء طلب شبكة لاسترجاع وعرض كود حالة الموقع. إذا كانت النتيجة توجيهًا، فستتمكن من عرض عنوان URL النهائي. يتم الحصول على محتوى عنوان URL (GET)، ولكن لا يتم تقييمه، لذلك لن يتم اكتشاف التوجيهات استنادًا إلى JavaScript.</string>
-    <string name="mVT_desc">عند تمكين هذه الوحدة، يمكنك فحص عنوان الويب باستخدام VirusTotal والتحقق من التقرير. يلزم وجود مفتاح API الخاص بـ VirusTotal الشخصي لعمله، يمكنك الحصول على واحد بعد التسجيل للحصول على حساب مجاني هنا: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">عند تمكين هذه الوحدة، يمكنك فحص عنوان الويب باستخدام VirusTotal والتحقق من التقرير. يلزم وجود مفتاح API الخاص بـ VirusTotal الشخصي لعمله، يمكنك الحصول على واحد بعد التسجيل للحصول على حساب مجاني هنا: %s .</string>
     <string name="mD_desc">إذا قمت بإعادة ترتيب الوحدات، سيتم وضع الجديدة التي يتم إضافتها في التحديثات المستقبلية فوق هذه الوحدة.
 \n
 \nإذا قمت بتمكين هذا، سيتم عرض بعض البيانات التصحيحية الداخلية (مثل عنوان intent الأصلي)، مفيدة للمطورين.
 \n
 \nيمكنك الضغط المطول لتحديد النص.</string>
     <string name="mClear_desc">تقوم هذه الوحدة بإزالة tracking وreferrer وغيرها من parameters الغير مفيدة من عنوان URL. كما تسمح أيضًا بتوجيهات URL المشتركة في وضع عدم الاتصال بالإنترنت.</string>
-    <string name="mClear_tm">كتالوج مدمج تم نسخه من ClearURL: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">كتالوج مدمج تم نسخه من ClearURL: %s</string>
     <string name="mClear_clear">تطبيق</string>
     <string name="mClear_matches">يطابق %s</string>
     <string name="mClear_blocked">- محظور!</string>
@@ -241,7 +240,7 @@
     <string name="mRemove_all">حذف الكل</string>
     <string name="mRemove_one">حذف %s</string>
     <string name="mClear_hashMismatch">التجزئات Hashes غير متطابقة، قد يكون الملف قد تم التلاعب به. إذا كنت ترغب في تخطي التحقق، قم بإزالة العنوان الخاص بالتجزئة hash URL</string>
-    <string name="mClear_editor">قواعد الكتالوج: يجب أن تتبع التنسيق الموجود في https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">قواعد الكتالوج: يجب أن تتبع التنسيق الموجود في %s.
 \nيرجى ملاحظة أن أي تعديل على الكائن الأصلي parent object \'providers\' سيتم استبداله overwritten إذا تم تحديث الكتالوج تلقائيًا أو يدويًا من نافذة المُحدّث. لتعيين قواعد شخصية، ضعها في كائن أبوي parent object آخر (أي اسم).</string>
     <string name="mRemove_empty">حذف الفراغ</string>
     <string name="mLog_name">سجل</string>
@@ -285,7 +284,7 @@
     <string name="mDrawer_name">الدرج</string>
     <string name="mDrawer_desc">سيتم إخفاء جميع الوحدات بالأسفل في درج. ستعمل الوحدات بشكل طبيعي، ولكن ستكون مخفية حتى تفتح الدرج. يمكنك وضع الوحدات التي تستخدمها نادرًا هنا، لتجنب الفوضى.</string>
     <string name="mChg_name">سجل التغييرات</string>
-    <string name="mHosts_desc">هذه الوحدة تقوم بتصنيف المضيفين (hosts)، سواء عن طريق تحديدها يدويًا أو باستخدام ملف آخر يشبه المضيفين (hosts). يمكنك استخدامها للتحذير من المواقع الخطرة أو الخاصة. يحدد التكوين (configuration) المدمج مضيفي StevenBlack\'s hosts (الإعلانات (adware)/البرمجيات الخبيثة(malware)، الأخبار المزيفة(fakenews)، المقامرة(gambling) والمحتوى الخاص بالكبار(adult content)) من https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">هذه الوحدة تقوم بتصنيف المضيفين (hosts)، سواء عن طريق تحديدها يدويًا أو باستخدام ملف آخر يشبه المضيفين (hosts). يمكنك استخدامها للتحذير من المواقع الخطرة أو الخاصة. يحدد التكوين (configuration) المدمج مضيفي StevenBlack\'s hosts (الإعلانات (adware)/البرمجيات الخبيثة(malware)، الأخبار المزيفة(fakenews)، المقامرة(gambling) والمحتوى الخاص بالكبار(adult content)) من %s</string>
     <string name="mHosts_editor">تكوين المضيفين(Hosts configuration). التنسيق: قائمة من الكائنات(objects) حيث يكون المفتاح هو تصنيف المضيفين(hosts label) ويشمل المحتوى القيم الاختيارية التالية:
 \n- ملف(file): عنوان URL لملف مضيفين(hosts) عن بُعد للتنزيل. سيتم إضافة جميع المضيفين الصالحين الموجودين.
 \n- مضيفين(hosts): قائمة من المضيفين(hosts) الخام (strings) لإضافتها.
@@ -293,7 +292,7 @@
 \n- استبدال(replace): إذا كانت قيمتها خاطئة، فلن يتم استبدال المضيفين الحالية. لاحظ أن الكائنات تُقَيَم من الأعلى إلى الأسفل. الافتراضي هو صحيح.
 \n- ممكّن(enabled): إذا كانت قيمتها خاطئة، سيتم تخطي هذا الكائن بأكمله. الافتراضي هو صحيح.</string>
     <string name="mHosts_buildDesc">سيؤدي هذا إلى مسح قاعدة بيانات المضيفين(hosts) الحالية وبنائها مرة أخرى بالتكوين(configuration) الحالي، مع تنزيل ملفات المضيفين(hosts) من الإنترنت إذا لزم الأمر. قد يستغرق هذا الإجراء بضع ثوانٍ. هل ترغب في المتابعة؟</string>
-    <string name="mUnshort_desc">تقوم هذه الوحدة بإلغاء تقصير الروابط عن طريق إرسالها إلى https://unshorten.me/، حيث يتم تقييمها على خوادمهم(servers) وحفظ التوجيه(redirection) للطلبات المستقبلية. تجنب إلغاء تقصير الروابط التي تحتوي على بيانات خاصة أو حساسة.
+    <string name="mUnshort_desc">تقوم هذه الوحدة بإلغاء تقصير الروابط عن طريق إرسالها إلى %s، حيث يتم تقييمها على خوادمهم(servers) وحفظ التوجيه(redirection) للطلبات المستقبلية. تجنب إلغاء تقصير الروابط التي تحتوي على بيانات خاصة أو حساسة.
 \nتقتصر واجهة api الخاصة بهم على 10 طلبات في الساعة للفحوصات الجديدة. ستوضح استجابة الوحدة عدد الطلبات المعلقة التي لديك.</string>
     <string name="mFlag_desc">[ميزة تجريبية] هذه وحدة متقدمة، تتيح لك تحرير الأعلام(intent flags) عند فتح تطبيق آخر.
 \nستعرض هذه الوحدة قائمة بالأعلام، يمكنك تغيير ما إذا كان العلم مفعلاً أم لا بالنقر على الأيقونة. هناك أيضًا قائمة كاملة لإخفاء الأعلام هناك، هي مرئية فقط، وستظل الأعلام تستخدم الحالة المخصصة..

@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -27,7 +28,6 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
-import com.trianguloy.urlchecker.utilities.methods.UrlUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 import com.trianguloy.urlchecker.utilities.wrappers.RejectionDetector;
 
@@ -81,9 +81,16 @@ public class OpenModule extends AModuleData {
 
 class OpenDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<OpenDialog>> AUTOMATIONS = List.of(
-            new AutomationRules.Automation<>("open", R.string.auto_open, dialog ->
-                    dialog.openUrl(0)),
+    static final List<AutomationRules.Automation<OpenDialog>> AUTOMATIONS = List.of(
+            new AutomationRules.Automation<>("open", R.string.auto_open, (dialog, args) -> {
+                // open with component and/or package, or the first app if none present
+                var component = args.optString("component");
+                var packageName = args.optString("package");
+                if (component.isEmpty() && packageName.isEmpty()) dialog.openUrl(0);
+                else dialog.openUrl(
+                        component.isEmpty() ? null : ComponentName.unflattenFromString(component),
+                        packageName.isEmpty() ? null : packageName);
+            }),
             new AutomationRules.Automation<>("share", R.string.auto_share, dialog ->
                     dialog.shareUtility.shareUrl()),
             new AutomationRules.Automation<>("copy", R.string.auto_copy, dialog ->
@@ -171,7 +178,7 @@ class OpenDialog extends AModuleDialog {
 
     /** Populates the spinner with the apps that can open it, in preference order */
     private void updateSpinner(String url) {
-        intentApps = IntentApp.getOtherPackages(UrlUtils.getViewIntent(url, null), getActivity());
+        intentApps = IntentApp.getOtherPackages(new Intent(Intent.ACTION_VIEW, Uri.parse(url)), getActivity());
 
         // remove referrer
         if (noReferrerPref.get()) {
@@ -222,29 +229,32 @@ class OpenDialog extends AModuleDialog {
 
     // ------------------- Buttons -------------------
 
-    /**
-     * Open url in a specific app
-     *
-     * @param index index from the intentApps list of the app to use
-     */
+    /** Opens the url in a specific app provided by the index on the list of available ones */
     private void openUrl(int index) {
         // get
         if (index < 0 || index >= intentApps.size()) return;
-        var chosen = intentApps.get(index);
+        var chosenComponent = intentApps.get(index).getComponent();
 
         // update as preferred over the rest
-        lastOpened.prefer(chosen, intentApps, getUrl());
+        lastOpened.prefer(chosenComponent, intentApps, getUrl());
+
+        openUrl(chosenComponent, null);
+    }
+
+    /** Opens the url in a specific app given by component and/or package */
+    private void openUrl(ComponentName component, String packageName) {
 
         // open
         var intent = new Intent(getActivity().getIntent());
         if (Intent.ACTION_VIEW.equals(intent.getAction())) {
             // preserve original VIEW intent
             intent.setData(Uri.parse(getUrl()));
-            intent.setComponent(chosen.getComponent());
         } else {
             // replace with new VIEW intent
-            intent = UrlUtils.getViewIntent(getUrl(), chosen);
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getUrl()));
         }
+        intent.setComponent(component);
+        intent.setPackage(packageName);
 
         // ctabs
         cTabs.apply(intent);
@@ -256,7 +266,7 @@ class OpenDialog extends AModuleDialog {
         Flags.applyGlobalFlags(intent, this);
 
         // rejection detector: mark as open
-        rejectionDetector.markAsOpen(getUrl(), chosen);
+        if (component != null) rejectionDetector.markAsOpen(getUrl(), component);
 
         // open
         PackageUtils.startActivity(intent, R.string.toast_noApp, getActivity());

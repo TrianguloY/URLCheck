@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -22,7 +24,7 @@ public class HttpUtils {
     }
 
     /** GETs an URL and streams its lines. */
-    public static void streamFromUrl(String url, JavaUtils.Consumer<String> consumer) throws IOException {
+    public static void streamFromUrl(String url, Consumer<String> consumer) throws IOException {
         var connection = new URL(url).openConnection();
         connection.setConnectTimeout(CONNECT_TIMEOUT);
         StreamUtils.consumeLines(connection.getInputStream(), consumer);

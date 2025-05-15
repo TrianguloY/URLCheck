@@ -2,7 +2,7 @@ package com.trianguloy.urlchecker.utilities.wrappers;
 
 import android.app.Activity;
 
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 /**
  * A wrapper around {@link android.app.ProgressDialog} with more useful functions
@@ -18,16 +18,14 @@ public class ProgressDialog extends android.app.ProgressDialog {
      *     });
      * </pre>
      */
-    public static void run(Activity context, int title, JavaUtils.Consumer<ProgressDialog> consumer) {
+    public static void run(Activity context, int title, Consumer<ProgressDialog> consumer) {
         new ProgressDialog(context, title, consumer);
     }
 
     private final Activity cntx;
 
-    /**
-     * Constructs and shows the dialog
-     */
-    private ProgressDialog(Activity context, int title, JavaUtils.Consumer<ProgressDialog> consumer) {
+    /** Constructs and shows the dialog */
+    private ProgressDialog(Activity context, int title, Consumer<ProgressDialog> consumer) {
         super(context);
         cntx = context;
         setTitle(title); // can't be changed later
@@ -47,25 +45,19 @@ public class ProgressDialog extends android.app.ProgressDialog {
         }).start();
     }
 
-    /**
-     * progress++
-     */
+    /** progress++ */
     public void increaseProgress() {
         setProgress(getProgress() + 1);
     }
 
-    /**
-     * sets max value and resets to 0
-     */
+    /** sets max value and resets to 0 */
     @Override
     public void setMax(int max) {
         super.setMax(max);
         setProgress(0);
     }
 
-    /**
-     * Changes the message from any thread
-     */
+    /** Changes the message from any thread */
     @Override
     public void setMessage(CharSequence message) {
         cntx.runOnUiThread(() -> super.setMessage(message));

@@ -7,11 +7,11 @@
     <string name="a_modules">Moduly</string>
     <string name="a_settings">Nastavení</string>
     <string name="a_about">O aplikaci</string>
-    <string name="txt_about">Aplikaci vytvořil TrianguloY.
+    <string name="txt_about">Aplikaci vytvořil %1$s.
 \n
-\nPřispěli: %1$s.
-\nPřeložili: %2$s.</string>
-    <string name="link_blog">Blog TrianguloY</string>
+\nPřispěli: %2$s.
+\nPřeložili: %3$s.</string>
+    <string name="link_blog">Blog %s</string>
     <string name="link_source">Zdrojový kód</string>
     <string name="link_privacy">Ochrana osobních údajů</string>
     <string name="toast_cantEnable">Nemohu povolit modul: %s</string>
@@ -155,8 +155,8 @@
     <string name="mOpen_share">Sdílet</string>
     <string name="mStatus_desc">Stisknutím zaškrtávacího tlačítka bude podána žádost o načtení a zobrazení kódu stavu webu. Pokud je výsledkem přesměrování, budete moci zobrazit cílovou adresu URL. Obsah adresy URL je získán (GET), ale není vyhodnocen, takže přesměrování založená na JavaScriptu nebudou detekována.</string>
     <string name="mVT_name">Skener URL</string>
-    <string name="mVT_desc">Když je tento modul povolen, můžete naskenovat adresu URL pomocí VirusTotal a zkontrolovat zprávu. K jeho fungování je potřeba osobní VirusTotal API klíč, ten získáte po registraci bezplatného účtu zde: https://www.virustotal.com/gui/join-us .</string>
-    <string name="mHosts_desc">Tento modul označuje hostitele, konfigurované buď jejich ručním zadáním, nebo pomocí souboru podobného vzdálenému \'hosts\'. Můžete jej použít k varování před nebezpečnými nebo speciálními stránkami. Vestavěná konfigurace určuje hostitele dle StevenBlack (adware/malware, falešné zprávy, hazardní hry a obsah pro dospělé) z https://github.com/StevenBlack/hosts</string>
+    <string name="mVT_desc">Když je tento modul povolen, můžete naskenovat adresu URL pomocí VirusTotal a zkontrolovat zprávu. K jeho fungování je potřeba osobní VirusTotal API klíč, ten získáte po registraci bezplatného účtu zde: %s .</string>
+    <string name="mHosts_desc">Tento modul označuje hostitele, konfigurované buď jejich ručním zadáním, nebo pomocí souboru podobného vzdálenému \'hosts\'. Můžete jej použít k varování před nebezpečnými nebo speciálními stránkami. Vestavěná konfigurace určuje hostitele dle StevenBlack (adware/malware, falešné zprávy, hazardní hry a obsah pro dospělé) z %s</string>
     <string name="mVT_jsonError">Nelze se připojit k VirusTotal. Ujistěte se, že je klíč API platný, nebo to zkuste znovu později.</string>
     <string name="mLog_desc">Tento modul zaznamenává všechny kontrolované adresy URL. Zde můžete zobrazit, vymazat nebo upravit celý protokol (historii), v hlavním dialogu se neobjeví žádná vizuální indikace. Chcete-li zakázat protokolování, deaktivujte modul.</string>
     <string name="mD_desc">Pokud změníte pořadí modulů, nové přidané (z budoucích aktualizací) budou umístěny nad tento modul.
@@ -166,7 +166,7 @@
 \nPodržením pak vyberete text.</string>
     <string name="mHist_desc">Když je adresa URL upravena, ať už ručně, nebo pomocí jiných modulů, je tímto modulem možno zobrazit a vrátit změny.</string>
     <string name="mClear_desc">Tento modul odstraňuje z adresy URL sledování, referrer (doporučitel) a další zbytečné parametry. Umožňuje také běžná offline přesměrování URL.</string>
-    <string name="mUnshort_desc">Tento modul rozbalí odkazy odesláním na https://unshorten.me/, který je vyhodnotí na svých serverech a uloží přesměrování pro budoucí žádosti. Vyhněte se zkracování odkazů se soukromými nebo citlivými daty.
+    <string name="mUnshort_desc">Tento modul rozbalí odkazy odesláním na %s, který je vyhodnotí na svých serverech a uloží přesměrování pro budoucí žádosti. Vyhněte se zkracování odkazů se soukromými nebo citlivými daty.
 \nJejich rozhraní API je omezeno na 10 žádostí za hodinu, pokud ještě nebyl zkontrolován. Odpověď modulu ukáže, kolik žádostí máte nevyřízených.</string>
     <string name="mFlag_desc">[Funkce beta] Toto je pokročilý modul, který vám umožňuje upravovat \'intent flag\' při otevírání jiné aplikace.
 \nTento modul zobrazí seznam příznaků, klepnutím na ikonu můžete změnit, zda je příznak nastaven nebo ne. K dispozici je také rozbalovací nabídka pro skrytí příznaků, je pouze vizuální, příznaky budou stále používat přiřazený stav.
@@ -180,7 +180,7 @@
     <string name="mD_ctabs">Zobrazit zprávy ladění ze služby Vlastních karet</string>
     <string name="mHist_name">Historie</string>
     <string name="mClear_name">Čistič URL</string>
-    <string name="mClear_tm">Vestavěný katalog zkopírován z ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Vestavěný katalog zkopírován z ClearURLs: %s</string>
     <string name="mClear_noRules">Pravidla nevyhovují kritériím</string>
     <string name="mClear_error">Není možno ověřit pravidlo</string>
     <string name="mClear_updateNow">Aktualizovat nyní</string>
@@ -263,7 +263,7 @@
     <string name="mHosts_built">Databáze sestavena: %d hostů</string>
     <string name="mUnshort_name">Rozbalovač URL</string>
     <string name="mParts_name">Části Uri</string>
-    <string name="mClear_editor">Katalogová pravidla: Musí dodržovat formát z https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Katalogová pravidla: Musí dodržovat formát z %s.
 \nVšimněte si, že jakákoliv úprava nadřazeného objektu \'providers\' (poskytovatelé) bude přepsána, pokud je katalog aktualizován automaticky nebo ručně z dialogu aktualizačního programu. Chcete-li zde užít vlastních pravidel, nastavte je v jiném nadřazeném objektu (libovolný název).</string>
     <string name="mPttrn_wrongSchemaHttp">Neplatná kapitalizace HTTP schématu.</string>
     <string name="mPttrn_wrongSchemaHttps">Neplatná kapitalizace HTTPS schématu.</string>

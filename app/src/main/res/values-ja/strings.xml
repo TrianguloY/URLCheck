@@ -16,11 +16,11 @@
     <string name="a_settings">設定</string>
     <string name="a_about">このアプリについて</string>
     <!-- about -->
-    <string name="txt_about">"このアプリは TrianguloY によって開発されました。
+    <string name="txt_about">"このアプリは %1$s によって開発されました。
 
-貢献者: %1$s
-翻訳者: %2$s"</string>
-    <string name="link_blog">TrianguloY のブログ</string>
+貢献者: %2$s
+翻訳者: %3$s"</string>
+    <string name="link_blog">%s のブログ</string>
     <string name="link_changelog">変更履歴</string>
     <string name="link_source">ソースコード</string>
     <string name="link_privacy">プライバシーポリシー</string>
@@ -126,7 +126,7 @@ URLコンテンツは取得 (GET) されますが、JavaScript によるリダ�
     <string name="mInput_desc">手動で編集できる現在のURLを表示します。</string>
     <string name="mVT_name">URL スキャナー</string>
     <string name="mVT_desc">"このモジュールを有効にすると、VirusTotal を使用してURLをスキャンし、レポートを確認できます。
-これが機能するには、個人用の VirusTotal API キーが必要です。https://www.virustotal.com/gui/join-us\nで無料アカウントに登録した後に取得できます。"</string>
+これが機能するには、個人用の VirusTotal API キーが必要です。%s\nで無料アカウントに登録した後に取得できます。"</string>
     <string name="mVT_apiKey">API キー</string>
     <string name="mVT_tm">VirusTotal™ は Google, Inc. の商標です。</string>
     <string name="mVT_scan">スキャン</string>
@@ -148,7 +148,7 @@ Intent または URLData をタップすると、クリップボードにコピ�
     <string name="mHist_desc">手動または他のモジュールによってURLが編集されると、このモジュールを使用して変更を表示および元に戻すことができます。</string>
     <string name="mClear_name">URL クリーナー</string>
     <string name="mClear_desc">このモジュールは、トラッキング、リファラル、およびその他の不要なパラメーターをURLから削除します。また、一般的なURLリダイレクトは、オフラインでも可能です。</string>
-    <string name="mClear_tm">ClearURLs からコピーされた組み込みカタログ:\nhttps://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">ClearURLs からコピーされた組み込みカタログ:\n%s</string>
     <string name="mClear_clear">適用</string>
     <string name="mClear_matches">%s に一致</string>
     <string name="mClear_blocked">- ブロックされました!</string>
@@ -179,7 +179,7 @@ Intent または URLData をタップすると、クリップボードにコピ�
     <string name="mClear_hashError">ハッシュを取得できません。URLが有効で、インターネット接続が有効であることを確認してください。</string>
     <string name="mClear_hashMismatch">ハッシュが一致しません。ファイルが壊れている可能性があります。チェックをスキップしたい場合は、ハッシュURLを削除してください</string>
     <string name="mClear_restore">URLをリセット</string>
-    <string name="mClear_editor">"パターンデータの形式は\nhttps://docs.clearurls.xyz/latest/specs/rules/ \nの形式に従う必要があります。
+    <string name="mClear_editor">"パターンデータの形式は\n%s \nの形式に従う必要があります。
 - カタログが自動または手動で更新された場合、親オブジェクト「providers」への変更はすべて上書きされることに注意してください。手動でルールを設定するには、別の親オブジェクト（任意の名前）に設定してください。"</string>
     <string name="mRemove_name">クエリの削除</string>
     <string name="mRemove_desc">"このモジュールを使用すると、URLからクエリを削除できます。
@@ -200,7 +200,7 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="mLog_empty">ログはありません</string>
     <string name="mHosts_name">ホスト ラベラー</string>
     <string name="mHosts_desc">このモジュールは、手動で指定するか、リモートホストのようなファイルを使って設定されたホストにラベル付けします。危険なサイトや特殊なサイトについて警告するために使用することができます。
-\nデフォルトの設定では、StevenBlack のホスト (アドウェア/マルウェア、fakenews、ギャンブル、アダルトコンテンツ) を https://github.com/StevenBlack/hosts から取得します。</string>
+\nデフォルトの設定では、StevenBlack のホスト (アドウェア/マルウェア、fakenews、ギャンブル、アダルトコンテンツ) を %s から取得します。</string>
     <string name="mHosts_malware">アドウェア/マルウェア</string>
     <string name="mHosts_info">ホスト:</string>
     <string name="mHosts_noLabel">ラベルなし</string>
@@ -236,4 +236,19 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="shortcut_checkClipboard">クリップボードから URL を確認する</string>
     <string name="mChg_desc">アプリが更新されたらお知らせします。</string>
     <string name="mLog_limit">保持するエントリーの最大数。推奨値：100。無制限の場合はUnlimitedに設定</string>
+    <string name="btn_backupRestore">バックアップと復元</string>
+    <string name="btn_backup">バックアップ</string>
+    <string name="bck_restoreOk">バックアップを復元しました</string>
+    <string name="mChg_view">変更を表示</string>
+    <string name="json_info">情報を表示</string>
+    <string name="mChg_name">更新履歴</string>
+    <string name="bck_mn_advanced">高度なオプションを表示</string>
+    <string name="btn_restore">復元</string>
+    <string name="btn_delete">削除</string>
+    <string name="bck_restoreTitle">バックアップを復元</string>
+    <string name="bck_backupOk">バックアップを作成しました</string>
+    <string name="bck_chooseFile">バックアップファイルを選択</string>
+    <string name="txt_animation">アニメーションを有効化</string>
+    <string name="spin_fullWidth">完全</string>
+    <string name="spin_dynamicWidth">ダイナミック</string>
 </resources>

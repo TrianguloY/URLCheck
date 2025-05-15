@@ -4,11 +4,11 @@
     <string name="a_modules">모듈</string>
     <string name="a_settings">설정</string>
     <string name="a_about">정보</string>
-    <string name="txt_about">이 앱은 TrianguloY에 의해 제작되었습니다.
+    <string name="txt_about">이 앱은 %1$s에 의해 제작되었습니다.
 \n
-\n기여자: %1$s
-\n번역한 사람들: %2$s</string>
-    <string name="link_blog">TrianguloY의 블로그</string>
+\n기여자: %2$s
+\n번역한 사람들: %3$s</string>
+    <string name="link_blog">%s의 블로그</string>
     <string name="link_changelog">변경 사항</string>
     <string name="link_source">소스 코드</string>
     <string name="link_privacy">개인정보 보호 정책</string>
@@ -82,7 +82,7 @@
     <string name="next">다음</string>
     <string name="canceled">취소됨</string>
     <string name="back">뒤로</string>
-    <string name="mClear_editor">카탈로그 규칙: https://docs.clearurls.xyz/latest/specs/rules/ 의 형식을 따라야 합니다.
+    <string name="mClear_editor">카탈로그 규칙: %s 의 형식을 따라야 합니다.
 \n부모 객체인 \'providers\'는 업데이트되었을 때 덮어씌어진다는 점을 주의하세요. 만약 개인적으로 규칙을 만들고 싶다면 아무 이름이나로 다른 부모 객체를 만들어서 규칙을 설정하세요.</string>
     <string name="invalid">유효하지 않음</string>
     <string name="clear">지우기</string>
@@ -92,7 +92,7 @@
     <string name="json_editor">고급 편집</string>
     <string name="mVT_tm">VirusTotal™은 Google, Inc.의 트레이드마크입니다.</string>
     <string name="mVT_scanning">스캔 중…</string>
-    <string name="mVT_desc">이 모듈이 활성화되어 있을 때 VirusTotal을 이용해 URL을 검사할 수 있습니다. 개인 VirusTotal API 키가 필요하며, 키는 https://www.virustotal.com/gui/join-us 에서 무료로 회원가입 후 받을 수 있습니다.</string>
+    <string name="mVT_desc">이 모듈이 활성화되어 있을 때 VirusTotal을 이용해 URL을 검사할 수 있습니다. 개인 VirusTotal API 키가 필요하며, 키는 %s 에서 무료로 회원가입 후 받을 수 있습니다.</string>
     <string name="mVT_connectError">VirusTotal에 연결할 수 없습니다. 인터넷에 연결되어 있는지 확인하거나 나중에 다시 시도하세요.</string>
     <string name="mVT_cancel">취소</string>
     <string name="mVT_name">URL 스캐너</string>
@@ -106,7 +106,7 @@
     <string name="mUnshort_pending">기다리는 중: %1$d/%2$d</string>
     <string name="mUnshort_ok">복구됨</string>
     <string name="mUnshort_internal">내부 오류 (%s)</string>
-    <string name="mUnshort_desc">이 모듈은 https://unshorten.me/로 보내 단축된 URL의 원본을 보여줍니다. 해당 사이트의 서버에서 실행한 뒤 향후의 요청을 위해 리디렉션 정보를 저장하는 방식으로 작동하니 사적이거나 민감한 링크에 사용하는 것을 피하세요.
+    <string name="mUnshort_desc">이 모듈은 %s로 보내 단축된 URL의 원본을 보여줍니다. 해당 사이트의 서버에서 실행한 뒤 향후의 요청을 위해 리디렉션 정보를 저장하는 방식으로 작동하니 사적이거나 민감한 링크에 사용하는 것을 피하세요.
 \nAPI는 새로운 확인에 대해 시간당 10개의 요청으로 제한됩니다. 이 모듈의 응답은 몇 번의 요청이 남았는지 보여줍니다.</string>
     <string name="mStatus_unknownCode">%d: 불명의 상태 코드</string>
     <string name="mUnshort_unshort">단축 URL 복구하기</string>

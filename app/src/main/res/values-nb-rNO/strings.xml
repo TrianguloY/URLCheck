@@ -5,13 +5,13 @@
     <string name="a_modules">Moduler</string>
     <string name="a_about">Om</string>
     <string name="a_settings">Innstillinger</string>
-    <string name="link_blog">TrianguloYs blogg</string>
+    <string name="link_blog">%ss blogg</string>
     <string name="link_source">Kildekode</string>
     <string name="link_privacy">Personvernspraksis</string>
-    <string name="txt_about">Programmet er laget av TrianguloY.
+    <string name="txt_about">Programmet er laget av %1$s.
 \n
-\nBidragsytere: %1$s.
-\nOversettelser: %2$s.</string>
+\nBidragsytere: %2$s.
+\nOversettelser: %3$s.</string>
     <string name="menu_resetOrder">Tilbakestill rekkefølge</string>
     <string name="desc_up">Flytt oppover</string>
     <string name="desc_down">Flytt nedover</string>

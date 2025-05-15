@@ -56,18 +56,15 @@ public interface LocaleUtils {
     /** Container for a locale with a given name */
     class AvailableLocale {
         public final String tag;
-        public final Locale locale;
         public final String name;
 
-        public AvailableLocale(String tag, Locale locale, String name) {
+        public AvailableLocale(String tag, String name) {
             this.tag = tag;
-            this.locale = locale;
             this.name = name;
         }
 
         public AvailableLocale(String name) {
             this.tag = "";
-            this.locale = null;
             this.name = name;
         }
 
@@ -89,11 +86,12 @@ public interface LocaleUtils {
             if (available.isEmpty() || !available.get(0).name.equals(localeName)) {
                 // either english (first one) or a translation exists
                 // note that translations may not exists because PlayStore only installs locales configured by the user
-                available.add(new AvailableLocale(tag, locale, localeName));
+                available.add(new AvailableLocale(tag, localeName));
             } else {
                 if (BuildConfig.DEBUG) Log.d("LOCALE", "Locale " + tag + " is not present");
             }
         }
+        //noinspection ComparatorCombinators requires api 24
         Collections.sort(available, (a, b) -> a.toString().compareTo(b.toString()));
         available.add(0, new AvailableLocale(cntx.getString(R.string.deviceDefault)));
         return available;

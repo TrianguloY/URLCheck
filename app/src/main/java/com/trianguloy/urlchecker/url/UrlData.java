@@ -23,14 +23,10 @@ public class UrlData {
 
     // ------------------- optional data -------------------
 
-    /**
-     * The module that triggered this data (null if internal)
-     */
+    /** The module that triggered this data (null if internal) */
     public AModuleDialog trigger;
 
-    /**
-     * If set, the module that triggers the update will be notified (all callbacks)
-     */
+    /** If set, the module that triggers the update will be notified (all callbacks) */
     public boolean triggerOwn = true;
 
     public UrlData dontTriggerOwn() {
@@ -38,9 +34,7 @@ public class UrlData {
         return this;
     }
 
-    /**
-     * If set, the url will not be changed (future setUrl calls will be ignored)
-     */
+    /** If set, the url will not be changed (future setUrl calls will be ignored) */
     public boolean disableUpdates = false;
 
     public UrlData disableUpdates() {
@@ -52,17 +46,13 @@ public class UrlData {
 
     private final LinkedHashMap<String, String> extraData = new LinkedHashMap<>(); // keeps order
 
-    /**
-     * saves a key-value data, will be kept with automatic updates (but not with manual ones)
-     */
+    /** saves a key-value data, will be kept with automatic updates (but not with manual ones) */
     public UrlData putData(String key, String value) {
         extraData.put(key, value);
         return this;
     }
 
-    /**
-     * gets a key-value data, those set on this update or previous automatic ones
-     */
+    /** gets a key-value data, those set on this update or previous automatic ones */
     public String getData(String key) {
         return extraData.get(key);
     }
@@ -76,9 +66,7 @@ public class UrlData {
         return entries;
     }
 
-    /**
-     * adds all data from the parameter into this object. Keeps insertion order [...urlData.extraData,...this.extraData]
-     */
+    /** adds all data from the parameter into this object. Keeps insertion order [...urlData.extraData,...this.extraData] */
     public void mergeData(UrlData urlData) {
         // there is no putAllFirst
         var thisExtraData = new LinkedHashMap<>(extraData);

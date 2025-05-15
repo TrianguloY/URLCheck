@@ -22,9 +22,7 @@ import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
 import java.util.Collections;
 import java.util.Set;
 
-/**
- * This activity opens (on this app) a link detected on the clipboard text. If multiple asks.
- */
+/** This activity opens (on this app) a link detected on the clipboard text. If multiple asks. */
 public class ShortcutsActivity extends Activity {
 
     private AlertDialog dialog;
@@ -72,9 +70,7 @@ public class ShortcutsActivity extends Activity {
         else run();
     }
 
-    /**
-     * To run when the clipboard is available
-     */
+    /** To run when the clipboard is available */
     private void run() {
         var links = getLinksFromClipboard();
         switch (links.size()) {
@@ -101,9 +97,7 @@ public class ShortcutsActivity extends Activity {
         }
     }
 
-    /**
-     * Opens a link on our app
-     */
+    /** Opens a link on our app */
     private void open(String link) {
         PackageUtils.startActivity(
                 new Intent()
@@ -116,9 +110,7 @@ public class ShortcutsActivity extends Activity {
         );
     }
 
-    /**
-     * Returns all links detected on the clipboard
-     */
+    /** Returns all links detected on the clipboard */
     private Set<String> getLinksFromClipboard() {
 
         var clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);

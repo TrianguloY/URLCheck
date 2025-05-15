@@ -2,10 +2,15 @@ package com.trianguloy.urlchecker.modules.list;
 
 import static android.graphics.Typeface.BOLD;
 import static android.graphics.Typeface.ITALIC;
+import static android.text.InputType.TYPE_TEXT_VARIATION_URI;
+import static android.view.KeyEvent.ACTION_DOWN;
+import static android.view.KeyEvent.KEYCODE_ENTER;
 import static android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.StyleSpan;
@@ -13,7 +18,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.ModulesActivity;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
@@ -83,19 +87,34 @@ class TextInputDialog extends AModuleDialog {
         // init view
         var editText = new EditText(getActivity());
         editText.setText(getUrl());
+        editText.setImeOptions(IME_ACTION_DONE);
+        editText.setInputType(TYPE_TEXT_VARIATION_URI);
+        editText.setSingleLine(false);
         if (position >= 0) editText.setSelection(position);
         else editText.setSelection(0, editText.length());
         editText.requestFocus();
 
         // init dialog
+        DialogInterface.OnClickListener accept = (d, w) -> setUrl(new UrlData(editText.getText().toString()).disableUpdates());
         var dialog = new AlertDialog.Builder(getActivity())
                 .setView(editText)
-                .setPositiveButton(android.R.string.ok, (d, w) -> setUrl(new UrlData(editText.getText().toString()).disableUpdates()))
+                .setPositiveButton(android.R.string.ok, accept)
                 .setNegativeButton(android.R.string.cancel, null)
                 .setCancelable(true)
                 .create();
-        if (dialog.getWindow() != null)
-            dialog.getWindow().setSoftInputMode(SOFT_INPUT_STATE_VISIBLE | SOFT_INPUT_ADJUST_RESIZE);
+
+        // resize with keyboard
+        if (dialog.getWindow() != null) dialog.getWindow().setSoftInputMode(SOFT_INPUT_STATE_VISIBLE | SOFT_INPUT_ADJUST_RESIZE);
+
+        // accept on done/enter
+        editText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == IME_ACTION_DONE || (event.getAction() == ACTION_DOWN && event.getKeyCode() == KEYCODE_ENTER)) {
+                accept.onClick(null, 0);
+                dialog.dismiss();
+                return true;
+            }
+            return false;
+        });
 
         // show
         dialog.show();
@@ -115,6 +134,7 @@ class TextInputDialog extends AModuleDialog {
             if (start != -1) {
                 start += 3;
                 var end = rawUri.indexOf("/", start);
+                if (end == -1) end = rawUri.length();
 
                 var userinfo = rawUri.indexOf("@", start);
                 if (userinfo != -1 && userinfo < end) start = userinfo + 1;
@@ -125,16 +145,17 @@ class TextInputDialog extends AModuleDialog {
                 str.setSpan(new StyleSpan(BOLD), start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
             }
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) e.printStackTrace();
+            AndroidUtils.assertError("Unable to set host as bold", e);
         }
 
         // italic query+fragment
         try {
             var start = rawUri.indexOf("?");
             if (start == -1) start = rawUri.indexOf("#");
-            if (start != -1) str.setSpan(new StyleSpan(ITALIC), start, rawUri.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+            if (start != -1)
+                str.setSpan(new StyleSpan(ITALIC), start, rawUri.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) e.printStackTrace();
+            AndroidUtils.assertError("Unable to set query+fragment as italic", e);
         }
 
         return str;

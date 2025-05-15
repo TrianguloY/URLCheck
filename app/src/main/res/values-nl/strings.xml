@@ -9,7 +9,7 @@
     <string name="close">Sluit</string>
     <string name="toast_cantEnable">Kan de module niet inschakelen: %s</string>
     <string name="save">Opslaan</string>
-    <string name="mVT_desc">Wanneer deze module is ingeschakeld, kunt u de URL scannen met VirusTotal en het rapport controleren. Om te kunnen werken is een persoonlijke VirusTotal API-sleutel nodig. U kunt er een verkrijgen nadat u zich hier voor een gratis account heeft geregistreerd: https://www.virustotal.com/gui/join-us.</string>
+    <string name="mVT_desc">Wanneer deze module is ingeschakeld, kunt u de URL scannen met VirusTotal en het rapport controleren. Om te kunnen werken is een persoonlijke VirusTotal API-sleutel nodig. U kunt er een verkrijgen nadat u zich hier voor een gratis account heeft geregistreerd: %s.</string>
     <string name="reset">Reset</string>
     <string name="mPttrn_wrongSchemaHttp">Ongeldig hoofdlettergebruik van http-schema.</string>
     <string name="link_changelog">Wijzigingslog</string>
@@ -59,7 +59,7 @@
     <string name="a_modules">Modules</string>
     <string name="mOpen_closeShare">Dialoogvenster sluiten na delen</string>
     <string name="txt_openLinks">Links openen in deze app: Android heeft in de loop der jaren de manier veranderd waarop het wordt geconfigureerd en verschilt per versie. Hieronder vindt u alle beschikbare instellingen voor uw apparaat. Als er geen links worden geopend in deze app, probeer ze dan allemaal.</string>
-    <string name="mClear_tm">Ingebouwde catalogus gekopieerd van ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Ingebouwde catalogus gekopieerd van ClearURLs: %s</string>
     <string name="back">Terug</string>
     <string name="hidden">Verborgen</string>
     <string name="mPttrn_desc">Deze module controleert de url met regex-patronen die vervangingen waarschuwen, voorstellen of toepassen. U kunt uw eigen patronen wijzigen of creëren, of zelfs door de gebruiker gemaakte patronen gebruiken.
@@ -85,7 +85,7 @@
 \n- Knop Openen: druk op de app-naam om de link in die app te openen. Als een link met meerdere apps kan worden geopend, wordt er een pijl weergegeven waarmee u kunt kiezen.
 \n- Knop Kopiëren: Druk op de knop om de link naar het klembord te kopiëren.
 \n- Deelknop: druk op de knop om de link te delen.</string>
-    <string name="link_blog">TrianguloY\'s blog</string>
+    <string name="link_blog">%s\'s blog</string>
     <string name="mClear_matches">Komt overeen met %s</string>
     <string name="mOpen_with">Openen met %s</string>
     <string name="mHist_desc">Wanneer de URL wordt bewerkt, handmatig of door andere modules, kunt u met deze module de wijzigingen bekijken en ongedaan maken.</string>
@@ -106,10 +106,10 @@
     <string name="mOpen_closeOpen">Dialoogvenster sluiten na openen</string>
     <string name="btn_setBrowser">Stel in als standaard browser</string>
     <string name="btn_androidSettings">Instellingen voor Android</string>
-    <string name="txt_about">App gemaakt door TrianguloY.
+    <string name="txt_about">App gemaakt door %1$s.
 \n
-\nBijdragen: %1$s.
-\nVertalingen: %2$s.</string>
+\nBijdragen: %2$s.
+\nVertalingen: %3$s.</string>
     <string name="mD_ctabs">Toon foutopsporingsberichten van de service voor aangepaste tabbladen</string>
     <string name="txt_locale">Taal:</string>
     <string name="mVT_goodUrl">Geen van de %1$d-engines heeft de URL gedetecteerd (vanaf datum %2$s)</string>
@@ -187,7 +187,7 @@
 \nMet dank aan PabloOQ voor het idee en de originele uitvoering!
 \n
 \nDeze module is verouderd ten gunste van de module \'Uri-onderdelen\'</string>
-    <string name="mClear_editor">Catalogusregels: ze moeten het formaat volgen van https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Catalogusregels: ze moeten het formaat volgen van %s.
 \nHoud er rekening mee dat elke wijziging aan het bovenliggende object \'providers\' zal worden overschreven als de catalogus automatisch of handmatig wordt bijgewerkt vanuit het updatevenster. Als u persoonlijke regels wilt instellen, plaatst u deze in een ander bovenliggend object (willekeurige naam).</string>
     <string name="mLog_unlimited">Onbeperkt</string>
     <string name="mHosts_built">Database gebouwd: %d hosts</string>
@@ -233,7 +233,7 @@
     <string name="mRemove_empty">Verwijder leeg</string>
     <string name="mClear_urlError">Kan de regels niet ophalen. Controleer of de URL geldig is en of u een actieve verbinding heeft</string>
     <string name="mLog_limit">Maximaal aantal te behouden vermeldingen. Aanbevolen waarde: 100. Stel leeg in voor onbeperkt</string>
-    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar https://unshorten.me/ te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens.
+    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar %s te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens.
 \nHun API is beperkt tot 10 verzoeken per uur voor nieuwe cheques. Het moduleantwoord laat zien hoeveel verzoeken u in behandeling heeft.</string>
     <string name="mHosts_build">Build</string>
     <string name="mRemove_one">Verwijder %s</string>
@@ -268,13 +268,12 @@
     <string name="mFlags_name">Flags editor</string>
     <string name="mRemove_found1">1 zoekopdracht gevonden</string>
     <string name="mUnshort_tm">unshorten.me gratis API van Unshorten.me</string>
-    <string name="mHosts_desc">Deze module labelt hosts, geconfigureerd door ze handmatig te specificeren of door een remote hosts-achtig bestand te gebruiken. U kunt het gebruiken om te waarschuwen voor gevaarlijke of speciale sites. De ingebouwde configuratie specificeert StevenBlack\'s hosts (adware/malware, fakenews, gokken en inhoud voor volwassenen) van https://github.com/StevenBlack/hosts. Let op: subdomeinen worden ook gecontroleerd, dus \'x.y.z\' en \'y.z\' worden gedetecteerd voor de invoer \'y.z\'</string>
+    <string name="mHosts_desc">Deze module labelt hosts, geconfigureerd door ze handmatig te specificeren of door een remote hosts-achtig bestand te gebruiken. U kunt het gebruiken om te waarschuwen voor gevaarlijke of speciale sites. De ingebouwde configuratie specificeert StevenBlack\'s hosts (adware/malware, fakenews, gokken en inhoud voor volwassenen) van %s. Let op: subdomeinen worden ook gecontroleerd, dus \'x.y.z\' en \'y.z\' worden gedetecteerd voor de invoer \'y.z\'</string>
     <string name="mLog_edit">Logboek bewerken</string>
     <string name="mClear_hashDesc">URL van het catalogus-hashbestand. Als u dit weglaat, wordt de download niet gecontroleerd om te zien of er mee is geknoeid/gewijzigd (niet aanbevolen)</string>
     <string name="mClear_hashError">Kan de hash niet ophalen. Zorg ervoor dat de URL geldig is en dat u een actieve verbinding heeft</string>
     <string name="mClear_lastCheck">Laatste controle:</string>
     <string name="btn_backupRestore">Back-up/herstellen</string>
-    <string name="btn_replace">Vervangen</string>
     <string name="btn_delete">Verwijderen</string>
     <string name="bkp_description">Kies welke elementen je wil back-uppen of herstellen.
 \nAls je een element herstelt en er een back-up van is gemaakt, wordt die behouden.</string>

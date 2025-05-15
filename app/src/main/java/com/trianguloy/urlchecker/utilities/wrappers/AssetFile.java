@@ -6,9 +6,7 @@ import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
 import java.io.IOException;
 
-/**
- * Represents a file from assets (read-only)
- */
+/** Represents a file from assets (read-only) */
 public class AssetFile {
     private final String fileName;
     private final Context cntx;
@@ -18,9 +16,7 @@ public class AssetFile {
         this.cntx = cntx;
     }
 
-    /**
-     * Returns the content of the file, or null if can't be read)
-     */
+    /** Returns the content of the file, or null if can't be read) */
     public String get() {
         // get the updated file first
         try {

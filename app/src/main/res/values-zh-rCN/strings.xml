@@ -16,11 +16,11 @@
     <string name="a_settings">设置</string>
     <string name="a_about">关于</string>
     <!-- about -->
-    <string name="txt_about">此应用由 TrianguloY 创建。
+    <string name="txt_about">此应用由 %1$s 创建。
 \n
-\n贡献者： %1$s。
-\n翻译者： %2$s。</string>
-    <string name="link_blog">TrianguloY 的博客</string>
+\n贡献者： %2$s。
+\n翻译者： %3$s。</string>
+    <string name="link_blog">%s 的博客</string>
     <string name="link_changelog">更新日志</string>
     <string name="link_source">源码</string>
     <string name="link_privacy">隐私政策</string>
@@ -104,7 +104,7 @@
     <string name="mPttrn_noSchemeHttp">缺少 HTTP 协议。</string>
     <string name="mPttrn_noSchemeHttps">缺少 HTTPS 协议。</string>
     <string name="mPttrn_ok">无匹配的模式</string>
-    <string name="mPttrn_editor">您可以在这里编辑或添加新的模式。格式： \n- \'encode\': 布尔值：设置为 true，启用在正则检查前编码 URL。 \n- \'regex\': 必需字符串：有效的 Java 正则表达式，须与 URL 匹配，否则会跳过此模式。 \n- \'excludeegex\': 字符串：如果提供，应是有效的 Java 正则表达式，须不与 URL 匹配，否则会跳过此模式。 \n- \'replacement\': 字符串或列表：如果提供，则“修复”按钮将运行\'url=url.replaceAll(regex,replacement)。如果是列表，replacement 将从中随机选择一个元素。 \n- \'decode\': 布尔值：设置为 true 以解码替换的 URL。 \n- \'automatic\'：布尔值：设置为 true 以自动应用该模式。 \n- \'enabled\'：布尔值：设置为 false 以禁用该模式。 \n注意：如果你编辑了这些模式，新的内置模式将不会自动添加到应用程序更新中（你可以使用重置选项恢复它们）。</string>
+    <string name="mPttrn_editor">您可以在这里编辑或添加新的模式。格式： \n-「encode」：布尔值：设置为 true，启用在正则检查前编码 URL。 \n-「regex」：字符串：有效的 Java 正则表达式，须与 URL 匹配，否则会跳过此模式。 \n-「excludeegex」：字符串：如果提供，应是有效的 Java 正则表达式，须不与 URL 匹配，否则会跳过此模式。 \n-「replacement」：字符串或列表：如果提供，则“修复”按钮将运行\'url=url.replaceAll(regex,replacement)。如果是列表，replacement 将从中随机选择一个元素。 \n-「decode」： 布尔值：设置为 true 以解码替换的 URL。 \n- 「automatic」：布尔值：设置为 true 以自动应用该模式。 \n- 「enabled」：布尔值：设置为 false 以禁用该模式。 \n注意：如果你编辑了这些模式，新的内置模式将不会自动添加到应用程序更新中（你可以使用重置选项恢复它们）。</string>
     <string name="mOpen_name">打开并分享</string>
     <string name="mOpen_desc">包含以下按钮（从左到右）：
 \n- 自定义标签页：切换以启用/禁用自定义标签页功能。启用后，浏览器以App内置浏览器的模式（Lite 模式）打开链接。
@@ -157,7 +157,7 @@
     <string name="mInput_name">输入文本</string>
     <string name="mInput_desc">显示当前链接，点击以进入编辑模式。</string>
     <string name="mVT_name">链接扫描器</string>
-    <string name="mVT_desc">"当启用此模块时，您可以使用VirusTotal扫描网址链接并查阅扫描报告。它需要一个个人的VirusTotal api key 才能正常工作，您可以在此处注册免费帐户后获取: https://www.virustotal.com/gui/join-us ."</string>
+    <string name="mVT_desc">"当启用此模块时，您可以使用VirusTotal扫描网址链接并查阅扫描报告。它需要一个个人的VirusTotal api key 才能正常工作，您可以在此处注册免费帐户后获取: %s ."</string>
     <string name="mVT_apiKey">API 密钥</string>
     <string name="mVT_tm">VirusTotal™ 是 Google, Inc. 的商标。</string>
     <string name="mVT_scan">扫描</string>
@@ -179,7 +179,7 @@
     <string name="mHist_desc">当链接被手动编辑过或者被其他模块修改时，此模块允许您查看和恢复更改。</string>
     <string name="mClear_name">链接清洁器</string>
     <string name="mClear_desc">此模块从链接中删除跟踪、引用来源和其他无用参数。它还允许常见的离线网址重定向。</string>
-    <string name="mClear_tm">从 ClearURLs 复制的内置规则目录: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">从 ClearURLs 复制的内置规则目录: %s</string>
     <string name="mClear_clear">应用</string>
     <string name="mClear_matches">匹配 %s</string>
     <string name="mClear_blocked">- 屏蔽!</string>
@@ -196,7 +196,7 @@
     <string name="mClear_toggleVerbose">启用匹配过程的粗略信息</string>
     <string name="mClear_error">无法检查规则</string>
     <string name="mClear_updater">更新器</string>
-    <string name="mClear_sourceDesc">具有规则的JSON文件目录的网址链接:</string>
+    <string name="mClear_sourceDesc">具有规则的 Json 文件目录的网址链接:</string>
     <string name="mClear_urlHint">规则目录链接</string>
     <string name="mClear_hashDesc">目录哈希值的网址链接。如果省略，将不检查下载是否被篡改/修改（不建议）</string>
     <string name="mClear_hashHint">没有哈希值检查</string>
@@ -210,7 +210,7 @@
     <string name="mClear_hashError">无法获取哈希值，请确保链接是有效的，并且您的网络连接正常</string>
     <string name="mClear_hashMismatch">哈希值不匹配，文件可能被篡改了。如果你想跳过检查，删除哈希值链接</string>
     <string name="mClear_restore">重置ClearURLs路径</string>
-    <string name="mClear_editor">"目录规则。他们必须遵循以下的格式 https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"目录规则。他们必须遵循以下的格式 %s.
 请注意，如果目录被自动或手动从更新器对话框中更新，对家长对象 "提供者 "的任何修改将被覆盖。要想拥有个人自定义规则，可以在不同的家长对象（任何名称）中设置它们。"</string>
     <string name="mRemove_name">查询删除器</string>
     <string name="mRemove_desc">[已弃用]通过这个模块，你可以删除网址链接中的查询参数。
@@ -230,7 +230,7 @@
     <string name="mLog_edit">修改日志</string>
     <string name="mLog_empty">无数据</string>
     <string name="mHosts_name">主机标识符</string>
-    <string name="mHosts_desc">此模块可以标记主机，通过手动指定或使用类似远程主机的文件进行配置。您可以使用它来警告危险或特殊的网站。内置的配置使用StevenBlack的hosts（广告软件/恶意软件、假新闻、赌博和成人内容）来自https://github.com/StevenBlack/hosts。注意：也会对子域名进行检查，因此“x.y.z”与“y.z”中会检测出“y.z”</string>
+    <string name="mHosts_desc">此模块可以标记主机，通过手动指定或使用类似远程主机的文件进行配置。您可以使用它来警告危险或特殊的网站。内置的配置使用StevenBlack的hosts（广告软件/恶意软件、假新闻、赌博和成人内容）来自%s。注意：也会对子域名进行检查，因此“x.y.z”与“y.z”中会检测出“y.z”</string>
     <string name="mHosts_malware">广告软件/恶意软件</string>
     <string name="mHosts_info">主机:</string>
     <string name="mHosts_noLabel">无标识</string>
@@ -256,7 +256,7 @@
     <string name="mHosts_built">数据库构建: %d 主机</string>
     <string name="mUnshort_name">短链接解析器</string>
     <string name="mUnshort_unshort">解析短链接</string>
-    <string name="mUnshort_desc">此模块将通过将网址链接发送到https://unshorten.me/ 来解析短链接，它们将在其服务器上对该链接进行检查，并为将来的请求保存重定向。避免那些含有私人或敏感数据的短链接。
+    <string name="mUnshort_desc">此模块将通过将网址链接发送到%s 来解析短链接，它们将在其服务器上对该链接进行检查，并为将来的请求保存重定向。避免那些含有私人或敏感数据的短链接。
 \n此API的限制为每小时10个新检查的请求。该模块响应将显示还您有多少请求待处理。</string>
     <string name="mUnshort_checking">检查中…</string>
     <string name="mUnshort_error">服务器错误: %s</string>
@@ -325,7 +325,6 @@
     <string name="bkp_secrets">秘密：认为是“秘密”的数据，比如 VirusTotal API 密钥或日志。</string>
     <string name="bck_backupOk">已创建备份</string>
     <string name="bck_restoreOk">已恢复备份</string>
-    <string name="btn_replace">替换</string>
     <string name="btn_restore">恢复</string>
     <string name="btn_delete">删除</string>
     <string name="bck_restoreDelete">恢复前删除元素。请注意，备份中可能缺少某些首选项或带默认值的文件，因此禁用此设置后，已有元素会与备份文件以预期外的方式合并。请在知道在做什么的情况下禁用。</string>
@@ -343,4 +342,48 @@
     <string name="auto_enabled">启用自动化功能</string>
     <string name="auto_error_toast">自动化失败时显示提示</string>
     <string name="mUnshort_to">取消短链接到 %s</string>
+    <string name="mWebhook_url_hint">Webhook URL</string>
+    <string name="mWebhook_auto_send">发送到 Webhook</string>
+    <string name="json_info">显示提示</string>
+    <string name="json_discard_close">撤销并关闭</string>
+    <string name="json_ignore">内容不是有效的 JSON。想要撤销并关闭编辑器吗？</string>
+    <string name="json_save">存在未保存的更改，想要保存或撤销它们吗？</string>
+    <string name="json_save_error">无法保存：%s</string>
+    <string name="auto_incognito">启用隐私模式。等于在该按钮禁用时自动按下「隐私模式」（即使按钮被隐藏）。</string>
+    <string name="json_format_error">无法解析，内容不是有效的 JSON。</string>
+    <string name="json_discard">警告，将会使用已保存的 JSON 替换编辑器内容。会使所有的修改都丢失。确定要继续吗？</string>
+    <string name="auto_ctabs">启用 ctab。等于按下已经禁用的「ctab」按钮（即使按钮被隐藏）。</string>
+    <string name="auto_close">关闭应用，不执行任何操作。</string>
+    <string name="auto_checkStatus">运行状态码检查。等于按下「检查状态」按钮。</string>
+    <string name="auto_unshort">运行短链接解析。等于按下「解析短链接」按钮。</string>
+    <string name="auto_clear">清洁 URL。等于按下「清洁」按钮。要注意，这个模块本身就包含一个自动化的配置，也可以有效地清理 URL，建议优先使用模块内配置。</string>
+    <string name="auto_scan">运行 URL 扫描。等于按下「扫描」按钮。</string>
+    <string name="mPttrn_upperDomain">警告！域名中包含大写字母。</string>
+    <string name="mWebhook_desc">这个模块会将 URL 发送到配置的 Webhook 端点。每一个 URL 都会和时间戳一起发送，这将允许通过你的服务器收集并处理 URL。\n感谢 anoop-b 提供的想法和基础实现！\n\n配置 Webhook URL 和请求体以开始发送 URL。\n对于请求体，你可以使用 $URL$ 和 $TIMESTAMP$ 占位符 。</string>
+    <string name="mWebhook_send">发送到 Webhook</string>
+    <string name="mWebhook_missing_config">缺少 Webhook 或请求体</string>
+    <string name="mWebhook_sending">正在发送到 Webhook…</string>
+    <string name="mWebhook_success">成功发送到 Webhook</string>
+    <string name="mWebhook_test">测试 Webhook</string>
+    <string name="txt_processText">URL 与可编辑文本同步（当通过文本输入框的长按选中文本打开应用时）</string>
+    <string name="spin_fullWidth">全宽</string>
+    <string name="spin_dynamicWidth">动态</string>
+    <string name="txt_width">对话框宽度：\n警告！过小的值可能会隐藏屏幕元素。</string>
+    <string name="json_reset">警告，将使用内置 JSON 替换编辑器内容。这会导致丢失所有的修改，但已保存的内容除非手动保存则不会被修改。确定要继续吗？</string>
+    <string name="auto_available_prefix">可用自动化动作（键名）：</string>
+    <string name="auto_notFound">无法找到键名为「%s」的自动化。请确保动作是有效的并且所需模块已激活。</string>
+    <string name="auto_available_disabled">模块被禁用，自动化将无法运行。</string>
+    <string name="auto_rule_bitly">解析 bit.ly</string>
+    <string name="auto_open">使用第一个可用的应用打开 URL。等于按下了「打开」按钮。</string>
+    <string name="auto_share">分享 URL。等于按下「分享」按钮。</string>
+    <string name="auto_copy">复制 URL。等于按下「复制」按钮。</string>
+    <string name="auto_rule_webhook">通过 Webhook 发送任何东西</string>
+    <string name="mWebhook_body_hint">Webhook 请求体</string>
+    <string name="mWebhook_error">发送到 Webhook 失败</string>
+    <string name="mWebhook_templates">模板</string>
+    <string name="auto_desc">通过自动化可以基于触发器执行模块动作。你可以在此处配置自动化，或使用下方的开关全部禁用。</string>
+    <string name="auto_editor">自动化配置。格式：对象列表，需要包含以下的唯一自动化键名：\n- 「regex」：字串符|列表，可选：如果存在，则需要是有效的 Java 正则表达式，URL 必须匹配该表达式才能进行自动化。如果是列表，则至少要有一个表达式与 URL 匹配才能进行。省略则表示匹配所有 URL 。\n- 「referrer」：字串符|列表，可选：如果存在，则引用来源（打开链接的应用）必须与值完全匹配。如果是列表，则引用来源必须要与其中一个值匹配才能进行自动化。如果省略，则表示匹配所有 URL。你可以使用调试模块检查具体的值。\n-「action」：字串符|列表，必须：要执行的自动化动作键名。如果是多个动作则按顺序执行。检查下方的列表以了解所有可用键名。\n-「stop」：布尔值：如果为 true，则表示当前 URL 不会再进行其他自动化动画。默认值为 false。\n-「enabled」：布尔值，可选：如果为 false，则表示该动作将跳过。默认值为 true。</string>
+    <string name="mWebhook_name">Webhook</string>
+    <string name="format">格式化</string>
+    <string name="discard">撤销</string>
 </resources>

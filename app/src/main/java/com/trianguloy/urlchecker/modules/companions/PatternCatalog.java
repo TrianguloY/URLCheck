@@ -10,9 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Represents the catalog of the Pattern module
- */
+/** Represents the catalog of the Pattern module */
 public class PatternCatalog extends JsonCatalog {
 
     public PatternCatalog(Activity cntx) {
@@ -55,17 +53,17 @@ public class PatternCatalog extends JsonCatalog {
 
                 // privacy redirections samples (see https://github.com/TrianguloY/URLCheck/discussions/122)
                 .put("Reddit ➔ Teddit", new JSONObject()
-                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?reddit.com/(.*)")
+                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?reddit\\.com/(.*)")
                         .put("replacement", "https://teddit.net/$1")
                         .put("enabled", false)
                 )
                 .put("Twitter ➔ Nitter", new JSONObject()
-                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?twitter.com/(.*)")
+                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?twitter\\.com/(.*)")
                         .put("replacement", "https://nitter.net/$1")
                         .put("enabled", false)
                 )
                 .put("Youtube ➔ Invidious", new JSONObject()
-                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?youtube.com/(.*)")
+                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?youtube\\.com/(.*)")
                         .put("replacement", new JSONArray()
                                 .put("https://yewtu.be/$1")
                                 .put("https://farside.link/invidious/$1")
@@ -75,7 +73,7 @@ public class PatternCatalog extends JsonCatalog {
 
                 // excludeRegex example. Consider replacing with another service that really allows all urls
                 .put("URL ➔ Songlink", new JSONObject()
-                        .put("excludeRegex", "^https://song.link/")
+                        .put("excludeRegex", "^https://song\\.link/")
                         .put("replacement", "https://song.link/$0")
                         .put("enabled", false)
                 )

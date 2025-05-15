@@ -11,10 +11,17 @@ import com.trianguloy.urlchecker.R;
  */
 public class DescriptionConfig extends AModuleConfig {
 
+    private final String descriptionString;
     private final int description;
 
     public DescriptionConfig(int description) {
+        this.descriptionString = null;
         this.description = description;
+    }
+
+    public DescriptionConfig(String descriptionString) {
+        this.descriptionString = descriptionString;
+        this.description = -1;
     }
 
     @Override
@@ -24,6 +31,7 @@ public class DescriptionConfig extends AModuleConfig {
 
     @Override
     public void onInitialize(View views) {
-        ((TextView) views).setText(description);
+        if (descriptionString != null) ((TextView) views).setText(descriptionString);
+        else ((TextView) views).setText(description);
     }
 }

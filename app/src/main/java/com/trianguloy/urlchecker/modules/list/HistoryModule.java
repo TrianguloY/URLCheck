@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * This module keeps a list of previous urls, and allows to jump between them
- */
+/** This module keeps a list of previous urls, and allows to jump between them */
 public class HistoryModule extends AModuleData {
     @Override
     public String getId() {
@@ -116,9 +114,7 @@ class HistoryDialog extends AModuleDialog {
 
     /* ------------------- internal ------------------- */
 
-    /**
-     * updated the UI with the internal data (buttons visibility)
-     */
+    /** updated the UI with the internal data (buttons visibility) */
     private void updateUI() {
         AndroidUtils.setEnabled(first, index > 0); // at least something to go back
         AndroidUtils.setEnabled(back, index > 0); // at least something to go back
@@ -150,9 +146,7 @@ class HistoryDialog extends AModuleDialog {
     }
 
 
-    /**
-     * Removes duplicated entries, also empty ones
-     */
+    /** Removes duplicated entries, also empty ones */
     private void removeDuplicates(boolean continuous) {
         for (int i = 0; i < history.size(); ) {
             String entry = history.get(i);

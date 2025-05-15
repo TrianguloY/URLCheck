@@ -8,19 +8,13 @@ import java.util.List;
 
 public abstract class AModuleData {
 
-    /**
-     * @return the unique identifier of this module
-     */
+    /** @return the unique identifier of this module */
     public abstract String getId();
 
-    /**
-     * @return the user visible name of this module
-     */
+    /** @return the user visible name of this module */
     public abstract int getName();
 
-    /**
-     * @return whether this module should be enabled by default
-     */
+    /** @return whether this module should be enabled by default */
     public boolean isEnabledByDefault() {
         return true;
     }

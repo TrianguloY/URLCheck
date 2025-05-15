@@ -25,9 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Manager of all the modules
- */
+/** Manager of all the modules */
 public class ModuleManager {
 
     /* ------------------- list ------------------- */
@@ -62,9 +60,7 @@ public class ModuleManager {
 
     /* ------------------- order ------------------- */
 
-    /**
-     * Order of the modules
-     */
+    /** Order of the modules */
     public static GenericPref.LstStr ORDER_PREF(Context cntx) {
         // default is just the defined order (but in reverse)
         List<String> ids = new ArrayList<>(modules.size());
@@ -80,9 +76,7 @@ public class ModuleManager {
 
     private static final String ENABLED_PREF_SUFFIX = "_en";
 
-    /**
-     * Returns a preference to indicate if a specific module is enabled or not
-     */
+    /** Returns a preference to indicate if a specific module is enabled or not */
     public static GenericPref.Bool getEnabledPrefOfModule(AModuleData module, Context cntx) {
         return new GenericPref.Bool(module.getId() + ENABLED_PREF_SUFFIX, module.isEnabledByDefault(), cntx);
     }
@@ -92,9 +86,7 @@ public class ModuleManager {
 
     private static final String DECORATIONS_PREF_SUFFIX = "_decorate";
 
-    /**
-     * Returns a preference to indicate if decorations are shown or not for a specific module
-     */
+    /** Returns a preference to indicate if decorations are shown or not for a specific module */
     public static GenericPref.Bool getDecorationsPrefOfModule(AModuleData module, Context cntx) {
         return new GenericPref.Bool(module.getId() + DECORATIONS_PREF_SUFFIX, false, cntx);
     }
@@ -131,9 +123,7 @@ public class ModuleManager {
         return availableModules;
     }
 
-    /**
-     * returns all the modules ids in the order they should be
-     */
+    /** returns all the modules ids in the order they should be */
     public static List<String> getOrderedModulesId(Context cntx) {
         // this is just "return getModules(...).map{it.getId}" but with java 7
         List<AModuleData> modules = getModules(true, cntx);

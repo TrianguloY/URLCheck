@@ -20,11 +20,11 @@
     <!--
         about
     -->
-    <string name="txt_about">Application créée par TrianguloY.
+    <string name="txt_about">Application créée par %1$s.
 \n
-\nContributions : %1$s.
-\nTraduction : %2$s.</string>
-    <string name="link_blog">Blog de TrianguloY</string>
+\nContributions : %2$s.
+\nTraduction : %3$s.</string>
+    <string name="link_blog">Blog de %s</string>
     <string name="link_changelog">Journal des modifications</string>
     <string name="link_source">Code source</string>
     <string name="link_privacy">Politique de confidentialité</string>
@@ -184,7 +184,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mInput_desc">Affiche l\'URL actuel. Appuyez dessus pour passer en mode édition.</string>
     <!-- -->
     <string name="mVT_name">Analyseur d’URL</string>
-    <string name="mVT_desc">Lorsque ce module est activé, vous pouvez analyser l\'URL à l\'aide de VirusTotal et en vérifier le rapport. Une clé personnelle de l\'Api VirusTotal est nécessaire pour que cela fonctionne, vous pouvez en obtenir une après vous être inscrit gratuitement ici: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Lorsque ce module est activé, vous pouvez analyser l\'URL à l\'aide de VirusTotal et en vérifier le rapport. Une clé personnelle de l\'Api VirusTotal est nécessaire pour que cela fonctionne, vous pouvez en obtenir une après vous être inscrit gratuitement ici: %s .</string>
     <string name="mVT_apiKey">Clé d\'API</string>
     <string name="mVT_tm">VirusTotal™ est une marque de Google, Inc.</string>
     <string name="mVT_scan">Analyse</string>
@@ -209,7 +209,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <!-- -->
     <string name="mClear_name">Nettoyeur d’URL</string>
     <string name="mClear_desc">Ce module supprime les paramètres de suivi, d\'affiliation ainsi que d\'autres paramètres inutiles de l\'URL. Il permet également des redirections d\'URLs hors-ligns courantes.</string>
-    <string name="mClear_tm">Catalogue intégré copié depuis ClearURL: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Catalogue intégré copié depuis ClearURL: %s</string>
     <string name="mClear_clear">Appliquer</string>
     <string name="mClear_matches">Correspond à %s</string>
     <string name="mClear_blocked">- BLOQUÉ!</string>
@@ -240,7 +240,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mClear_hashError">Impossible de récupérer le hachage, assurez-vous que l\'URL est valide et que vous disposez d\'une connexion active</string>
     <string name="mClear_hashMismatch">Les hachages ne correspondent pas, le fichier a peut-être été falsifié. Si vous souhaitez ignorer la vérification, supprimez l\'URL de hachage</string>
     <string name="mClear_restore">Restaurer les chemins d\'accès de ClearURLs</string>
-    <string name="mClear_editor">"Règles du catalogue: elles doivent suivre le format de https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Règles du catalogue: elles doivent suivre le format de %s.
 Notez que toute modification apportée à l'objet parent 'fournisseurs' sera écrasée si le catalogue est mis à jour automatiquement ou manuellement depuis la boîte de dialogue de mise à jour. Pour que des règles personnelles soient définies dans un objet parent différent (n'importe quel nom)."</string>
     <!-- -->
     <string name="mRemove_name">Suppresseur de requêtes</string>
@@ -263,7 +263,7 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mLog_empty">Aucune données</string>
     <!-- -->
     <string name="mHosts_name">Étiqueteur d\'hôtes</string>
-    <string name="mHosts_desc">Ce module étiquette les hôtes, configurés soit en les spécifiant manuellement, soit en utilisant un fichier \'Hosts\' distants. Vous pouvez l\'utiliser pour vous avertir à propos des sites dangereux ou spéciaux. La configuration intégrée utilise les fichiers hosts de StevenBlack (publicitaires/malveillants, fakenews, jeu et contenu pour adultes) à l\'adresse https://github.com/StevenBlack/hosts. Remarque: les sous-domaines seront également vérifiés, de sorte que \"x.y.z\" et \"y.z\" seront détectés pour l\'entrée \"y.z\"</string>
+    <string name="mHosts_desc">Ce module étiquette les hôtes, configurés soit en les spécifiant manuellement, soit en utilisant un fichier \'Hosts\' distants. Vous pouvez l\'utiliser pour vous avertir à propos des sites dangereux ou spéciaux. La configuration intégrée utilise les fichiers hosts de StevenBlack (publicitaires/malveillants, fakenews, jeu et contenu pour adultes) à l\'adresse %s. Remarque: les sous-domaines seront également vérifiés, de sorte que \"x.y.z\" et \"y.z\" seront détectés pour l\'entrée \"y.z\"</string>
     <string name="mHosts_malware">publicitaires/malveillants</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">Aucune correspondance</string>
@@ -290,7 +290,7 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <!-- -->
     <string name="mUnshort_name">Déraccourcisseur</string>
     <string name="mUnshort_unshort">Déraccourcir</string>
-    <string name="mUnshort_desc">Ce module déraccourcira les liens en les envoyant à https://unshorten.me/, qui les évaluera sur leurs serveurs et enregistrera la redirection pour les requêtes futures. Évitez de transmettre des liens contenant des données privées ou sensibles.
+    <string name="mUnshort_desc">Ce module déraccourcira les liens en les envoyant à %s, qui les évaluera sur leurs serveurs et enregistrera la redirection pour les requêtes futures. Évitez de transmettre des liens contenant des données privées ou sensibles.
 \nLeur API est limitée à 10 requêtes par heure pour les nouveaux contrôles. La réponse du module indiquera le nombre de requêtes que vous avez en attente.</string>
     <string name="mUnshort_tm">API gratuite fournie par Unshorten.me</string>
     <string name="mUnshort_checking">Vérification…</string>
@@ -355,7 +355,6 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="noLinks">Aucun lien détecté</string>
     <string name="txt_animation">Activer animations</string>
     <string name="btn_backup">Sauver</string>
-    <string name="btn_replace">Remplacer</string>
     <string name="btn_restore">Restorer</string>
     <string name="bck_restoreOk">Sauvegarde restorée</string>
     <string name="bck_mn_advanced">Monter les options avancées</string>
@@ -387,7 +386,6 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_url_hint">URL du Webhook</string>
     <string name="mWebhook_send">Envoyer au Webhook</string>
-    <string name="mWebhook_auto">Envoi automatique d\'URLs</string>
     <string name="mWebhook_auto_send">Envoyer au webhook</string>
     <string name="mWebhook_missing_config">Url ou corps du webhook manquant</string>
     <string name="mWebhook_sending">Envoi vers le webhook…</string>

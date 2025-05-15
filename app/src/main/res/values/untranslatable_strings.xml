@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">URLCheck</string>
 
@@ -13,4 +14,9 @@
 
     <string name="sample_url" translatable="false"><![CDATA[http://www.google.com/?ref=referrer&foo=bar#tag]]></string>
     <string name="json_sample" translatable="false">{…}</string>
+
+    <string name="vtLogin_url" translatable="false">https://www.virustotal.com/gui/join-us</string>
+    <string name="clearRules_url" translatable="false">https://docs.clearurls.xyz/latest/specs/rules</string>
+    <string name="stevenBlack_url" translatable="false">https://github.com/StevenBlack/hosts</string>
+    <string name="unshorten_url" translatable="false">https://unshorten.me</string>
 </resources>

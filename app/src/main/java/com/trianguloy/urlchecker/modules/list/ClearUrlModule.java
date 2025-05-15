@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 import static com.trianguloy.urlchecker.utilities.methods.UrlUtils.decode;
 
 import android.content.Context;
@@ -19,7 +20,7 @@ import com.trianguloy.urlchecker.modules.companions.ClearUrlCatalog;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,9 +31,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * This module clears the url using the ClearUrl catalog
- */
+/** This module clears the url using the ClearUrl catalog */
 public class ClearUrlModule extends AModuleData {
 
     public static GenericPref.Bool REFERRAL_PREF(Context cntx) {
@@ -102,6 +101,8 @@ class ClearUrlConfig extends AModuleConfig {
 
         views.findViewById(R.id.update).setOnClickListener(v -> catalog.showUpdater());
         views.findViewById(R.id.edit).setOnClickListener(v -> catalog.showEditor());
+
+        views.<TextView>findViewById(R.id.tm).setText(getStringWithPlaceholder(getActivity(), R.string.mClear_tm, R.string.clearRules_url));
     }
 
 }
@@ -149,7 +150,7 @@ class ClearUrlDialog extends AModuleDialog {
     }
 
     @Override
-    public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
+    public void onModifyUrl(UrlData urlData, Function<UrlData, Boolean> setNewUrl) {
         cleared = urlData.url;
         data = new Data();
 
@@ -286,7 +287,7 @@ class ClearUrlDialog extends AModuleDialog {
                     }
                 }
             } catch (JSONException | UnsupportedEncodingException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid rule", e);
                 if (verbose.get()) {
                     data.addInfo(R.string.mClear_error);
                     data.addDetails(provider);
@@ -329,42 +330,32 @@ class ClearUrlDialog extends AModuleDialog {
 
     /* ------------------- internal ------------------- */
 
-    /**
-     * Dataclass for transferring data
-     */
+    /** Dataclass for transferring data */
     private class Data {
         public boolean enabled = false;
         String info = "";
         int color = 0;
 
-        /**
-         * Changes the color, managing importance
-         */
+        /** Changes the color, managing importance */
         void setColor(int newColor) {
             if (color == R.color.bad && newColor == R.color.warning) return; // keep bad instead of replacing with warning
             color = newColor;
         }
 
-        /**
-         * Appends a line to the info textview, manages linebreaks
-         */
+        /** Appends a line to the info textview, manages linebreaks */
         void addInfo(int line, Object... formatArgs) {
             if (!info.isEmpty()) info += "\n";
             info += getActivity().getString(line, formatArgs);
         }
 
-        /**
-         * utility to append details to the info textview, after calling append
-         */
+        /** utility to append details to the info textview, after calling append */
         void addDetails(String data) {
             info += ": " + data;
         }
 
     }
 
-    /**
-     * Clear the url
-     */
+    /** Clear the url */
     private void clear() {
         if (cleared != null) setUrl(new UrlData(cleared).putData(CLEARED, CLEARED));
     }

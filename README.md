@@ -12,7 +12,7 @@
 [![App-Code Size](https://img.shields.io/github/languages/code-size/trianguloy/urlchecker.svg)](https://api.github.com/repos/TrianguloY/URLCheck)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TrianguloY/URLCheck)](https://github.com/TrianguloY/URLCheck/pulse/monthly)
 [![Weblate (translation percentage)](https://hosted.weblate.org/widgets/urlcheck/-/svg-badge.svg)](https://hosted.weblate.org/engage/urlcheck/)
-[![Development version](https://img.shields.io/badge/dynamic/json?label=development%20version&color=darkgrey&query=version&url=https%3A%2F%2Fgithub.com%2FTrianguloY%2FURLCheck%2Freleases%2Fdownload%2Flatest%2Fshields.json)](https://github.com/TrianguloY/URLCheck/blob/master/app/build.gradle)
+[![Development version](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FTrianguloY%2FURLCheck%2Frefs%2Fheads%2Fmaster%2Fapp%2Fbuild.gradle&search=versionName%20%5B%27%22%5D(.*)%5B%27%22%5D&replace=v%241&label=development%20version&color=darkgrey)](https://github.com/TrianguloY/URLCheck/blob/master/app/build.gradle)
 
 [![GitHub version](https://img.shields.io/github/v/release/TrianguloY/URLCheck?logo=github&label=Github%20version&color=white)](https://github.com/TrianguloY/URLCheck/releases)
 [![F-Droid version](https://img.shields.io/f-droid/v/com.trianguloy.urlchecker?label=F-Droid%20version&logo=fdroid&color=%231e79d3)](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.trianguloy.urlchecker.yml)

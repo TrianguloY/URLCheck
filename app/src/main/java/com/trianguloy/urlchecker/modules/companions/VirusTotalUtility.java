@@ -3,8 +3,8 @@ package com.trianguloy.urlchecker.modules.companions;
 import android.content.Context;
 
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
-import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +37,7 @@ public class VirusTotalUtility {
         try {
             responseJSON = HttpUtils.performPOST(urlGetReport, getPOSTparameters(urlToScan, key));
         } catch (IOException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Can't connect to VirusTotal", e);
             result.error = cntx.getString(R.string.mVT_connectError);
             return result;
         }
@@ -60,7 +60,7 @@ public class VirusTotalUtility {
                 result.error = response.getString("verbose_msg"); // untranslated
             }
         } catch (JSONException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Can't parse VirusTotal response", e);
             result.error = cntx.getString(R.string.mVT_jsonError);
         }
 
@@ -84,7 +84,7 @@ public class VirusTotalUtility {
                     + "=" + URLEncoder.encode("true", "UTF-8");
 
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Can't encode url parameters", e);
         }
         return data;
     }

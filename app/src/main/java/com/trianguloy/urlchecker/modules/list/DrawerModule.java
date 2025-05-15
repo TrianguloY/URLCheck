@@ -11,13 +11,10 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.DescriptionConfig;
-import com.trianguloy.urlchecker.url.UrlData;
 
 import java.util.List;
 
-/**
- * A special module that manages the drawer functionality
- */
+/** A special module that manages the drawer functionality */
 public class DrawerModule extends AModuleData {
     @Override
     public String getId() {
@@ -52,7 +49,7 @@ public class DrawerModule extends AModuleData {
 
 class DrawerDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<DrawerDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<DrawerDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("drawer", R.string.auto_drawer, dialog -> dialog.setDrawerVisibility(true))
     );
 
@@ -88,7 +85,7 @@ class DrawerDialog extends AModuleDialog {
     }
 
     @Override
-    public void onFinishUrl(UrlData urlData) {
+    public void onFinishUrl() {
         setVisibility(getActivity().anyDrawerChildVisible());
     }
 

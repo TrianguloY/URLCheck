@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="locale">Deutsch</string>
-    <string name="txt_about">App erstellt von TrianguloY.
+    <string name="txt_about">App erstellt von %1$s.
 \n
-\nBeiträge: %1$s.
-\nÜbersetzungen: %2$s.</string>
+\nBeiträge: %2$s.
+\nÜbersetzungen: %3$s.</string>
     <string name="link_changelog">Änderungen</string>
     <string name="desc_down">Nach unten</string>
     <string name="desc_decorations">Titel anzeigen/ausblenden</string>
@@ -40,7 +40,7 @@
     <string name="a_modules">Module</string>
     <string name="a_about">Über</string>
     <string name="a_settings">Einstellungen</string>
-    <string name="link_blog">TrianguloYs Blog</string>
+    <string name="link_blog">%ss Blog</string>
     <string name="link_source">Quellcode</string>
     <string name="link_privacy">Datenschutzbestimmungen</string>
     <string name="toast_cantEnable">Modul kann nicht aktiviert werden: %s</string>
@@ -114,7 +114,7 @@
     <string name="mInput_name">Texteingabe</string>
     <string name="mInput_desc">Zeigt die aktuelle URL an. Antippen zum Bearbeiten.</string>
     <string name="mVT_name">URL-Scanner</string>
-    <string name="mVT_desc">Wenn dieses Modul aktiviert ist, können Sie die URLs mithilfe von VirusTotal überprüfen und das Ergebnis sehen. Ein persönlicher VirusTotal-API-Key ist dafür notwendig, Sie können diesen erhalten, indem Sie sich hier kostenfrei registrieren: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Wenn dieses Modul aktiviert ist, können Sie die URLs mithilfe von VirusTotal überprüfen und das Ergebnis sehen. Ein persönlicher VirusTotal-API-Key ist dafür notwendig, Sie können diesen erhalten, indem Sie sich hier kostenfrei registrieren: %s .</string>
     <string name="mVT_apiKey">API-Key</string>
     <string name="mVT_tm">VirusTotal™ ist ein eingetragenes Warenzeichen von Google, Inc.</string>
     <string name="mVT_scan">Scannen</string>
@@ -133,7 +133,7 @@
     <string name="mHist_name">Verlauf</string>
     <string name="mClear_name">URL Säubern</string>
     <string name="mClear_desc">Dieses Modul entfernt Tracking, Referrer und andere unnötige Parameter einer URL. Es unterstützt auch gängige Offline-URL-Weiterleitungen.</string>
-    <string name="mClear_tm">Integrierte Liste von ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Integrierte Liste von ClearURLs: %s</string>
     <string name="mClear_clear">Anwenden</string>
     <string name="mClear_matches">Passt zu %s</string>
     <string name="mClear_blocked">- BLOCKIERT!</string>
@@ -231,14 +231,14 @@
     <string name="mClear_hashDesc">URL der Prüfsumme (Hash) des Katalogs. Wenn ausgelassen, wird der Download nicht prüfen, ob dieser verfälscht/verändert wurde (nicht empfohlen)</string>
     <string name="mClear_updated">Katalog aktualisiert</string>
     <string name="mClear_urlError">Regeln konnten nicht geladen werden, stellen Sie sicher, dass die URL korrekt und Ihre Internetverbindung aktiv ist</string>
-    <string name="mClear_editor">Katalog-Regeln: Diese müssen dem Format unter https://docs.clearurls.xyz/latest/specs/rules/ entsprechen.
+    <string name="mClear_editor">Katalog-Regeln: Diese müssen dem Format unter %s entsprechen.
 \nBedenken Sie, dass alle Änderungen im Objekt \'providers\' überschrieben werden, wenn der Katalog aktualisiert wird (automatisch oder manuell im Aktualisieren-Menü). Erstellen Sie eigene Regeln in einem anderen Objekt (beliebiger Name).</string>
     <string name="mRemove_desc">[ERSETZT] Mit diesem Modul können Sie Parameter aus URLs entfernen.
 \nDrücken Sie auf die Schaltfläche, um alle zu entfernen, oder drücken Sie auf den Pfeil, um einzelne zu entfernen.
 \nVielen Dank an PabloOQ für die Idee und die ursprüngliche Implementierung!
 \n
 \nDieses Modul wurde durch das Modul \'URI-Teile\' ersetzt</string>
-    <string name="mHosts_desc">Dieses Modul kategorisiert Hosts anhand manueller Konfiguration oder einer hosts-artigen Datei aus dem Internet. Sie können es zur Warnung vor gefährlichen oder besonderen Seiten benutzen. Die integrierte Konfiguration benutzt StevenBlacks Hosts (Adware/Malware, Fake News, Glücksspiel und Inhalte für Erwachsene) von https://github.com/StevenBlack/hosts. Hinweis: Subdomains werden auch erkannt, sodass \'x.y.z\' und \'y.z\' dem Eintrag \'y.z\' zugeordnet werden.</string>
+    <string name="mHosts_desc">Dieses Modul kategorisiert Hosts anhand manueller Konfiguration oder einer hosts-artigen Datei aus dem Internet. Sie können es zur Warnung vor gefährlichen oder besonderen Seiten benutzen. Die integrierte Konfiguration benutzt StevenBlacks Hosts (Adware/Malware, Fake News, Glücksspiel und Inhalte für Erwachsene) von %s. Hinweis: Subdomains werden auch erkannt, sodass \'x.y.z\' und \'y.z\' dem Eintrag \'y.z\' zugeordnet werden.</string>
     <string name="mHosts_parseError">Hosts URL kann nicht verarbeitet werden</string>
     <string name="mHosts_editor">Hosts-Konfiguration. Format: Liste von Objekten, bei denen der Schlüssel die Host-Kategorie ist und der Wert folgende optionale Felder enthält:
 \n- file: (Datei) Eine URL zu einer Hosts-Datei zum Download. Es werden alle validen Hosts der Datei hinzugefügt. Die Zeilen sollten der Hosts-Syntax folgen (\'IP Host [Alias …]\'), aber nur \'Host\' ist ausreichend.
@@ -249,7 +249,7 @@
     <string name="mHosts_buildSave">Wird gespeichert…</string>
     <string name="mHosts_built">Datenbank erstellt: %d Hosts</string>
     <string name="mUnshort_unshort">Ent-Kürzen</string>
-    <string name="mUnshort_desc">Dieses Modul stellt gekürzte Links wieder her, indem es sie zu https://unshorten.me/ schickt, wo sie auf deren Servern ausgewertet und Weiterleitungen für zukünftige Anfragen gespeichert werden. Vermeiden Sie es, Links mit privaten oder sensiblen Daten an diesen Dienst zu schicken.
+    <string name="mUnshort_desc">Dieses Modul stellt gekürzte Links wieder her, indem es sie zu %s schickt, wo sie auf deren Servern ausgewertet und Weiterleitungen für zukünftige Anfragen gespeichert werden. Vermeiden Sie es, Links mit privaten oder sensiblen Daten an diesen Dienst zu schicken.
 \nDie API dieses Dienstes ist auf 10 Anfragen pro Stunde für neue Anfragen beschränkt. Dieses Modul wird in der Antwort die verbleibende Anzahl an Anfragen anzeigen.</string>
     <string name="mUnshort_internal">Interner Fehler (%s)</string>
     <string name="mUnshort_notFound">Keine ent-kürzte URL gefunden</string>
@@ -275,7 +275,6 @@
     <string name="mPttrn_wrongSchemaHttps">Ungültige Großschreibung des https-Schemas.</string>
     <string name="btn_backupRestore">Backup und Wiederherstellung</string>
     <string name="bck_mn_advanced">Erweiterte Optionen anzeigen</string>
-    <string name="btn_replace">Ersetzen</string>
     <string name="bkp_data">Daten: Standarddaten der App, z. B. aktivierte Module, JSON-Konfigurationen, etc. Enthält keine geheimen Informationen oder den Cache.</string>
     <string name="bkp_data_prefs">Einstellungen</string>
     <string name="bkp_data_files">Dateien</string>
@@ -330,7 +329,7 @@
     <string name="auto_unshort">Ent-Kürzen starten.</string>
     <string name="auto_scan">URL scannen, entspricht dem Scannen-Button.</string>
     <string name="auto_drawer">Überhangmenü öffnen.</string>
-    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, notwendig: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
+    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, optional: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'referrer\': string|list, optional: Falls vorhanden, muss der Referrer (die App, die den Link geöffnet hat) genau diesem Wert entsprechen. Bei einer Liste muss der Referrer einer der Werte sein. Sie können das Debug-Modul verwenden, um den tatsächlichen Wert zu überprüfen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'stop\': boolean: Wenn wahr, keine weiteren Automatisierungen für diese URL ausführen. Standardmäßig falsch.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
     <string name="format">Formatieren</string>
     <string name="discard">Verwerfen</string>
     <string name="json_info">Erklärung anzeigen</string>
@@ -347,7 +346,6 @@
     <string name="auto_clear">URL säubern, äquivalent zum entsprechenden Modul. Beachten Sie, dass das Modul selbst eine \"Auto\"-Einstellung enthält, die bevorzugt werden sollte.</string>
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_send">An Webhook senden</string>
-    <string name="mWebhook_auto">URLs automatisch senden</string>
     <string name="mWebhook_desc">Dieses Modul sendet URLs an den einstellten Webhook-Endpunkt. Es wird ein Timestamp mitgesendet und Sie können die URLs auf Ihrem Server verarbeiten.\nDanke an anoop-b für die Idee und Basisimplementierung!\n\nKonfigurieren Sie die Webhook URL und Body um URLs zu senden.\nIm Body können Sie die Platzhalter $URL$ und $TIMESTAMP$ verwenden.</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_body_hint">Webhook body</string>
@@ -359,4 +357,8 @@
     <string name="json_reset">Warnung: Der Inhalt des Editors wird durch das initiale JSON ersetzt. Alle Änderungen im Editor gehen verloren, aber gespeicherte Inhalte werden nicht verändert, bis Sie manuell speichern. Möchten Sie fortfahren?</string>
     <string name="auto_rule_webhook">Alles an den Webhook senden</string>
     <string name="auto_rule_bitly">bit.ly ent-kürzen</string>
+    <string name="txt_processText">Synchronisierung der URL mit editierbarem Text (wenn die App durch langes Tippen auf ein Eingabefeld geöffnet wird)</string>
+    <string name="txt_width">Dialogbreite:\nWarnung: Kleine Werte können Bildschirmelemente verstecken.</string>
+    <string name="spin_fullWidth">Voll</string>
+    <string name="spin_dynamicWidth">Dynamisch</string>
 </resources>

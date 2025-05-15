@@ -37,9 +37,7 @@ public class BrowserButtonsFragment implements Fragment, ResultCodeInjector.Acti
 
     // adapted from https://stackoverflow.com/a/74108806
 
-    /**
-     * hide buttons if not available
-     */
+    /** hide buttons if not available */
     private void configureBrowserButtons(View view) {
         Button b1 = view.findViewById(R.id.b1);
         Button b2 = view.findViewById(R.id.b2);
@@ -69,9 +67,7 @@ public class BrowserButtonsFragment implements Fragment, ResultCodeInjector.Acti
     }
 
 
-    /**
-     * open a specific dialog to choose the browser
-     */
+    /** open a specific dialog to choose the browser */
     @TargetApi(Build.VERSION_CODES.Q)
     public void chooseBrowserPopup() {
         cntx.startActivityForResult(roleManager.createRequestRoleIntent(RoleManager.ROLE_BROWSER), requestCode);
@@ -86,9 +82,7 @@ public class BrowserButtonsFragment implements Fragment, ResultCodeInjector.Acti
         }
     }
 
-    /**
-     * Open android settings about the default browser
-     */
+    /** Open android settings about the default browser */
     @TargetApi(Build.VERSION_CODES.N)
     public void openBrowserSettings() {
         // open the settings
@@ -109,9 +103,7 @@ public class BrowserButtonsFragment implements Fragment, ResultCodeInjector.Acti
 
     // adapted from https://groups.google.com/g/androidscript/c/cLq7eiUVpig/m/RDraxFYQCgAJ
 
-    /**
-     * Open the android app settings to open links as default
-     */
+    /** Open the android app settings to open links as default */
     @TargetApi(Build.VERSION_CODES.S)
     public void openAppLinks() {
         PackageUtils.startActivity(new Intent(
@@ -120,9 +112,7 @@ public class BrowserButtonsFragment implements Fragment, ResultCodeInjector.Acti
         ), R.string.toast_noApp, cntx);
     }
 
-    /**
-     * Open the android app settings
-     */
+    /** Open the android app settings */
     public void openAppDetails() {
         PackageUtils.startActivity(new Intent(
                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS,

@@ -3,9 +3,7 @@ package com.trianguloy.urlchecker.modules.companions;
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.Enums;
 
-/**
- * Enum for a toggle with on/off/auto x hide/show states
- */
+/** Enum for a toggle with on/off/auto x hide/show states */
 public enum OnOffConfig implements Enums.IdEnum, Enums.StringEnum {
     // TODO: think of better labels. "Show/Hide button + enabled/disabled/default state"?
     AUTO(0, R.string.auto),

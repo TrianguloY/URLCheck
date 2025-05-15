@@ -10,15 +10,15 @@
         Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
     <string name="locale">עברית</string>
     <!-- main -->
-    <string name="txt_info">אפליקציה זו פועלת כצעד ביניים לקראת פתיחת קישורי url. כאשר תלחץ על קישור ובחר באפליקציה זו כדי לפתוח אותה, היא תציג תיבת דו-שיח עם מידע על הקישור. לחץ על לחצן המודול למטה כדי לבדוק ולהגדיר את כל המודולים הזמינים.</string>
+    <string name="txt_info">אפליקציה זו פועלת כצעד ביניים לפני פתיחת קישורים כאשר תלחץ על קישור בחר באפליקציה זו כדי לפתוח אותו, האפליקציה תציג תיבת דו-שיח עם מידע על הקישור. לחץ על לחצן המודול למטה כדי לבדוק ולהגדיר את כל המודולים הזמינים.</string>
     <string name="txt_sample">לחץ על הקישור למטה כדי לבדוק את זה:</string>
     <string name="a_modules">מודולים</string>
     <string name="a_about">על אודות</string>
     <!-- about -->
-    <string name="txt_about">"אפליקציה שנוצרה על ידי TrianguloY.
- תרומות: %1$s.
- תרגומים: %2$s."</string>
-    <string name="link_blog">"הבלוג של TrianguloY"</string>
+    <string name="txt_about">"אפליקציה שנוצרה על ידי %1$s.
+ תרומות: %2$s.
+ תרגומים: %3$s."</string>
+    <string name="link_blog">"הבלוג של %s"</string>
     <!-- configuration -->
     <string name="txt_conf">רשימת מודולים: אתה יכול להפעיל או לבטל אותם, גם לבדוק את התיאור והתצורה שלו.</string>
     <string name="toast_cantEnable">"לא ניתן להפעיל את המודול: %s"</string>
@@ -88,7 +88,7 @@
     <string name="mInput_desc">מציג את כתובת האתר הנוכחית, אותה ניתן לערוך באופן ידני.</string>
     <string name="mVT_name">סורק כתובות אתרים</string>
     <string name="mVT_desc">"כאשר מודול זה מופעל אתה יכול לסרוק את כתובת האתר באמצעות וירוס טוטאל ולבדוק את הדוח.
- יש צורך במפתח API אישי של וירוס טוטאל כדי שזה יעבוד, אתה יכול לקבל אחד לאחר הרשמה לחשבון בחינם כאן: https://www.virustotal.com/gui/join-us ."</string>
+ יש צורך במפתח API אישי של וירוס טוטאל כדי שזה יעבוד, אתה יכול לקבל אחד לאחר הרשמה לחשבון בחינם כאן: %s ."</string>
     <string name="mVT_apiKey">מפתח api</string>
     <string name="mVT_tm">VirusTotal™ הוא סימן מסחרי של Google, Inc.</string>
     <string name="mVT_scan">לִסְרוֹק</string>
@@ -108,7 +108,7 @@
     <string name="mHist_desc">כאשר כתובת האתר נערכת, ידנית או על ידי מודולים אחרים, הכתובת הזו מאפשרת לך להציג שינויים ולבטל אותם.</string>
     <string name="mClear_name">מנקה כתובות אתרים</string>
     <string name="mClear_desc">מודול זה מסיר מעקב, מפנה ופרמטרים חסרי תועלת אחרים מכתובת האתר. זה גם מאפשר הפניות נפוצות של כתובות אתרים לא מקוונות.</string>
-    <string name="mClear_tm">קטלוג מובנה הועתק מכתובות ClearURL: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">קטלוג מובנה הועתק מכתובות ClearURL: %s</string>
     <string name="mClear_clear">להגיש מועמדות</string>
     <string name="mClear_matches">מתאים ל-%s</string>
     <string name="mClear_blocked">- חסום!</string>
@@ -136,7 +136,7 @@
     <string name="mClear_hashError">אין אפשרות להביא את ה-hash, ודא שכתובת האתר חוקית ויש לך חיבור פעיל</string>
     <string name="mClear_hashMismatch">הגיבובים אינם תואמים, ייתכן שהקובץ מטופל. אם אתה רוצה לדלג על הסימון, הסר את כתובת ה-hash</string>
     <string name="mClear_restore">שחזר נתיבי ClearURLs</string>
-    <string name="mClear_editor">"כללי קטלוג: עליהם לפעול לפי הפורמט של https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"כללי קטלוג: עליהם לפעול לפי הפורמט של %s.
  שים לב שכל שינוי באובייקט האב 'ספקי' ידרוס אם הקטלוג יתעדכן אוטומטית או ידנית מתיבת הדו-שיח של העדכון.  כדי שהכללים האישיים יקבעו אותם באובייקט אב אחר (כל שם)."</string>
     <string name="mRemove_name">מסיר שאילתות</string>
     <string name="mRemove_desc">"עם מודול זה תוכל להסיר שאילתות מכתובת האתר.

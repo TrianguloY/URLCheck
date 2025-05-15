@@ -66,7 +66,6 @@
     <string name="btn_configureBrowser">Standardwebbläsare</string>
     <string name="txt_theme">Tema:</string>
     <string name="btn_delete">Radera</string>
-    <string name="btn_replace">Ersätt</string>
     <string name="a_automations">Automatiseringar</string>
     <string name="txt_tutorial1">Tack för att du laddade ner appen!\n\nDetta är guiden, om du vill hoppa över den, så kan du göra det via nedanstående knapp. Du kan alltid komma tillbaka till denna guide via inställningsmenyn.</string>
     <string name="mOpen_with">Öppna med %s</string>
@@ -98,6 +97,5 @@
     <string name="mStatus_name">Statuskod</string>
     <string name="mVT_scan">Skanna</string>
     <string name="mVT_scanning">Skannar…</string>
-    <string name="mWebhook_auto">Skicka automatiskt URLs</string>
     <string name="toast_noApp">Kan inte öppna appen</string>
 </resources>

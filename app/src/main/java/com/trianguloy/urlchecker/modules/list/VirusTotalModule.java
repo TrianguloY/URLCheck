@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -24,9 +26,7 @@ import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
 import java.util.List;
 
-/**
- * This module uses the VirusTotal api (https://developers.virustotal.com/reference) for url reports
- */
+/** This module uses the VirusTotal api (https://developers.virustotal.com/reference) for url reports */
 public class VirusTotalModule extends AModuleData {
 
     public static final String PREF = "api_key";
@@ -97,12 +97,14 @@ class VirusTotalConfig extends AModuleConfig {
                 if (cannotEnableErrorId() != -1) disable();
             }
         });
+
+        views.<TextView>findViewById(R.id.label).setText(getStringWithPlaceholder(getActivity(), R.string.mVT_desc, R.string.vtLogin_url));
     }
 }
 
 class VirusTotalDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<VirusTotalDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<VirusTotalDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("scan", R.string.auto_scan, VirusTotalDialog::scanOrCancel)
     );
 
@@ -163,9 +165,7 @@ class VirusTotalDialog extends AModuleDialog {
         updateUI();
     }
 
-    /**
-     * Manages the scanning in the background
-     */
+    /** Manages the scanning in the background */
     private void _scanUrl() {
         VirusTotalUtility.InternalReponse response;
         while (scanning) {
@@ -184,15 +184,13 @@ class VirusTotalDialog extends AModuleDialog {
             try {
                 Thread.sleep(RETRY_TIMEOUT);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("You may not rest now, there are monsters nearby", e);
             }
         }
 
     }
 
-    /**
-     * Updates the ui
-     */
+    /** Updates the ui */
     private void updateUI() {
         if (scanning) {
             // scanning in progress, show cancel
