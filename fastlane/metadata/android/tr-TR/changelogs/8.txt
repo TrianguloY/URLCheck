@@ -1,3 +1,0 @@
-V 2.0
-- Style update
-- Updated Clear Url catalog
