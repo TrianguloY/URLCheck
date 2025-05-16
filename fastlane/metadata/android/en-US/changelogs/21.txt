@@ -1,0 +1,3 @@
+V 2.9.1
+- New Italian translation. Thanks to dperruso!
+- Fixed some uncommon errors when opening links

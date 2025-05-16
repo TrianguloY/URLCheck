@@ -1,0 +1,5 @@
+V 2.5
+- Editor JSON avanzado para ClearURLs y patrones
+- La base de datos de ClearURLs se puede actualizar
+- Añadida traducción al español
+- Mejoras en los estilos y textos

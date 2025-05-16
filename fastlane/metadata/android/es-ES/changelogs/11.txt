@@ -1,0 +1,6 @@
+V 2.3
+- Los módulos se pueden reordenar
+- El módulo ClearURLs puede ser configurado para auto aplicarse
+- El módulo para eliminar parámetros puede borrar uno a uno
+- Añadida traducción al Portugues. ¡Gracias a Tiago Carmo!
+- Algunas mejoras y arreglos

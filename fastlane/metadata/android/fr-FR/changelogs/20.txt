@@ -1,0 +1,8 @@
+V 2.9
+- Nouveau module: Étiqueteur d'hôtes
+- Masquer le titre des modules (peut être activé)
+- Nouvelle fenetre de paramétrage
+     - Configuration comme navigateur par défaut
+     - Changer le thème
+     - Changer les paramètres régionaux
+- Styles et code modifiés et nettoyés

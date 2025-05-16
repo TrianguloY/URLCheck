@@ -1,0 +1,4 @@
+V 3.3.1
+- New: Allow multiple referrers on automations
+- Fix: Automations other than the first not working
+- Fix: Unescaped dots on example patterns
