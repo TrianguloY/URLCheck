@@ -48,15 +48,7 @@
     <string name="mClear_hashError">Nu se poate prelua hash-ul, asigurați-vă că adresa URL este validă și că aveți o conexiune activă</string>
     <string name="mClear_restore">Restaurarea traseelor ClearURLs</string>
     <string name="mRemove_found">%d interogări găsite</string>
-    <string name="mPttrn_editor">Aici poți edita sau adăuga un nou șablon. Formatul este:
-\n-\'encode\': boolean: setat la true pentru a codifica URL-ul înainte de verificarea regexului.
-\n-\'regex\': string: un regex Java valid cu care URL-ul trebuie să se potrivească, altfel șablonul este omis.
-\n-\'excludeRegex\': string: dacă este furnizat, un regex Java valid pe care URL-ul nu trebuie să-l potrivească, altfel șablonul este omis.
-\n-\'replacement\': string|listă: dacă este furnizat, butonul \'fix\' va rula \'url=url.replaceAll(regex, replacement)\'. Dacă este listă, înlocuirea va fi un element aleatoriu din aceasta.
-\n-\'decode\': boolean: setat la true pentru a decoda URL-ul înlocuit.
-\n-\'automatic\': boolean: setat la true pentru a aplica automat șablonul.
-\n-\'enabled\': boolean: setat la false pentru a dezactiva șablonul.
-\nNotă: dacă editezi șabloanele, noi șabloane încorporate din actualizările aplicației nu vor fi adăugate automat (le poți restaura cu opțiunea de resetare).</string>
+    <string name="mPttrn_editor">Aici poți edita sau adăuga un nou șablon. Formatul este: \n-\'encode\': boolean: setat la true pentru a codifica URL-ul înainte de verificarea regexului. \n-\'regex\': string: un regex Java valid cu care URL-ul trebuie să se potrivească, altfel șablonul este omis. \n-\'excludeRegex\': string: dacă este furnizat, un regex Java valid pe care URL-ul nu trebuie să-l potrivească, altfel șablonul este omis. \n-\'replacement\': string|listă: dacă este furnizat, butonul \'fix\' va rula \'url=url.replaceAll(regex, replacement)\'. Dacă este listă, înlocuirea va fi un element aleatoriu din aceasta. \n-\'decode\': boolean: setat la true pentru a decoda URL-ul înlocuit. \n-\'automatic\': boolean: setat la true pentru a aplica automat șablonul. \n-\'enabled\': boolean: setat la false pentru a dezactiva șablonul. \nNotă: dacă editezi șabloanele, noi șabloane încorporate din actualizările aplicației nu vor fi adăugate automat (le poți restaura cu opțiunea de resetare).</string>
     <string name="txt_tutorial5">Asta e tot. Iată câteva sfaturi care pot fi utile:
 \n
 \nAtunci când o aplicație nu vă oferă o modalitate de a deschide sau de a partaja un URL, dar vă oferă o modalitate de a face celălalt, puteți rezolva problema folosind această aplicație. De asemenea, puteți copia url-ul în clipboard apăsând lung butonul de partajare.

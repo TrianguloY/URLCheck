@@ -207,15 +207,7 @@
 \n- Möglichkeit, \'http\' mit \'https\' zu ersetzen
 \n- Möglichkeit, Youtube, Reddit oder Twitter durch datenschutzfreundlichen Alternativen zu ersetzen [standardmäßig deaktiviert]</string>
     <string name="mLog_desc">Diese Modul speichert alle geprüften URLs. Sie können hier das gesamte Protokoll ansehen, bearbeiten und leeren. Es gibt keine visuelle Anzeige im Hauptdialog. Um das Protokoll abzuschalten, deaktivieren Sie einfach dieses Modul.</string>
-    <string name="mPttrn_editor">Hier können Sie Muster hinzufügen oder editieren. Format:
-\n- \'encode\': boolean: Wahr, um das Muster auf die encodierte URL anzuwenden.
-\n- \'regex\': string: Ein valider Java RegEx, der passen muss; sonst wird das Muster übersprungen.
-\n- \'excludeRegex\': string: (optional) Ein valider Java RegEx, der nicht passen darf; sonst wird das Muster übersprungen.
-\n- \'replacement\': string|list: (optional) Der Anwenden-Button wird \'url=url.replaceAll(regex,replacement)\' ausführen. Bei einer Liste wird ein Element zufällig gewählt.
-\n- \'decode\': boolean: Wahr, um die URL nach Ersetzung zu decodieren.
-\n- \'automatic\': boolean: Wahr, um das Muster automatisch anzuwenden.
-\n- \'enabled\': boolean: Falsch, um das Muster zu deaktivieren.
-\nHinweis: Wenn Sie die Muster verändern, werden neue Muster durch App-Updates nicht mehr automatisch hinzugefügt (diese können Sie mit dem Zurücksetzen-Button wiederherstellen).</string>
+    <string name="mPttrn_editor">Hier können Sie Muster hinzufügen oder editieren. Format: \n- \'encode\': boolean: Wahr, um das Muster auf die encodierte URL anzuwenden. \n- \'regex\': string: Ein valider Java RegEx, der passen muss; sonst wird das Muster übersprungen. \n- \'excludeRegex\': string: (optional) Ein valider Java RegEx, der nicht passen darf; sonst wird das Muster übersprungen. \n- \'replacement\': string|list: (optional) Der Anwenden-Button wird \'url=url.replaceAll(regex,replacement)\' ausführen. Bei einer Liste wird ein Element zufällig gewählt. \n- \'decode\': boolean: Wahr, um die URL nach Ersetzung zu decodieren. \n- \'automatic\': boolean: Wahr, um das Muster automatisch anzuwenden. \n- \'enabled\': boolean: Falsch, um das Muster zu deaktivieren. \nHinweis: Wenn Sie die Muster verändern, werden neue Muster durch App-Updates nicht mehr automatisch hinzugefügt (diese können Sie mit dem Zurücksetzen-Button wiederherstellen).</string>
     <string name="mOpen_desc">Enthält die folgenden Buttons (links nach rechts):
 \n- Benutzerdefinierte Tabs: Schalter um Benutzerdefinierte Tabs einzuschalten. Wenn aktiviert, sollte der Browser im \'lite\'-Modus geöffnet werden.
 \n- Privater Modus: Nur Firefox. Wenn der Schalter aktiviert ist, sollte der Browser im privaten Modus geöffnet werden.

@@ -85,15 +85,7 @@ Translations: %3$s."</string>
     <string name="mPttrn_noSchemeHttp">Esquema HTTP em falta.</string>
     <string name="mPttrn_noSchemeHttps">Esquema HTTPS em falta.</string>
     <string name="mPttrn_ok">Nenhum padrão corresponde</string>
-    <string name="mPttrn_editor">Aqui pode editar ou adicionar novos padrões. Formato:
-\n- \'encode\': booleano: defina como true para codificar a URL antes de verificar o regex.
-\n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Numa lista, um elemento aleatório é escolhido.
-\n- \'decode\': booleano: defina como true para decodificar a URL substítuida.
-\n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão.
-\n- \'enabled\': booleano: defina como false para desativar o padrão.
-\nNota: se editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
+    <string name="mPttrn_editor">Aqui pode editar ou adicionar novos padrões. Formato: \n- \'encode\': booleano: defina como true para codificar a URL antes de verificar o regex. \n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado. \n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado. \n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Numa lista, um elemento aleatório é escolhido. \n- \'decode\': booleano: defina como true para decodificar a URL substítuida. \n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão. \n- \'enabled\': booleano: defina como false para desativar o padrão. \nNota: se editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
     <!-- -->
     <string name="mOpen_name">Abrir e partilhar</string>
     <string name="mOpen_desc">"Contém os seguintes botões (da esquerda para a direita):

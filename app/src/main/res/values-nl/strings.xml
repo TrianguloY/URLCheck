@@ -89,15 +89,7 @@
     <string name="mClear_matches">Komt overeen met %s</string>
     <string name="mOpen_with">Openen met %s</string>
     <string name="mHist_desc">Wanneer de URL wordt bewerkt, handmatig of door andere modules, kunt u met deze module de wijzigingen bekijken en ongedaan maken.</string>
-    <string name="mPttrn_editor">Hier kunt u een nieuw patroon bewerken of toevoegen. Formaat:
-\n- \'encode\': boolean: ingesteld op true om de URL te coderen voordat regex wordt gecontroleerd.
-\n- \'regex\': string: een geldige Java-regex waaraan de url moet voldoen, anders wordt het patroon overgeslagen.
-\n- \'excludeRegex\': string: indien opgegeven, een geldige Java-regex waarvan de url niet mag overeenkomen, anders wordt het patroon overgeslagen.
-\n- \'replacement\': string|list: indien opgegeven, zal de \'fix\'-knop \'url=url.replaceAll(regex,replacement)\' uitvoeren. Als de lijst wordt weergegeven, zal vervanging een willekeurig element zijn.
-\n- \'decode\': boolean: ingesteld op true om de vervangen url te decoderen.
-\n- \'automatisch\': boolean: ingesteld op true om het patroon automatisch toe te passen.
-\n- \'enabled\': boolean: ingesteld op false om het patroon uit te schakelen.
-\nLet op: als je de patronen bewerkt, worden nieuwe ingebouwde patronen uit app-updates niet automatisch toegevoegd (je kunt ze herstellen met de reset-optie).</string>
+    <string name="mPttrn_editor">Hier kunt u een nieuw patroon bewerken of toevoegen. Formaat: \n- \'encode\': boolean: ingesteld op true om de URL te coderen voordat regex wordt gecontroleerd. \n- \'regex\': string: een geldige Java-regex waaraan de url moet voldoen, anders wordt het patroon overgeslagen. \n- \'excludeRegex\': string: indien opgegeven, een geldige Java-regex waarvan de url niet mag overeenkomen, anders wordt het patroon overgeslagen. \n- \'replacement\': string|list: indien opgegeven, zal de \'fix\'-knop \'url=url.replaceAll(regex,replacement)\' uitvoeren. Als de lijst wordt weergegeven, zal vervanging een willekeurig element zijn. \n- \'decode\': boolean: ingesteld op true om de vervangen url te decoderen. \n- \'automatisch\': boolean: ingesteld op true om het patroon automatisch toe te passen. \n- \'enabled\': boolean: ingesteld op false om het patroon uit te schakelen. \nLet op: als je de patronen bewerkt, worden nieuwe ingebouwde patronen uit app-updates niet automatisch toegevoegd (je kunt ze herstellen met de reset-optie).</string>
     <string name="mStatus_autoRedirect">Vervang omleidings-URL\'s automatisch</string>
     <string name="mOpen_ctabs">Aangepaste tabbladen:</string>
     <string name="btn_linksSettings">Open ondersteunde koppelingen</string>

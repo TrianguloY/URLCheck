@@ -111,15 +111,7 @@
     <string name="mStatus_recheck">Kiểm tra</string>
     <string name="mStatus_checking">Đang kiểm tra…</string>
     <string name="mHist_desc">Khi URL được chỉnh sửa theo cách thủ công hoặc bằng các mô-đun khác, URL này cho phép bạn xem và hoàn nguyên các thay đổi.</string>
-    <string name="mPttrn_editor">Tại đây bạn có thể chỉnh sửa hoặc thêm mẫu mới. Định dạng:
-\n- \'encode\': boolean: đặt thành true để mã hóa url trước khi kiểm tra biểu thức chính quy.
-\n- \'regex\': chuỗi: một biểu thức chính quy java hợp lệ mà url phải khớp, nếu không mẫu sẽ bị bỏ qua.
-\n- \'excludeRegex\': string: nếu được cung cấp, một biểu thức chính quy java hợp lệ mà url không được khớp, nếu không mẫu sẽ bị bỏ qua.
-\n- \'replacement\': string|list: nếu được cung cấp, nút \'sửa\' sẽ chạy \'url=url.replaceAll(regex,replacement)\'. Nếu có danh sách, sự thay thế sẽ là một phần tử ngẫu nhiên từ nó.
-\n- \'decode\': boolean: đặt thành true để giải mã url được thay thế.
-\n- \'tự động\': boolean: đặt thành true để tự động áp dụng mẫu.
-\n- \'enabled\': boolean: đặt thành false để tắt mẫu.
-\nLưu ý: nếu bạn chỉnh sửa các mẫu, các mẫu tích hợp mới từ bản cập nhật ứng dụng sẽ không được thêm tự động (bạn có thể khôi phục chúng bằng tùy chọn đặt lại).</string>
+    <string name="mPttrn_editor">Tại đây bạn có thể chỉnh sửa hoặc thêm mẫu mới. Định dạng: \n- \'encode\': boolean: đặt thành true để mã hóa url trước khi kiểm tra biểu thức chính quy. \n- \'regex\': chuỗi: một biểu thức chính quy java hợp lệ mà url phải khớp, nếu không mẫu sẽ bị bỏ qua. \n- \'excludeRegex\': string: nếu được cung cấp, một biểu thức chính quy java hợp lệ mà url không được khớp, nếu không mẫu sẽ bị bỏ qua. \n- \'replacement\': string|list: nếu được cung cấp, nút \'sửa\' sẽ chạy \'url=url.replaceAll(regex,replacement)\'. Nếu có danh sách, sự thay thế sẽ là một phần tử ngẫu nhiên từ nó. \n- \'decode\': boolean: đặt thành true để giải mã url được thay thế. \n- \'tự động\': boolean: đặt thành true để tự động áp dụng mẫu. \n- \'enabled\': boolean: đặt thành false để tắt mẫu. \nLưu ý: nếu bạn chỉnh sửa các mẫu, các mẫu tích hợp mới từ bản cập nhật ứng dụng sẽ không được thêm tự động (bạn có thể khôi phục chúng bằng tùy chọn đặt lại).</string>
     <string name="mVT_cancel">Hủy</string>
     <string name="mVT_warningUrl">Cảnh báo, công cụ %1$d/%2$d đã phát hiện ra URL (kể từ ngày %3$s)</string>
     <string name="mVT_badUrl">Cẩn thận! Công cụ %1$d/%2$d đã phát hiện thấy URL (kể từ ngày %3$s)</string>

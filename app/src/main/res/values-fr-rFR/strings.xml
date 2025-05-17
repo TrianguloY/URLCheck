@@ -119,15 +119,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mPttrn_noSchemeHttp">Schéma HTTP manquant.</string>
     <string name="mPttrn_noSchemeHttps">Schéma HTTPS manquant.</string>
     <string name="mPttrn_ok">Aucun modèle correspondant</string>
-    <string name="mPttrn_editor">Ici, vous pouvez modifier ou ajouter un nouveau modèle. Format :
-\n- \'encode\': booléen: mettre à true pour encoder l\'url avant de vérifier la regex.
-\n- \'regex\': chaîne de caractères : une regex Java valide à laquelle l\'url doit correspondre, sinon le motif est ignoré.
-\n- \'excludeRegex\': chaîne de caractères: si fournie, une regex Java valide que l\'url ne doit pas correspondre, sinon le motif est ignoré.
-\n- \'replacement\': string|list: si fourni, le bouton \'fix\' lancera \'url=url.replaceAll(regex,replacement)\'. S\'il s\'agit d\'une liste, le remplacement sera un élément aléatoire de cette liste.
-\n- decode\': booléen: mettre à true pour décoder l\'url remplacée.
-\n- \'automatic\': booléen: mettre à true pour appliquer automatiquement le motif.
-\n- \'enabled\': booléen: mettre à false pour désactiver le motif.
-\nRemarque: si vous modifiez les motifs, les nouveaux motifs intégrés provenant des mises à jour de l\'application ne seront pas ajoutés automatiquement (vous pouvez les restaurer à l\'aide de l\'option de réinitialisation).</string>
+    <string name="mPttrn_editor">Ici, vous pouvez modifier ou ajouter un nouveau modèle. Format : \n- \'encode\': booléen: mettre à true pour encoder l\'url avant de vérifier la regex. \n- \'regex\': chaîne de caractères : une regex Java valide à laquelle l\'url doit correspondre, sinon le motif est ignoré. \n- \'excludeRegex\': chaîne de caractères: si fournie, une regex Java valide que l\'url ne doit pas correspondre, sinon le motif est ignoré. \n- \'replacement\': string|list: si fourni, le bouton \'fix\' lancera \'url=url.replaceAll(regex,replacement)\'. S\'il s\'agit d\'une liste, le remplacement sera un élément aléatoire de cette liste. \n- decode\': booléen: mettre à true pour décoder l\'url remplacée. \n- \'automatic\': booléen: mettre à true pour appliquer automatiquement le motif. \n- \'enabled\': booléen: mettre à false pour désactiver le motif. \nRemarque: si vous modifiez les motifs, les nouveaux motifs intégrés provenant des mises à jour de l\'application ne seront pas ajoutés automatiquement (vous pouvez les restaurer à l\'aide de l\'option de réinitialisation).</string>
     <!-- -->
     <string name="mOpen_name">Ouvrir et partager</string>
     <string name="mOpen_desc">Contient les boutons suivants (de gauche à droite):
@@ -392,7 +384,7 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mWebhook_error">Échec de l\'envoi au webhook</string>
     <string name="mWebhook_templates">Modèles</string>
     <string name="auto_clear">Efface l\'url. Cela équivaut à appuyer sur le bouton \'Effacer\'. Notez que le module lui-même contient un réglage automatique qui effacera également toutes les url de manière plus efficace, et qui devrait être préféré.</string>
-    <string name="mWebhook_desc">Ce module envoie des URL à un point de terminaison webhook configuré. Chaque URL est envoyée avec un horodatage, ce qui vous permet de collecter et de traiter les URL sur votre propre serveur.\nMerci à anoop-b pour l\'idée et l\'implémentation de base !\n\nConfigurez l\'URL et le corps de votre webhook ci-dessous pour commencer à envoyer des URL.\nPour le corps, vous pouvez utiliser les caractères génériques $URL$ et $TIMESTAMP$.</string>
+    <string name="mWebhook_desc">Ce module envoie des URL à un point de terminaison webhook configuré. Chaque URL est envoyée avec un horodatage, ce qui vous permet de collecter et de traiter les URL sur votre propre serveur.\nMerci à anoop-b pour l\'idée et l\'implémentation de base !\n\nConfigurez l\'URL et le corps de votre webhook ci-dessous pour commencer à envoyer des URL.\nPour le corps, vous pouvez utiliser les caractères génériques $URL$ et $TIMESTAMP$.</string>
     <string name="auto_editor">Configuration des automatismes. Format : liste d\'objets dont la clé est un nom d\'automatisation unique et dont le contenu comprend les valeurs suivantes :\n- \'regex\' : string|list, required : une regex java valide à laquelle l\'url doit correspondre pour que l\'automatisation s\'exécute. S\'il s\'agit d\'une liste, au moins une regex doit correspondre.\n- \'action\' : string|list, obligatoire : la clé de l\'automatisation à exécuter. Voir ci-dessous la liste de toutes les clés disponibles.\n- \'enabled\' : boolean, optionnel : si false, l\'automatisation sera ignorée. True par défaut.</string>
     <string name="auto_unshort">Lance le processus de déraccourcissement. Cela équivaut à appuyer sur le bouton \"Déracourcir\".</string>
     <string name="auto_close">Fermera l\'application, sans rien faire d\'autre.</string>
