@@ -350,4 +350,12 @@
     <string name="txt_processText">Синхронізувати URL-адресу з текстом, який можна редагувати (коли програму відкривають довгим натисканням тексту в текстовому полі введення)</string>
     <string name="auto_toast">Відобразити спливаюче вікно з фіксованим текстом. Текст має бути наданий як аргумент з назвою «text».</string>
     <string name="auto_rule_toast">Приклад тосту</string>
+    <string name="mVT_checkKey">Перевірити</string>
+    <string name="mVT_validKey">Дійсний ключ від користувача: %s</string>
+    <string name="mVt_title">Назва:</string>
+    <string name="mVt_finalUrl">Кінцева URL-адреса:</string>
+    <string name="mVt_reputation">Репутація:</string>
+    <string name="mVt_votes">Голоси:</string>
+    <string name="mVt_categories">Категорії:</string>
+    <string name="mVt_detections">Виявлення:</string>
 </resources>
