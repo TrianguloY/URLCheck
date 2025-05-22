@@ -1,0 +1,10 @@
+V 2.8
+- Renamed app from 'Url Checker' to 'URLCheck'
+- New japanese translation. Thanks to 404potato!
+- New Pattern Checker samples and improvements
+- New setting to sort apps per-domain
+- New setting to close after sharing
+- New setting to hide the source app (referrer)
+- Allow disabling all modules
+- Improved About activity
+- Internal tooling improvements
