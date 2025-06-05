@@ -388,4 +388,7 @@
     <string name="mWebhook_name">Webhook</string>
     <string name="format">格式化</string>
     <string name="discard">撤销</string>
+    <string name="mVT_checkKey">检查</string>
+    <string name="mVt_finalUrl">最终链接：</string>
+    <string name="mVt_categories">分类：</string>
 </resources>
