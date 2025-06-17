@@ -361,7 +361,7 @@
     <string name="auto_clear">清洁 URL。等于按下「清洁」按钮。要注意，这个模块本身就包含一个自动化的配置，也可以有效地清理 URL，建议优先使用模块内配置。</string>
     <string name="auto_scan">运行 URL 扫描。等于按下「扫描」按钮。</string>
     <string name="mPttrn_upperDomain">警告！域名中包含大写字母。</string>
-    <string name="mWebhook_desc">这个模块会将 URL 发送到配置的 Webhook 端点。每一个 URL 都会和时间戳一起发送，这将允许通过你的服务器收集并处理 URL。\n感谢 anoop-b 提供的想法和基础实现！\n\n配置 Webhook URL 和请求体以开始发送 URL。\n对于请求体，你可以使用 $URL$ 和 $TIMESTAMP$ 占位符 。</string>
+    <string name="mWebhook_desc">这个模块会将 URL 发送到配置的 Webhook 端点。每一个 URL 都会和时间戳一起发送，这将允许通过你的服务器收集并处理 URL。\n感谢 anoop-b 提供的想法和基础实现！\n\n配置 Webhook URL 和请求体以开始发送 URL。\n对于请求体，你可以使用 $URL$ ， $TIMESTAMP$ 和 $REFERRER$ 占位符 。</string>
     <string name="mWebhook_send">发送到 Webhook</string>
     <string name="mWebhook_missing_config">缺少 Webhook 或请求体</string>
     <string name="mWebhook_sending">正在发送到 Webhook…</string>
@@ -388,4 +388,14 @@
     <string name="mWebhook_name">Webhook</string>
     <string name="format">格式化</string>
     <string name="discard">撤销</string>
+    <string name="mVT_checkKey">检查</string>
+    <string name="mVt_finalUrl">最终链接：</string>
+    <string name="mVt_categories">分类：</string>
+    <string name="mVT_validKey">用户提供的有效密钥: %s</string>
+    <string name="auto_toast">显示一个带有固定文本的 Toast 提示。文本必须作为名为“text”的“args”参数提供。</string>
+    <string name="auto_rule_toast">Toast 示例</string>
+    <string name="mVt_title">标题：</string>
+    <string name="mVt_reputation">信誉：</string>
+    <string name="mVt_votes">票数：</string>
+    <string name="mVt_detections">检测结果：</string>
 </resources>
