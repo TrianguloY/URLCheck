@@ -190,10 +190,7 @@
     <string name="mFlags_name">Marker-Editor</string>
     <string name="mFlag_editFlags">Standardwerte für die Marker bearbeiten</string>
     <string name="mParts_name">URI-Teile</string>
-    <string name="mFlag_desc">[Beta-Funktion] Dies ist ein erweitertes Modul, um Intent Marker beim Öffnen anderer Apps zu bearbeiten.
-\nDieses Modul zeigt eine Liste der Marker an. Sie können wählen, ob ein Marker gesetzt ist, indem Sie auf das Symbol tippen. Es gibt auch ein Überlaufmenü um einige Marker auszublenden, dies ist nur visuell und die Marker behalten weiterhin den zugewiesenen Status.
-\nDie Marker werden zwei Farbindikatoren neben dem Kontrollschalter haben. Der linke zeigt den vom Intent empfangenen Wert, der rechte den vom Modul selbst gesetzten Status. Rot bedeutet, dass der Marker nicht gesetzt ist, grün, dass der Marker gesetzt ist. Zusätzlich kann der Indikator grau sein, was bedeutet, dass der Status auf automatisch gesetzt wurde.
-\nMit der folgenden Schaltfläche können Sie den Standardwert und die Sichtbarkeit der Marker setzen.</string>
+    <string name="mFlag_desc">[Beta-Funktion] Dies ist ein erweitertes Modul, um Intent Marker beim Öffnen anderer Apps zu bearbeiten.\nDieses Modul zeigt eine Liste der Marker an. Sie können wählen, ob ein Marker gesetzt ist, indem Sie auf das Symbol tippen. Es gibt auch ein Überlaufmenü um einige Marker auszublenden, dies ist nur visuell und die Marker behalten weiterhin den zugewiesenen Status.\nDie Marker werden zwei Farbindikatoren neben dem Kontrollschalter haben. Der linke zeigt den vom Intent empfangenen Wert, der rechte den vom Modul selbst gesetzten Status. Rot bedeutet, dass der Marker nicht gesetzt ist, grün, dass der Marker gesetzt ist. Zusätzlich kann der Indikator grau sein, was bedeutet, dass der Status auf automatisch gesetzt wurde.\nMit der folgenden Schaltfläche können Sie den Standardwert und die Sichtbarkeit der Marker setzen.</string>
     <string name="mParts_desc">Dieses Modul zeigt alle Teile der URL an: Schema, Autorität, Pfade, Parameter und Fragment.
 \nWenn Sie auf einen Teil klicken, wird dieser als neue URL festgelegt, z.B. nützlich, wenn ein Parameter oder Pfad eine kodierte URL zur Weiterleitung ist.
 \nLanges Drücken auf einen Teil kopiert diesen in die Zwischenablage.
@@ -205,7 +202,7 @@
 \n- Möglichkeit, \'http\' mit \'https\' zu ersetzen
 \n- Möglichkeit, Youtube, Reddit oder Twitter durch datenschutzfreundlichen Alternativen zu ersetzen [standardmäßig deaktiviert]</string>
     <string name="mLog_desc">Diese Modul speichert alle geprüften URLs. Sie können hier das gesamte Protokoll ansehen, bearbeiten und leeren. Es gibt keine visuelle Anzeige im Hauptdialog. Um das Protokoll abzuschalten, deaktivieren Sie einfach dieses Modul.</string>
-    <string name="mPttrn_editor">Hier können Sie Muster hinzufügen oder editieren. Format: \n- \'encode\': boolean: Wahr, um das Muster auf die encodierte URL anzuwenden. \n- \'regex\': string: Ein valider Java RegEx, der passen muss; sonst wird das Muster übersprungen. \n- \'excludeRegex\': string: (optional) Ein valider Java RegEx, der nicht passen darf; sonst wird das Muster übersprungen. \n- \'replacement\': string|list: (optional) Der Anwenden-Button wird \'url=url.replaceAll(regex,replacement)\' ausführen. Bei einer Liste wird ein Element zufällig gewählt. \n- \'decode\': boolean: Wahr, um die URL nach Ersetzung zu decodieren. \n- \'automatic\': boolean: Wahr, um das Muster automatisch anzuwenden. \n- \'enabled\': boolean: Falsch, um das Muster zu deaktivieren. \nHinweis: Wenn Sie die Muster verändern, werden neue Muster durch App-Updates nicht mehr automatisch hinzugefügt (diese können Sie mit dem Zurücksetzen-Button wiederherstellen).</string>
+    <string name="mPttrn_editor">Hier können Sie Muster hinzufügen oder editieren. Format: \n- \'encode\': boolean: Wahr, um das Muster auf die encodierte URL anzuwenden. \n- \'regex\': string|list: Ein valider Java RegEx, der passen muss; sonst wird das Muster übersprungen. Bei einer Liste müssen alle RegEx passen.\n- \'excludeRegex\': string|list: (optional) Ein valider Java RegEx, der nicht passen darf; sonst wird das Muster übersprungen. Bei einer Liste wird das Muster bei einem passenden RegEx übersprungen.\n- \'replacement\': string|list: (optional) Der Anwenden-Button wird \'url=url.replaceAll(regex,replacement)\' ausführen [Wenn regex eine Liste ist, wird das erste Element verwendet]. Bei einer Liste wird ein Element zufällig gewählt.\n- \'decode\': boolean: Wahr, um die URL nach Ersetzung zu decodieren. \n- \'automatic\': boolean: Wahr, um das Muster automatisch anzuwenden. \n- \'enabled\': boolean: Falsch, um das Muster zu deaktivieren. \nHinweis: Wenn Sie die Muster verändern, werden neue Muster durch App-Updates nicht mehr automatisch hinzugefügt (diese können Sie mit dem Zurücksetzen-Button wiederherstellen).</string>
     <string name="mOpen_desc">Enthält die folgenden Buttons (links nach rechts):
 \n- Benutzerdefinierte Tabs: Schalter um Benutzerdefinierte Tabs einzuschalten. Wenn aktiviert, sollte der Browser im \'lite\'-Modus geöffnet werden.
 \n- Privater Modus: Nur Firefox. Wenn der Schalter aktiviert ist, sollte der Browser im privaten Modus geöffnet werden.
@@ -312,14 +309,14 @@
     <string name="auto_error_toast">Hinweis anzeigen, wenn eine Automatisierung fehlschlägt</string>
     <string name="auto_notFound">Keine Automatisierung mit dem Schlüssel \'%s\' verfügbar. Stellen Sie sicher, dass dieser richtig ist und das entsprechende Modul aktiv ist.</string>
     <string name="auto_available_prefix">Verfügbare Aktionen zur Automatisierung (keys):</string>
-    <string name="auto_open">Öffnet die URL mit der ersten verfügbaren App äquivalent zum \"Öffnen\"-Button.</string>
+    <string name="auto_open">Öffnet die URL mit der ersten verfügbaren App äquivalent zum \"Öffnen\"-Button. Mit \'args\': \'package\' und \'component\' kann eine andere App festgelegt werden.</string>
     <string name="auto_share">Teilt die URL äquivalent zum \"Teilen\"-Button.</string>
     <string name="auto_copy">Kopiert die URL äquivalent zum \"Kopieren\"-Button.</string>
     <string name="auto_checkStatus">Statuscode abfragen, äquivalent zum entsprechenden Button.</string>
     <string name="auto_unshort">Ent-Kürzen starten.</string>
     <string name="auto_scan">URL scannen, entspricht dem Scannen-Button.</string>
     <string name="auto_drawer">Überhangmenü öffnen.</string>
-    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, optional: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'referrer\': string|list, optional: Falls vorhanden, muss der Referrer (die App, die den Link geöffnet hat) genau diesem Wert entsprechen. Bei einer Liste muss der Referrer einer der Werte sein. Sie können das Debug-Modul verwenden, um den tatsächlichen Wert zu überprüfen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'stop\': boolean: Wenn wahr, keine weiteren Automatisierungen für diese URL ausführen. Standardmäßig falsch.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
+    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'excludeRegex\': Ein valider Java RegEx, der nicht passen darf, damit die Automatisierung ausgeführt wird. Bei einer Liste darf kein RegEx passen.\n- \'referrer\': string|list: Falls vorhanden, muss der Referrer (die App, die den Link geöffnet hat) genau diesem Wert entsprechen. Bei einer Liste muss der Referrer einer der Werte sein. Sie können das Debug-Modul verwenden, um den tatsächlichen Wert zu überprüfen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'args\', object: Werte, die die jeweilige Aktion benötigt, vgl. Beschreibung der Aktion. Beispiel: { …, \"args\": { \"text\": \"example\" }}\n- \'stop\': boolean: Wenn wahr, keine weiteren Automatisierungen für diese URL ausführen. Standardmäßig falsch.\n- \'enabled\': boolean: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
     <string name="format">Formatieren</string>
     <string name="discard">Verwerfen</string>
     <string name="json_info">Erklärung anzeigen</string>
@@ -336,7 +333,7 @@
     <string name="auto_clear">URL säubern, äquivalent zum entsprechenden Modul. Beachten Sie, dass das Modul selbst eine \"Auto\"-Einstellung enthält, die bevorzugt werden sollte.</string>
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_send">An Webhook senden</string>
-    <string name="mWebhook_desc">Dieses Modul sendet URLs an den einstellten Webhook-Endpunkt. Es wird ein Timestamp mitgesendet und Sie können die URLs auf Ihrem Server verarbeiten.\nDanke an anoop-b für die Idee und Basisimplementierung!\n\nKonfigurieren Sie die Webhook URL und Body um URLs zu senden.\nIm Body können Sie die Platzhalter $URL$ und $TIMESTAMP$ verwenden.</string>
+    <string name="mWebhook_desc">Dieses Modul sendet URLs an den einstellten Webhook-Endpunkt. Es wird ein Timestamp mitgesendet und Sie können die URLs auf Ihrem Server verarbeiten.\nDanke an anoop-b für die Idee und Basisimplementierung!\n\nKonfigurieren Sie die Webhook URL und Body um URLs zu senden.\nIm Body können Sie die Platzhalter $URL$, $TIMESTAMP$ und $REFERRER$ verwenden.</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_body_hint">Webhook body</string>
     <string name="mWebhook_auto_send">An Webhook senden</string>
@@ -351,4 +348,14 @@
     <string name="txt_width">Dialogbreite:\nWarnung: Kleine Werte können Bildschirmelemente verstecken.</string>
     <string name="spin_fullWidth">Voll</string>
     <string name="spin_dynamicWidth">Dynamisch</string>
+    <string name="auto_rule_toast">Beispielhinweis</string>
+    <string name="auto_toast">Hinweis mit festgelegtem Text anzeigen. Der Text wird über \'args\' in \'text\' übergeben.</string>
+    <string name="mVT_checkKey">Prüfen</string>
+    <string name="mVT_validKey">Valider Key des Benutzers: %s</string>
+    <string name="mVt_title">Titel:</string>
+    <string name="mVt_finalUrl">Finale URL:</string>
+    <string name="mVt_reputation">Reputation:</string>
+    <string name="mVt_votes">Bewertung:</string>
+    <string name="mVt_categories">Kategorien:</string>
+    <string name="mVt_detections">Funde:</string>
 </resources>

@@ -150,4 +150,10 @@
     <string name="mRemove_all">להסיר את כל</string>
     <string name="mRemove_one">הסר את %s</string>
     <string name="mRemove_empty">הסר ריקים</string>
+    <string name="link_source">קוד המקור</string>
+    <string name="link_privacy">מדיניות פרטיות</string>
+    <string name="a_settings">הגדרות</string>
+    <string name="desc_up">הזז למעלה</string>
+    <string name="link_changelog">יומן שינויים</string>
+    <string name="desc_down">הזז למטה</string>
 </resources>
