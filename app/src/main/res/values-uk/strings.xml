@@ -362,4 +362,5 @@
     <string name="mVt_votes">Голоси:</string>
     <string name="mVt_categories">Категорії:</string>
     <string name="mVt_detections">Виявлення:</string>
+    <string name="mHosts_tm">Ведучі StevenBlack з %s</string>
 </resources>
