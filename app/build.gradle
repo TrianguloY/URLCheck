@@ -32,10 +32,29 @@ android {
         }
     }
 
+    flavorDimensions "internet"
+
+    productFlavors {
+        internet {
+            dimension "internet"
+            isDefault true
+        }
+        noInternet {
+            dimension "internet"
+        }
+    }
+
+
     // rename output apks
     applicationVariants.configureEach {
         outputs.configureEach {
-            outputFileName = "URLCheck-$versionName${name == "release" ? "" : "-$name"}.apk"
+            def parsedName = Arrays.stream(name.split("-"))
+                    .filter { it != "release" } // remove release
+                    .filter { try { !android.productFlavors.named(it).get().default } catch (ignored) { true } } // remove default flavors
+                    .collect { "-$it" }
+                    .join()
+            // println(name + " -> " + parsedName)
+            outputFileName = "URLCheck-$versionName${parsedName}.apk"
         }
     }
 
