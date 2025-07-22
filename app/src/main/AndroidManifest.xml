@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <!--
     As of API 30+ package discovery is restricted, and you can't even open an url: https://developer.android.com/training/basics/intents/package-visibility#intent-signature
     A queries tag with description of what intents you use is required, but if you don't want to be bothered this is a simple alternative.
@@ -20,8 +18,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/ActivityThemeDark"
-        android:usesCleartextTraffic="true">
+        android:theme="@style/ActivityThemeDark">
         <activity android:name=".activities.AboutActivity" />
         <activity android:name=".activities.AutomationActivity" />
         <activity android:name=".activities.ModulesActivity" />

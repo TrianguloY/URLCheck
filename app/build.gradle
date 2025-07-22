@@ -32,10 +32,24 @@ android {
         }
     }
 
+    flavorDimensions "internet"
+
+    productFlavors {
+        default_internet {
+            dimension "internet"
+            isDefault true
+        }
+        noInternet {
+            dimension "internet"
+        }
+    }
+
+
     // rename output apks
     applicationVariants.configureEach {
         outputs.configureEach {
-            outputFileName = "URLCheck-$versionName${name == "release" ? "" : "-$name"}.apk"
+            def parsedName = name.split("-").findAll { !it.startsWith("default_") }.join("-")
+            outputFileName = "URLCheck-$versionName${parsedName == "release" ? "" : "-$parsedName"}.apk"
         }
     }
 

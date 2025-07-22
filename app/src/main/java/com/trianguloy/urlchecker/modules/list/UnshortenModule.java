@@ -185,7 +185,7 @@ class UnshortenDialog extends AModuleDialog {
                 });
             }
 
-        } catch (IOException | JSONException e) {
+        } catch (IOException | JSONException | SecurityException e) {
             // internal error
             AndroidUtils.assertError("Unable to unshorten url", e);
 

@@ -12,13 +12,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
 
-import javax.net.ssl.HttpsURLConnection;
 
-/** Wrapper of HttpsURLConnection with some util methods */
+/** Wrapper of HttpURLConnection with some util methods */
 public interface Connection {
 
     int CONNECT_TIMEOUT = 5000;
@@ -29,12 +29,12 @@ public interface Connection {
     }
 
     class Request {
-        private HttpsURLConnection connection = null;
+        private HttpURLConnection connection = null;
 
         private Request(String url) {
             try {
-                connection = (HttpsURLConnection) new URL(url).openConnection();
-            } catch (IOException e) {
+                connection = (HttpURLConnection) new URL(url).openConnection();
+            } catch (IOException | SecurityException e) {
                 AndroidUtils.assertError("Unable to create a connection", e);
                 return;
             }
@@ -62,7 +62,7 @@ public interface Connection {
             try (var writer = new OutputStreamWriter(connection.getOutputStream())) {
                 writer.write(body);
                 writer.flush();
-            } catch (IOException e) {
+            } catch (IOException | SecurityException e) {
                 AndroidUtils.assertError("Unable to post string", e);
                 connection = null;
             }
@@ -103,7 +103,7 @@ public interface Connection {
             try {
                 connection.connect();
                 return new Response(connection);
-            } catch (IOException e) {
+            } catch (IOException | SecurityException e) {
                 AndroidUtils.assertError("Unable to connect", e);
                 return new Response(null);
             }
@@ -111,9 +111,9 @@ public interface Connection {
     }
 
     class Response {
-        private HttpsURLConnection connection;
+        private HttpURLConnection connection;
 
-        private Response(HttpsURLConnection connection) {
+        private Response(HttpURLConnection connection) {
             this.connection = connection;
         }
 
@@ -123,7 +123,7 @@ public interface Connection {
 
             try {
                 return connection.getResponseCode();
-            } catch (IOException e) {
+            } catch (IOException | SecurityException e) {
                 AndroidUtils.assertError("Unable to get a connection status code", e);
                 connection = null;
                 return -1;
@@ -136,7 +136,7 @@ public interface Connection {
 
             try {
                 return StreamUtils.inputStream2String(getStream());
-            } catch (IOException e) {
+            } catch (IOException | SecurityException e) {
                 AndroidUtils.assertError("Unable to get a connection result", e);
                 connection = null;
                 return null;

@@ -199,7 +199,7 @@ class StatusDialog extends AModuleDialog {
                 // location = URLDecoder.decode(location, sUTF-8);
                 redirectionUrl = new URL(new URL(url), location).toExternalForm(); // Deal with relative URLs
             }
-        } catch (IOException e) {
+        } catch (IOException | SecurityException e) {
             // io error
             AndroidUtils.assertError("Network error while checking url", e);
             message = getActivity().getString(R.string.mStatus_ioerror, e.getMessage());

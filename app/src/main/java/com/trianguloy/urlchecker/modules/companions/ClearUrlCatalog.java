@@ -289,7 +289,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         String rawRules;
         try {
             rawRules = HttpUtils.readFromUrl(catalogURL.get());
-        } catch (IOException e) {
+        } catch (IOException | SecurityException e) {
             AndroidUtils.assertError("Unable to get remote catalog", e);
             return R.string.mClear_urlError;
         }
@@ -301,7 +301,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
             String hash;
             try {
                 hash = HttpUtils.readFromUrl(hashURL.get()).trim();
-            } catch (IOException e) {
+            } catch (IOException | SecurityException e) {
                 AndroidUtils.assertError("Unable to fetch remote hash", e);
                 return R.string.mClear_hashError;
             }

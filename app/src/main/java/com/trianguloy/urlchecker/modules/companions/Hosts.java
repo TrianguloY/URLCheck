@@ -108,7 +108,7 @@ public class Hosts {
                         add(hosts.getString(i), Pair.create(label, color), replace);
                     }
                 }
-            } catch (JSONException | IOException e) {
+            } catch (JSONException | IOException | SecurityException e) {
                 AndroidUtils.assertError("Exception while trying to build database from entry", e);
             }
             progress.increaseProgress();
