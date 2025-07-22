@@ -14,9 +14,7 @@ import com.trianguloy.urlchecker.modules.DescriptionConfig;
 import com.trianguloy.urlchecker.modules.companions.VersionManager;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
-/**
- * This module will show a message if the app was updated.
- */
+/** This module will show a message if the app was updated. */
 public class ChangeLogModule extends AModuleData {
 
     @Override

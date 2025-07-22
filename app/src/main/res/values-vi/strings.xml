@@ -5,10 +5,10 @@
     <string name="a_modules">Mô-đun</string>
     <string name="a_settings">Thiết đặt</string>
     <string name="a_about">Giới thiệu</string>
-    <string name="txt_about">Ứng dụng được tạo bởi TrianguloY.
+    <string name="txt_about">Ứng dụng được tạo bởi %1$s.
 \n
-\nĐóng góp: %1$s.
-\nBản dịch: %2$s.</string>
+\nĐóng góp: %2$s.
+\nBản dịch: %3$s.</string>
     <string name="link_changelog">Nhật ký thay đổi</string>
     <string name="link_source">Mã nguồn</string>
     <string name="link_privacy">Chính sách bảo mật</string>
@@ -32,7 +32,6 @@
     <string name="btn_backupRestore">Sao lưu / Khôi phục</string>
     <string name="bck_mn_advanced">Hiển thị tùy chọn nâng cao</string>
     <string name="btn_backup">Sao lưu</string>
-    <string name="btn_replace">Thay thế</string>
     <string name="btn_restore">Khôi phục</string>
     <string name="bkp_data_prefs">Tùy chọn: Dữ liệu được lưu dưới dạng tùy chọn.</string>
     <string name="bkp_data_files">Tệp: Dữ liệu được lưu dưới dạng tệp.</string>
@@ -98,8 +97,8 @@
     <string name="bkp_secrets">Bí mật: Dữ liệu được coi là \'bí mật\', như khóa api VirusTotal hoặc nhật ký.</string>
     <string name="bjp_cache">Bộ đệm: Dữ liệu có thể dễ dàng tải xuống/tạo, như cơ sở dữ liệu máy chủ. Kích hoạt tùy chọn này có thể làm tăng đáng kể kích thước bản sao lưu.</string>
     <string name="mVT_tm">VirusTotal™ là một nhãn hiệu của Google, Inc.</string>
-    <string name="mClear_tm">Danh mục tích hợp được sao chép từ ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
-    <string name="mVT_desc">Khi mô-đun này được bật, bạn có thể quét URL bằng VirusTotal và kiểm tra báo cáo. Cần có khóa API VirusTotal cá nhân để nó hoạt động, bạn có thể nhận một khóa sau khi đăng ký tài khoản miễn phí tại đây: https://www.virustotal.com/gui/join-us.</string>
+    <string name="mClear_tm">Danh mục tích hợp được sao chép từ ClearURLs: %s</string>
+    <string name="mVT_desc">Khi mô-đun này được bật, bạn có thể quét URL bằng VirusTotal và kiểm tra báo cáo. Cần có khóa API VirusTotal cá nhân để nó hoạt động, bạn có thể nhận một khóa sau khi đăng ký tài khoản miễn phí tại đây: %s.</string>
     <string name="mOpen_perDomain">Sắp xếp các tên miền khác nhau một cách độc lập</string>
     <string name="mOpen_noReferrer">Ẩn ứng dụng nguồn (người giới thiệu)</string>
     <string name="mOpen_rejected">Ẩn ứng dụng nếu URL bị từ chối (ứng dụng ngay lập tức yêu cầu mở cùng một URL mà nó đã được mở). Không ảnh hưởng đến việc chia sẻ.</string>
@@ -112,20 +111,11 @@
     <string name="mStatus_recheck">Kiểm tra</string>
     <string name="mStatus_checking">Đang kiểm tra…</string>
     <string name="mHist_desc">Khi URL được chỉnh sửa theo cách thủ công hoặc bằng các mô-đun khác, URL này cho phép bạn xem và hoàn nguyên các thay đổi.</string>
-    <string name="mPttrn_editor">Tại đây bạn có thể chỉnh sửa hoặc thêm mẫu mới. Định dạng:
-\n- \'encode\': boolean: đặt thành true để mã hóa url trước khi kiểm tra biểu thức chính quy.
-\n- \'regex\': chuỗi, bắt buộc: một biểu thức chính quy java hợp lệ mà url phải khớp, nếu không mẫu sẽ bị bỏ qua.
-\n- \'excludeRegex\': string: nếu được cung cấp, một biểu thức chính quy java hợp lệ mà url không được khớp, nếu không mẫu sẽ bị bỏ qua.
-\n- \'replacement\': string|list: nếu được cung cấp, nút \'sửa\' sẽ chạy \'url=url.replaceAll(regex,replacement)\'. Nếu có danh sách, sự thay thế sẽ là một phần tử ngẫu nhiên từ nó.
-\n- \'decode\': boolean: đặt thành true để giải mã url được thay thế.
-\n- \'tự động\': boolean: đặt thành true để tự động áp dụng mẫu.
-\n- \'enabled\': boolean: đặt thành false để tắt mẫu.
-\nLưu ý: nếu bạn chỉnh sửa các mẫu, các mẫu tích hợp mới từ bản cập nhật ứng dụng sẽ không được thêm tự động (bạn có thể khôi phục chúng bằng tùy chọn đặt lại).</string>
+    <string name="mPttrn_editor">Tại đây bạn có thể chỉnh sửa hoặc thêm mẫu mới. Định dạng: \n- \'encode\': boolean: đặt thành true để mã hóa url trước khi kiểm tra biểu thức chính quy. \n- \'regex\': chuỗi: một biểu thức chính quy java hợp lệ mà url phải khớp, nếu không mẫu sẽ bị bỏ qua. \n- \'excludeRegex\': string: nếu được cung cấp, một biểu thức chính quy java hợp lệ mà url không được khớp, nếu không mẫu sẽ bị bỏ qua. \n- \'replacement\': string|list: nếu được cung cấp, nút \'sửa\' sẽ chạy \'url=url.replaceAll(regex,replacement)\'. Nếu có danh sách, sự thay thế sẽ là một phần tử ngẫu nhiên từ nó. \n- \'decode\': boolean: đặt thành true để giải mã url được thay thế. \n- \'tự động\': boolean: đặt thành true để tự động áp dụng mẫu. \n- \'enabled\': boolean: đặt thành false để tắt mẫu. \nLưu ý: nếu bạn chỉnh sửa các mẫu, các mẫu tích hợp mới từ bản cập nhật ứng dụng sẽ không được thêm tự động (bạn có thể khôi phục chúng bằng tùy chọn đặt lại).</string>
     <string name="mVT_cancel">Hủy</string>
     <string name="mVT_warningUrl">Cảnh báo, công cụ %1$d/%2$d đã phát hiện ra URL (kể từ ngày %3$s)</string>
     <string name="mVT_badUrl">Cẩn thận! Công cụ %1$d/%2$d đã phát hiện thấy URL (kể từ ngày %3$s)</string>
-    <string name="mVT_connectError">Không thể kết nối với VirusTotal. Đảm bảo bạn đã kết nối với Internet hoặc thử lại sau.</string>
-    <string name="mVT_jsonError">Không thể kết nối với VirusTotal. Đảm bảo khóa API hợp lệ hoặc thử lại sau.</string>
+    <string name="mVT_error">Không thể kết nối với VirusTotal. Đảm bảo khóa API hợp lệ hoặc thử lại sau.</string>
     <string name="mD_name">Mô-đun gỡ lỗi/đánh dấu</string>
     <string name="mD_desc">Nếu bạn sắp xếp lại các mô-đun, những mô-đun mới được thêm vào trong các bản cập nhật trong tương lai sẽ được đặt phía trên mô-đun này.
 \n
@@ -137,7 +127,7 @@
     <string name="mClear_desc">Mô-đun này loại bỏ theo dõi, liên kết giới thiệu và các tham số vô dụng khác khỏi URL. Nó cũng cho phép chuyển hướng URL ngoại tuyến phổ biến.</string>
     <string name="mClear_clear">Áp dụng</string>
     <string name="mClear_name">Trình dọn dẹp URL</string>
-    <string name="link_blog">TrianguloY\'s blog</string>
+    <string name="link_blog">%s\'s blog</string>
     <string name="bkp_description">Chọn những phần tử cần sao lưu/khôi phục.
 \nKhi khôi phục, nếu bản sao lưu được tạo mà không có nó thì bản sao lưu hiện có sẽ được giữ lại.</string>
     <string name="bck_chooseFile">Chọn tệp sao lưu</string>
@@ -155,7 +145,6 @@
     <string name="clear">Dọn</string>
     <string name="auto">Tự động</string>
     <string name="alwaysOn">Luôn mở</string>
-    <string name="title_choose">Chọn ứng dụng</string>
     <string name="invalid">Không hợp lệ</string>
     <string name="save">Lưu</string>
     <string name="toast_noApp">Không thể mở ứng dụng</string>
@@ -235,9 +224,9 @@
     <string name="mLog_empty">Không có dữ liệu</string>
     <string name="mLog_limit">Số lượng mục tối đa cần giữ. Giá trị đề xuất: 100. Đặt trống để không giới hạn</string>
     <string name="mHosts_name">Trình gắn nhãn máy chủ</string>
-    <string name="mHosts_desc">Mô-đun này gắn nhãn các máy chủ, được định cấu hình bằng cách chỉ định chúng theo cách thủ công hoặc bằng cách sử dụng tệp giống như máy chủ từ xa. Bạn có thể sử dụng nó để cảnh báo về các trang web nguy hiểm hoặc đặc biệt. Cấu hình dựng sẵn chỉ định máy chủ của StevenBlack (phần mềm quảng cáo/phần mềm độc hại, tin giả, cờ bạc và nội dung người lớn) từ https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">Mô-đun này gắn nhãn các máy chủ, được định cấu hình bằng cách chỉ định chúng theo cách thủ công hoặc bằng cách sử dụng tệp giống như máy chủ từ xa. Bạn có thể sử dụng nó để cảnh báo về các trang web nguy hiểm hoặc đặc biệt. Cấu hình dựng sẵn chỉ định máy chủ của StevenBlack (phần mềm quảng cáo/phần mềm độc hại, tin giả, cờ bạc và nội dung người lớn) từ %s</string>
     <string name="mHosts_buildDesc">Thao tác này sẽ xóa cơ sở dữ liệu máy chủ hiện tại và xây dựng nó với cấu hình hiện tại, tải xuống các tệp máy chủ từ internet nếu được yêu cầu. Hành động này có thể mất vài giây. Tiếp tục?</string>
-    <string name="mUnshort_desc">Mô-đun này sẽ giải rút ngắn các liên kết bằng cách gửi chúng đến https://unshorten.me/, nơi đánh giá chúng trên máy chủ của họ và lưu chuyển hướng cho các yêu cầu trong tương lai. Tránh giải rút ngắn các liên kết có dữ liệu riêng tư hoặc nhạy cảm.
+    <string name="mUnshort_desc">Mô-đun này sẽ giải rút ngắn các liên kết bằng cách gửi chúng đến %s, nơi đánh giá chúng trên máy chủ của họ và lưu chuyển hướng cho các yêu cầu trong tương lai. Tránh giải rút ngắn các liên kết có dữ liệu riêng tư hoặc nhạy cảm.
 \nAPI của họ bị giới hạn tốc độ ở 10 yêu cầu mỗi giờ đối với các lần kiểm tra mới. Phản hồi của mô-đun sẽ hiển thị số lượng yêu cầu bạn đang chờ xử lý.</string>
     <string name="mClear_hashDesc">URL của danh mục tệp băm. Nếu bị bỏ qua, nội dung tải xuống sẽ không được kiểm tra xem liệu nó có bị giả mạo/sửa đổi (không khuyến nghị)</string>
     <string name="mClear_matches">Phù hợp %s</string>
@@ -256,7 +245,7 @@
     <string name="mClear_hashHint">Không kiểm tra băm</string>
     <string name="mClear_updateNow">Cập nhật ngay</string>
     <string name="mClear_restore">Khôi phục đường dẫn ClearURLs</string>
-    <string name="mClear_editor">Quy tắc danh mục: Chúng phải tuân theo định dạng từ https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Quy tắc danh mục: Chúng phải tuân theo định dạng từ %s.
 \nLưu ý rằng mọi sửa đổi đối với đối tượng gốc \'nhà cung cấp\' sẽ bị ghi đè nếu danh mục được cập nhật tự động hoặc thủ công từ hộp thoại trình cập nhật. Để có các quy tắc cá nhân, hãy đặt chúng trong một đối tượng cha khác (bất kỳ tên nào).</string>
     <string name="mRemove_name">Máy xóa truy vấn</string>
     <string name="mRemove_desc">[KHÔNG DÙNG NỮA] Với mô-đun này, bạn có thể xóa truy vấn khỏi URL.

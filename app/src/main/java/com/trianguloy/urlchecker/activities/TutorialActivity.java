@@ -109,9 +109,7 @@ public class TutorialActivity extends Activity {
 
     /* ------------------- actions ------------------- */
 
-    /**
-     * Updates the buttons and index texts
-     */
+    /** Updates the buttons and index texts */
     private void updateButtons() {
         var current = flipper.getDisplayedChild();
         var max = flipper.getChildCount();
@@ -122,9 +120,7 @@ public class TutorialActivity extends Activity {
         pageIndexText.setText(String.format(Locale.getDefault(), "%d/%d", current + 1, max));
     }
 
-    /**
-     * Marks the tutorial as completed and exits
-     */
+    /** Marks the tutorial as completed and exits */
     private void exit() {
         tutorialDone.set(true);
         this.finish();

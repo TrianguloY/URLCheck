@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
     <string name="translators">Metezd;symbuzzer</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Türkçe</string>
     <!--
         main
@@ -20,11 +24,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"Uygulama TrianguloY tarafından geliştirilmiştir.
+    <string name="txt_about">"Uygulama %1$s tarafından geliştirilmiştir.
 
-Geliştiriciler: %1$s.
-Çeviriler: %2$s."</string>
-    <string name="link_blog">TrianguloY\'un blog sayfası</string>
+Geliştiriciler: %2$s.
+Çeviriler: %3$s."</string>
+    <string name="link_blog">%s\'un blog sayfası</string>
     <string name="link_changelog">Değişiklikler</string>
     <string name="link_source">Kaynak Kodu</string>
     <string name="link_privacy">Gizlilik Politikası</string>
@@ -84,7 +88,6 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     -->
     <string name="toast_noApp">Uygulama açılamıyor</string>
     <string name="toast_noBrowser">Tarayıcı açılamıyor</string>
-    <string name="title_choose">Uygulama seç</string>
     <string name="invalid">Geçersiz</string>
     <string name="save">Kaydet</string>
     <string name="reset">Sıfırla</string>
@@ -179,7 +182,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mInput_desc">Geçerli URL\'yi görüntüler. Düzenleme moduna girmek için bas.</string>
     <!-- -->
     <string name="mVT_name">URL Tarayıcı</string>
-    <string name="mVT_desc">Bu bileşen etkinleştirildiğinde, VirusTotal kullanarak URL\'yi tarayabilir ve raporu inceleyebilirsiniz. Bunun çalışması için kişisel bir VirusTotal API anahtarı gereklidir, buradan ücretsiz bir hesap için kayıt olduktan sonra bir tane alabilirsiniz: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Bu bileşen etkinleştirildiğinde, VirusTotal kullanarak URL\'yi tarayabilir ve raporu inceleyebilirsiniz. Bunun çalışması için kişisel bir VirusTotal API anahtarı gereklidir, buradan ücretsiz bir hesap için kayıt olduktan sonra bir tane alabilirsiniz: %s .</string>
     <string name="mVT_apiKey">API anahtarı</string>
     <string name="mVT_tm">VirusTotal™ Google, Inc. şirketinin ticari markasıdır.</string>
     <string name="mVT_scan">Tara</string>
@@ -188,8 +191,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mVT_goodUrl">Hiçbir %1$d motoru URL\'yi algılamadı (%2$s tarihi itibariyle)</string>
     <string name="mVT_warningUrl">Uyarı, %1$d/%2$d motorları URL\'yi algıladı (%3$s tarihi itibariyle)</string>
     <string name="mVT_badUrl">Dikkat! %1$d/%2$d motorları URL\'yi algıladı (%3$s tarihi itibariyle)</string>
-    <string name="mVT_connectError">VirusTotal\'a bağlanılamıyor. Aktif bir internet bağlantınız olduğundan emin olun veya daha sonra tekrar deneyin.</string>
-    <string name="mVT_jsonError">VirusTotal\'e bağlanılamıyor. API anahtarının geçerli olduğundan emin olun veya daha sonra tekrar deneyin.</string>
+    <string name="mVT_error">VirusTotal\'e bağlanılamıyor. API anahtarının geçerli olduğundan emin olun veya daha sonra tekrar deneyin.</string>
     <!-- -->
     <string name="mD_name">Hata Ayıklama/İşaretleyici modülü</string>
     <string name="mD_desc">Modülleri yeniden sıralarsanız, gelecekteki güncellemelerde eklenen yenileri bunun üzerine yerleştirilecektir.\n\nBunu etkinleştirirseniz, geliştiriciler için yararlı olan bazı dahili hata ayıklama verilerini (orijinal amaç uri gibi) görüntüler.\n\nMetin seçmek için basılı tutabilirsiniz.</string>
@@ -200,7 +202,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <!-- -->
     <string name="mClear_name">URL Temizleyici</string>
     <string name="mClear_desc">Bu modül URL\'den izleyici, yönlendirici ve diğer gereksiz parametreleri kaldırır. Ayrıca yaygın çevrimdışı URL yönlendirmelerine de izin verir.</string>
-    <string name="mClear_tm">https://docs.clearurls.xyz/latest/specs/rules/ adresindeki ClearURLs kataloğunu kullanır</string>
+    <string name="mClear_tm">%s adresindeki ClearURLs kataloğunu kullanır</string>
     <string name="mClear_clear">Uygula</string>
     <string name="mClear_matches">%s ile eşleşiyor</string>
     <string name="mClear_blocked">- ENGELLENDİ!</string>
@@ -231,7 +233,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mClear_hashError">Sağlama öğesi alınamıyor, URL\'nin geçerli olduğundan ve etkin bir bağlantınız olduğundan emin olun</string>
     <string name="mClear_hashMismatch">Hash\'ler eşleşmiyor, dosya değiştirilmiş olabilir. Kontrolü atlamak istiyorsanız hash URL\'sini kaldırın</string>
     <string name="mClear_restore">ClearUrl dosyalarını geri yükle</string>
-    <string name="mClear_editor">"Katalog kuralları: Şu formatı takip etmelidirler: https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Katalog kuralları: Şu formatı takip etmelidirler: %s.
 Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncellenirse, 'sağlayıcılar' üst nesnesinde yapılan tüm değişikliklerin üzerine yazılacağını unutmayın. Kişisel kurallara sahip olmak için onları farklı bir üst nesneye (herhangi bir ad) ayarlayın."</string>
     <!-- -->
     <string name="mRemove_name">Sorguları Kaldır</string>
@@ -254,7 +256,7 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="mLog_empty">Veri yok</string>
     <!-- -->
     <string name="mHosts_name">Hosts etiketleyici</string>
-    <string name="mHosts_desc">Bu modül, manuel olarak belirtilerek veya uzak ana bilgisayar benzeri bir dosya kullanılarak yapılandırılan ana bilgisayarları etiketler. Tehlikeli veya özel siteler hakkında uyarmak için kullanabilirsiniz. Yerleşik yapılandırma, StevenBlack\'in ana bilgisayarlarını (reklam yazılımı / kötü amaçlı yazılım, sahte haberler, kumar ve yetişkinlere yönelik içerik) https://github.com/StevenBlack/hosts adresinden belirtir. Not: alt alan adları da kontrol edilecektir, bu nedenle \'y.z\' girişi için \'x.y.z\' ve \'y.z\' algılanacaktır</string>
+    <string name="mHosts_desc">Bu modül, manuel olarak belirtilerek veya uzak ana bilgisayar benzeri bir dosya kullanılarak yapılandırılan ana bilgisayarları etiketler. Tehlikeli veya özel siteler hakkında uyarmak için kullanabilirsiniz. Yerleşik yapılandırma, StevenBlack\'in ana bilgisayarlarını (reklam yazılımı / kötü amaçlı yazılım, sahte haberler, kumar ve yetişkinlere yönelik içerik) %s adresinden belirtir. Not: alt alan adları da kontrol edilecektir, bu nedenle \'y.z\' girişi için \'x.y.z\' ve \'y.z\' algılanacaktır</string>
     <string name="mHosts_malware">reklam yazılımı/kötü amaçlı yazılım</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">etiket yok</string>
@@ -281,7 +283,7 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <!-- -->
     <string name="mUnshort_name">Kısaltma giderici</string>
     <string name="mUnshort_unshort">Kısaltmayı gider</string>
-    <string name="mUnshort_desc">Bu modül, bağlantıları sunucularında değerlendiren ve gelecekteki istekler için yeniden yönlendirmeyi kaydeden https://unshorten.me/ adresine göndererek bağlantıların kısaltmasını kaldıracaktır. Özel veya hassas veriler içeren bağlantıları kısaltmaktan kaçının.\nAPI\'leri yeni kontroller için saatte 10 istekle sınırlıdır. Modül yanıtı, bekleyen kaç isteğiniz olduğunu gösterecektir.</string>
+    <string name="mUnshort_desc">Bu modül, bağlantıları sunucularında değerlendiren ve gelecekteki istekler için yeniden yönlendirmeyi kaydeden %s adresine göndererek bağlantıların kısaltmasını kaldıracaktır. Özel veya hassas veriler içeren bağlantıları kısaltmaktan kaçının.\nAPI\'leri yeni kontroller için saatte 10 istekle sınırlıdır. Modül yanıtı, bekleyen kaç isteğiniz olduğunu gösterecektir.</string>
     <string name="mUnshort_tm">Unshorten.me tarafından unshorten.me ücretsiz API</string>
     <string name="mUnshort_checking">Kontrol ediliyor…</string>
     <string name="mUnshort_error">Sunucu hatası: %s</string>
@@ -326,7 +328,6 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="btn_restore">Geri Yükle</string>
     <string name="bck_mn_advanced">Gelişmiş seçenekleri göster</string>
     <string name="btn_backup">Yedekle</string>
-    <string name="btn_replace">Değiştir</string>
     <string name="btn_delete">Kaldır</string>
     <string name="bkp_data">Veri: Standart uygulama verileri. Etkinleştirilmiş modüller, json yapılandırmaları vb. gibi şeyler. Gizli bilgileri veya önbelleği içermez.</string>
     <string name="bkp_data_prefs">Tercihler: Tercihler olarak kaydedilen veriler.</string>
@@ -355,7 +356,6 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="mWebhook_url_hint">Web Kancası URL\'si</string>
     <string name="mWebhook_body_hint">Web Kanca\'sı içeriği</string>
     <string name="mWebhook_send">Web Kancası\'na gönder</string>
-    <string name="mWebhook_auto">URL\'leri otomatik olarak gönder</string>
     <string name="mWebhook_auto_send">Web Kancası\'na gönder</string>
     <string name="mWebhook_missing_config">Eksik Web Kancası url\'si veya içeriği</string>
     <string name="mWebhook_sending">Web kancasına gönderiliyor…</string>
@@ -376,7 +376,7 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="bjp_cache">Önbellek: Ana bilgisayarlar veritabanı gibi kolayca indirilebilen veya yeniden oluşturulabilen veriler. Bu seçeneğin etkinleştirilmesi, yedekleme boyutunu önemli ölçüde artırabilir.</string>
     <string name="bck_restoreDelete">Geri yüklemeden önce öğeleri sil. Varsayılan değerlerle bazı dosyalar ve tercihler mevcut olmayabilir, bu yüzden bu seçeneği devre dışı bırakmak, mevcut öğeleri yedekteki öğelerle beklenmedik şekillerde birleştirebilir. Ne yaptığınızı biliyorsanız devre dışı bırakın.</string>
     <string name="big">Büyük</string>
-    <string name="auto_editor">Otomasyon yapılandırması. Biçim: anahtarın benzersiz bir otomasyon adı olduğu ve içeriğin aşağıdaki değerleri içerdiği nesnelerin listesi:\n- \'regex\': string|list, zorunlu: otomasyonun çalışması için url\'nin eşleşmesi gereken geçerli bir java regex\'i. Liste ise, en az bir regex eşleşmelidir.\n- \'action\': string, zorunlu: çalıştırılacak otomasyonun anahtarı. Kullanılabilir tüm anahtarların bir listesi için aşağıya bakın.\n- \'enabled\': boolean, isteğe bağlı: false ise bu otomasyon atlanacaktır. Varsayılan olarak doğrudur.</string>
+    <string name="auto_editor">Otomasyon yapılandırması. Biçim: anahtarın benzersiz bir otomasyon adı olduğu ve içeriğin aşağıdaki değerleri içerdiği nesnelerin listesi:\n- \'regex\': string|list, zorunlu: otomasyonun çalışması için url\'nin eşleşmesi gereken geçerli bir java regex\'i. Liste ise, en az bir regex eşleşmelidir.\n- \'action\': string|list, zorunlu: çalıştırılacak otomasyonun anahtarı. Kullanılabilir tüm anahtarların bir listesi için aşağıya bakın.\n- \'enabled\': boolean, isteğe bağlı: false ise bu otomasyon atlanacaktır. Varsayılan olarak doğrudur.</string>
     <string name="mWebhook_desc">Bu modül, yapılandırılmış bir webhook uç noktasına URL\'ler gönderir. Her URL bir zaman damgası ile gönderilir ve URL\'leri kendi sunucunuzda toplamanıza ve işlemenize olanak tanır.\nFikir ve temel uygulama için anoop-b\'ye teşekkürler!\n\nURL\'leri göndermeye başlamak için webhook URL\'nizi ve gövdesini aşağıda yapılandırın.\nGövde için $URL$ ve $TIMESTAMP$ yer tutucularını kullanabilirsiniz.</string>
     <string name="mD_show">Hata ayıklama verilerini yükle</string>
     <string name="a_automations">Otomasyonlar</string>

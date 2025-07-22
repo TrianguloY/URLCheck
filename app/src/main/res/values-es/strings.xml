@@ -7,7 +7,9 @@
     <string name="translators">TrianguloY; PabloOQ</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish' -->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Español</string>
     <!--
         main
@@ -20,11 +22,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"Aplicación creada por TrianguloY.
+    <string name="txt_about">"Aplicación creada por %1$s.
 
-Contribuciones: %1$s.
-Traducciones: %2$s."</string>
-    <string name="link_blog">Blog de TrianguloY</string>
+Contribuciones: %2$s.
+Traducciones: %3$s."</string>
+    <string name="link_blog">Blog de %s</string>
     <string name="link_changelog">Cambios</string>
     <string name="link_source">Código fuente</string>
     <string name="link_privacy">Política de privacidad</string>
@@ -56,6 +58,7 @@ Traducciones: %2$s."</string>
     <string name="spin_dynamicWidth">Dinámico</string>
     <string name="txt_locale">Idioma:</string>
     <string name="txt_animation">Activar animaciones</string>
+    <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre al mantener pulsado texto en un cuadro de entrada)</string>
     <!--
         generic
     -->
@@ -84,7 +87,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="btn_tutorialEnd">Terminar tutorial</string>
     <string name="toast_noApp">No se puede abrir la aplicación</string>
     <string name="toast_noBrowser">No se puede abrir el navegador</string>
-    <string name="title_choose">Elige aplicación</string>
     <string name="invalid">Invalido</string>
     <string name="save">Guardar</string>
     <string name="reset">Reiniciar</string>
@@ -99,6 +101,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="small">Pequeño</string>
     <string name="normal">Normal</string>
     <string name="big">Grande</string>
+    <string name="format">Formatear</string>
+    <string name="discard">Descartar</string>
     <!--
         json
     -->
@@ -123,11 +127,11 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
     <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
-    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista, obligatorio: una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular.\n- \'acción\': cadena, obligatoria: la clave de la automatización que se va a ejecutar. A continuación, se muestra una lista de todas las claves disponibles.\n- \'enabled\': booleano, opcional: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
+    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista: si existe, una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular. Si se omite, todas las URL coincidirán.\n\- \'excludeRegex\': cadena|lista: si existe, una expresión regular de Java válida que la URL no debe coincidir para que se ejecute la automatización. Si es una lista, ninguna expresión regular debe coincidir. Si se omite, ninguna url se excluirá.\n- \'referrer\': cadena|lista: si existe, el referrer (la aplicación que abrió el enlace) debe coincidir de forma exacta. Si es una lista, el referrer debe ser uno de los valores. Si se omite, todas las URL coincidirán. Puedes usar el módulo de debug para comprobar el valor actual.\n- \'action\': cadena|lista, obligatoria: la clave de la automatización que se va a ejecutar. En caso de varias se ejecutarán en order. A continuación, se muestra una lista de todas las claves disponibles.\n- \'args\', objeto: valores que la acción puede necesitar, revisa la descripción de cada acción para los valores que aceptan. Ejemplo: { …, \"args\": { \"text\": \"ejemplo\" } }\n- \'stop\': booleano: si es verdadero, ninguna automatización más se ejecutará para la URL actual. Falso por defecto.\n- \'enabled\': booleano: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
     <string name="auto_available_prefix">Claves de automatizaciones disponibles:</string>
     <string name="auto_available_disabled">"Este módulo está deshabilitado, las automatizaciones no se ejecutarán"</string>
     <!-- -->
-    <string name="auto_open">"Abrirá el enlace con la primera aplicación disponible. Equivalente a pulsar el boton 'abrir'."</string>
+    <string name="auto_open">"Abrirá el enlace. Si no se proporcionan 'args' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los 'args': 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
     <string name="auto_share">"Compartirá el enlace. Equivalente a pulsar el botón de compartir."</string>
     <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
     <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
@@ -136,6 +140,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_unshort">Ejecutará el proceso de desacortar enlace. Equivalente a pulsar el botón de \'desacortar\'.</string>
     <string name="auto_scan">Escaneará el enlace. Equivalente a pulsar el botón \'escanear\'.</string>
     <string name="auto_drawer">"Abrirá el cajón. Equivalente a pulsar el boton del cajón cuando está cerrado."</string>
+    <string name="auto_toast">Muestra un mensaje temporal con un texto fijo. El texo se provee como un \'args\' llamado \'text\'.</string>
     <!--
         modules
     -->
@@ -156,9 +161,9 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mPttrn_ok">No hay patrones coincidentes</string>
     <string name="mPttrn_editor">Aquí puedes editar o agregar un nuevo patrón. Formato:
 \n- \'encode\': boolean: establecido en verdadero para codificar la url antes de verificar la expresión regular.
-\n- \'regex\': string, requerida: una expresión regular de Java válida que la URL debe coincidir; de lo contrario, se omite el patrón.
-\n- \'excludeRegex\': string: si se proporciona, una expresión regular de Java válida y que la URL no debe coincidir; de lo contrario, se omite el patrón.
-\n- \'replacement\': string|list: si se proporciona, el botón \'fix\' ejecutará la \'url=url.replaceAll(regex,replacement)\'. Si está en la lista, el reemplazo será un elemento aleatorio de la misma.
+\n- \'regex\': string|lista: una expresión regular de Java válida que la URL debe coincidir; de lo contrario, se omite el patrón. Si es una lista, al menos un regex debe coincidir. Si no se proporciona, la url completa coincidirá.
+\n- \'excludeRegex\': string|lista: si se proporciona, una expresión regular de Java válida y que la URL no debe coincidir; de lo contrario, se omite el patrón. Si es una lista, y al menos un regex coincide, el pattern se omitirá.
+\n- \'replacement\': string|list: si se proporciona, el botón \'fix\' ejecutará la \'url=url.replaceAll(regex,replacement)\'. [si regex era lista, se usará el primer patrón en coincidir]. Si es una lista, el reemplazo será un elemento aleatorio de la misma.
 \n- \'decode\': boolean: establecido en verdadero para decodificar la url reemplazada.
 \n- \'automatic\': boolean: establecido en verdadero para aplicar automáticamente el patrón.
 \n- \'enabled\': boolean: establecido en falso para deshabilitar el patrón.
@@ -221,9 +226,11 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mInput_desc">Muestra la URL actual. Pulsa para editarla.</string>
     <!-- -->
     <string name="mVT_name">Escáneador de la URL</string>
-    <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>
     <string name="mVT_apiKey">Clave de la API</string>
+    <string name="mVT_checkKey">Comprobar</string>
     <string name="mVT_noKey">Falta la clave de la API</string>
+    <string name="mVT_validKey">Clave válida del usuario: %s</string>
     <string name="mVT_tm">VirusTotal™ es una marca registrada de Google, Inc.</string>
     <string name="mVT_scan">Escanear</string>
     <string name="mVT_cancel">Cancelar</string>
@@ -231,8 +238,13 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVT_goodUrl">Ninguno de los antivirus %1$d detectó la URL (a fecha %2$s)</string>
     <string name="mVT_warningUrl">Advertencia, %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
     <string name="mVT_badUrl">¡Cuidado! %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
-    <string name="mVT_connectError">No se puede conectar a VirusTotal. Asegúrese de que está conectado a Internet o inténtelo más tarde.</string>
-    <string name="mVT_jsonError">No se ha podido conectar con VirusTotal. Comprueba que la clave api es correcta o prueba mas tarde.</string>
+    <string name="mVT_error">No se ha podido obtener una respuesta válida de VirusTotal. Asegúrese de que la clave de la api es correcta y está conectado a Internet, o inténtelo mas tarde.</string>
+    <string name="mVt_title">Título:</string>
+    <string name="mVt_finalUrl">Url destino:</string>
+    <string name="mVt_reputation">Reputación:</string>
+    <string name="mVt_votes">Votos:</string>
+    <string name="mVt_categories">Categorías:</string>
+    <string name="mVt_detections">Detecciones:</string>
     <!-- -->
     <string name="mD_name">Módulo debug/marcador</string>
     <string name="mD_desc">Si reordenas los módulos, los nuevos que se añadan en futuras actualizaciones se colocarán encima de éste.
@@ -248,7 +260,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mClear_name">Limpiador de URLs</string>
     <string name="mClear_desc">Este módulo elimina el seguimiento, la referencia y otros parámetros inútiles de la URL. También permite redirecciones de URL sin conexión comunes.</string>
-    <string name="mClear_tm">Catálogo incluido copiado de ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Catálogo incluido copiado de ClearURLs: %s</string>
     <string name="mClear_clear">Aplicar</string>
     <string name="mClear_matches">%s detectado</string>
     <string name="mClear_blocked">- BLOQUEADO!</string>
@@ -279,7 +291,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mClear_hashError">No se ha podido descargar el hash, comprueba que la url es correcta y que tienes acceso a internet</string>
     <string name="mClear_hashMismatch">Los hash no coinciden, el archivo puede haber sido manipulado. Si desea omitir la comprobación, elimine la URL del hash</string>
     <string name="mClear_restore">Restaurar direcciones de ClearURLs</string>
-    <string name="mClear_editor">Catálogo de reglas: deben seguir el formato definido en https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Catálogo de reglas: deben seguir el formato definido en %s.
 \nTen en cuenta que las modificaciones del objeto principal \'providers\' serán sobreescritas al actualizar el catálogo automática o manualmente desde la ventana del actualizador. Para añadir reglas personales inclúyelas en un objeto padre distinto (cualquier nombre).</string>
     <!-- -->
     <string name="mRemove_name">Eliminador de parámetros</string>
@@ -298,7 +310,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mLog_empty">Sin datos</string>
     <!-- -->
     <string name="mHosts_name">Etiquetador de hosts</string>
-    <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de https://github.com/StevenBlack/hosts. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
+    <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de %s. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
+    <string name="mHosts_tm">Hosts de StevenBlack de %s</string>
     <string name="mHosts_malware">software dañino</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">sin etiqueta</string>
@@ -328,7 +341,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mUnshort_name">Desacortador</string>
     <string name="mUnshort_unshort">Desacortar</string>
-    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a https://unshorten.me/, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
+    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a %s, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
     <string name="mUnshort_tm">API gratuita de Unshorten.me</string>
     <string name="mUnshort_checking">Comprobando…</string>
     <string name="mUnshort_error">Error de servidor: %s</string>
@@ -375,7 +388,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="btn_backupRestore">Copia de seguridad y restauración</string>
     <string name="bck_mn_advanced">Mostrar opciones avanzadas</string>
     <string name="btn_backup">Hacer copia</string>
-    <string name="btn_replace">Reemplazar</string>
     <string name="btn_restore">Restaurar</string>
     <string name="btn_delete">Borrar</string>
     <string name="bkp_description">Elige los elementos para hacer copia/restaurar.\nAl restaurar, si la copia se creó sin ellos, los existentes se mantendrán.</string>
@@ -402,6 +414,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="bck_deleteError">No se han podido borrar los elementos</string>
     <string name="auto_rule_bitly">Bit.ly no abreviado</string>
     <string name="auto_rule_webhook">Enviar todo al webhook</string>
+    <string name="auto_rule_toast">Ejemplo \'toast\'</string>
     <string name="auto_clear">Limpiará la URL. Equivale a presionar el botón \"Borrar\". Tenga en cuenta que el módulo en sí contiene una configuración automática que también borrará todas las URL de manera más eficiente y debería ser la preferida.</string>
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_auto_send">Enviar a webhook</string>
@@ -409,12 +422,11 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mWebhook_url_hint">Url del webhook</string>
     <string name="mWebhook_body_hint">Cuerpo webhook</string>
     <string name="mWebhook_send">Enviar a webhook</string>
-    <string name="mWebhook_auto">Enviar URL automáticamente</string>
     <string name="mWebhook_missing_config">Falta la URL o el cuerpo del webhook</string>
     <string name="mWebhook_success">Envío a webhook correctamente</string>
     <string name="mWebhook_error">Error al enviar a webhook</string>
     <string name="mWebhook_templates">Plantillas</string>
     <string name="mWebhook_test">Probar webhook</string>
-    <string name="mWebhook_desc">Este módulo envía URLs a un punto final webhook configurado. Cada URL es enviada con una marca de tiempo, permitiéndole recolectar y procesar URLs en su propio servidor.\n¡Gracias a anoop-b por la idea y la implementación base!\n\nConfigura la URL y el cuerpo de tu webhook para empezar a enviar URLs.\nPara el cuerpo, puedes usar los marcadores de posición $URL$ y $TIMESTAMP$.</string>
+    <string name="mWebhook_desc">Este módulo envía URLs a un punto final webhook configurado. Cada URL es enviada con una marca de tiempo, permitiéndole recolectar y procesar URLs en su propio servidor.\n¡Gracias a anoop-b por la idea y la implementación base!\n\nConfigura la URL y el cuerpo de tu webhook para empezar a enviar URLs.\nPara el cuerpo, puedes usar los marcadores de posición $URL$, $TIMESTAMP$ y $REFERRER$.</string>
     <string name="mWebhook_sending">Enviando a webhook…</string>
 </resources>

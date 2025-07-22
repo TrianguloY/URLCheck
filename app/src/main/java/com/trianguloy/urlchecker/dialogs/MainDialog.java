@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.dialogs;
 
+import static com.trianguloy.urlchecker.activities.SettingsActivity.SYNC_PROCESSTEXT_PREF;
 import static com.trianguloy.urlchecker.activities.SettingsActivity.WIDTH_PREF;
 
 import android.animation.ObjectAnimator;
@@ -7,6 +8,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.view.View;
@@ -31,7 +33,10 @@ import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,14 +45,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * The main dialog, when opening a url
- */
+/** The main dialog, when opening a url */
 public class MainDialog extends Activity {
 
-    /**
-     * Maximum number of updates to avoid loops
-     */
+    /** Maximum number of updates to avoid loops */
     private static final int MAX_UPDATES = 100;
 
     // ------------------- helpers -------------------
@@ -56,36 +57,24 @@ public class MainDialog extends Activity {
 
     // ------------------- data -------------------
 
-    /**
-     * All active modules
-     */
+    /** All active modules */
     private final Map<AModuleDialog, List<View>> modules = new HashMap<>();
 
-    /**
-     * Global data to keep even if the url changes
-     */
+    /** Global data to keep even if the url changes */
     public final Map<String, String> globalData = new HashMap<>();
 
-    /**
-     * Available automations
-     */
-    private final Map<String, Runnable> automations = new ArrayMap<>();
+    /** Available automations */
+    private final Map<String, Consumer<JSONObject>> automations = new ArrayMap<>();
 
-    /**
-     * The current url
-     */
+    /** The current url */
     private UrlData urlData = new UrlData("");
 
-    /**
-     * Currently in the process of updating.
-     */
+    /** Currently in the process of updating. */
     private int updating = 0;
 
     // ------------------- module functions -------------------
 
-    /**
-     * Something wants to set a new url.
-     */
+    /** Something wants to set a new url. */
     public void onNewUrl(UrlData newUrlData) {
         // mark as next if nothing else yet
         if (updating != 0) {
@@ -155,31 +144,44 @@ public class MainDialog extends Activity {
                 // skip own if required
                 if (!urlData.triggerOwn && module == urlData.trigger) continue;
                 try {
-                    module.onFinishUrl(urlData);
+                    module.onFinishUrl();
                 } catch (Exception e) {
                     AndroidUtils.assertError("Exception in onFinishUrl for module " + module.getClass().getName(), e);
                 }
             }
 
             // fifth run automations
+            // bug: you can't run automations that modify the url, maybe it's time to implement a proper url queue
             if (automationRules.automationsEnabledPref.get()) {
-                for (var automationKey : automationRules.check(urlData)) {
-                    var action = automations.get(automationKey);
-                    if (action == null) {
-                        if (automationRules.automationsShowErrorToast.get()) {
-                            Toast.makeText(this, getString(R.string.auto_notFound, automationKey), Toast.LENGTH_LONG).show();
+                for (var matchedAutomation : automationRules.check(urlData, this)) {
+                    for (var automationKey : matchedAutomation.actions()) {
+                        var action = automations.get(automationKey);
+                        if (action == null) {
+                            if (automationRules.automationsShowErrorToast.get()) {
+                                Toast.makeText(this, getString(R.string.auto_notFound, automationKey), Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            try {
+                                action.accept(matchedAutomation.args());
+                            } catch (Exception e) {
+                                AndroidUtils.assertError("Exception while running automation " + automationKey, e);
+                            }
                         }
-                    } else {
-                        try {
-                            action.run();
-                        } catch (Exception e) {
-                            AndroidUtils.assertError("Exception while running automation " + automationKey, e);
-                        }
+                    }
+                    if (matchedAutomation.stop()) {
+                        break;
                     }
                 }
             }
 
             break;
+        }
+
+        // if in text_process mode, update text unless disabled
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                && SYNC_PROCESSTEXT_PREF(this).get()
+                && !getIntent().getBooleanExtra(Intent.EXTRA_PROCESS_TEXT_READONLY, true)) {
+            setResult(RESULT_OK, new Intent().putExtra(Intent.EXTRA_PROCESS_TEXT, urlData.url));
         }
 
         // end, reset
@@ -191,9 +193,7 @@ public class MainDialog extends Activity {
         return urlData;
     }
 
-    /**
-     * Changes a module visibility
-     */
+    /** Changes a module visibility */
     public void setModuleVisibility(AModuleDialog module, boolean visible) {
         var views = modules.get(module);
         if (views == null) {
@@ -268,9 +268,7 @@ public class MainDialog extends Activity {
         }
     }
 
-    /**
-     * Initializes the modules
-     */
+    /** Initializes the modules */
     private void initializeModules() {
         modules.clear();
         ll_main.removeAllViews();
@@ -347,7 +345,7 @@ public class MainDialog extends Activity {
                     if (BuildConfig.DEBUG && automations.containsKey(automation.key())) {
                         AndroidUtils.assertError("There is already an automation with key " + automation.key() + "!");
                     }
-                    automations.put(automation.key(), () -> automation.action().accept(module));
+                    automations.put(automation.key(), args -> automation.action().accept(module, args));
                 }
             }
         } catch (Exception e) {
@@ -356,16 +354,12 @@ public class MainDialog extends Activity {
         }
     }
 
-    /**
-     * Adds a separator component to the list of mods
-     */
+    /** Adds a separator component to the list of mods */
     private View addSeparator(LinearLayout ll) {
         return Inflater.inflate(R.layout.separator, ll);
     }
 
-    /**
-     * Returns the url that this activity was opened with (intent uri or sent text)
-     */
+    /** Returns the url that this activity was opened with (intent uri or sent text) */
     private Set<String> getOpenUrl() {
         // get the intent
         var intent = getIntent();
@@ -380,6 +374,10 @@ public class MainDialog extends Activity {
             var links = AndroidUtils.getLinksFromText(sharedText);
             if (links.isEmpty()) links.add(sharedText.trim()); // no links? just use the whole text, the user requested the app so...
             return links;
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Intent.ACTION_PROCESS_TEXT.equals(action)) {
+            // process text
+            var text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
+            return text == null ? Collections.emptySet() : Set.of(text.toString());
         } else {
             // other, check data
             var uri = intent.getData();
@@ -413,9 +411,7 @@ public class MainDialog extends Activity {
 
     /* ------------------- its a secret! ------------------- */
 
-    /**
-     * To be set when there is no module displayed
-     */
+    /** To be set when there is no module displayed */
     private View egg() {
         var frame = new FrameLayout(this);
 

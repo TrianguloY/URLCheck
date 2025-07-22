@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.MenuItem;
@@ -24,14 +25,17 @@ import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
 
 import java.util.Objects;
 
-/**
- * An activity with general app-related settings
- */
+/** An activity with general app-related settings */
 public class SettingsActivity extends Activity {
 
     /** The width pref */
     public static GenericPref.Int WIDTH_PREF(Context cntx) {
         return new GenericPref.Int("width", WindowManager.LayoutParams.WRAP_CONTENT, cntx);
+    }
+
+    /** The sync process-text pref */
+    public static GenericPref.Bool SYNC_PROCESSTEXT_PREF(Context cntx) {
+        return new GenericPref.Bool("syncProcessText", true, cntx);
     }
 
 
@@ -48,6 +52,12 @@ public class SettingsActivity extends Activity {
         configureTheme();
         configureLocale();
         Animations.ANIMATIONS(this).attachToSwitch(findViewById(R.id.animations));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            SYNC_PROCESSTEXT_PREF(this).attachToSwitch(findViewById(R.id.processText));
+        } else {
+            findViewById(R.id.processText).setVisibility(View.GONE);
+        }
 
         // if this was reloaded, some settings may have change, so reload previous one too
         if (AndroidSettings.wasReloaded(this)) AndroidSettings.markForReloading(this);
@@ -89,7 +99,7 @@ public class SettingsActivity extends Activity {
         );
 
         // init width seekBar
-        // 0      <-> wrap content
+        // 0      <-> WRAP_CONTENT
         // [1,99] <-> [1,99]
         // 100    <-> MATCH_PARENT
         WIDTH_PREF(this).attachToSeekBar(findViewById(R.id.width_value), findViewById(R.id.width_label),

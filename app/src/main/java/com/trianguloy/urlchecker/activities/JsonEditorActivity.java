@@ -17,6 +17,7 @@ import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.util.Objects;
 
@@ -100,7 +101,7 @@ public class JsonEditorActivity extends Activity {
         // validate
         JSONObject currentData;
         try {
-            currentData = new JSONObject(editor.getText().toString());
+            currentData = fixJsonObjectConstructor(editor.getText().toString());
         } catch (JSONException e) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.invalid)
@@ -145,7 +146,7 @@ public class JsonEditorActivity extends Activity {
     /** Formats the editor content, shows a dialog if invalid */
     private void format() {
         try {
-            editor.setText(new JSONObject(editor.getText().toString()).toString(INDENT_SPACES));
+            editor.setText(fixJsonObjectConstructor(editor.getText().toString()).toString(INDENT_SPACES));
         } catch (JSONException e) {
             // invalid json
             new AlertDialog.Builder(this)
@@ -180,7 +181,7 @@ public class JsonEditorActivity extends Activity {
     private void save() {
         String result;
         try {
-            result = provider.saveJson(new JSONObject(editor.getText().toString()));
+            result = provider.saveJson(fixJsonObjectConstructor(editor.getText().toString()));
         } catch (JSONException e) {
             // invalid json
             result = getString(R.string.json_format_error);
@@ -206,6 +207,16 @@ public class JsonEditorActivity extends Activity {
             // panic, don't format then
             return content.toString();
         }
+    }
+
+    /**
+     * new JsonObject(content) will ignore elements added after the object. This alternative will fail instead.
+     */
+    private static JSONObject fixJsonObjectConstructor(String content) throws JSONException {
+        var tokener = new JSONTokener(content);
+        var object = new JSONObject(tokener);
+        if (tokener.nextClean() != '\0') throw new JSONException("The input contains elements after the object");
+        return object;
     }
 
 }

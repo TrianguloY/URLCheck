@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
+
 import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
@@ -18,9 +20,7 @@ import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * This module checks for patterns characters in the url
- */
+/** This module checks for patterns characters in the url */
 public class HostsModule extends AModuleData {
 
     @Override
@@ -69,6 +69,8 @@ class HostsConfig extends AModuleConfig {
         views.findViewById(R.id.edit).setOnClickListener(v ->
                 hosts.showEditor()
         );
+
+        views.<TextView>findViewById(R.id.desc).setText(getStringWithPlaceholder(getActivity(), R.string.mHosts_desc, R.string.stevenBlack_url));
     }
 
 }
@@ -116,7 +118,7 @@ class HostsDialog extends AModuleDialog {
         try {
             host = new URL(url).getHost();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Invalid url", e);
             text.setText(R.string.mHosts_parseError);
             AndroidUtils.setRoundedColor(R.color.warning, text);
             setVisibility(true);
@@ -129,7 +131,7 @@ class HostsDialog extends AModuleDialog {
             try {
                 AndroidUtils.setRawRoundedColor(Color.parseColor(label.second), text);
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid color", e);
                 AndroidUtils.setRoundedColor(R.color.bad, text);
             }
             setVisibility(true);

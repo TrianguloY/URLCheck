@@ -9,7 +9,7 @@
     <string name="close">Sluit</string>
     <string name="toast_cantEnable">Kan de module niet inschakelen: %s</string>
     <string name="save">Opslaan</string>
-    <string name="mVT_desc">Wanneer deze module is ingeschakeld, kunt u de URL scannen met VirusTotal en het rapport controleren. Om te kunnen werken is een persoonlijke VirusTotal API-sleutel nodig. U kunt er een verkrijgen nadat u zich hier voor een gratis account heeft geregistreerd: https://www.virustotal.com/gui/join-us.</string>
+    <string name="mVT_desc">Wanneer deze module is ingeschakeld, kunt u de URL scannen met VirusTotal en het rapport controleren. Om te kunnen werken is een persoonlijke VirusTotal API-sleutel nodig. U kunt er een verkrijgen nadat u zich hier voor een gratis account heeft geregistreerd: %s.</string>
     <string name="reset">Reset</string>
     <string name="mPttrn_wrongSchemaHttp">Ongeldig hoofdlettergebruik van http-schema.</string>
     <string name="link_changelog">Wijzigingslog</string>
@@ -18,7 +18,6 @@
 \nDit is de tutorial, als je deze wilt overslaan, kun je dat doen met de onderstaande knop. Je kunt altijd terugkeren naar deze tutorial vanuit het instellingenmenu.</string>
     <string name="mClear_desc">Deze module verwijdert tracking, referrer en andere nutteloze parameters uit de URL. Het maakt ook algemene offline URL-omleidingen mogelijk.</string>
     <string name="btn_tutorialSettings">Herhaal tutorial</string>
-    <string name="mVT_connectError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat u verbonden bent met internet of probeer het later opnieuw.</string>
     <string name="mPttrn_regexfix">Optionele regex-groepen repareren (uitschakelen als regex niet correct werkt)</string>
     <string name="tutorial">Tutorial</string>
     <string name="toast_defaultSet">De app is nu de standaardwebbrowser</string>
@@ -59,7 +58,7 @@
     <string name="a_modules">Modules</string>
     <string name="mOpen_closeShare">Dialoogvenster sluiten na delen</string>
     <string name="txt_openLinks">Links openen in deze app: Android heeft in de loop der jaren de manier veranderd waarop het wordt geconfigureerd en verschilt per versie. Hieronder vindt u alle beschikbare instellingen voor uw apparaat. Als er geen links worden geopend in deze app, probeer ze dan allemaal.</string>
-    <string name="mClear_tm">Ingebouwde catalogus gekopieerd van ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Ingebouwde catalogus gekopieerd van ClearURLs: %s</string>
     <string name="back">Terug</string>
     <string name="hidden">Verborgen</string>
     <string name="mPttrn_desc">Deze module controleert de url met regex-patronen die vervangingen waarschuwen, voorstellen of toepassen. U kunt uw eigen patronen wijzigen of creëren, of zelfs door de gebruiker gemaakte patronen gebruiken.
@@ -85,19 +84,11 @@
 \n- Knop Openen: druk op de app-naam om de link in die app te openen. Als een link met meerdere apps kan worden geopend, wordt er een pijl weergegeven waarmee u kunt kiezen.
 \n- Knop Kopiëren: Druk op de knop om de link naar het klembord te kopiëren.
 \n- Deelknop: druk op de knop om de link te delen.</string>
-    <string name="link_blog">TrianguloY\'s blog</string>
+    <string name="link_blog">%s\'s blog</string>
     <string name="mClear_matches">Komt overeen met %s</string>
     <string name="mOpen_with">Openen met %s</string>
     <string name="mHist_desc">Wanneer de URL wordt bewerkt, handmatig of door andere modules, kunt u met deze module de wijzigingen bekijken en ongedaan maken.</string>
-    <string name="mPttrn_editor">Hier kunt u een nieuw patroon bewerken of toevoegen. Formaat:
-\n- \'encode\': boolean: ingesteld op true om de URL te coderen voordat regex wordt gecontroleerd.
-\n- \'regex\': string, vereist: een geldige Java-regex waaraan de url moet voldoen, anders wordt het patroon overgeslagen.
-\n- \'excludeRegex\': string: indien opgegeven, een geldige Java-regex waarvan de url niet mag overeenkomen, anders wordt het patroon overgeslagen.
-\n- \'replacement\': string|list: indien opgegeven, zal de \'fix\'-knop \'url=url.replaceAll(regex,replacement)\' uitvoeren. Als de lijst wordt weergegeven, zal vervanging een willekeurig element zijn.
-\n- \'decode\': boolean: ingesteld op true om de vervangen url te decoderen.
-\n- \'automatisch\': boolean: ingesteld op true om het patroon automatisch toe te passen.
-\n- \'enabled\': boolean: ingesteld op false om het patroon uit te schakelen.
-\nLet op: als je de patronen bewerkt, worden nieuwe ingebouwde patronen uit app-updates niet automatisch toegevoegd (je kunt ze herstellen met de reset-optie).</string>
+    <string name="mPttrn_editor">Hier kunt u een nieuw patroon bewerken of toevoegen. Formaat: \n- \'encode\': boolean: ingesteld op true om de URL te coderen voordat regex wordt gecontroleerd. \n- \'regex\': string: een geldige Java-regex waaraan de url moet voldoen, anders wordt het patroon overgeslagen. \n- \'excludeRegex\': string: indien opgegeven, een geldige Java-regex waarvan de url niet mag overeenkomen, anders wordt het patroon overgeslagen. \n- \'replacement\': string|list: indien opgegeven, zal de \'fix\'-knop \'url=url.replaceAll(regex,replacement)\' uitvoeren. Als de lijst wordt weergegeven, zal vervanging een willekeurig element zijn. \n- \'decode\': boolean: ingesteld op true om de vervangen url te decoderen. \n- \'automatisch\': boolean: ingesteld op true om het patroon automatisch toe te passen. \n- \'enabled\': boolean: ingesteld op false om het patroon uit te schakelen. \nLet op: als je de patronen bewerkt, worden nieuwe ingebouwde patronen uit app-updates niet automatisch toegevoegd (je kunt ze herstellen met de reset-optie).</string>
     <string name="mStatus_autoRedirect">Vervang omleidings-URL\'s automatisch</string>
     <string name="mOpen_ctabs">Aangepaste tabbladen:</string>
     <string name="btn_linksSettings">Open ondersteunde koppelingen</string>
@@ -106,10 +97,10 @@
     <string name="mOpen_closeOpen">Dialoogvenster sluiten na openen</string>
     <string name="btn_setBrowser">Stel in als standaard browser</string>
     <string name="btn_androidSettings">Instellingen voor Android</string>
-    <string name="txt_about">App gemaakt door TrianguloY.
+    <string name="txt_about">App gemaakt door %1$s.
 \n
-\nBijdragen: %1$s.
-\nVertalingen: %2$s.</string>
+\nBijdragen: %2$s.
+\nVertalingen: %3$s.</string>
     <string name="mD_ctabs">Toon foutopsporingsberichten van de service voor aangepaste tabbladen</string>
     <string name="txt_locale">Taal:</string>
     <string name="mVT_goodUrl">Geen van de %1$d-engines heeft de URL gedetecteerd (vanaf datum %2$s)</string>
@@ -133,7 +124,7 @@
     <string name="mClear_clear">Toepassen</string>
     <string name="mOpen_incognito">Incognito modus:</string>
     <string name="desc_decorations">Titel tonen/verbergen</string>
-    <string name="mVT_jsonError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
+    <string name="mVT_error">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
     <string name="auto">Automatisch</string>
     <string name="mInput_name">Voer tekst in</string>
     <string name="txt_tutorial2">De app fungeert als tussenpersoon bij het openen of delen van url-links. Zodra een URL naar de app is verzonden, kunt u ermee communiceren via de modules. Daarna kunt u de link openen (in de gewenste app), delen of naar het klembord kopiëren.</string>
@@ -161,7 +152,6 @@
     <string name="mOpen_open">Open</string>
     <string name="mHist_name">Geschiedenis</string>
     <string name="defaultOff">Standaard uitgeschakeld</string>
-    <string name="title_choose">Kies app</string>
     <string name="mPttrn_noSchemeHttps">Ontbrekend HTTPS-schema.</string>
     <string name="mStatus_checking">Controleren…</string>
     <string name="mVT_tm">VirusTotal™ is een handelsmerk van Google, Inc.</string>
@@ -187,7 +177,7 @@
 \nMet dank aan PabloOQ voor het idee en de originele uitvoering!
 \n
 \nDeze module is verouderd ten gunste van de module \'Uri-onderdelen\'</string>
-    <string name="mClear_editor">Catalogusregels: ze moeten het formaat volgen van https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Catalogusregels: ze moeten het formaat volgen van %s.
 \nHoud er rekening mee dat elke wijziging aan het bovenliggende object \'providers\' zal worden overschreven als de catalogus automatisch of handmatig wordt bijgewerkt vanuit het updatevenster. Als u persoonlijke regels wilt instellen, plaatst u deze in een ander bovenliggend object (willekeurige naam).</string>
     <string name="mLog_unlimited">Onbeperkt</string>
     <string name="mHosts_built">Database gebouwd: %d hosts</string>
@@ -233,7 +223,7 @@
     <string name="mRemove_empty">Verwijder leeg</string>
     <string name="mClear_urlError">Kan de regels niet ophalen. Controleer of de URL geldig is en of u een actieve verbinding heeft</string>
     <string name="mLog_limit">Maximaal aantal te behouden vermeldingen. Aanbevolen waarde: 100. Stel leeg in voor onbeperkt</string>
-    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar https://unshorten.me/ te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens.
+    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar %s te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens.
 \nHun API is beperkt tot 10 verzoeken per uur voor nieuwe cheques. Het moduleantwoord laat zien hoeveel verzoeken u in behandeling heeft.</string>
     <string name="mHosts_build">Build</string>
     <string name="mRemove_one">Verwijder %s</string>
@@ -268,13 +258,12 @@
     <string name="mFlags_name">Flags editor</string>
     <string name="mRemove_found1">1 zoekopdracht gevonden</string>
     <string name="mUnshort_tm">unshorten.me gratis API van Unshorten.me</string>
-    <string name="mHosts_desc">Deze module labelt hosts, geconfigureerd door ze handmatig te specificeren of door een remote hosts-achtig bestand te gebruiken. U kunt het gebruiken om te waarschuwen voor gevaarlijke of speciale sites. De ingebouwde configuratie specificeert StevenBlack\'s hosts (adware/malware, fakenews, gokken en inhoud voor volwassenen) van https://github.com/StevenBlack/hosts. Let op: subdomeinen worden ook gecontroleerd, dus \'x.y.z\' en \'y.z\' worden gedetecteerd voor de invoer \'y.z\'</string>
+    <string name="mHosts_desc">Deze module labelt hosts, geconfigureerd door ze handmatig te specificeren of door een remote hosts-achtig bestand te gebruiken. U kunt het gebruiken om te waarschuwen voor gevaarlijke of speciale sites. De ingebouwde configuratie specificeert StevenBlack\'s hosts (adware/malware, fakenews, gokken en inhoud voor volwassenen) van %s. Let op: subdomeinen worden ook gecontroleerd, dus \'x.y.z\' en \'y.z\' worden gedetecteerd voor de invoer \'y.z\'</string>
     <string name="mLog_edit">Logboek bewerken</string>
     <string name="mClear_hashDesc">URL van het catalogus-hashbestand. Als u dit weglaat, wordt de download niet gecontroleerd om te zien of er mee is geknoeid/gewijzigd (niet aanbevolen)</string>
     <string name="mClear_hashError">Kan de hash niet ophalen. Zorg ervoor dat de URL geldig is en dat u een actieve verbinding heeft</string>
     <string name="mClear_lastCheck">Laatste controle:</string>
     <string name="btn_backupRestore">Back-up/herstellen</string>
-    <string name="btn_replace">Vervangen</string>
     <string name="btn_delete">Verwijderen</string>
     <string name="bkp_description">Kies welke elementen je wil back-uppen of herstellen.
 \nAls je een element herstelt en er een back-up van is gemaakt, wordt die behouden.</string>
@@ -317,7 +306,7 @@
     <string name="auto_rule_webhook">Stuur alles naar webhook</string>
     <string name="auto_incognito">Zal incognito inschakelen. Gelijk aan het indrukken van de \'incognito\'-knop indien uitgeschakeld (zelfs indien verborgen).</string>
     <string name="auto_checkStatus">Zal de statuscontrole uitvoeren. Gelijk aan het indrukken van de \'Check\'-knop.</string>
-    <string name="auto_editor">Configuratie van automatiseringen. Formaat: lijst met objecten waarbij de sleutel een unieke automatiseringsnaam is en de inhoud de volgende waarden bevat:\n- \'regex\': string|lijst, vereist: een geldige Java-regex die aan de URL moet voldoen om de automatisering uit te voeren. Als lijst, moet er ten minste één regex overeenkomen.\n- \'actie\': string, vereist: de sleutel van de automatisering die moet worden uitgevoerd. Bekijk hieronder een lijst met alle beschikbare sleutels.\n- \'ingeschakeld\': booleaans, optioneel: als deze optie false is, wordt deze automatisering overgeslagen. Standaard true.</string>
+    <string name="auto_editor">Configuratie van automatiseringen. Formaat: lijst met objecten waarbij de sleutel een unieke automatiseringsnaam is en de inhoud de volgende waarden bevat:\n- \'regex\': string|lijst, vereist: een geldige Java-regex die aan de URL moet voldoen om de automatisering uit te voeren. Als lijst, moet er ten minste één regex overeenkomen.\n- \'actie\': string|lijst, vereist: de sleutel van de automatisering die moet worden uitgevoerd. Bekijk hieronder een lijst met alle beschikbare sleutels.\n- \'ingeschakeld\': booleaans, optioneel: als deze optie false is, wordt deze automatisering overgeslagen. Standaard true.</string>
     <string name="auto_ctabs">Zal ctabs inschakelen. Gelijk aan het indrukken van de \'ctabs\'-knop indien uitgeschakeld (zelfs indien verborgen).</string>
     <string name="auto_close">Sluit de applicatie en doe verder niets.</string>
     <string name="a_automations">Automatiseringen</string>

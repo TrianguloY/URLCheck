@@ -15,6 +15,7 @@
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autoLink="web"
             android:text="@string/json_info" />
     </ScrollView>
 
@@ -28,6 +29,7 @@
             android:id="@+id/data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="json"
             android:gravity="top"
             android:hint="@string/json_sample"
             android:inputType="textMultiLine" />

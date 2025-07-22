@@ -1,9 +1,11 @@
 package com.trianguloy.urlchecker.activities;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnticipateOvershootInterpolator;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.modules.AutomationRules;
@@ -31,6 +33,15 @@ public class AutomationActivity extends Activity {
 
         rules.automationsEnabledPref.attachToSwitch(findViewById(R.id.auto_enabled));
         rules.automationsShowErrorToast.attachToSwitch(findViewById(R.id.auto_error_toast));
+
+        // smaller easter egg
+        findViewById(R.id.icon).setOnClickListener(icon -> {
+            var anim = ValueAnimator.ofFloat(0, 360);
+            anim.addUpdateListener(valueAnimator -> icon.setRotation((float) valueAnimator.getAnimatedValue()));
+            anim.setInterpolator(new AnticipateOvershootInterpolator());
+            anim.setDuration(1000);
+            anim.start();
+        });
     }
 
     @Override

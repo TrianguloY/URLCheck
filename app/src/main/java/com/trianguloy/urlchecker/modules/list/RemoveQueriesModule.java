@@ -138,9 +138,7 @@ class RemoveQueriesDialog extends AModuleDialog {
         updateMoreIndicator();
     }
 
-    /**
-     * Sets the 'more' indicator.
-     */
+    /** Sets the 'more' indicator. */
     private void updateMoreIndicator() {
         info.setCompoundDrawablesRelativeWithIntrinsicBounds(
                 box.getChildCount() == 0 ? 0
@@ -149,17 +147,13 @@ class RemoveQueriesDialog extends AModuleDialog {
                 0, 0, 0);
     }
 
-    /**
-     * Manages the splitting, removing and merging of queries
-     */
+    /** Manages the splitting, removing and merging of queries */
     private static class UrlParts {
         private final String preQuery; // "http://google.com"
         private final List<String> queries = new ArrayList<>(); // ["ref=foo","bar"]
         private final String postQuery; // "#start"
 
-        /**
-         * Prepares a url and extracts its queries
-         */
+        /** Prepares a url and extracts its queries */
         public UrlParts(String url) {
             // an uri is defined as [scheme:][//authority][path][?query][#fragment]
             // we need to find a '?' followed by anything except a '#'
@@ -178,39 +172,24 @@ class RemoveQueriesDialog extends AModuleDialog {
             postQuery = url.substring(iEnd);
         }
 
-        /**
-         * returns the number of queries present
-         */
+        /** returns the number of queries present */
         public int queriesSize() {
             return queries.size();
         }
 
-        /**
-         * Returns the name of a query (by index)
-         */
+        /** Returns the name of a query (by index) */
         public String getQueryName(int index) {
             return splitFix(queries.get(index),"=").get(0);
         }
 
-        /**
-         * Returns the decoded value of a query (by index)
-         */
+        /** Returns the decoded value of a query (by index) */
         public String getQueryValue(int index) {
             var split = splitFix(queries.get(index),"=");
             if (split.size() <= 1) return "";
             return decode(split.get(1));
         }
 
-        /**
-         * Returns the full url
-         */
-        public String getUrl() {
-            return getUrlWithoutQuery(-1);
-        }
-
-        /**
-         * Returns the url without one query (by index)
-         */
+        /** Returns the url without one query (by index) */
         public String getUrlWithoutQuery(int index) {
             var sb = new StringBuilder();
 
@@ -227,9 +206,7 @@ class RemoveQueriesDialog extends AModuleDialog {
             return sb.toString();
         }
 
-        /**
-         * Returns the url without queries
-         */
+        /** Returns the url without queries */
         public String getUrlWithoutQueries() {
             return preQuery + postQuery;
         }

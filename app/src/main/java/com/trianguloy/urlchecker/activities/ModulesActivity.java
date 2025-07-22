@@ -29,9 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * An activity that shows the list of modules that can be enabled/disabled
- */
+/** An activity that shows the list of modules that can be enabled/disabled */
 public class ModulesActivity extends Activity {
 
     private LinearLayout list;
@@ -72,29 +70,31 @@ public class ModulesActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+        return switch (item.getItemId()) {
+            case android.R.id.home -> {
                 // press the 'back' button in the action bar to go back
                 onBackPressed();
-                return true;
-            case R.id.menu_reset:
+                yield true;
+            }
+            case R.id.menu_reset -> {
                 // reset order entry
                 resetOrder();
-                return true;
-            case R.id.menu_decorations:
+                yield true;
+            }
+            case R.id.menu_decorations -> {
                 // toggle decorations entry
                 toggleAllDecorations();
-                return true;
-        }
+                yield true;
+            }
 
-        return super.onOptionsItemSelected(item);
+            default -> super.onOptionsItemSelected(item);
+        };
+
     }
 
     // ------------------- actions -------------------
 
-    /**
-     * Initializes and adds a module to the list
-     */
+    /** Initializes and adds a module to the list */
     private void initModule(AModuleData module) {
         final AModuleConfig config = module.getConfig(this);
 
@@ -160,9 +160,7 @@ public class ModulesActivity extends Activity {
         );
     }
 
-    /**
-     * Moves a module a specific number of positions in the list
-     */
+    /** Moves a module a specific number of positions in the list */
     private void moveModule(View moduleView, int delta) {
         int position = list.indexOfChild(moduleView);
         if (position == -1) return; // no view? impossible
@@ -183,17 +181,13 @@ public class ModulesActivity extends Activity {
         order.set(modules);
     }
 
-    /**
-     * Disables a module specified by its config
-     */
+    /** Disables a module specified by its config */
     public void disableModule(AModuleConfig module) {
         final Switch vswitch = switches.get(module);
         if (vswitch != null) vswitch.setChecked(false);
     }
 
-    /**
-     * Updates the enable status of all the movable buttons
-     */
+    /** Updates the enable status of all the movable buttons */
     private void updateMovableButtons() {
         var listSize = list.getChildCount();
         for (int i = 0; i < listSize; i++) {
@@ -209,9 +203,7 @@ public class ModulesActivity extends Activity {
         }
     }
 
-    /**
-     * Resets the order of the modules
-     */
+    /** Resets the order of the modules */
     private void resetOrder() {
         // updates preference
         order.clear();
@@ -225,6 +217,7 @@ public class ModulesActivity extends Activity {
 
         // sort views based on the order they should have
         List<String> modules = ModuleManager.getOrderedModulesId(this);
+        //noinspection ComparatorCombinators requires api 24
         Collections.sort(views, (a, b) -> modules.indexOf(a.getTag().toString()) - modules.indexOf(b.getTag().toString()));
 
         // add
@@ -234,9 +227,7 @@ public class ModulesActivity extends Activity {
         updateMovableButtons();
     }
 
-    /**
-     * Clicks all the decorations switches (effectively toggling them)
-     */
+    /** Clicks all the decorations switches (effectively toggling them) */
     private void toggleAllDecorations() {
         for (int i = 0; i < list.getChildCount(); i++) {
             list.getChildAt(i).findViewById(R.id.decorations).performClick();

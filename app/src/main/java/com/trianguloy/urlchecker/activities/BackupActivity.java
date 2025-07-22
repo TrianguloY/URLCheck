@@ -32,6 +32,7 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
@@ -160,21 +161,13 @@ public class BackupActivity extends Activity {
             super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (!resultCodeInjector.onRequestPermissionsResult(requestCode, permissions, grantResults))
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
     /* ------------------- backup ------------------- */
 
     public void backup(View ignored) {
         chooseFile(Intent.ACTION_CREATE_DOCUMENT, this::backup);
     }
 
-    /**
-     * Creates a backup and saves it to [uri]
-     */
+    /** Creates a backup and saves it to [uri] */
     private void backup(Uri uri) {
         ProgressDialog.run(this, R.string.btn_backup, progress -> {
 
@@ -218,7 +211,7 @@ public class BackupActivity extends Activity {
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_backupOk, Toast.LENGTH_SHORT).show());
 
             } catch (Exception e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to backup", e);
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_backupError, Toast.LENGTH_LONG).show());
             }
         });
@@ -253,9 +246,7 @@ public class BackupActivity extends Activity {
         chooseFile(Intent.ACTION_OPEN_DOCUMENT, this::askRestore);
     }
 
-    /**
-     * Asks to restore a backup from [uri]
-     */
+    /** Asks to restore a backup from [uri] */
     private void askRestore(Uri uri) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.bck_restoreTitle)
@@ -265,9 +256,7 @@ public class BackupActivity extends Activity {
                 .show();
     }
 
-    /**
-     * Restores a backup from [uri]
-     */
+    /** Restores a backup from [uri] */
     private void restore(Uri uri) {
         ProgressDialog.run(this, R.string.btn_restore, progress -> {
             progress.setMax(5);
@@ -303,7 +292,7 @@ public class BackupActivity extends Activity {
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_restoreOk, Toast.LENGTH_LONG).show());
 
             } catch (Exception e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to restore", e);
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_restoreError, Toast.LENGTH_LONG).show());
             }
 
@@ -404,7 +393,7 @@ public class BackupActivity extends Activity {
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_deleteOk, Toast.LENGTH_SHORT).show());
 
             } catch (Exception e) {
-                e.printStackTrace();
+                AndroidUtils.assertError("Unable to delete", e);
                 runOnUiThread(() -> Toast.makeText(this, R.string.bck_deleteError, Toast.LENGTH_SHORT).show());
             }
 
@@ -441,7 +430,7 @@ public class BackupActivity extends Activity {
     private static final Function<String, Boolean> IS_PREF_SECRET = List.of(VirusTotalModule.PREF, LogModule.PREF, WebhookModule.URL_PREF)::contains;
     private static final Function<String, Boolean> IS_FILE_CACHE = s -> s.startsWith(Hosts.PREFIX);
 
-    private void chooseFile(String action, JavaUtils.Consumer<Uri> listener) {
+    private void chooseFile(String action, Consumer<Uri> listener) {
         // choose backup file
         var intent = new Intent(action);
         intent.putExtra(Intent.EXTRA_TITLE, getInitialFile());

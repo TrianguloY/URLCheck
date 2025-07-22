@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
     <string name="translators">TrianguloY</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">English</string>
     <!--
         main
@@ -20,11 +24,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"App created by TrianguloY.
+    <string name="txt_about">"App created by %1$s.
 
-Contributions: %1$s.
-Translations: %2$s."</string>
-    <string name="link_blog">"TrianguloY's blog"</string>
+Contributions: %2$s.
+Translations: %3$s."</string>
+    <string name="link_blog">"%s's blog"</string>
     <string name="link_changelog">Changelog</string>
     <string name="link_source">Source code</string>
     <string name="link_privacy">Privacy policy</string>
@@ -56,6 +60,7 @@ Translations: %2$s."</string>
     <string name="spin_dynamicWidth">Dynamic</string>
     <string name="txt_locale">Locale:</string>
     <string name="txt_animation">Enable animations</string>
+    <string name="txt_processText">Sync url with editable text (when the app is opened by long tapping text on an input textbox)</string>
     <string name="btn_tutorialSettings">Repeat tutorial</string>
     <string name="btn_backupRestore">Backup / Restore</string>
     <!--
@@ -63,7 +68,6 @@ Translations: %2$s."</string>
     -->
     <string name="bck_mn_advanced">Show advanced options</string>
     <string name="btn_backup">Backup</string>
-    <string name="btn_replace">Replace</string>
     <string name="btn_restore">Restore</string>
     <string name="btn_delete">Delete</string>
     <string name="bkp_description">"Choose which elements to backup/restore.
@@ -122,7 +126,6 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     -->
     <string name="toast_noApp">Can not open the app</string>
     <string name="toast_noBrowser">Can not open the web browser</string>
-    <string name="title_choose">Choose app</string>
     <string name="invalid">Invalid</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
@@ -172,14 +175,19 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_error_toast">Show toast if automation fails</string>
     <string name="auto_notFound">"No automation with key '%s' is available. Make sure it is valid and the required module is active."</string>
     <string name="auto_editor">"Automations configuration. Format: list of objects where the key is a unique automation name and the content includes the following values:
-- 'regex': string|list, required: a valid java regex that the url must match for the automation to run. If list, at least one regex must match.
-- 'action': string, required: the key of the automation to run. Check below for a list of all the available keys.
-- 'enabled': boolean, optional: if false this automation will be skipped. True by default."</string>
+- 'regex': string|list: if present, a valid java regex that the url must match for the automation to run. If list, at least one regex must match. If omitted, all urls will match.
+- 'excludeRegex': string|list: if present, a valid java regex that the url must not match for the automation to run. If list, none of the regex must match. If omitted, no url will be excluded.
+- 'referrer': string|list: if present, the referrer (the app that opened the link) must exactly match this value. If list, the referrer must be one of the values. If omitted, all urls will match. You can use the debug module to check the actual value.
+- 'action': string|list, required: the key of the automation to run. If multiple they will run in order. Check below for a list of all the available keys.
+- 'args', object: values that the action may require, see the description of each action for the values they accept. Example: { …, \"args\": { \"text\": \"example\" } }
+- 'stop': boolean: if true, no more automations will run for the current url. False by default.
+- 'enabled': boolean: if false this automation will be skipped. True by default."</string>
     <string name="auto_available_prefix">Available automation actions (keys):</string>
     <string name="auto_available_disabled">"This module is disabled, automations won't run"</string>
     <string name="auto_rule_bitly">Unshort bit.ly</string>
     <string name="auto_rule_webhook">Send everything to webhook</string>
-    <string name="auto_open">"Will open the url with the first available app. Equivalent of pressing the 'open' button."</string>
+    <string name="auto_rule_toast">Toast example</string>
+    <string name="auto_open">"Will open the url. If no expected 'args' are provided, the first available app will be used (equivalent of pressing the 'open' button). If the 'args': 'package' and/or 'component' are provided, those will be used instead."</string>
     <string name="auto_share">"Will share the url. Equivalent of pressing the 'share' button."</string>
     <string name="auto_copy">"Will copy the url. Equivalent of pressing the 'copy' button."</string>
     <string name="auto_ctabs">"Will enable ctabs. Equivalent of pressing the 'ctabs' button if disabled (even if hidden)."</string>
@@ -190,6 +198,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_scan">"Will scan the url. Equivalent of pressing the 'Scan' button."</string>
     <string name="auto_clear">"Will clear the url. Equivalent of pressing the 'Clear' button. Note that the module itself contains an auto setting that will also clear all urls more efficiently, and should be preferred."</string>
     <string name="auto_drawer">"Will open the drawer. Equivalent of pressing the drawer button if collapsed."</string>
+    <string name="auto_toast">Display a toast with a fixed text. The text must be provided as an \'args\' named \'text\'.</string>
     <!--
         modules
     -->
@@ -213,9 +222,9 @@ Built-in patterns include:
     <string name="mPttrn_ok">No matching patterns</string>
     <string name="mPttrn_editor">"Here you can edit or add new pattern. Format:
 - 'encode': boolean: set to true to encode the url before checking regex.
-- 'regex': string, required: a valid java regex that the url must match, otherwise the pattern is skipped.
-- 'excludeRegex': string: if provided, a valid java regex that the url must not match, otherwise the pattern is skipped.
-- 'replacement': string|list: if provided, the 'fix' button will run 'url=url.replaceAll(regex,replacement)'. If list, replacement will be a random element from it.
+- 'regex': string|list: a valid java regex that the url must match, otherwise the pattern is skipped. If list, at least one regex must match. If omitted, the full url will match.
+- 'excludeRegex': string|list: if provided, a valid java regex that the url must not match, otherwise the pattern is skipped. If list, and at least one regex matches, the pattern will be skipped.
+- 'replacement': string|list: if provided, the 'fix' button will run 'url=url.replaceAll(regex,replacement)' [if regex was list, the first pattern to match will be used]. If list, replacement will be a random element from it.
 - 'decode': boolean: set to true to decode the replaced url.
 - 'automatic': boolean: set to true to automatically apply the pattern.
 - 'enabled': boolean: set to false to disable the pattern.
@@ -280,9 +289,11 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mInput_desc">Displays the current URL. Press it to enter edit mode.</string>
     <!-- -->
     <string name="mVT_name">URL Scanner</string>
-    <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: %s .</string>
     <string name="mVT_apiKey">API key</string>
+    <string name="mVT_checkKey">Check</string>
     <string name="mVT_noKey">Missing API key</string>
+    <string name="mVT_validKey">Valid key from user: %s</string>
     <string name="mVT_tm">VirusTotal™ is a trademark of Google, Inc.</string>
     <string name="mVT_scan">Scan</string>
     <string name="mVT_cancel">Cancel</string>
@@ -290,8 +301,13 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mVT_goodUrl">None of the %1$d engines detected the URL (as of date %2$s)</string>
     <string name="mVT_warningUrl">Warning, %1$d/%2$d engines detected the URL (as of date %3$s)</string>
     <string name="mVT_badUrl">Careful! %1$d/%2$d engines detected the URL (as of date %3$s)</string>
-    <string name="mVT_connectError">Can not connect to VirusTotal. Ensure you are connected to the Internet, or try again later.</string>
-    <string name="mVT_jsonError">Can not connect to VirusTotal. Ensure the API key is valid, or try again later.</string>
+    <string name="mVT_error">Unable to get a valid answer from VirusTotal. Make sure the api key is valid and that you are connected to the Internet, or try again later.</string>
+    <string name="mVt_title">Title:</string>
+    <string name="mVt_finalUrl">Final url:</string>
+    <string name="mVt_reputation">Reputation:</string>
+    <string name="mVt_votes">Votes:</string>
+    <string name="mVt_categories">Categories:</string>
+    <string name="mVt_detections">Detections:</string>
     <!-- -->
     <string name="mD_name">Debug/Marker module</string>
     <string name="mD_desc">"If you reorder the modules, new ones added in future updates will be placed above this one.
@@ -307,7 +323,7 @@ You can hold to select text."</string>
     <!-- -->
     <string name="mClear_name">URL Cleaner</string>
     <string name="mClear_desc">This module removes tracking, referrer and other useless parameters from the URL. It also allows for common offline URL redirections.</string>
-    <string name="mClear_tm">Built-in catalog copied from ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Built-in catalog copied from ClearURLs: %s</string>
     <string name="mClear_clear">Apply</string>
     <string name="mClear_matches">Matches %s</string>
     <string name="mClear_blocked">- BLOCKED!</string>
@@ -338,7 +354,7 @@ You can hold to select text."</string>
     <string name="mClear_hashError">Unable to fetch the hash, make sure the url is valid and you have an active connection</string>
     <string name="mClear_hashMismatch">Hashes do not match, the file may have been tampered with. If you want to skip the check remove the hash URL</string>
     <string name="mClear_restore">Restore ClearURLs paths</string>
-    <string name="mClear_editor">"Catalog rules: They must follow the format from https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Catalog rules: They must follow the format from %s.
 Note that any modification to the parent object 'providers' will be overwritten if the catalog is updated automatically or manually from the updater dialog. To have personal rules set them in a different parent object (any name)."</string>
     <!-- -->
     <string name="mRemove_name">Queries Remover</string>
@@ -363,7 +379,8 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mLog_unlimited">Unlimited</string>
     <!-- -->
     <string name="mHosts_name">Hosts labeler</string>
-    <string name="mHosts_desc">"This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack's hosts (adware/malware, fakenews, gambling and adult content) from https://github.com/StevenBlack/hosts. Note: subdomains will also be checked, so 'x.y.z' and 'y.z' will be detected for the entry 'y.z'"</string>
+    <string name="mHosts_desc">"This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack's hosts (adware/malware, fakenews, gambling and adult content) from %s. Note: subdomains will also be checked, so 'x.y.z' and 'y.z' will be detected for the entry 'y.z'"</string>
+    <string name="mHosts_tm">StevenBlack\'s hosts from %s</string>
     <string name="mHosts_malware">adware/malware</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">no label</string>
@@ -390,7 +407,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <!-- -->
     <string name="mUnshort_name">Unshortener</string>
     <string name="mUnshort_unshort">Unshort</string>
-    <string name="mUnshort_desc">"This module will unshort links by sending them to https://unshorten.me/, which evaluates them on their servers and save the redirection for future requests. Avoid unshortening links with private or sensitive data.
+    <string name="mUnshort_desc">"This module will unshort links by sending them to %s, which evaluates them on their servers and save the redirection for future requests. Avoid unshortening links with private or sensitive data.
 Their api is rate limited to 10 requests per hour for new checks. The module response will show how many requests you have pending."</string>
     <string name="mUnshort_tm">unshorten.me free API by Unshorten.me</string>
     <string name="mUnshort_checking">Checking…</string>
@@ -418,11 +435,10 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mParts_copy">Part copied to clipboard</string>
     <!-- -->
     <string name="mWebhook_name">Webhook</string>
-    <string name="mWebhook_desc">This module sends URLs to a configured webhook endpoint. Each URL is sent with a timestamp, allowing you to collect and process URLs on your own server.\nThanks to anoop-b for the idea and base implementation!\n\nConfigure your webhook URL and body below to start sending URLs.\nFor the body, you can use the placeholders $URL$ and $TIMESTAMP$.</string>
+    <string name="mWebhook_desc">This module sends URLs to a configured webhook endpoint. Each URL is sent with a timestamp, allowing you to collect and process URLs on your own server.\nThanks to anoop-b for the idea and base implementation!\n\nConfigure your webhook URL and body below to start sending URLs.\nFor the body, you can use the placeholders $URL$, $TIMESTAMP$ and $REFERRER$.</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_body_hint">Webhook body</string>
     <string name="mWebhook_send">Send to Webhook</string>
-    <string name="mWebhook_auto">Automatically send URLs</string>
     <string name="mWebhook_auto_send">Send to webhook</string>
     <string name="mWebhook_missing_config">Missing webhook url or body</string>
     <string name="mWebhook_sending">Sending to webhook…</string>

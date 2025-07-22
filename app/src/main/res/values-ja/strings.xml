@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
     <string name="translators">404potato</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">日本語</string>
     <!-- main -->
     <string name="txt_info">このアプリは、クリックされた URL リンクを開く際の仲介として機能します。 このアプリを選択して開くと、リンクに関する情報を含むダイアログが表示されます。 下のモジュール ボタンを押して、利用可能なすべてのモジュールを確認して設定します。</string>
@@ -16,11 +20,11 @@
     <string name="a_settings">設定</string>
     <string name="a_about">このアプリについて</string>
     <!-- about -->
-    <string name="txt_about">"このアプリは TrianguloY によって開発されました。
+    <string name="txt_about">"このアプリは %1$s によって開発されました。
 
-貢献者: %1$s
-翻訳者: %2$s"</string>
-    <string name="link_blog">TrianguloY のブログ</string>
+貢献者: %2$s
+翻訳者: %3$s"</string>
+    <string name="link_blog">%s のブログ</string>
     <string name="link_changelog">変更履歴</string>
     <string name="link_source">ソースコード</string>
     <string name="link_privacy">プライバシーポリシー</string>
@@ -47,7 +51,6 @@
     <!-- generic -->
     <string name="toast_noApp">アプリを開けません</string>
     <string name="toast_noBrowser">Web ブラウザを開けません</string>
-    <string name="title_choose">アプリを選択</string>
     <string name="invalid">無効です</string>
     <string name="save">保存</string>
     <string name="reset">リセット</string>
@@ -73,12 +76,7 @@
     <string name="mPttrn_noSchemeHttp">HTTPスキームがありません。</string>
     <string name="mPttrn_noSchemeHttps">HTTPSスキームがありません。</string>
     <string name="mPttrn_ok">問題は見つかりませんでした。</string>
-    <string name="mPttrn_editor">"ここでは、パターンの編集をしたり、新しいパターンを追加したりできます。\n利用できるフォーマットは以下です:
-- 'regex': 文字列: Java の正規表現。URLに対して照合されます。
-- 'replacement': 文字列またはリスト: 指定すると、「適用」 ボタンをタップした時に、'url=url.replaceAll(regex,replacement)' が実行されます。
-- 'automatic': ブール値: true に設定すると、パターンが自動的に適用されます。
-- 'enabled': ブール値: パターンを無効にするには false に設定します。
-注: パターンを編集した場合、アプリの更新による新しい組み込みパターンは自動的に追加されません (リセットオプションで復元できます)。"</string>
+    <string name="mPttrn_editor">ここでは、パターンの編集をしたり、新しいパターンを追加したりできます。\n利用できるフォーマットは以下です:\n- \'regex\': 文字列: Java の正規表現。URLに対して照合されます。\n- \'replacement\': 文字列またはリスト: 指定すると、「適用」 ボタンをタップした時に、\'url=url.replaceAll(regex,replacement)\' が実行されます。\n- \'automatic\': ブール値: true に設定すると、パターンが自動的に適用されます。\n- \'enabled\': ブール値: パターンを無効にするには false に設定します。\n注: パターンを編集した場合、アプリの更新による新しい組み込みパターンは自動的に追加されません (リセットオプションで復元できます)。</string>
     <string name="mOpen_name"><![CDATA[開く・共有する]]></string>
     <string name="mOpen_desc">"次のボタンが含まれています (左から右へ):
 - 「カスタムタブ」ボタン: カスタムタブ機能を有効化/無効化します。有効にすると、ブラウザは「ライト」モードで開かれます。
@@ -131,7 +129,7 @@ URLコンテンツは取得 (GET) されますが、JavaScript によるリダ�
     <string name="mInput_desc">手動で編集できる現在のURLを表示します。</string>
     <string name="mVT_name">URL スキャナー</string>
     <string name="mVT_desc">"このモジュールを有効にすると、VirusTotal を使用してURLをスキャンし、レポートを確認できます。
-これが機能するには、個人用の VirusTotal API キーが必要です。https://www.virustotal.com/gui/join-us\nで無料アカウントに登録した後に取得できます。"</string>
+これが機能するには、個人用の VirusTotal API キーが必要です。%s\nで無料アカウントに登録した後に取得できます。"</string>
     <string name="mVT_apiKey">API キー</string>
     <string name="mVT_tm">VirusTotal™ は Google, Inc. の商標です。</string>
     <string name="mVT_scan">スキャン</string>
@@ -140,8 +138,7 @@ URLコンテンツは取得 (GET) されますが、JavaScript によるリダ�
     <string name="mVT_goodUrl">%1$dつのエンジンのいずれもURLを検出しませんでした (%2$s 時点データ)</string>
     <string name="mVT_warningUrl">警告! %1$dつのエンジンの内、%2$dのエンジンがURLを検出しました (%3$s 時点データ)</string>
     <string name="mVT_badUrl">注意! %1$dつのエンジンの内 %2$dつがURLを検出しました (%3$s 時点データ)</string>
-    <string name="mVT_connectError">VirusTotal に接続できません。インターネット接続が有効であることを確認するか、後でもう一度試してください。</string>
-    <string name="mVT_jsonError">VirusTotal に接続できません。APIキーが有効であることを確認するか、後でもう一度試してください。</string>
+    <string name="mVT_error">VirusTotal に接続できません。APIキーが有効であることを確認するか、後でもう一度試してください。</string>
     <string name="mD_name">デバッグ/マーカー モジュール</string>
     <string name="mD_desc">"モジュールの順序を変更すると、将来のアップデートで追加される新しいモジュールがこのモジュールの上に配置されます。
 
@@ -153,7 +150,7 @@ Intent または URLData をタップすると、クリップボードにコピ�
     <string name="mHist_desc">手動または他のモジュールによってURLが編集されると、このモジュールを使用して変更を表示および元に戻すことができます。</string>
     <string name="mClear_name">URL クリーナー</string>
     <string name="mClear_desc">このモジュールは、トラッキング、リファラル、およびその他の不要なパラメーターをURLから削除します。また、一般的なURLリダイレクトは、オフラインでも可能です。</string>
-    <string name="mClear_tm">ClearURLs からコピーされた組み込みカタログ:\nhttps://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">ClearURLs からコピーされた組み込みカタログ:\n%s</string>
     <string name="mClear_clear">適用</string>
     <string name="mClear_matches">%s に一致</string>
     <string name="mClear_blocked">- ブロックされました!</string>
@@ -184,7 +181,7 @@ Intent または URLData をタップすると、クリップボードにコピ�
     <string name="mClear_hashError">ハッシュを取得できません。URLが有効で、インターネット接続が有効であることを確認してください。</string>
     <string name="mClear_hashMismatch">ハッシュが一致しません。ファイルが壊れている可能性があります。チェックをスキップしたい場合は、ハッシュURLを削除してください</string>
     <string name="mClear_restore">URLをリセット</string>
-    <string name="mClear_editor">"パターンデータの形式は\nhttps://docs.clearurls.xyz/latest/specs/rules/ \nの形式に従う必要があります。
+    <string name="mClear_editor">"パターンデータの形式は\n%s \nの形式に従う必要があります。
 - カタログが自動または手動で更新された場合、親オブジェクト「providers」への変更はすべて上書きされることに注意してください。手動でルールを設定するには、別の親オブジェクト（任意の名前）に設定してください。"</string>
     <string name="mRemove_name">クエリの削除</string>
     <string name="mRemove_desc">"このモジュールを使用すると、URLからクエリを削除できます。
@@ -205,7 +202,7 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="mLog_empty">ログはありません</string>
     <string name="mHosts_name">ホスト ラベラー</string>
     <string name="mHosts_desc">このモジュールは、手動で指定するか、リモートホストのようなファイルを使って設定されたホストにラベル付けします。危険なサイトや特殊なサイトについて警告するために使用することができます。
-\nデフォルトの設定では、StevenBlack のホスト (アドウェア/マルウェア、fakenews、ギャンブル、アダルトコンテンツ) を https://github.com/StevenBlack/hosts から取得します。</string>
+\nデフォルトの設定では、StevenBlack のホスト (アドウェア/マルウェア、fakenews、ギャンブル、アダルトコンテンツ) を %s から取得します。</string>
     <string name="mHosts_malware">アドウェア/マルウェア</string>
     <string name="mHosts_info">ホスト:</string>
     <string name="mHosts_noLabel">ラベルなし</string>
@@ -241,4 +238,19 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="shortcut_checkClipboard">クリップボードから URL を確認する</string>
     <string name="mChg_desc">アプリが更新されたらお知らせします。</string>
     <string name="mLog_limit">保持するエントリーの最大数。推奨値：100。無制限の場合はUnlimitedに設定</string>
+    <string name="btn_backupRestore">バックアップと復元</string>
+    <string name="btn_backup">バックアップ</string>
+    <string name="bck_restoreOk">バックアップを復元しました</string>
+    <string name="mChg_view">変更を表示</string>
+    <string name="json_info">情報を表示</string>
+    <string name="mChg_name">更新履歴</string>
+    <string name="bck_mn_advanced">高度なオプションを表示</string>
+    <string name="btn_restore">復元</string>
+    <string name="btn_delete">削除</string>
+    <string name="bck_restoreTitle">バックアップを復元</string>
+    <string name="bck_backupOk">バックアップを作成しました</string>
+    <string name="bck_chooseFile">バックアップファイルを選択</string>
+    <string name="txt_animation">アニメーションを有効化</string>
+    <string name="spin_fullWidth">完全</string>
+    <string name="spin_dynamicWidth">ダイナミック</string>
 </resources>

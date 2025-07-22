@@ -12,7 +12,6 @@
     <string name="mClear_clear">Aplicar</string>
     <string name="mLog_empty">Sem dados</string>
     <string name="btn_tutorialSkip">Pular tutorial</string>
-    <string name="title_choose">Escolha o aplicativo</string>
     <string name="a_modules">Módulos</string>
     <string name="close">Fechar</string>
     <string name="mOpen_share">Compartilhar</string>
@@ -20,10 +19,10 @@
     <string name="a_settings">Configurações</string>
     <string name="link_privacy">Política de privacidade</string>
     <string name="locale">Português Brasileiro</string>
-    <string name="txt_about">Aplicativo criado por TrianguloY.
+    <string name="txt_about">Aplicativo criado por %1$s.
 \n
-\nContribuições: %1$s.
-\nTraduções: %2$s.</string>
+\nContribuições: %2$s.
+\nTraduções: %3$s.</string>
     <string name="desc_down">Mover para baixo</string>
     <string name="none">Nenhum</string>
     <string name="share">Compartilhar</string>
@@ -72,20 +71,19 @@
     <string name="mOpen_name">Abrir e compartilhar</string>
     <string name="defaultOn">Habilitado por padrão</string>
     <string name="mVT_apiKey">Chave de API</string>
-    <string name="btn_androidSettings">Configurações Android do aplicativo</string>
+    <string name="btn_androidSettings">Configurações do aplicativo</string>
     <string name="txt_locale">Localização:</string>
     <string name="btn_linksSettings">Abrir links suportados</string>
     <string name="txt_sample">Clique no link abaixo para testá-lo:</string>
     <string name="mStatus_name">Códigos de status</string>
     <string name="mPttrn_fixed">Aplicado - %s</string>
-    <string name="mVT_connectError">Não foi possível conectar-se ao VirusTotal. Verifique se você está conectado à Internet ou tente novamente mais tarde.</string>
-    <string name="mVT_jsonError">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
+    <string name="mVT_error">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
     <string name="mUnshort_error">Erro de servidor: %s</string>
     <string name="mUnshort_checking">Verificando…</string>
     <string name="mUnshort_internal">Erro interno (%s)</string>
     <string name="translators">Murilogs1910</string>
     <string name="txt_info">Esse aplicativo age como intermediário ao abrir links. Um diálogo com algumas informações sobre o link são apresentadas ao escolher esse app para abrir um link. Pressione o botão módulos abaixo para checar e configurar todos os módulos disponíveis.</string>
-    <string name="link_blog">Blog do TrianguloY</string>
+    <string name="link_blog">Blog do %s</string>
     <string name="menu_toggleDecorations">Alternar todos os títulos</string>
     <string name="txt_openLinks">Abra os links neste aplicativo: Ao longo dos anos, o Android mudou a forma de configurar, variando entre as diferentes versões. Encontre abaixo todas as configurações disponíveis para o seu dispositivo. Se os links não estiverem sendo abertos neste aplicativo, tente todas elas.</string>
     <string name="toast_defaultSet">O aplicativo agora é o navegador padrão</string>
@@ -124,7 +122,7 @@
     <string name="mClear_name">Limpador de URL</string>
     <string name="mClear_desc">Esse módulo remove rastreamento, referência e outros parâmetros inúteis da URL. Ele também permite redirecionamentos comuns de URL offline.</string>
     <string name="mClear_matches">Corresponde %s</string>
-    <string name="mClear_tm">Catálogo embutido copiado do ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Catálogo embutido copiado do ClearURLs: %s</string>
     <string name="mClear_blocked">- BLOQUEADO!</string>
     <string name="mClear_exception">- ignorado devido a exceção %s</string>
     <string name="mPttrn_noSchemeHttps">Esquema HTTPS ausente.</string>
@@ -155,7 +153,7 @@
 \n- Alerta quando contém caracteres não-ASCII, como letras gregas. Isso pode ser usado para phishing: googĺe.com vs google.com
 \n- Sugere substituir ‘http’ por ‘https’
 \n- Sugere substituir Youtube, Reddit ou Twitter por alternativas que respeitam a privacidade [desativadas por padrão]</string>
-    <string name="mVT_desc">Quando este módulo está habilitado, você pode verificar a URL usando o VirusTotal e conferir o relatório. É necessário uma chave da API do VirusTotal para que isso funcione, você pode obter uma registrando-se para uma conta gratuita aqui: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Quando este módulo está habilitado, você pode verificar a URL usando o VirusTotal e conferir o relatório. É necessário uma chave da API do VirusTotal para que isso funcione, você pode obter uma registrando-se para uma conta gratuita aqui: %s .</string>
     <string name="mVT_badUrl">Cuidado! %1$d/%2$d mecanismos detectaram a URL (na data %3$s)</string>
     <string name="mClear_toggleVerbose">Ativar informações detalhadas para o processo de correspondência</string>
     <string name="txt_tutorial5">Isso é tudo. Aqui vão algumas dicas que podem ser úteis:
@@ -207,7 +205,7 @@
     <string name="mParts_empty">(vazio)</string>
     <string name="mParts_copy">Parte copiada para área de transferência</string>
     <string name="mStatus_desc">Ao pressionar o botão de verificação, uma solicitação de rede será feita para consultar e exibir o código de status do site. Se o resultado for um redirecionamento, você poderá visualizar a URL de destino. O conteúdo da URL é obtido (GET), mas não avaliado, portanto redirecionamentos baseados em JavaScript não serão detectados.</string>
-    <string name="mClear_editor">Regras do catálogo: Devem seguir o formato de https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Regras do catálogo: Devem seguir o formato de %s.
 \nObserve que qualquer modificação no objeto principal \'providers\' será substituída se o catálogo for atualizado, automaticamente ou manualmente. Portanto, crie suas regras pessoais eu um outro objeto (qualquer nome).</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_buildTitle">Construir catálogo de hosts</string>
@@ -215,7 +213,7 @@
     <string name="mHosts_build">Construir</string>
     <string name="mHosts_noLabel">sem rótulo</string>
     <string name="mHosts_built">Catálogo construido: %d hosts</string>
-    <string name="mUnshort_desc">Este módulo desencurta links enviando-os para https://unshorten.me/, que os avalia em seus servidores e salva o redirecionamento para futuras petições. Evite desencurtar links com dados privados ou confidenciais.
+    <string name="mUnshort_desc">Este módulo desencurta links enviando-os para %s, que os avalia em seus servidores e salva o redirecionamento para futuras petições. Evite desencurtar links com dados privados ou confidenciais.
 \nA API é limitada a 10 solicitações por hora para novas verificações. A resposta do módulo mostrará quantas petições você tem pendentes.</string>
     <string name="mOpen_desc">Contém os seguintes botões (da esquerda para a direita):
 \n- Abas customizadas: Alterne para ativar/desativar as abas customizadas. Quando ativado, o navegador deve abrir em um modo \'lite\'.
@@ -229,15 +227,7 @@
 \n- color: A cor do rótulo. Uma string de cores do Android (#AARRGGBB, #RRGGBB ou um nome de cor válido). O padrão é um vermelho de \'perigo\'.
 \n- replace: Se falso, os hosts existentes não serão substituídos. Nota que os objetos são avaliados de cima para baixo. Verdadeiro por padrão.
 \n- enabled: Se falso, todo o objeto será ignorado. Verdadeiro por padrão.</string>
-    <string name="mPttrn_editor">Aqui você pode editar ou adicionar novos padrões. Formato:
-\n- \'encode\': booleano: defina como true para codificar a URL antes de checar o regex.
-\n- \'regex\': string, requerido: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Em uma lista, um elemento aleatório é escolhido.
-\n- \'decode\': booleano: defina como true para decodificar a URL substítuida.
-\n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão.
-\n- \'enabled\': booleano: defina como false para desativar o padrão.
-\nNota: se você editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
+    <string name="mPttrn_editor">Aqui você pode editar ou adicionar novos padrões. Formato: \n- \'encode\': booleano: defina como true para codificar a URL antes de checar o regex. \n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado. \n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado. \n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Em uma lista, um elemento aleatório é escolhido. \n- \'decode\': booleano: defina como true para decodificar a URL substítuida. \n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão. \n- \'enabled\': booleano: defina como false para desativar o padrão. \nNota: se você editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
     <string name="mParts_desc">Este módulo mostra todas as partes da url decodificadas: esquema, autoridade, caminhos, parâmetros e fragmento.
 \nAo clicar em uma parte, ela será definida como a nova URL, útil, por exemplo, se uma das consultas ou caminhos for uma URL codificada de redirecionamento.
 \nAo segurar uma parte, ela será copiada para a área de transferência.
@@ -257,7 +247,6 @@
     <string name="btn_backupRestore">Backup / Restaurar</string>
     <string name="bck_mn_advanced">Mostrar opções avançadas</string>
     <string name="btn_backup">Backup</string>
-    <string name="btn_replace">Substituir</string>
     <string name="btn_restore">Restaurar</string>
     <string name="btn_delete">Deletar</string>
     <string name="bkp_description">Escolha quais elementos fazer backup/restaurar.\nAo restaurar, se o backup foi criado sem ele, os existentes serão mantidos.</string>

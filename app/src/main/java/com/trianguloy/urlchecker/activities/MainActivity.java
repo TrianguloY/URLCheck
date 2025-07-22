@@ -17,9 +17,7 @@ import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
 
-/**
- * The activity to show when clicking the desktop shortcut (when 'opening' the app)
- */
+/** The activity to show when clicking the desktop shortcut (when 'opening' the app) */
 public class MainActivity extends Activity {
 
     private final ResultCodeInjector resultCodeInjector = new ResultCodeInjector();

@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -51,7 +52,7 @@ public class UnshortenModule extends AModuleData {
 
     @Override
     public AModuleConfig getConfig(ModulesActivity cntx) {
-        return new DescriptionConfig(R.string.mUnshort_desc);
+        return new DescriptionConfig(getStringWithPlaceholder(cntx, R.string.mUnshort_desc, R.string.unshorten_url));
     }
 
     @Override
@@ -62,7 +63,7 @@ public class UnshortenModule extends AModuleData {
 
 class UnshortenDialog extends AModuleDialog {
 
-    static List<AutomationRules.Automation<UnshortenDialog>> AUTOMATIONS = List.of(
+    static final List<AutomationRules.Automation<UnshortenDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("unshort", R.string.auto_unshort, dialog ->
                     dialog.unshort(dialog.getUrlData().disableUpdates))
     );
@@ -186,7 +187,7 @@ class UnshortenDialog extends AModuleDialog {
 
         } catch (IOException | JSONException e) {
             // internal error
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to unshorten url", e);
 
             // exit if was canceled
             if (Thread.currentThread().isInterrupted()) {

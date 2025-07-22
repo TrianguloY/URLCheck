@@ -21,20 +21,20 @@ val PUBLISH = args.contains("publish")
 /* ------------------- utils ------------------- */
 
 /** Returns the default versions */
-val defaultVersions = File(File(RELEASE_NOTES, DEFAULT), FILE).let { file ->
-    file.readVersions.also { versions ->
-        file.writeText(versions.getFixedVersions(DEFAULT))
-    }
-}
+val defaultVersions = File(File(RELEASE_NOTES, DEFAULT), FILE).readVersions
 
 /** Reads the versions from a versions file */
 val File.readVersions
     get() = readText().replace("\r\n", "\n").split(Regex(DELIM))
 
-/** Returns the valid versions from a versions list */
-fun List<String>.getFixedVersions(locale: String) = runningReduce { acc, s -> acc + DELIM + s }
-    .lastOrNull { it.length <= MAX_LENGTH } ?: throw Exception("There is no changelog with less than $MAX_LENGTH chars for locale $locale")
+/** Returns the valid versions from a versions list. Provide a locale for logging */
+fun List<String>.limitVersions() = runningReduce { acc, s -> acc + DELIM + s }
+    .lastOrNull { it.length <= MAX_LENGTH }
+    ?: throw Exception("There is no changelog with less than $MAX_LENGTH chars for the provided list of changes")
 
+/** Returns a string with the content of a file that should contain some changelog. Depends on PUBLISH */
+fun List<String>.fixVersions() =
+    (if (PUBLISH) limitVersions() else joinToString(DELIM)).replace("\n", "\r\n")
 
 /* ------------------- main ------------------- */
 
@@ -45,12 +45,10 @@ File(LISTINGS).list().orEmpty()
     .forEach { (locale, file) ->
         // check if file exists
         if (!file.exists()) {
-            if (PUBLISH) {
-                // file doesn't exists and we want to publish
-                println("Creating $file")
-                file.parentFile.mkdirs()
-                file.writeText(defaultVersions.getFixedVersions(DEFAULT))
-            }
+            // file doesn't exists, create it
+            println("Creating $file")
+            file.parentFile.mkdirs()
+            file.writeText(defaultVersions.fixVersions())
             return@forEach
         }
 
@@ -60,8 +58,10 @@ File(LISTINGS).list().orEmpty()
             versions.find { version ->
                 version.lines().first() == englishVersion.lines().first()
             } ?: englishVersion
-        }.run { if (PUBLISH) getFixedVersions(locale) else joinToString(DELIM) }
+        }.fixVersions()
 
-        println("Fixing $locale")
-        file.writeText(fixedVersions)
+        if (file.readText() != fixedVersions) {
+            println("Fixing $locale")
+            file.writeText(fixedVersions)
+        }
     }

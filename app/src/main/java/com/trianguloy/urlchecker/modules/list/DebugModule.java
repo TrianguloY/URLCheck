@@ -4,10 +4,13 @@ import static java.util.Objects.requireNonNullElse;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
@@ -17,10 +20,10 @@ import com.trianguloy.urlchecker.flavors.IncognitoDimension;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
+import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.services.CustomTabs;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.UrlUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 
 import java.util.List;
@@ -31,7 +34,7 @@ import java.util.List;
  * Allows also to enable/disable ctabs toasts
  */
 public class DebugModule extends AModuleData {
-    public static String ID = "debug";
+    public static final String ID = "debug";
 
     @Override
     public String getId() {
@@ -57,9 +60,22 @@ public class DebugModule extends AModuleData {
     public AModuleConfig getConfig(ModulesActivity cntx) {
         return new DebugConfig(cntx);
     }
+
+    @Override
+    public List<AutomationRules.Automation<AModuleDialog>> getAutomations() {
+        return (List<AutomationRules.Automation<AModuleDialog>>) (List<?>) DebugDialog.AUTOMATIONS;
+    }
 }
 
 class DebugDialog extends AModuleDialog {
+
+    static final List<AutomationRules.Automation<DebugDialog>> AUTOMATIONS = List.of(
+            new AutomationRules.Automation<>(
+                    "toast",
+                    R.string.auto_toast,
+                    ((t, args) -> Toast.makeText(t.getActivity(), args.optString("text"), Toast.LENGTH_SHORT).show())
+            )
+    );
 
     public static final String SEPARATOR = "";
     private TextView data;
@@ -90,7 +106,7 @@ class DebugDialog extends AModuleDialog {
                 SEPARATOR,
 
                 "queryIntentActivities:",
-                IntentApp.getOtherPackages(UrlUtils.getViewIntent(getUrl(), null), getActivity()).toString(),
+                IntentApp.getOtherPackages(new Intent(Intent.ACTION_VIEW, Uri.parse(getUrl())), getActivity()).toString(),
 
                 SEPARATOR,
 
@@ -98,7 +114,7 @@ class DebugDialog extends AModuleDialog {
                 getActivity().getPackageManager().queryIntentActivityOptions(
                         new ComponentName(getActivity(), MainDialog.class.getName()),
                         null,
-                        UrlUtils.getViewIntent(getUrl(), null),
+                        new Intent(Intent.ACTION_VIEW, Uri.parse(getUrl())),
                         Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PackageManager.MATCH_ALL : 0
                 ).toString(),
 

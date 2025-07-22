@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.sUTF_8;
 import static com.trianguloy.urlchecker.utilities.methods.UrlUtils.decode;
 
 import android.view.View;
@@ -18,20 +19,18 @@ import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.wrappers.RegexFix;
 
 import org.json.JSONArray;
 
-import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Pattern;
 
-/**
- * This module checks for patterns characters in the url
- */
+/** This module checks for patterns characters in the url */
 public class PatternModule extends AModuleData {
 
     @Override
@@ -83,7 +82,8 @@ class PatternConfig extends AModuleConfig {
 }
 
 class PatternDialog extends AModuleDialog {
-    public static final String APPLIED = "pattern.applied";
+    private static final String APPLIED = "pattern.applied";
+    private static final Pattern ALL_MATCH = Pattern.compile("^.*$");
 
     private TextView txt_noPatterns;
     private LinearLayout box;
@@ -111,7 +111,7 @@ class PatternDialog extends AModuleDialog {
     }
 
     @Override
-    public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
+    public void onModifyUrl(UrlData urlData, Function<UrlData, Boolean> setNewUrl) {
         // init
         messages.clear();
 
@@ -127,26 +127,37 @@ class PatternDialog extends AModuleDialog {
                 if (data == null) continue;
                 if (!data.optBoolean("enabled", true)) continue;
 
-                // get regex (must exists)
-                if (!data.has("regex")) continue;
-
                 // encode if required
                 if (data.optBoolean("encode")) {
-                    url = URLEncoder.encode(url);
+                    url = URLEncoder.encode(url, sUTF_8);
                 }
 
-                // check matches
-                // if 'regex' matches, the pattern can match
-                // if 'regex' doesn't match, the patter doesn't match
-                var regex_matcher = Pattern.compile(data.getString("regex")).matcher(url);
-                var matches = regex_matcher.find();
-                if (matches && data.has("excludeRegex")) {
-                    // if 'excludeRegex' doesn't exist, the pattern can match
-                    // if 'excludeRegex' matches, the pattern doesn't matches
-                    // if 'excludeRegex' doesn't match, the pattern can match
-                    matches = !Pattern.compile(data.getString("excludeRegex")).matcher(url).find();
+                // check matches:
+                // if 'regex' doesn't exist, the pattern can match (as everything)
+                var regexMatcher = ALL_MATCH.matcher(url);
+                for (var regex : JavaUtils.parseArrayOrElement(data.get("regex"), String.class)) {
+                    regexMatcher = Pattern.compile(regex).matcher(url);
+                    if (regexMatcher.find()) {
+                        // if at least one 'regex' matches, the pattern can match (as first to match)
+                        break;
+                    } else {
+                        // if 'regex' exists and none match, the pattern doesn't match
+                        regexMatcher = null;
+                    }
                 }
-                if (matches) {
+                // if 'excludeRegex' doesn't exist, the pattern can match
+                if (regexMatcher != null && data.has("excludeRegex")) {
+                    for (var exclusions : JavaUtils.parseArrayOrElement(data.get("excludeRegex"), String.class)) {
+                        // if at least one 'excludeRegex' matches, the pattern doesn't match
+                        if (Pattern.compile(exclusions).matcher(url).find()) {
+                            regexMatcher = null;
+                            break;
+                        }
+                        // if no 'excludeRegex' match, the pattern can match
+                    }
+                }
+
+                if (regexMatcher != null) {
                     message.matches = true;
 
                     // check replacements
@@ -166,7 +177,7 @@ class PatternDialog extends AModuleDialog {
 
                     if (replacement != null) {
                         // replace url
-                        message.newUrl = regexFix.replaceAll(url, regex_matcher, replacement);
+                        message.newUrl = regexFix.replaceAll(url, regexMatcher, replacement);
 
                         // decode if required
                         if (data.optBoolean("decode")) {
@@ -185,8 +196,7 @@ class PatternDialog extends AModuleDialog {
                 if (message.matches) messages.add(message);
 
             } catch (Exception e) {
-                // invalid pattern? ignore
-                e.printStackTrace();
+                AndroidUtils.assertError("Invalid pattern", e);
             }
         }
     }
@@ -233,9 +243,7 @@ class PatternDialog extends AModuleDialog {
         if (message.newUrl != null) fix.setOnClickListener(v -> setUrl(new UrlData(message.newUrl).putData(APPLIED + message.pattern, message.pattern)));
     }
 
-    /**
-     * DataClass for pattern messages
-     */
+    /** DataClass for pattern messages */
     private static class Message {
         final String pattern;
         public boolean matches = false;

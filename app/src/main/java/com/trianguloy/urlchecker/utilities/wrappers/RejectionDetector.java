@@ -25,9 +25,9 @@ public class RejectionDetector {
         this.cntx = cntx;
     }
 
-    /** Marks a url as opened from an intentApp (at this moment) */
-    public void markAsOpen(String url, IntentApp intentApp) {
-        rejectLast.set(List.of(Long.toString(System.currentTimeMillis()), intentApp.getComponent().flattenToString(), url));
+    /** Marks a url as opened from a component (at this moment) */
+    public void markAsOpen(String url, ComponentName component) {
+        rejectLast.set(List.of(Long.toString(System.currentTimeMillis()), component.flattenToString(), url));
     }
 
     /**

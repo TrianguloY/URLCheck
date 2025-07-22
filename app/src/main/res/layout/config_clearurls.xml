@@ -28,6 +28,7 @@
         android:text="@string/mClear_toggleVerbose" />
 
     <TextView
+        android:id="@+id/tm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="web"

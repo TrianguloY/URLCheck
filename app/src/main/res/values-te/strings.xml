@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a_settings">సెట్టింగులు</string>
+    <string name="a_about">గురించి</string>
+    <string name="txt_conf">ఇక్కడ అందుబాటులో ఉన్న అన్ని మాడ్యూల్స్ ఉన్నాయి, ఇక్కడ మీరు వాటి వివరణ మరియు సెట్టింగ్‌లను తనిఖీ చేయవచ్చు. మీరు వాటిని తిరిగి ఆర్డర్ చేయవచ్చు, శీర్షిక దృశ్యమానతను మార్చవచ్చు మరియు వాటిని ప్రారంభించవచ్చు/నిలిపివేయవచ్చు.</string>
+    <string name="txt_openLinks">ఈ యాప్‌లో లింక్‌లను తెరవండి: సంవత్సరాలుగా Android దీన్ని కాన్ఫిగర్ చేసే విధానాన్ని మార్చింది మరియు వెర్షన్‌ల మధ్య వ్యత్యాసం ఉంది. మీ పరికరానికి అందుబాటులో ఉన్న అన్ని సెట్టింగ్‌లను క్రింద కనుగొనండి, లింక్‌లు ఈ యాప్‌లో తెరవకపోతే వాటన్నింటినీ ప్రయత్నించండి.</string>
+    <string name="txt_info">ఈ యాప్ క్లిక్ చేసిన URL లను తెరవడానికి ఒక మధ్యవర్తిగా పనిచేస్తుంది. ఈ యాప్‌ను తెరవడానికి ఎంచుకున్నప్పుడు లింక్ గురించి కొంత సమాచారంతో కూడిన డైలాగ్ చూపబడుతుంది. అందుబాటులో ఉన్న అన్ని మాడ్యూల్స్‌ని తనిఖీ చేయడానికి మరియు కాన్ఫిగర్ చేయడానికి దిగువ మాడ్యూల్ బటన్‌ను నొక్కండి.</string>
+    <string name="locale">తెలుగు</string>
+    <string name="txt_sample">దీనిని పరీక్షించడానికి క్రింది లింక్‌ను నొక్కండి:</string>
+    <string name="a_modules">మాడ్యూల్స్</string>
+    <string name="txt_about">%1$s ద్వారా యాప్ రూపొందించబడింది.\n\nసహకారం: %2$s.\nఅనువాదాలు: %3$s.</string>
+    <string name="link_blog">%s యొక్క బ్లాగ్</string>
+    <string name="link_changelog">మార్పుల చిట్టా</string>
+    <string name="link_source">సోర్స్ కోడ్</string>
+    <string name="link_privacy">గోప్యతా విధానం</string>
+    <string name="toast_cantEnable">మాడ్యూల్‌ని ప్రారంభించలేకపోయాను: %s</string>
+    <string name="desc_up">పైకి</string>
+    <string name="desc_down">కిందికి</string>
+    <string name="desc_decorations">శీర్షికను చూపు/దాచు</string>
+    <string name="btn_setBrowser">డిఫాల్ట్ బ్రౌజర్‌గా సెట్ చేయండి</string>
+    <string name="toast_defaultSet">యాప్ ఇప్పుడు డిఫాల్ట్ వెబ్ బ్రౌజర్</string>
+    <string name="btn_configureBrowser">డిఫాల్ట్ వెబ్ బ్రౌజర్</string>
+    <string name="btn_linksSettings">మద్దతు ఉన్న లింక్‌లను తెరవండి</string>
+    <string name="btn_androidSettings">Android యాప్ సెట్టింగ్‌లు</string>
+    <string name="txt_theme">థీమ్:</string>
+    <string name="translators">సత్య</string>
+    <string name="menu_toggleDecorations">అన్ని శీర్షికలను టోగుల్ చేయండి</string>
+    <string name="spin_lightTheme">లైట్</string>
+    <string name="menu_resetOrder">క్రమాన్ని రీసెట్ చేయండి</string>
+    <string name="desc_enable">మాడ్యూల్‌ను ప్రారంభించు/నిలిపివేయి</string>
+    <string name="spin_darkTheme">డార్క్</string>
+    <string name="txt_width">డైలాగ్ వెడల్పు:\nహెచ్చరిక! చిన్న విలువలు స్క్రీన్ మూలకాలను దాచవచ్చు.</string>
+</resources>

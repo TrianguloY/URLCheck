@@ -7,11 +7,11 @@
     <string name="a_about">حول التطبيق</string>
     <string name="translators">Magdy Elgendy</string>
     <string name="locale">العربية</string>
-    <string name="txt_about">تم إنشاء التطبيق بواسطة TrianguloY.
+    <string name="txt_about">تم إنشاء التطبيق بواسطة %1$s.
 \n
-\nالمساهمون: %1$s.
-\nالمترجمون: %2$s.</string>
-    <string name="link_blog">مدونة TrianguloY</string>
+\nالمساهمون: %2$s.
+\nالمترجمون: %3s.</string>
+    <string name="link_blog">مدونة %s</string>
     <string name="link_changelog">سجل التغييرات</string>
     <string name="link_source">رمز المصدر</string>
     <string name="link_privacy">سياسة الخصوصية</string>
@@ -33,7 +33,6 @@
     <string name="btn_backupRestore">النسخ الاحتياطي / استعادة البيانات</string>
     <string name="bck_mn_advanced">عرض الخيارات المتقدمة</string>
     <string name="btn_backup">عمل نسخة احتياطية</string>
-    <string name="btn_replace">استبدال</string>
     <string name="btn_restore">استعادة البيانات</string>
     <string name="btn_delete">حذف</string>
     <string name="bkp_data_prefs">التفضيلات: البيانات المحفوظة كتفضيلات.</string>
@@ -73,7 +72,6 @@
     <string name="txt_tutorial2">يعمل التطبيق كوسيط عند فتح روابط URL أو مشاركتها. بمجرد إرسال URL إلى التطبيق، يمكنك التفاعل معه من خلال الوحدات. بعد ذلك، يمكنك فتح الرابط (في التطبيق الذي تريده)، مشاركته، أو نسخه إلى الحافظة.</string>
     <string name="toast_noApp">لا يمكن فتح التطبيق</string>
     <string name="toast_noBrowser">لا يمكن فتح متصفح الويب</string>
-    <string name="title_choose">اختر التطبيق</string>
     <string name="invalid">غير صالح</string>
     <string name="save">حفظ</string>
     <string name="close">إغلاق</string>
@@ -136,8 +134,7 @@
     <string name="mVT_badUrl">حذار! اكتشف %1$d/%2$d من محركات البحث عنوان الويب (اعتبارًا من تاريخ %3$s)</string>
     <string name="mVT_warningUrl">تحذير، اكتشف %1$d/%2$d من محركات البحث عنوان الويب (اعتبارًا من تاريخ %3$s)</string>
     <string name="mVT_goodUrl">لم يتم اكتشاف أي من محركات %1$d عنوان الويب (اعتبارًا من تاريخ %2$s)</string>
-    <string name="mVT_connectError">لا يمكن الاتصال بـ VirusTotal. تأكد من الاتصال بالإنترنت، أو حاول مرة أخرى لاحقًا.</string>
-    <string name="mVT_jsonError">لا يمكن الاتصال بـ VirusTotal. تأكد من أن مفتاح API صالح، أو حاول مرة أخرى لاحقًا.</string>
+    <string name="mVT_error">لا يمكن الاتصال بـ VirusTotal. تأكد من أن مفتاح API صالح، أو حاول مرة أخرى لاحقًا.</string>
     <string name="mD_name">وحدة تصحيح الأخطاء/العلامة</string>
     <string name="mD_ctabs">عرض رسائل التصحيح من خدمة علامات التبويب المخصصة</string>
     <string name="mHist_name">السجل</string>
@@ -171,15 +168,7 @@
     <string name="mPttrn_ascii">تحذير! تم العثور على أحرف غير ASCII.</string>
     <string name="mPttrn_wrongSchemaHttp">صيغة http غير صالحة بالحروف الكبيرة.</string>
     <string name="mPttrn_ok">لا توجد أنماط مطابقة</string>
-    <string name="mPttrn_editor">هنا يمكنك تحرير أو إضافة نمط جديد. الصيغة:
-\n- \'encode\': boolean: قم بتعيينها على صحيح لترميز عنوان الويب قبل فحصه بواسطة التعبير النمطي.
-\n- \'regex\': string, required: تعبير نمطي صالح في جافا يجب أن يتطابق معه عنوان الويب، وإلا سيتم تخطي النمط.
-\n- \'excludeRegex\': string: إذا تم توفيره، فهو تعبير نمطي صالح في جافا يجب أن لا يتطابق معه عنوان الويب، وإلا سيتم تخطي النمط.
-\n- \'replacement\': string|list: إذا تم توفيره، فسيقوم الزر \'تصحيح\' بتشغيل \'url=url.replaceAll(regex,replacement)\'. إذا كانت قائمة، سيكون الاستبدال عنصرًا عشوائيًا منها.
-\n- \'decode\': boolean: قم بتعيينها على صحيح لفك تشفير العنوان النهائي.
-\n- \'automatic\': boolean: قم بتعيينها على صحيح لتطبيق النمط تلقائيًا.
-\n- \'enabled\': boolean: قم بتعيينها على غير صحيح لتعطيل النمط.
-\nملاحظة: إذا قمت بتحرير الأنماط، فلن يتم إضافة أنماط جديدة مضمنة من تحديثات التطبيق تلقائيًا (يمكنك استعادتها باستخدام الخيار إعادة الضبط).</string>
+    <string name="mPttrn_editor">هنا يمكنك تحرير أو إضافة نمط جديد. الصيغة: \n- \'encode\': boolean: قم بتعيينها على صحيح لترميز عنوان الويب قبل فحصه بواسطة التعبير النمطي. \n- \'regex\': string: تعبير نمطي صالح في جافا يجب أن يتطابق معه عنوان الويب، وإلا سيتم تخطي النمط. \n- \'excludeRegex\': string: إذا تم توفيره، فهو تعبير نمطي صالح في جافا يجب أن لا يتطابق معه عنوان الويب، وإلا سيتم تخطي النمط. \n- \'replacement\': string|list: إذا تم توفيره، فسيقوم الزر \'تصحيح\' بتشغيل \'url=url.replaceAll(regex,replacement)\'. إذا كانت قائمة، سيكون الاستبدال عنصرًا عشوائيًا منها. \n- \'decode\': boolean: قم بتعيينها على صحيح لفك تشفير العنوان النهائي. \n- \'automatic\': boolean: قم بتعيينها على صحيح لتطبيق النمط تلقائيًا. \n- \'enabled\': boolean: قم بتعيينها على غير صحيح لتعطيل النمط. \nملاحظة: إذا قمت بتحرير الأنماط، فلن يتم إضافة أنماط جديدة مضمنة من تحديثات التطبيق تلقائيًا (يمكنك استعادتها باستخدام الخيار إعادة الضبط).</string>
     <string name="mOpen_desc">يحتوي على الأزرار التالية (من اليسار إلى اليمين):
 \n- زر علامات تبويب مخصصة: قم بتبديل تمكين/تعطيل ميزة علامات التبويب المخصصة. عند التمكين، يجب أن يتم فتح المتصفح في وضع \'خفيف\'.
 \n- زر التصفح الخفي: للمتصفح Firefox فقط. قم بتبديل تمكين/تعطيل وضع التصفح الخفي. عند التمكين، يجب أن يتم فتح المتصفح في وضع التصفح الخفي.
@@ -192,14 +181,14 @@
     <string name="mOpen_incognitoDesc">تبديل وضع التصفح الخفي (Firefox فقط)</string>
     <string name="mStatus_name">كود الحالة</string>
     <string name="mStatus_desc">من خلال الضغط على زر التحقق، سيتم إجراء طلب شبكة لاسترجاع وعرض كود حالة الموقع. إذا كانت النتيجة توجيهًا، فستتمكن من عرض عنوان URL النهائي. يتم الحصول على محتوى عنوان URL (GET)، ولكن لا يتم تقييمه، لذلك لن يتم اكتشاف التوجيهات استنادًا إلى JavaScript.</string>
-    <string name="mVT_desc">عند تمكين هذه الوحدة، يمكنك فحص عنوان الويب باستخدام VirusTotal والتحقق من التقرير. يلزم وجود مفتاح API الخاص بـ VirusTotal الشخصي لعمله، يمكنك الحصول على واحد بعد التسجيل للحصول على حساب مجاني هنا: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">عند تمكين هذه الوحدة، يمكنك فحص عنوان الويب باستخدام VirusTotal والتحقق من التقرير. يلزم وجود مفتاح API الخاص بـ VirusTotal الشخصي لعمله، يمكنك الحصول على واحد بعد التسجيل للحصول على حساب مجاني هنا: %s .</string>
     <string name="mD_desc">إذا قمت بإعادة ترتيب الوحدات، سيتم وضع الجديدة التي يتم إضافتها في التحديثات المستقبلية فوق هذه الوحدة.
 \n
 \nإذا قمت بتمكين هذا، سيتم عرض بعض البيانات التصحيحية الداخلية (مثل عنوان intent الأصلي)، مفيدة للمطورين.
 \n
 \nيمكنك الضغط المطول لتحديد النص.</string>
     <string name="mClear_desc">تقوم هذه الوحدة بإزالة tracking وreferrer وغيرها من parameters الغير مفيدة من عنوان URL. كما تسمح أيضًا بتوجيهات URL المشتركة في وضع عدم الاتصال بالإنترنت.</string>
-    <string name="mClear_tm">كتالوج مدمج تم نسخه من ClearURL: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">كتالوج مدمج تم نسخه من ClearURL: %s</string>
     <string name="mClear_clear">تطبيق</string>
     <string name="mClear_matches">يطابق %s</string>
     <string name="mClear_blocked">- محظور!</string>
@@ -241,7 +230,7 @@
     <string name="mRemove_all">حذف الكل</string>
     <string name="mRemove_one">حذف %s</string>
     <string name="mClear_hashMismatch">التجزئات Hashes غير متطابقة، قد يكون الملف قد تم التلاعب به. إذا كنت ترغب في تخطي التحقق، قم بإزالة العنوان الخاص بالتجزئة hash URL</string>
-    <string name="mClear_editor">قواعد الكتالوج: يجب أن تتبع التنسيق الموجود في https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">قواعد الكتالوج: يجب أن تتبع التنسيق الموجود في %s.
 \nيرجى ملاحظة أن أي تعديل على الكائن الأصلي parent object \'providers\' سيتم استبداله overwritten إذا تم تحديث الكتالوج تلقائيًا أو يدويًا من نافذة المُحدّث. لتعيين قواعد شخصية، ضعها في كائن أبوي parent object آخر (أي اسم).</string>
     <string name="mRemove_empty">حذف الفراغ</string>
     <string name="mLog_name">سجل</string>
@@ -285,7 +274,7 @@
     <string name="mDrawer_name">الدرج</string>
     <string name="mDrawer_desc">سيتم إخفاء جميع الوحدات بالأسفل في درج. ستعمل الوحدات بشكل طبيعي، ولكن ستكون مخفية حتى تفتح الدرج. يمكنك وضع الوحدات التي تستخدمها نادرًا هنا، لتجنب الفوضى.</string>
     <string name="mChg_name">سجل التغييرات</string>
-    <string name="mHosts_desc">هذه الوحدة تقوم بتصنيف المضيفين (hosts)، سواء عن طريق تحديدها يدويًا أو باستخدام ملف آخر يشبه المضيفين (hosts). يمكنك استخدامها للتحذير من المواقع الخطرة أو الخاصة. يحدد التكوين (configuration) المدمج مضيفي StevenBlack\'s hosts (الإعلانات (adware)/البرمجيات الخبيثة(malware)، الأخبار المزيفة(fakenews)، المقامرة(gambling) والمحتوى الخاص بالكبار(adult content)) من https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">هذه الوحدة تقوم بتصنيف المضيفين (hosts)، سواء عن طريق تحديدها يدويًا أو باستخدام ملف آخر يشبه المضيفين (hosts). يمكنك استخدامها للتحذير من المواقع الخطرة أو الخاصة. يحدد التكوين (configuration) المدمج مضيفي StevenBlack\'s hosts (الإعلانات (adware)/البرمجيات الخبيثة(malware)، الأخبار المزيفة(fakenews)، المقامرة(gambling) والمحتوى الخاص بالكبار(adult content)) من %s</string>
     <string name="mHosts_editor">تكوين المضيفين(Hosts configuration). التنسيق: قائمة من الكائنات(objects) حيث يكون المفتاح هو تصنيف المضيفين(hosts label) ويشمل المحتوى القيم الاختيارية التالية:
 \n- ملف(file): عنوان URL لملف مضيفين(hosts) عن بُعد للتنزيل. سيتم إضافة جميع المضيفين الصالحين الموجودين.
 \n- مضيفين(hosts): قائمة من المضيفين(hosts) الخام (strings) لإضافتها.
@@ -293,7 +282,7 @@
 \n- استبدال(replace): إذا كانت قيمتها خاطئة، فلن يتم استبدال المضيفين الحالية. لاحظ أن الكائنات تُقَيَم من الأعلى إلى الأسفل. الافتراضي هو صحيح.
 \n- ممكّن(enabled): إذا كانت قيمتها خاطئة، سيتم تخطي هذا الكائن بأكمله. الافتراضي هو صحيح.</string>
     <string name="mHosts_buildDesc">سيؤدي هذا إلى مسح قاعدة بيانات المضيفين(hosts) الحالية وبنائها مرة أخرى بالتكوين(configuration) الحالي، مع تنزيل ملفات المضيفين(hosts) من الإنترنت إذا لزم الأمر. قد يستغرق هذا الإجراء بضع ثوانٍ. هل ترغب في المتابعة؟</string>
-    <string name="mUnshort_desc">تقوم هذه الوحدة بإلغاء تقصير الروابط عن طريق إرسالها إلى https://unshorten.me/، حيث يتم تقييمها على خوادمهم(servers) وحفظ التوجيه(redirection) للطلبات المستقبلية. تجنب إلغاء تقصير الروابط التي تحتوي على بيانات خاصة أو حساسة.
+    <string name="mUnshort_desc">تقوم هذه الوحدة بإلغاء تقصير الروابط عن طريق إرسالها إلى %s، حيث يتم تقييمها على خوادمهم(servers) وحفظ التوجيه(redirection) للطلبات المستقبلية. تجنب إلغاء تقصير الروابط التي تحتوي على بيانات خاصة أو حساسة.
 \nتقتصر واجهة api الخاصة بهم على 10 طلبات في الساعة للفحوصات الجديدة. ستوضح استجابة الوحدة عدد الطلبات المعلقة التي لديك.</string>
     <string name="mFlag_desc">[ميزة تجريبية] هذه وحدة متقدمة، تتيح لك تحرير الأعلام(intent flags) عند فتح تطبيق آخر.
 \nستعرض هذه الوحدة قائمة بالأعلام، يمكنك تغيير ما إذا كان العلم مفعلاً أم لا بالنقر على الأيقونة. هناك أيضًا قائمة كاملة لإخفاء الأعلام هناك، هي مرئية فقط، وستظل الأعلام تستخدم الحالة المخصصة..
@@ -308,4 +297,27 @@
     <string name="mChg_current">الإصدار الحالي: %s</string>
     <string name="mChg_desc">سيتم الإشعار عند تحديث التطبيق.</string>
     <string name="mChg_view">عرض التغييرات</string>
+    <string name="small">صغير</string>
+    <string name="normal">عادي</string>
+    <string name="big">كبير</string>
+    <string name="json_discard_close">تجاهل وإغلاق</string>
+    <string name="txt_processText">مزامنة الرابط مع النص القابل للتحرير (عند فتح التطبيق بالنقر المطول على النص في مربع نص الإدخال)</string>
+    <string name="json_ignore">محتوى Json غير صالح. هل تريد تجاهله وإغلاق المحرر؟</string>
+    <string name="json_reset">تحذير، سيؤدي هذا إلى استبدال محتوى المحرر بمحتوى json المحفوظ. ستفقد جميع التغييرات التي تم إجراؤها، ولكن لن يتم تعديل المحتوى المحفوظ ما لم يتم حفظه يدوياً. هل تريد المتابعة؟</string>
+    <string name="auto_desc">باستخدام الأتمتة يمكنك تنفيذ إجراءات الوحدة النمطية بناءً على المحفزات. يمكنك تهيئة الأتمتة هنا، أو تعطيلها جميعاً باستخدام المفتاح أدناه.</string>
+    <string name="auto_editor">تكوين الأتمتة . التنسيق: قائمة من الكائنات (list of objects) حيث المفتاح (key) هو اسم أتمتة فريد (unique automation name) والمحتوى يتضمن القيم التالية:\n- \'regex\': سلسلة|قائمة (string|list): إذا كانت موجودة، يجب أن تتطابق مع تعبير عادي (regex) صالح بلغة جافا (valid java regex) يجب أن يتطابق مع الرابط لكي تعمل الأتمتة. إذا كانت قائمة، يجب أن يتطابق على الأقل تعبير عادي واحد. إذا تم حذفها، ستتطابق جميع الروابط.\n- \'referrer\': سلسلة|قائمة (string|list): إذا كانت موجودة، يجب أن يتطابق المرجع (referrer) (التطبيق الذي فتح الرابط) تمامًا مع هذه القيمة. إذا كانت قائمة، يجب أن يكون المرجع واحدًا من القيم. إذا تم حذفها، ستتطابق جميع الروابط. يمكنك استخدام وحدة التصحيح (debug module) للتحقق من القيمة الفعلية.\n- \'action\': سلسلة|قائمة (string|list)، مطلوبة (required): مفتاح الأتمتة (key of the automation) التي يجب تشغيلها. إذا كانت متعددة، ستعمل بالترتيب. تحقق أدناه للحصول على قائمة بجميع المفاتيح المتاحة (available keys).\n- \'args\': كائن (object): القيم التي قد تتطلبها الإجراء (action)، انظر وصف كل إجراء للقيم التي تقبلها.\n- \'stop\': منطقي (boolean): إذا كانت صحيحة (true)، فلن تعمل المزيد من الأتمتة للرابط الحالي. خاطئة بشكل افتراضي.\n- \'enabled\': منطقي (boolean): إذا كانت خاطئة (false)، سيتم تخطي هذه الأتمتة. صحيحة بشكل افتراضي.</string>
+    <string name="txt_width">عُرض الحوار:\nتحذير! قد تخفي القيم الصغيرة عناصر الشاشة.</string>
+    <string name="spin_fullWidth">كامل</string>
+    <string name="spin_dynamicWidth">حيوي</string>
+    <string name="format">التنسيق</string>
+    <string name="discard">إهمال</string>
+    <string name="json_info">عرض المعلومات</string>
+    <string name="json_save_error">تعذر حفظ: %s</string>
+    <string name="json_save">هناك تغييرات غير محفوظة، هل تريد حفظها أم تجاهلها؟</string>
+    <string name="json_format_error">محتوى Json غير صالح، لا يمكن تحليله.</string>
+    <string name="json_discard">تحذير، سيؤدي هذا إلى استبدال محتوى المحرر بمحتوى json المحفوظ. ستفقد جميع التغييرات التي تم إجراؤها. هل تريد المتابعة؟</string>
+    <string name="a_automations">الأتمتة</string>
+    <string name="auto_enabled">تفعيل ميزة الأتمتة</string>
+    <string name="auto_error_toast">عرض إشعار إذا فشلت الأتمتة</string>
+    <string name="auto_notFound">لا توجد أتمتة بالمفتاح \'%s\' . تأكد من أنه صالح وأن الوحدة المطلوبة نشطة.</string>
 </resources>

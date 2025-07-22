@@ -9,11 +9,11 @@
     <string name="a_modules">模組</string>
     <string name="a_settings">設定</string>
     <string name="a_about">關於</string>
-    <string name="txt_about">本應用程式由 TrianguloY 所建立
+    <string name="txt_about">本應用程式由 %1$s 所建立
 \n
-\n貢獻者：%1$s
-\n翻譯者：%2$s</string>
-    <string name="link_blog">TrianguloY 的網誌</string>
+\n貢獻者：%2$s
+\n翻譯者：%3$s</string>
+    <string name="link_blog">%s 的網誌</string>
     <string name="link_changelog">更新日誌</string>
     <string name="link_source">原始碼</string>
     <string name="toast_cantEnable">無法啟用模組: %s</string>
@@ -60,7 +60,6 @@
     <string name="mOpen_share">分享</string>
     <string name="toast_noBrowser">無法開啟網頁瀏覽器</string>
     <string name="mOpen_open">開啟</string>
-    <string name="title_choose">選擇程式</string>
     <string name="mVT_scanning">掃描中…</string>
     <string name="mLog_unlimited">無限制</string>
     <string name="mChg_name">更新日誌</string>
@@ -98,7 +97,7 @@
     <string name="mInput_desc">顯示目前的網址，並可手動編輯。</string>
     <string name="mOpen_name">開啟與分享</string>
     <string name="mOpen_closeShare">分享後關閉對話方塊</string>
-    <string name="mClear_tm">內建的規則目錄是從 ClearURLs 複製而來的：https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">內建的規則目錄是從 ClearURLs 複製而來的：%s</string>
     <string name="hidden">隱藏</string>
     <string name="mStatus_redir">重新導向至 %s</string>
     <string name="mClear_updater">更新工具</string>
@@ -183,17 +182,16 @@
     <string name="mClear_redirection">- 發現重新導向</string>
     <string name="mClear_hashError">無法取得雜湊檔，請檢查網址是否正確、裝置是否已連上網際網路</string>
     <string name="mHosts_noLabel">未標識</string>
-    <string name="mVT_jsonError">無法連上 VirusTotal。請檢查 API 金鑰是否有效，或稍後再試一次。</string>
+    <string name="mVT_error">無法連上 VirusTotal。請檢查 API 金鑰是否有效，或稍後再試一次。</string>
     <string name="mClear_hashHint">沒有雜湊驗證</string>
     <string name="mClear_restore">重設為 ClearURLs 路徑</string>
     <string name="mClear_hashMismatch">雜湊值不相符，該檔案可能已遭竄改。若欲略過驗證，請將雜湊檔網址留空。</string>
     <string name="mOpen_noReferrer">隱藏前景應用程式 (Referrer)</string>
     <string name="mClear_cleared">- 已清理</string>
-    <string name="mVT_desc">此模組可讓你透過 VirusTotal 掃描網址的安全性威脅並查看調查報告。如要使用此模組，請提供你的 VirusTotal API 金鑰，前往 https://www.virustotal.com/gui/join-us 免費註冊即可取得一組金鑰。</string>
+    <string name="mVT_desc">此模組可讓你透過 VirusTotal 掃描網址的安全性威脅並查看調查報告。如要使用此模組，請提供你的 VirusTotal API 金鑰，前往 %s 免費註冊即可取得一組金鑰。</string>
     <string name="mVT_goodUrl">已通過 %1$d 個掃毒引擎的檢驗 (截至 %2$s)</string>
     <string name="mVT_warningUrl">警告！掃毒引擎偵測率為 %1$d/%2$d (截至 %3$s)</string>
     <string name="mVT_badUrl">危險！掃毒引擎偵測率為 %1$d/%2$d (截至 %3$s)</string>
-    <string name="mVT_connectError">無法連上 VirusTotal。請確保裝置已連上網際網路，或稍後再試一次。</string>
     <string name="mClear_sourceDesc">規則目錄 JSON 檔的網址：</string>
     <string name="mClear_hashDesc">規則目錄雜湊檔的網址。若留空則不會檢查下載的內容是否遭到竄改 (不建議)：</string>
     <string name="mClear_blocked">- 已封鎖！</string>
@@ -212,7 +210,7 @@
 \n- 開啟網址：在應用程式中開啟網址。若有多個支援該網址的程式，則可從下拉式選單中選擇。
 \n- 複製網址：將網址複製到剪貼簿。
 \n- 分享網址：將網址分享到其他地方。</string>
-    <string name="mHosts_desc">此模組會對主機名稱加以識別，協助你留意危險或特定的網站。你可以手動配置，或使用遠端的主機檔案。內建的設定檔所選用的主機檔案是由 StevenBlack 提供，可用於鑑別廣告/惡意軟體、假新聞、賭博和成人內容，該檔案可在 https://github.com/StevenBlack/hosts 取得。</string>
+    <string name="mHosts_desc">此模組會對主機名稱加以識別，協助你留意危險或特定的網站。你可以手動配置，或使用遠端的主機檔案。內建的設定檔所選用的主機檔案是由 StevenBlack 提供，可用於鑑別廣告/惡意軟體、假新聞、賭博和成人內容，該檔案可在 %s 取得。</string>
     <string name="mHosts_editor">此為主機識別器設定檔，格式為一物件清單，每個物件的「鍵」為主機標識名稱，「值」則有下列屬性可供選填：
 \n- file：遠端主機檔案的網址。檔案中任何有效的主機都將被加入。
 \n- hosts：欲新增的主機名稱清單，格式為包含字串的陣列。
@@ -226,7 +224,7 @@
 \n這是進階版的「參數移除器」模組。</string>
     <string name="mClear_exception">- 因「%s」而忽略</string>
     <string name="mClear_desc">此模組能移除網址中的追蹤碼、參照連結等非必要參數。其亦能實現常見的離線重新導向。</string>
-    <string name="mClear_editor">此為規則目錄，其必須遵循 https://docs.clearurls.xyz/latest/specs/rules/ 的格式。
+    <string name="mClear_editor">此為規則目錄，其必須遵循 %s 的格式。
 \n注意：一旦使用更新工具更新規則目錄，任何對於「providers」物件的修改都將被覆寫。如要自訂規則，請另行建立其他物件 (任意名稱皆可) 並在其下撰寫。</string>
     <string name="mStatus_desc">藉由點選「檢查狀態」按鈕，此模組將發送一個網路請求來檢索並顯示該網站的狀態碼。如果結果為重新導向，則能檢視目標網址。雖然已取得 (GET) 網址的內容，但並未解析，因此無法偵測到任何基於 JavaScript 的重新導向。</string>
     <string name="mUnshort_pending">等待中：%1$d/%2$d</string>
@@ -248,17 +246,8 @@
 \n- 警告含有非 ASCII 字元 (例如希臘字母)。這對鑑別釣魚網站特別有用，試想這兩個網址：googĺe.com、google.com
 \n- 建議以「https」取代「http」
 \n- 建議以隱私友善的替代方案取代 YouTube、Reddit 或 Twitter 等網站 [預設為未啟用]</string>
-    <string name="mPttrn_editor">此為型樣檢查器設定檔，你可以在此編輯或新增型樣，格式為：
-\n- encode：布林值。若為「true」，網址會先解碼再檢查。
-\n- regex：字串，此項為必填，其應為有效的 Java 規則運算式。網址必須與之匹配，否則將略過該型樣。
-\n- excludeRegex：字串，其應為有效的 Java 規則運算式。若填寫此項，網址必須與之「不」匹配，否則將略過該型樣。
-\n- replacement：字串或包含字串的陣列。若填寫此項，將顯示一個「套用」按鈕供執行「url=url.replaceAll(regex,replacement)」；若為陣列，將會隨機挑選取代內容。
-\n- decode：布林值。若為「true」，將解碼取代後的網址。
-\n- automatic：布林值。若為「true」，將自動套用可用的動作。
-\n- enabled：布林值。若為「false」，將停用該型樣。
-\n注意：一旦編輯了這個設定檔，未來本程式所推出的新型樣將不會被自動加入 (除非重設本設定檔)。</string>
+    <string name="mPttrn_editor">此為型樣檢查器設定檔，你可以在此編輯或新增型樣，格式為： \n- encode：布林值。若為「true」，網址會先解碼再檢查。 \n- regex：字串，此項為必填，其應為有效的 Java 規則運算式。網址必須與之匹配，否則將略過該型樣。 \n- excludeRegex：字串，其應為有效的 Java 規則運算式。若填寫此項，網址必須與之「不」匹配，否則將略過該型樣。 \n- replacement：字串或包含字串的陣列。若填寫此項，將顯示一個「套用」按鈕供執行「url=url.replaceAll(regex,replacement)」；若為陣列，將會隨機挑選取代內容。 \n- decode：布林值。若為「true」，將解碼取代後的網址。 \n- automatic：布林值。若為「true」，將自動套用可用的動作。 \n- enabled：布林值。若為「false」，將停用該型樣。 \n注意：一旦編輯了這個設定檔，未來本程式所推出的新型樣將不會被自動加入 (除非重設本設定檔)。</string>
     <string name="mRemove_one">移除 %s</string>
-    <string name="btn_replace">取代</string>
     <string name="btn_backupRestore">備份／還原</string>
     <string name="bck_mn_advanced">顯示進階選項</string>
     <string name="btn_backup">備份</string>

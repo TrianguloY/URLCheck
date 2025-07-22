@@ -83,9 +83,10 @@
         <SeekBar
             android:id="@+id/width_value"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:max="100" />
+            android:max="100"
+            android:padding="@dimen/smallPadding" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -127,11 +128,15 @@
             android:id="@+id/animations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/smallPadding"
-            android:paddingLeft="@dimen/smallPadding"
-            android:paddingEnd="@dimen/smallPadding"
-            android:paddingRight="@dimen/smallPadding"
+            android:padding="@dimen/smallPadding"
             android:text="@string/txt_animation" />
+
+        <Switch
+            android:id="@+id/processText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/smallPadding"
+            android:text="@string/txt_processText" />
 
         <FrameLayout
             android:layout_width="match_parent"

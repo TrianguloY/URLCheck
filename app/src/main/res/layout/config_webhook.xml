@@ -14,6 +14,7 @@
         android:id="@+id/webhook_url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="url,webhook"
         android:hint="@string/mWebhook_url_hint"
         android:inputType="textUri" />
 
@@ -27,6 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:autofillHints="json,body,webhook"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/mWebhook_body_hint"

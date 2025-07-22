@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
+import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.valueOrDefault;
+
 import android.app.Activity;
 import android.content.Context;
 
@@ -9,6 +11,8 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.generics.JsonCatalog;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.BiConsumer;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +26,15 @@ public class AutomationRules extends JsonCatalog {
     /* ------------------- inner classes ------------------- */
 
     /** Represents an available automation */
-    public record Automation<T extends AModuleDialog>(String key, int description, JavaUtils.Consumer<T> action) {
+    public record Automation<T extends AModuleDialog>(
+            String key, int description, BiConsumer<T, JSONObject> action) {
+        public Automation(String key, int description, Consumer<T> action) {
+            this(key, description, (dialog, ignoredArgs) -> action.accept(dialog));
+        }
+    }
+
+    /** Represents an automation that matched a url */
+    public record MatchedAutomation(List<String> actions, boolean stop, JSONObject args) {
     }
 
     /* ------------------- static ------------------- */
@@ -64,12 +76,17 @@ public class AutomationRules extends JsonCatalog {
                         .put("action", "webhook")
                         .put("enabled", false)
                 )
+                .put(cntx.getString(R.string.auto_rule_toast), new JSONObject()
+                        .put("regex", cntx.getString(R.string.trianguloy))
+                        .put("action", "toast")
+                        .put("args", new JSONObject()
+                                .put("text", "👋🙂")))
                 ;
     }
 
-    /** Returns the automation ids that match a specific [urlData] */
-    public List<String> check(UrlData urlData) {
-        var matches = new ArrayList<String>();
+    /** Returns the automations that matched a specific [urlData] */
+    public List<MatchedAutomation> check(UrlData urlData, Activity cntx) {
+        var matches = new ArrayList<MatchedAutomation>();
 
         var catalog = getCatalog();
         for (var key : JavaUtils.toList(catalog.keys())) {
@@ -77,17 +94,29 @@ public class AutomationRules extends JsonCatalog {
                 var automation = catalog.getJSONObject(key);
                 if (!automation.optBoolean("enabled", true)) continue;
 
-                for (String pattern : JavaUtils.getArrayOrElement(automation.get("regex"), String.class)){
-                    if (urlData.url.matches(pattern)) {
-                        matches.add(automation.getString("action"));
-                        break;
-                    }
+                // match at least one referrer, if any
+                var referrer = AndroidUtils.getReferrer(cntx);
+                if (referrer != null && JavaUtils.nonePresentMatch(JavaUtils.parseArrayOrElement(automation.opt("referrer"), String.class), referrer::equals)) {
+                    continue;
                 }
 
-            } catch (JSONException e) {
-                AndroidUtils.assertError("Invalid automation rule", e);
-            } catch (ClassCastException e) {
-                AndroidUtils.assertError("Invalid automation regex", e);
+                // match at least one regex, if any
+                if (JavaUtils.nonePresentMatch(JavaUtils.parseArrayOrElement(automation.opt("regex"), String.class), urlData.url::matches)) {
+                    continue;
+                }
+
+                // don't match any excluded regex, if any
+                if (JavaUtils.anyMatch(JavaUtils.parseArrayOrElement(automation.opt("excludeRegex"), String.class), urlData.url::matches)) {
+                    continue;
+                }
+
+                // add as matched
+                matches.add(new MatchedAutomation(
+                        JavaUtils.parseArrayOrElement(automation.opt("action"), String.class),
+                        automation.optBoolean("stop"), valueOrDefault(automation.optJSONObject("args"), new JSONObject())));
+
+            } catch (Exception e) {
+                AndroidUtils.assertError("Invalid automation", e);
             }
         }
         return matches;

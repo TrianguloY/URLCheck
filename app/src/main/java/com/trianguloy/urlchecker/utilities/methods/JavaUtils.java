@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -15,9 +16,11 @@ import java.util.List;
  */
 public interface JavaUtils {
 
+    String sUTF_8 = StandardCharsets.UTF_8.name();
+
     /** Converts an iterator to a list */
     static <T> List<T> toList(Iterator<T> iterator) {
-        List<T> list = new ArrayList<>();
+        var list = new ArrayList<T>();
         while (iterator.hasNext()) {
             list.add(iterator.next());
         }
@@ -33,7 +36,25 @@ public interface JavaUtils {
         return result;
     }
 
-    /**Converts a string into a json object, returns empty on failure */
+    /** Returns true iff none of the present elements fulfill the check. False if the list is empty. */
+    static <T> boolean nonePresentMatch(List<T> list, Function<T, Boolean> check) {
+        if (list.isEmpty()) return false;
+
+        for (var element : list) {
+            if (check.apply(element)) return false;
+        }
+        return true;
+    }
+
+    /** Returns true iff at least one of the elements fulfill the check (false if the list is empty). */
+    static <T> boolean anyMatch(List<T> list, Function<T, Boolean> check) {
+        for (var element : list) {
+            if (check.apply(element)) return true;
+        }
+        return false;
+    }
+
+    /** Converts a string into a json object, returns empty on failure */
     static JSONObject toJson(String content) {
         try {
             return new JSONObject(content);
@@ -50,17 +71,17 @@ public interface JavaUtils {
      *
      * @throws ClassCastException if the values are not from type {@code T}
      */
-    static <T> List<T> getArrayOrElement(Object object, Class<T> clazz) throws ClassCastException, JSONException {
-        List<T> result = new ArrayList<T>();
+    static <T> List<T> parseArrayOrElement(Object object, Class<T> className) throws ClassCastException, JSONException {
+        var result = new ArrayList<T>();
 
         if (object instanceof JSONArray array) {
             // List
-            for (int i = 0; i < array.length(); i++) {
-                result.add(getAsOrCrash(array.get(i), clazz));
+            for (var i = 0; i < array.length(); i++) {
+                result.add(getAsOrCrash(array.get(i), className));
             }
-        } else {
+        } else if (object != null) {
             // Value
-            result.add(getAsOrCrash(object, clazz));
+            result.add(getAsOrCrash(object, className));
         }
 
         return result;
@@ -68,16 +89,17 @@ public interface JavaUtils {
 
     // I don't like it but it wasn't throwing an exception when wrongly casting,
     // probably due to type casting
+
     /**
      * Returns the value as type {@code T} if possible, if not, it throws an exception
      *
      * @throws ClassCastException if the values are not from type {@code T}
      */
-    static <T> T getAsOrCrash(Object object, Class<T> clazz) throws ClassCastException{
-        if (clazz.isInstance(object)) {
+    static <T> T getAsOrCrash(Object object, Class<T> className) throws ClassCastException {
+        if (className.isInstance(object)) {
             return (T) object;
         } else {
-            throw new ClassCastException("Not of class " + clazz.getName());
+            throw new ClassCastException("Not of class " + className.getName());
         }
     }
 
@@ -93,12 +115,12 @@ public interface JavaUtils {
      * The order does not matter.
      */
     static boolean containsWords(String body, String keywords) {
-        JavaUtils.Function<String, String> filter = s -> s.toUpperCase().replaceAll("[\\s-_]+", " ");
+        UnaryOperator<String> filter = s -> s.toUpperCase().replaceAll("[\\s-_]+", " ");
         // Match all words
-        String[] words = filter.apply(keywords).split(" ");
+        var words = filter.apply(keywords).split(" ");
         body = filter.apply(body);
-        boolean match = true;
-        for (String str : words) {
+        var match = true;
+        for (var str : words) {
             if (!body.contains(str)) {
                 match = false;
                 break;
@@ -156,6 +178,12 @@ public interface JavaUtils {
         void accept(T t);
     }
 
+    /** java.util.function.BiConsumer requires api 24 */
+    @FunctionalInterface
+    interface BiConsumer<T, U> {
+        void accept(T t, U u);
+    }
+
     /** java.util.function.Supplier requires api 24 */
     @FunctionalInterface
     interface Supplier<T> {
@@ -168,13 +196,13 @@ public interface JavaUtils {
         R apply(T t);
     }
 
-    /** Negates a boolean Function */
-    static <T> Function<T, Boolean> negate(Function<T, Boolean> function) {
-        return t -> !function.apply(t);
-    }
-
     /** java.util.function.UnaryOperator requires api 24 */
     @FunctionalInterface
     interface UnaryOperator<T> extends Function<T, T> {
+    }
+
+    /** Negates a boolean Function */
+    static <T> Function<T, Boolean> negate(Function<T, Boolean> function) {
+        return t -> !function.apply(t);
     }
 }

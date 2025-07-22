@@ -17,9 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/**
- * Manages the app version, to notify of updates
- */
+/** Manages the app version, to notify of updates */
 public class VersionManager {
 
     private final GenericPref.Str lastVersion;
@@ -30,9 +28,7 @@ public class VersionManager {
 
     /* ------------------- static ------------------- */
 
-    /**
-     * Check if the version must be updated
-     */
+    /** Check if the version must be updated */
     public static void check(Activity cntx) {
         // just call the constructor, it does the check
         new VersionManager(cntx);
@@ -100,17 +96,13 @@ public class VersionManager {
         }
     }
 
-    /**
-     * returns true iff the app was updated since last time it was used
-     */
+    /** returns true iff the app was updated since last time it was used */
     public boolean wasUpdated() {
         // just check inequality. If the app was downgraded, you probably also want to be notified.
         return !BuildConfig.VERSION_NAME.equals(lastVersion.get());
     }
 
-    /**
-     * Marks the current version as seen (wasUpdated will return false until a new update happens)
-     */
+    /** Marks the current version as seen (wasUpdated will return false until a new update happens) */
     public void markSeen() {
         lastVersion.set(BuildConfig.VERSION_NAME);
     }

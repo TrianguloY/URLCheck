@@ -9,7 +9,7 @@
     <ViewFlipper
         android:id="@+id/flipper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:autoStart="false">
@@ -24,8 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/padding"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -61,8 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/padding"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -181,8 +181,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/padding"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -233,8 +233,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/padding"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -249,7 +249,6 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/padding"
                     android:drawableStart="@android:drawable/ic_menu_sort_by_size"
-                    android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
                     android:drawablePadding="@dimen/smallPadding"
                     android:onClick="openModulesActivity"
                     android:paddingLeft="@dimen/padding"
@@ -269,8 +268,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/padding"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -287,8 +286,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/smallPadding"
-        android:layout_weight="0">
+        android:padding="@dimen/smallPadding">
 
         <Button
             android:id="@+id/bBack"

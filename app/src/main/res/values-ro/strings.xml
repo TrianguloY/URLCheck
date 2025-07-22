@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="toast_cantEnable">Nu se poate activa modulul: %s</string>
-    <string name="locale">Engleză</string>
+    <string name="locale">Română</string>
     <string name="txt_info">Această aplicație acționează ca un intermediar la deschiderea linkurilor URL accesate. Când alegeți această aplicație pentru a deschide un link, este afișată o fereastră de dialog cu informații despre acesta. Apăsați butonul modul de mai jos pentru a verifica și configura toate modulele disponibile.</string>
     <string name="txt_sample">Apasă linkul de mai jos pentru a-l testa:</string>
     <string name="a_modules">Module</string>
@@ -19,12 +19,12 @@
     <string name="txt_theme">Temă:</string>
     <string name="spin_darkTheme">Întunecat</string>
     <string name="spin_lightTheme">Luminat</string>
-    <string name="link_blog">Blogul lui TrianguloY</string>
+    <string name="link_blog">Blogul lui %s</string>
     <string name="txt_conf">Aici sunt prezentate toate modulele disponibile, unde puteți verifica descrierea și setările acestora. De asemenea, puteți să le reordonați, să comutați vizibilitatea titlului și să le activați/dezactivați.</string>
-    <string name="txt_about">Aplicație creată de TrianguloY.
+    <string name="txt_about">Aplicație creată de %1$s.
 \n
-\nContribuții: %1$s.
-\nTraduceri: %2$s.</string>
+\nContribuții: %2$s.
+\nTraduceri: %3$s.</string>
     <string name="txt_locale">Localitate:</string>
     <string name="txt_tutorial1">Mulțumim pentru descărcarea aplicației!
 \n
@@ -48,15 +48,7 @@
     <string name="mClear_hashError">Nu se poate prelua hash-ul, asigurați-vă că adresa URL este validă și că aveți o conexiune activă</string>
     <string name="mClear_restore">Restaurarea traseelor ClearURLs</string>
     <string name="mRemove_found">%d interogări găsite</string>
-    <string name="mPttrn_editor">Aici poți edita sau adăuga un nou șablon. Formatul este:
-\n-\'encode\': boolean: setat la true pentru a codifica URL-ul înainte de verificarea regexului.
-\n-\'regex\': string, obligatoriu: un regex Java valid cu care URL-ul trebuie să se potrivească, altfel șablonul este omis.
-\n-\'excludeRegex\': string: dacă este furnizat, un regex Java valid pe care URL-ul nu trebuie să-l potrivească, altfel șablonul este omis.
-\n-\'replacement\': string|listă: dacă este furnizat, butonul \'fix\' va rula \'url=url.replaceAll(regex, replacement)\'. Dacă este listă, înlocuirea va fi un element aleatoriu din aceasta.
-\n-\'decode\': boolean: setat la true pentru a decoda URL-ul înlocuit.
-\n-\'automatic\': boolean: setat la true pentru a aplica automat șablonul.
-\n-\'enabled\': boolean: setat la false pentru a dezactiva șablonul.
-\nNotă: dacă editezi șabloanele, noi șabloane încorporate din actualizările aplicației nu vor fi adăugate automat (le poți restaura cu opțiunea de resetare).</string>
+    <string name="mPttrn_editor">Aici poți edita sau adăuga un nou șablon. Formatul este: \n-\'encode\': boolean: setat la true pentru a codifica URL-ul înainte de verificarea regexului. \n-\'regex\': string: un regex Java valid cu care URL-ul trebuie să se potrivească, altfel șablonul este omis. \n-\'excludeRegex\': string: dacă este furnizat, un regex Java valid pe care URL-ul nu trebuie să-l potrivească, altfel șablonul este omis. \n-\'replacement\': string|listă: dacă este furnizat, butonul \'fix\' va rula \'url=url.replaceAll(regex, replacement)\'. Dacă este listă, înlocuirea va fi un element aleatoriu din aceasta. \n-\'decode\': boolean: setat la true pentru a decoda URL-ul înlocuit. \n-\'automatic\': boolean: setat la true pentru a aplica automat șablonul. \n-\'enabled\': boolean: setat la false pentru a dezactiva șablonul. \nNotă: dacă editezi șabloanele, noi șabloane încorporate din actualizările aplicației nu vor fi adăugate automat (le poți restaura cu opțiunea de resetare).</string>
     <string name="txt_tutorial5">Asta e tot. Iată câteva sfaturi care pot fi utile:
 \n
 \nAtunci când o aplicație nu vă oferă o modalitate de a deschide sau de a partaja un URL, dar vă oferă o modalitate de a face celălalt, puteți rezolva problema folosind această aplicație. De asemenea, puteți copia url-ul în clipboard apăsând lung butonul de partajare.
@@ -76,7 +68,7 @@
     <string name="mClear_rawRule">- conținut inutil găsit</string>
     <string name="mClear_hashDesc">URL-ul fișierului hash de catalog. Dacă este omisă, descărcarea nu va fi verificată pentru a vedea dacă a fost manipulată/modificat (nu este recomandat)</string>
     <string name="mClear_hashMismatch">Hashurile nu se potrivesc, este posibil ca fișierul să fi fost modificat. Dacă doriți să omiteți verificarea, eliminați adresa URL hash</string>
-    <string name="mClear_editor">Reguli de catalog: trebuie să respecte formatul de la https://docs.clearurls.xyz/latest/specs/rules/. Rețineți că orice modificare a obiectului părinte „furnizori” va fi suprascrisă dacă catalogul este actualizat automat sau manual din dialogul de actualizare. Pentru ca regulile personale să le seteze într-un obiect părinte diferit (orice nume).</string>
+    <string name="mClear_editor">Reguli de catalog: trebuie să respecte formatul de la %s. Rețineți că orice modificare a obiectului părinte „furnizori” va fi suprascrisă dacă catalogul este actualizat automat sau manual din dialogul de actualizare. Pentru ca regulile personale să le seteze într-un obiect părinte diferit (orice nume).</string>
     <string name="mRemove_desc">[DEPRECAT] Cu acest modul puteți elimina interogări de la adresa URL. Apăsați butonul pentru a le elimina pe toate sau apăsați pe săgeată pentru a le elimina pe rând. Mulțumim lui PabloOQ pentru idee și implementare originală!
 \n
 \nAcest modul a fost depreciat în favoarea modulului „Uri parts”.</string>
@@ -87,7 +79,6 @@
     <string name="btn_tutorialEnd">Termină tutorial-ul</string>
     <string name="toast_noApp">Nu se poate deschide aplicația</string>
     <string name="toast_noBrowser">Nu se poate deschide browser-ul web</string>
-    <string name="title_choose">Alegeți aplicația</string>
     <string name="invalid">Invalid</string>
     <string name="save">Salvează</string>
     <string name="reset">Resetare</string>
@@ -112,7 +103,7 @@
     <string name="mPttrn_noSchemeHttp">Lipsește schema HTTP.</string>
     <string name="mPttrn_noSchemeHttps">Lipsește schema HTTPS.</string>
     <string name="mOpen_name">Deschideți și partajați</string>
-    <string name="mClear_tm">Catalogul încorporat copiat de la ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Catalogul încorporat copiat de la ClearURLs: %s</string>
     <string name="mClear_desc">Acest modul elimină urmărirea, referințele și alți parametri inutili din URL. De asemenea, permite redirecționări URL offline obișnuite.</string>
     <string name="mClear_clear">Aplică</string>
     <string name="mClear_matches">Potriviri %s</string>

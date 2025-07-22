@@ -1,5 +1,9 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,15 +11,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Generic utilities related to streams (urls, strings, bytes...)
- */
+/** Generic utilities related to streams (urls, strings, bytes...) */
 public interface StreamUtils {
-    Charset UTF_8 = Charset.forName("UTF-8"); // StandardCharsets.UTF_8 requires api 19
 
     /** Reads an input stream and returns its content as a string. The stream is closed afterwards. */
     static String inputStream2String(InputStream is) throws IOException {
@@ -47,14 +47,14 @@ public interface StreamUtils {
     }
 
     /** Reads an input stream and streams its lines. */
-    static void consumeLines(InputStream is, JavaUtils.Consumer<String> function) {
+    static void consumeLines(InputStream is, Consumer<String> function) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 function.accept(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to consume stream", e);
         }
     }
 
@@ -72,8 +72,7 @@ public interface StreamUtils {
             return hex.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            // this should never happen, all Androids must support sha-256
+            AndroidUtils.assertError("this should never happen, all Androids must support sha-256", e);
             return "";
         }
     }

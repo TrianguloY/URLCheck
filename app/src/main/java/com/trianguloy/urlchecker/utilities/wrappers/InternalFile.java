@@ -1,16 +1,17 @@
 package com.trianguloy.urlchecker.utilities.wrappers;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import android.content.Context;
 
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Represents an internal file, can be modified
- */
+/** Represents an internal file, can be modified */
 public class InternalFile {
     private final String fileName;
     private final Context cntx;
@@ -20,9 +21,7 @@ public class InternalFile {
         this.cntx = cntx;
     }
 
-    /**
-     * Returns the content, null if the file doesn't exists or can't be read
-     */
+    /** Returns the content, null if the file doesn't exists or can't be read */
     public String get() {
         try {
             return StreamUtils.inputStream2String(cntx.openFileInput(fileName));
@@ -31,22 +30,16 @@ public class InternalFile {
         }
     }
 
-    /**
-     * Streams the lines
-     */
-    public boolean stream(JavaUtils.Consumer<String> function) {
+    /** Streams the lines */
+    public void stream(Consumer<String> function) {
         try {
             StreamUtils.consumeLines(cntx.openFileInput(fileName), function);
-            return true;
         } catch (IOException ignored) {
             // do nothing
-            return false;
         }
     }
 
-    /**
-     * Sets a new file content
-     */
+    /** Sets a new file content */
     public boolean set(String content) {
 
         // the same, already saved
@@ -56,17 +49,15 @@ public class InternalFile {
 
         // store
         try (FileOutputStream fos = cntx.openFileOutput(fileName, Context.MODE_PRIVATE)) {
-            fos.write(content.getBytes(StreamUtils.UTF_8));
+            fos.write(content.getBytes(UTF_8));
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
+            AndroidUtils.assertError("Unable to store file content", e);
             return false;
         }
     }
 
-    /**
-     * Deletes the file
-     */
+    /** Deletes the file */
     public void delete() {
         cntx.deleteFile(fileName);
     }

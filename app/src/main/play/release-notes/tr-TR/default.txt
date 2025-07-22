@@ -1,3 +1,79 @@
+V 3.4
+- Improve: Rewritten VirusTotal integration: use api v3 and show more details (vote third place)
+- Improve: You can now specify the app component and/or package in the open automation
+- Improve: Allow list of strings on 'regex' and 'excludeRegex' for patterns
+- Improve: $REFERRER$ can be used on the webhook body
+- Improve: Close url editText when pressing enter
+- New: Toast automation sample
+- Fix: bold host display not working with host-only urls
+- Fix: non-clickable links on json editor
+
+V 3.3.1
+- New: Allow multiple referrers on automations
+- Fix: Automations other than the first not working
+- Fix: Unescaped dots on example patterns
+
+V 3.3
+- New: Configurable dialog width
+- New: Automations: 'referrer' and 'stop'
+- New: Open&replace text on long-click
+- New: Register the app to open some common url intents (thanks ArtikusHG!)
+- New: Sample pattern song.link (thanks shalva-an!)
+- Improve: Automations: Allow multiple actions
+- Improve: Automations and patterns: 'regex' is now optional
+- Fix: Custom tabs not working when opening from some apps (like Google search)
+- Remove: 'clear' automation (wasn't working)
+
+V 3.2
+- Improve: enhanced JSON editor (vote second place)
+- New: upper-case-in-domain default pattern (thanks Bakr-Ali!)
+- Fix: 'rejected' urls hide the opened app
+
+V 3.1
+- New module: Webhook. Thanks to anoop-b!
+- New automations: clear and close
+- Improve: Allow multiple regex on automations
+- Improve: Tweaked style of history module
+- Fix: Disable auto-updates after using the Input module
+
+V 3.0
+- New: Automation (vote winner)
+- Change: Text input edit mode is now a popup
+- Fix: Uri parser should no longer decode twice
+- Improve: Updated main screen icons
+
+V 2.17
+- Improve: Input Text module display
+- Improve: Hosts module will check for subdomains too
+- Fix: Avoid crashes when decoding invalid text
+- Fix: Avoid crashes with malformed queries
+- Fix: Updated invalid lastUpdate of ClearUrl catalog
+- Fix: Module enable switches was sometimes reset when the app was sent to the background
+- Fix: Double decoding of url parts
+
+V 2.16
+- Improve: Detect multiple activities for the same app
+- Improve: Show first app icon
+- Improve: Display applied patterns in order
+- Debug: Include query results in the debug module
+
+V 2.15
+- New: Animations (can be disabled)
+- Fix: Better rejected detection. And allow to disable.
+- Fix: Custom tabs should work in more situations (links not opening)
+- Fix: Emojis and other non-standard characters on the Uri parts module
+- Improvement: Better error message when a module can't be enabled
+
+V 2.14
+- New: Backup/restore screen
+- Removed support for Android 4.3 and below
+- Updated internal versions
+
+V 2.13.1
+- New: Custom logic to hide rejected urls. Hide referrer is now disabled by default.
+- Fix: Third try to the 'open/share does nothing' bug.
+- Fix: Status module no longer decodes the location.
+
 V 2.13
 - New module: drawer. Hide modules under a button.
 - New module: changelog. Will notify if the app updates.

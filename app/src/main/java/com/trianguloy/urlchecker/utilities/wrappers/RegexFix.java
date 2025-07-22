@@ -16,9 +16,7 @@ import java.util.regex.Matcher;
  */
 public class RegexFix {
 
-    /**
-     * Android 11 and up have already the fix, disable in those cases
-     */
+    /** Android 11 and up have already the fix, disable in those cases */
     public static final boolean IS_ANDROID_FIXED = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R;
 
     private final GenericPref.Bool pttrn_regexfix;
@@ -28,9 +26,7 @@ public class RegexFix {
         pttrn_regexfix = new GenericPref.Bool("pttrn_regexfix", true, cntx);
     }
 
-    /**
-     * Attach the setting to a given switch view (or disabled if not needed)
-     */
+    /** Attach the setting to a given switch view (or disabled if not needed) */
     public static void attachSetting(Switch view) {
         if (IS_ANDROID_FIXED) {
             // hide, already native
@@ -42,9 +38,7 @@ public class RegexFix {
         }
     }
 
-    /**
-     * Use this instead of: matcher = pattern.matcher(text); result = matcher.replaceAll(replacement)
-     */
+    /** Use this instead of: matcher = pattern.matcher(text); result = matcher.replaceAll(replacement) */
     public String replaceAll(String text, Matcher matcher, String replacement) {
         if (IS_ANDROID_FIXED || !pttrn_regexfix.get()) {
             // no fix required or explicitly disabled, just use native function
@@ -73,6 +67,7 @@ public class RegexFix {
         return matcher.end();
     }
 
+    /** @noinspection UnnecessaryContinue, DataFlowIssue , ConstantValue */
     private static void appendEvaluated(Matcher matcher, StringBuffer buffer, String s) {
         // Copied from https://android.googlesource.com/platform/libcore/+/refs/heads/android13-release/ojluni/src/main/java/java/util/regex/Matcher.java#731
         boolean escape = false;
@@ -128,6 +123,7 @@ public class RegexFix {
         }
     }
 
+    /** @noinspection UnusedReturnValue*/
     private static StringBuffer appendTail(String text, StringBuffer sb, int appendPos) {
         // Copied from https://android.googlesource.com/platform/libcore/+/refs/heads/android13-release/ojluni/src/main/java/java/util/regex/Matcher.java#796
         int to = text.length();

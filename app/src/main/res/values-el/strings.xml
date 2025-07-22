@@ -23,15 +23,15 @@
     <string name="txt_tutorial3">Όρισε την εφαρμογή ως τον προεπιλεγμένο περιηγητή για να καταγράφει τα URLs των συνδέσμων όταν τους ανοίγεις.
 \n(Δεν χρειάζεται αν χρησιμοποιείτε \"Κοινοποίηση\")</string>
     <string name="btn_configureBrowser">Προεπιλεγμένος περιηγητής</string>
-    <string name="link_blog">Το μπλογκ του TrianguloY</string>
+    <string name="link_blog">Το μπλογκ του %s</string>
     <string name="btn_linksSettings">Άνοιξε τους υποστηριζόμενους συνδέσμους</string>
     <string name="menu_resetOrder">Επαναφορά σειράς</string>
     <string name="btn_setBrowser">Όρισε ως προεπιλεγμένο περιηγητή</string>
     <string name="btn_androidSettings">Ρυθμίσεις Android της εφαρμογής</string>
-    <string name="txt_about">Η εφαρμογή δημιουργήθηκε από τον TrianguloY.
+    <string name="txt_about">Η εφαρμογή δημιουργήθηκε από τον %1$s.
 \n
-\nΣυνεισφορές: %1$s.
-\nΜεταφράσεις: %2$s.</string>
+\nΣυνεισφορές: %2$s.
+\nΜεταφράσεις: %3$s.</string>
     <string name="txt_locale">Τόπος:</string>
     <string name="txt_info">Αυτή εφαρμογή λειτουργεί σαν διαμεσολαβητής όταν ανοίγετε συνδέσμους URL. Ένας διάλογος με κάποιες πληροφορίες για τον σύνδεσμο εμφανίζεται όταν επιλέγετε αυτήν την εφαρμογή για να τον ανοίξει. Πατήστε το κουμπί λειτουργιών για να ελέγξετε και να ρυθμήσετε όλες τις διαθέσιμες λειτουργίες.</string>
     <string name="desc_up">Πήγαινε πάνω</string>

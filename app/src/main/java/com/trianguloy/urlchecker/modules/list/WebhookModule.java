@@ -20,11 +20,10 @@ import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.wrappers.Connection;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -127,7 +126,7 @@ class WebhookDialog extends AModuleDialog {
         statusButton.setEnabled(false);
 
         executor.execute(() -> {
-            var sent = send(webhookUrl.get(), getUrl(), webhookBody.get());
+            var sent = send(webhookUrl.get(), getUrl(), AndroidUtils.getReferrer(getActivity()), webhookBody.get());
             getActivity().runOnUiThread(() -> {
                 statusText.setText(sent ? R.string.mWebhook_success : R.string.mWebhook_error);
                 if (!sent) {
@@ -139,31 +138,88 @@ class WebhookDialog extends AModuleDialog {
     }
 
     /** Performs the send action */
-    static boolean send(String webhook, String url, String body) {
-        try {
-            var json = body
-                    .replace("$URL$", url)
-                    .replace("$TIMESTAMP$", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).format(new Date()));
+    static boolean send(String webhook, String url, String referrer, String body) {
+        var json = body
+                .replace("$URL$", url)
+                .replace("$TIMESTAMP$", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).format(new Date()))
+                .replace("$REFERRER$", referrer);
 
-            var responseCode = HttpUtils.performPOSTJSON(webhook, json);
-            return responseCode >= 200 && responseCode < 300;
-        } catch (IOException e) {
-            AndroidUtils.assertError("Failed to send to webhook", e);
-            return false;
-        }
-
+        var responseCode = Connection.to(webhook)
+                .postJSONString(json)
+                .getStatusCode();
+        return responseCode >= 200 && responseCode < 300;
     }
 }
 
 class WebhookConfig extends AModuleConfig {
 
-    public static final String DEFAULT = "{\"url\":\"$URL$\",\"timestamp\":\"$TIMESTAMP$\"}";
+    public static final String DEFAULT = """
+            {
+              "url": "$URL$",
+              "timestamp": "$TIMESTAMP$",
+              "referrer": "$REFERRER$"
+            }""";
 
     private static final List<Pair<String, String>> TEMPLATES = List.of(
             Pair.create("custom", DEFAULT),
-            Pair.create("Discord", "{\"content\":\"$URL$ @ $TIMESTAMP$\"}"),
-            Pair.create("Slack", "{\"text\":\"$URL$ @ $TIMESTAMP$\"}"),
-            Pair.create("Teams", "{\"text\":\"$URL$ @ $TIMESTAMP$\"}")
+            Pair.create("Discord", """
+                    {
+                      "embeds": [
+                        {
+                          "title": "$URL$",
+                          "fields": [
+                            {
+                              "name": "referrer",
+                              "value": "$REFERRER$"
+                            }
+                          ],
+                          "footer": {
+                            "text": "$TIMESTAMP$"
+                          }
+                        }
+                      ]
+                    }"""),
+            Pair.create("Slack", """
+                    {
+                      "blocks": [
+                        {
+                          "type": "section",
+                          "text": {
+                            "type": "mrkdwn",
+                            "text": "$URL$"
+                          }
+                        },
+                        {
+                          "type": "context",
+                          "elements": [
+                            {
+                              "type": "plain_text",
+                              "text": "Referrer: $REFERRER$\\n$TIMESTAMP$"
+                            }
+                          ]
+                        }
+                      ]
+                    }"""),
+            Pair.create("Teams", """
+                    {
+                     "type": "message",
+                     "attachments": [
+                      {
+                       "contentType": "application/vnd.microsoft.card.adaptive",
+                       "content": {
+                        "type": "AdaptiveCard",
+                        "version": "1.4",
+                        "body": [
+                         {
+                          "type": "TextBlock",
+                          "text": "[$URL$]($URL$)\\n\\n- Referrer: $REFERRER$\\n\\n_$TIMESTAMP$_",
+                          "wrap": true
+                         }
+                        ]
+                       }
+                      }
+                     ]
+                    }""")
     );
 
     private final GenericPref.Str webhookUrl;
@@ -224,7 +280,7 @@ class WebhookConfig extends AModuleConfig {
         test.setOnClickListener(v -> {
             test.setEnabled(false);
             new Thread(() -> {
-                var ok = WebhookDialog.send(webhookUrl.get(), webhookUrl.get(), webhookBody.get());
+                var ok = WebhookDialog.send(webhookUrl.get(), webhookUrl.get(), getActivity().getPackageName(), webhookBody.get());
                 getActivity().runOnUiThread(() -> {
                     test.setEnabled(true);
                     Toast.makeText(v.getContext(), ok ? R.string.mWebhook_success : R.string.mWebhook_error, Toast.LENGTH_SHORT).show();
