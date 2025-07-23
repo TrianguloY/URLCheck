@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     permissions:
-      pull-requests: write # need to write the comment
+      issues: write # need to write the comment
 
     steps:
       - name: "[PR] Comment url to artifact"
