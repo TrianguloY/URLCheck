@@ -16,9 +16,9 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
 
-import javax.net.ssl.HttpsURLConnection;
+import java.net.HttpURLConnection;
 
-/** Wrapper of HttpsURLConnection with some util methods */
+/** Wrapper of HttpURLConnection with some util methods */
 public interface Connection {
 
     int CONNECT_TIMEOUT = 5000;
@@ -29,11 +29,11 @@ public interface Connection {
     }
 
     class Request {
-        private HttpsURLConnection connection = null;
+        private HttpURLConnection connection = null;
 
         private Request(String url) {
             try {
-                connection = (HttpsURLConnection) new URL(url).openConnection();
+                connection = (HttpURLConnection) new URL(url).openConnection();
             } catch (IOException e) {
                 AndroidUtils.assertError("Unable to create a connection", e);
                 return;
@@ -111,9 +111,9 @@ public interface Connection {
     }
 
     class Response {
-        private HttpsURLConnection connection;
+        private HttpURLConnection connection;
 
-        private Response(HttpsURLConnection connection) {
+        private Response(HttpURLConnection connection) {
             this.connection = connection;
         }
 
