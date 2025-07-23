@@ -1,5 +1,6 @@
 # This actions validates the gradle files and runs a build test to ensure the app is not corrupted
-# if succeeded, and the source is a pull request, builds an evaluation apk and posts a comment to download it
+# if succeeded, and the source is a pull request, builds an evaluation apk
+# Note: A different action will post a pr comment with the evaluation apk
 name: Validate gradle build test
 
 on:
@@ -41,53 +42,15 @@ jobs:
       # the following steps will only run for PRs
 
       - name: "[PR] Generate apk"
-        if: ${{ github.event_name == 'pull_request' }}
+        if: github.event_name == 'pull_request'
         run: ./gradlew assemble${{ env.VARIANT }}
 
       - name: "[PR] Upload apk as artifact"
         id: artifact-upload-step
-        if: ${{ github.event_name == 'pull_request' }}
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           path: ./app/build/outputs/apk/${{ env.VARIANT }}/*.apk
           name: ${{ env.NAME }}
           retention-days: ${{ env.RETENTION_DAYS }}
           if-no-files-found: error
-
-    outputs:
-      artifact-url: ${{ steps.artifact-upload-step.outputs.artifact-url }}
-
-  comment:
-    if: ${{ github.event_name == 'pull_request' }}
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      # both seems to be needed to write the comment
-      issues: write
-      pull-requests: write
-
-    steps:
-      - name: "[PR] Comment url to artifact"
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          # post link comment
-          URL="${{ github.event.pull_request.html_url }}"
-          BODY="
-          This PR builds correctly, here is the generated apk.
-          This unsigned version can be installed alongside the original app and should only be used for testing the changes, not for daily usage.
-          
-          | [Download testing apk](${{ needs.build.outputs.artifact-url }}) |
-          | - |
-          
-          
-          You must be logged in for the link to work.
-          The link will expire in $RETENTION_DAYS days, at $(date -d "+$RETENTION_DAYS days").
-          
-          <hr>
-          
-          <sub>This is an automatic comment created by a [Github Action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}?pr=${{ github.event.pull_request.number }})</sub>
-          "
-          
-          # use --edit-last-or-create whenever it is ready: https://github.com/cli/cli/issues/6790
-          gh pr comment "$URL" --edit-last --body "$BODY" || gh pr comment "$URL" --body "$BODY"
