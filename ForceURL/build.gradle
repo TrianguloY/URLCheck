@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.trianguloy.forceurl'
+
+    defaultConfig {
+        compileSdk 33
+        minSdkVersion 14
+        targetSdkVersion 33
+        versionCode 1
+        versionName "0.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        alpha {
+            initWith(buildTypes.debug)
+            versionNameSuffix '-ALPHA'
+        }
+        evaluation {
+            initWith(buildTypes.debug)
+            versionNameSuffix '-TEST'
+        }
+    }
+
+    lint {
+        // users are free to update translations whenever
+        // this mean that they are not usually up to date
+        // and that there are usually lots of missing translations
+        // so we ignore missing strings
+        disable 'MissingTranslation'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+// Generate translation related fields
+android {
+    defaultConfig {
+        // get translations names
+        def folder = file("src/main/res") // from this folder
+        def translations = Arrays.stream(folder.list()) // from all files in the folder
+                .filter { file("$folder.path/$it/strings.xml").exists() } // and containing a strings translation
+                .collect { it }
+
+        // generate buildconfig field with all locales
+        def locales = translations.stream()
+                .map { it.replace('values-', '').replace('-r', '-').replace('values', 'en') } // extract the locale code
+                .distinct().sorted() // keep distinct and sort them
+                .collect { '"' + it + '"' } // convert as 'string'
+                .join(',') // and concatenate with commas
+        println "Found locales: $locales"
+        buildConfigField "java.util.List<String>", 'LOCALES', "java.util.List.of($locales)" // create field
+
+        // generate string resource with all translators
+        def translators = translations.stream() // for all translations
+                .map { file("$folder.path/$it/strings.xml") } // get the xml file
+                .map { new XmlParser().parse(it).find { it.@name == "translators" }?.text() ?: "" } // extract translators
+                .filter { it != "" } // filter empty
+                .flatMap { it.split(';').stream() } // split multiple
+                .map { it.strip() } // trim
+                .filter { it != "TrianguloY" } // remove myself
+                .distinct().sorted() // keep distinct and sort them
+                .collect { it }.join(', ') // join with commas
+        println "Extracted translators: $translators"
+        resValue "string", "all_translators", translators // create resource
+    }
+}

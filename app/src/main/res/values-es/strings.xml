@@ -365,7 +365,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
 \nTambién puede hacer clic en el botón \'X\' para eliminar algunos de ellos.
 \nEsta es una versión avanzada del módulo \'Eliminador de consultas\'.</string>
     <string name="mOpen_incognito">Modo incógnito:</string>
-    <string name="mOpen_incognitoDesc">Alternar el modo de incógnito (solo para Firefox)</string>
+    <string name="mOpen_incognitoDesc">Alternar el modo de incógnito</string>
     <string name="mOpen_closeCopy">Cierra la ventana después de copiar</string>
     <string name="mOpen_mergeCopy">Juntar botones de copiar y compartir (mantén pulsado para copiar)</string>
     <string name="mOpen_copyUrl">Copiar</string>

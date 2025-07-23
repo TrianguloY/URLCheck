@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">URLCheck</string>
-
     <string name="lnk_playStore" translatable="false">Play Store</string>
     <string name="lnk_fDroid" translatable="false">F-Droid</string>
     <string name="lnk_izzy" translatable="false">IzzyOnDroid</string>
