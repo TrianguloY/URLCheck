@@ -8,8 +8,6 @@ on:
       - master
   # run this workflow on master pull requests
   pull_request:
-    branches:
-      - master
 
 # Cancel running actions if new commits are added
 concurrency:

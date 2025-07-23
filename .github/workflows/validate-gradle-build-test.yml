@@ -6,9 +6,7 @@ on:
   push:
     branches:
       - master
-  pull_request_target:
-    branches:
-      - master
+  pull_request:
 
 # Cancel running actions if new commits are added
 concurrency:
@@ -43,12 +41,12 @@ jobs:
       # the following steps will only run for PRs
 
       - name: "[PR] Generate apk"
-        if: ${{ github.event_name == 'pull_request_target' }}
+        if: ${{ github.event_name == 'pull_request' }}
         run: ./gradlew assemble${{ env.VARIANT }}
 
       - name: "[PR] Upload apk as artifact"
         id: artifact-upload-step
-        if: ${{ github.event_name == 'pull_request_target' }}
+        if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
           path: ./app/build/outputs/apk/${{ env.VARIANT }}/*.apk
@@ -60,7 +58,7 @@ jobs:
       artifact-url: ${{ steps.artifact-upload-step.outputs.artifact-url }}
 
   comment:
-    if: ${{ github.event_name == 'pull_request_target' }}
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     needs: build
     permissions:
