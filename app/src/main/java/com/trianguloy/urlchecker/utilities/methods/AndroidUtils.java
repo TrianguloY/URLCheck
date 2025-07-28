@@ -112,7 +112,10 @@ public interface AndroidUtils {
     /** Copy to the clipboard */
     static void copyToClipboard(Activity activity, String toast, String text) {
         ClipboardManager clipboard = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
-        if (clipboard == null) return;
+        if (clipboard == null) {
+            Toast.makeText(activity, R.string.clipboard_copyError, Toast.LENGTH_LONG).show();
+            return;
+        }
 
         clipboard.setPrimaryClip(ClipData.newPlainText("", text));
 

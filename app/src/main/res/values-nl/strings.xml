@@ -107,7 +107,7 @@
     <string name="alwaysOn">Altijd aan</string>
     <string name="mVT_apiKey">API key</string>
     <string name="mStatus_unknownCode">%d: Onbekende statuscode</string>
-    <string name="mOpen_incognitoDesc">Schakel de incognitomodus in (alleen voor Firefox)</string>
+    <string name="mOpen_incognitoDesc">Schakel de incognitomodus in</string>
     <string name="btn_tutorialSkip">Tutorial overslaan</string>
     <string name="mOpen_noReferrer">Verberg de bronapp (verwijzer)</string>
     <string name="mClear_name">URL Cleaner</string>

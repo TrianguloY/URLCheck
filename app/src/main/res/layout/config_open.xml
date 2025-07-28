@@ -50,6 +50,14 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/urlHelper_settings"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/smallPadding"
+        android:text="@string/mOpen_incognitoSettings" />
+
     <Switch
         android:id="@+id/closeopen_pref"
         android:layout_width="match_parent"
