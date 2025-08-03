@@ -60,7 +60,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         catalogURL = new GenericPref.Str("clearurl_catalogURL", "https://rules2.clearurls.xyz/data.minify.json", cntx);
         hashURL = new GenericPref.Str("clearurl_hashURL", "https://rules2.clearurls.xyz/rules.minify.hash", cntx);
         autoUpdate = new GenericPref.Bool("clearurl_autoUpdate", false, cntx);
-        lastUpdate = new GenericPref.Lng("clearurl_lastUpdate", /*data.minify.json-timestamp*/1751159577000L/*data.minify.json-timestamp*/, cntx);
+        lastUpdate = new GenericPref.Lng("clearurl_lastUpdate", /*data.minify.json-timestamp*/1754183829000L/*data.minify.json-timestamp*/, cntx);
         lastCheck = new GenericPref.Lng("clearurl_lastCheck", -1L, cntx);
         lastAuto = new GenericPref.Bool("clearurl_lastAuto", false, cntx);
 
