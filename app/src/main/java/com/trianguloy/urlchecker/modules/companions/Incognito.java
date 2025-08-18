@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.flavors.IncognitoDimension;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
@@ -61,15 +63,23 @@ public class Incognito {
         button.setImageResource(state ? R.drawable.incognito : R.drawable.no_incognito);
     }
 
-    /** applies the setting to a given intent */
-    public void apply(Intent intent) {
-        intent.putExtra(FIREFOX_EXTRA, state);
-        intent.putExtra(CHROME_EXTRA, state);
+    /** Applies the setting to a given intent, and launches any helper needed */
+    public void apply(Context context, Intent intent, String url) {
+        if (BuildConfig.IS_INCOGNITO) {
+            IncognitoDimension.applyAndLaunchHelper(context, intent, url, state);
+        } else {
+            intent.putExtra(FIREFOX_EXTRA, state);
+            intent.putExtra(CHROME_EXTRA, state);
+        }
     }
 
-    /** true iff the intent has at least one incognito extra */
+    /** true iff the intent has at least one incognito extra, launching any helper needed */
     private boolean isIncognito(Intent intent) {
-        return intent.getBooleanExtra(FIREFOX_EXTRA, false)
-                || intent.getBooleanExtra(CHROME_EXTRA, false);
+        if (BuildConfig.IS_INCOGNITO) {
+            return IncognitoDimension.isIncognito(intent);
+        } else {
+            return intent.getBooleanExtra(FIREFOX_EXTRA, false)
+                    || intent.getBooleanExtra(CHROME_EXTRA, false);
+        }
     }
 }

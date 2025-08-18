@@ -298,7 +298,7 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
 \nBayraklar, onay kutusunun yanında iki renk göstergesine sahip olacaktır. Soldaki, amaçtan alınan değeri gösterir, sağdaki ise modülün kendisi tarafından ayarlanan durumu gösterir. Kırmızı, bayrağın ayarlanmadığı, yeşil ise ayarlandığı anlamına gelir. Ek olarak tercih göstergesi gri olabilir, bu da durumun otomatik olarak ayarlandığı anlamına gelir.
 \nAşağıdaki düğme ile varsayılan durumu ve bayrakların görünürlüğünü düzenleyebilirsiniz.</string>
     <string name="mOpen_incognito">Gizli mod:</string>
-    <string name="mOpen_incognitoDesc">Gizli modu aç / kapat (yalnızca Firefox için)</string>
+    <string name="mOpen_incognitoDesc">Gizli modu aç / kapat</string>
     <string name="mParts_desc">Bu modül, kodu çözülen URL\'nin tüm parçalarını gösterir: şema, yetki, yollar, sorgular ve parça.
 \nBir parçaya tıkladığınızda tıkladığınız parça yeni URL olarak ayarlanacaktır, örneğin sorgulardan veya yollardan biri kodlanmış bir yeniden yönlendirme URL\'si ise kullanışlıdır.
 \nAyrıca bazılarını kaldırmak için \'X\' düğmesine tıklayabilirsiniz.
