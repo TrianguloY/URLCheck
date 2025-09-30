@@ -247,6 +247,14 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_rejected">Hide app if URL was rejected (an app immediately requests to open the same URL it was opened with). Doesn\'t affect sharing.</string>
     <string name="mOpen_mergeCopy">Merge Copy and Share buttons (long press to copy)</string>
     <string name="mOpen_iconSize">Icon size</string>
+
+    <string name="denylist_none">None Denied</string>
+    <string name="denylist_chrome">Deny Chrome</string>
+    <string name="denylist_firefox">Deny Firefox</string>
+    <string name="denylist_edge">Deny Edge</string>
+    <string name="denylist_opera">Deny Opera</string>
+    <string name="denylist_brave">Deny Brave</string>
+
     <string name="mOpen_with">Open with %s</string>
     <string name="mOpen_open">Open</string>
     <string name="mOpen_share">Share</string>

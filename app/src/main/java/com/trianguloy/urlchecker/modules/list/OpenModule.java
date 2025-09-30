@@ -23,6 +23,7 @@ import com.trianguloy.urlchecker.modules.companions.Incognito;
 import com.trianguloy.urlchecker.modules.companions.LastOpened;
 import com.trianguloy.urlchecker.modules.companions.ShareUtility;
 import com.trianguloy.urlchecker.modules.companions.Size;
+import com.trianguloy.urlchecker.modules.companions.DenylistOption;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -51,6 +52,14 @@ public class OpenModule extends AModuleData {
 
     public static GenericPref.Enumeration<Size> ICONSIZE_PREF(Context cntx) {
         return new GenericPref.Enumeration<>("open_iconsize", Size.NORMAL, Size.class, cntx);
+    }
+
+    /** Preference: Which app should be denied
+     * Right now only denies chrome, edge, firefox, opera, and brave.
+     * Could implement something in future for more apps
+     */
+    public static GenericPref.Enumeration<DenylistOption> DENYLIST_PREF(Context cntx) {
+        return new GenericPref.Enumeration<>("open_denylist", DenylistOption.NONE, DenylistOption.class, cntx);
     }
 
     @Override
@@ -180,6 +189,13 @@ class OpenDialog extends AModuleDialog {
     private void updateSpinner(String url) {
         intentApps = IntentApp.getOtherPackages(new Intent(Intent.ACTION_VIEW, Uri.parse(url)), getActivity());
 
+        /** Read deny list and removes the matching package */
+        DenylistOption deny = OpenModule.DENYLIST_PREF(getActivity()).get();
+        String packageToRemove = deny.getPackageName();
+        if (packageToRemove != null) {
+            JavaUtils.removeIf(intentApps, ri -> Objects.equals(ri.getPackage(), packageToRemove));
+        }
+
         // remove referrer
         if (noReferrerPref.get()) {
             var referrer = AndroidUtils.getReferrer(getActivity());
@@ -304,6 +320,7 @@ class OpenConfig extends AModuleConfig {
         OpenModule.REJECTED_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.rejected));
         LastOpened.PERDOMAIN_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.perDomain));
         OpenModule.ICONSIZE_PREF(getActivity()).attachToSpinner(views.findViewById(R.id.iconsize_pref), null);
+        OpenModule.DENYLIST_PREF(getActivity()).attachToSpinner(views.findViewById(R.id.denylist_pref), null);
 
         // share
         ShareUtility.onInitializeConfig(views, getActivity());
