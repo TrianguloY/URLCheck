@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
     <string name="translators">Nhman Mazuz</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">עברית</string>
     <!-- main -->
     <string name="txt_info">אפליקציה זו פועלת כצעד ביניים לפני פתיחת קישורים כאשר תלחץ על קישור בחר באפליקציה זו כדי לפתוח אותו, האפליקציה תציג תיבת דו-שיח עם מידע על הקישור. לחץ על לחצן המודול למטה כדי לבדוק ולהגדיר את כל המודולים הזמינים.</string>
@@ -26,7 +30,6 @@
     <!-- generic -->
     <string name="toast_noApp">"לא ניתן לפתוח את האפליקציה"</string>
     <string name="toast_noBrowser">"לא מצליח לפתוח את הדפדפן"</string>
-    <string name="title_choose">בחר אפליקציה</string>
     <string name="invalid">לא חוקי</string>
     <string name="save">להציל</string>
     <string name="reset">איפוס</string>
@@ -97,8 +100,7 @@
     <string name="mVT_goodUrl">אף אחד מהמנועים %1$d לא זיהה את כתובת האתר (נכון לתאריך %2$s)</string>
     <string name="mVT_warningUrl">אזהרה, מנועי %1$d/%2$d זיהו את כתובת האתר (נכון לתאריך %3$s)</string>
     <string name="mVT_badUrl">זָהִיר! %1$d/%2$d מנועים זיהו את כתובת האתר (נכון לתאריך %3$s)</string>
-    <string name="mVT_connectError">"לא ניתן להתחבר ל-VirusTotal. ודא שיש לך חיבור אינטרנט פעיל או נסה שוב מאוחר יותר."</string>
-    <string name="mVT_jsonError">"לא ניתן להתחבר ל-VirusTotal. ודא שמפתח ה-API חוקי או נסה שוב מאוחר יותר."</string>
+    <string name="mVT_error">"לא ניתן להתחבר ל-VirusTotal. ודא שמפתח ה-API חוקי או נסה שוב מאוחר יותר."</string>
     <string name="mD_name">מודול ניפוי באגים/סמן</string>
     <string name="mD_desc">"אם תסדר מחדש את המודולים, חדשים שנוספו בעדכונים עתידיים יוצבו מעל זה.
 
@@ -148,4 +150,10 @@
     <string name="mRemove_all">להסיר את כל</string>
     <string name="mRemove_one">הסר את %s</string>
     <string name="mRemove_empty">הסר ריקים</string>
+    <string name="link_source">קוד המקור</string>
+    <string name="link_privacy">מדיניות פרטיות</string>
+    <string name="a_settings">הגדרות</string>
+    <string name="desc_up">הזז למעלה</string>
+    <string name="link_changelog">יומן שינויים</string>
+    <string name="desc_down">הזז למטה</string>
 </resources>

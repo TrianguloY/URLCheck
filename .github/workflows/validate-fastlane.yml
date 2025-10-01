@@ -11,8 +11,6 @@ on:
       - 2025-fastlane-migration
   # run this workflow on master pull requests
   pull_request:
-    branches:
-      - master
 
 # Cancel running actions if new commits are added
 concurrency:
@@ -24,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download project files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate Fastlane files
         uses: ashutoshgngwr/validate-fastlane-supply-metadata@v2

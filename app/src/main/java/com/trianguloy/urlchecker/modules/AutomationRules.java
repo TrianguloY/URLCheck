@@ -96,12 +96,17 @@ public class AutomationRules extends JsonCatalog {
 
                 // match at least one referrer, if any
                 var referrer = AndroidUtils.getReferrer(cntx);
-                if (referrer != null && JavaUtils.noneMatch(JavaUtils.parseArrayOrElement(automation.opt("referrer"), String.class), referrer::equals, false)) {
+                if (referrer != null && JavaUtils.nonePresentMatch(JavaUtils.parseArrayOrElement(automation.opt("referrer"), String.class), referrer::equals)) {
                     continue;
                 }
 
                 // match at least one regex, if any
-                if (JavaUtils.noneMatch(JavaUtils.parseArrayOrElement(automation.opt("regex"), String.class), urlData.url::matches, false)) {
+                if (JavaUtils.nonePresentMatch(JavaUtils.parseArrayOrElement(automation.opt("regex"), String.class), urlData.url::matches)) {
+                    continue;
+                }
+
+                // don't match any excluded regex, if any
+                if (JavaUtils.anyMatch(JavaUtils.parseArrayOrElement(automation.opt("excludeRegex"), String.class), urlData.url::matches)) {
                     continue;
                 }
 

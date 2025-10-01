@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
@@ -21,7 +22,6 @@ import com.trianguloy.urlchecker.modules.companions.VirusTotalUtility;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.UrlUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
 import java.util.List;
@@ -89,13 +89,47 @@ class VirusTotalConfig extends AModuleConfig {
     @Override
     public void onInitialize(View views) {
         var edit_key = views.<TextView>findViewById(R.id.api_key);
-        edit_key.setText(api_key.get());
+        var test = views.<Button>findViewById(R.id.test);
+        var result = views.<TextView>findViewById(R.id.result);
+        var testing = views.<ProgressBar>findViewById(R.id.testing);
+
+        // init output
+        testing.setVisibility(View.GONE);
+
+        // set and configure input
         edit_key.addTextChangedListener(new DefaultTextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
                 api_key.set(s.toString());
-                if (cannotEnableErrorId() != -1) disable();
+                if (cannotEnableErrorId() != -1) {
+                    disable();
+                }
+
+                test.setEnabled(s.length() != 0);
+                result.setText("");
             }
+        });
+        edit_key.setText(api_key.get());
+
+        // set onclick
+        test.setOnClickListener(v -> {
+            // mark as testing
+            testing.setVisibility(View.VISIBLE);
+            test.setEnabled(false);
+            edit_key.setEnabled(false);
+            result.setText("");
+            new Thread(() -> {
+                // check
+                var user = VirusTotalUtility.getUser(api_key.get());
+                getActivity().runOnUiThread(() -> {
+                    // display result
+                    testing.setVisibility(View.GONE);
+                    test.setEnabled(true);
+                    edit_key.setEnabled(true);
+                    if (user == null) result.setText(R.string.mVT_error);
+                    else result.setText(getActivity().getString(R.string.mVT_validKey, user));
+                });
+            }).start();
         });
 
         views.<TextView>findViewById(R.id.label).setText(getStringWithPlaceholder(getActivity(), R.string.mVT_desc, R.string.vtLogin_url));
@@ -113,7 +147,7 @@ class VirusTotalDialog extends AModuleDialog {
     private TextView txt_result;
 
     private boolean scanning = false;
-    private VirusTotalUtility.InternalReponse result = null;
+    private VirusTotalUtility.InternalResponse result = null;
 
     private final GenericPref.Str api_key;
 
@@ -167,13 +201,13 @@ class VirusTotalDialog extends AModuleDialog {
 
     /** Manages the scanning in the background */
     private void _scanUrl() {
-        VirusTotalUtility.InternalReponse response;
+        VirusTotalUtility.InternalResponse response;
         while (scanning) {
             // asks for the report
             response = VirusTotalUtility.scanUrl(getUrl(), api_key.get(), getActivity());
 
             // check valid report
-            if (response.detectionsTotal > 0 || response.error != null) {
+            if (response != null) {
                 result = response;
                 scanning = false;
                 getActivity().runOnUiThread(this::updateUI);
@@ -244,21 +278,16 @@ class VirusTotalDialog extends AModuleDialog {
         }
     }
 
-    /**
-     * Shows the report results
-     *
-     * @param details if true, the virustotal page is opened, if false just a basic dialog with the json
-     */
-    private void showInfo(boolean details) {
+    /** Shows the report results, either a summary or debug details */
+    private void showInfo(boolean debug) {
         if (result == null || result.error != null) return;
 
-        if (details) {
-            UrlUtils.openUrlRemoveThis(result.scanUrl, getActivity());
-        } else {
-            // TODO: beautify this
-            new AlertDialog.Builder(getActivity())
-                    .setMessage(result.info)
-                    .show();
-        }
+        new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.mVT_name)
+                .setMessage(debug ? result.debugData : result.info)
+                .setPositiveButton("virustotal.com", (dialog, which) -> setUrl(result.scanUrl))
+                .setNeutralButton(debug ? "Abc: xyz" : "{...}", (dialog, which) -> showInfo(!debug))
+                .setNegativeButton(R.string.close, null)
+                .show();
     }
 }

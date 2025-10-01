@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
-    <string name="translators">dperruso</string>
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
+    <string name="translators">dperruso; miniBill</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Italiano</string>
     <!-- main -->
     <string name="txt_info">"Quest'app agisce come uno step intermedio tra il premere su un link e la sua apertura. Quando premi su un link e scegli quest'app per aprirlo, ti verrà mostrata una finestra con delle informazioni riguardo il link. Premi il pulsante dei moduli in basso per dare un'occhiata a tutti i moduli disponibili."</string>
@@ -34,8 +38,8 @@ Traduzioni: %3$s."</string>
     <string name="desc_decorations">Mostra/nascondi titoli</string>
     <string name="desc_enable">Attiva/disattiva modulo</string>
     <!-- settings -->
-    <string name="txt_openLinks">"Durante gli anni, il modo per configurare l'apertura dei link nelle app è cambiato. Trovi qui in basso tutte le impostazioni disponibili al riguardo per il tuo dispositivo, se i link non vengono aperti in quest'app, dai un'occhiata a tutti."</string>
-    <string name="btn_setBrowser">Imposta come browser di default</string>
+    <string name="txt_openLinks">"Aprire i link in quest'app: Durante gli anni, il modo per configurare l'apertura dei link nelle app è cambiato. Trovi qui in basso tutte le impostazioni disponibili al riguardo per il tuo dispositivo, se i link non vengono aperti in quest'app, dai un'occhiata a tutti."</string>
+    <string name="btn_setBrowser">Imposta come browser web predefinito</string>
     <string name="toast_defaultSet">L\'app è ora il browser web predefinito</string>
     <string name="btn_configureBrowser">Browser web predefinito</string>
     <string name="btn_linksSettings">Apri link supportati</string>
@@ -43,11 +47,13 @@ Traduzioni: %3$s."</string>
     <string name="txt_theme">Tema:</string>
     <string name="spin_darkTheme">Scuro</string>
     <string name="spin_lightTheme">Chiaro</string>
+    <string name="txt_width">Larghezza popup:\nAttenzione! Valori troppo piccoli potrebbero nascondere alcuni elementi.</string>
+    <string name="spin_fullWidth">Intera</string>
     <string name="txt_locale">Lingua:</string>
+    <string name="txt_processText">Sincronizza url con testo modificabile (quando l\'app viene aperta tramite pressione lunga sul testo in un input)</string>
     <!-- generic -->
     <string name="toast_noApp">Impossibile aprire l\'app</string>
     <string name="toast_noBrowser">Impossibile aprire il browser web</string>
-    <string name="title_choose">Scegli app</string>
     <string name="invalid">Invalido</string>
     <string name="save">Salva</string>
     <string name="reset">Reset</string>
@@ -129,8 +135,7 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mVT_goodUrl">Nessun %1$d engine ha rilevato qualcosa (ad oggi %2$s)</string>
     <string name="mVT_warningUrl">Attenzione, questi engines: %1$d/%2$d hanno rilevato qualcosa (ad oggi %3$s)</string>
     <string name="mVT_badUrl">Attenzione! %1$d/%2$d engines hanno rilevato qualcosa (ad oggi %3$s)</string>
-    <string name="mVT_connectError">Impossibile connettersi a VirusTotal. Assicuati di essere connesso a internet, oppure riprova più tardi.</string>
-    <string name="mVT_jsonError">Impossibile connettersi a VirusTotal. Controlla che la chiave API inserita sia valida, oppure riprova più tardi.</string>
+    <string name="mVT_error">Impossibile connettersi a VirusTotal. Controlla che la chiave API inserita sia valida, oppure riprova più tardi.</string>
     <string name="mD_name">Modulo di debug</string>
     <string name="mD_desc">Se riorganizzi i moduli, i nuovi aggiunti nei futuri aggiornamenti verranno posizionati sopra quest\'ultimo.\n\nSe attivi questa opzione, verrano visuallizzati alcuni dati di debug interni (come l\'uri dell\'intento originale), utile per gli sviluppatori.\n\nPuoi tenere premuto per selezionare il testo.</string>
     <string name="mD_ctabs">Mostra i messaggi di debug dal serivzio di schede custom.</string>

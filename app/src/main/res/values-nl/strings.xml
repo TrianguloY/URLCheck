@@ -18,7 +18,6 @@
 \nDit is de tutorial, als je deze wilt overslaan, kun je dat doen met de onderstaande knop. Je kunt altijd terugkeren naar deze tutorial vanuit het instellingenmenu.</string>
     <string name="mClear_desc">Deze module verwijdert tracking, referrer en andere nutteloze parameters uit de URL. Het maakt ook algemene offline URL-omleidingen mogelijk.</string>
     <string name="btn_tutorialSettings">Herhaal tutorial</string>
-    <string name="mVT_connectError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat u verbonden bent met internet of probeer het later opnieuw.</string>
     <string name="mPttrn_regexfix">Optionele regex-groepen repareren (uitschakelen als regex niet correct werkt)</string>
     <string name="tutorial">Tutorial</string>
     <string name="toast_defaultSet">De app is nu de standaardwebbrowser</string>
@@ -89,15 +88,7 @@
     <string name="mClear_matches">Komt overeen met %s</string>
     <string name="mOpen_with">Openen met %s</string>
     <string name="mHist_desc">Wanneer de URL wordt bewerkt, handmatig of door andere modules, kunt u met deze module de wijzigingen bekijken en ongedaan maken.</string>
-    <string name="mPttrn_editor">Hier kunt u een nieuw patroon bewerken of toevoegen. Formaat:
-\n- \'encode\': boolean: ingesteld op true om de URL te coderen voordat regex wordt gecontroleerd.
-\n- \'regex\': string: een geldige Java-regex waaraan de url moet voldoen, anders wordt het patroon overgeslagen.
-\n- \'excludeRegex\': string: indien opgegeven, een geldige Java-regex waarvan de url niet mag overeenkomen, anders wordt het patroon overgeslagen.
-\n- \'replacement\': string|list: indien opgegeven, zal de \'fix\'-knop \'url=url.replaceAll(regex,replacement)\' uitvoeren. Als de lijst wordt weergegeven, zal vervanging een willekeurig element zijn.
-\n- \'decode\': boolean: ingesteld op true om de vervangen url te decoderen.
-\n- \'automatisch\': boolean: ingesteld op true om het patroon automatisch toe te passen.
-\n- \'enabled\': boolean: ingesteld op false om het patroon uit te schakelen.
-\nLet op: als je de patronen bewerkt, worden nieuwe ingebouwde patronen uit app-updates niet automatisch toegevoegd (je kunt ze herstellen met de reset-optie).</string>
+    <string name="mPttrn_editor">Hier kunt u een nieuw patroon bewerken of toevoegen. Formaat: \n- \'encode\': boolean: ingesteld op true om de URL te coderen voordat regex wordt gecontroleerd. \n- \'regex\': string: een geldige Java-regex waaraan de url moet voldoen, anders wordt het patroon overgeslagen. \n- \'excludeRegex\': string: indien opgegeven, een geldige Java-regex waarvan de url niet mag overeenkomen, anders wordt het patroon overgeslagen. \n- \'replacement\': string|list: indien opgegeven, zal de \'fix\'-knop \'url=url.replaceAll(regex,replacement)\' uitvoeren. Als de lijst wordt weergegeven, zal vervanging een willekeurig element zijn. \n- \'decode\': boolean: ingesteld op true om de vervangen url te decoderen. \n- \'automatisch\': boolean: ingesteld op true om het patroon automatisch toe te passen. \n- \'enabled\': boolean: ingesteld op false om het patroon uit te schakelen. \nLet op: als je de patronen bewerkt, worden nieuwe ingebouwde patronen uit app-updates niet automatisch toegevoegd (je kunt ze herstellen met de reset-optie).</string>
     <string name="mStatus_autoRedirect">Vervang omleidings-URL\'s automatisch</string>
     <string name="mOpen_ctabs">Aangepaste tabbladen:</string>
     <string name="btn_linksSettings">Open ondersteunde koppelingen</string>
@@ -133,7 +124,7 @@
     <string name="mClear_clear">Toepassen</string>
     <string name="mOpen_incognito">Incognito modus:</string>
     <string name="desc_decorations">Titel tonen/verbergen</string>
-    <string name="mVT_jsonError">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
+    <string name="mVT_error">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
     <string name="auto">Automatisch</string>
     <string name="mInput_name">Voer tekst in</string>
     <string name="txt_tutorial2">De app fungeert als tussenpersoon bij het openen of delen van url-links. Zodra een URL naar de app is verzonden, kunt u ermee communiceren via de modules. Daarna kunt u de link openen (in de gewenste app), delen of naar het klembord kopiëren.</string>
@@ -161,7 +152,6 @@
     <string name="mOpen_open">Open</string>
     <string name="mHist_name">Geschiedenis</string>
     <string name="defaultOff">Standaard uitgeschakeld</string>
-    <string name="title_choose">Kies app</string>
     <string name="mPttrn_noSchemeHttps">Ontbrekend HTTPS-schema.</string>
     <string name="mStatus_checking">Controleren…</string>
     <string name="mVT_tm">VirusTotal™ is een handelsmerk van Google, Inc.</string>

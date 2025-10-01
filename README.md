@@ -83,7 +83,14 @@ to remove trackers, affiliate links, unnecessary elements, check Hosts, facilita
 
 </div>
 
+<!-- ---------- Trademarks ---------- -->
 
+Uses:
+
+- [VirusTotal](https://www.virustotal.com/gui/)™ is a trademark of Google, Inc
+- Built-in catalog copied from [ClearURLs](https://docs.clearurls.xyz/latest/specs/rules)
+- [unshorten.me](https://unshorten.me/) free API by Unshorten.me
+- [StevenBlack's Hosts](https://github.com/StevenBlack/hosts)
 
 <!-- ---------- Contribution & contributors ---------- -->
 

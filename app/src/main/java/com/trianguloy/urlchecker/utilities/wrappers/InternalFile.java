@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.utilities.wrappers;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import android.content.Context;
 
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -47,7 +49,7 @@ public class InternalFile {
 
         // store
         try (FileOutputStream fos = cntx.openFileOutput(fileName, Context.MODE_PRIVATE)) {
-            fos.write(content.getBytes(StreamUtils.UTF_8));
+            fos.write(content.getBytes(UTF_8));
             return true;
         } catch (IOException e) {
             AndroidUtils.assertError("Unable to store file content", e);

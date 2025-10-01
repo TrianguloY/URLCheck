@@ -1,0 +1,71 @@
+# This action will send a comment to the pr for download the built apk.
+# Needs to be as a separate action, actions on prs don't have permission to post comments
+name: Comment Artifact URL on PR
+
+on:
+  workflow_run:
+    workflows:
+      - "Validate gradle build test"
+    types:
+      - "completed"
+
+permissions:
+  actions: read # needed to read the artifacts url
+  contents: read # needed to get the pr id
+  pull-requests: write # needed to write the comment
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  PREVIOUS_JOB_ID: ${{ github.event.workflow_run.id }}
+
+jobs:
+  comment-on-pr:
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+
+      # adapted from https://github.com/docker-mailserver/docker-mailserver/pull/4264#issuecomment-2484040678
+      - name: "Get PR context"
+        id: pr-context
+        env:
+          # If the PR is from a fork, prefix it with `<owner-login>:`, otherwise only the PR branch name is relevant:
+          PR_BRANCH: |-
+            ${{
+              (github.event.workflow_run.head_repository.owner.login != github.event.workflow_run.repository.owner.login)
+                && format('{0}:{1}', github.event.workflow_run.head_repository.owner.login, github.event.workflow_run.head_branch)
+                || github.event.workflow_run.head_branch
+            }}
+        run: |
+          gh pr view --repo "$GITHUB_REPOSITORY" "${PR_BRANCH}" \
+            --json 'number' \
+            --jq '"number=\(.number)"' \
+            >> $GITHUB_OUTPUT
+
+      - name: "Get artifact data"
+        id: artifact-data
+        run: |
+          gh api "/repos/$GITHUB_REPOSITORY/actions/runs/$PREVIOUS_JOB_ID/artifacts" \
+            --jq '"id=\(.artifacts[0].id)\nexpires_at=\(.artifacts[0].expires_at)"' \
+            >> $GITHUB_OUTPUT
+
+      - name: "Comment url to artifact"
+        env:
+          PR_ID: ${{ steps.pr-context.outputs.number }}
+          ARTIFACT_ID: ${{ steps.artifact-data.outputs.id }}
+          ARTIFACT_EXPIRATION: ${{ steps.artifact-data.outputs.expires_at }}
+        run: |
+          gh pr comment --repo "$GITHUB_REPOSITORY" "$PR_ID" --edit-last --create-if-none --body-file - <<EOF
+          This PR builds correctly, here is the generated apk.
+          This unsigned version can be installed alongside the original app and should only be used for testing the changes, not for daily usage.
+          
+          | [Download testing apk](https://github.com/$GITHUB_REPOSITORY/actions/runs/$PREVIOUS_JOB_ID/artifacts/$ARTIFACT_ID) |
+          | - |
+          
+          
+          You must be logged in for the link to work.
+          The link will expire at $ARTIFACT_EXPIRATION.
+          
+          <hr>
+          
+          <sub>This is an automatic comment created by a [Github Action](https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID) based on a previous [Github Action](https://github.com/$GITHUB_REPOSITORY/actions/runs/$PREVIOUS_JOB_ID)</sub>
+          EOF

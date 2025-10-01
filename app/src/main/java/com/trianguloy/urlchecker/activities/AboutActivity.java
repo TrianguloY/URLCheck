@@ -3,12 +3,15 @@ package com.trianguloy.urlchecker.activities;
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.BuildConfig;
@@ -19,7 +22,9 @@ import com.trianguloy.urlchecker.utilities.methods.Inflater;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
+import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AboutActivity extends Activity {
@@ -63,13 +68,10 @@ public class AboutActivity extends Activity {
         setTitle(R.string.a_about);
         AndroidUtils.configureUp(this);
 
-        if (!BuildConfig.DEBUG) {
-            // on release, append version to the action bar title
-            setTitle(getTitle() + " (V" + BuildConfig.VERSION_NAME + ")");
-        } else if (!"alpha".equals(BuildConfig.BUILD_TYPE)) {
-            // on no-alpha, append type
-            setTitle(getTitle() + " (" + BuildConfig.BUILD_TYPE + ")");
-        }
+        setTitle(getTitle()
+                + " (V" + BuildConfig.VERSION_NAME
+                + (!"release".equals(BuildConfig.BUILD_TYPE) ? " - " + BuildConfig.BUILD_TYPE : "")
+                + ")");
 
         // fill contributors and translators
         this.<TextView>findViewById(R.id.txt_about).setText(
@@ -82,6 +84,7 @@ public class AboutActivity extends Activity {
 
         // trademarks
         this.<TextView>findViewById(R.id.tm_clear).setText(getStringWithPlaceholder(this, R.string.mClear_tm, R.string.clearRules_url));
+        this.<TextView>findViewById(R.id.tm_hosts).setText(getStringWithPlaceholder(this, R.string.mHosts_tm, R.string.stevenBlack_url));
 
         // create links
         ViewGroup v_links = findViewById(R.id.links);
@@ -95,6 +98,48 @@ public class AboutActivity extends Activity {
             v_link.setOnLongClickListener(v -> {
                 share(((String) v.getTag()));
                 return true;
+            });
+        }
+
+        // show logcat
+        if (BuildConfig.DEBUG) {
+            findViewById(R.id.trianguloy).setOnClickListener(v -> {
+
+                // get log
+                String log;
+                try {
+                    log = StreamUtils.inputStream2String(Runtime.getRuntime().exec("logcat -d").getInputStream());
+                } catch (IOException e) {
+                    log = e.toString();
+                }
+
+                // generate dialog
+                var textView = new TextView(this);
+                textView.setText(log);
+                textView.setTextIsSelectable(true);
+
+                // wrap into a padded scrollview+horizontalscrollview for nice scrolling
+                var scrollView = new ScrollView(this);
+                scrollView.addView(textView);
+                scrollView.post(() -> scrollView.scrollTo(0, textView.getHeight())); // start at bottom (new)
+                var horizontalScrollView = new HorizontalScrollView(this);
+                int pad = getResources().getDimensionPixelSize(R.dimen.smallPadding);
+                horizontalScrollView.setPadding(pad, pad, pad, pad);
+                horizontalScrollView.addView(scrollView);
+
+                new AlertDialog.Builder(this)
+                        .setTitle("Logcat")
+                        .setView(horizontalScrollView)
+                        .setPositiveButton("close", null)
+                        .setNeutralButton("clear", (dialog, which) -> {
+                            try {
+                                Runtime.getRuntime().exec("logcat -c");
+                                dialog.cancel();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        })
+                        .show();
             });
         }
 

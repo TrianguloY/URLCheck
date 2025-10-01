@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
     <string name="translators">Tiago Carmo (ReduxFlakes)</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Português de Portugal</string>
     <!--
         main
@@ -57,7 +61,6 @@ Translations: %3$s."</string>
     -->
     <string name="toast_noApp">Não foi possível abrir a app</string>
     <string name="toast_noBrowser">Não foi possível abrir o navegador</string>
-    <string name="title_choose">Escolher aplicação</string>
     <string name="invalid">Inválido</string>
     <string name="save">Salva</string>
     <string name="reset">Resetar</string>
@@ -85,15 +88,7 @@ Translations: %3$s."</string>
     <string name="mPttrn_noSchemeHttp">Esquema HTTP em falta.</string>
     <string name="mPttrn_noSchemeHttps">Esquema HTTPS em falta.</string>
     <string name="mPttrn_ok">Nenhum padrão corresponde</string>
-    <string name="mPttrn_editor">Aqui pode editar ou adicionar novos padrões. Formato:
-\n- \'encode\': booleano: defina como true para codificar a URL antes de verificar o regex.
-\n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado.
-\n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Numa lista, um elemento aleatório é escolhido.
-\n- \'decode\': booleano: defina como true para decodificar a URL substítuida.
-\n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão.
-\n- \'enabled\': booleano: defina como false para desativar o padrão.
-\nNota: se editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
+    <string name="mPttrn_editor">Aqui pode editar ou adicionar novos padrões. Formato: \n- \'encode\': booleano: defina como true para codificar a URL antes de verificar o regex. \n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado. \n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado. \n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Numa lista, um elemento aleatório é escolhido. \n- \'decode\': booleano: defina como true para decodificar a URL substítuida. \n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão. \n- \'enabled\': booleano: defina como false para desativar o padrão. \nNota: se editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
     <!-- -->
     <string name="mOpen_name">Abrir e partilhar</string>
     <string name="mOpen_desc">"Contém os seguintes botões (da esquerda para a direita):
@@ -152,8 +147,7 @@ Translations: %3$s."</string>
     <string name="mVT_goodUrl">Nenhum dos %1$d mecanismos detetou a URL (na data %2$s)</string>
     <string name="mVT_warningUrl">Aviso, %1$d/%2$d mecanismos detetaram a URL (na data %3$s)</string>
     <string name="mVT_badUrl">Cuidado! %1$d/%2$d mecanismos detetaram a URL (na data %3$s)</string>
-    <string name="mVT_connectError">Não foi possível conectar-se ao VirusTotal. Verifique se está conectado à Internet ou tente novamente mais tarde.</string>
-    <string name="mVT_jsonError">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
+    <string name="mVT_error">Não foi possível conectar-se ao VirusTotal. Verifique se a chave de API é válida ou tente novamente mais tarde.</string>
     <!-- -->
     <string name="mD_name">Módulo de depuração/marcador</string>
     <string name="mD_desc">Caso reordene os módulos, os novos adicionados em atualizações futuras serão postos acima desse.

@@ -97,7 +97,6 @@
     <string name="btn_tutorialEnd">پایان آموزش</string>
     <string name="toast_noApp">نمی‌توان برنامه را باز کرد</string>
     <string name="toast_noBrowser">نمی‌توان مرورگر وب را باز کرد</string>
-    <string name="title_choose">انتخاب برنامه</string>
     <string name="invalid">نادرست</string>
     <string name="save">ذخیره</string>
     <string name="reset">بازنشانی</string>
@@ -199,8 +198,7 @@
     <string name="mVT_goodUrl">هیچ‌کدام از %1$d موتورها URL را شناسایی نکردند (تا تاریخ %2$s)</string>
     <string name="mVT_warningUrl">هشدار، %1$d/%2$d موتورها URL را شناسایی کردند (تا تاریخ %3$s)</string>
     <string name="mVT_badUrl">احتیاط! %1$d/%2$d موتورها URL را شناسایی کردند (تا تاریخ %3$s)</string>
-    <string name="mVT_connectError">نمی‌توان به ویروس‌توتال متصل شد. مطمئن شوید به اینترنت متصل هستید یا بعداً دوباره امتحان کنید.</string>
-    <string name="mVT_jsonError">نمی‌توان به ویروس‌توتال متصل شد. مطمئن شوید کلید API معتبر است یا بعداً دوباره امتحان کنید.</string>
+    <string name="mVT_error">نمی‌توان به ویروس‌توتال متصل شد. مطمئن شوید کلید API معتبر است یا بعداً دوباره امتحان کنید.</string>
     <string name="mD_name">ماژول دیباگ/نشانه‌گذار</string>
     <string name="mD_ctabs">نمایش پیام‌های دیباگ از سرویس زبانه‌های سفارشی</string>
     <string name="mD_show">بارگذاری داده‌های دیباگ</string>

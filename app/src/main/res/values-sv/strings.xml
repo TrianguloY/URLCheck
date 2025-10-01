@@ -7,7 +7,7 @@
     <string name="btn_setBrowser">Ställ in som standardwebbläsare</string>
     <string name="btn_tutorialEnd">Slutför guiden</string>
     <string name="mChg_name">Ändringslogg</string>
-    <string name="translators">\"GreatGatsby102\"</string>
+    <string name="translators">GreatGatsby102</string>
     <string name="mChg_updated">Appen har uppdaterats.</string>
     <string name="mHosts_build">Bygg</string>
     <string name="mWebhook_sending">Skickar till webhook…</string>
@@ -85,7 +85,6 @@
     <string name="share">Dela</string>
     <string name="reset">Återställ</string>
     <string name="toast_noBrowser">Kan inte öppna webbläsaren</string>
-    <string name="title_choose">Välj app</string>
     <string name="bck_deleteConfirm">Radera element</string>
     <string name="mVT_cancel">Avbryt</string>
     <string name="bck_deleteOk">Element raderade</string>

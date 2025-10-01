@@ -38,7 +38,6 @@
     <string name="btn_tutorialEnd">Uzavřít návod</string>
     <string name="toast_noApp">Aplikaci není možno otevřít</string>
     <string name="toast_noBrowser">Webový prohlížeč není možno otevřít</string>
-    <string name="title_choose">Vyberte aplikaci</string>
     <string name="invalid">Neplatné</string>
     <string name="save">Uložit</string>
     <string name="reset">Obnovit</string>
@@ -103,7 +102,6 @@
     <string name="mVT_warningUrl">Varování, %1$d/%2$d vyhledávačů tuto adresu URL nahlásilo (k datu %3$s)</string>
     <string name="mVT_badUrl">Opatrně! %1$d/%2$d vyhledávačů tuto adresu URL nahlásilo (k datu %3$s)</string>
     <string name="mVT_goodUrl">Žádný z %1$d vyhledávačů tuto adresu URL nenahlásilo (k datu %2$s)</string>
-    <string name="mVT_connectError">Nelze se připojit k VirusTotal. Ujistěte se, že jste připojeni k internetu, nebo to zkuste znovu později.</string>
     <string name="mD_name">Pro ladění</string>
     <string name="mDrawer_desc">Všechny moduly pod tímto budou skryty v šuplíku. Moduly budou stále fungovat, ale budou skryté, dokud šuplík neotevřete. Zde můžete umístit moduly, které používáte zřídka, abyste se vyhnuli nepořádku.</string>
     <string name="mRemove_desc">[DEPRECATED] Pomocí tohoto modulu můžete odstranit dotazy z adresy URL.
@@ -111,15 +109,7 @@
 \nDěkujeme PabloOQ za nápad a originální realizaci!
 \n
 \nTento modul byl zastaralý ve prospěch modulu \'Uri parts\'</string>
-    <string name="mPttrn_editor">Zde můžete upravit nebo přidat nový vzor. Formát:
-\n- \'encode\': boolean: Nastavte hodnotu true pro zakódování URL před kontrolou regulárních výrazů (regex).
-\n- \'regex\': řetězec: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen.
-\n- \'excludeRegex\': řetězec: je-li zadán, platný java regex, kterému url nesmí odpovídat – jinak je vzor přeskočen.
-\n- \'replacement\': řetězec|seznam: je-li zadáno, tlačítko \'fix\' spustí \'url=url.replaceAll(regex,replacement)\'. Pokud je uveden seznam, bude náhradou náhodný prvek z něj.
-\n- \'decode\': boolean: nastavte na true pro dekódování nahrazené url.
-\n- \'automatic\': boolean: nastavte na true pro automatické použití vzoru.
-\n- \'enabled\': boolean: nastavte na false, abyste vzor deaktivovali.
-\nPoznámka: Pokud si vzory upravíte, nové výchozí vzory z aktualizací aplikace se automaticky nepřidají (můžete je obnovit pomocí možnosti reset).</string>
+    <string name="mPttrn_editor">Zde můžete upravit nebo přidat nový vzor. Formát: \n- \'encode\': boolean: Nastavte hodnotu true pro zakódování URL před kontrolou regulárních výrazů (regex). \n- \'regex\': řetězec: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen. \n- \'excludeRegex\': řetězec: je-li zadán, platný java regex, kterému url nesmí odpovídat – jinak je vzor přeskočen. \n- \'replacement\': řetězec|seznam: je-li zadáno, tlačítko \'fix\' spustí \'url=url.replaceAll(regex,replacement)\'. Pokud je uveden seznam, bude náhradou náhodný prvek z něj. \n- \'decode\': boolean: nastavte na true pro dekódování nahrazené url. \n- \'automatic\': boolean: nastavte na true pro automatické použití vzoru. \n- \'enabled\': boolean: nastavte na false, abyste vzor deaktivovali. \nPoznámka: Pokud si vzory upravíte, nové výchozí vzory z aktualizací aplikace se automaticky nepřidají (můžete je obnovit pomocí možnosti reset).</string>
     <string name="mOpen_with">Otevřít v %s</string>
     <string name="json_editor">Pokročilý editor</string>
     <string name="link_changelog">Seznam změn</string>
@@ -157,7 +147,7 @@
     <string name="mVT_name">Skener URL</string>
     <string name="mVT_desc">Když je tento modul povolen, můžete naskenovat adresu URL pomocí VirusTotal a zkontrolovat zprávu. K jeho fungování je potřeba osobní VirusTotal API klíč, ten získáte po registraci bezplatného účtu zde: %s .</string>
     <string name="mHosts_desc">Tento modul označuje hostitele, konfigurované buď jejich ručním zadáním, nebo pomocí souboru podobného vzdálenému \'hosts\'. Můžete jej použít k varování před nebezpečnými nebo speciálními stránkami. Vestavěná konfigurace určuje hostitele dle StevenBlack (adware/malware, falešné zprávy, hazardní hry a obsah pro dospělé) z %s</string>
-    <string name="mVT_jsonError">Nelze se připojit k VirusTotal. Ujistěte se, že je klíč API platný, nebo to zkuste znovu později.</string>
+    <string name="mVT_error">Nelze se připojit k VirusTotal. Ujistěte se, že je klíč API platný, nebo to zkuste znovu později.</string>
     <string name="mLog_desc">Tento modul zaznamenává všechny kontrolované adresy URL. Zde můžete zobrazit, vymazat nebo upravit celý protokol (historii), v hlavním dialogu se neobjeví žádná vizuální indikace. Chcete-li zakázat protokolování, deaktivujte modul.</string>
     <string name="mD_desc">Pokud změníte pořadí modulů, nové přidané (z budoucích aktualizací) budou umístěny nad tento modul.
 \n

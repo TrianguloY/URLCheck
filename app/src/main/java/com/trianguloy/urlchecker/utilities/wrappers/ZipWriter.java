@@ -1,6 +1,6 @@
 package com.trianguloy.urlchecker.utilities.wrappers;
 
-import static com.trianguloy.urlchecker.utilities.methods.StreamUtils.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import android.content.Context;
 import android.net.Uri;

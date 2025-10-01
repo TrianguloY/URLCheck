@@ -36,17 +36,22 @@ public interface JavaUtils {
         return result;
     }
 
-    /**
-     * Returns true iff none of the elements fulfill the check.
-     * Returns ifEmpty if the list is empty.
-     */
-    static <T> boolean noneMatch(List<T> list, Function<T, Boolean> check, boolean ifEmpty) {
-        if (list.isEmpty()) return ifEmpty;
+    /** Returns true iff none of the present elements fulfill the check. False if the list is empty. */
+    static <T> boolean nonePresentMatch(List<T> list, Function<T, Boolean> check) {
+        if (list.isEmpty()) return false;
 
         for (var element : list) {
             if (check.apply(element)) return false;
         }
         return true;
+    }
+
+    /** Returns true iff at least one of the elements fulfill the check (false if the list is empty). */
+    static <T> boolean anyMatch(List<T> list, Function<T, Boolean> check) {
+        for (var element : list) {
+            if (check.apply(element)) return true;
+        }
+        return false;
     }
 
     /** Converts a string into a json object, returns empty on failure */

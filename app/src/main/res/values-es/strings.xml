@@ -7,7 +7,9 @@
     <string name="translators">TrianguloY; PabloOQ</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish' -->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Español</string>
     <!--
         main
@@ -85,7 +87,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="btn_tutorialEnd">Terminar tutorial</string>
     <string name="toast_noApp">No se puede abrir la aplicación</string>
     <string name="toast_noBrowser">No se puede abrir el navegador</string>
-    <string name="title_choose">Elige aplicación</string>
     <string name="invalid">Invalido</string>
     <string name="save">Guardar</string>
     <string name="reset">Reiniciar</string>
@@ -126,11 +127,11 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
     <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
-    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista: si existe, una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular. Si se omite todas las URL coincidirán.\n- \'referrer\': cadena|lista: si existe, el referrer (la aplicación que abrió el enlace) debe coincidir de forma exacta. Si es una lista, el referrer debe ser uno de los valores. Si se omite, todas las URL coincidirán. Puedes usar el módulo de debug para comprobar el valor actual.\n- \'action\': cadena|lista, obligatoria: la clave de la automatización que se va a ejecutar. En caso de varias se ejecutarán en order. A continuación, se muestra una lista de todas las claves disponibles.\n- \'args\', objeto: valores que la acción puede necesitar, revisa la descripción de cada acción para los valores que aceptan.\n- \'stop\': booleano: si es verdadero, ninguna automatización más se ejecutará para la URL actual. Falso por defecto.\n- \'enabled\': booleano: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
+    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista: si existe, una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular. Si se omite, todas las URL coincidirán.\n\- \'excludeRegex\': cadena|lista: si existe, una expresión regular de Java válida que la URL no debe coincidir para que se ejecute la automatización. Si es una lista, ninguna expresión regular debe coincidir. Si se omite, ninguna url se excluirá.\n- \'referrer\': cadena|lista: si existe, el referrer (la aplicación que abrió el enlace) debe coincidir de forma exacta. Si es una lista, el referrer debe ser uno de los valores. Si se omite, todas las URL coincidirán. Puedes usar el módulo de debug para comprobar el valor actual.\n- \'action\': cadena|lista, obligatoria: la clave de la automatización que se va a ejecutar. En caso de varias se ejecutarán en order. A continuación, se muestra una lista de todas las claves disponibles.\n- \'args\', objeto: valores que la acción puede necesitar, revisa la descripción de cada acción para los valores que aceptan. Ejemplo: { …, \"args\": { \"text\": \"ejemplo\" } }\n- \'stop\': booleano: si es verdadero, ninguna automatización más se ejecutará para la URL actual. Falso por defecto.\n- \'enabled\': booleano: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
     <string name="auto_available_prefix">Claves de automatizaciones disponibles:</string>
     <string name="auto_available_disabled">"Este módulo está deshabilitado, las automatizaciones no se ejecutarán"</string>
     <!-- -->
-    <string name="auto_open">"Abrirá el enlace. Si no se proporcionan argumentos esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los argumentos 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
+    <string name="auto_open">"Abrirá el enlace. Si no se proporcionan 'args' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los 'args': 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
     <string name="auto_share">"Compartirá el enlace. Equivalente a pulsar el botón de compartir."</string>
     <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
     <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
@@ -139,7 +140,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_unshort">Ejecutará el proceso de desacortar enlace. Equivalente a pulsar el botón de \'desacortar\'.</string>
     <string name="auto_scan">Escaneará el enlace. Equivalente a pulsar el botón \'escanear\'.</string>
     <string name="auto_drawer">"Abrirá el cajón. Equivalente a pulsar el boton del cajón cuando está cerrado."</string>
-    <string name="auto_toast">Muestra un mensaje temporal con un texto fijo. El texo se provee como un argumento llamado \'text\'.</string>
+    <string name="auto_toast">Muestra un mensaje temporal con un texto fijo. El texo se provee como un \'args\' llamado \'text\'.</string>
     <!--
         modules
     -->
@@ -227,7 +228,9 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVT_name">Escáneador de la URL</string>
     <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>
     <string name="mVT_apiKey">Clave de la API</string>
+    <string name="mVT_checkKey">Comprobar</string>
     <string name="mVT_noKey">Falta la clave de la API</string>
+    <string name="mVT_validKey">Clave válida del usuario: %s</string>
     <string name="mVT_tm">VirusTotal™ es una marca registrada de Google, Inc.</string>
     <string name="mVT_scan">Escanear</string>
     <string name="mVT_cancel">Cancelar</string>
@@ -235,8 +238,13 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVT_goodUrl">Ninguno de los antivirus %1$d detectó la URL (a fecha %2$s)</string>
     <string name="mVT_warningUrl">Advertencia, %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
     <string name="mVT_badUrl">¡Cuidado! %1$d/%2$d antivirus detectaron la URL (a partir de la fecha %3$s)</string>
-    <string name="mVT_connectError">No se puede conectar a VirusTotal. Asegúrese de que está conectado a Internet o inténtelo más tarde.</string>
-    <string name="mVT_jsonError">No se ha podido conectar con VirusTotal. Comprueba que la clave api es correcta o prueba mas tarde.</string>
+    <string name="mVT_error">No se ha podido obtener una respuesta válida de VirusTotal. Asegúrese de que la clave de la api es correcta y está conectado a Internet, o inténtelo mas tarde.</string>
+    <string name="mVt_title">Título:</string>
+    <string name="mVt_finalUrl">Url destino:</string>
+    <string name="mVt_reputation">Reputación:</string>
+    <string name="mVt_votes">Votos:</string>
+    <string name="mVt_categories">Categorías:</string>
+    <string name="mVt_detections">Detecciones:</string>
     <!-- -->
     <string name="mD_name">Módulo debug/marcador</string>
     <string name="mD_desc">Si reordenas los módulos, los nuevos que se añadan en futuras actualizaciones se colocarán encima de éste.
@@ -303,6 +311,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mHosts_name">Etiquetador de hosts</string>
     <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de %s. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
+    <string name="mHosts_tm">Hosts de StevenBlack de %s</string>
     <string name="mHosts_malware">software dañino</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">sin etiqueta</string>

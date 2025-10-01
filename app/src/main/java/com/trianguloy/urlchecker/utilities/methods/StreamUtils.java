@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 import java.io.BufferedReader;
@@ -9,13 +11,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /** Generic utilities related to streams (urls, strings, bytes...) */
 public interface StreamUtils {
-    Charset UTF_8 = Charset.forName("UTF-8"); // StandardCharsets.UTF_8 requires api 19
 
     /** Reads an input stream and returns its content as a string. The stream is closed afterwards. */
     static String inputStream2String(InputStream is) throws IOException {
