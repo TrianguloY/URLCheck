@@ -63,11 +63,6 @@ android {
     }
 }
 
-play {
-    track.set("beta")
-    releaseName.set(android.defaultConfig.versionName + " (" + android.defaultConfig.versionCode + ")")
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
