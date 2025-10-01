@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app">#004D57</color>
+    <color name="good">#804CAF50</color>
+    <color name="warning">#80FF9800</color>
+    <color name="bad">#80E91E63</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey">#808080</color>
+</resources>
+<!-- -->
+<!-- This resource is copied from URLChecker -->
+<!-- TODO: move to external library? -->
+<!-- -->
