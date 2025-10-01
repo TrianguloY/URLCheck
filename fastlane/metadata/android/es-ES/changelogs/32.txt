@@ -1,0 +1,6 @@
+V 2.15
+- Nuevo: Animaciones (se pueden desactivar)
+- Arreglo: Mejora en la detección de rechazados. Y se permite desactivar.
+- Arreglo: Custom tabs deberían funcionar en mas situaciones (enlaces que no se abrían)
+- Arreglo: Emoticonos y otros carácteres no estándar en Partes de la uri
+- Mejora: Errores mas descriptivos cuando un módulo no se puede habilitar

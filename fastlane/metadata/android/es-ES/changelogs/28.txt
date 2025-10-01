@@ -1,0 +1,6 @@
+V 2.13
+- Nuevo módulo: cajón. Oculta módulos bajo un desplegable.
+- Nuevo módulo: cambios. Notificará cuando la aplicación se actualize.
+- Mejora: Límite en el número de entradas del log.
+- Mejora: Estado 'oculto' para botones de Ctabs e incógnito.
+- Mejora: Intenta abrir más enlaces válidos.
