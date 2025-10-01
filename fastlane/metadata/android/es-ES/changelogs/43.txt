@@ -1,0 +1,10 @@
+V 3.4
+- Mejora: Rehecha integración con VirusTotal: usar api v3 y mostrar más detalles (voto tercer lugar)
+- Mejora: Permitir componente y/o paquete en la automatización open
+- Mejora: Permitir lista de strings en 'regex' y 'excludeRegex' de patrones
+- Mejora: $REFERRER$ en el cuerpo del webhook
+- Mejora: Cerrar el editor de url al pulsar enter
+- Nuevo: excludeRegex en automatizaciones
+- Nuevo: Automatización 'toast'
+- Arreglo: Host en negrita
+- Arreglo: Enlaces no-clickables en el editor json
