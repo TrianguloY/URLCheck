@@ -1,0 +1,1 @@
+Maakt het analyseren (of delen) van URL's mogelijk voordat ze worden geopend.

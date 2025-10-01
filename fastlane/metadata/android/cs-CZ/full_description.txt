@@ -1,0 +1,36 @@
+Tato aplikace funguje jako prostředník při otevírání/sdílení odkazů URL. Při tom se zobrazí okno s informacemi o URL adrese, které vám umožní provádět i její změny.
+Je obzvláště užitečný, když potřebujete otevřít externí odkaz buď z e-mailu, aplikace sociální sítě nebo jiné.
+
+
+URLCheck je vyvinut společností TrianguloY, původně pro osobní použití. Je open source (pod licencí CC BY 4.0), zdarma, bez reklam a sledovačů, má malou velikost a používá tak málo oprávnění, jak je jen třeba (tj. pouze oprávnění pro internet, pro kontroly modulů, které se provedou pouze tehdy, když si je uživatel vyžádá). Zdrojový kód je k dispozici také na GitHubu, pokud chcete navrhnout změny, provést úpravy nebo navrhnout nový překlad: https://github.com/TrianguloY/URLCheck.
+
+
+Aplikace je strukturována modulárně, můžete povolovat/zakazovat a měnit pořadí jednotlivých modulů, mezi které patří např:
+
+* Vstupní text: Zobrazuje aktuální URL adresu, kterou lze ručně upravovat. Nelze zakázat: V případě, že se jedná o webovou adresu, je možné ji vypnout.
+
+* Historie: Vložené údaje se zobrazí v seznamu, který je určen pro zadávání údajů: Zobrazit a vrátit jakoukoli změnu z jiných modulů, včetně úprav od uživatele (typická funkce undo/redo).
+
+* Protokolování historie: Udržuje protokol všech zaškrtnutých URL, které můžete prohlížet, upravovat, kopírovat, mazat...
+
+* Stavový kód: Stisknutím tlačítka se provede žádost o načtení dané URL a zobrazí se stavový kód (v pořádku, chyba serveru, nenalezeno...). Pokud navíc odpovídá přesměrování, stisknutím zprávy zkontrolujete novou url adresu. URL je načtena, ale není vyhodnocena, takže přesměrování na základě javascriptu neprojde.
+
+* Skener URL: Umožňuje skenovat url pomocí VirusTotal a zkontrolovat zprávu. K jeho fungování je zapotřebí bezplatný osobní klíč API VirusTotal. VirusTotal™ je ochranná známka společnosti Google, Inc.
+
+* Čistič URL: Používá katalog ClearURLs k odstranění odkazů a zbytečných parametrů z url. Umožňuje také běžné offline přesměrování url. Vestavěný katalog z adresy https://docs.clearurls.xyz/latest/specs/rules/
+
+* Rozbalovač odkazů (Unshortener): Používá adresu https://unshorten.me/ k vzdálenému rozbalení URL.
+
+* Odstraňovač dotazů: Zobrazuje dekódované jednotlivé url dotazy, které můžete odstranit nebo zkontrolovat.
+
+* Modul vzorů: Kontroluje URL pomocí regexových vzorů, které varují, navrhují nebo používají náhrady. Můžete upravovat nebo vytvářet vlastní vzory, případně použít i vzory vytvořené uživatelem.
+Mezi vestavěné vzory patří např:
+    - Varování, pokud obsahuje znaky jiné než ascii, například řecká písmena. Toho lze využít při phishingu: googĺe.com vs google.com.
+    - Navrhujeme nahradit "http" za "https".
+    - Navrhnout nahrazení Youtube, Reddit nebo Twitter alternativami šetrnými k soukromí [ve výchozím nastavení vypnuto].
+
+* Kontrola hostitelů: Tento modul označuje hostitele, které lze nakonfigurovat buď ručním zadáním, nebo pomocí souboru podobného vzdálenému hostiteli. Můžete jej použít k upozornění na nebezpečné nebo zvláštní stránky. Vestavěná konfigurace určuje hostitele StevenBlack (adware/malware, fakenews, hazardní hry a obsah pro dospělé) z adresy https://github.com/StevenBlack/hosts.
+
+* Modul pro ladění: Zobrazuje URI záměru a volitelně informace o službě ctabs (vlastní karty). Je určen pro vývojáře.
+
+* Otevřený modul: Obsahuje tlačítka pro otevření a sdílení. Pokud lze odkaz otevřít pomocí více aplikací, zobrazí se šipka umožňující výběr. Nelze deaktivovat.

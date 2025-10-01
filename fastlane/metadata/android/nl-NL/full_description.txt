@@ -1,0 +1,36 @@
+Deze applicatie fungeert als tussenpersoon bij het openen van URL-links. Wanneer u dit doet, wordt er een venster weergegeven met informatie over de url, waarin u ook daarin wijzigingen kunt aanbrengen.
+Dit is vooral handig wanneer u een externe link moet openen vanuit een e-mail, een app voor sociale netwerken of andere.
+
+
+URLCheck is ontwikkeld door TrianguloY, oorspronkelijk voor persoonlijk gebruik. Het is open source (onder CC BY 4.0-licentie), gratis, zonder advertenties of trackers, licht van formaat en gebruikt zo weinig machtigingen als nodig is (alleen internettoestemming, voor modulecontroles die alleen worden uitgevoerd wanneer de gebruiker daarom vraagt). De broncode is ook beschikbaar op GitHub, als u wijzigingen wilt voorstellen, aanpassingen wilt uitvoeren of een nieuwe vertaling wilt voorstellen: https://github.com/TrianguloY/URLCheck
+
+
+De app is modulair opgebouwd, u kunt individuele modules in-/uitschakelen en opnieuw ordenen, waaronder:
+
+* Invoertekst: toont de huidige URL die handmatig kan worden bewerkt. Kan niet worden uitgeschakeld.
+
+* Geschiedenis: bekijk en herstel alle wijzigingen van andere modules, inclusief bewerkingen van de gebruiker (typische functie voor ongedaan maken/opnieuw uitvoeren)
+
+* Logboek: houdt een logboek bij van alle gecontroleerde URL's, die u kunt bekijken, bewerken, kopiëren, wissen...
+
+* Statuscode: Door op de knop te drukken wordt er een netwerkverzoek gedaan om die url op te halen, en wordt de statuscode weergegeven (ok, serverfout, niet gevonden...). Als het bovendien overeenkomt met een omleiding, drukt u op het bericht om de nieuwe URL te controleren. De url wordt opgehaald, maar niet geëvalueerd, dus omleiding op basis van javascript wordt niet gedetecteerd.
+
+* Url Scanner: Hiermee kunt u de URL scannen met VirusTotal en het rapport controleren. Om te kunnen werken is een gratis persoonlijke VirusTotal API-sleutel nodig. VirusTotal™ is een handelsmerk van Google, Inc.
+
+* Url Cleaner: gebruikt de ClearURLs-catalogus om verwijzingen en nutteloze parameters van de URL te verwijderen. Het maakt ook algemene offline URL-omleidingen mogelijk. Ingebouwde catalogus van https://docs.clearurls.xyz/latest/specs/rules/
+
+* Unshortener: gebruikt https://unshorten.me/ om URL's op afstand te verkorten.
+
+* Query's verwijderen: toont de gedecodeerde individuele URL-query's, die u kunt verwijderen of controleren.
+
+* Patroonmodule: controleert de url met regex-patronen die vervangingen waarschuwen, voorstellen of toepassen. U kunt uw eigen patronen wijzigen of creëren, of zelfs door de gebruiker gemaakte patronen gebruiken.
+Ingebouwde patronen zijn onder meer:
+     - Waarschuwing als het niet-ASCII-tekens bevat, zoals Griekse letters. Dit kan worden gebruikt voor phishing: google.com versus google.com
+     - Stel voor om 'http' te vervangen door 'https'
+     - Stel voor om YouTube, Reddit of Twitter te vervangen door privacyvriendelijke alternatieven [standaard uitgeschakeld]
+
+* Hosts checker: Deze module labelt hosts, geconfigureerd door ze handmatig op te geven of door een extern hosts-achtig bestand te gebruiken. U kunt het gebruiken om te waarschuwen voor gevaarlijke of bijzondere locaties. De ingebouwde configuratie specificeert de hosts van StevenBlack (adware/malware, fakenews, gokken en inhoud voor volwassenen) van https://github.com/StevenBlack/hosts
+
+* Debug-module: toont de intentie-URI en optioneel informatie over de ctabs-service (aangepaste tabbladen). Dit is bedoeld voor ontwikkelaars.
+
+* Open module: Bevat de knoppen openen en delen. Als een link met meerdere apps kan worden geopend, wordt er een pijl weergegeven waarmee u kunt kiezen. Kan niet worden uitgeschakeld.

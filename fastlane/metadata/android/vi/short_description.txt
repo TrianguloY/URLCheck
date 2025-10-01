@@ -1,0 +1,1 @@
+Cho phép phân tích (hoặc chia sẻ) URL trước khi mở chúng.
