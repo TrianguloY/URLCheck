@@ -48,7 +48,7 @@ jobs:
       - name: "[PR] Upload apk as artifact"
         id: artifact-upload-step
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           path: ./app/build/outputs/apk/${{ env.VARIANT }}/*.apk
           name: ${{ env.NAME }}
