@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translator(s) name:
+        If you create or update a translation, add how you want to be credited here.
+        For multiple translators, separate them by semicolon.
+        Example: <string name="translators">John Doe; Jane Doe</string> -->
+    <string name="translators">TrianguloY</string>
+    <!--
+        Locale name:
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+    <string name="locale">English</string>
+    <!--
+    clipboard and clipboard borrower
+    -->
+    <string name="clipboard_serviceError">Could not get clipboard service</string>
+    <string name="clipboard_copyError">Error trying to copy to clipboard</string>
+    <string name="clipboard_getError">Error trying to get clipboard</string>
+    <string name="clipboard_setError">Error trying to set clipboard</string>
+    <string name="clipboard_canReadTrue">Can read clipboard</string>
+    <string name="clipboard_canReadFalse">"Can't read clipboard"</string>
+    <string name="borrow_borrowSet">Clipboard borrowed</string>
+    <string name="borrow_borrowError">"Clipboard not available can't borrow"</string>
+    <string name="borrow_releaseSet">Clipboard released</string>
+    <string name="borrow_releaseError">"Clipboard not available can't restore"</string>
+    <string name="borrow_storeGet">"Clipboard content stored"</string>
+    <string name="borrow_drawError">"ERROR: Bubble called without draw permissions, can't release"</string>
+    <string name="borrow_releaseNoDraw">"No draw permissions, can't store before release"</string>
+    <!--
+    Settings
+    -->
+    <string name="settings_title">URL input helper</string>
+    <string name="settings_description">"Some apps will ignore the URL received (mainly chromium in incognito), this compatibility layer helps make it more manageable, but it is not a silver bullet.
+
+Currently we have 3 modes and all require help from the user. The URL will be temporarily stored in the clipboard, while we are borrowing the clipboard the user is expected to paste the URL in the search bar and then we will stop borrowing the clipboard.
+We always respect what you had in the clipboard before borrowing it, we will restore it later. We also try to respect if you copy something before regaining the clipboard, however for this to work we need to be able to read the clipboard, which is not easy to do in Android 10 or more, for this we need drawing permissions.
+-'URLHelper Mode': 4 modes
+    -'None': Disabled, incognito firefox will still work, as it accepts URL in incognito.
+    -'Automatic': The clipboard content will be restored after a set amount of time (customizable).
+    -'Manual': Needs drawing permissions. A bubble will appear, and we will restore the clipboard contents only when tapped.
+    -'Semiautomatic': Needs drawing permissions. A combination of automatic and manual, whichever event triggers first.
+-'Clipboard borrowing time': For automatic and semiautomatic. The time in seconds before restoring the clipboard content
+-'Read for changes…': When disabled, we will not respect what you copy to the clipboard before restoring its contents, but we don't need drawing permissions either
+
+Currently supports: Chromium(chrome, brave,…)"</string>
+    <string name="settings_timer">Clipboard borrowing time</string>
+    <string name="settings_seconds">Seconds</string>
+    <string name="settings_helperNone">None</string>
+    <string name="settings_helperAuto">Automatic</string>
+    <string name="settings_helperManual">Manual</string>
+    <string name="settings_helperSemiauto">Semiautomatic</string>
+    <string name="settings_helperAccessibility">Accessibility service</string>
+    <string name="settings_openDrawSettings">Give draw permissions</string>
+    <string name="settings_openAccessibilitySettings">Give accessibility permissions</string>
+    <string name="settings_drawError">Could not launch draw permissions settings</string>
+    <!-- -->
+    <string name="service_summary">Automatically input URLs</string>
+    <string name="service_description">Used to automatically input URLs in non-supported apps, like Chromium browsers in incognito.</string>
+    <string name="service_notConnected">Accessibility service not available</string>
+    <string name="service_closed">Could not input URL, stopping attempts</string>
+</resources>

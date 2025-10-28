@@ -12,6 +12,10 @@ android {
         targetSdkVersion 34
         versionCode 45
         versionName "3.4"
+
+        buildConfigField("boolean", "IS_INCOGNITO", "false") // default incognito value
+
+        resValue "string", "app_name", "URLCheck"
     }
 
     buildTypes {
@@ -29,6 +33,23 @@ android {
             initWith(buildTypes.debug)
             applicationIdSuffix '.test'
             versionNameSuffix '-TEST'
+        }
+    }
+
+    flavorDimensions = ["incognito"]
+    productFlavors {
+        // incognito dimension
+        base {
+            dimension "incognito"
+        }
+        incognito {
+            dimension "incognito"
+            buildConfigField("boolean", "IS_INCOGNITO", "true")
+
+            applicationIdSuffix ".incognito"
+
+            // For easy differentiation when installed
+            resValue "string", "app_name", "URLCheck-I"
         }
     }
 
@@ -71,6 +92,7 @@ play {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    incognitoImplementation project(path: ':forceurl');
 }
 
 // configure signing for release
