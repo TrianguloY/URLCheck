@@ -176,7 +176,7 @@
     <string name="mPttrn_fix">Застосувати</string>
     <string name="mOpen_closeOpen">Закрити діалогове вікно після відкриття</string>
     <string name="small">Маленький</string>
-    <string name="normal">нормальний</string>
+    <string name="normal">Нормальний</string>
     <string name="big">Великий</string>
     <string name="json_editor">Json редактор</string>
     <string name="mPttrn_regexfix">Виправте додаткові групи регулярних виразів (вимкніть, якщо регулярні вирази не працюють належним чином)</string>
@@ -362,4 +362,5 @@
     <string name="mVt_votes">Голоси:</string>
     <string name="mVt_categories">Категорії:</string>
     <string name="mVt_detections">Виявлення:</string>
+    <string name="mHosts_tm">Ведучі StevenBlack з %s</string>
 </resources>

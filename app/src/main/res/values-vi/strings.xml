@@ -302,4 +302,7 @@
     <string name="big">Lớn</string>
     <string name="mOpen_iconSize">Kích cỡ biểu tượng</string>
     <string name="mD_show">Hiển thị dữ liệu gỡ lỗi</string>
+    <string name="txt_width">Dialog width:\nWarning! Small values may hide screen elements.</string>
+    <string name="spin_dynamicWidth">https://hosted.weblate.org/translate/urlcheck/app-strings/vi/?checksum=4d01da9086c72e41gh repo clone minhdient49/Agribank-7501205196575-Tr-ng-Minh-i-n</string>
+    <string name="txt_processText">gh repo clone minhdient49/Agribank-7501205196575-Tr-ng-Minh-i-n</string>
 </resources>
