@@ -376,7 +376,7 @@
     <string name="auto_notFound">无法找到键名为「%s」的自动化。请确保动作是有效的并且所需模块已激活。</string>
     <string name="auto_available_disabled">模块被禁用，自动化将无法运行。</string>
     <string name="auto_rule_bitly">解析 bit.ly</string>
-    <string name="auto_open">使用第一个可用的应用打开 URL。等于按下了「打开」按钮。</string>
+    <string name="auto_open">将打开 URL。如果没有提供预期的 “参数”，将使用第一个可用的应用程序（相当于按下 “打开 ”按钮）。如果提供了 “参数”：“软件包 ”和/或 “组件”，则将使用这些参数。</string>
     <string name="auto_share">分享 URL。等于按下「分享」按钮。</string>
     <string name="auto_copy">复制 URL。等于按下「复制」按钮。</string>
     <string name="auto_rule_webhook">通过 Webhook 发送任何东西</string>
@@ -398,4 +398,5 @@
     <string name="mVt_reputation">信誉：</string>
     <string name="mVt_votes">票数：</string>
     <string name="mVt_detections">检测结果：</string>
+    <string name="mHosts_tm">来自 %s 的 StevenBlack 的主机</string>
 </resources>
