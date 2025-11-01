@@ -1,0 +1,8 @@
+V 2.9
+- New module: Hosts labeler
+- Hide module titles (can be toggled)
+- New settings activity
+    - Setup as default browser
+    - Change theme
+    - Change locale
+- Tweaked and cleaned styles and code

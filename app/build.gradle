@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'com.github.triplet.play' version '3.10.1'
 }
 
 android {
@@ -62,11 +61,6 @@ android {
         // Disables dependency metadata when building Android App Bundles.
         includeInBundle = false
     }
-}
-
-play {
-    track.set("beta")
-    releaseName.set(android.defaultConfig.versionName + " (" + android.defaultConfig.versionCode + ")")
 }
 
 dependencies {

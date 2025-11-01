@@ -1,0 +1,10 @@
+V 2.7
+- Improved Open module apps sorting
+- Improved ClearURL catalog updater
+- Added CTabs settings
+- Some Android 13 improvements
+- Fixed issues with module sorting
+- Fixed some links not opening
+- Fixes and tweaks to strings
+- Fixes and tweaks to styles
+- Several internal improvements

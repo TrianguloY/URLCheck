@@ -1,0 +1,4 @@
+V 3.3.1
+- Nuevo: Permitir multiples referrers en automatizaciones
+- Arreglo: Automatizaciones aparte de la primera no funcionaban
+- Arreglo: Puntos sin escapar en patrones de ejemplo

@@ -1,0 +1,8 @@
+V 2.6
+- Colors!
+- Improved Queries remover module
+- Improved Patterns checker module
+- New module: Log
+- New Turkish translation. Thanks to Metezd!
+- New Hebrew translation. Thanks to Nhman Mazuz!
+- Minor tweaks and fixes

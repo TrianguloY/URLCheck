@@ -1,0 +1,4 @@
+V 3.2
+- Improve: enhanced JSON editor (vote second place)
+- New: upper-case-in-domain default pattern (thanks Bakr-Ali!)
+- Fix: 'rejected' urls hide the opened app

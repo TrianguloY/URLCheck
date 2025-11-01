@@ -1,0 +1,7 @@
+V 2.10
+- Ny veiledningsskjerm
+- Ny modul: Avforkorter
+- Nye funksjoner og forbedringer i statusmodulen
+- Ny snarvei og flis for åpning av utklippstavlelenker
+- Ny kinesisk oversettelse, takket være Seviche CC.
+- Visuelle forbedringer

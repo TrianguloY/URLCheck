@@ -1,0 +1,10 @@
+V 2.11
+- Yeni modül: Bayrakları Düzenle
+- Yeni modül: URI Parçaları (Sorgu Silici'nin yerine)
+- Yeni ayar: Kalıp Denetleyicisi modülünde excludeRegex alanı
+- Değişiklik: modüller kullanılmadıklarında artık gizliler
+- Düzeltme: açılan uygulamalar son açılanlarda gözükmüyordu
+- Düzeltme: standart kısayollar mevcut değildi
+- Düzeltme: klavye diyaloğu engelliyordu
+- Düzeltme: durum modülü düzgün çalışmıyordu
+- Çeviriler: symbuzzer yeni ve güncellemeler ve diğerleri Weblate'ten
