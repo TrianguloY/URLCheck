@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Checkout master
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0 # need to fetch other branches
 

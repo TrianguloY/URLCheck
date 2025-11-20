@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       # use java 17, CodeQL is not properly detecting the version
       - name: Set up JDK 17
