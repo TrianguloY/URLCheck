@@ -358,4 +358,5 @@
     <string name="mVt_votes">Bewertung:</string>
     <string name="mVt_categories">Kategorien:</string>
     <string name="mVt_detections">Funde:</string>
+    <string name="mHosts_tm">StevenBlacks Hosts von %s</string>
 </resources>
