@@ -45,7 +45,7 @@ jobs:
           RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
 
       - name: Upload apk as artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           path: ./app/build/outputs/apk/release/*.apk
