@@ -55,7 +55,7 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         run: |
           (
-          sed '/^$/q' ./fastlane/metadata/android/en-US/changelogs/40.txt
+          cat ./fastlane/metadata/android/en-US/changelogs/$(ls ./fastlane/metadata/android/en-US/changelogs/ | sort -n | tail -n 1)
           cat - << EOF
           ---
           
