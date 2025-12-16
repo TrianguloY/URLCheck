@@ -1,1 +1,36 @@
-<p>This application acts as an intermediary when opening url links. When you do so, a window containing information about the url is displayed, allowing you to make changes to it as well. Specially useful when you need to open an external link either from an email, a social network app or others.</p><p><em>URLCheck</em> is developed by TrianguloY, originally for personal use. It is open source (under CC BY 4.0 license), free, without any ads or trackers, light sized and using as few permissions as necessary (only the internet permission, for module checks that will only be performed when the user request them).</p><p>The app is structured with a modular setup, you can enable/disable and reorder individual modules, which include:</p><ul><li><strong>Input text:</strong> Displays the current url which can be edited manually. Can’t be disabled.</li><li><strong>History:</strong> View and revert any change from other modules, including edits from the user (typical undo/redo feature)</li><li><strong>Log:</strong> Keeps a log of all checked urls, which you can view, edit, copy, clear...</li><li><strong>Status code:</strong> By pressing the button a network request will be made to retrieve that url, and the status code will be displayed (ok, server error, not found...). Additionally, if it corresponds to a redirection, press the message to check the new url. The url is fetched, but not evaluated, so redirection based on javascript won’t be detected.</li><li><strong>Url Scanner:</strong> Allows you to scan the url using VirusTotal, and check the report. A free personal VirusTotal API key is needed for it to work. VirusTotal™ is a trademark of Google, Inc.</li><li><strong>Url Cleaner:</strong> Uses the ClearURLs catalog to remove referral and useless parameters from the url. It also allows for common offline url redirections. Built-in catalog from https://docs.clearurls.xyz/latest/specs/rules/</li><li><strong>Unshortener:</strong> Uses https://unshorten.me/ to unshorten urls remotely.</li><li><strong>Queries remover:</strong> Displays the decoded individual url queries, which you can remove or check.</li><li><strong>Pattern module:</strong> Checks the url with regex patterns that warns, suggests or applies replacements. You can modify or create your own patterns, or even use user-created ones. Built-in patterns include:<ul><li>Warning when contains non-ascii characters like greek letters. This can be used for phishing: googĺe.com vs google.com</li><li>Suggest replacing ’http’ with ’https’</li><li>Suggest replacing Youtube, Reddit or Twitter with privacy-friendly alternatives [disabled by default]</li></ul></li><li><strong>Hosts checker:</strong> This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack’s hosts (adware/malware, fakenews, gambling and adult content) from https://github.com/StevenBlack/hosts</li><li><strong>Debug module:</strong> Displays the intent uri, and optionally info about the ctabs (custom tabs) service. This is intended for developers.</li><li><strong>Open module:</strong> Contains the open and share buttons. If a link can be opened with multiple apps, an arrow will be shown to let you choose. Can’t be disabled.</li></ul>
+This application acts as an intermediary when opening url links. When you do so, a window containing information about the url is displayed, allowing you to make changes to it as well.
+Specially useful when you need to open an external link either from an email, a social network app or others.
+
+
+URLCheck is developed by TrianguloY, originally for personal use. It is open source (under CC BY 4.0 license), free, without any ads or trackers, light sized and using as few permissions as necessary (only the internet permission, for module checks that will only be performed when the user request them). The source code is available on GitHub too, if you want to suggest changes, perform modifications or propose a new translation: https://github.com/TrianguloY/URLCheck
+
+
+The app is structured with a modular setup, you can enable/disable and reorder individual modules, which include:
+
+* Input text: Displays the current url which can be edited manually. Can't be disabled.
+
+* History: View and revert any change from other modules, including edits from the user (typical undo/redo feature)
+
+* Log: Keeps a log of all checked urls, which you can view, edit, copy, clear...
+
+* Status code: By pressing the button a network request will be made to retrieve that url, and the status code will be displayed (ok, server error, not found...). Additionally, if it corresponds to a redirection, press the message to check the new url. The url is fetched, but not evaluated, so redirection based on javascript won't be detected.
+
+* Url Scanner: Allows you to scan the url using VirusTotal, and check the report. A free personal VirusTotal API key is needed for it to work. VirusTotal™ is a trademark of Google, Inc.
+
+* Url Cleaner: Uses the ClearURLs catalog to remove referral and useless parameters from the url. It also allows for common offline url redirections. Built-in catalog from https://docs.clearurls.xyz/latest/specs/rules/
+
+* Unshortener: Uses https://unshorten.me/ to unshorten urls remotely.
+
+* Queries remover: Displays the decoded individual url queries, which you can remove or check.
+
+* Pattern module: Checks the url with regex patterns that warns, suggests or applies replacements. You can modify or create your own patterns, or even use user-created ones.
+Built-in patterns include:
+    - Warning when contains non-ascii characters like greek letters. This can be used for phishing: googĺe.com vs google.com
+    - Suggest replacing 'http' with 'https'
+    - Suggest replacing Youtube, Reddit or Twitter with privacy-friendly alternatives [disabled by default]
+
+* Hosts checker: This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack's hosts (adware/malware, fakenews, gambling and adult content) from https://github.com/StevenBlack/hosts
+
+* Debug module: Displays the intent uri, and optionally info about the ctabs (custom tabs) service. This is intended for developers.
+
+* Open module: Contains the open and share buttons. If a link can be opened with multiple apps, an arrow will be shown to let you choose. Can't be disabled.
