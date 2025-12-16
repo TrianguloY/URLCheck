@@ -65,7 +65,7 @@
     <string name="mOpen_with">Öffnen mit %s</string>
     <string name="mOpen_open">Öffnen</string>
     <string name="mOpen_tabsDesc">„Benutzerdefinierte Tabs“-Funktion umschalten</string>
-    <string name="mOpen_incognitoDesc">Privaten Modus umschalten (nur Firefox)</string>
+    <string name="mOpen_incognitoDesc">Privaten Modus umschalten</string>
     <string name="mStatus_name">Status Code</string>
     <string name="mStatus_desc">Durch drücken des Prüfen-Buttons wird eine Netzwerk-Anfrage ausgeführt, um den Status Code einer Seite abzufragen und anzuzeigen. Wenn das Ergebnis eine Weiterleitung ist, können Sie die Ziel-URL sehen. Der Inhalt einer URL wird geladen (GET), aber nicht ausgewertet, sodass JavaScript-basierte Weiterleitungen nicht erkannt werden können.</string>
     <string name="mStatus_ioerror">Netzwerkfehler beim Prüfen der URL: %s</string>

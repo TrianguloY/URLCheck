@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/transparent">
+    <item
+        android:bottom="5dp"
+        android:top="5dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="@color/app" />
+        </shape>
+    </item>
+</layer-list>
+<!-- -->
+<!-- This resource is copied from URLChecker -->
+<!-- TODO: move to external library? -->
+<!-- -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">25dp</dimen>
+    <dimen name="smallPadding">10dp</dimen>
+    <dimen name="square_button">35dp</dimen>
+</resources>
+<!-- -->
+<!-- This resource is copied from URLChecker -->
+<!-- TODO: move to external library? -->
+<!-- -->
