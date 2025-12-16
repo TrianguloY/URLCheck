@@ -329,4 +329,5 @@
     <string name="mVt_votes">Голоса:</string>
     <string name="mVt_categories">Категории:</string>
     <string name="mVt_detections">Обнаружения:</string>
+    <string name="mHosts_tm">Список хостов Стивена Блека (StevenBlack) из %s</string>
 </resources>

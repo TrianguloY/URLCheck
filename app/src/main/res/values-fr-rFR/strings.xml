@@ -6,7 +6,7 @@
         For multiple translators, separate them by semicolon.
         Example: <string name="translators">John Doe; Jane Doe</string>
     -->
-    <string name="translators">Ilithy</string>
+    <string name="translators">jpoisson; Samylol9; kingu; Ilithy; N4TH4NOT</string>
     <!--
         Locale name:
         Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
@@ -24,10 +24,7 @@
     <!--
         about
     -->
-    <string name="txt_about">Application créée par %1$s.
-\n
-\nContributions : %2$s.
-\nTraduction : %3$s.</string>
+    <string name="txt_about">Application créée par %1$s. \n \nContributeurs : %2$s. \nTraducteurs : %3$s.</string>
     <string name="link_blog">Blog de %s</string>
     <string name="link_changelog">Journal des modifications</string>
     <string name="link_source">Code source</string>
@@ -36,7 +33,7 @@
         modules
     -->
     <string name="txt_conf">Voici tous les modules disponibles, où vous pouvez vérifier leur description et leurs paramètres. Vous pouvez également réorganiser, changer la visibilité de leur titre et les activer/désactiver.</string>
-    <string name="toast_cantEnable">Impossible d\'activer le module: %s</string>
+    <string name="toast_cantEnable">Impossible d\'activer le module : %s</string>
     <string name="menu_resetOrder">Réinitialiser l\'ordre</string>
     <string name="menu_toggleDecorations">Inverser l\'état d\'affichage du tîtres de tout les modules</string>
     <string name="desc_up">Monter</string>
@@ -122,15 +119,10 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mPttrn_noSchemeHttp">Schéma HTTP manquant.</string>
     <string name="mPttrn_noSchemeHttps">Schéma HTTPS manquant.</string>
     <string name="mPttrn_ok">Aucun modèle correspondant</string>
-    <string name="mPttrn_editor">Ici, vous pouvez modifier ou ajouter un nouveau modèle. Format : \n- \'encode\': booléen: mettre à true pour encoder l\'url avant de vérifier la regex. \n- \'regex\': chaîne de caractères : une regex Java valide à laquelle l\'url doit correspondre, sinon le motif est ignoré. \n- \'excludeRegex\': chaîne de caractères: si fournie, une regex Java valide que l\'url ne doit pas correspondre, sinon le motif est ignoré. \n- \'replacement\': string|list: si fourni, le bouton \'fix\' lancera \'url=url.replaceAll(regex,replacement)\'. S\'il s\'agit d\'une liste, le remplacement sera un élément aléatoire de cette liste. \n- decode\': booléen: mettre à true pour décoder l\'url remplacée. \n- \'automatic\': booléen: mettre à true pour appliquer automatiquement le motif. \n- \'enabled\': booléen: mettre à false pour désactiver le motif. \nRemarque: si vous modifiez les motifs, les nouveaux motifs intégrés provenant des mises à jour de l\'application ne seront pas ajoutés automatiquement (vous pouvez les restaurer à l\'aide de l\'option de réinitialisation).</string>
+    <string name="mPttrn_editor">Ici, vous pouvez modifier ou ajouter un nouveau modèle. Format : \n- \'encode\' : booléen : mettre à true pour encoder l\'url avant de vérifier la regex. \n- \'regex\' : chaîne de caractères|liste : une regex Java valide à laquelle l\'url doit correspondre, sinon le motif est ignoré. S\'il s\'agit d\'une liste, au moins une regex doit correspondre. Si non spécifié, tout motif sera accepté.\n- \'excludeRegex\' : chaîne de caractères|liste : si fournie, aucune regex Java valide ne doit correspondre, sinon le motif est ignoré. S\'il s\'agit d\'une liste, et qu\'au moins une regex correspond, le motif sera ignoré.\n- \'replacement\' : string|liste : si fourni, le bouton \'fix\' lancera \'url=url.replaceAll(regex,replacement)\'. [si regex est une liste, le premier motif a correspondre sera utilisé] S\'il s\'agit d\'une liste, le remplacement sera un élément aléatoire de cette liste. \n- decode\' : booléen : mettre à vrai pour décoder l\'url remplacée. \n- \'automatic\' : booléen : mettre à vrai pour appliquer automatiquement le motif. \n- \'enabled\' : booléen : mettre à faux pour désactiver le motif. \nRemarque : si vous modifiez les motifs, les nouveaux motifs intégrés provenant des mises à jour de l\'application ne seront pas ajoutés automatiquement (vous pouvez les restaurer à l\'aide de l\'option de réinitialisation).</string>
     <!-- -->
     <string name="mOpen_name">Ouvrir et partager</string>
-    <string name="mOpen_desc">Contient les boutons suivants (de gauche à droite):
-\n- Bouton Onglets personnalisés: activez/désactivez la fonction d\'onglet personnalisé. Si activé, le navigateur sera ouvert en mode \'alléger\'.
-\n- Bouton Incognito : Pour Firefox uniquement. Permet d\'activer/désactiver le mode incognito. Lorsqu\'il est activé, le navigateur doit être ouvert en mode incognito.
-\n- Bouton Ouvrir: appuyez sur le nom de l\'application pour ouvrir le lien avec. Si un lien peut être ouvert avec plusieurs applications, une flèche s\'affiche afin de vous offrir le choix.
-\n- Bouton Copier : Appuyez sur ce bouton pour copier le lien dans le presse-papiers.
-\n- Bouton Partager : Appuyez sur ce bouton pour partager le lien.</string>
+    <string name="mOpen_desc">Contient les boutons suivants (de gauche à droite) : \n- Bouton Onglets personnalisés : activez/désactivez la fonction d\'onglet personnalisé. Si activé, le navigateur sera ouvert en mode \'alléger\'. \n- Bouton Incognito : Pour Firefox uniquement. Permet d\'activer/désactiver le mode incognito. Lorsqu\'il est activé, le navigateur doit être ouvert en mode incognito. \n- Bouton Ouvrir : appuyez sur le nom de l\'application pour ouvrir le lien avec. Si un lien peut être ouvert avec plusieurs applications, une flèche s\'affiche afin de vous offrir le choix. \n- Bouton Copier : Appuyez sur ce bouton pour copier le lien dans le presse-papiers. \n- Bouton Partager : Appuyez sur ce bouton pour partager le lien.</string>
     <string name="mOpen_ctabs">Onglets personnalisés :</string>
     <string name="defaultOn">Activé par défaut</string>
     <string name="defaultOff">Désactivé par défaut</string>
@@ -171,7 +163,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
         <item>502: Erreur du serveur</item>
         <item>504: Délai du serveur dépassé</item>
     </string-array>
-    <string name="mStatus_unknownCode">%d: Code d\'état inconnu</string>
+    <string name="mStatus_unknownCode">%d : Code d\'état inconnu</string>
     <string name="mStatus_redir">Redirige vers %s</string>
     <string name="mStatus_autoRedirect">Remplacer automatiquement les URLs de redirection</string>
     <!-- -->
@@ -179,34 +171,30 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mInput_desc">Affiche l\'URL actuel. Appuyez dessus pour passer en mode édition.</string>
     <!-- -->
     <string name="mVT_name">Analyseur d’URL</string>
-    <string name="mVT_desc">Lorsque ce module est activé, vous pouvez analyser l\'URL à l\'aide de VirusTotal et en vérifier le rapport. Une clé personnelle de l\'Api VirusTotal est nécessaire pour que cela fonctionne, vous pouvez en obtenir une après vous être inscrit gratuitement ici: %s .</string>
+    <string name="mVT_desc">Lorsque ce module est activé, vous pouvez analyser l\'URL à l\'aide de VirusTotal et en vérifier le rapport. Une clé personnelle de l\'Api VirusTotal est nécessaire pour que cela fonctionne, vous pouvez en obtenir une après vous être inscrit gratuitement ici : %s .</string>
     <string name="mVT_apiKey">Clé d\'API</string>
     <string name="mVT_tm">VirusTotal™ est une marque de Google, Inc.</string>
     <string name="mVT_scan">Analyse</string>
     <string name="mVT_cancel">Annuler</string>
-    <string name="mVT_scanning">Balayage…</string>
+    <string name="mVT_scanning">Analyse…</string>
     <string name="mVT_goodUrl">Aucun des %1$d moteurs n\'a détecté l\'URL (en date du %2$s)</string>
     <string name="mVT_warningUrl">Attention, %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
     <string name="mVT_badUrl">Prudence ! %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
     <string name="mVT_error">Impossible de se connecter à VirusTotal. Assurez-vous que la clé API est valide ou réessayez plus tard.</string>
     <!-- -->
-    <string name="mD_name">Module de débogage/marqueur</string>
-    <string name="mD_desc">Si vous réorganisez les modules, les nouveaux modules ajoutés dans les mises à jour futures seront placés au-dessus de celui-ci.
-\n
-\nSi vous activez cette option, cela affichera certaines données de débogage internes (comme l\'uri de l\'intention originale), utiles pour les développeurs.
-\n
-\nVous pouvez maintenir pour sélectionner du texte.</string>
+    <string name="mD_name">Module de débogage/marquage</string>
+    <string name="mD_desc">Si tu réorganises les modules, les nouveaux modules ajoutés dans les prochaines mises à jour seront placés au-dessus de celui-ci. \n \nSi vous activez cette option, cela affichera certaines données de débogage internes (comme l\'uri de l\'intent originale), utiles pour les développeurs. \n \nVous pouvez maintenir pour sélectionner du texte.</string>
     <string name="mD_ctabs">Afficher les messages de débogage provenant du service d\'onglets personnalisés</string>
     <!-- -->
     <string name="mHist_name">Historique</string>
-    <string name="mHist_desc">Lorsque l\'URL est modifiée, manuellement ou par d\'autres modules, ceci vous permet de visualiser et d\'annuler les modifications.</string>
+    <string name="mHist_desc">Lorsque l\'URL est modifiée, même manuellement ou par d\'autres modules, ceci te permets de visualiser et d\'annuler les modifications.</string>
     <!-- -->
     <string name="mClear_name">Nettoyeur d’URL</string>
     <string name="mClear_desc">Ce module supprime les paramètres de suivi, d\'affiliation ainsi que d\'autres paramètres inutiles de l\'URL. Il permet également des redirections d\'URLs hors-ligns courantes.</string>
-    <string name="mClear_tm">Catalogue intégré copié depuis ClearURL: %s</string>
+    <string name="mClear_tm">Catalogue intégré copié depuis ClearURL : %s</string>
     <string name="mClear_clear">Appliquer</string>
     <string name="mClear_matches">Correspond à %s</string>
-    <string name="mClear_blocked">- BLOQUÉ!</string>
+    <string name="mClear_blocked">- BLOQUÉ !</string>
     <string name="mClear_exception">- ignoré en raison de l\'exception %s</string>
     <string name="mClear_rule">- paramètre inutile détecté</string>
     <string name="mClear_rawRule">- contenu inutile détecté</string>
@@ -216,33 +204,28 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mClear_cleared">- Effacé</string>
     <string name="mClear_noRules">Aucune règle correspondante</string>
     <string name="mClear_auto">Appliquer automatiquement</string>
-    <string name="mClear_toggleReferral">"Autoriser le marketing de parrainage (les paramètres d'affiliations ne seront pas effacés)"</string>
-    <string name="mClear_toggleVerbose">Activer les informations détaillées pour le processus de correspondance</string>
+    <string name="mClear_toggleReferral">Autoriser le partenariat commercial (les paramètres d\'affiliations ne seront pas effacés)</string>
+    <string name="mClear_toggleVerbose">Activer les informations détaillées pour le processus correspond</string>
     <string name="mClear_error">Impossible de vérifier la règle</string>
-    <string name="mClear_updater">Actualisation</string>
-    <string name="mClear_sourceDesc">URL du fichier de catalogue JSON contenant les règles:</string>
+    <string name="mClear_updater">Mise à jour</string>
+    <string name="mClear_sourceDesc">URL du fichier de catalogue JSON contenant les règles :</string>
     <string name="mClear_urlHint">URL du catalogue</string>
-    <string name="mClear_hashDesc">URL du fichier de hachage du catalogue. S\'il est omis, le téléchargement ne sera pas vérifié pour voir s\'il a été falsifié/modifié (non recommandé)</string>
+    <string name="mClear_hashDesc">URL du fichier de hachage du catalogue. Si non spécifié, le téléchargement ne sera pas vérifié pour voir s\'il a été falsifié/modifié (non recommandé)</string>
     <string name="mClear_hashHint">Pas de vérification du hachage</string>
     <string name="mClear_updateNow">Mettre à jour maintenant</string>
     <string name="mClear_autoUpdate">Mettre à jour périodiquement</string>
-    <string name="mClear_lastCheck">Dernière vérification:</string>
-    <string name="mClear_lastUpdate">Dernière mise à jour:</string>
-    <string name="mClear_updated">Catalogue actualisé</string>
+    <string name="mClear_lastCheck">Dernière vérification :</string>
+    <string name="mClear_lastUpdate">Dernière mise à jour :</string>
+    <string name="mClear_updated">Catalogue à jour</string>
     <string name="mClear_upToDate">Catalogue à jour</string>
     <string name="mClear_urlError">Impossible de récupérer les règles, assurez-vous que l\'URL est valide et que vous disposez d\'une connexion active</string>
     <string name="mClear_hashError">Impossible de récupérer le hachage, assurez-vous que l\'URL est valide et que vous disposez d\'une connexion active</string>
     <string name="mClear_hashMismatch">Les hachages ne correspondent pas, le fichier a peut-être été falsifié. Si vous souhaitez ignorer la vérification, supprimez l\'URL de hachage</string>
     <string name="mClear_restore">Restaurer les chemins d\'accès de ClearURLs</string>
-    <string name="mClear_editor">"Règles du catalogue: elles doivent suivre le format de %s.
-Notez que toute modification apportée à l'objet parent 'fournisseurs' sera écrasée si le catalogue est mis à jour automatiquement ou manuellement depuis la boîte de dialogue de mise à jour. Pour que des règles personnelles soient définies dans un objet parent différent (n'importe quel nom)."</string>
+    <string name="mClear_editor">Règles du catalogue : elles doivent suivre le format de %s.\nNotez que toute modification apportée à l\'objet parent \'fournisseurs\' sera écrasée si le catalogue est mis à jour automatiquement ou manuellement depuis la boîte de dialogue de mise à jour. Pour que des règles personnelles soient définies dans un objet parent différent (n\'importe quel nom).</string>
     <!-- -->
     <string name="mRemove_name">Suppresseur de requêtes</string>
-    <string name="mRemove_desc">[ SUPPRIMÉ] Avec ce module, vous pouvez supprimer des requêtes d\'une URL.
-\nAppuyez sur le bouton pour les supprimer toute ou appuyez sur la flèche pour les supprimer une par une.
-\nMerci à PabloOQ pour l\'idée et la mise en œuvre d\'origine!
-\n
-\nCe module a été supprimé au profit du module \"Uri parts\"</string>
+    <string name="mRemove_desc">[ SUPPRIMÉ] Avec ce module, vous pouvez supprimer des requêtes d\'une URL. \nAppuyez sur le bouton pour les supprimer toute ou appuyez sur la flèche pour les supprimer une par une. \nMerci à PabloOQ pour l\'idée et la mise en œuvre d\'origine ! \n \nCe module a été supprimé au profit du module \"Uri parts\"</string>
     <string name="mRemove_found1">1 requête trouvée</string>
     <string name="mRemove_found">%d requêtes trouvées</string>
     <string name="mRemove_noQueries">Aucune requête</string>
@@ -257,30 +240,25 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mLog_empty">Aucune données</string>
     <!-- -->
     <string name="mHosts_name">Étiqueteur d\'hôtes</string>
-    <string name="mHosts_desc">Ce module étiquette les hôtes, configurés soit en les spécifiant manuellement, soit en utilisant un fichier \'Hosts\' distants. Vous pouvez l\'utiliser pour vous avertir à propos des sites dangereux ou spéciaux. La configuration intégrée utilise les fichiers hosts de StevenBlack (publicitaires/malveillants, fakenews, jeu et contenu pour adultes) à l\'adresse %s. Remarque: les sous-domaines seront également vérifiés, de sorte que \"x.y.z\" et \"y.z\" seront détectés pour l\'entrée \"y.z\"</string>
+    <string name="mHosts_desc">Ce module étiquette les hôtes, configurés soit en les spécifiant manuellement, soit en utilisant un fichier \'Hosts\' distants. Vous pouvez l\'utiliser pour vous avertir à propos des sites dangereux ou spéciaux. La configuration intégrée utilise les fichiers hosts de StevenBlack (publicitaires/malveillants, fakenews, jeu et contenu pour adultes) à l\'adresse %s. Remarque : les sous-domaines seront également vérifiés, de sorte que \"x.y.z\" et \"y.z\" seront détectés pour l\'entrée \"y.z\"</string>
     <string name="mHosts_malware">publicitaires/malveillants</string>
-    <string name="mHosts_info">Host:</string>
+    <string name="mHosts_info">Hôtes :</string>
     <string name="mHosts_noLabel">Aucune correspondance</string>
-    <string name="mHosts_fakenews">fakenews</string>
+    <string name="mHosts_fakenews">désinformation</string>
     <string name="mHosts_gambling">jeux d\'argent</string>
     <string name="mHosts_adult">contenu réservé aux adultes</string>
     <string name="mHosts_build">Construire</string>
     <string name="mHosts_uninitialized">Base de données d\'hôtes non initialisée. Touchez pour la construire</string>
     <string name="mHosts_parseError">Impossible d\'analyser l\'hôte de l\'URL</string>
-    <string name="mHosts_editor">Paramétrage des hôtes. Format: liste d\'objets où la clé est l\'étiquette des hôtes et dont le contenu peu inclure les valeurs facultatives suivantes:
-\n- file: L\'url d\'un fichier d\'hôtes distants à télécharger. Toutes les entrées d\'hôtes valides présentes seront ajoutées. Les lignes doivent suivre la syntaxe des hôtes : \'ip host [alias...]\', mais celles qui ne contiennent que \'host\' sont également valables.
-\n- hosts: Liste d\'hôtes (hosts) bruts à ajouter.
-\n- color: Une chaîne Android représentant une couleur (#AARRGGBB, #RRGGBB ou un nom de couleur valide). La valeur par défaut est un rouge «danger».
-\n- replace: si faux (false) les hôtes existants ne seront pas remplacés. Notez que les objets sont évalués de haut en bas. Vrai (true) par défaut.
-\n- enabled: si faux (false), l\'entrée entière ne sera pas évaluée.</string>
+    <string name="mHosts_editor">Paramétrage des hôtes. Format : liste d\'objets où la clé est l\'étiquette des hôtes et dont le contenu peu inclure les valeurs facultatives suivantes : \n- file : L\'url d\'un fichier d\'hôtes distants à télécharger. Toutes les entrées d\'hôtes valides présentes seront ajoutées. Les lignes doivent suivre la syntaxe des hôtes : \'ip host [alias...]\', mais celles qui ne contiennent que \'host\' sont également valables. \n- hosts : Liste d\'hôtes (hosts) bruts à ajouter. \n- color : Une chaîne Android représentant une couleur (#AARRGGBB, #RRGGBB ou un nom de couleur valide). La valeur par défaut est un rouge «danger». \n- replace : si faux (false) les hôtes existants ne seront pas remplacés. Notez que les objets sont évalués de haut en bas. Vrai (true) par défaut. \n- enabled : si faux (false), l\'entrée entière ne sera pas évaluée.</string>
     <string name="mHosts_buildTitle">Construire la base de données d\'hôtes (Hosts)</string>
-    <string name="mHosts_buildDesc">Cela effacera la base de données des hôtes actuels et la construira avec les hôtes configurés, en les téléchargeant depuis Internet si nécessaire. Cette action peut prendre quelques secondes. Continuer?</string>
+    <string name="mHosts_buildDesc">Cela effacera la base de données des hôtes actuels et la construira avec les hôtes configurés, en les téléchargeant depuis Internet si nécessaire. Cette action peut prendre quelques secondes. Continuer ?</string>
     <string name="mHosts_buildProgress">Construction du fichier d\'hôtes</string>
     <string name="mHosts_buildInit">Initialisation</string>
     <string name="mHosts_buildClear">Nettoyage…</string>
     <string name="mHosts_buildDownload">"Téléchargement de '%1$s' hôtes depuis %2$s…"</string>
     <string name="mHosts_buildSave">Enregistrement…</string>
-    <string name="mHosts_built">Base de données construite: %d hôtes</string>
+    <string name="mHosts_built">Base de données construite : %d hôtes</string>
     <!-- -->
     <string name="mUnshort_name">Déraccourcisseur</string>
     <string name="mUnshort_unshort">Déraccourcir</string>
@@ -321,8 +299,7 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mChg_view">Afficher les modifications</string>
     <string name="mDrawer_name">Tiroir</string>
     <string name="btn_backupRestore">Sauvegarder / Restaurer</string>
-    <string name="bck_deleteMessage">ATTENTION! Ceci supprimera tous les éléments sélectionnés.
-\nVoulez-vous vraiment continuer?</string>
+    <string name="bck_deleteMessage">ATTENTION ! Ceci supprimera tous les éléments sélectionnés. \nVoulez-vous vraiment continuer ?</string>
     <string name="bck_deleteConfirm">Supprimer les éléments</string>
     <string name="bck_deleteOk">Éléments supprimés</string>
     <string name="bck_deleteError">Impossible de supprimer les éléments</string>
@@ -342,8 +319,8 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="bkp_description">Choisissez quels éléments doivent être sauvegardés/restaurés.
 \nLors de la restauration, si la sauvegarde a été créée sans éléments, les éléments existants seront conservés.</string>
     <string name="bkp_data">Données : Données standard de l\'application. Des choses comme les modules activés, les configurations json, etc. Ne comprendra pas les secrets ni le cache.</string>
-    <string name="bkp_data_prefs">Préférences: Données sauvegardées en tant que préférences.</string>
-    <string name="bkp_secrets">Secrets: Données considérées comme \"secrètes\", comme la clé api de VirusTotal ou le registre.</string>
+    <string name="bkp_data_prefs">Préférences : Données sauvegardées en tant que préférences.</string>
+    <string name="bkp_secrets">Secrets : Données considérées comme \"secrètes\", comme la clé api de VirusTotal ou le registre.</string>
     <string name="bck_ignoreNewer">Autoriser les sauvegardes créées à partir de versions plus récentes de l\'application.</string>
     <string name="bck_backupOk">Sauvegarde créée</string>
     <string name="noLinks">Aucun lien détecté</string>
@@ -352,18 +329,17 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="btn_restore">Restorer</string>
     <string name="bck_restoreOk">Sauvegarde restorée</string>
     <string name="bck_mn_advanced">Monter les options avancées</string>
-    <string name="bkp_data_files">Fichiers: Données enregistrées sous forme de fichiers.</string>
-    <string name="bjp_cache">Cache: Données qui peuvent être facilement téléchargées/générées, comme la base de données des hôtes. L\'activation de cette option augmente considérablement la taille de la sauvegarde.</string>
+    <string name="bkp_data_files">Fichiers : Données enregistrées sous forme de fichiers.</string>
+    <string name="bjp_cache">Cache : Données qui peuvent être facilement téléchargées/générées, comme la base de données des hôtes. L\'activation de cette option augmente considérablement la taille de la sauvegarde.</string>
     <string name="bck_restoreTitle">Restorer la sauvegarde</string>
     <string name="mVT_noKey">Clé API manquante</string>
-    <string name="bck_restoreMessage">ATTENTION! Ceci remplacera les éléments sélectionnés dans la sauvegarde.
-\nVoulez-vous vraiment continuer ?</string>
+    <string name="bck_restoreMessage">ATTENTION ! Ceci remplacera les éléments sélectionnés dans la sauvegarde. \nVoulez-vous vraiment continuer ?</string>
     <string name="bck_newer">Annulé. La sauvegarde a été créée avec une version plus récente de l\'application.</string>
     <string name="bck_chooseFile">Choisissez le fichier de sauvegarde</string>
     <string name="bck_restoreDelete">Supprimer les éléments avant la restauration. Notez que les préférences et certains fichiers avec des valeurs par défaut peuvent ne pas exister, de sorte que la désactivation de cette option fusionnera les éléments existants avec les éléments sauvegardés de manière inattendue. Désactivez cette option uniquement si vous savez ce que vous faites.</string>
     <string name="bck_backupError">Impossible de créer une sauvegarde, essayez de choisir un autre emplacement pour le fichier.</string>
     <string name="bck_restoreConfirm">Remplacer les éléments</string>
-    <string name="bck_restoreError">Impossible de restaurer la sauvegarde. S\'agit-il d\'un fichier valide?</string>
+    <string name="bck_restoreError">Impossible de restaurer la sauvegarde. S\'agit-il d\'un fichier valide ?</string>
     <string name="mFlag_desc">[Fonctionnalité bêta] Il s\'agit d\'un module avancé, qui vous permet de modifier les drapeaux d\'intention lors de l\'ouverture d\'une autre application.
 \nCe module affichera une liste de drapeaux, vous pouvez changer si le drapeau est activé ou non en appuyant sur l\'icône. Il y a aussi un menu de débordement pour cacher les drapeaux, c\'est juste visuel, les drapeaux utiliseront toujours l\'état assigné.
 \nLes drapeaux ont deux indicateurs de couleur à côté de la case à cocher. Celui de gauche indique la valeur reçue de l\'intention, celui de droite indique l\'état défini par le module lui-même. Le rouge signifie que le drapeau n\'est pas activé et le vert qu\'il l\'est. En outre, l\'indicateur de préférence peut être gris, ce qui signifie que l\'état a été réglé sur automatique.
@@ -386,8 +362,8 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mWebhook_error">Échec de l\'envoi au webhook</string>
     <string name="mWebhook_templates">Modèles</string>
     <string name="auto_clear">Efface l\'url. Cela équivaut à appuyer sur le bouton \'Effacer\'. Notez que le module lui-même contient un réglage automatique qui effacera également toutes les url de manière plus efficace, et qui devrait être préféré.</string>
-    <string name="mWebhook_desc">Ce module envoie des URL à un point de terminaison webhook configuré. Chaque URL est envoyée avec un horodatage, ce qui vous permet de collecter et de traiter les URL sur votre propre serveur.\nMerci à anoop-b pour l\'idée et l\'implémentation de base !\n\nConfigurez l\'URL et le corps de votre webhook ci-dessous pour commencer à envoyer des URL.\nPour le corps, vous pouvez utiliser les caractères génériques $URL$ et $TIMESTAMP$.</string>
-    <string name="auto_editor">Configuration des automatismes. Format : liste d\'objets dont la clé est un nom d\'automatisation unique et dont le contenu comprend les valeurs suivantes :\n- \'regex\' : string|list, required : une regex java valide à laquelle l\'url doit correspondre pour que l\'automatisation s\'exécute. S\'il s\'agit d\'une liste, au moins une regex doit correspondre.\n- \'action\' : string|list, obligatoire : la clé de l\'automatisation à exécuter. Voir ci-dessous la liste de toutes les clés disponibles.\n- \'enabled\' : boolean, optionnel : si false, l\'automatisation sera ignorée. True par défaut.</string>
+    <string name="mWebhook_desc">Ce module envoie des URL à un point de terminaison webhook configuré. Chaque URL est envoyée avec un horodatage, ce qui vous permet de collecter et de traiter les URL sur votre propre serveur.\nMerci à anoop-b pour l\'idée et l\'implémentation de base !\n\nConfigurez l\'URL et le corps de votre webhook ci-dessous pour commencer à envoyer des URL.\nPour le corps, vous pouvez utiliser les caractères génériques $URL$, $TIMESTAMP$ et $REFERRER$.</string>
+    <string name="auto_editor">"Configuration des automatismes. Format : liste d\'objets dont la clé est un nom d\'automatisation unique et dont le contenu comprend les valeurs suivantes :\n- \'regex\' : string|list: si présent, une regex java valide à laquelle l\'url doit correspondre pour que l\'automatisation s\'exécute. S\'il s\'agit d\'une liste, au moins une regex doit correspondre. Si non spécifié, toutes les urls seront acceptés.\n- \'excludeRegex\': string|list: si présent, une regex java valide à laquelle l\'url ne doit pas correspondre pour que l\'automatisation s\'exécute. S\'il s\'agit d\'une liste, aucune  des regex ne doit correspondre . Si non spécifié, aucune url ne sera refusé.\n- \'referrer\': string|list: si présent, le référent(l\'application qui a ouvert le lien) devra correspondre exactement à cette valeur. S\'il s\'agit d\'une liste, le référent doit correspondre à au moins l\'une de ces valeurs. Si non spécifié,  toutes les urls seront acceptés. Tu peux utilisé le mode de débogage pour obtenir la valeur actuelle.\n- \'action\' : string|list, requis : la clé de l\'automatisation à exécuter. Voir ci-dessous la liste de toutes les clés disponibles.\n- \'args\', objet: des valeurs que l\'action à besoin, voir la description de chaque action pour les valeurs acceptés. Exemple: { …, \"args\": { \"texte\": \"exemple\" } }\n- \'stop\': booléan: si vrai, plus aucun automatisme ne s\'exécutera pour cette url. Faux par défaut.\n- \'enabled\' : booléan, optionnel : si faux, l\'automatisation sera ignorée. Vrai par défaut."</string>
     <string name="auto_unshort">Lance le processus de déraccourcissement. Cela équivaut à appuyer sur le bouton \"Déracourcir\".</string>
     <string name="auto_close">Fermera l\'application, sans rien faire d\'autre.</string>
     <string name="mWebhook_success">Envoi au webhook réussi</string>
@@ -395,11 +371,37 @@ Notez que toute modification apportée à l'objet parent 'fournisseurs' sera éc
     <string name="mWebhook_body_hint">Corps du Webhook</string>
     <string name="auto_available_prefix">Actions d\'automatisation disponibles (clés) :</string>
     <string name="auto_available_disabled">Ce module est désactivé, les automatisations ne fonctionneront pas</string>
-    <string name="auto_open">Ouvre l\'URL avec la première application disponible. Équivaut à appuyer sur le bouton \'ouvrir\'.</string>
+    <string name="auto_open">Ouvre l\'URL, si aucun \'args\' n\'est pas renseigné, la première application disponible (équivaut à appuyer sur le bouton \'ouvrir\'). Si \'arg\': \'package\' et/ou \'component\' sont renseignés, ils seront utilisé.</string>
     <string name="auto_share">Partage l\'url. Cela équivaut à appuyer sur le bouton \'partager\'.</string>
     <string name="auto_copy">Copie l\'url. Cela équivaut à appuyer sur le bouton \'copier\'.</string>
     <string name="auto_rule_bitly">déraccourcir bit.ly</string>
     <string name="auto_rule_webhook">Envoyer tout au webhook</string>
     <string name="auto_ctabs">Active ctabs. Équivalent à appuyer sur le bouton \'ctabs\' s\'il est désactivé (même s\'il est caché).</string>
     <string name="auto_incognito">Active la navigation privée. Équivalent à appuyer sur le bouton \'Incognito\' s\'il est désactivé (même s\'il est masqué).</string>
+    <string name="txt_width">Largeur de la boîte de dialogue:\nAttention! Les petites valeurs peuvent cacher des éléments.</string>
+    <string name="spin_fullWidth">Complet</string>
+    <string name="spin_dynamicWidth">Dynamique</string>
+    <string name="txt_processText">Synchroniser l\'url avec la zone d\'édition (quand l\'application est ouverte par un appuie long sur la zone de saisie de texte)</string>
+    <string name="format">Format</string>
+    <string name="discard">Ne pas sauvegarder</string>
+    <string name="json_info">Afficher les info</string>
+    <string name="json_ignore">Ce contenu n\'est pas un Json valide. Veux-tu annulé les modifications lors de la fermeture de l\'éditeur ?</string>
+    <string name="json_discard_close">Ne pas sauvegarder et fermer</string>
+    <string name="json_save">Des changements ont été apporté, souhaites-tu les sauvegarder ou pas ?</string>
+    <string name="json_save_error">Impossible de sauvegarder : %s</string>
+    <string name="json_format_error">Le contenu n\'est pas un Json valide, il ne peux pas être parsé.</string>
+    <string name="json_discard">Attention, cela va remplacé le contenu de l\'éditeur avec le json sauvegardé. Tout les changements seront perdu. Souhaites-tu continué ?</string>
+    <string name="json_reset">Attention, cela va remplacer le contenu de l\'éditeur avec le json par défaut. Tout les changements de l\'éditeur seront perdu, mais le contenu sauvegardé ne sera pas modifié tant que tu ne sauvegardes pas manuellement. Souhaites-tu continuer ?</string>
+    <string name="mVt_detections">Détections :</string>
+    <string name="mHosts_tm">Les hôtes de StevenBlack en provenance de %s</string>
+    <string name="auto_rule_toast">Toast d\'exemple</string>
+    <string name="mPttrn_upperDomain">Attention ! Lettres majuscule dans le nom de domaine.</string>
+    <string name="mVT_checkKey">Vérifier</string>
+    <string name="mVT_validKey">Clé valide de l\'utilisateur : %s</string>
+    <string name="mVt_title">Titre :</string>
+    <string name="mVt_finalUrl">Url finale :</string>
+    <string name="mVt_reputation">Réputation :</string>
+    <string name="mVt_votes">Votes :</string>
+    <string name="mVt_categories">Catégories :</string>
+    <string name="auto_toast">Afficher un toast avec un texte fixe. Ce texte doit fournir comme un \'args\' appelé \'texte\'.</string>
 </resources>

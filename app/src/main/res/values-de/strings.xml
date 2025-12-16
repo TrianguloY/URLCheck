@@ -333,7 +333,7 @@
     <string name="auto_clear">URL säubern, äquivalent zum entsprechenden Modul. Beachten Sie, dass das Modul selbst eine \"Auto\"-Einstellung enthält, die bevorzugt werden sollte.</string>
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_send">An Webhook senden</string>
-    <string name="mWebhook_desc">Dieses Modul sendet URLs an den einstellten Webhook-Endpunkt. Es wird ein Timestamp mitgesendet und Sie können die URLs auf Ihrem Server verarbeiten.\nDanke an anoop-b für die Idee und Basisimplementierung!\n\nKonfigurieren Sie die Webhook URL und Body um URLs zu senden.\nIm Body können Sie die Platzhalter $URL$, $TIMESTAMP$ und $REFERRER$ verwenden.</string>
+    <string name="mWebhook_desc">Dieses Modul sendet URLs an den eingestellten Webhook-Endpunkt. Es wird ein Timestamp mitgesendet und Sie können die URLs auf Ihrem Server verarbeiten.\nDanke an anoop-b für die Idee und Basisimplementierung!\n\nKonfigurieren Sie die Webhook URL und Body um URLs zu senden.\nIm Body können Sie die Platzhalter $URL$, $TIMESTAMP$ und $REFERRER$ verwenden.</string>
     <string name="mWebhook_url_hint">Webhook URL</string>
     <string name="mWebhook_body_hint">Webhook body</string>
     <string name="mWebhook_auto_send">An Webhook senden</string>
@@ -358,4 +358,5 @@
     <string name="mVt_votes">Bewertung:</string>
     <string name="mVt_categories">Kategorien:</string>
     <string name="mVt_detections">Funde:</string>
+    <string name="mHosts_tm">StevenBlacks Hosts von %s</string>
 </resources>

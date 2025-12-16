@@ -97,7 +97,7 @@ Traduzioni: %3$s."</string>
     <string name="mOpen_noapps">Nessuna app</string>
     <string name="mOpen_tabsDesc">Attiva/disattiva la funzione schede personalizzate</string>
     <string name="mStatus_name">Status code</string>
-    <string name="mStatus_desc">Premendo il pulsante di verifica, una richiesta verrà inviata per recuperare lo status code del sito. Se il risultato è una re-indirizzazione, potrai visualizzare l\'url di destinazione. Il contenuto dell\'url viene recuperato (GET), ma non controllato, quindi re-indirizzamenti basati su javascript non verranno rilevati.</string>
+    <string name="mStatus_desc">Premendo il pulsante di verifica, una richiesta verrà inviata per recuperare lo status code del sito. Se il risultato è un reindirizzamento, potrai visualizzare l\'url di destinazione. Il contenuto dell\'url viene recuperato (GET), ma non controllato, quindi reindirizzamenti basati su javascript non verranno rilevati.</string>
     <string name="mStatus_ioerror">Errore di rete durante il tentativo di controllare l\'URL: %s</string>
     <string name="mStatus_error">Errore interno durante il tentativo di controllare l\'url: %s</string>
     <string name="mStatus_check">Controlla stato</string>
@@ -121,7 +121,7 @@ Traduzioni: %3$s."</string>
         <item>504: Server timeout</item>
     </string-array>
     <string name="mStatus_unknownCode">%d: Status code sconosciuto</string>
-    <string name="mStatus_redir">Re-indirizzazione: %s</string>
+    <string name="mStatus_redir">Reindirizza a: %s</string>
     <string name="mInput_name">Modifica link</string>
     <string name="mInput_desc">Mostra l\'url corrente. Premilo per entrare nella modalita` di modifica.</string>
     <string name="mVT_name">URL Scanner</string>
@@ -131,7 +131,7 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mVT_tm">VirusTotal™ è un trademark di Google, Inc.</string>
     <string name="mVT_scan">Scansiona</string>
     <string name="mVT_cancel">Cancella</string>
-    <string name="mVT_scanning">Scansionando…</string>
+    <string name="mVT_scanning">Scansione in corso…</string>
     <string name="mVT_goodUrl">Nessun %1$d engine ha rilevato qualcosa (ad oggi %2$s)</string>
     <string name="mVT_warningUrl">Attenzione, questi engines: %1$d/%2$d hanno rilevato qualcosa (ad oggi %3$s)</string>
     <string name="mVT_badUrl">Attenzione! %1$d/%2$d engines hanno rilevato qualcosa (ad oggi %3$s)</string>
@@ -151,8 +151,8 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mClear_rule">- parametro inutile trovato</string>
     <string name="mClear_rawRule">- contenuto inutile trovato</string>
     <string name="mClear_referral">- referral trovato</string>
-    <string name="mClear_forcedRedirection">- re-indirizzazione forzata rilevata</string>
-    <string name="mClear_redirection">- re-indirizzazione rilevata</string>
+    <string name="mClear_forcedRedirection">- reindirizzamento forzato rilevato</string>
+    <string name="mClear_redirection">- reindirizzamento rilevato</string>
     <string name="mClear_cleared">- Pulito</string>
     <string name="mClear_noRules">Nessuna regola corrisponde</string>
     <string name="mClear_auto">Applica automaticamente</string>
@@ -299,23 +299,23 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="mOpen_mergeCopy">Unisce i tasti Copia e Condividi (tieni premuto per copiare)</string>
     <string name="mStatus_autoRedirect">Sostituisci automaticamente gli URLs di reindirizzamento</string>
     <string name="mPttrn_regexfix">Correggi i gruppi regex facoltativi (disabilita se l\'espressione regolare non funziona correttamente)</string>
-    <string name="mUnshort_ok">Non accorciato</string>
+    <string name="mUnshort_ok">Disaccorciato</string>
     <string name="mD_show">Carica i dati di debug</string>
     <string name="mLog_limit">Numero massimo di voci da tenere. Valore consigliato: 100. Imposta vuoto per un numero illimitato</string>
-    <string name="mUnshort_unshort">Disaccorciare</string>
+    <string name="mUnshort_unshort">Disaccorcia</string>
     <string name="mUnshort_pending">in attesa: %1$d/%2$d</string>
     <string name="mOpen_closeCopy">Chiudi dialogo dopo aver copiato</string>
     <string name="mOpen_rejected">Nascondi app se l\'URL e` stato rifiutato (un app richiede immediatamente di aprire lo stesso URL con cui e` stata aperta). Non influisce sulla condivisione.</string>
     <string name="mUnshort_name">Disaccorciatore</string>
     <string name="mUnshort_tm">unshorten.me API gratuita di Unshorten.me</string>
-    <string name="mUnshort_desc">Questo modulo disaccoricia i link inviandoli a %s, che li valuta sui propri server e salva il reindirizzamento per le richieste future. Evitare di disaccorciare i link con dati privati o sensibili.\nLa loro API è limitata a 10 richieste all\'ora per i nuovi controlli. La risposta del modulo mostrerà il numero di richieste in sospeso.</string>
-    <string name="mUnshort_checking">Controllo…</string>
+    <string name="mUnshort_desc">Questo modulo disaccorcia i link inviandoli a %s, che li valuta sui propri server e salva il reindirizzamento per le richieste future. Evitare di disaccorciare i link con dati privati o sensibili.\nLa loro API è limitata a 10 richieste all\'ora per i nuovi controlli. La risposta del modulo mostrerà il numero di richieste in sospeso.</string>
+    <string name="mUnshort_checking">Controllo in corso…</string>
     <string name="mUnshort_error">Errore del server: %s</string>
     <string name="mUnshort_internal">Errore interno (%s)</string>
-    <string name="mUnshort_notFound">Non è stato trovato alcun url non abbreviato</string>
+    <string name="mUnshort_notFound">Non è stato trovato alcun url disaccorciato</string>
     <string name="mUnshort_to">Disaccorcia a %s</string>
     <string name="mParts_name">Parti dell\'Uri</string>
-    <string name="mParts_desc">Questo modulo mostra tutte le parti dell\'url decodificato: schema, autorita`, percorsi, queries e frammenti.\nCliccando una parte verra` impostata come nuovo url, utile per esempio se una della quey o percorsi era un url di reindirizzazzione dedcodificato.\nTenenedo premuto una parte, questa verra` copiata negli appunti.\nPuoi anche cliccare il tasto \'X\' per rimuoreve alcune di loro.\nQuesta e` una versione avanzata del modulo \'Rimozione delle query\'.</string>
+    <string name="mParts_desc">Questo modulo mostra tutte le parti dell\'url decodificato: schema, autorita`, percorsi, queries e frammenti.\nCliccando una parte verra` impostata come nuovo url, utile per esempio se una della quey o percorsi era un url di reindirizzamento dedcodificato.\nTenenedo premuto una parte, questa verra` copiata negli appunti.\nPuoi anche cliccare il tasto \'X\' per rimuoreve alcune di loro.\nQuesta e` una versione avanzata del modulo \'Rimozione delle query\'.</string>
     <string name="mDrawer_desc">Tutti i moduli al di sotto di questo verranno nascosti in un cassetto. I moduli continueranno a funzionare, ma saranno nascosti finche` non aprirai il cassetto. Qui puoi mettere moduli che usi raramente, per evitare disordine.</string>
     <string name="mChg_current">Versione attuale: %s</string>
     <string name="mVT_noKey">Chiave API mancante</string>
@@ -324,7 +324,7 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="auto_ctabs">Abilitera` ctabs. Equivalente a premere il tasto \'ctabs\' se disabilitato (anche se nascosto).</string>
     <string name="auto_incognito">Abiliterà la modalità incognito. Equivalente a premere il tasto \'incognito\' se disabilitato (anche se nascosto).</string>
     <string name="auto_checkStatus">Eseguira` il controllo dello stato. Equivalente a premere il tasto \'Controlla\'.</string>
-    <string name="auto_unshort">Eseguirà il processo di unshort. Equivalente a premere il tasto \'Unshort\'.</string>
+    <string name="auto_unshort">Eseguirà il processo di disaccorciamento. Equivalente a premere il tasto \'Disaccorcia\'.</string>
     <string name="auto_scan">Scnasionera` l\'url. Equivalente a premere il tasto \'Scansiona\'.</string>
     <string name="auto_editor">Configurazione automazioni. Formato: lista di oggetti in cui la chiave e` un nome di automazione univoco e il contenuto include i seguenti valori:\n- \'regex\': stringa: un\'espressione java regex valida a cui l\'url deve corrispondere per l\'esecuzione dell\'automazione.\n- \'action\': stringa, richiesto: la chiave dell\'automazione per l\'esecuzione. Controlla sotto per una lista di tutte le chiavi disponibili.\n- \'enabled\': boolean, opzionale: se falso questa automazione verra` saltata. Vero per default.</string>
     <string name="auto_available_prefix">Azioni di automazione disponibili (chiavi):</string>
@@ -341,4 +341,10 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="spin_dynamicWidth">Dinamico</string>
     <string name="json_save">Ci sono modifiche non salvate, vuoi salvarle o scartarle?</string>
     <string name="format">Formato</string>
+    <string name="dismiss">Ignora</string>
+    <string name="json_discard_close">Annulla e chiudi</string>
+    <string name="json_format_error">Il contenuto non è un JSON valido, non può essere analizzato.</string>
+    <string name="json_discard">Attenzione, questo sostituirà il contenuto dell’editor con il JSON salvato. Tutte le modifiche apportate andranno perse. Vuoi continuare?</string>
+    <string name="json_reset">Attenzione, questo sostituirà il contenuto dell’editor con il JSON integrato. Tutte le modifiche apportate nell’editor andranno perse, ma il contenuto salvato non verrà modificato a meno che non venga salvato manualmente. Vuoi continuare?</string>
+    <string name="auto_rule_bitly">Disaccorcia bit.ly</string>
 </resources>
