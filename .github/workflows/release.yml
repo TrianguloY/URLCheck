@@ -55,6 +55,8 @@ jobs:
         run: |
           (
           cat ./fastlane/metadata/android/en-US/changelogs/$(ls ./fastlane/metadata/android/en-US/changelogs/ | sort -n | tail -n 1)
+          echo
+          echo
           cat - << EOF
           ---
           
