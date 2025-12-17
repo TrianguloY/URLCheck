@@ -7,3 +7,4 @@ V 2.8
 - Nouveau paramètre pour masquer l'application source (référente)
 - Autoriser la désactivation de tous les modules
 - Amélioration de la page 'À propos'
+- Améliorations des outils interne
