@@ -50,7 +50,6 @@ jobs:
         with:
           path: ./app/build/outputs/apk/release/*.apk
 
-      # TODO: link to latest
       - name: Upload apk to release with the release notes
         if: ${{ github.event_name == 'push' }}
         run: |
