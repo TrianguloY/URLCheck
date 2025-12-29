@@ -1,174 +1,458 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="toast_cantEnable">Nu se poate activa modulul: %s</string>
+    <!--
+        Translator(s) name:
+        If you create or update a translation, add how you want to be credited here.
+        For multiple translators, separate them by semicolon.
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
+    <string name="translators">Nicolae Fericitu</string>
+    <!--
+        Locale name:
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Română</string>
-    <string name="txt_info">Această aplicație acționează ca un intermediar la deschiderea linkurilor URL accesate. Când alegeți această aplicație pentru a deschide un link, este afișată o fereastră de dialog cu informații despre acesta. Apăsați butonul modul de mai jos pentru a verifica și configura toate modulele disponibile.</string>
-    <string name="txt_sample">Apasă linkul de mai jos pentru a-l testa:</string>
+    <!--
+        main
+    -->
+    <string name="txt_info">Această aplicație acționează ca un intermediar la deschiderea linkurilor URL pe care dai clic. Se afișează un dialog cu informații despre link atunci când alegi această aplicație pentru a-l deschide. Apasă butonul modulului de mai jos pentru a verifica și configura toate modulele disponibile.</string>
+    <string name="txt_sample">Apasă pe linkul de mai jos pentru a testa:</string>
     <string name="a_modules">Module</string>
     <string name="a_settings">Setări</string>
     <string name="a_about">Despre</string>
+    <!--
+        about
+    -->
+    <string name="txt_about">"Aplicație creată de %1$s.
+
+Contribuții: %2$s.
+Traduceri: %3$s."</string>
+    <string name="link_blog">"Blogul lui %s"</string>
     <string name="link_changelog">Jurnal de modificări</string>
-    <string name="link_source">Cod sursa</string>
-    <string name="link_privacy">Politica de confidențialitate</string>
+    <string name="link_source">Cod sursă</string>
+    <string name="link_privacy">Politică de confidențialitate</string>
+    <!--
+        modules
+    -->
+    <string name="txt_conf">Aici sunt toate modulele disponibile, unde poți verifica descrierea și setările acestora. De asemenea, poți reordona, comuta vizibilitatea titlului și le poți activa/dezactiva.</string>
+    <string name="toast_cantEnable">"Nu se poate activa modulul: %s"</string>
     <string name="menu_resetOrder">Resetează ordinea</string>
-    <string name="txt_openLinks">Deschideți linkuri în această aplicație: De-a lungul anilor, Android a schimbat modul de configurare și diferă de la o versiune la alta. Găsiți mai jos toate setările disponibile pentru dispozitivul dvs., dacă nu se deschid linkuri pe această aplicație încercați-le pe toate.</string>
+    <string name="menu_toggleDecorations">Comută toate titlurile</string>
+    <string name="desc_up">Mută sus</string>
+    <string name="desc_down">Mută jos</string>
+    <string name="desc_decorations">Arată/ascunde titlul</string>
+    <string name="desc_enable">Activează/dezactivează modulul</string>
+    <!--
+        settings
+    -->
+    <string name="txt_openLinks">Deschide linkuri în această aplicație: De-a lungul anilor, Android a schimbat modul de configurare, diferind între versiuni. Găsește mai jos toate setările disponibile pentru dispozitivul tău; dacă linkurile nu se deschid în această aplicație, încearcă-le pe toate.</string>
     <string name="btn_setBrowser">Setează ca browser implicit</string>
     <string name="toast_defaultSet">Aplicația este acum browserul web implicit</string>
     <string name="btn_configureBrowser">Browser web implicit</string>
-    <string name="btn_androidSettings">Setările aplicației Android</string>
+    <string name="btn_linksSettings">Deschide linkurile acceptate</string>
+    <string name="btn_androidSettings">Setări aplicație Android</string>
     <string name="txt_theme">Temă:</string>
     <string name="spin_darkTheme">Întunecat</string>
-    <string name="spin_lightTheme">Luminat</string>
-    <string name="link_blog">Blogul lui %s</string>
-    <string name="txt_conf">Aici sunt prezentate toate modulele disponibile, unde puteți verifica descrierea și setările acestora. De asemenea, puteți să le reordonați, să comutați vizibilitatea titlului și să le activați/dezactivați.</string>
-    <string name="txt_about">Aplicație creată de %1$s.
-\n
-\nContribuții: %2$s.
-\nTraduceri: %3$s.</string>
-    <string name="txt_locale">Localitate:</string>
-    <string name="txt_tutorial1">Mulțumim pentru descărcarea aplicației!
-\n
-\nAcesta este tutorialul, dacă vrei să-l sări, o poți face cu butonul de mai jos. Puteți reveni oricând la acest tutorial din meniul de setări.</string>
+    <string name="spin_lightTheme">Luminos</string>
+    <string name="txt_width">Lățime dialog:\nAtenție! Valorile mici pot ascunde elemente ale ecranului.</string>
+    <string name="spin_fullWidth">Complet</string>
+    <string name="spin_dynamicWidth">Dinamic</string>
+    <string name="txt_locale">Limbă (Locale):</string>
+    <string name="txt_animation">Activează animațiile</string>
+    <string name="txt_processText">Sincronizează URL-ul cu textul editabil (când aplicația este deschisă prin apăsare lungă pe text într-o casetă de introducere)</string>
+    <string name="btn_tutorialSettings">Repetă tutorialul</string>
+    <string name="btn_backupRestore">Copie de rezervă / Restaurare</string>
+    <!--
+        Backup / Restore
+    -->
+    <string name="bck_mn_advanced">Arată opțiuni avansate</string>
+    <string name="btn_backup">Copie de rezervă</string>
+    <string name="btn_restore">Restaurează</string>
+    <string name="btn_delete">Șterge</string>
+    <string name="bkp_description">"Alege ce elemente să incluzi în copia de rezervă/restaurare.
+La restaurare, dacă copia de rezervă a fost creată fără ele, cele existente vor fi păstrate."</string>
+    <string name="bkp_data">Date: Date standard ale aplicației. Lucruri precum module activate, configurații json etc. Nu va include secrete sau memoria cache.</string>
+    <string name="bkp_data_prefs">Preferințe: Date salvate ca preferințe.</string>
+    <string name="bkp_data_files">Fișiere: Date salvate ca fișiere.</string>
+    <string name="bkp_secrets">"Secrete: Date considerate 'secrete', cum ar fi cheia API VirusTotal sau jurnalul."</string>
+    <string name="bjp_cache">Cache: Date care pot fi descărcate/generate ușor, cum ar fi baza de date hosts. Activarea acestei opțiuni poate crește notabil dimensiunea copiei de rezervă.</string>
+    <string name="bck_restoreDelete">Șterge elementele înainte de restaurare. Reține că preferințele și unele fișiere cu valori implicite ar putea să nu existe, deci dezactivarea acestei opțiuni va fuziona elementele existente cu cele din backup în moduri neașteptate. Dezactivează doar dacă știi ce faci.</string>
+    <string name="bck_ignoreNewer">Permite copii de rezervă create din versiuni mai noi ale aplicației.</string>
+    <string name="bck_newer">Anulat. Copia de rezervă a fost creată cu o versiune mai nouă a aplicației.</string>
+    <string name="bck_chooseFile">Alege fișierul de backup</string>
+    <string name="bck_backupOk">Copie de rezervă creată</string>
+    <string name="bck_backupError">"Nu s-a putut crea copia de rezervă, încearcă să alegi o altă locație pentru fișier."</string>
+    <string name="bck_restoreTitle">Restaurează backup</string>
+    <string name="bck_restoreMessage">"ATENȚIE! Aceasta va înlocui elementele selectate cu cele din copia de rezervă.
+Sigur dorești să continui?"</string>
+    <string name="bck_restoreConfirm">Înlocuiește elementele</string>
+    <string name="bck_restoreOk">Copie de rezervă restaurată</string>
+    <string name="bck_restoreError">Nu s-a putut restaura copia de rezervă. Este un fișier valid?</string>
+    <string name="bck_deleteTitle">Șterge elemente</string>
+    <string name="bck_deleteMessage">"ATENȚIE! Aceasta va șterge toate elementele selectate.
+Sigur dorești să continui?"</string>
+    <string name="bck_deleteConfirm">Șterge elementele</string>
+    <string name="bck_deleteOk">Elemente șterse</string>
+    <string name="bck_deleteError">Nu s-a putut șterge elementele</string>
+    <!--
+        tutorial
+    -->
     <string name="tutorial">Tutorial</string>
-    <string name="mClear_rule">- parametru inutil găsit</string>
-    <string name="mClear_forcedRedirection">- redirecționare forțată găsită</string>
-    <string name="mClear_redirection">- redirecționare găsită</string>
-    <string name="mClear_auto">Aplicare automată</string>
-    <string name="mClear_error">Nu s-a putut verifica regula</string>
-    <string name="mClear_sourceDesc">Adresa URL a catalogului de fișiere JSON cu regulile:</string>
-    <string name="mClear_urlHint">Catalog URL</string>
-    <string name="mClear_hashHint">Fără verificare hash</string>
-    <string name="mClear_updateNow">Actualizează acum</string>
-    <string name="mClear_autoUpdate">Actualizarea periodică</string>
-    <string name="mClear_lastCheck">Ultima verificare:</string>
-    <string name="mClear_lastUpdate">Ultima actualizare:</string>
-    <string name="mClear_updated">Catalog actualizat</string>
-    <string name="mClear_upToDate">Catalog actualizat</string>
-    <string name="mClear_urlError">Nu se pot prelua regulile, asigurați-vă că adresa URL este validă și că aveți o conexiune activă</string>
-    <string name="mClear_hashError">Nu se poate prelua hash-ul, asigurați-vă că adresa URL este validă și că aveți o conexiune activă</string>
-    <string name="mClear_restore">Restaurarea traseelor ClearURLs</string>
-    <string name="mRemove_found">%d interogări găsite</string>
-    <string name="mPttrn_editor">Aici poți edita sau adăuga un nou șablon. Formatul este: \n-\'encode\': boolean: setat la true pentru a codifica URL-ul înainte de verificarea regexului. \n-\'regex\': string: un regex Java valid cu care URL-ul trebuie să se potrivească, altfel șablonul este omis. \n-\'excludeRegex\': string: dacă este furnizat, un regex Java valid pe care URL-ul nu trebuie să-l potrivească, altfel șablonul este omis. \n-\'replacement\': string|listă: dacă este furnizat, butonul \'fix\' va rula \'url=url.replaceAll(regex, replacement)\'. Dacă este listă, înlocuirea va fi un element aleatoriu din aceasta. \n-\'decode\': boolean: setat la true pentru a decoda URL-ul înlocuit. \n-\'automatic\': boolean: setat la true pentru a aplica automat șablonul. \n-\'enabled\': boolean: setat la false pentru a dezactiva șablonul. \nNotă: dacă editezi șabloanele, noi șabloane încorporate din actualizările aplicației nu vor fi adăugate automat (le poți restaura cu opțiunea de resetare).</string>
-    <string name="txt_tutorial5">Asta e tot. Iată câteva sfaturi care pot fi utile:
+    <string name="txt_tutorial1">"Îți mulțumim pentru descărcarea aplicației!
+
+Acesta este tutorialul; dacă dorești să îl omiți, poți face acest lucru cu butonul de mai jos. Poți reveni oricând la acest tutorial din meniul de setări."</string>
+    <string name="txt_tutorial2">Aplicația acționează ca un intermediar la deschiderea sau partajarea linkurilor URL. Odată ce un URL este trimis către aplicație, poți interacționa cu el prin intermediul modulelor. După aceea, poți deschide linkul (în aplicația dorită), îl poți partaja sau îl poți copia în clipboard.</string>
+    <string name="txt_tutorial3">Setează aplicația ca browser web implicit pentru a intercepta URL-urile la deschidere.
+\n(Nu este necesar dacă URL-urile sunt redirecționate folosind funcționalitatea "Share" / Partajare.)</string>
+    <string name="txt_tutorial4">Modulele reprezintă modul în care aplicația interacționează cu URL-urile.
+\nFiecare modul are o funcție specifică. De obicei, pentru a prezenta informații despre URL sau pentru a permite modificarea acestuia.
+\nCitește despre ele și configurează-le după cum este necesar.
 \n
-\nAtunci când o aplicație nu vă oferă o modalitate de a deschide sau de a partaja un URL, dar vă oferă o modalitate de a face celălalt, puteți rezolva problema folosind această aplicație. De asemenea, puteți copia url-ul în clipboard apăsând lung butonul de partajare.
+\nImportant: Toate acțiunile sunt manuale în mod implicit. Aplicația nu va modifica nimic și nu se va conecta la internet decât dacă permiți acest lucru în mod specific, dar unele acțiuni pot fi aplicate automat dacă dorești.
 \n
-\nExistă unele URL-uri care scopul său numai este redirecționarea vă la un alt URL- ul. Dacă url-ul final poate fi deschis într-o aplicație, atunci puteți evita deschiderea acestuia într-un browser.
-\n
-\nSper că veți găsi aplicația utilă! Și nu ezitați să sugerați caracteristici, să raportați bug-uri sau chiar să propuneți modificări. Găsiți toate linkurile relevante pe ecranul despre.</string>
-    <string name="txt_tutorial4">Modulele reprezintă modul în care aplicația interacționează cu adresele URL.
-\nFiecare dintre module are o funcție specifică. De obicei, pentru a prezenta informații despre URL-ul, sau permițându-i să fie modificate.
-\nCitiți despre ele și configurați-le după cum este necesar.
-\n
-\nImportant: Toate acțiunile sunt manuale în mod implicit. Aplicația nu va modifica nimic și nici nu se va conecta la Internet decât dacă o permiteți în mod specific, dar unele acțiuni pot fi aplicate automat dacă doriți.
-\n
-\nDeschideți lista de module din ecranul principal sau atingând butonul de mai jos.</string>
-    <string name="mClear_blocked">-BLOCAT!</string>
-    <string name="mClear_exception">- ignorat din cauza excepției %s</string>
-    <string name="mClear_rawRule">- conținut inutil găsit</string>
-    <string name="mClear_hashDesc">URL-ul fișierului hash de catalog. Dacă este omisă, descărcarea nu va fi verificată pentru a vedea dacă a fost manipulată/modificat (nu este recomandat)</string>
-    <string name="mClear_hashMismatch">Hashurile nu se potrivesc, este posibil ca fișierul să fi fost modificat. Dacă doriți să omiteți verificarea, eliminați adresa URL hash</string>
-    <string name="mClear_editor">Reguli de catalog: trebuie să respecte formatul de la %s. Rețineți că orice modificare a obiectului părinte „furnizori” va fi suprascrisă dacă catalogul este actualizat automat sau manual din dialogul de actualizare. Pentru ca regulile personale să le seteze într-un obiect părinte diferit (orice nume).</string>
-    <string name="mRemove_desc">[DEPRECAT] Cu acest modul puteți elimina interogări de la adresa URL. Apăsați butonul pentru a le elimina pe toate sau apăsați pe săgeată pentru a le elimina pe rând. Mulțumim lui PabloOQ pentru idee și implementare originală!
-\n
-\nAcest modul a fost depreciat în favoarea modulului „Uri parts”.</string>
-    <string name="desc_decorations">Afișează/ascunde titlul</string>
-    <string name="desc_enable">Activarea/dezactivarea modulului</string>
-    <string name="btn_tutorialSettings">Repetarea tutorial-ul</string>
-    <string name="btn_tutorialSkip">Săriți peste tutorial</string>
-    <string name="btn_tutorialEnd">Termină tutorial-ul</string>
+\nDeschide lista modulelor din ecranul principal sau apăsând butonul de mai jos.</string>
+    <string name="txt_tutorial5">"Asta e tot. Iată câteva sfaturi care pot fi utile:
+
+Când o aplicație nu îți oferă o modalitate de a deschide sau partaja un URL, dar oferă cealaltă opțiune, poți rezolva problema folosind această aplicație. De asemenea, poți copia URL-ul în clipboard printr-o apăsare lungă pe butonul de partajare.
+
+Există unele URL-uri al căror singur scop este să te redirecționeze către un alt URL. Dacă URL-ul final poate fi deschis într-o aplicație, atunci poți evita deschiderea acestuia într-un browser.
+
+Sperăm că vei găsi aplicația utilă! Și nu ezita să sugerezi funcții, să raportezi erori sau chiar să propui modificări. Găsește toate linkurile relevante în ecranul Despre."</string>
+    <string name="btn_tutorialSkip">Omite tutorialul</string>
+    <string name="btn_tutorialEnd">Termină tutorialul</string>
+    <!--
+        generic
+    -->
     <string name="toast_noApp">Nu se poate deschide aplicația</string>
-    <string name="toast_noBrowser">Nu se poate deschide browser-ul web</string>
+    <string name="toast_noBrowser">Nu se poate deschide browserul web</string>
     <string name="invalid">Invalid</string>
     <string name="save">Salvează</string>
-    <string name="reset">Resetare</string>
+    <string name="reset">Resetează</string>
     <string name="close">Închide</string>
-    <string name="clear">Șterge</string>
-    <string name="auto">Automat</string>
-    <string name="share">Partajați</string>
-    <string name="canceled">Anulat</string>
-    <string name="deviceDefault">Dispozitiv implicit</string>
-    <string name="next">Următor</string>
-    <string name="back">Înapoi</string>
-    <string name="json_editor">Editor avansat</string>
-    <string name="mPttrn_desc">Acest modul verifică adresa URL cu modele regex care avertizează, sugerează sau aplică înlocuiri. Puteți modifica sau crea propriile modele sau chiar să le utilizați pe cele create de utilizator. 
-\nModelele încorporate includ: 
-\n- Avertizare când conține caractere non-ascii, cum ar fi literele grecești. Acesta poate fi folosit pentru phishing: googĺe.com vs google.com 
-\n- Sugerați înlocuirea „http” cu \'https\' 
-\n- Sugerați înlocuirea Youtube, Reddit sau Twitter cu alternative care să favorizeze confidențialitatea [dezactivate în mod implicit]</string>
-    <string name="mPttrn_fix">Aplică</string>
-    <string name="mPttrn_fixed">Aplicat - %s</string>
-    <string name="mPttrn_ascii">Atenție! S-au găsit caractere non-ASCII.</string>
-    <string name="mPttrn_http">Link HTTP. Luați în considerare utilizarea HTTPS.</string>
-    <string name="mPttrn_noSchemeHttp">Lipsește schema HTTP.</string>
-    <string name="mPttrn_noSchemeHttps">Lipsește schema HTTPS.</string>
-    <string name="mOpen_name">Deschideți și partajați</string>
-    <string name="mClear_tm">Catalogul încorporat copiat de la ClearURLs: %s</string>
-    <string name="mClear_desc">Acest modul elimină urmărirea, referințele și alți parametri inutili din URL. De asemenea, permite redirecționări URL offline obișnuite.</string>
-    <string name="mClear_clear">Aplică</string>
-    <string name="mClear_matches">Potriviri %s</string>
-    <string name="mLog_name">Jurnal</string>
-    <string name="mLog_desc">Acest modul înregistrează toate adresele URL verificate. Puteți vizualiza, șterge sau edita jurnalul complet aici, nicio indicație vizuală nu va apărea în dialogul principal. Pentru a dezactiva înregistrarea, trebuie doar să dezactivați modulul.</string>
-    <string name="hidden">Ascuns</string>
+    <string name="clear">Golește</string>
     <string name="none">Niciunul</string>
-    <string name="txt_tutorial3">Setează aplicația ca browser web implicit pentru a intercepta URL-urile atunci când sunt deschise.
-\n(Nu este necesar dacă URL-urile sunt redirecționate folosind funcționalitatea de \"Partajare\".)</string>
-    <string name="desc_up">Muta sus</string>
-    <string name="desc_down">Muta jos</string>
-    <string name="bck_mn_advanced">Arata opțiuni avansate</string>
-    <string name="btn_delete">Șterge</string>
-    <string name="bkp_data_prefs">"Preferințe:  Date salvate ca preferințe."</string>
-    <string name="bck_restoreTitle">Restaurează copia de rezervă</string>
-    <string name="bck_newer">Anulat. Copia de rezervă a fost creată cu o versiune mai nouă a aplicației.</string>
-    <string name="bck_chooseFile">Alege fișierul de rezervă</string>
-    <string name="bck_backupOk">Fișier de rezerva creat.</string>
-    <string name="bck_backupError">Nu se poate crea copia de rezervă, încearcă să alegi o locație diferită pentru fișier.</string>
-    <string name="bck_restoreConfirm">Înlocuiește elementele</string>
-    <string name="dismiss">Respins</string>
+    <string name="auto">Automat</string>
     <string name="defaultOn">Activat implicit</string>
     <string name="defaultOff">Dezactivat implicit</string>
+    <string name="alwaysOn">Mereu pornit</string>
+    <string name="alwaysOff">Mereu oprit</string>
+    <string name="hidden">Ascuns</string>
+    <string name="share">Partajează</string>
+    <string name="canceled">Anulat</string>
+    <string name="deviceDefault">Implicit dispozitiv</string>
+    <string name="next">Următorul</string>
+    <string name="back">Înapoi</string>
+    <string name="dismiss">Închide</string>
+    <string name="noLinks">Niciun link detectat</string>
     <string name="small">Mic</string>
     <string name="normal">Normal</string>
     <string name="big">Mare</string>
-    <string name="mPttrn_userContent">Listă de alte șabloane create de utilizatori utile: %s</string>
-    <string name="bck_restoreMessage">ATENȚIE! Aceasta va înlocui elementele selectate din copia de rezervă.
-\nEști sigur că vrei să continui?</string>
-    <string name="alwaysOn">Întotdeauna activ</string>
-    <string name="mPttrn_regexfix">Corectează grupurile opționale de regex (dezactivează dacă regexul nu funcționează corect)</string>
-    <string name="bck_restoreOk">Copia de rezervă a fost restaurată</string>
-    <string name="bkp_description">Alege care elemente sa fie salvate/restaurate
-\nCând restaurezi, daca copia de rezerva a fost creata fără, cele existente vor fi păstrate.</string>
-    <string name="bkp_data">Date: Datele standard ale aplicației. Lucruri precum module activate, configurații JSON etc. Nu va include secrete sau cache.</string>
-    <string name="bkp_data_files">Fișiere: Date salvate ca fișiere.</string>
-    <string name="bkp_secrets">Secrete: Date considerate \'secret\', ca api key sau logul aplicației Virus Total.</string>
-    <string name="bjp_cache">Cache: Date care pot fi descărcate/generate ușor, cum ar fi baza de date a gazdelor. Activarea acestei opțiuni poate creste mărimea copiei de rezerva.</string>
-    <string name="bck_restoreDelete">Șterge elementele înainte de restaurare. Reține că preferințele și unele fișiere cu valori implicite pot să nu existe, așa că dezactivarea acestei opțiuni va îmbina elementele existente cu cele din copia de rezervă în moduri neașteptate. Dezactivează dacă știi ce faci.</string>
-    <string name="bck_ignoreNewer">Permite copii de rezervă create din versiuni mai noi ale aplicației.</string>
-    <string name="bck_restoreError">Imposibil de restaurat copia de rezervă. Este un fișier valid?</string>
-    <string name="bck_deleteTitle">Șterge elementele</string>
-    <string name="bck_deleteMessage">ATENȚIE! Aceasta va șterge toate elementele selectate.
-\nVrei cu adevărat să continui?</string>
-    <string name="bck_deleteConfirm">Șterge elementele</string>
-    <string name="bck_deleteOk">Elementele au fost șterse</string>
-    <string name="bck_deleteError">Imposibil de șters elementele</string>
-    <string name="txt_tutorial2">Aplicația acționează ca un intermediar când deschizi sau partajezi link-uri URL. Odată ce un URL este trimis în aplicație, poți interacționa cu el prin module. După aceea, poți deschide link-ul (în aplicația dorită), să-l partajezi sau să-l copiezi în clipboard.</string>
-    <string name="alwaysOff">Întotdeauna inactiv</string>
-    <string name="noLinks">Niciun link detectat</string>
-    <string name="menu_toggleDecorations">Comută toate titlurile</string>
-    <string name="mOpen_desc">Conține următoarele butoane (de la stânga la dreapta):
-\n-Butonul Taburi personalizate: comută pentru a activa/dezactiva funcția de taburi personalizate. Când este activată, browserul ar trebui să fie deschis într-un mod „ușor”.
-\n-Butonul Incognito: Doar pentru Firefox. Comută pentru a activa/dezactiva modul incognito. Când este activat, browserul ar trebui să fie deschis în mod incognito.
-\n-Butonul Deschide: Apasă pe numele aplicației pentru a deschide link-ul în acea aplicație. Dacă un link poate fi deschis cu mai multe aplicații, va fi afișată o săgeată pentru a te lăsa să alegi.
-\n-Butonul Copiază: Apasă pe buton pentru a copia link-ul în clipboard.
-\n-Butonul Partajează: Apasă pe buton pentru a partaja link-ul.</string>
-    <string name="mOpen_noReferrer">Ascunde aplicația sursă (referrer)</string>
-    <string name="mOpen_mergeCopy">Îmbină butoanele Copiază și Partajează (apasă lung pentru a copia)</string>
-    <string name="mOpen_iconSize">Mărimea iconiței</string>
-    <string name="mOpen_closeShare">Închide dialogul după partajare</string>
-    <string name="mOpen_perDomain">Sortează domeniile diferite independent</string>
-    <string name="mOpen_closeOpen">Închide dialogul după deschidere</string>
-    <string name="mOpen_rejected">Ascunde aplicația dacă URL-ul a fost respins (o aplicație solicită imediat să deschidă același URL cu care a fost deschisă). Nu afectează partajarea.</string>
-    <string name="mOpen_ctabs">Taburi personalizate:</string>
+    <string name="format">Format</string>
+    <string name="discard">Renunță</string>
+    <!--
+        json
+    -->
+    <string name="json_editor">Editor Json</string>
+    <string name="json_info">Arată info</string>
+    <string name="json_ignore">Conținutul nu este Json valid. Vrei să renunți la el și să închizi editorul?</string>
+    <string name="json_discard_close">Renunță și închide</string>
+    <string name="json_save">Există modificări nesalvate, vrei să le salvezi sau să renunți la ele?</string>
+    <string name="json_save_error">Nu s-a putut salva: %s</string>
+    <string name="json_format_error">Conținutul nu este Json valid, nu poate fi analizat.</string>
+    <string name="json_discard">Atenție, aceasta va înlocui conținutul editorului cu fișierul json salvat. Toate modificările făcute vor fi pierdute. Vrei să continui?</string>
+    <string name="json_reset">Atenție, aceasta va înlocui conținutul editorului cu fișierul json încorporat. Toate modificările din editor vor fi pierdute, dar conținutul salvat nu va fi modificat decât dacă îl salvezi manual. Vrei să continui?</string>
+    <!--
+        shortcuts
+    -->
+    <string name="shortcut_checkClipboard">Verifică URL-uri din clipboard</string>
+    <!--
+        automations
+    -->
+    <string name="a_automations">Automatizări</string>
+    <string name="auto_desc">Cu automatizări, poți efectua acțiuni ale modulelor bazate pe declanșatori (triggers). Poți configura automatizările aici sau le poți dezactiva pe toate folosind comutatorul de mai jos.</string>
+    <string name="auto_enabled">Activează funcția de automatizări</string>
+    <string name="auto_error_toast">Arată un toast dacă automatizarea eșuează</string>
+    <string name="auto_notFound">"Nicio automatizare cu cheia '%s' nu este disponibilă. Asigură-te că este validă și că modulul necesar este activ."</string>
+    <string name="auto_editor">"Configurare automatizări. Format: listă de obiecte unde cheia este un nume unic de automatizare, iar conținutul include următoarele valori:
+- 'regex': șir|listă: dacă este prezent, un regex java valid cu care URL-ul trebuie să se potrivească pentru ca automatizarea să ruleze. Dacă e listă, cel puțin un regex trebuie să se potrivească. Dacă este omis, toate URL-urile se vor potrivi.
+- 'excludeRegex': șir|listă: dacă este prezent, un regex java valid cu care URL-ul NU trebuie să se potrivească. Dacă e listă, niciunul nu trebuie să se potrivească. Dacă este omis, niciun URL nu va fi exclus.
+- 'referrer': șir|listă: dacă este prezent, referrer-ul (aplicația care a deschis linkul) trebuie să se potrivească exact cu această valoare. Dacă e listă, referrer-ul trebuie să fie una dintre valori. Dacă este omis, toate URL-urile se vor potrivi. Poți folosi modulul de depanare pentru a verifica valoarea reală.
+- 'action': șir|listă, obligatoriu: cheia automatizării de rulat. Dacă sunt multiple, vor rula în ordine. Verifică mai jos lista tuturor cheilor disponibile.
+- 'args', obiect: valori pe care acțiunea le-ar putea necesita, vezi descrierea fiecărei acțiuni pentru valorile acceptate. Exemplu: { …, \"args\": { \"text\": \"exemplu\" } }
+- 'stop': boolean: dacă este true (adevărat), nu vor mai rula alte automatizări pentru URL-ul curent. False (fals) implicit.
+- 'enabled': boolean: dacă este false (fals), această automatizare va fi omisă. True (adevărat) implicit."</string>
+    <string name="auto_available_prefix">Acțiuni de automatizare disponibile (chei):</string>
+    <string name="auto_available_disabled">"Acest modul este dezactivat, automatizările nu vor rula"</string>
+    <string name="auto_rule_bitly">De-scurtează bit.ly</string>
+    <string name="auto_rule_webhook">Trimite totul la webhook</string>
+    <string name="auto_rule_toast">Exemplu toast</string>
+    <string name="auto_open">"Va deschide URL-ul. Dacă nu sunt furnizate 'args' așteptate, va fi folosită prima aplicație disponibilă (echivalent cu apăsarea butonului 'deschide'). Dacă sunt furnizate 'args': 'package' și/sau 'component', acelea vor fi folosite."</string>
+    <string name="auto_share">"Va partaja URL-ul. Echivalent cu apăsarea butonului 'partajează'."</string>
+    <string name="auto_copy">"Va copia URL-ul. Echivalent cu apăsarea butonului 'copiază'."</string>
+    <string name="auto_ctabs">"Va activa tab-urile personalizate. Echivalent cu apăsarea butonului 'tab-uri personalizate' dacă este dezactivat (chiar dacă este ascuns)."</string>
+    <string name="auto_incognito">"Va activa incognito. Echivalent cu apăsarea butonului 'incognito' dacă este dezactivat (chiar dacă este ascuns)."</string>
+    <string name="auto_close">"Va închide aplicația, fără a face altceva."</string>
+    <string name="auto_checkStatus">"Va rula verificarea de stare. Echivalent cu apăsarea butonului 'Verifică'."</string>
+    <string name="auto_unshort">"Va rula procesul de de-scurtare. Echivalent cu apăsarea butonului 'De-scurtare'."</string>
+    <string name="auto_scan">"Va scana URL-ul. Echivalent cu apăsarea butonului 'Scanează'."</string>
+    <string name="auto_clear">"Va curăța URL-ul. Echivalent cu apăsarea butonului 'Curăță'. Reține că modulul în sine conține o setare auto care va curăța toate URL-urile mai eficient și ar trebui preferată."</string>
+    <string name="auto_drawer">"Va deschide sertarul. Echivalent cu apăsarea butonului sertar dacă este restrâns."</string>
+    <string name="auto_toast">Afișează un toast cu un text fix. Textul trebuie furnizat ca un \'args\' numit \'text\'.</string>
+    <!--
+        modules
+    -->
+    <string name="mPttrn_name">Verificator de tipare</string>
+    <string name="mPttrn_desc">"Acest modul verifică URL-ul cu tipare regex care avertizează, sugerează sau aplică înlocuiri. Poți modifica sau crea propriile tipare, sau poți folosi unele create de utilizatori.
+Tiparele încorporate includ:
+- Avertisment când conține caractere non-ascii, cum ar fi litere grecești. Poate fi folosit pentru phishing: googĺe.com vs google.com
+- Sugerează înlocuirea 'http' cu 'https'
+- Sugerează înlocuirea Youtube, Reddit sau Twitter cu alternative care respectă confidențialitatea [dezactivat implicit]"</string>
+    <string name="mPttrn_regexfix">Corectează grupurile regex opționale (dezactivează dacă regex-ul nu funcționează corect)</string>
+    <string name="mPttrn_userContent">Lista altor tipare utile create de utilizatori: %s</string>
+    <string name="mPttrn_fix">Aplică</string>
+    <string name="mPttrn_fixed">Aplicat - %s</string>
+    <string name="mPttrn_ascii">Atenție! S-au găsit caractere non-ASCII.</string>
+    <string name="mPttrn_upperDomain">Atenție! Literă majusculă în domeniu.</string>
+    <string name="mPttrn_http">Link HTTP. Ia în considerare folosirea HTTPS.</string>
+    <string name="mPttrn_noSchemeHttp">Lipsește schema HTTP.</string>
+    <string name="mPttrn_noSchemeHttps">Lipsește schema HTTPS.</string>
+    <string name="mPttrn_wrongSchemaHttp">Capitalizare incorectă a schemei http.</string>
+    <string name="mPttrn_wrongSchemaHttps">Capitalizare incorectă a schemei https.</string>
+    <string name="mPttrn_ok">Niciun tipar nu se potrivește</string>
+    <string name="mPttrn_editor">"Aici poți edita sau adăuga un tipar nou. Format:
+- 'encode': boolean: setează pe true pentru a codifica URL-ul înainte de verificarea regex.
+- 'regex': șir|listă: un regex java valid cu care URL-ul trebuie să se potrivească, altfel tiparul este omis. Dacă e listă, cel puțin un regex trebuie să se potrivească. Dacă este omis, întregul URL se va potrivi.
+- 'excludeRegex': șir|listă: dacă este furnizat, un regex java valid cu care URL-ul NU trebuie să se potrivească, altfel tiparul este omis. Dacă e listă și cel puțin un regex se potrivește, tiparul va fi omis.
+- 'replacement': șir|listă: dacă este furnizat, butonul 'fix' (repară) va rula 'url=url.replaceAll(regex,replacement)' [dacă regex a fost listă, se va folosi primul tipar care se potrivește]. Dacă e listă, înlocuirea va fi un element aleatoriu din ea.
+- 'decode': boolean: setează pe true pentru a decodifica URL-ul înlocuit.
+- 'automatic': boolean: setează pe true pentru a aplica automat tiparul.
+- 'enabled': boolean: setează pe false pentru a dezactiva tiparul.
+Notă: dacă editezi tiparele, noile tipare încorporate din actualizările aplicației nu vor fi adăugate automat (le poți restaura cu opțiunea de resetare)."</string>
+    <!-- -->
+    <string name="mOpen_name">Deschide și partajează</string>
+    <string name="mOpen_desc">"Conține următoarele butoane (de la stânga la dreapta):
+- Buton Tab-uri personalizate: comută pentru a activa/dezactiva funcția de tab-uri personalizate. Când este activată, browserul ar trebui să se deschidă într-un mod 'lite'.
+- Buton Incognito: Doar pentru Firefox. Comută pentru a activa/dezactiva modul incognito. Când este activat, browserul ar trebui să se deschidă în incognito.
+- Buton Deschide: Apasă numele aplicației pentru a deschide linkul în acea aplicație. Dacă un link poate fi deschis cu mai multe aplicații, va apărea o săgeată pentru a te lăsa să alegi.
+- Buton Copiază: Apasă butonul pentru a copia linkul în clipboard.
+- Buton Partajează: Apasă butonul pentru a partaja linkul."</string>
+    <string name="mOpen_ctabs">Tab-uri personalizate:</string>
     <string name="mOpen_incognito">Mod incognito:</string>
+    <string name="mOpen_closeOpen">Închide dialogul după deschidere</string>
+    <string name="mOpen_closeShare">Închide dialogul după partajare</string>
     <string name="mOpen_closeCopy">Închide dialogul după copiere</string>
+    <string name="mOpen_perDomain">Sortează domeniile diferite independent</string>
+    <string name="mOpen_noReferrer">Ascunde aplicația sursă (referrer)</string>
+    <string name="mOpen_rejected">Ascunde aplicația dacă URL-ul a fost respins (o aplicație solicită imediat deschiderea aceluiași URL cu care a fost deschisă). Nu afectează partajarea.</string>
+    <string name="mOpen_mergeCopy">Îmbină butoanele Copiază și Partajează (apăsare lungă pentru copiere)</string>
+    <string name="mOpen_iconSize">Mărime pictograme</string>
+    <string name="mOpen_with">Deschide cu %s</string>
+    <string name="mOpen_open">Deschide</string>
+    <string name="mOpen_share">Partajează</string>
+    <string name="mOpen_copyUrl">Copiază</string>
+    <string name="mOpen_clipboard">URL copiat în clipboard</string>
+    <string name="mOpen_noapps">Fără aplicații</string>
+    <string name="mOpen_tabsDesc">Comută funcția Tab-uri personalizate</string>
+    <string name="mOpen_incognitoDesc">Comută modul incognito (doar pentru Firefox)</string>
+    <!-- -->
+    <string name="mStatus_name">Cod de stare</string>
+    <string name="mStatus_desc">Apăsând butonul de verificare, se va face o cerere de rețea pentru a prelua și afișa codul de stare al site-ului. Dacă rezultatul este o redirecționare, vei putea vedea URL-ul de destinație. Conținutul URL-ului este obținut (GET), dar nu este evaluat, deci redirecționările bazate pe JavaScript nu vor fi detectate.</string>
+    <string name="mStatus_ioerror">Eroare de rețea la încercarea de verificare a URL-ului: %s</string>
+    <string name="mStatus_error">Eroare internă la încercarea de verificare a URL-ului: %s</string>
+    <string name="mStatus_check">Verifică stare</string>
+    <string name="mStatus_recheck">Verifică</string>
+    <string name="mStatus_checking">Se verifică…</string>
+    <string-array name="mStatus_codes">
+        <item>200: OK</item>
+        <item>301: Mutat permanent</item>
+        <item>302: Mutat temporar</item>
+        <item>307: Mutat temporar</item>
+        <item>308: Mutat permanent</item>
+        <item>400: Cerere greșită (Bad request)</item>
+        <item>401: Neautentificat</item>
+        <item>403: Interzis (Forbidden)</item>
+        <item>404: Nu a fost găsit</item>
+        <item>410: Dispărut permanent</item>
+        <item>"418: Sunt un ceainic! :D"</item>
+        <item>500: Eroare de server</item>
+        <item>503: Temporar indisponibil</item>
+        <item>502: Eroare de server</item>
+        <item>504: Timeout server</item>
+    </string-array>
+    <string name="mStatus_unknownCode">%d: Cod de stare necunoscut</string>
+    <string name="mStatus_redir">Redirecționează către %s</string>
+    <string name="mStatus_autoRedirect">Înlocuiește automat URL-urile de redirecționare</string>
+    <!-- -->
+    <string name="mInput_name">Text de intrare</string>
+    <string name="mInput_desc">Afișează URL-ul curent. Apasă-l pentru a intra în modul de editare.</string>
+    <!-- -->
+    <string name="mVT_name">Scanner URL</string>
+    <string name="mVT_desc">Când acest modul este activat, poți scana URL-ul folosind VirusTotal și verifica raportul. O cheie API personală VirusTotal este necesară pentru funcționare; poți obține una după înregistrarea unui cont gratuit aici: %s .</string>
+    <string name="mVT_apiKey">Cheie API</string>
+    <string name="mVT_checkKey">Verifică</string>
+    <string name="mVT_noKey">Lipsește cheia API</string>
+    <string name="mVT_validKey">Cheie validă de la utilizator: %s</string>
+    <string name="mVT_tm">VirusTotal™ este o marcă înregistrată a Google, Inc.</string>
+    <string name="mVT_scan">Scanează</string>
+    <string name="mVT_cancel">Anulează</string>
+    <string name="mVT_scanning">Se scanează…</string>
+    <string name="mVT_goodUrl">Niciunul din %1$d motoare nu a detectat URL-ul (la data %2$s)</string>
+    <string name="mVT_warningUrl">Atenție, %1$d/%2$d motoare au detectat URL-ul (la data %3$s)</string>
+    <string name="mVT_badUrl">Grijă mare! %1$d/%2$d motoare au detectat URL-ul (la data %3$s)</string>
+    <string name="mVT_error">Nu s-a putut obține un răspuns valid de la VirusTotal. Asigură-te că cheia API este validă și că ești conectat la internet, sau încearcă mai târziu.</string>
+    <string name="mVt_title">Titlu:</string>
+    <string name="mVt_finalUrl">Url final:</string>
+    <string name="mVt_reputation">Reputație:</string>
+    <string name="mVt_votes">Voturi:</string>
+    <string name="mVt_categories">Categorii:</string>
+    <string name="mVt_detections">Detectări:</string>
+    <!-- -->
+    <string name="mD_name">Depanare/Marcare modul</string>
+    <string name="mD_desc">"Dacă reordonezi modulele, cele noi adăugate în actualizările viitoare vor fi plasate deasupra acestuia.
+
+Dacă activezi acest lucru, se vor afișa unele date interne de depanare (cum ar fi uri-ul intent original), utile pentru dezvoltatori.
+
+Poți ține apăsat pentru a selecta text."</string>
+    <string name="mD_ctabs">Arată mesaje de depanare de la serviciul de tab-uri personalizate</string>
+    <string name="mD_show">Încarcă date de depanare</string>
+    <!-- -->
+    <string name="mHist_name">Istoric</string>
+    <string name="mHist_desc">Când URL-ul este editat, fie manual, fie de alte module, acesta îți permite să vizualizezi și să anulezi modificările.</string>
+    <!-- -->
+    <string name="mClear_name">Curățare URL</string>
+    <string name="mClear_desc">Acest modul elimină parametrii de urmărire, referrer și alți parametri inutili din URL. Permite, de asemenea, redirecționări comune URL offline.</string>
+    <string name="mClear_tm">Catalog încorporat copiat din ClearURLs: %s</string>
+    <string name="mClear_clear">Aplică</string>
+    <string name="mClear_matches">Se potrivește cu %s</string>
+    <string name="mClear_blocked">- BLOCAT!</string>
+    <string name="mClear_exception">- ignorat din cauza excepției %s</string>
+    <string name="mClear_rule">- parametru inutil găsit</string>
+    <string name="mClear_rawRule">- conținut inutil găsit</string>
+    <string name="mClear_referral">- referral găsit</string>
+    <string name="mClear_forcedRedirection">- redirecționare forțată găsită</string>
+    <string name="mClear_redirection">- redirecționare găsită</string>
+    <string name="mClear_cleared">- Curățat</string>
+    <string name="mClear_noRules">Nicio regulă potrivită</string>
+    <string name="mClear_auto">Aplicare automată</string>
+    <string name="mClear_toggleReferral">"Activează marketing prin referral (parametrii referral nu vor fi șterși)"</string>
+    <string name="mClear_toggleVerbose">Activează informații detaliate (verbose) pentru procesul de potrivire</string>
+    <string name="mClear_error">Nu s-a putut verifica regula</string>
+    <string name="mClear_updater">Updater</string>
+    <string name="mClear_sourceDesc">URL-ul catalogului de fișiere Json cu regulile:</string>
+    <string name="mClear_urlHint">URL catalog</string>
+    <string name="mClear_hashDesc">URL-ul fișierului hash al catalogului. Dacă este omis, descărcarea nu va fi verificată pentru a vedea dacă a fost modificată neautorizat (nerecomandat)</string>
+    <string name="mClear_hashHint">Fără verificare hash</string>
+    <string name="mClear_updateNow">Actualizează acum</string>
+    <string name="mClear_autoUpdate">Actualizează periodic</string>
+    <string name="mClear_lastCheck">Ultima verificare:</string>
+    <string name="mClear_lastUpdate">Ultima actualizare:</string>
+    <string name="mClear_updated">Catalog actualizat</string>
+    <string name="mClear_upToDate">Catalog la zi</string>
+    <string name="mClear_urlError">Nu s-a putut prelua regulile, asigură-te că URL-ul este valid și că ai o conexiune activă</string>
+    <string name="mClear_hashError">Nu s-a putut prelua hash-ul, asigură-te că url-ul este valid și că ai o conexiune activă</string>
+    <string name="mClear_hashMismatch">Hash-urile nu se potrivesc, fișierul poate fi fost modificat neautorizat. Dacă dorești să omiți verificarea, elimină URL-ul hash</string>
+    <string name="mClear_restore">Restaurează căi ClearURLs</string>
+    <string name="mClear_editor">"Reguli catalog: Trebuie să urmeze formatul din %s.
+Reține că orice modificare a obiectului părinte 'providers' va fi suprascrisă dacă catalogul este actualizat automat sau manual din dialogul de actualizare. Pentru a avea reguli personale, setează-le într-un obiect părinte diferit (orice nume)."</string>
+    <!-- -->
+    <string name="mRemove_name">Eliminare interogări</string>
+    <string name="mRemove_desc">"[ÎNVECHIT] Cu acest modul poți elimina interogările (queries) din URL.
+Apasă butonul pentru a le elimina pe toate sau apasă săgeata pentru a elimina una câte una.
+Mulțumiri lui PabloOQ pentru idee și implementarea originală!
+
+Acest modul este învechit în favoarea modulului 'Părți URI'"</string>
+    <string name="mRemove_found1">1 interogare găsită</string>
+    <string name="mRemove_found">%d interogări găsite</string>
+    <string name="mRemove_noQueries">Nicio interogare</string>
+    <string name="mRemove_all">Elimină tot</string>
+    <string name="mRemove_one">Elimină %s</string>
+    <string name="mRemove_empty">Elimină goale</string>
+    <!-- -->
+    <string name="mLog_name">Jurnal</string>
+    <string name="mLog_desc">Acest modul înregistrează toate URL-urile verificate. Poți vizualiza, șterge sau edita întregul jurnal aici; nicio indicație vizuală nu va apărea în dialogul principal. Pentru a dezactiva jurnalizarea, pur și simplu dezactivează modulul.</string>
+    <string name="mLog_view">Vezi jurnal</string>
+    <string name="mLog_edit">Editează jurnal</string>
+    <string name="mLog_empty">Fără date</string>
+    <string name="mLog_limit">Număr maxim de intrări de păstrat. Valoare recomandată: 100. Lasă gol pentru nelimitat</string>
+    <string name="mLog_unlimited">Nelimitat</string>
+    <!-- -->
+    <string name="mHosts_name">Etichetare hosts</string>
+    <string name="mHosts_desc">"Acest modul etichetează gazdele (hosts), configurate fie manual, fie folosind un fișier hosts de la distanță. Îl poți folosi pentru a avertiza despre site-uri periculoase sau speciale. Configurația încorporată specifică fișierele hosts ale lui StevenBlack (adware/malware, știri false, jocuri de noroc și conținut pentru adulți) de la %s. Notă: subdomeniile vor fi de asemenea verificate, deci 'x.y.z' și 'y.z' vor fi detectate pentru intrarea 'y.z'"</string>
+    <string name="mHosts_tm">Hosts de la StevenBlack de la %s</string>
+    <string name="mHosts_malware">adware/malware</string>
+    <string name="mHosts_info">Gazdă (Host):</string>
+    <string name="mHosts_noLabel">fără etichetă</string>
+    <string name="mHosts_fakenews">știri false</string>
+    <string name="mHosts_gambling">jocuri de noroc</string>
+    <string name="mHosts_adult">conținut pentru adulți</string>
+    <string name="mHosts_build">Construiește</string>
+    <string name="mHosts_uninitialized">Baza de date hosts neinițializată. Apasă pentru a construi</string>
+    <string name="mHosts_parseError">Nu se poate analiza gazda URL-ului</string>
+    <string name="mHosts_editor">"Configurare hosts. Format: Listă de obiecte unde cheia este eticheta hosts și conținutul include următoarele valori opționale:
+- file: Un url al unui fișier hosts de la distanță pentru descărcare. Toate gazdele valide prezente vor fi adăugate. Liniile ar trebui să urmeze sintaxa hosts: 'ip host [alias…]', dar și cele cu doar 'host' sunt valide.
+- hosts: Listă de gazde brute (șiruri) de adăugat.
+- color: Culoarea etichetei. Un șir de culoare Android (#AARRGGBB, #RRGGBB sau un nume valid de culoare). Implicit este un roșu de 'pericol'.
+- replace: dacă e false, gazdele existente nu vor fi înlocuite. Reține că obiectele sunt evaluate de sus în jos. True implicit.
+- enabled: dacă e false, tot acest obiect va fi omis. True implicit."</string>
+    <string name="mHosts_buildTitle">Construiește baza de date hosts</string>
+    <string name="mHosts_buildDesc">Aceasta va șterge baza de date hosts curentă și o va construi cu configurația actuală, descărcând fișiere hosts de pe internet dacă este necesar. Această acțiune poate dura câteva secunde. Continui?</string>
+    <string name="mHosts_buildProgress">Se construiește catalogul</string>
+    <string name="mHosts_buildInit">Se inițializează</string>
+    <string name="mHosts_buildClear">Se șterge…</string>
+    <string name="mHosts_buildDownload">"Se descarcă hosts '%1$s' de la %2$s…"</string>
+    <string name="mHosts_buildSave">Se salvează…</string>
+    <string name="mHosts_built">Bază de date construită: %d gazde</string>
+    <!-- -->
+    <string name="mUnshort_name">De-scurtare linkuri</string>
+    <string name="mUnshort_unshort">De-scurtare</string>
+    <string name="mUnshort_desc">"Acest modul va de-scurta (expanda) linkurile trimițându-le la %s, care le evaluează pe serverele lor și salvează redirecționarea pentru cereri viitoare. Evită de-scurtarea linkurilor cu date private sau sensibile.
+API-ul lor are o limită de 10 cereri pe oră pentru verificări noi. Răspunsul modulului va afișa câte cereri mai ai în așteptare."</string>
+    <string name="mUnshort_tm">API gratuit unshorten.me de la Unshorten.me</string>
+    <string name="mUnshort_checking">Se verifică…</string>
+    <string name="mUnshort_error">Eroare server: %s</string>
+    <string name="mUnshort_internal">Eroare internă (%s)</string>
+    <string name="mUnshort_to">Se de-scurtează în %s</string>
+    <string name="mUnshort_notFound">Niciun url de-scurtat găsit</string>
+    <string name="mUnshort_pending">în așteptare: %1$d/%2$d</string>
+    <string name="mUnshort_ok">De-scurtat</string>
+    <!-- -->
+    <string name="mFlags_name">Editor flag-uri</string>
+    <string name="mFlag_desc">"[Funcție Beta] Acesta este un modul avansat care îți permite să editezi flag-urile (indicatorii) intent-ului atunci când deschizi o altă aplicație.
+Acest modul va afișa o listă de flag-uri; poți schimba dacă flag-ul este setat sau nu atingând pictograma. Există și un meniu de overflow pentru a ascunde flag-uri acolo; este doar vizual, flag-urile vor folosi în continuare starea atribuită.
+Flag-urile vor avea doi indicatori de culoare lângă caseta de bifare. Cel din stânga arată valoarea primită de la intent, cel din dreapta indică starea setată de modulul însuși. Roșu înseamnă că flag-ul nu este setat, iar verde înseamnă că flag-ul este setat. În plus, indicatorul de preferință poate fi gri, ceea ce înseamnă că starea a fost setată pe automat.
+Cu butonul de mai jos poți edita starea implicită și vizibilitatea flag-urilor."</string>
+    <string name="mFlag_editFlags">Editează valorile implicite ale flag-urilor</string>
+    <!-- -->
+    <string name="mParts_name">Părți URI</string>
+    <string name="mParts_desc">"Acest modul arată toate părțile URL-ului decodificate: schema, autoritatea, căile, interogările și fragmentul.
+Făcând clic pe o parte, aceasta va fi setată ca noul url, util de exemplu dacă una dintre interogări sau căi era un url de redirecționare codificat.
+Printr-o apăsare lungă pe o parte, aceasta va fi copiată în clipboard.
+De asemenea, poți face clic pe butonul 'X' pentru a elimina unele dintre ele.
+Aceasta este o versiune avansată a modulului 'Eliminare interogări'."</string>
+    <string name="mParts_empty">(gol)</string>
+    <string name="mParts_copy">Parte copiată în clipboard</string>
+    <!-- -->
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mWebhook_desc">Acest modul trimite URL-uri către un punct final (endpoint) webhook configurat. Fiecare URL este trimis cu o ștampilă de timp, permițându-ți să colectezi și să procesezi URL-uri pe propriul server.\nMulțumiri lui anoop-b pentru idee și implementarea de bază!\n\nConfigurează URL-ul webhook și corpul (body) mai jos pentru a începe trimiterea URL-urilor.\nPentru corp, poți folosi substituenții $URL$, $TIMESTAMP$ și $REFERRER$.</string>
+    <string name="mWebhook_url_hint">URL Webhook</string>
+    <string name="mWebhook_body_hint">Corp Webhook</string>
+    <string name="mWebhook_send">Trimite la Webhook</string>
+    <string name="mWebhook_auto_send">Trimite la webhook</string>
+    <string name="mWebhook_missing_config">Lipsește url-ul sau corpul webhook</string>
+    <string name="mWebhook_sending">Se trimite la webhook…</string>
+    <string name="mWebhook_success">Trimis cu succes la webhook</string>
+    <string name="mWebhook_error">Nu s-a reușit trimiterea la webhook</string>
+    <string name="mWebhook_templates">Șabloane</string>
+    <string name="mWebhook_test">Testează webhook</string>
+    <!-- -->
+    <string name="mDrawer_name">Sertar</string>
+    <string name="mDrawer_desc">Toate modulele de sub acesta vor fi ascunse într-un sertar. Modulele vor funcționa în continuare, dar vor fi ascunse până când deschizi sertarul. Aici poți plasa modulele pe care le folosești rar, pentru a evita aglomerația.</string>
+    <!-- -->
+    <string name="mChg_name">Jurnal de modificări</string>
+    <string name="mChg_desc">Va notifica atunci când aplicația a fost actualizată.</string>
+    <string name="mChg_updated">Aplicația a fost actualizată.</string>
+    <string name="mChg_current">Versiunea curentă: %s</string>
+    <string name="mChg_view">Vezi modificările</string>
+
 </resources>
