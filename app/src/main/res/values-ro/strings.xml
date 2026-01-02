@@ -16,7 +16,7 @@
     <!--
         main
     -->
-    <string name="txt_info">Această aplicație acționează ca un intermediar la deschiderea linkurilor URL pe care dai clic. Se afișează un dialog cu informații despre link atunci când alegi această aplicație pentru a-l deschide. Apasă butonul modulului de mai jos pentru a verifica și configura toate modulele disponibile.</string>
+    <string name="txt_info">Această aplicație acționează ca un intermediar atunci când deschizi linkuri URL accesate prin clic. Un dialog cu câteva informații despre link este afișat atunci când alegi această aplicație pentru a-l deschide. Apasă butonul de module de mai jos pentru a verifica și configura toate modulele disponibile.</string>
     <string name="txt_sample">Apasă pe linkul de mai jos pentru a testa:</string>
     <string name="a_modules">Module</string>
     <string name="a_settings">Setări</string>
@@ -55,37 +55,35 @@ Traduceri: %3$s."</string>
     <string name="txt_theme">Temă:</string>
     <string name="spin_darkTheme">Întunecat</string>
     <string name="spin_lightTheme">Luminos</string>
-    <string name="txt_width">Lățime dialog:\nAtenție! Valorile mici pot ascunde elemente ale ecranului.</string>
-    <string name="spin_fullWidth">Complet</string>
-    <string name="spin_dynamicWidth">Dinamic</string>
-    <string name="txt_locale">Limbă (Locale):</string>
+    <string name="txt_width">Lățime dialog: \nAtenție! Valorile mici pot ascunde elemente de pe ecran.</string>
+    <string name="spin_fullWidth">Completă</string>
+    <string name="spin_dynamicWidth">Dinamică</string>
+    <string name="txt_locale">Limbă și regiune:</string>
     <string name="txt_animation">Activează animațiile</string>
-    <string name="txt_processText">Sincronizează URL-ul cu textul editabil (când aplicația este deschisă prin apăsare lungă pe text într-o casetă de introducere)</string>
+    <string name="txt_processText">Sincronizează URL-ul cu textul editabil (când aplicația este deschisă prin apăsare lungă pe un câmp de introducere)</string>
     <string name="btn_tutorialSettings">Repetă tutorialul</string>
-    <string name="btn_backupRestore">Copie de rezervă / Restaurare</string>
+    <string name="btn_backupRestore">Backup / Restaurare</string>
     <!--
         Backup / Restore
     -->
-    <string name="bck_mn_advanced">Arată opțiuni avansate</string>
+    <string name="bck_mn_advanced">Afișează opțiunile avansate</string>
     <string name="btn_backup">Copie de rezervă</string>
-    <string name="btn_restore">Restaurează</string>
+    <string name="btn_restore">Restaurare</string>
     <string name="btn_delete">Șterge</string>
-    <string name="bkp_description">"Alege ce elemente să incluzi în copia de rezervă/restaurare.
-La restaurare, dacă copia de rezervă a fost creată fără ele, cele existente vor fi păstrate."</string>
-    <string name="bkp_data">Date: Date standard ale aplicației. Lucruri precum module activate, configurații json etc. Nu va include secrete sau memoria cache.</string>
+    <string name="bkp_description">Alege elementele pentru backup/restaurare.\nLa restaurare, dacă backupul a fost creat fără acestea, cele existente vor fi păstrate.</string>
+    <string name="bkp_data">Date: Datele standard ale aplicației. Lucruri precum modulele activate, configurațiile JSON etc. Nu vor include date secrete sau memoria cache.</string>
     <string name="bkp_data_prefs">Preferințe: Date salvate ca preferințe.</string>
     <string name="bkp_data_files">Fișiere: Date salvate ca fișiere.</string>
-    <string name="bkp_secrets">"Secrete: Date considerate 'secrete', cum ar fi cheia API VirusTotal sau jurnalul."</string>
-    <string name="bjp_cache">Cache: Date care pot fi descărcate/generate ușor, cum ar fi baza de date hosts. Activarea acestei opțiuni poate crește notabil dimensiunea copiei de rezervă.</string>
-    <string name="bck_restoreDelete">Șterge elementele înainte de restaurare. Reține că preferințele și unele fișiere cu valori implicite ar putea să nu existe, deci dezactivarea acestei opțiuni va fuziona elementele existente cu cele din backup în moduri neașteptate. Dezactivează doar dacă știi ce faci.</string>
-    <string name="bck_ignoreNewer">Permite copii de rezervă create din versiuni mai noi ale aplicației.</string>
-    <string name="bck_newer">Anulat. Copia de rezervă a fost creată cu o versiune mai nouă a aplicației.</string>
+    <string name="bkp_secrets">Secrete: Date considerate \'secret\', precum cheia API VirusTotal sau jurnalul.</string>
+    <string name="bjp_cache">Cache: Date care pot fi descărcate/generate cu ușurință, precum baza de date a gazdelor. Activarea acestei opțiuni poate mări considerabil dimensiunea backupului.</string>
+    <string name="bck_restoreDelete">Șterge elementele înainte de restaurare. Reține că este posibil ca preferințele și unele fișiere cu valori implicite să nu existe, deci dezactivarea acestei opțiuni va fuziona elementele existente cu cele din backup în moduri neprevăzute. Dezactivează doar dacă știi ce faci.</string>
+    <string name="bck_ignoreNewer">Permite backupuri create cu versiuni mai noi ale aplicației.</string>
+    <string name="bck_newer">Anulat. Backupul a fost creat cu o versiune mai nouă a aplicației.</string>
     <string name="bck_chooseFile">Alege fișierul de backup</string>
-    <string name="bck_backupOk">Copie de rezervă creată</string>
-    <string name="bck_backupError">"Nu s-a putut crea copia de rezervă, încearcă să alegi o altă locație pentru fișier."</string>
-    <string name="bck_restoreTitle">Restaurează backup</string>
-    <string name="bck_restoreMessage">"ATENȚIE! Aceasta va înlocui elementele selectate cu cele din copia de rezervă.
-Sigur dorești să continui?"</string>
+    <string name="bck_backupOk">Backup creat</string>
+    <string name="bck_backupError">Backupul nu a putut fi creat, încearcă să alegi o altă locație pentru fișier.</string>
+    <string name="bck_restoreTitle">Restaurare backup</string>
+    <string name="bck_restoreMessage">AVERTISMENT! Această acțiune va înlocui elementele selectate cu cele din backup.\nSigur dorești să continui?</string>
     <string name="bck_restoreConfirm">Înlocuiește elementele</string>
     <string name="bck_restoreOk">Copie de rezervă restaurată</string>
     <string name="bck_restoreError">Nu s-a putut restaura copia de rezervă. Este un fișier valid?</string>
@@ -165,14 +163,14 @@ Sperăm că vei găsi aplicația utilă! Și nu ezita să sugerezi funcții, să
     <!--
         shortcuts
     -->
-    <string name="shortcut_checkClipboard">Verifică URL-uri din clipboard</string>
+    <string name="shortcut_checkClipboard">Verifică adresele URL din clipboard</string>
     <!--
         automations
     -->
     <string name="a_automations">Automatizări</string>
-    <string name="auto_desc">Cu automatizări, poți efectua acțiuni ale modulelor bazate pe declanșatori (triggers). Poți configura automatizările aici sau le poți dezactiva pe toate folosind comutatorul de mai jos.</string>
+    <string name="auto_desc">Cu ajutorul automatizărilor poți efectua acțiuni ale modulelor pe baza unor declanșatori. Poți configura automatizările aici sau le poți dezactiva pe toate împreună folosind comutatorul de mai jos.</string>
     <string name="auto_enabled">Activează funcția de automatizări</string>
-    <string name="auto_error_toast">Arată un toast dacă automatizarea eșuează</string>
+    <string name="auto_error_toast">Afișează un mesaj scurt dacă automatizarea eșuează</string>
     <string name="auto_notFound">"Nicio automatizare cu cheia '%s' nu este disponibilă. Asigură-te că este validă și că modulul necesar este activ."</string>
     <string name="auto_editor">"Configurare automatizări. Format: listă de obiecte unde cheia este un nume unic de automatizare, iar conținutul include următoarele valori:
 - 'regex': șir|listă: dacă este prezent, un regex java valid cu care URL-ul trebuie să se potrivească pentru ca automatizarea să ruleze. Dacă e listă, cel puțin un regex trebuie să se potrivească. Dacă este omis, toate URL-urile se vor potrivi.
@@ -252,16 +250,16 @@ Notă: dacă editezi tiparele, noile tipare încorporate din actualizările apli
     <string name="mOpen_share">Partajează</string>
     <string name="mOpen_copyUrl">Copiază</string>
     <string name="mOpen_clipboard">URL copiat în clipboard</string>
-    <string name="mOpen_noapps">Fără aplicații</string>
+    <string name="mOpen_noapps">Nicio aplicație</string>
     <string name="mOpen_tabsDesc">Comută funcția Tab-uri personalizate</string>
     <string name="mOpen_incognitoDesc">Comută modul incognito (doar pentru Firefox)</string>
     <!-- -->
     <string name="mStatus_name">Cod de stare</string>
     <string name="mStatus_desc">Apăsând butonul de verificare, se va face o cerere de rețea pentru a prelua și afișa codul de stare al site-ului. Dacă rezultatul este o redirecționare, vei putea vedea URL-ul de destinație. Conținutul URL-ului este obținut (GET), dar nu este evaluat, deci redirecționările bazate pe JavaScript nu vor fi detectate.</string>
-    <string name="mStatus_ioerror">Eroare de rețea la încercarea de verificare a URL-ului: %s</string>
-    <string name="mStatus_error">Eroare internă la încercarea de verificare a URL-ului: %s</string>
-    <string name="mStatus_check">Verifică stare</string>
-    <string name="mStatus_recheck">Verifică</string>
+    <string name="mStatus_ioerror">Eroare de rețea în timpul încercării de a verifica adresa URL: %s</string>
+    <string name="mStatus_error">Eroare internă în timpul încercării de a verifica adresa URL: %s</string>
+    <string name="mStatus_check">Verifică starea</string>
+    <string name="mStatus_recheck">Verifică din nou</string>
     <string name="mStatus_checking">Se verifică…</string>
     <string-array name="mStatus_codes">
         <item>200: OK</item>
@@ -341,7 +339,7 @@ Poți ține apăsat pentru a selecta text."</string>
     <string name="mClear_updater">Updater</string>
     <string name="mClear_sourceDesc">URL-ul catalogului de fișiere Json cu regulile:</string>
     <string name="mClear_urlHint">URL catalog</string>
-    <string name="mClear_hashDesc">URL-ul fișierului hash al catalogului. Dacă este omis, descărcarea nu va fi verificată pentru a vedea dacă a fost modificată neautorizat (nerecomandat)</string>
+    <string name="mClear_hashDesc">Adresa URL a fișierului hash al catalogului. Dacă este omisă, descărcarea nu va fi verificată pentru a vedea dacă a fost alterată/modificată (nerecomandat)</string>
     <string name="mClear_hashHint">Fără verificare hash</string>
     <string name="mClear_updateNow">Actualizează acum</string>
     <string name="mClear_autoUpdate">Actualizează periodic</string>
@@ -405,7 +403,7 @@ Acest modul este învechit în favoarea modulului 'Părți URI'"</string>
     <string name="mHosts_built">Bază de date construită: %d gazde</string>
     <!-- -->
     <string name="mUnshort_name">De-scurtare linkuri</string>
-    <string name="mUnshort_unshort">De-scurtare</string>
+    <string name="mUnshort_unshort">Expandare link</string>
     <string name="mUnshort_desc">"Acest modul va de-scurta (expanda) linkurile trimițându-le la %s, care le evaluează pe serverele lor și salvează redirecționarea pentru cereri viitoare. Evită de-scurtarea linkurilor cu date private sau sensibile.
 API-ul lor are o limită de 10 cereri pe oră pentru verificări noi. Răspunsul modulului va afișa câte cereri mai ai în așteptare."</string>
     <string name="mUnshort_tm">API gratuit unshorten.me de la Unshorten.me</string>
