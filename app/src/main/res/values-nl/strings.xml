@@ -13,9 +13,7 @@
     <string name="reset">Reset</string>
     <string name="mPttrn_wrongSchemaHttp">Ongeldig hoofdlettergebruik van http-schema.</string>
     <string name="link_changelog">Wijzigingslog</string>
-    <string name="txt_tutorial1">Bedankt voor het downloaden van de app!
-\n
-\nDit is de tutorial, als je deze wilt overslaan, kun je dat doen met de onderstaande knop. Je kunt altijd terugkeren naar deze tutorial vanuit het instellingenmenu.</string>
+    <string name="txt_tutorial1">Bedankt voor het downloaden van de app! \n \nDit is de tutorial, als je deze wilt overslaan, kun je dat doen met de onderstaande knop. Je kunt altijd terugkeren naar deze tutorial vanuit het instellingenmenu.</string>
     <string name="mClear_desc">Deze module verwijdert tracking, referrer en andere nutteloze parameters uit de URL. Het maakt ook algemene offline URL-omleidingen mogelijk.</string>
     <string name="btn_tutorialSettings">Herhaal tutorial</string>
     <string name="mPttrn_regexfix">Optionele regex-groepen repareren (uitschakelen als regex niet correct werkt)</string>
@@ -25,20 +23,10 @@
     <string name="mStatus_check">Controleer de status</string>
     <string name="a_about">Over</string>
     <string name="spin_darkTheme">Donker</string>
-    <string name="mD_desc">Als u de modules opnieuw ordent, worden nieuwe modules die in toekomstige updates worden toegevoegd, boven deze geplaatst.
-\n
-\nAls u dit inschakelt, worden enkele interne foutopsporingsgegevens weergegeven (zoals de oorspronkelijke intentie-uri), handig voor ontwikkelaars.
-\n
-\nHoud ingedrukt om tekst te selecteren.</string>
+    <string name="mD_desc">Als u de modules opnieuw ordent, worden nieuwe modules die in toekomstige updates worden toegevoegd, boven deze geplaatst. \n \nAls u dit inschakelt, worden enkele interne foutopsporingsgegevens weergegeven (zoals de oorspronkelijke intentie-uri), handig voor ontwikkelaars. \n \nHoud ingedrukt om tekst te selecteren.</string>
     <string name="next">Volgende</string>
     <string name="txt_conf">Hier vindt u alle beschikbare modules, waar u hun beschrijving en instellingen kunt controleren. U kunt ook de volgorde wijzigen, de zichtbaarheid van de titels wijzigen en deze in-/uitschakelen.</string>
-    <string name="txt_tutorial5">Dat is alles. Hier zijn enkele tips die nuttig kunnen zijn:
-\n
-\nWanneer een app je geen manier biedt om een url te openen of te delen, maar wel een manier om de andere te doen, kun je het probleem oplossen met deze app. U kunt de URL ook naar het klembord kopiëren door lang op de deelknop te drukken.
-\n
-\nEr zijn enkele URL\'s waarvan het enige doel is om u door te verwijzen naar een andere URL. Als de uiteindelijke URL in een app kan worden geopend, kunt u voorkomen dat deze in een browser wordt geopend.
-\n
-\nIk hoop dat je de app nuttig vindt! En aarzel niet om functies voor te stellen, bugs te melden of zelfs wijzigingen voor te stellen. Vind alle relevante links op het infoscherm.</string>
+    <string name="txt_tutorial5">Dat is alles. Hier zijn enkele tips die nuttig kunnen zijn: \n \nWanneer een app je geen manier biedt om een url te openen of te delen, maar wel een manier om de andere te doen, kun je het probleem oplossen met deze app. U kunt de URL ook naar het klembord kopiëren door lang op de deelknop te drukken. \n \nEr zijn enkele URL\'s waarvan het enige doel is om u door te verwijzen naar een andere URL. Als de uiteindelijke URL in een app kan worden geopend, kunt u voorkomen dat deze in een browser wordt geopend. \n \nIk hoop dat je de app nuttig vindt! En aarzel niet om functies voor te stellen, bugs te melden of zelfs wijzigingen voor te stellen. Vind alle relevante links op het infoscherm.</string>
     <string name="link_privacy">Privacybeleid</string>
     <string name="mPttrn_userContent">Lijst met andere nuttige, door de gebruiker gemaakte patronen: %s</string>
     <string name="clear">Wissen</string>
@@ -61,11 +49,7 @@
     <string name="mClear_tm">Ingebouwde catalogus gekopieerd van ClearURLs: %s</string>
     <string name="back">Terug</string>
     <string name="hidden">Verborgen</string>
-    <string name="mPttrn_desc">Deze module controleert de url met regex-patronen die vervangingen waarschuwen, voorstellen of toepassen. U kunt uw eigen patronen wijzigen of creëren, of zelfs door de gebruiker gemaakte patronen gebruiken.
-\nIngebouwde patronen zijn onder meer:
-\n- Waarschuwing als het niet-ASCII-tekens bevat, zoals Griekse letters. Dit kan worden gebruikt voor phishing: google.com versus google.com
-\n- Stel voor om \'http\' te vervangen door \'https\'
-\n- Stel voor om YouTube, Reddit of Twitter te vervangen door privacyvriendelijke alternatieven [standaard uitgeschakeld]</string>
+    <string name="mPttrn_desc">Deze module controleert de url met regex-patronen die vervangingen waarschuwen, voorstellen of toepassen. U kunt uw eigen patronen wijzigen of creëren, of zelfs door de gebruiker gemaakte patronen gebruiken. \nIngebouwde patronen zijn onder meer: \n- Waarschuwing als het niet-ASCII-tekens bevat, zoals Griekse letters. Dit kan worden gebruikt voor phishing: google.com versus google.com \n- Stel voor om \'http\' te vervangen door \'https\' \n- Stel voor om YouTube, Reddit of Twitter te vervangen door privacyvriendelijke alternatieven [standaard uitgeschakeld]</string>
     <string name="mOpen_noapps">Geen apps</string>
     <string name="mPttrn_ascii">Waarschuwing! Niet-ASCII-tekens gevonden.</string>
     <string name="mVT_cancel">Annuleren</string>
@@ -75,15 +59,9 @@
     <string name="mStatus_ioerror">Netwerkfout tijdens het controleren van de URL: %s</string>
     <string name="mStatus_error">Interne fout bij het controleren van de URL: %s</string>
     <string name="translators">Mika</string>
-    <string name="txt_tutorial3">Stel de app in als de standaardwebbrowser om URL\'s te onderscheppen wanneer deze worden geopend.
-\n(Niet nodig als URL\'s worden omgeleid via de functionaliteit \'Delen\'.)</string>
+    <string name="txt_tutorial3">Stel de app in als de standaardwebbrowser om URL\'s te onderscheppen wanneer deze worden geopend. \n(Niet nodig als URL\'s worden omgeleid via de functionaliteit \'Delen\'.)</string>
     <string name="btn_configureBrowser">Standaard webbrowser</string>
-    <string name="mOpen_desc">Bevat de volgende knoppen (van links naar rechts):
-\n- Knop Aangepaste tabbladen: schakel om de functie voor aangepaste tabbladen in of uit te schakelen. Indien ingeschakeld, moet de browser in een \'lite\'-modus worden geopend.
-\n- Incognitoknop: alleen voor Firefox. Schakel tussen het in-/uitschakelen van de incognitomodus. Indien ingeschakeld, moet de browser incognito worden geopend.
-\n- Knop Openen: druk op de app-naam om de link in die app te openen. Als een link met meerdere apps kan worden geopend, wordt er een pijl weergegeven waarmee u kunt kiezen.
-\n- Knop Kopiëren: Druk op de knop om de link naar het klembord te kopiëren.
-\n- Deelknop: druk op de knop om de link te delen.</string>
+    <string name="mOpen_desc">Bevat de volgende knoppen (van links naar rechts): \n- Knop Aangepaste tabbladen: schakel om de functie voor aangepaste tabbladen in of uit te schakelen. Indien ingeschakeld, moet de browser in een \'lite\'-modus worden geopend. \n- Incognitoknop: alleen voor Firefox. Schakel tussen het in-/uitschakelen van de incognitomodus. Indien ingeschakeld, moet de browser incognito worden geopend. \n- Knop Openen: druk op de app-naam om de link in die app te openen. Als een link met meerdere apps kan worden geopend, wordt er een pijl weergegeven waarmee u kunt kiezen. \n- Knop Kopiëren: Druk op de knop om de link naar het klembord te kopiëren. \n- Deelknop: druk op de knop om de link te delen.</string>
     <string name="link_blog">%s\'s blog</string>
     <string name="mClear_matches">Komt overeen met %s</string>
     <string name="mOpen_with">Openen met %s</string>
@@ -97,10 +75,7 @@
     <string name="mOpen_closeOpen">Dialoogvenster sluiten na openen</string>
     <string name="btn_setBrowser">Stel in als standaard browser</string>
     <string name="btn_androidSettings">Instellingen voor Android</string>
-    <string name="txt_about">App gemaakt door %1$s.
-\n
-\nBijdragen: %2$s.
-\nVertalingen: %3$s.</string>
+    <string name="txt_about">App gemaakt door %1$s. \n \nBijdragen: %2$s. \nVertalingen: %3$s.</string>
     <string name="mD_ctabs">Toon foutopsporingsberichten van de service voor aangepaste tabbladen</string>
     <string name="txt_locale">Taal:</string>
     <string name="mVT_goodUrl">Geen van de %1$d-engines heeft de URL gedetecteerd (vanaf datum %2$s)</string>
@@ -136,13 +111,7 @@
     <string name="link_source">Broncode</string>
     <string name="mPttrn_fix">Toepassen</string>
     <string name="mPttrn_noSchemeHttp">Ontbrekend HTTP-schema.</string>
-    <string name="txt_tutorial4">Modules is hoe de app communiceert met de URL\'s.
-\nElk van de modules heeft een specifieke functie. Meestal om informatie over de URL weer te geven, of om deze te laten wijzigen.
-\nLees er meer over en stel ze indien nodig in.
-\n
-\nBelangrijk: Alle acties zijn standaard handmatig. De app zal niets wijzigen en geen verbinding maken met internet, tenzij u dit specifiek toestaat, maar sommige acties kunnen desgewenst automatisch worden toegepast.
-\n
-\nOpen de lijst met modules vanuit het hoofdscherm of door op de onderstaande knop te tikken.</string>
+    <string name="txt_tutorial4">Modules is hoe de app communiceert met de URL\'s. \nElk van de modules heeft een specifieke functie. Meestal om informatie over de URL weer te geven, of om deze te laten wijzigen. \nLees er meer over en stel ze indien nodig in. \n \nBelangrijk: Alle acties zijn standaard handmatig. De app zal niets wijzigen en geen verbinding maken met internet, tenzij u dit specifiek toestaat, maar sommige acties kunnen desgewenst automatisch worden toegepast. \n \nOpen de lijst met modules vanuit het hoofdscherm of door op de onderstaande knop te tikken.</string>
     <string name="mPttrn_wrongSchemaHttps">Ongeldig hoofdlettergebruik van https-schema.</string>
     <string name="json_editor">Json editor</string>
     <string name="mPttrn_fixed">Toegepast - %s</string>
@@ -172,13 +141,8 @@
     <string name="mClear_error">Kan de regel niet controleren</string>
     <string name="mClear_toggleReferral">Verwijzingsmarketing inschakelen (verwijzingsparameters worden niet gewist)</string>
     <string name="mClear_auto">Automatisch toepassen</string>
-    <string name="mRemove_desc">[AFGESCHAFT] Met deze module kunt u zoekopdrachten uit de URL verwijderen.
-\nDruk op de knop om ze allemaal te verwijderen of druk op de pijl om ze allemaal één voor één te verwijderen.
-\nMet dank aan PabloOQ voor het idee en de originele uitvoering!
-\n
-\nDeze module is verouderd ten gunste van de module \'Uri-onderdelen\'</string>
-    <string name="mClear_editor">Catalogusregels: ze moeten het formaat volgen van %s.
-\nHoud er rekening mee dat elke wijziging aan het bovenliggende object \'providers\' zal worden overschreven als de catalogus automatisch of handmatig wordt bijgewerkt vanuit het updatevenster. Als u persoonlijke regels wilt instellen, plaatst u deze in een ander bovenliggend object (willekeurige naam).</string>
+    <string name="mRemove_desc">[AFGESCHAFT] Met deze module kunt u zoekopdrachten uit de URL verwijderen. \nDruk op de knop om ze allemaal te verwijderen of druk op de pijl om ze allemaal één voor één te verwijderen. \nMet dank aan PabloOQ voor het idee en de originele uitvoering! \n \nDeze module is verouderd ten gunste van de module \'Uri-onderdelen\'</string>
+    <string name="mClear_editor">Catalogusregels: ze moeten het formaat volgen van %s. \nHoud er rekening mee dat elke wijziging aan het bovenliggende object \'providers\' zal worden overschreven als de catalogus automatisch of handmatig wordt bijgewerkt vanuit het updatevenster. Als u persoonlijke regels wilt instellen, plaatst u deze in een ander bovenliggend object (willekeurige naam).</string>
     <string name="mLog_unlimited">Onbeperkt</string>
     <string name="mHosts_built">Database gebouwd: %d hosts</string>
     <string name="mChg_updated">De app is bijgewerkt.</string>
@@ -190,12 +154,7 @@
     <string name="mHosts_parseError">Kan URL-host niet parseren</string>
     <string name="mClear_lastUpdate">Laatste update:</string>
     <string name="mUnshort_error">Serverfout: %s</string>
-    <string name="mHosts_editor">Hostconfiguratie. Formaat: Lijst met objecten waarbij de sleutel het hosts-label is en de inhoud de volgende optionele waarden bevat:
-\n- bestand: Een url van een extern hosts-bestand om te downloaden. Alle geldige hosts die aanwezig zijn, worden toegevoegd. De regels moeten de hosts-syntaxis volgen: \'ip host [alias…]\', maar regels met alleen \'host\' zijn ook geldig.
-\n- hosts: Lijst met onbewerkte hosts (strings) om toe te voegen.
-\n- kleur: De kleur van het label. Een Android-kleurenstring (#AARRGGBB, #RRGGBB of een geldige kleurnaam). Standaard is dit een \'gevaar\'-rood.
-\n- vervangen: als dit onwaar is, worden bestaande hosts niet vervangen. Let op dat objecten van boven naar beneden worden geëvalueerd. Standaard True.
-\n- ingeschakeld: als dit onwaar is, wordt dit hele object overgeslagen. Standaard True.</string>
+    <string name="mHosts_editor">Hostconfiguratie. Formaat: Lijst met objecten waarbij de sleutel het hosts-label is en de inhoud de volgende optionele waarden bevat: \n- bestand: Een url van een extern hosts-bestand om te downloaden. Alle geldige hosts die aanwezig zijn, worden toegevoegd. De regels moeten de hosts-syntaxis volgen: \'ip host [alias…]\', maar regels met alleen \'host\' zijn ook geldig. \n- hosts: Lijst met onbewerkte hosts (strings) om toe te voegen. \n- kleur: De kleur van het label. Een Android-kleurenstring (#AARRGGBB, #RRGGBB of een geldige kleurnaam). Standaard is dit een \'gevaar\'-rood. \n- vervangen: als dit onwaar is, worden bestaande hosts niet vervangen. Let op dat objecten van boven naar beneden worden geëvalueerd. Standaard True. \n- ingeschakeld: als dit onwaar is, wordt dit hele object overgeslagen. Standaard True.</string>
     <string name="mChg_current">Huidige versie: %s</string>
     <string name="mRemove_name">Zoekopdracht Verwijderaar</string>
     <string name="mClear_hashMismatch">Hashes komen niet overeen, er is mogelijk met het bestand geknoeid. Als u de controle wilt overslaan, verwijdert u de hash-URL</string>
@@ -210,11 +169,7 @@
     <string name="mHosts_buildDesc">Hierdoor wordt de huidige hosts-database gewist en opgebouwd met de huidige configuratie, waarbij indien nodig hosts-bestanden van internet worden gedownload. Deze actie kan enkele seconden duren. Doorgaan?</string>
     <string name="mClear_hashHint">Geen hash-check</string>
     <string name="mParts_name">Uri-onderdelen</string>
-    <string name="mParts_desc">Deze module toont alle delen van de url gedecodeerd: schema, autoriteit, paden, queries en fragment.
-\nDoor op een onderdeel te klikken, wordt het ingesteld als de nieuwe url, wat bijvoorbeeld handig is als een van de queries of paden een gecodeerde omleidings-URL was.
-\nDoor lang op een onderdeel te klikken, wordt het naar het klembord gekopieerd.
-\nU kunt ook op de knop \'X\' klikken om enkele ervan te verwijderen.
-\nDit is een geavanceerde versie van de module \'Queries Remover\'.</string>
+    <string name="mParts_desc">Deze module toont alle delen van de url gedecodeerd: schema, autoriteit, paden, queries en fragment. \nDoor op een onderdeel te klikken, wordt het ingesteld als de nieuwe url, wat bijvoorbeeld handig is als een van de queries of paden een gecodeerde omleidings-URL was. \nDoor lang op een onderdeel te klikken, wordt het naar het klembord gekopieerd. \nU kunt ook op de knop \'X\' klikken om enkele ervan te verwijderen. \nDit is een geavanceerde versie van de module \'Queries Remover\'.</string>
     <string name="mHosts_uninitialized">Hostdatabase niet geïnitialiseerd. Druk om te bouwen</string>
     <string name="mHosts_buildSave">Bewaren…</string>
     <string name="mRemove_all">Verwijder alles</string>
@@ -223,8 +178,7 @@
     <string name="mRemove_empty">Verwijder leeg</string>
     <string name="mClear_urlError">Kan de regels niet ophalen. Controleer of de URL geldig is en of u een actieve verbinding heeft</string>
     <string name="mLog_limit">Maximaal aantal te behouden vermeldingen. Aanbevolen waarde: 100. Stel leeg in voor onbeperkt</string>
-    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar %s te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens.
-\nHun API is beperkt tot 10 verzoeken per uur voor nieuwe cheques. Het moduleantwoord laat zien hoeveel verzoeken u in behandeling heeft.</string>
+    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar %s te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens. \nHun API is beperkt tot 10 verzoeken per uur voor nieuwe cheques. Het moduleantwoord laat zien hoeveel verzoeken u in behandeling heeft.</string>
     <string name="mHosts_build">Build</string>
     <string name="mRemove_one">Verwijder %s</string>
     <string name="mFlag_editFlags">Standaardvlagwaarden bewerken</string>
@@ -245,10 +199,7 @@
     <string name="mHosts_buildClear">Wissen…</string>
     <string name="mParts_empty">(leeg)</string>
     <string name="mRemove_found">%d zoekopdrachten gevonden</string>
-    <string name="mFlag_desc">[Bètafunctie] Dit is een geavanceerde module, waarmee u de intentievlaggen kunt bewerken wanneer u een andere app opent.
-\nDeze module toont een lijst met vlaggen. U kunt wijzigen of de vlag is ingesteld of niet door op het pictogram te tikken. Er is ook een overloopmenu om vlaggen daarin te verbergen, het is alleen visueel, vlaggen zullen nog steeds de toegewezen status gebruiken.
-\nDe vlaggen hebben twee kleurindicatoren naast het selectievakje. De linker toont de waarde die is ontvangen van de intentie, de rechter geeft de status aan die door de module zelf is ingesteld. Rood betekent dat de vlag niet is uitgezet en groen betekent dat de vlag is uitgezet. Bovendien kan de voorkeursindicator grijs zijn, dit betekent dat de status op automatisch staat.
-\nMet onderstaande knop kunt u de standaardstatus en de zichtbaarheid van de vlaggen bewerken.</string>
+    <string name="mFlag_desc">[Bètafunctie] Dit is een geavanceerde module, waarmee u de intentievlaggen kunt bewerken wanneer u een andere app opent. \nDeze module toont een lijst met vlaggen. U kunt wijzigen of de vlag is ingesteld of niet door op het pictogram te tikken. Er is ook een overloopmenu om vlaggen daarin te verbergen, het is alleen visueel, vlaggen zullen nog steeds de toegewezen status gebruiken. \nDe vlaggen hebben twee kleurindicatoren naast het selectievakje. De linker toont de waarde die is ontvangen van de intentie, de rechter geeft de status aan die door de module zelf is ingesteld. Rood betekent dat de vlag niet is uitgezet en groen betekent dat de vlag is uitgezet. Bovendien kan de voorkeursindicator grijs zijn, dit betekent dat de status op automatisch staat. \nMet onderstaande knop kunt u de standaardstatus en de zichtbaarheid van de vlaggen bewerken.</string>
     <string name="mUnshort_checking">Controleren…</string>
     <string name="mClear_autoUpdate">Periodiek bijwerken</string>
     <string name="mClear_updateNow">Update nu</string>
@@ -265,19 +216,16 @@
     <string name="mClear_lastCheck">Laatste controle:</string>
     <string name="btn_backupRestore">Back-up/herstellen</string>
     <string name="btn_delete">Verwijderen</string>
-    <string name="bkp_description">Kies welke elementen je wil back-uppen of herstellen.
-\nAls je een element herstelt en er een back-up van is gemaakt, wordt die behouden.</string>
+    <string name="bkp_description">Kies welke elementen je wil back-uppen of herstellen. \nAls je een element herstelt en er een back-up van is gemaakt, wordt die behouden.</string>
     <string name="bkp_data_prefs">Voorkeuren: gegevens die zijn opgeslagen als voorkeuren.</string>
     <string name="bck_restoreTitle">Back-up herstellen</string>
     <string name="bck_backupError">Back-up maken mislukt. Kies een andere locatie voor het bestand.</string>
-    <string name="bck_restoreMessage">PAS OP! Hiermee worden de gekozen elementen van de back-up vervangen.
-\nWeet je zeker dat je dit wilt?</string>
+    <string name="bck_restoreMessage">PAS OP! Hiermee worden de gekozen elementen van de back-up vervangen. \nWeet je zeker dat je dit wilt?</string>
     <string name="bck_restoreConfirm">Elementen herstellen</string>
     <string name="bck_restoreOk">Back-up hersteld</string>
     <string name="bck_restoreError">Back-up herstellen mislukt. Is dit het juiste bestand?</string>
     <string name="bck_deleteTitle">Elementen wissen</string>
-    <string name="bck_deleteMessage">PAS OP! Hiermee worden alle gekozen elementen gewist.
-\nWeet je zeker dat je dit wilt?</string>
+    <string name="bck_deleteMessage">PAS OP! Hiermee worden alle gekozen elementen gewist. \nWeet je zeker dat je dit wilt?</string>
     <string name="bck_deleteConfirm">Elementen wissen</string>
     <string name="bck_deleteOk">Elementen gewist</string>
     <string name="txt_animation">Animaties activeren</string>

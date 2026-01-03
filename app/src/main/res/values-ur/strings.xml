@@ -22,10 +22,7 @@
     <string name="link_changelog">تبدیلیاں</string>
     <string name="link_source">سورس کوڈ</string>
     <string name="link_privacy">پرائیویسی پالیسی</string>
-    <string name="txt_about">ایپ %1$s کے ذریعہ تشکیل دی گئی
-\n
-\nمعاونت: %2$s
-\nترجمے: %3$s.</string>
+    <string name="txt_about">ایپ %1$s کے ذریعہ تشکیل دی گئی \n \nمعاونت: %2$s \nترجمے: %3$s.</string>
     <string name="toast_cantEnable">ماڈیول کوفعال نہیں کر سکتے: %s</string>
     <string name="txt_openLinks">لنک اس ایپ میں کھولیں: برسوں سے اینڈرائیڈ نے اسے ترتیب دینے کے طریقوں میں تبدیلیاں کی ہیں، جو اینڈرائیڈ کے ہر ورژن میں مختلف ہیں۔ آپ کی ڈیوائس کے لیے نیچے موجود تمام ترتیبات میں تلاش کریں، اگر اس ایپ سے لنک نہیں کھل رہے ہیں تو ان سبھی ترتیبات کو آزمائیں۔</string>
     <string name="menu_toggleDecorations">سبھی عنوان کو تبدیل کریں</string>
@@ -35,7 +32,5 @@
     <string name="btn_configureBrowser">ڈیفالٹ ویب براؤزر</string>
     <string name="toast_defaultSet">یہ ایپ اب ڈیفالٹ ویب براؤزر ہے</string>
     <string name="txt_locale">مقامی زبان:</string>
-    <string name="txt_tutorial1">ایپ کو ڈاؤنلوڈ کرنے کا شکریہ!
-\n
-\nیہ رہبری ہے، اگر آپ اسے دیکھنا نہیں چاہتے ہیں تو آپ نیچے والے بٹن استعمال کر کے ایسا کرسکتے ہیں۔ آپ ہمیشہ ترتیبات کے مینو سے اس رہبری پر واپس آ سکتے ہیں۔</string>
+    <string name="txt_tutorial1">ایپ کو ڈاؤنلوڈ کرنے کا شکریہ! \n \nیہ رہبری ہے، اگر آپ اسے دیکھنا نہیں چاہتے ہیں تو آپ نیچے والے بٹن استعمال کر کے ایسا کرسکتے ہیں۔ آپ ہمیشہ ترتیبات کے مینو سے اس رہبری پر واپس آ سکتے ہیں۔</string>
 </resources>

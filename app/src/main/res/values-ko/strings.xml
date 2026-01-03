@@ -4,10 +4,7 @@
     <string name="a_modules">모듈</string>
     <string name="a_settings">설정</string>
     <string name="a_about">정보</string>
-    <string name="txt_about">이 앱은 %1$s에 의해 제작되었습니다.
-\n
-\n기여자: %2$s
-\n번역한 사람들: %3$s</string>
+    <string name="txt_about">이 앱은 %1$s에 의해 제작되었습니다. \n \n기여자: %2$s \n번역한 사람들: %3$s</string>
     <string name="link_blog">%s의 블로그</string>
     <string name="link_changelog">변경 사항</string>
     <string name="link_source">소스 코드</string>
@@ -24,11 +21,8 @@
     <string name="txt_locale">언어:</string>
     <string name="btn_tutorialSettings">튜토리얼 다시 보기</string>
     <string name="tutorial">튜토리얼</string>
-    <string name="txt_tutorial1">앱을 다운로드해주셔서 감사합니다!
-\n
-\n만약 이 튜토리얼을 넘기고 싶다면 아래에 있는 버튼을 눌러 주세요. 설정에서 이 튜토리얼을 언제든 다시 보실 수 있습니다.</string>
-    <string name="txt_tutorial3">URL을 열 때 이 앱을 사용하려면 기본 웹 브라우저로 설정하세요.
-\n(기본 웹 브라우저로 설정하지 않더라도 “공유” 기능을 이용하면 앱을 사용할 수 있습니다.)</string>
+    <string name="txt_tutorial1">앱을 다운로드해주셔서 감사합니다! \n \n만약 이 튜토리얼을 넘기고 싶다면 아래에 있는 버튼을 눌러 주세요. 설정에서 이 튜토리얼을 언제든 다시 보실 수 있습니다.</string>
+    <string name="txt_tutorial3">URL을 열 때 이 앱을 사용하려면 기본 웹 브라우저로 설정하세요. \n(기본 웹 브라우저로 설정하지 않더라도 “공유” 기능을 이용하면 앱을 사용할 수 있습니다.)</string>
     <string name="translators">ilotoki0804;</string>
     <string name="locale">한국어</string>
     <string name="txt_info">이 앱은 URL 링크를 클릭했을 때 중간역을 합니다. 이 앱을 링크를 열 때 사용하도록 하면 링크에 대한 몇 가지 정보가 있는 창이 나타납니다. 아래에 있는 모듈 버튼을 눌러 사용 가능한 모든 모듈을 확인하고 설정해 보세요.</string>
@@ -41,20 +35,8 @@
     <string name="txt_conf">여기에는 사용 가능한 모든 모듈과 설명 및 설정이 있습니다. 또한 모듈의 순서를 변경하고, 제목을 보일지 여부를 설정하며, 켜거나 끌 수 있습니다.</string>
     <string name="desc_decorations">모듈 이름 보이기/숨기기</string>
     <string name="txt_tutorial2">이 앱은 URL 링크를 열 때 중간역을 합니다. 이 앱이 URL이 받으면, 모듈을 통해 URL과 상호작용할 수 있습니다. 이후, 링크를 원하는 앱으로 열거나, 공유하거나, 클립보드에 복사할 수 있습니다.</string>
-    <string name="txt_tutorial4">모듈은 앱이 URL과 상호작용하는 방법입니다.
-\n각각의 모듈은 특정한 기능이 있습니다. 보통 URL에 대한 정보를 보여주기도 하고, 사용자의 허락이 있을 경우 변경하기도 합니다.
-\n모듈의 설명을 읽어 보고 필요한 기능을 설정하세요.
-\n
-\n중요!: 모든 동작은 기본적으로 수동입니다. 앱은 사용자가 허용하지 않는 한 인터넷에 연결하거나 링크를 수정하지 않습니다. 다만, 몇몇 동작은 필요하면 자동으로 작동하도록 설정할 수 있습니다.
-\n
-\n아래에 있는 버튼을 누르거나 메인 화면에서 모듈 목록을 열 수 있습니다.</string>
-    <string name="txt_tutorial5">끝입니다. 유용한 팁 몇 가지를 알려 드리겠습니다:
-\n
-\n어떤 앱이 링크 열기나 공유하는 방법 중 하나를 제공하지 않지만 나머지 하나는 제공한다면, 이 앱을 통해 문제를 해결할 수 있습니다. 공유 버튼을 길게 눌러 클립보드에 복사할 수 있습니다.
-\n
-\n몇몇 URL은 단지 리다이렉트하는 것이 목적입니다. 만약 최종 URL을 앱으로 열 수 있다면, 브라우저에서 여는 것을 피할 수 있습니다.
-\n
-\n이 앱이 유용하기를 빕니다! 적극적으로 기능을 제안하거나, 버그를 제보하거나, 변경을 제안해 주세요. 관련한 모든 링크는 정보란에 있습니다.</string>
+    <string name="txt_tutorial4">모듈은 앱이 URL과 상호작용하는 방법입니다. \n각각의 모듈은 특정한 기능이 있습니다. 보통 URL에 대한 정보를 보여주기도 하고, 사용자의 허락이 있을 경우 변경하기도 합니다. \n모듈의 설명을 읽어 보고 필요한 기능을 설정하세요. \n \n중요!: 모든 동작은 기본적으로 수동입니다. 앱은 사용자가 허용하지 않는 한 인터넷에 연결하거나 링크를 수정하지 않습니다. 다만, 몇몇 동작은 필요하면 자동으로 작동하도록 설정할 수 있습니다. \n \n아래에 있는 버튼을 누르거나 메인 화면에서 모듈 목록을 열 수 있습니다.</string>
+    <string name="txt_tutorial5">끝입니다. 유용한 팁 몇 가지를 알려 드리겠습니다: \n \n어떤 앱이 링크 열기나 공유하는 방법 중 하나를 제공하지 않지만 나머지 하나는 제공한다면, 이 앱을 통해 문제를 해결할 수 있습니다. 공유 버튼을 길게 눌러 클립보드에 복사할 수 있습니다. \n \n몇몇 URL은 단지 리다이렉트하는 것이 목적입니다. 만약 최종 URL을 앱으로 열 수 있다면, 브라우저에서 여는 것을 피할 수 있습니다. \n \n이 앱이 유용하기를 빕니다! 적극적으로 기능을 제안하거나, 버그를 제보하거나, 변경을 제안해 주세요. 관련한 모든 링크는 정보란에 있습니다.</string>
     <string name="btn_tutorialSkip">튜토리얼 넘기기</string>
     <string name="save">저장</string>
     <string name="close">닫기</string>
@@ -81,8 +63,7 @@
     <string name="next">다음</string>
     <string name="canceled">취소됨</string>
     <string name="back">뒤로</string>
-    <string name="mClear_editor">카탈로그 규칙: %s 의 형식을 따라야 합니다.
-\n부모 객체인 \'providers\'는 업데이트되었을 때 덮어씌어진다는 점을 주의하세요. 만약 개인적으로 규칙을 만들고 싶다면 아무 이름이나로 다른 부모 객체를 만들어서 규칙을 설정하세요.</string>
+    <string name="mClear_editor">카탈로그 규칙: %s 의 형식을 따라야 합니다. \n부모 객체인 \'providers\'는 업데이트되었을 때 덮어씌어진다는 점을 주의하세요. 만약 개인적으로 규칙을 만들고 싶다면 아무 이름이나로 다른 부모 객체를 만들어서 규칙을 설정하세요.</string>
     <string name="invalid">유효하지 않음</string>
     <string name="clear">지우기</string>
     <string name="shortcut_checkClipboard">클립보드에서 URL 확인하기</string>
@@ -104,8 +85,7 @@
     <string name="mUnshort_pending">기다리는 중: %1$d/%2$d</string>
     <string name="mUnshort_ok">복구됨</string>
     <string name="mUnshort_internal">내부 오류 (%s)</string>
-    <string name="mUnshort_desc">이 모듈은 %s로 보내 단축된 URL의 원본을 보여줍니다. 해당 사이트의 서버에서 실행한 뒤 향후의 요청을 위해 리디렉션 정보를 저장하는 방식으로 작동하니 사적이거나 민감한 링크에 사용하는 것을 피하세요.
-\nAPI는 새로운 확인에 대해 시간당 10개의 요청으로 제한됩니다. 이 모듈의 응답은 몇 번의 요청이 남았는지 보여줍니다.</string>
+    <string name="mUnshort_desc">이 모듈은 %s로 보내 단축된 URL의 원본을 보여줍니다. 해당 사이트의 서버에서 실행한 뒤 향후의 요청을 위해 리디렉션 정보를 저장하는 방식으로 작동하니 사적이거나 민감한 링크에 사용하는 것을 피하세요. \nAPI는 새로운 확인에 대해 시간당 10개의 요청으로 제한됩니다. 이 모듈의 응답은 몇 번의 요청이 남았는지 보여줍니다.</string>
     <string name="mStatus_unknownCode">%d: 불명의 상태 코드</string>
     <string name="mUnshort_unshort">단축 URL 복구하기</string>
     <string name="mUnshort_checking">확인 중…</string>

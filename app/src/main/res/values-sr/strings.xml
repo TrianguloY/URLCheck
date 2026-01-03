@@ -5,10 +5,7 @@
     <string name="a_modules">Moduli</string>
     <string name="a_about">O Aplikaciji</string>
     <string name="a_settings">Podešavanja</string>
-    <string name="txt_about">Aplikacija koju je napravio %1$s.
-\n
-\nDoprinosi: %2$s.
-\nPrevodi: %3$s.</string>
+    <string name="txt_about">Aplikacija koju je napravio %1$s. \n \nDoprinosi: %2$s. \nPrevodi: %3$s.</string>
     <string name="link_blog">%s Blog</string>
     <string name="link_changelog">Dnevnik promena</string>
     <string name="link_source">Otvoreni Kod</string>
@@ -30,8 +27,7 @@
     <string name="bck_deleteOk">Elementi su izbrisani</string>
     <string name="bck_deleteError">Nije moguće izbrisati elemente</string>
     <string name="tutorial">Vodič</string>
-    <string name="txt_tutorial3">Postavite aplikaciju kao podrazumevani veb pregledač da presreće URL-ove kada ih otvarate.
-\n(Nije potrebno ako se URL-ovi preusmeravaju pomoću funkcije „Deli“.)</string>
+    <string name="txt_tutorial3">Postavite aplikaciju kao podrazumevani veb pregledač da presreće URL-ove kada ih otvarate. \n(Nije potrebno ako se URL-ovi preusmeravaju pomoću funkcije „Deli“.)</string>
     <string name="invalid">Nevažeći</string>
     <string name="save">Sačuvaj</string>
     <string name="reset">Resetuj</string>
@@ -155,12 +151,10 @@
     <string name="bkp_data">Podaci: Standardni podaci aplikacije. Stvari kao što su omogućeni moduli, json konfiguracije, itd. Neće uključivati tajne niti keš memoriju.</string>
     <string name="bkp_data_prefs">Preference: Podaci sačuvani kao preference.</string>
     <string name="bck_restoreDelete">Obrišite elemente pre vraćanja. Imajte na umu da postavke i neke datoteke sa podrazumevanim vrednostima možda ne postoje, pa će onemogućavanje ove opcije spojiti postojeće elemente sa rezervnim na neočekivane načine. Onemogućite ako znate šta radite.</string>
-    <string name="bkp_description">Izaberite koje elemente želite da napravite rezervnu kopiju/vratite.
-\nPrilikom vraćanja, ako je rezervna kopija napravljena bez nje, postojeće će biti sačuvane.</string>
+    <string name="bkp_description">Izaberite koje elemente želite da napravite rezervnu kopiju/vratite. \nPrilikom vraćanja, ako je rezervna kopija napravljena bez nje, postojeće će biti sačuvane.</string>
     <string name="toast_noApp">Nije moguće otvoriti aplikaciju</string>
     <string name="bck_ignoreNewer">Dozvolite rezervne kopije napravljene od novijih verzija aplikacije.</string>
-    <string name="bck_restoreMessage">UPOZORENJE! Ovo će zameniti izabrane elemente iz rezervne kopije.
-\nDa li zaista želite da nastavite?</string>
+    <string name="bck_restoreMessage">UPOZORENJE! Ovo će zameniti izabrane elemente iz rezervne kopije. \nDa li zaista želite da nastavite?</string>
     <string name="bck_restoreConfirm">Zamenite elemente</string>
     <string name="bck_chooseFile">Izaberite datoteku rezervne kopije</string>
     <string name="bck_newer">Otkazano. Rezervna kopija je napravljena sa novijom verzijom aplikacije.</string>
@@ -171,41 +165,22 @@
     <string name="bck_restoreOk">Rezervna kopija je vraćena</string>
     <string name="bck_restoreError">Nije moguće vratiti rezervnu kopiju. Da li je to važeća datoteka?</string>
     <string name="bck_deleteTitle">Izbrišite elemente</string>
-    <string name="bck_deleteMessage">UPOZORENJE! Ovo će izbrisati sve izabrane elemente.
-\nDa li zaista želite da nastavite?</string>
-    <string name="txt_tutorial1">Hvala što ste preuzeli aplikaciju!
-\n
-\nOvo je vodič, ako želite da ga preskočite, možete to učiniti pomoću dugmeta ispod. Uvek se možete vratiti na ovaj vodič iz menija podešavanja.</string>
+    <string name="bck_deleteMessage">UPOZORENJE! Ovo će izbrisati sve izabrane elemente. \nDa li zaista želite da nastavite?</string>
+    <string name="txt_tutorial1">Hvala što ste preuzeli aplikaciju! \n \nOvo je vodič, ako želite da ga preskočite, možete to učiniti pomoću dugmeta ispod. Uvek se možete vratiti na ovaj vodič iz menija podešavanja.</string>
     <string name="btn_tutorialSkip">Preskoči vodič</string>
     <string name="toast_noBrowser">Nije moguće otvoriti veb pregledač</string>
     <string name="auto">Automatski</string>
-    <string name="txt_tutorial4">Moduli su način na koji aplikacija komunicira sa URL-ovima.
-\nSvaki od modula ima određenu funkciju. Obično za predstavljanje informacija o URL-u ili omogućavanje njegove izmene.
-\nPročitajte o njima i podesite ih po potrebi.
-\n
-\nVažno: Sve radnje su podrazumevano ručne. Aplikacija neće ništa izmeniti niti se povezati na Internet osim ako to izričito ne dozvolite, ali neke radnje se mogu automatski primeniti po želji.
-\n
-\nOtvorite listu modula sa glavnog ekrana ili dodirom na dugme ispod.</string>
+    <string name="txt_tutorial4">Moduli su način na koji aplikacija komunicira sa URL-ovima. \nSvaki od modula ima određenu funkciju. Obično za predstavljanje informacija o URL-u ili omogućavanje njegove izmene. \nPročitajte o njima i podesite ih po potrebi. \n \nVažno: Sve radnje su podrazumevano ručne. Aplikacija neće ništa izmeniti niti se povezati na Internet osim ako to izričito ne dozvolite, ali neke radnje se mogu automatski primeniti po želji. \n \nOtvorite listu modula sa glavnog ekrana ili dodirom na dugme ispod.</string>
     <string name="btn_tutorialEnd">Završi vodič</string>
     <string name="alwaysOff">Uvek isključen</string>
     <string name="deviceDefault">Podrazumevano za uređaj</string>
     <string name="next">Sledeće</string>
-    <string name="txt_tutorial5">To je sve. Evo nekoliko saveta koji mogu biti korisni:
-\n
-\nKada vam aplikacija ne daje način da otvorite ili delite URL, ali vam daje način da uradite nešto drugo, problem možete rešiti pomoću ove aplikacije. Takođe možete kopirati URL u međuspremnik dugim pritiskom na dugme za deljenje.
-\n
-\nPostoje neki URL-ovi čija je jedina svrha da vas preusmere na drugi URL. Ako se konačni URL može otvoriti u aplikaciji, onda možete izbjeći otvaranje u pregledaču.
-\n
-\nNadamo se da će vam aplikacija biti korisna! I ne ustručavajte se da predložite funkcije, prijavite greške ili čak predložite izmene. Pronađite sve relevantne veze na ekranu o informacijama.</string>
+    <string name="txt_tutorial5">To je sve. Evo nekoliko saveta koji mogu biti korisni: \n \nKada vam aplikacija ne daje način da otvorite ili delite URL, ali vam daje način da uradite nešto drugo, problem možete rešiti pomoću ove aplikacije. Takođe možete kopirati URL u međuspremnik dugim pritiskom na dugme za deljenje. \n \nPostoje neki URL-ovi čija je jedina svrha da vas preusmere na drugi URL. Ako se konačni URL može otvoriti u aplikaciji, onda možete izbjeći otvaranje u pregledaču. \n \nNadamo se da će vam aplikacija biti korisna! I ne ustručavajte se da predložite funkcije, prijavite greške ili čak predložite izmene. Pronađite sve relevantne veze na ekranu o informacijama.</string>
     <string name="canceled">Otkazano</string>
     <string name="shortcut_checkClipboard">Proverite URL-ove iz međuspremnika</string>
     <string name="json_editor">Json editor</string>
     <string name="mPttrn_name">Provera šablona</string>
-    <string name="mPttrn_desc">Ovaj modul proverava URL sa obrascima regex šablona koji upozorava, predlaže ili primenjuje zamene. Možete modifikovati ili kreirati sopstvene šablone, ili čak koristiti one koje kreiraju korisnici.
-\nUgrađeni obrasci uključuju:
-\n- Upozorenje kada sadrži znakove koji nisu ascii kao što su grčka slova. Ovo se može koristiti za phishing: googĺe.com vs google.com
-\n– Predložite zamenu „http“ sa „https“
-\n- Predložite zamenu Youtube, Reddit ili Tvitter alternativama prilagođenim privatnosti [podrazumevano onemogućeno]</string>
+    <string name="mPttrn_desc">Ovaj modul proverava URL sa obrascima regex šablona koji upozorava, predlaže ili primenjuje zamene. Možete modifikovati ili kreirati sopstvene šablone, ili čak koristiti one koje kreiraju korisnici. \nUgrađeni obrasci uključuju: \n- Upozorenje kada sadrži znakove koji nisu ascii kao što su grčka slova. Ovo se može koristiti za phishing: googĺe.com vs google.com \n– Predložite zamenu „http“ sa „https“ \n- Predložite zamenu Youtube, Reddit ili Tvitter alternativama prilagođenim privatnosti [podrazumevano onemogućeno]</string>
     <string name="mPttrn_userContent">Lista drugih korisnih šablona koje su kreirali korisnici: %s</string>
     <string name="mPttrn_regexfix">Popravite opcionalne grupe regularnih izraza (onemogućite ako regex ne radi ispravno)</string>
     <string name="mPttrn_wrongSchemaHttps">Nevažeća upotreba velikih slova u https šemi.</string>
@@ -215,12 +190,7 @@
     <string name="mPttrn_editor">Ovde možete urediti ili dodati novi obrazac. Format: \n- \'encode\': boolean: podesite na tačno da biste kodirali URL pre provere redovnog izraza. \n- \'regex\': string: važeći java regularni izraz sa kojim URL mora da odgovara, inače se šablon preskače. \n- \'ekcludeRegex\': string: ako je naveden, važeći java regularni izraz sa kojim se URL ne sme podudarati, inače se šablon preskače. \n- \'replacement\': string|list: ako je navedeno, dugme \'fix\' će pokrenuti \'url=url.replaceAll(regex,replacement)\'. Ako je lista, zamena će biti nasumični element iz njega. \n- \'decode\': boolean: postaviti na tačno da bi se dekodirao zamenjeni URL. \n- \'automatski\': boolean: podesite na tačno da biste automatski primenili šablon. \n- \'enabled\': boolean: podesite na false da biste onemogućili šablon. \nNapomena: ako uredite šablone, novi ugrađeni šabloni iz ažuriranja aplikacija neće biti automatski dodani (možete ih vratiti pomoću opcije resetovanja).</string>
     <string name="mOpen_name">Otvori i podeli</string>
     <string name="mStatus_check">Proveri status</string>
-    <string name="mOpen_desc">Sadrži sledeća dugmad (s leva na desno):
-\n- Dugme Custom Tabs: prebacite se da biste omogućili/onemogućili funkciju prilagođene kartice. Kada je omogućeno, pretraživač treba da se otvori u „laganom“ režimu.
-\n- Dugme bez arhiviranja: Samo za Firefox. Prebacite da biste omogućili/onemogućili režim bez arhiviranja. Kada je omogućeno, pretraživač treba da se otvori u anonimnom režimu.
-\n- Dugme za otvaranje: Pritisnite naziv aplikacije da biste otvorili vezu na toj aplikaciji. Ako se veza može otvoriti sa više aplikacija, prikazaće se strelica koja vam omogućava da izaberete.
-\n- Dugme Kopiraj: Pritisnite dugme da biste kopirali vezu u međuspremnik.
-\n- Dugme za deljenje: Pritisnite dugme da biste podelili vezu.</string>
+    <string name="mOpen_desc">Sadrži sledeća dugmad (s leva na desno): \n- Dugme Custom Tabs: prebacite se da biste omogućili/onemogućili funkciju prilagođene kartice. Kada je omogućeno, pretraživač treba da se otvori u „laganom“ režimu. \n- Dugme bez arhiviranja: Samo za Firefox. Prebacite da biste omogućili/onemogućili režim bez arhiviranja. Kada je omogućeno, pretraživač treba da se otvori u anonimnom režimu. \n- Dugme za otvaranje: Pritisnite naziv aplikacije da biste otvorili vezu na toj aplikaciji. Ako se veza može otvoriti sa više aplikacija, prikazaće se strelica koja vam omogućava da izaberete. \n- Dugme Kopiraj: Pritisnite dugme da biste kopirali vezu u međuspremnik. \n- Dugme za deljenje: Pritisnite dugme da biste podelili vezu.</string>
     <string name="mOpen_perDomain">Različite domene sortiraj nezavisno</string>
     <string name="mOpen_rejected">Sakrij aplikaciju ako je URL odbijen (aplikacija odmah zahteva da otvori isti URL sa kojim je otvorena). Ne utiče na delenje.</string>
     <string name="mOpen_clipboard">URL je kopiran u međuspremnik</string>
@@ -238,11 +208,7 @@
     <string name="mVT_scan">Skeniraj</string>
     <string name="mVT_goodUrl">Nijedan od %1$d motora nije otkrio URL (od datuma %2$s)</string>
     <string name="mVT_error">Ne mogu da se povežem na VirusTotal. Uverite se da je API ključ važeći ili pokušajte ponovo kasnije.</string>
-    <string name="mD_desc">Ako promenite redosled modula, novi dodani u budućim ažuriranjima biće postavljeni iznad ovog.
-\n
-\nAko ovo omogućite, prikazaće se neki interni podaci za otklanjanje grešaka (kao što je originalni uri namere), korisno za programere.
-\n
-\nMožete da držite da izaberete tekst.</string>
+    <string name="mD_desc">Ako promenite redosled modula, novi dodani u budućim ažuriranjima biće postavljeni iznad ovog. \n \nAko ovo omogućite, prikazaće se neki interni podaci za otklanjanje grešaka (kao što je originalni uri namere), korisno za programere. \n \nMožete da držite da izaberete tekst.</string>
     <string name="mHist_desc">Kada se URL uredi, bilo ručno ili pomoću drugih modula, ovaj vam omogućava da vidite i vratite promene.</string>
     <string name="mClear_tm">Ugrađeni katalog kopiran sa ClearURL-ova: %s</string>
     <string name="mClear_clear">Primeni</string>
@@ -258,13 +224,8 @@
     <string name="mClear_hashHint">Nema heš provere</string>
     <string name="mClear_updated">Katalog je ažuriran</string>
     <string name="mClear_upToDate">Katalog je ažuran</string>
-    <string name="mRemove_desc">[ZASTARELO] Sa ovim modulom možete ukloniti upite sa URL-a.
-\nPritisnite dugme da biste ih sve uklonili ili pritisnite strelicu da biste uklonili jedno po jedno.
-\nHvala PabloOK-u na ideji i originalnoj implementaciji!
-\n
-\nOvaj modul je zastareo u korist modula \'Uri parts\'</string>
-    <string name="mClear_editor">Pravila kataloga: Moraju da prate format sa %s.
-\nImajte na umu da će svaka modifikacija nadređenog objekta \'provajderi\' biti prepisana ako se katalog ažurira automatski ili ručno iz dijaloga za ažuriranje. Da ih lična pravila postave u drugom nadređenom objektu (bilo koje ime).</string>
+    <string name="mRemove_desc">[ZASTARELO] Sa ovim modulom možete ukloniti upite sa URL-a. \nPritisnite dugme da biste ih sve uklonili ili pritisnite strelicu da biste uklonili jedno po jedno. \nHvala PabloOK-u na ideji i originalnoj implementaciji! \n \nOvaj modul je zastareo u korist modula \'Uri parts\'</string>
+    <string name="mClear_editor">Pravila kataloga: Moraju da prate format sa %s. \nImajte na umu da će svaka modifikacija nadređenog objekta \'provajderi\' biti prepisana ako se katalog ažurira automatski ili ručno iz dijaloga za ažuriranje. Da ih lična pravila postave u drugom nadređenom objektu (bilo koje ime).</string>
     <string name="mRemove_found">Pronađeno je %d upita</string>
     <string name="mRemove_one">Ukloni %s</string>
     <string name="mRemove_empty">Ukloni prazno</string>
@@ -273,29 +234,16 @@
     <string name="mHosts_desc">Ovaj modul označava hostove, konfigurisane ili njihovim navođenjem ručno ili korišćenjem datoteke nalik udaljenom hostu. Možete ga koristiti da upozorite na opasne ili posebne lokacije. Ugrađena konfiguracija navodi StevenBlackove hostove (adver/malver, lažne vesti, kockanje i sadržaj za odrasle) sa %s</string>
     <string name="mHosts_gambling">kockanje</string>
     <string name="mHosts_uninitialized">Baza podataka hostova nije inicijalizovana. Pritisnite da biste izgradili</string>
-    <string name="mHosts_editor">Konfiguracija Hosta. Format: Lista objekata gde je ključ oznaka hosta, a sadržaj uključuje sledeće opcione vrednosti:
-\n- datoteka: URL udaljene datoteke hostova za preuzimanje. Biće dodati svi važeći prisutni hostovi.
-\n- hostovi: Lista neobrađenih hostova (stringova) za dodavanje.
-\n- boja: Boja etikete. Niz boje za Android (#AARRGGBB, #RRGGBB ili važeći naziv boje). Podrazumevano je crvena \'opasnost\'.
-\n- zameni: ako lažni postojeći hostovi neće biti zamenjeni. Imajte na umu da se objekti procenjuju od vrha do dna. Podrazumevano tačno.
-\n- omogućeno: ako je netačno, ceo ovaj objekat će biti preskočen. Podrazumevano tačno.</string>
+    <string name="mHosts_editor">Konfiguracija Hosta. Format: Lista objekata gde je ključ oznaka hosta, a sadržaj uključuje sledeće opcione vrednosti: \n- datoteka: URL udaljene datoteke hostova za preuzimanje. Biće dodati svi važeći prisutni hostovi. \n- hostovi: Lista neobrađenih hostova (stringova) za dodavanje. \n- boja: Boja etikete. Niz boje za Android (#AARRGGBB, #RRGGBB ili važeći naziv boje). Podrazumevano je crvena \'opasnost\'. \n- zameni: ako lažni postojeći hostovi neće biti zamenjeni. Imajte na umu da se objekti procenjuju od vrha do dna. Podrazumevano tačno. \n- omogućeno: ako je netačno, ceo ovaj objekat će biti preskočen. Podrazumevano tačno.</string>
     <string name="mHosts_buildDesc">Ovo će obrisati trenutnu bazu podataka hostova i izgraditi je sa trenutnom konfiguracijom, preuzimajući datoteke hostova sa interneta ako je potrebno. Ova radnja može potrajati nekoliko sekundi. Nastaviti?</string>
     <string name="mHosts_buildSave">Čuvanje…</string>
-    <string name="mUnshort_desc">Ovaj modul će poništiti kratke veze tako što će ih poslati na %s, koji ih procenjuje na svojim serverima i čuva preusmeravanje za buduće zahteve. Izbegavajte ukidanje veza sa privatnim ili osetljivim podacima.
-\nNjihov API je ograničen na 10 zahteva na sat za nove provere. Odgovor modula će pokazati koliko zahteva imate na čekanju.</string>
+    <string name="mUnshort_desc">Ovaj modul će poništiti kratke veze tako što će ih poslati na %s, koji ih procenjuje na svojim serverima i čuva preusmeravanje za buduće zahteve. Izbegavajte ukidanje veza sa privatnim ili osetljivim podacima. \nNjihov API je ograničen na 10 zahteva na sat za nove provere. Odgovor modula će pokazati koliko zahteva imate na čekanju.</string>
     <string name="mUnshort_error">Greška servera: %s</string>
     <string name="mUnshort_internal">Interna greška (%s)</string>
     <string name="mFlag_editFlags">Uredite podrazumevane vrednosti zastava</string>
     <string name="mParts_name">Uri delovi</string>
-    <string name="mParts_desc">Ovaj modul prikazuje sve delove URL-a dekodirane: šemu, autoritet, putanje, upite i fragment.
-\nKlikom na deo biće postavljen kao novi URL, što je korisno na primer ako je jedan od upita ili putanja bio kodirani URL za preusmeravanje.
-\nDugim klikom na deo biće kopiran u međuspremnik.
-\nTakođe možete kliknuti na dugme \'Ks\' da biste uklonili neke od njih.
-\nOvo je napredna verzija modula „Uklanjanje upita“.</string>
-    <string name="mFlag_desc">[Beta funkcija] Ovo je napredni modul, omogućava vam da uređujete oznake namere kada otvarate drugu aplikaciju.
-\nOvaj modul će prikazati listu zastavica, možete promeniti da li je zastavica postavljena ili ne tako što ćete dodirnuti ikonu. Tu je i meni za prelivanje za sakrivanje zastavica, on je samo vizuelan, zastavice će i dalje koristiti dodeljeno stanje.
-\nZastavice će imati dva indikatora u boji pored polja za potvrdu. Leva pokazuje vrednost dobijenu od namere, desna označava stanje koje je postavio sam modul. Crvena znači da zastava nije postavljena, a zelena znači da je zastava postavljena. Dodatno, indikator preferencije može biti siv, što znači da je stanje podešeno na auto.
-\nPomoću dugmeta ispod možete da uredite podrazumevano stanje i vidljivost zastavica.</string>
+    <string name="mParts_desc">Ovaj modul prikazuje sve delove URL-a dekodirane: šemu, autoritet, putanje, upite i fragment. \nKlikom na deo biće postavljen kao novi URL, što je korisno na primer ako je jedan od upita ili putanja bio kodirani URL za preusmeravanje. \nDugim klikom na deo biće kopiran u međuspremnik. \nTakođe možete kliknuti na dugme \'Ks\' da biste uklonili neke od njih. \nOvo je napredna verzija modula „Uklanjanje upita“.</string>
+    <string name="mFlag_desc">[Beta funkcija] Ovo je napredni modul, omogućava vam da uređujete oznake namere kada otvarate drugu aplikaciju. \nOvaj modul će prikazati listu zastavica, možete promeniti da li je zastavica postavljena ili ne tako što ćete dodirnuti ikonu. Tu je i meni za prelivanje za sakrivanje zastavica, on je samo vizuelan, zastavice će i dalje koristiti dodeljeno stanje. \nZastavice će imati dva indikatora u boji pored polja za potvrdu. Leva pokazuje vrednost dobijenu od namere, desna označava stanje koje je postavio sam modul. Crvena znači da zastava nije postavljena, a zelena znači da je zastava postavljena. Dodatno, indikator preferencije može biti siv, što znači da je stanje podešeno na auto. \nPomoću dugmeta ispod možete da uredite podrazumevano stanje i vidljivost zastavica.</string>
     <string name="mParts_empty">(prazno)</string>
     <string name="mParts_copy">Deo je kopiran u međuspremnik</string>
     <string name="mDrawer_name">Fioka</string>

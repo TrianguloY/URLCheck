@@ -23,10 +23,7 @@
     <!--
         about
     -->
-    <string name="txt_about">Програму розробив %1$s.
-\n
-\nContributions: %2$s.
-\nTranslations: %3$s.</string>
+    <string name="txt_about">Програму розробив %1$s. \n \nContributions: %2$s. \nTranslations: %3$s.</string>
     <string name="link_blog">Блог %s</string>
     <!--
         configuration

@@ -22,10 +22,7 @@
     <!--
         about
     -->
-    <string name="txt_about">"Aplicación creada por %1$s.
-
-Contribuciones: %2$s.
-Traducciones: %3$s."</string>
+    <string name="txt_about">Aplicación creada por %1$s.\n\nContribuciones: %2$s.\nTraducciones: %3$s.</string>
     <string name="link_blog">Blog de %s</string>
     <string name="link_changelog">Cambios</string>
     <string name="link_source">Código fuente</string>
@@ -63,26 +60,11 @@ Traducciones: %3$s."</string>
         generic
     -->
     <string name="tutorial">Tutorial</string>
-    <string name="txt_tutorial1">"¡Gracias por descargar la aplicación!
-
-Este es el tutorial, si quieres saltarlo puedes hacerlo con el botón de debajo. Puedes volver a este tutorial siempre que quieras desde el menú de ajustes."</string>
+    <string name="txt_tutorial1">¡Gracias por descargar la aplicación!\n\nEste es el tutorial, si quieres saltarlo puedes hacerlo con el botón de debajo. Puedes volver a este tutorial siempre que quieras desde el menú de ajustes.</string>
     <string name="txt_tutorial2">La aplicación actúa como intermediaria cuando se abre o comparte un enlace. Una vez se envía un enlace a la aplicación puedes interactuar con él mediante los módulos. Tras ello puedes abrir el enlace (en la aplicación que quieras), compartirlo o copiarlo al portapapeles.</string>
-    <string name="txt_tutorial3">Configura la aplicación como navegador web predeterminado para interceptar las URL al abrirlas.
-\n(No es necesario si las URL se abren utilizando la funcionalidad \"Compartir\".)</string>
-    <string name="txt_tutorial4">Los módulos son la forma en que la aplicación interactúa con las URL.
-\nCada uno de los módulos tiene una función específica. Por lo general, presentan información sobre la URL, o permiten su modificación.
-\nLee sobre ellos y configúralos según sea necesario.
-\n
-\nImportante: Todas las acciones son manuales por defecto. La aplicación no modificará nada ni se conectará a Internet a menos que usted lo permita específicamente, pero algunas acciones pueden aplicarse automáticamente si lo desea.
-\n
-\nAbre la lista de módulos desde la pantalla principal, o pulsando el botón de abajo.</string>
-    <string name="txt_tutorial5">"Eso es todo. Aquí tienes algunos consejos que pueden ser útiles:
-
-Cuando una app no te da una forma de abrir o compartir un enlace, pero sí te una forma para hacer la otra puedes solventar este problema usando esta aplicación. También puedes copiar el enlace al portapapeles al mantener el botón de compartir.
-
-Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el enlace final puede ser abierto en una aplicación, entonces puedes evitar abrirlo en un navegador.
-
-¡Esperamos que la aplicación te resulte útil! No dudes en sugerir funcionalidades, reportar errores o proponer cambios. Puedes encontrar los todos los enlaces importantes en la pantalla 'Acerca de'."</string>
+    <string name="txt_tutorial3">Configura la aplicación como navegador web predeterminado para interceptar las URL al abrirlas. \n(No es necesario si las URL se abren utilizando la funcionalidad \"Compartir\".)</string>
+    <string name="txt_tutorial4">Los módulos son la forma en que la aplicación interactúa con las URL. \nCada uno de los módulos tiene una función específica. Por lo general, presentan información sobre la URL, o permiten su modificación. \nLee sobre ellos y configúralos según sea necesario. \n \nImportante: Todas las acciones son manuales por defecto. La aplicación no modificará nada ni se conectará a Internet a menos que usted lo permita específicamente, pero algunas acciones pueden aplicarse automáticamente si lo desea. \n \nAbre la lista de módulos desde la pantalla principal, o pulsando el botón de abajo.</string>
+    <string name="txt_tutorial5">Eso es todo. Aquí tienes algunos consejos que pueden ser útiles:\n\nCuando una app no te da una forma de abrir o compartir un enlace, pero sí te una forma para hacer la otra puedes solventar este problema usando esta aplicación. También puedes copiar el enlace al portapapeles al mantener el botón de compartir.\n\nHay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el enlace final puede ser abierto en una aplicación, entonces puedes evitar abrirlo en un navegador.\n\n¡Esperamos que la aplicación te resulte útil! No dudes en sugerir funcionalidades, reportar errores o proponer cambios. Puedes encontrar los todos los enlaces importantes en la pantalla \'Acerca de\'.</string>
     <string name="btn_tutorialSkip">Saltar tutorial</string>
     <string name="btn_tutorialEnd">Terminar tutorial</string>
     <string name="toast_noApp">No se puede abrir la aplicación</string>
@@ -126,30 +108,26 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="auto_desc">Con automatizaciones, puedes realizar acciones basadas en estados. Puedes configurar las automatizaciones aquí, o deshabilitarlas completamente usando el boton de debajo.</string>
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
-    <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
-    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista: si existe, una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular. Si se omite, todas las URL coincidirán.\n\- \'excludeRegex\': cadena|lista: si existe, una expresión regular de Java válida que la URL no debe coincidir para que se ejecute la automatización. Si es una lista, ninguna expresión regular debe coincidir. Si se omite, ninguna url se excluirá.\n- \'referrer\': cadena|lista: si existe, el referrer (la aplicación que abrió el enlace) debe coincidir de forma exacta. Si es una lista, el referrer debe ser uno de los valores. Si se omite, todas las URL coincidirán. Puedes usar el módulo de debug para comprobar el valor actual.\n- \'action\': cadena|lista, obligatoria: la clave de la automatización que se va a ejecutar. En caso de varias se ejecutarán en order. A continuación, se muestra una lista de todas las claves disponibles.\n- \'args\', objeto: valores que la acción puede necesitar, revisa la descripción de cada acción para los valores que aceptan. Ejemplo: { …, \"args\": { \"text\": \"ejemplo\" } }\n- \'stop\': booleano: si es verdadero, ninguna automatización más se ejecutará para la URL actual. Falso por defecto.\n- \'enabled\': booleano: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
+    <string name="auto_notFound">No hay ninguna automatización disponible con clave \'%s\'. Asegúrate de que es válida y el módulo que la incluye está activo.</string>
+    <string name="auto_editor">Configuración de automatizaciones. Formato: lista de objetos donde la clave es un nombre de automatización único y el contenido incluye los siguientes valores:\n- \'regex\': cadena|lista: si existe, una expresión regular de Java válida que la URL debe coincidir para que se ejecute la automatización. Si es una lista, debe coincidir al menos una expresión regular. Si se omite, todas las URL coincidirán.\n \'excludeRegex\': cadena|lista: si existe, una expresión regular de Java válida que la URL no debe coincidir para que se ejecute la automatización. Si es una lista, ninguna expresión regular debe coincidir. Si se omite, ninguna url se excluirá.\n- \'referrer\': cadena|lista: si existe, el referrer (la aplicación que abrió el enlace) debe coincidir de forma exacta. Si es una lista, el referrer debe ser uno de los valores. Si se omite, todas las URL coincidirán. Puedes usar el módulo de debug para comprobar el valor actual.\n- \'action\': cadena|lista, obligatoria: la clave de la automatización que se va a ejecutar. En caso de varias se ejecutarán en order. A continuación, se muestra una lista de todas las claves disponibles.\n- \'args\', objeto: valores que la acción puede necesitar, revisa la descripción de cada acción para los valores que aceptan. Ejemplo: { …, \"args\": { \"text\": \"ejemplo\" } }\n- \'stop\': booleano: si es verdadero, ninguna automatización más se ejecutará para la URL actual. Falso por defecto.\n- \'enabled\': booleano: si es falso, se omitirá esta automatización. Verdadero de forma predeterminada.</string>
     <string name="auto_available_prefix">Claves de automatizaciones disponibles:</string>
-    <string name="auto_available_disabled">"Este módulo está deshabilitado, las automatizaciones no se ejecutarán"</string>
+    <string name="auto_available_disabled">Este módulo está deshabilitado, las automatizaciones no se ejecutarán</string>
     <!-- -->
-    <string name="auto_open">"Abrirá el enlace. Si no se proporcionan 'args' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los 'args': 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
-    <string name="auto_share">"Compartirá el enlace. Equivalente a pulsar el botón de compartir."</string>
-    <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
-    <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
-    <string name="auto_ctabs">"Activará el modo de custom tabs. Equivalente a pulsar el boton de 'custom tabs' cuando está desactivado (incluso si está oculto)."</string>
+    <string name="auto_open">Abrirá el enlace. Si no se proporcionan \'args\' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton \'abrir\'). Si los \'args\': \'package\' y/o \'component\' se proporcionan, se usarán esos en su lugar.</string>
+    <string name="auto_share">Compartirá el enlace. Equivalente a pulsar el botón de compartir.</string>
+    <string name="auto_copy">Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de \'copiar\'</string>
+    <string name="auto_incognito">Activará el modo incógnito. Equivalente a pulsar el boton de \'incógnito\' cuando está desactivado (incluso si está oculto).</string>
+    <string name="auto_ctabs">Activará el modo de custom tabs. Equivalente a pulsar el boton de \'custom tabs\' cuando está desactivado (incluso si está oculto).</string>
     <string name="auto_checkStatus">Ejecutará la comprobación del estado. Equivalente a pulsar el botón de \'comprobar\'.</string>
     <string name="auto_unshort">Ejecutará el proceso de desacortar enlace. Equivalente a pulsar el botón de \'desacortar\'.</string>
     <string name="auto_scan">Escaneará el enlace. Equivalente a pulsar el botón \'escanear\'.</string>
-    <string name="auto_drawer">"Abrirá el cajón. Equivalente a pulsar el boton del cajón cuando está cerrado."</string>
+    <string name="auto_drawer">Abrirá el cajón. Equivalente a pulsar el boton del cajón cuando está cerrado.</string>
     <string name="auto_toast">Muestra un mensaje temporal con un texto fijo. El texo se provee como un \'args\' llamado \'text\'.</string>
     <!--
         modules
     -->
     <string name="mPttrn_name">Verificador de patrones</string>
-    <string name="mPttrn_desc">Este módulo comprueba la url con patrones regex para notificar, sugerir o aplicar reemplazos. Puedes modificar o crear tus propios patrones, o usar otros realizados por usuarios.
-\nPor defecto incluye:
-\n- Notifica si contiene caracteres no-ascii como letras griegas. Esto podría usarse para phishing: googĺe.com vs google.com.
-\n- Sugiere reemplazar \'http\' por \'https\'
-\n- Sugiere reeplazar Youtube, Reddit o Twitter con alternativas mas privadas [deshabilitado por defecto]</string>
+    <string name="mPttrn_desc">Este módulo comprueba la url con patrones regex para notificar, sugerir o aplicar reemplazos. Puedes modificar o crear tus propios patrones, o usar otros realizados por usuarios. \nPor defecto incluye: \n- Notifica si contiene caracteres no-ascii como letras griegas. Esto podría usarse para phishing: googĺe.com vs google.com. \n- Sugiere reemplazar \'http\' por \'https\' \n- Sugiere reeplazar Youtube, Reddit o Twitter con alternativas mas privadas [deshabilitado por defecto]</string>
     <string name="mPttrn_userContent">Listado de otros patrones útiles creados por usuarios: %s</string>
     <string name="mPttrn_fix">Aplicar</string>
     <string name="mPttrn_fixed">Aplicado - %s</string>
@@ -159,24 +137,11 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mPttrn_noSchemeHttp">Falta esquema HTTP.</string>
     <string name="mPttrn_noSchemeHttps">Falta esquema HTTPS.</string>
     <string name="mPttrn_ok">No hay patrones coincidentes</string>
-    <string name="mPttrn_editor">Aquí puedes editar o agregar un nuevo patrón. Formato:
-\n- \'encode\': boolean: establecido en verdadero para codificar la url antes de verificar la expresión regular.
-\n- \'regex\': string|lista: una expresión regular de Java válida que la URL debe coincidir; de lo contrario, se omite el patrón. Si es una lista, al menos un regex debe coincidir. Si no se proporciona, la url completa coincidirá.
-\n- \'excludeRegex\': string|lista: si se proporciona, una expresión regular de Java válida y que la URL no debe coincidir; de lo contrario, se omite el patrón. Si es una lista, y al menos un regex coincide, el pattern se omitirá.
-\n- \'replacement\': string|list: si se proporciona, el botón \'fix\' ejecutará la \'url=url.replaceAll(regex,replacement)\'. [si regex era lista, se usará el primer patrón en coincidir]. Si es una lista, el reemplazo será un elemento aleatorio de la misma.
-\n- \'decode\': boolean: establecido en verdadero para decodificar la url reemplazada.
-\n- \'automatic\': boolean: establecido en verdadero para aplicar automáticamente el patrón.
-\n- \'enabled\': boolean: establecido en falso para deshabilitar el patrón.
-\nNota: si edita los patrones, los nuevos patrones incorporados de las actualizaciones de la aplicación no se agregarán automáticamente (puedes restaurarlos con la opción de reinicio).</string>
+    <string name="mPttrn_editor">Aquí puedes editar o agregar un nuevo patrón. Formato: \n- \'encode\': boolean: establecido en verdadero para codificar la url antes de verificar la expresión regular. \n- \'regex\': string|lista: una expresión regular de Java válida que la URL debe coincidir; de lo contrario, se omite el patrón. Si es una lista, al menos un regex debe coincidir. Si no se proporciona, la url completa coincidirá. \n- \'excludeRegex\': string|lista: si se proporciona, una expresión regular de Java válida y que la URL no debe coincidir; de lo contrario, se omite el patrón. Si es una lista, y al menos un regex coincide, el pattern se omitirá. \n- \'replacement\': string|list: si se proporciona, el botón \'fix\' ejecutará la \'url=url.replaceAll(regex,replacement)\'. [si regex era lista, se usará el primer patrón en coincidir]. Si es una lista, el reemplazo será un elemento aleatorio de la misma. \n- \'decode\': boolean: establecido en verdadero para decodificar la url reemplazada. \n- \'automatic\': boolean: establecido en verdadero para aplicar automáticamente el patrón. \n- \'enabled\': boolean: establecido en falso para deshabilitar el patrón. \nNota: si edita los patrones, los nuevos patrones incorporados de las actualizaciones de la aplicación no se agregarán automáticamente (puedes restaurarlos con la opción de reinicio).</string>
     <!-- -->
     <string name="mOpen_name">Abrir y compartir</string>
-    <string name="mOpen_desc">Contiene los siguientes botones (de izquierda a derecha):
-\n- Botón Pestañas personalizadas: alterne para activar/desactivar la función de pestañas personalizadas (custom tabs). Cuando está habilitado, el navegador debe abrirse en un modo \'lite\'.
-\n- Botón de incógnito: solo para Firefox. Alterne para habilitar/deshabilitar el modo de incógnito. Cuando está habilitado, el navegador debe abrirse en modo incógnito.
-\n- Botón Abrir: Presione el nombre de la aplicación para abrir el enlace en esa aplicación. Si un enlace se puede abrir con varias aplicaciones, se mostrará una flecha para que pueda elegir.
-\n- Botón copiar: Presione el botón para copiar el enlace en el portapapeles.
-\n- Botón Compartir: Presione el botón para compartir el enlace.</string>
-    <string name="mOpen_ctabs">"'Custom tabs':"</string>
+    <string name="mOpen_desc">Contiene los siguientes botones (de izquierda a derecha): \n- Botón Pestañas personalizadas: alterne para activar/desactivar la función de pestañas personalizadas (custom tabs). Cuando está habilitado, el navegador debe abrirse en un modo \'lite\'. \n- Botón de incógnito: solo para Firefox. Alterne para habilitar/deshabilitar el modo de incógnito. Cuando está habilitado, el navegador debe abrirse en modo incógnito. \n- Botón Abrir: Presione el nombre de la aplicación para abrir el enlace en esa aplicación. Si un enlace se puede abrir con varias aplicaciones, se mostrará una flecha para que pueda elegir. \n- Botón copiar: Presione el botón para copiar el enlace en el portapapeles. \n- Botón Compartir: Presione el botón para compartir el enlace.</string>
+    <string name="mOpen_ctabs">\'Custom tabs\':</string>
     <string name="defaultOn">Activado por defecto</string>
     <string name="defaultOff">Desactivado por defecto</string>
     <string name="alwaysOn">Siempre activado</string>
@@ -192,7 +157,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mOpen_share">Compartir</string>
     <string name="mOpen_clipboard">URL copiada en el portapapeles</string>
     <string name="mOpen_noapps">Sin aplicaciones</string>
-    <string name="mOpen_tabsDesc">"Activa/desactiva 'custom tabs'"</string>
+    <string name="mOpen_tabsDesc">Activa/desactiva \'custom tabs\'</string>
     <!-- -->
     <string name="mStatus_name">Código de estado</string>
     <string name="mStatus_desc">Al pulsar sobre el botón de verificación, se realizará una solicitud a la red para recuperar y mostrar el código de estado de la página. Si el resultado es una redirección, podrás ver la URL de destino. El contenido de la URL se obtiene (GET), pero no se evalúa, por lo que no se detectarán las redirecciones basadas en JavaScript.</string>
@@ -247,11 +212,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mVt_detections">Detecciones:</string>
     <!-- -->
     <string name="mD_name">Módulo debug/marcador</string>
-    <string name="mD_desc">Si reordenas los módulos, los nuevos que se añadan en futuras actualizaciones se colocarán encima de éste.
-\n
-\nSi habilitas esta opción, se mostrarán algunos datos de depuración internos (como la uri de la intención original), útil para los desarrolladores.
-\n
-\nPuede mantener pulsado para seleccionar el texto.</string>
+    <string name="mD_desc">Si reordenas los módulos, los nuevos que se añadan en futuras actualizaciones se colocarán encima de éste. \n \nSi habilitas esta opción, se mostrarán algunos datos de depuración internos (como la uri de la intención original), útil para los desarrolladores. \n \nPuede mantener pulsado para seleccionar el texto.</string>
     <string name="mD_ctabs">Mostrar mensajes de debug del servicio custom tabs</string>
     <string name="mD_show">Cargar datos de depuración</string>
     <!-- -->
@@ -291,8 +252,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mClear_hashError">No se ha podido descargar el hash, comprueba que la url es correcta y que tienes acceso a internet</string>
     <string name="mClear_hashMismatch">Los hash no coinciden, el archivo puede haber sido manipulado. Si desea omitir la comprobación, elimine la URL del hash</string>
     <string name="mClear_restore">Restaurar direcciones de ClearURLs</string>
-    <string name="mClear_editor">Catálogo de reglas: deben seguir el formato definido en %s.
-\nTen en cuenta que las modificaciones del objeto principal \'providers\' serán sobreescritas al actualizar el catálogo automática o manualmente desde la ventana del actualizador. Para añadir reglas personales inclúyelas en un objeto padre distinto (cualquier nombre).</string>
+    <string name="mClear_editor">Catálogo de reglas: deben seguir el formato definido en %s. \nTen en cuenta que las modificaciones del objeto principal \'providers\' serán sobreescritas al actualizar el catálogo automática o manualmente desde la ventana del actualizador. Para añadir reglas personales inclúyelas en un objeto padre distinto (cualquier nombre).</string>
     <!-- -->
     <string name="mRemove_name">Eliminador de parámetros</string>
     <string name="mRemove_desc">[OBSOLETO] Con este módulo puedes eliminar consultas de la URL.\nPresione el botón para eliminarlos todos o presione la flecha para eliminarlos uno a la vez.\n¡Gracias a PabloOQ por la idea y la implementación original!\n\nEste módulo ha quedado obsoleto en favor del módulo \'Partes Uri\'</string>
@@ -310,7 +270,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mLog_empty">Sin datos</string>
     <!-- -->
     <string name="mHosts_name">Etiquetador de hosts</string>
-    <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de %s. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
+    <string name="mHosts_desc">Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de %s. Nota: subdominios también se comprobarán, con lo que \'x.y.z\' e \'y.z\' serán detectados para la entrada \'y.z\'</string>
     <string name="mHosts_tm">Hosts de StevenBlack de %s</string>
     <string name="mHosts_malware">software dañino</string>
     <string name="mHosts_info">Host:</string>
@@ -321,18 +281,13 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mHosts_build">Generar</string>
     <string name="mHosts_uninitialized">Catálogo de hosts sin inicializar. Pulsa para generarlo</string>
     <string name="mHosts_parseError">No se puede analizar la URL del host</string>
-    <string name="mHosts_editor">Configuración de hosts. Formato: Lista de objectos en los que la clave es la etiqueta de los hosts y el contenido incluye los siguientes campos opcionales:
-\n- file: Enlace a un fichero remoto tipo hosts para descargar. Todos los hosts válidos que incluya serán añadidos. Las líneas deben seguir el formato host: \'ip host [alias…]\', aunque aquellas con solo \'host\' también son validas.
-\n- hosts: Lista de hosts (strings) para añadir.
-\n- color: El color de la etiqueta. Un string de color de Android (#AARRGGBB, #RRGGBB o un color válido). Rojo \'peligro\' por defecto.
-\n- replace: si es \'false\' hosts existentes no serán reemplazados. Notar que los objetos se evalúan de arriba a abajo. \'true\' por defecto.
-\n- enabled: si es \'false\' el objeto entero se ignorará. \'true\' por defecto.</string>
+    <string name="mHosts_editor">Configuración de hosts. Formato: Lista de objectos en los que la clave es la etiqueta de los hosts y el contenido incluye los siguientes campos opcionales: \n- file: Enlace a un fichero remoto tipo hosts para descargar. Todos los hosts válidos que incluya serán añadidos. Las líneas deben seguir el formato host: \'ip host [alias…]\', aunque aquellas con solo \'host\' también son validas. \n- hosts: Lista de hosts (strings) para añadir. \n- color: El color de la etiqueta. Un string de color de Android (#AARRGGBB, #RRGGBB o un color válido). Rojo \'peligro\' por defecto. \n- replace: si es \'false\' hosts existentes no serán reemplazados. Notar que los objetos se evalúan de arriba a abajo. \'true\' por defecto. \n- enabled: si es \'false\' el objeto entero se ignorará. \'true\' por defecto.</string>
     <string name="mHosts_buildTitle">Generar catálogo de hosts</string>
     <string name="mHosts_buildDesc">Esto eliminará el catálogo actual y lo generará con la configuración actual, descargando ficheros de hosts de internet si es necesario. Esta acción puede durar varios segundos. ¿Continuar?</string>
     <string name="mHosts_buildProgress">Generando base de datos</string>
     <string name="mHosts_buildInit">Inicializando</string>
     <string name="mHosts_buildClear">Borrando…</string>
-    <string name="mHosts_buildDownload">"Descargando '%1$s' hosts de %2$s…"</string>
+    <string name="mHosts_buildDownload">Descargando \'%1$s\' hosts de %2$s…</string>
     <string name="mHosts_buildSave">Guardando…</string>
     <string name="mHosts_built">Base de datos construida: %d hosts</string>
     <string name="btn_tutorialSettings">Repetir tutorial</string>
@@ -352,18 +307,11 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mUnshort_ok">Desacortado</string>
     <!-- -->
     <string name="mFlags_name">Editor de flags</string>
-    <string name="mFlag_desc">[Funcionalidad beta] Este es un módulo avanzado que te permite editar las marcas del intent al abrir otra aplicación.
-\nEste módulo mostrará una lista de marcas, se puede cambiar si la marca se establece o no tocando el icono. También hay un menú de desbordamiento para ocultar las marcas allí, es sólo visual, las marcas seguirán utilizando el estado asignado.
-\nLas marcas tendrán dos indicadores de color junto a la casilla de verificación. El de la izquierda muestra el valor recibido del intent, el de la derecha indica el estado establecido por el propio módulo. Rojo significa que la marca no está establecida y verde significa que sí lo está. Adicionalmente, el indicador puede ser gris, que significa que el estado se estableció en automático.
-\nCon el botón de abajo puede editar el estado por defecto y la visibilidad de las marcas.</string>
+    <string name="mFlag_desc">[Funcionalidad beta] Este es un módulo avanzado que te permite editar las marcas del intent al abrir otra aplicación. \nEste módulo mostrará una lista de marcas, se puede cambiar si la marca se establece o no tocando el icono. También hay un menú de desbordamiento para ocultar las marcas allí, es sólo visual, las marcas seguirán utilizando el estado asignado. \nLas marcas tendrán dos indicadores de color junto a la casilla de verificación. El de la izquierda muestra el valor recibido del intent, el de la derecha indica el estado establecido por el propio módulo. Rojo significa que la marca no está establecida y verde significa que sí lo está. Adicionalmente, el indicador puede ser gris, que significa que el estado se estableció en automático. \nCon el botón de abajo puede editar el estado por defecto y la visibilidad de las marcas.</string>
     <string name="mFlag_editFlags">Editar los valores por defecto de los marcadores</string>
     <!-- -->
     <string name="mParts_name">Partes de la URI</string>
-    <string name="mParts_desc">Este módulo muestra todas las partes de la url decodificadas: esquema, autoridad, rutas, consultas y fragmento.
-\nAl hacer clic en una parte, se establecerá como la nueva URL, útil por ejemplo si una de las consultas o rutas era una URL de redirección codificada.
-\nAl hacer clic largo en una parte, se copiará en el portapapeles.
-\nTambién puede hacer clic en el botón \'X\' para eliminar algunos de ellos.
-\nEsta es una versión avanzada del módulo \'Eliminador de consultas\'.</string>
+    <string name="mParts_desc">Este módulo muestra todas las partes de la url decodificadas: esquema, autoridad, rutas, consultas y fragmento. \nAl hacer clic en una parte, se establecerá como la nueva URL, útil por ejemplo si una de las consultas o rutas era una URL de redirección codificada. \nAl hacer clic largo en una parte, se copiará en el portapapeles. \nTambién puede hacer clic en el botón \'X\' para eliminar algunos de ellos. \nEsta es una versión avanzada del módulo \'Eliminador de consultas\'.</string>
     <string name="mOpen_incognito">Modo incógnito:</string>
     <string name="mOpen_incognitoDesc">Alternar el modo de incógnito (solo para Firefox)</string>
     <string name="mOpen_closeCopy">Cierra la ventana después de copiar</string>

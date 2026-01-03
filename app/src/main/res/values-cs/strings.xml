@@ -7,10 +7,7 @@
     <string name="a_modules">Moduly</string>
     <string name="a_settings">Nastavení</string>
     <string name="a_about">O aplikaci</string>
-    <string name="txt_about">Aplikaci vytvořil %1$s.
-\n
-\nPřispěli: %2$s.
-\nPřeložili: %3$s.</string>
+    <string name="txt_about">Aplikaci vytvořil %1$s. \n \nPřispěli: %2$s. \nPřeložili: %3$s.</string>
     <string name="link_blog">Blog %s</string>
     <string name="link_source">Zdrojový kód</string>
     <string name="link_privacy">Ochrana osobních údajů</string>
@@ -32,8 +29,7 @@
     <string name="btn_tutorialSettings">Opakovat návod</string>
     <string name="tutorial">Návod</string>
     <string name="btn_androidSettings">Nastavení aplikace (Android)</string>
-    <string name="txt_tutorial3">Nastavte aplikaci jako výchozí webový prohlížeč, aby zachytil adresy URL při jejich otevírání.
-\n(Není potřeba, pokud jsou adresy URL přesměrovány pomocí funkce „Sdílet“.)</string>
+    <string name="txt_tutorial3">Nastavte aplikaci jako výchozí webový prohlížeč, aby zachytil adresy URL při jejich otevírání. \n(Není potřeba, pokud jsou adresy URL přesměrovány pomocí funkce „Sdílet“.)</string>
     <string name="btn_tutorialSkip">Přeskočit návod</string>
     <string name="btn_tutorialEnd">Uzavřít návod</string>
     <string name="toast_noApp">Aplikaci není možno otevřít</string>
@@ -65,12 +61,7 @@
     <string name="mPttrn_noSchemeHttps">Chybí/Neodpovídá HTTPS schéma.</string>
     <string name="mPttrn_ok">Odpovídající vzor nenalezen</string>
     <string name="mOpen_name">Otevřít a sdílet</string>
-    <string name="mOpen_desc">Obsahuje následující tlačítka (zleva doprava):
-\n- Tlačítko Vlastní karty: zapnutí/vypnutí funkce vlastní karty. Je-li povoleno, prohlížeč by se měl otevřít v režimu \"lite\".
-\n- Tlačítko Inkognito: Pouze pro Firefox. Přepínačem povolíte/zakážete anonymní režim. Je-li povoleno, měl by být prohlížeč otevřen v anonymním režimu.
-\n- Tlačítko Otevřít: Stisknutím názvu aplikace otevřete odkaz na danou aplikaci. Pokud lze odkaz otevřít ve více aplikacích, zobrazí se šipka, abyste si mohli vybrat.
-\n- Tlačítko Kopírovat: Stisknutím tlačítka zkopírujete odkaz do schránky.
-\n- Tlačítko Sdílet: Stisknutím tlačítka můžete odkaz sdílet.</string>
+    <string name="mOpen_desc">Obsahuje následující tlačítka (zleva doprava): \n- Tlačítko Vlastní karty: zapnutí/vypnutí funkce vlastní karty. Je-li povoleno, prohlížeč by se měl otevřít v režimu \"lite\". \n- Tlačítko Inkognito: Pouze pro Firefox. Přepínačem povolíte/zakážete anonymní režim. Je-li povoleno, měl by být prohlížeč otevřen v anonymním režimu. \n- Tlačítko Otevřít: Stisknutím názvu aplikace otevřete odkaz na danou aplikaci. Pokud lze odkaz otevřít ve více aplikacích, zobrazí se šipka, abyste si mohli vybrat. \n- Tlačítko Kopírovat: Stisknutím tlačítka zkopírujete odkaz do schránky. \n- Tlačítko Sdílet: Stisknutím tlačítka můžete odkaz sdílet.</string>
     <string name="mOpen_ctabs">Vlastní karty:</string>
     <string name="mOpen_incognito">Režim Inkognito:</string>
     <string name="mOpen_closeOpen">Zavřít okno po otevření</string>
@@ -104,42 +95,20 @@
     <string name="mVT_goodUrl">Žádný z %1$d vyhledávačů tuto adresu URL nenahlásilo (k datu %2$s)</string>
     <string name="mD_name">Pro ladění</string>
     <string name="mDrawer_desc">Všechny moduly pod tímto budou skryty v šuplíku. Moduly budou stále fungovat, ale budou skryté, dokud šuplík neotevřete. Zde můžete umístit moduly, které používáte zřídka, abyste se vyhnuli nepořádku.</string>
-    <string name="mRemove_desc">[DEPRECATED] Pomocí tohoto modulu můžete odstranit dotazy z adresy URL.
-\nStisknutím tlačítka je odeberete všechny nebo stisknutím šipky odeberete jeden po druhém.
-\nDěkujeme PabloOQ za nápad a originální realizaci!
-\n
-\nTento modul byl zastaralý ve prospěch modulu \'Uri parts\'</string>
+    <string name="mRemove_desc">[DEPRECATED] Pomocí tohoto modulu můžete odstranit dotazy z adresy URL. \nStisknutím tlačítka je odeberete všechny nebo stisknutím šipky odeberete jeden po druhém. \nDěkujeme PabloOQ za nápad a originální realizaci! \n \nTento modul byl zastaralý ve prospěch modulu \'Uri parts\'</string>
     <string name="mPttrn_editor">Zde můžete upravit nebo přidat nový vzor. Formát: \n- \'encode\': boolean: Nastavte hodnotu true pro zakódování URL před kontrolou regulárních výrazů (regex). \n- \'regex\': řetězec: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen. \n- \'excludeRegex\': řetězec: je-li zadán, platný java regex, kterému url nesmí odpovídat – jinak je vzor přeskočen. \n- \'replacement\': řetězec|seznam: je-li zadáno, tlačítko \'fix\' spustí \'url=url.replaceAll(regex,replacement)\'. Pokud je uveden seznam, bude náhradou náhodný prvek z něj. \n- \'decode\': boolean: nastavte na true pro dekódování nahrazené url. \n- \'automatic\': boolean: nastavte na true pro automatické použití vzoru. \n- \'enabled\': boolean: nastavte na false, abyste vzor deaktivovali. \nPoznámka: Pokud si vzory upravíte, nové výchozí vzory z aktualizací aplikace se automaticky nepřidají (můžete je obnovit pomocí možnosti reset).</string>
     <string name="mOpen_with">Otevřít v %s</string>
     <string name="json_editor">Pokročilý editor</string>
     <string name="link_changelog">Seznam změn</string>
     <string name="txt_conf">Zde jsou uvedeny všechny dostupné moduly, u kterých si můžete zkontrolovat jejich popis a nastavení. Můžete také změnit jejich pořadí, přepnout viditelnost názvu či je povolit/zakázat.</string>
     <string name="txt_openLinks">Otevírání odkazů v této aplikaci: V průběhu let Android změnil způsob nastavení otevírání odkazů a značně se tak liší mezi jednotlivými verzemi. Níže najdete výběr možných kroků nastavení pro vaše zařízení. Pokud se odkazy v této aplikaci neotevírají, vyzkoušejte je všechny.</string>
-    <string name="txt_tutorial1">Děkujeme za stažení aplikace!
-\n
-\nToto je návod, pokud jej chcete přeskočit, můžete tak učinit pomocí tlačítka níže. K tomuto návodu se můžete kdykoli vrátit z nabídky nastavení.</string>
+    <string name="txt_tutorial1">Děkujeme za stažení aplikace! \n \nToto je návod, pokud jej chcete přeskočit, můžete tak učinit pomocí tlačítka níže. K tomuto návodu se můžete kdykoli vrátit z nabídky nastavení.</string>
     <string name="txt_tutorial2">Aplikace funguje jako prostředník při otevírání nebo sdílení URL odkazů. Jakmile je do aplikace odeslána adresa URL, můžete s ní komunikovat prostřednictvím modulů. Poté můžete odkaz otevřít (v požadované aplikaci), sdílet jej nebo zkopírovat do schránky.</string>
-    <string name="txt_tutorial5">To je vše. Zde je několik tipů, které mohou být užitečné:
-\n
-\nKdyž vám aplikace neumožňuje otevřít nebo sdílet adresu URL, ale poskytuje vám způsob, jak to udělat jinak, můžete problém vyřešit pomocí této aplikace. Adresu URL můžete také zkopírovat do schránky dlouhým stisknutím tlačítka sdílení.
-\n
-\nExistují některé adresy URL, jejichž jediným účelem je přesměrovat vás na jinou adresu URL. Pokud lze cílovou adresu URL otevřít v aplikaci, můžete se vyhnout jejímu otevření v prohlížeči.
-\n
-\nDoufám, že vám aplikace bude užitečná! A neváhejte navrhovat funkce, hlásit chyby nebo dokonce přímo navrhovat změny. Všechny relevantní odkazy naleznete na obrazovce O aplikaci.</string>
-    <string name="txt_tutorial4">Moduly slouží k interakci aplikace s adresami URL.
-\nKaždý z modulů má specifickou funkci. Obvykle slouží k prezentaci informací o adrese URL nebo k její úpravě.
-\nPřečtěte si o nich a nastavte si je podle potřeby.
-\n
-\nDůležité: Ve výchozím nastavení jsou všechny akce manuální. Aplikace nebude nic upravovat ani se připojovat k internetu, pokud to výslovně nepovolíte, ale některé akce lze v případě potřeby aplikovat automaticky.
-\n
-\nSeznam modulů otevřete na hlavní obrazovce nebo klepnutím na tlačítko níže.</string>
+    <string name="txt_tutorial5">To je vše. Zde je několik tipů, které mohou být užitečné: \n \nKdyž vám aplikace neumožňuje otevřít nebo sdílet adresu URL, ale poskytuje vám způsob, jak to udělat jinak, můžete problém vyřešit pomocí této aplikace. Adresu URL můžete také zkopírovat do schránky dlouhým stisknutím tlačítka sdílení. \n \nExistují některé adresy URL, jejichž jediným účelem je přesměrovat vás na jinou adresu URL. Pokud lze cílovou adresu URL otevřít v aplikaci, můžete se vyhnout jejímu otevření v prohlížeči. \n \nDoufám, že vám aplikace bude užitečná! A neváhejte navrhovat funkce, hlásit chyby nebo dokonce přímo navrhovat změny. Všechny relevantní odkazy naleznete na obrazovce O aplikaci.</string>
+    <string name="txt_tutorial4">Moduly slouží k interakci aplikace s adresami URL. \nKaždý z modulů má specifickou funkci. Obvykle slouží k prezentaci informací o adrese URL nebo k její úpravě. \nPřečtěte si o nich a nastavte si je podle potřeby. \n \nDůležité: Ve výchozím nastavení jsou všechny akce manuální. Aplikace nebude nic upravovat ani se připojovat k internetu, pokud to výslovně nepovolíte, ale některé akce lze v případě potřeby aplikovat automaticky. \n \nSeznam modulů otevřete na hlavní obrazovce nebo klepnutím na tlačítko níže.</string>
     <string name="back">Zpět</string>
     <string name="shortcut_checkClipboard">Najít URL odkaz(y) ve schránce</string>
-    <string name="mPttrn_desc">Tento modul kontroluje adresu URL pomocí vzorů regulárních výrazů (regex), které varují, navrhují či nahrazují. Můžete upravovat nebo vytvářet své vlastní vzory, nebo dokonce používat ty vytvořené uživatelem.
-\nMezi vestavěné vzory patří:
-\n- Upozornění, když odkaz obsahuje znaky jiné než ASCII, jako jsou řecká písmena. Toto lze použít pro phishing: googĺe.com vs google.com
-\n- Navrhování záměny „https“ za „http“
-\n- Navrhování záměny Youtube, Reddit nebo Twitter odkazů za alternativy šetrné k ochraně soukromí [ve výchozím nastavení vypnuto]</string>
+    <string name="mPttrn_desc">Tento modul kontroluje adresu URL pomocí vzorů regulárních výrazů (regex), které varují, navrhují či nahrazují. Můžete upravovat nebo vytvářet své vlastní vzory, nebo dokonce používat ty vytvořené uživatelem. \nMezi vestavěné vzory patří: \n- Upozornění, když odkaz obsahuje znaky jiné než ASCII, jako jsou řecká písmena. Toto lze použít pro phishing: googĺe.com vs google.com \n- Navrhování záměny „https“ za „http“ \n- Navrhování záměny Youtube, Reddit nebo Twitter odkazů za alternativy šetrné k ochraně soukromí [ve výchozím nastavení vypnuto]</string>
     <string name="mOpen_noReferrer">Skrýt zdrojovou aplikaci (referrer)</string>
     <string name="mOpen_open">Otevřít</string>
     <string name="mOpen_share">Sdílet</string>
@@ -149,24 +118,12 @@
     <string name="mHosts_desc">Tento modul označuje hostitele, konfigurované buď jejich ručním zadáním, nebo pomocí souboru podobného vzdálenému \'hosts\'. Můžete jej použít k varování před nebezpečnými nebo speciálními stránkami. Vestavěná konfigurace určuje hostitele dle StevenBlack (adware/malware, falešné zprávy, hazardní hry a obsah pro dospělé) z %s</string>
     <string name="mVT_error">Nelze se připojit k VirusTotal. Ujistěte se, že je klíč API platný, nebo to zkuste znovu později.</string>
     <string name="mLog_desc">Tento modul zaznamenává všechny kontrolované adresy URL. Zde můžete zobrazit, vymazat nebo upravit celý protokol (historii), v hlavním dialogu se neobjeví žádná vizuální indikace. Chcete-li zakázat protokolování, deaktivujte modul.</string>
-    <string name="mD_desc">Pokud změníte pořadí modulů, nové přidané (z budoucích aktualizací) budou umístěny nad tento modul.
-\n
-\nPokud jej povolíte, zobrazí se některá vnitřní ladicí data (např. původní intent URI), užitečná pro vývojáře.
-\n
-\nPodržením pak vyberete text.</string>
+    <string name="mD_desc">Pokud změníte pořadí modulů, nové přidané (z budoucích aktualizací) budou umístěny nad tento modul. \n \nPokud jej povolíte, zobrazí se některá vnitřní ladicí data (např. původní intent URI), užitečná pro vývojáře. \n \nPodržením pak vyberete text.</string>
     <string name="mHist_desc">Když je adresa URL upravena, ať už ručně, nebo pomocí jiných modulů, je tímto modulem možno zobrazit a vrátit změny.</string>
     <string name="mClear_desc">Tento modul odstraňuje z adresy URL sledování, referrer (doporučitel) a další zbytečné parametry. Umožňuje také běžná offline přesměrování URL.</string>
-    <string name="mUnshort_desc">Tento modul rozbalí odkazy odesláním na %s, který je vyhodnotí na svých serverech a uloží přesměrování pro budoucí žádosti. Vyhněte se zkracování odkazů se soukromými nebo citlivými daty.
-\nJejich rozhraní API je omezeno na 10 žádostí za hodinu, pokud ještě nebyl zkontrolován. Odpověď modulu ukáže, kolik žádostí máte nevyřízených.</string>
-    <string name="mFlag_desc">[Funkce beta] Toto je pokročilý modul, který vám umožňuje upravovat \'intent flag\' při otevírání jiné aplikace.
-\nTento modul zobrazí seznam příznaků, klepnutím na ikonu můžete změnit, zda je příznak nastaven nebo ne. K dispozici je také rozbalovací nabídka pro skrytí příznaků, je pouze vizuální, příznaky budou stále používat přiřazený stav.
-\nPříznaky budou mít vedle zaškrtávacího políčka dva barevné indikátory. Levý ukazuje hodnotu přijatou ze záměru (\'intent\'), pravý ukazuje stav nastavený modulem samotným. Červená znamená, že příznak není nastaven a zelená znamená, že je. Indikátor preference může být navíc šedý, to znamená, že stav byl nastaven na auto.
-\nPomocí tlačítka níže můžete upravit výchozí stav a viditelnost příznaků.</string>
-    <string name="mParts_desc">Tento modul zobrazuje všechny části dekódované adresy URL: schéma, oprávnění, cesty, dotazy a fragment.
-\nKliknutím na její díl bude nastavena jakožto nová adresa URL, což je užitečné například v případě, že jeden z dotazů/cest byl zakódován v adrese URL pro přesměrování.
-\nDlouhým kliknutím na díl se zkopíruje do schránky.
-\nNěkteré z nich můžete také odstranit kliknutím na tlačítko \'X\'.
-\nToto je pokročilá verze modulu \'Queries Remover\'.</string>
+    <string name="mUnshort_desc">Tento modul rozbalí odkazy odesláním na %s, který je vyhodnotí na svých serverech a uloží přesměrování pro budoucí žádosti. Vyhněte se zkracování odkazů se soukromými nebo citlivými daty. \nJejich rozhraní API je omezeno na 10 žádostí za hodinu, pokud ještě nebyl zkontrolován. Odpověď modulu ukáže, kolik žádostí máte nevyřízených.</string>
+    <string name="mFlag_desc">[Funkce beta] Toto je pokročilý modul, který vám umožňuje upravovat \'intent flag\' při otevírání jiné aplikace. \nTento modul zobrazí seznam příznaků, klepnutím na ikonu můžete změnit, zda je příznak nastaven nebo ne. K dispozici je také rozbalovací nabídka pro skrytí příznaků, je pouze vizuální, příznaky budou stále používat přiřazený stav. \nPříznaky budou mít vedle zaškrtávacího políčka dva barevné indikátory. Levý ukazuje hodnotu přijatou ze záměru (\'intent\'), pravý ukazuje stav nastavený modulem samotným. Červená znamená, že příznak není nastaven a zelená znamená, že je. Indikátor preference může být navíc šedý, to znamená, že stav byl nastaven na auto. \nPomocí tlačítka níže můžete upravit výchozí stav a viditelnost příznaků.</string>
+    <string name="mParts_desc">Tento modul zobrazuje všechny části dekódované adresy URL: schéma, oprávnění, cesty, dotazy a fragment. \nKliknutím na její díl bude nastavena jakožto nová adresa URL, což je užitečné například v případě, že jeden z dotazů/cest byl zakódován v adrese URL pro přesměrování. \nDlouhým kliknutím na díl se zkopíruje do schránky. \nNěkteré z nich můžete také odstranit kliknutím na tlačítko \'X\'. \nToto je pokročilá verze modulu \'Queries Remover\'.</string>
     <string name="mD_ctabs">Zobrazit zprávy ladění ze služby Vlastních karet</string>
     <string name="mHist_name">Historie</string>
     <string name="mClear_name">Čistič URL</string>
@@ -241,20 +198,14 @@
     <string name="mRemove_empty">Odebrat prázdné</string>
     <string name="mLog_name">Protokolování historie</string>
     <string name="mLog_view">Zobrazit historii</string>
-    <string name="mHosts_editor">Nastavení hostitelů. Formát: Seznam objektů, kde je klíčem označení \'hosts\' a obsah zahrnuje následující nepovinné hodnoty:
-\n- soubor: url vzdáleného souboru hosts, který se má stáhnout. Přidají se všichni platní přítomní hostitelé.
-\n- hosts: Seznam nezpracovaných hostitelů (řetězců), které se mají přidat.
-\n- color: Barva štítku. Barevný řetězec systému Android (#AARRGGBB, #RRGGBB nebo platný název barvy). Výchozí hodnota je červená (jako u varování).
-\n- replace: Pokud false, nebudou stávající hostitelé nahrazeni. Všimněte si, že objekty jsou vyhodnocovány shora dolů. Ve výchozím nastavení je hodnota True.
-\n- enabled: pokud false, bude celý tento objekt přeskočen. Ve výchozím nastavení je True.</string>
-    <string name="mHosts_buildDesc">Tím se vymaže aktuální databáze hostitelů a vytvoří se nová dle aktuální konfigurace, přičemž se v případě potřeby stáhnou soubory hostitelů z internetu. Tato akce může trvat několik sekund. Pokračovat\?</string>
+    <string name="mHosts_editor">Nastavení hostitelů. Formát: Seznam objektů, kde je klíčem označení \'hosts\' a obsah zahrnuje následující nepovinné hodnoty: \n- soubor: url vzdáleného souboru hosts, který se má stáhnout. Přidají se všichni platní přítomní hostitelé. \n- hosts: Seznam nezpracovaných hostitelů (řetězců), které se mají přidat. \n- color: Barva štítku. Barevný řetězec systému Android (#AARRGGBB, #RRGGBB nebo platný název barvy). Výchozí hodnota je červená (jako u varování). \n- replace: Pokud false, nebudou stávající hostitelé nahrazeni. Všimněte si, že objekty jsou vyhodnocovány shora dolů. Ve výchozím nastavení je hodnota True. \n- enabled: pokud false, bude celý tento objekt přeskočen. Ve výchozím nastavení je True.</string>
+    <string name="mHosts_buildDesc">Tím se vymaže aktuální databáze hostitelů a vytvoří se nová dle aktuální konfigurace, přičemž se v případě potřeby stáhnou soubory hostitelů z internetu. Tato akce může trvat několik sekund. Pokračovat?</string>
     <string name="mHosts_buildDownload">Stahuji \'%1$s\' hostů z %2$s…</string>
     <string name="mHosts_buildSave">Ukládám…</string>
     <string name="mHosts_built">Databáze sestavena: %d hostů</string>
     <string name="mUnshort_name">Rozbalovač URL</string>
     <string name="mParts_name">Části Uri</string>
-    <string name="mClear_editor">Katalogová pravidla: Musí dodržovat formát z %s.
-\nVšimněte si, že jakákoliv úprava nadřazeného objektu \'providers\' (poskytovatelé) bude přepsána, pokud je katalog aktualizován automaticky nebo ručně z dialogu aktualizačního programu. Chcete-li zde užít vlastních pravidel, nastavte je v jiném nadřazeném objektu (libovolný název).</string>
+    <string name="mClear_editor">Katalogová pravidla: Musí dodržovat formát z %s. \nVšimněte si, že jakákoliv úprava nadřazeného objektu \'providers\' (poskytovatelé) bude přepsána, pokud je katalog aktualizován automaticky nebo ručně z dialogu aktualizačního programu. Chcete-li zde užít vlastních pravidel, nastavte je v jiném nadřazeném objektu (libovolný název).</string>
     <string name="mPttrn_wrongSchemaHttp">Neplatná kapitalizace HTTP schématu.</string>
     <string name="mPttrn_wrongSchemaHttps">Neplatná kapitalizace HTTPS schématu.</string>
     <string name="mChg_name">Seznam změn</string>

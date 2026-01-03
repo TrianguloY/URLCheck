@@ -20,10 +20,7 @@
     <string name="a_settings">設定</string>
     <string name="a_about">このアプリについて</string>
     <!-- about -->
-    <string name="txt_about">"このアプリは %1$s によって開発されました。
-
-貢献者: %2$s
-翻訳者: %3$s"</string>
+    <string name="txt_about">このアプリは %1$s によって開発されました。\n\n貢献者: %2$s\n翻訳者: %3$s</string>
     <string name="link_blog">%s のブログ</string>
     <string name="link_changelog">変更履歴</string>
     <string name="link_source">ソースコード</string>
@@ -63,11 +60,7 @@
     <string name="json_editor">上級者向けエディタ</string>
     <!-- modules -->
     <string name="mPttrn_name">パターンチェッカー</string>
-    <string name="mPttrn_desc">"正規表現パターンで URL をチェックし、警告・提案・置換をします。パターンは変更したり、独自に作成したり、あるいは他のユーザーが作成したものを使用することもできます。
-内蔵のパターンは以下の通りです。
-- ギリシャ文字のような非ASCII文字が含まれている場合に警告します。これはフィッシング詐欺に使われることがあるためです。例: Goõgle.com と Google.com など。
-- 'http'を'https'に置き換えることを提案します。
-- Youtube、Reddit、Twitter をプライバシーに配慮したフロントエンドに置き換えるよう提案します。 [デフォルトでは無効]"</string>
+    <string name="mPttrn_desc">正規表現パターンで URL をチェックし、警告・提案・置換をします。パターンは変更したり、独自に作成したり、あるいは他のユーザーが作成したものを使用することもできます。\n内蔵のパターンは以下の通りです。\n- ギリシャ文字のような非ASCII文字が含まれている場合に警告します。これはフィッシング詐欺に使われることがあるためです。例: Goõgle.com と Google.com など。\n- \'http\'を\'https\'に置き換えることを提案します。\n- Youtube、Reddit、Twitter をプライバシーに配慮したフロントエンドに置き換えるよう提案します。 [デフォルトでは無効]</string>
     <string name="mPttrn_userContent">その他のユーザーが作成した便利なパターンのリスト: %s</string>
     <string name="mPttrn_fix">適用</string>
     <string name="mPttrn_fixed">適用しました: %s</string>
@@ -78,10 +71,7 @@
     <string name="mPttrn_ok">問題は見つかりませんでした。</string>
     <string name="mPttrn_editor">ここでは、パターンの編集をしたり、新しいパターンを追加したりできます。\n利用できるフォーマットは以下です:\n- \'regex\': 文字列: Java の正規表現。URLに対して照合されます。\n- \'replacement\': 文字列またはリスト: 指定すると、「適用」 ボタンをタップした時に、\'url=url.replaceAll(regex,replacement)\' が実行されます。\n- \'automatic\': ブール値: true に設定すると、パターンが自動的に適用されます。\n- \'enabled\': ブール値: パターンを無効にするには false に設定します。\n注: パターンを編集した場合、アプリの更新による新しい組み込みパターンは自動的に追加されません (リセットオプションで復元できます)。</string>
     <string name="mOpen_name"><![CDATA[開く・共有する]]></string>
-    <string name="mOpen_desc">"次のボタンが含まれています (左から右へ):
-- 「カスタムタブ」ボタン: カスタムタブ機能を有効化/無効化します。有効にすると、ブラウザは「ライト」モードで開かれます。
-- 「開く」ボタン: アプリ名を押すと、そのアプリのリンクが開きます。複数のアプリでリンクを開くことができる場合は、選択できるように矢印が表示されます。
-- 共有ボタン: ボタンを押してリンクを共有します。長押しすると、クリップボードにすばやくコピーできます。\nこのモジュールを無効にすることはできません。"</string>
+    <string name="mOpen_desc">次のボタンが含まれています (左から右へ):\n- 「カスタムタブ」ボタン: カスタムタブ機能を有効化/無効化します。有効にすると、ブラウザは「ライト」モードで開かれます。\n- 「開く」ボタン: アプリ名を押すと、そのアプリのリンクが開きます。複数のアプリでリンクを開くことができる場合は、選択できるように矢印が表示されます。\n- 共有ボタン: ボタンを押してリンクを共有します。長押しすると、クリップボードにすばやくコピーできます。\nこのモジュールを無効にすることはできません。</string>
     <string name="mOpen_ctabs">カスタムタブ:</string>
     <string name="defaultOn">デフォルトで有効</string>
     <string name="defaultOff">デフォルトで無効</string>
@@ -98,9 +88,7 @@
     <string name="mOpen_noapps">アプリがありません</string>
     <string name="mOpen_tabsDesc">カスタムタブ機能の有効化・無効化を切り替えます</string>
     <string name="mStatus_name">ステータス コード</string>
-    <string name="mStatus_desc">"チェックボタンを押すと、サイトのステータスコードを取得し表示します。
-結果がリダイレクトの場合は、リダイレクト先URLが表示されます。
-URLコンテンツは取得 (GET) されますが、JavaScript によるリダイレ​​クトは評価されないため、検出されません。"</string>
+    <string name="mStatus_desc">チェックボタンを押すと、サイトのステータスコードを取得し表示します。\n結果がリダイレクトの場合は、リダイレクト先URLが表示されます。\nURLコンテンツは取得 (GET) されますが、JavaScript によるリダイレ​​クトは評価されないため、検出されません。</string>
     <string name="mStatus_ioerror">URLの確認中にネットワークエラーが発生しました: %s</string>
     <string name="mStatus_error">URLのチェック中に内部エラーが発生しました: %s</string>
     <string name="mStatus_check">ステータスコードを確認</string>
@@ -128,8 +116,7 @@ URLコンテンツは取得 (GET) されますが、JavaScript によるリダ�
     <string name="mInput_name">URLの表示</string>
     <string name="mInput_desc">手動で編集できる現在のURLを表示します。</string>
     <string name="mVT_name">URL スキャナー</string>
-    <string name="mVT_desc">"このモジュールを有効にすると、VirusTotal を使用してURLをスキャンし、レポートを確認できます。
-これが機能するには、個人用の VirusTotal API キーが必要です。%s\nで無料アカウントに登録した後に取得できます。"</string>
+    <string name="mVT_desc">このモジュールを有効にすると、VirusTotal を使用してURLをスキャンし、レポートを確認できます。\nこれが機能するには、個人用の VirusTotal API キーが必要です。%s\nで無料アカウントに登録した後に取得できます。</string>
     <string name="mVT_apiKey">API キー</string>
     <string name="mVT_tm">VirusTotal™ は Google, Inc. の商標です。</string>
     <string name="mVT_scan">スキャン</string>
@@ -140,11 +127,7 @@ URLコンテンツは取得 (GET) されますが、JavaScript によるリダ�
     <string name="mVT_badUrl">注意! %1$dつのエンジンの内 %2$dつがURLを検出しました (%3$s 時点データ)</string>
     <string name="mVT_error">VirusTotal に接続できません。APIキーが有効であることを確認するか、後でもう一度試してください。</string>
     <string name="mD_name">デバッグ/マーカー モジュール</string>
-    <string name="mD_desc">"モジュールの順序を変更すると、将来のアップデートで追加される新しいモジュールがこのモジュールの上に配置されます。
-
-これを有効にすると、受け取ったインテントをURIとして表示します。\n開発者にとって便利です。
-
-Intent または URLData をタップすると、クリップボードにコピーされます。長押しすると全てコピーできます。"</string>
+    <string name="mD_desc">モジュールの順序を変更すると、将来のアップデートで追加される新しいモジュールがこのモジュールの上に配置されます。\n\nこれを有効にすると、受け取ったインテントをURIとして表示します。\n開発者にとって便利です。\n\nIntent または URLData をタップすると、クリップボードにコピーされます。長押しすると全てコピーできます。</string>
     <string name="mD_ctabs">カスタムタブ サービスからのデバッグメッセージを表示する</string>
     <string name="mHist_name">履歴</string>
     <string name="mHist_desc">手動または他のモジュールによってURLが編集されると、このモジュールを使用して変更を表示および元に戻すことができます。</string>
@@ -181,28 +164,22 @@ Intent または URLData をタップすると、クリップボードにコピ�
     <string name="mClear_hashError">ハッシュを取得できません。URLが有効で、インターネット接続が有効であることを確認してください。</string>
     <string name="mClear_hashMismatch">ハッシュが一致しません。ファイルが壊れている可能性があります。チェックをスキップしたい場合は、ハッシュURLを削除してください</string>
     <string name="mClear_restore">URLをリセット</string>
-    <string name="mClear_editor">"パターンデータの形式は\n%s \nの形式に従う必要があります。
-- カタログが自動または手動で更新された場合、親オブジェクト「providers」への変更はすべて上書きされることに注意してください。手動でルールを設定するには、別の親オブジェクト（任意の名前）に設定してください。"</string>
+    <string name="mClear_editor">パターンデータの形式は\n%s \nの形式に従う必要があります。\n- カタログが自動または手動で更新された場合、親オブジェクト「providers」への変更はすべて上書きされることに注意してください。手動でルールを設定するには、別の親オブジェクト（任意の名前）に設定してください。</string>
     <string name="mRemove_name">クエリの削除</string>
-    <string name="mRemove_desc">"このモジュールを使用すると、URLからクエリを削除できます。
-ボタンを押すとすべて削除され、矢印を押すと２つずつ削除されます。
-PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
+    <string name="mRemove_desc">このモジュールを使用すると、URLからクエリを削除できます。\nボタンを押すとすべて削除され、矢印を押すと２つずつ削除されます。\nPabloOQさんのアイデアとはじめの実装に感謝します!</string>
     <string name="mRemove_found1">１つのクエリが見つかりました</string>
     <string name="mRemove_found">%d 個のクエリが見つかりました</string>
-    <string name="mRemove_noQueries">クエリはあ"りません</string>
+    <string name="mRemove_noQueries">クエリはあ\"りません</string>
     <string name="mRemove_all">すべて削除</string>
     <string name="mRemove_one">%s を削除</string>
     <string name="mRemove_empty">空のクエリを削除</string>
     <string name="mLog_name">ログ</string>
-    <string name="mLog_desc">"このモジュールは、チェックされたすべてのURLをログに記録します。
-ここで完全なログを表示、消去、または編集できます。メインダイアログには視覚的な表示はありません。
-ログの記録を無効にするには、モジュールを無効にしてください。"</string>
+    <string name="mLog_desc">このモジュールは、チェックされたすべてのURLをログに記録します。\nここで完全なログを表示、消去、または編集できます。メインダイアログには視覚的な表示はありません。\nログの記録を無効にするには、モジュールを無効にしてください。</string>
     <string name="mLog_view">ログを表示</string>
     <string name="mLog_edit">ログを編集</string>
     <string name="mLog_empty">ログはありません</string>
     <string name="mHosts_name">ホスト ラベラー</string>
-    <string name="mHosts_desc">このモジュールは、手動で指定するか、リモートホストのようなファイルを使って設定されたホストにラベル付けします。危険なサイトや特殊なサイトについて警告するために使用することができます。
-\nデフォルトの設定では、StevenBlack のホスト (アドウェア/マルウェア、fakenews、ギャンブル、アダルトコンテンツ) を %s から取得します。</string>
+    <string name="mHosts_desc">このモジュールは、手動で指定するか、リモートホストのようなファイルを使って設定されたホストにラベル付けします。危険なサイトや特殊なサイトについて警告するために使用することができます。 \nデフォルトの設定では、StevenBlack のホスト (アドウェア/マルウェア、fakenews、ギャンブル、アダルトコンテンツ) を %s から取得します。</string>
     <string name="mHosts_malware">アドウェア/マルウェア</string>
     <string name="mHosts_info">ホスト:</string>
     <string name="mHosts_noLabel">ラベルなし</string>
@@ -212,19 +189,13 @@ PabloOQさんのアイデアとはじめの実装に感謝します!"</string>
     <string name="mHosts_build">データベースを作成</string>
     <string name="mHosts_uninitialized">ホストデータベースが初期化されていません。\n「データベースを作成」を押してください。</string>
     <string name="mHosts_parseError">URLのホストファイルを解析できませんでした</string>
-    <string name="mHosts_editor">ホストの設定 です。
-\n形式: hosts ラベルをキーとした、オブジェクトのリスト。以下の値を含むことができます。
-\n- file: ダウンロードするリモートホストファイルのURL。ファイルに含まれるすべての有効なホストが追加されます。
-\n- hosts: 追加する生(raw)ホストのリスト(文字列)。
-\n- color: ラベルの色。Androidの色文字列 (#AARRGGBB, #RRGGBB または有効な色名)。デフォルトは「危険な」赤です。
-\n- replace: false の場合、既存のホストは置き換えられません。オブジェクトは上から下へ評価されることに注意してください。デフォルトでは true です。
-\n- enabled: false の場合、このオブジェクト全体がスキップされます。デフォルトでは true です。</string>
+    <string name="mHosts_editor">ホストの設定 です。 \n形式: hosts ラベルをキーとした、オブジェクトのリスト。以下の値を含むことができます。 \n- file: ダウンロードするリモートホストファイルのURL。ファイルに含まれるすべての有効なホストが追加されます。 \n- hosts: 追加する生(raw)ホストのリスト(文字列)。 \n- color: ラベルの色。Androidの色文字列 (#AARRGGBB, #RRGGBB または有効な色名)。デフォルトは「危険な」赤です。 \n- replace: false の場合、既存のホストは置き換えられません。オブジェクトは上から下へ評価されることに注意してください。デフォルトでは true です。 \n- enabled: false の場合、このオブジェクト全体がスキップされます。デフォルトでは true です。</string>
     <string name="mHosts_buildTitle">ホストデータベースの作成</string>
     <string name="mHosts_buildDesc">この操作は、既存のホストデータベースを削除し、新しい設定でデータベースを作成します。必要であればインターネットからホストファイルをダウンロードします。この操作には数秒かかることがあります。続行しますか？</string>
     <string name="mHosts_buildProgress">データベースを作成中…</string>
     <string name="mHosts_buildInit">準備中…</string>
     <string name="mHosts_buildClear">初期化中…</string>
-    <string name="mHosts_buildDownload">"%1$s個のホストを %2$s からダウンロード中…"</string>
+    <string name="mHosts_buildDownload">%1$s個のホストを %2$s からダウンロード中…</string>
     <string name="mHosts_buildSave">保存中…</string>
     <string name="mHosts_built">データベースが作成されました: %d個のホスト</string>
     <string name="tutorial">チュートリアル</string>

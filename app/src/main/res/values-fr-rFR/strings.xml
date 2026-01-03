@@ -17,7 +17,7 @@
         main
     -->
     <string name="txt_info">Cette application agit comme une étape intermédiaire à l\'ouverture de liens. Lorsque vous cliquez sur un lien et choisissez cette application pour l\'ouvrir, une boîte de dialogue contenant des informations sur le lien s\'affiche. Appuyez sur le bouton \"Modules\" ci-dessous pour vérifier et configurer tous les modules disponibles.</string>
-    <string name="txt_sample">Appuyez sur le lien ci-dessous pour le tester :</string>
+    <string name="txt_sample">Appuyez sur le lien ci-dessous pour le tester :</string>
     <string name="a_modules">Modules</string>
     <string name="a_settings">Paramètres</string>
     <string name="a_about">À Propos</string>
@@ -43,40 +43,25 @@
     <!--
         settings
     -->
-    <string name="txt_openLinks">Ouvrir les liens via cette application : au fil des ans, Android a changé la façon de le configurer et cela diffère selon les versions. Retrouvez ci-dessous tous les paramètres disponibles pour la configuration de votre appareil, si les liens ne sont pas ouverts par URLCheck, essayez-les tous.</string>
+    <string name="txt_openLinks">Ouvrir les liens via cette application : au fil des ans, Android a changé la façon de le configurer et cela diffère selon les versions. Retrouvez ci-dessous tous les paramètres disponibles pour la configuration de votre appareil, si les liens ne sont pas ouverts par URLCheck, essayez-les tous.</string>
     <string name="btn_setBrowser">Définir comme navigateur par défaut</string>
     <string name="toast_defaultSet">L\'application est désormais définie comme navigateur par défaut</string>
     <string name="btn_configureBrowser">Navigateur par défaut</string>
     <string name="btn_linksSettings">Ouvrir les liens compatibles</string>
     <string name="btn_androidSettings">Paramètres Android de l\'application</string>
-    <string name="txt_theme">Thème :</string>
+    <string name="txt_theme">Thème :</string>
     <string name="spin_darkTheme">Obscur</string>
     <string name="spin_lightTheme">Clair</string>
-    <string name="txt_locale">Langue :</string>
+    <string name="txt_locale">Langue :</string>
     <!--
         tutorial
     -->
     <string name="tutorial">Didacticiel</string>
-    <string name="txt_tutorial1">"Merci d'avoir téléchargé l'application!
-
-Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en utilisant le bouton ci-dessous. Vous pourrez toujours revenir à ce didacticiel à partir du menu paramètres."</string>
-    <string name="txt_tutorial2">"L'application agit comme intermédiaire lors de l'ouverture ou du partage de liens URL. Une fois qu'une URL est envoyée à l'application, vous pouvez interagir avec elle via les modules. Après cela vous pouvez ouvrir le lien (dans l'application de votre choix), le partager ou le copier dans le presse-papiers."</string>
-    <string name="txt_tutorial3">Configurer l\'application comme navigateur par défaut pour intercepter les URLs lors de leur ouverture.
-\n(Non nécessaire si les URLs sont transmises à l\'aide de la fonctionnalité \"Partager\".)</string>
-    <string name="txt_tutorial4">Les modules sont la façon dont l\'application interagit avec les URLs.
-\nIl existe plusieurs modules, chacun d\'eux avec une fonction spécifique, généralement ils vous fournissent des informations sur l\'URL, ou permettent de la modifier.
-\nChacun dispose d\'options, il est donc recommandé de vérifier et d\'adapter leurs configurations au besoin. Les fonctionnalités de chaque modules y sont expliquées.
-\n
-\nImportant : toutes les actions sont manuelles par défaut, l\'application ne modifiera rien et ne se connectera pas à Internet à moins que vous ne l\'y autorisiez explicitement, mais certaines actions peuvent être configurées pour s\'appliquer automatiquement si vous le souhaitez.
-\n
-\nVous pouvez ouvrir la liste des modules depuis l\'écran principal ou en appuyant sur le bouton ci-dessous.</string>
-    <string name="txt_tutorial5">C\'est presque tout. Voici quelques conseils qui peuvent être utiles :
-\n
-\nLorsqu\'une application ne vous permet pas d\'ouvrir ou de partager une URL, mais qu\'elle vous permet autre chose, vous pouvez résoudre le problème à l\'aide de cette application. Vous pouvez également copier l\'URL dans le presse-papiers en appuyant longuement sur le bouton \"Partager\".
-\n
-\nCertaines URLs ont pour seul but de vous rediriger vers une autre URL. Si l\'URL finale peut être ouverte dans une application, alors vous pouvez éviter de l\'ouvrir dans un navigateur.
-\n
-\nJ\'espère que vous trouverez l\'application utile ! Et n\'hésitez pas à suggérer des fonctionnalités, à signaler des bugs ou même à proposer des changements. Trouvez tous les liens pertinents sur l’écran \"À propos\".</string>
+    <string name="txt_tutorial1">Merci d\'avoir téléchargé l\'application!\n\nCeci est le didacticiel, si vous souhaitez l\'ignorer vous pouvez le faire en utilisant le bouton ci-dessous. Vous pourrez toujours revenir à ce didacticiel à partir du menu paramètres.</string>
+    <string name="txt_tutorial2">L\'application agit comme intermédiaire lors de l\'ouverture ou du partage de liens URL. Une fois qu\'une URL est envoyée à l\'application, vous pouvez interagir avec elle via les modules. Après cela vous pouvez ouvrir le lien (dans l\'application de votre choix), le partager ou le copier dans le presse-papiers.</string>
+    <string name="txt_tutorial3">Configurer l\'application comme navigateur par défaut pour intercepter les URLs lors de leur ouverture. \n(Non nécessaire si les URLs sont transmises à l\'aide de la fonctionnalité \"Partager\".)</string>
+    <string name="txt_tutorial4">Les modules sont la façon dont l\'application interagit avec les URLs. \nIl existe plusieurs modules, chacun d\'eux avec une fonction spécifique, généralement ils vous fournissent des informations sur l\'URL, ou permettent de la modifier. \nChacun dispose d\'options, il est donc recommandé de vérifier et d\'adapter leurs configurations au besoin. Les fonctionnalités de chaque modules y sont expliquées. \n \nImportant : toutes les actions sont manuelles par défaut, l\'application ne modifiera rien et ne se connectera pas à Internet à moins que vous ne l\'y autorisiez explicitement, mais certaines actions peuvent être configurées pour s\'appliquer automatiquement si vous le souhaitez. \n \nVous pouvez ouvrir la liste des modules depuis l\'écran principal ou en appuyant sur le bouton ci-dessous.</string>
+    <string name="txt_tutorial5">C\'est presque tout. Voici quelques conseils qui peuvent être utiles : \n \nLorsqu\'une application ne vous permet pas d\'ouvrir ou de partager une URL, mais qu\'elle vous permet autre chose, vous pouvez résoudre le problème à l\'aide de cette application. Vous pouvez également copier l\'URL dans le presse-papiers en appuyant longuement sur le bouton \"Partager\". \n \nCertaines URLs ont pour seul but de vous rediriger vers une autre URL. Si l\'URL finale peut être ouverte dans une application, alors vous pouvez éviter de l\'ouvrir dans un navigateur. \n \nJ\'espère que vous trouverez l\'application utile ! Et n\'hésitez pas à suggérer des fonctionnalités, à signaler des bugs ou même à proposer des changements. Trouvez tous les liens pertinents sur l’écran \"À propos\".</string>
     <string name="btn_tutorialSkip">Ignorer le didacticiel</string>
     <string name="btn_tutorialEnd">Clore le didacticiel</string>
     <!--
@@ -106,15 +91,11 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
         modules
     -->
     <string name="mPttrn_name">Vérificateur de modèle</string>
-    <string name="mPttrn_desc">Ce module vérifie l\'URL avec des modèles d\'expression régulière (regex) qui avertissent, suggèrent et/ou appliquent des remplacements. Vous pouvez modifier ou créer vos propres modèles, ou même utiliser ceux créés par d\'autres utilisateurs.
-\nLes modèles intégrés comprennent:
-\n- Avertissement de la présence de caractères non-ascii comme les lettres grecques. Cela peut être utilisé pour l\'hameçonnage : googĺe.com au lieu de google.com.
-\n- suggestion de remplacement des liens en \'http\' par \'https\'.
-\n- suggestion de remplacement de Youtube, Reddit ou Twitter par des alternatives respectueuses de la vie privée [désactivé par défaut]</string>
-    <string name="mPttrn_userContent">Liste d\'autres modèles utiles créés par des utilisateurs : %s</string>
+    <string name="mPttrn_desc">Ce module vérifie l\'URL avec des modèles d\'expression régulière (regex) qui avertissent, suggèrent et/ou appliquent des remplacements. Vous pouvez modifier ou créer vos propres modèles, ou même utiliser ceux créés par d\'autres utilisateurs. \nLes modèles intégrés comprennent: \n- Avertissement de la présence de caractères non-ascii comme les lettres grecques. Cela peut être utilisé pour l\'hameçonnage : googĺe.com au lieu de google.com. \n- suggestion de remplacement des liens en \'http\' par \'https\'. \n- suggestion de remplacement de Youtube, Reddit ou Twitter par des alternatives respectueuses de la vie privée [désactivé par défaut]</string>
+    <string name="mPttrn_userContent">Liste d\'autres modèles utiles créés par des utilisateurs : %s</string>
     <string name="mPttrn_fix">Appliquer</string>
     <string name="mPttrn_fixed">Appliqué - %s</string>
-    <string name="mPttrn_ascii">Avertissement ! Caractères non-ASCII trouvés.</string>
+    <string name="mPttrn_ascii">Avertissement ! Caractères non-ASCII trouvés.</string>
     <string name="mPttrn_http">Lien HTTP. Pensez à utiliser l\'HTTPS.</string>
     <string name="mPttrn_noSchemeHttp">Schéma HTTP manquant.</string>
     <string name="mPttrn_noSchemeHttps">Schéma HTTPS manquant.</string>
@@ -123,7 +104,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <!-- -->
     <string name="mOpen_name">Ouvrir et partager</string>
     <string name="mOpen_desc">Contient les boutons suivants (de gauche à droite) : \n- Bouton Onglets personnalisés : activez/désactivez la fonction d\'onglet personnalisé. Si activé, le navigateur sera ouvert en mode \'alléger\'. \n- Bouton Incognito : Pour Firefox uniquement. Permet d\'activer/désactiver le mode incognito. Lorsqu\'il est activé, le navigateur doit être ouvert en mode incognito. \n- Bouton Ouvrir : appuyez sur le nom de l\'application pour ouvrir le lien avec. Si un lien peut être ouvert avec plusieurs applications, une flèche s\'affiche afin de vous offrir le choix. \n- Bouton Copier : Appuyez sur ce bouton pour copier le lien dans le presse-papiers. \n- Bouton Partager : Appuyez sur ce bouton pour partager le lien.</string>
-    <string name="mOpen_ctabs">Onglets personnalisés :</string>
+    <string name="mOpen_ctabs">Onglets personnalisés :</string>
     <string name="defaultOn">Activé par défaut</string>
     <string name="defaultOff">Désactivé par défaut</string>
     <string name="alwaysOn">Toujours activé</string>
@@ -141,8 +122,8 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <!-- -->
     <string name="mStatus_name">Code d\'état</string>
     <string name="mStatus_desc">En appuyant sur le bouton de vérification, une requête sera faite pour récupérer et afficher le code d\'état du site. Si le résultat est une redirection, vous pourrez voir l\'url de destination. Le contenu de l\'url est obtenu (GET), mais n\'est pas évalué, les redirections basées sur javascript ne seront donc pas détectées.</string>
-    <string name="mStatus_ioerror">Erreur réseau lors de la tentative de vérification de l\'URL : %s</string>
-    <string name="mStatus_error">Erreur interne lors de la tentative de vérification de l\'URL : %s</string>
+    <string name="mStatus_ioerror">Erreur réseau lors de la tentative de vérification de l\'URL : %s</string>
+    <string name="mStatus_error">Erreur interne lors de la tentative de vérification de l\'URL : %s</string>
     <string name="mStatus_check">Vérifier le statut</string>
     <string name="mStatus_recheck">Vérifier</string>
     <string name="mStatus_checking">Vérification…</string>
@@ -179,7 +160,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mVT_scanning">Analyse…</string>
     <string name="mVT_goodUrl">Aucun des %1$d moteurs n\'a détecté l\'URL (en date du %2$s)</string>
     <string name="mVT_warningUrl">Attention, %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
-    <string name="mVT_badUrl">Prudence ! %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
+    <string name="mVT_badUrl">Prudence ! %1$d/%2$d moteurs ont détecté l\'URL (en date du %3$s)</string>
     <string name="mVT_error">Impossible de se connecter à VirusTotal. Assurez-vous que la clé API est valide ou réessayez plus tard.</string>
     <!-- -->
     <string name="mD_name">Module de débogage/marquage</string>
@@ -256,20 +237,19 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mHosts_buildProgress">Construction du fichier d\'hôtes</string>
     <string name="mHosts_buildInit">Initialisation</string>
     <string name="mHosts_buildClear">Nettoyage…</string>
-    <string name="mHosts_buildDownload">"Téléchargement de '%1$s' hôtes depuis %2$s…"</string>
+    <string name="mHosts_buildDownload">Téléchargement de \'%1$s\' hôtes depuis %2$s…</string>
     <string name="mHosts_buildSave">Enregistrement…</string>
     <string name="mHosts_built">Base de données construite : %d hôtes</string>
     <!-- -->
     <string name="mUnshort_name">Déraccourcisseur</string>
     <string name="mUnshort_unshort">Déraccourcir</string>
-    <string name="mUnshort_desc">Ce module déraccourcira les liens en les envoyant à %s, qui les évaluera sur leurs serveurs et enregistrera la redirection pour les requêtes futures. Évitez de transmettre des liens contenant des données privées ou sensibles.
-\nLeur API est limitée à 10 requêtes par heure pour les nouveaux contrôles. La réponse du module indiquera le nombre de requêtes que vous avez en attente.</string>
+    <string name="mUnshort_desc">Ce module déraccourcira les liens en les envoyant à %s, qui les évaluera sur leurs serveurs et enregistrera la redirection pour les requêtes futures. Évitez de transmettre des liens contenant des données privées ou sensibles. \nLeur API est limitée à 10 requêtes par heure pour les nouveaux contrôles. La réponse du module indiquera le nombre de requêtes que vous avez en attente.</string>
     <string name="mUnshort_tm">API gratuite fournie par Unshorten.me</string>
     <string name="mUnshort_checking">Vérification…</string>
-    <string name="mUnshort_error">Erreur de serveur : %s</string>
+    <string name="mUnshort_error">Erreur de serveur : %s</string>
     <string name="mUnshort_internal">Erreur interne (%s)</string>
     <string name="mUnshort_notFound">Aucune url déraccourcit n\'a été trouvée</string>
-    <string name="mUnshort_pending">en attente : %1$d/%2$d</string>
+    <string name="mUnshort_pending">en attente : %1$d/%2$d</string>
     <string name="mUnshort_ok">Non raccourci</string>
     <string name="mOpen_mergeCopy">Fusionner les boutons Copier et Partager (appuie long pour copier)</string>
     <string name="hidden">Caché</string>
@@ -277,13 +257,13 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="back">Retour</string>
     <string name="btn_tutorialSettings">Répéter le tutoriel</string>
     <string name="next">Suivant</string>
-    <string name="mOpen_incognito">Mode incognito :</string>
+    <string name="mOpen_incognito">Mode incognito :</string>
     <string name="mOpen_incognitoDesc">Basculer en mode incognito (pour Firefox uniquement)</string>
     <string name="mParts_empty">(vide)</string>
     <string name="mParts_copy">Partie copiée dans le presse-papiers</string>
     <string name="mPttrn_wrongSchemaHttp">Mise en majuscules du schéma HTTP non valide.</string>
     <string name="mPttrn_wrongSchemaHttps">Mise en majuscules du schéma HTTPS non valide.</string>
-    <string name="mLog_limit">Nombre maximum d’entrées à conserver. Valeur recommandée : 100. Définir vide pour un nombre illimité</string>
+    <string name="mLog_limit">Nombre maximum d’entrées à conserver. Valeur recommandée : 100. Définir vide pour un nombre illimité</string>
     <string name="mLog_unlimited">Illimité</string>
     <string name="dismiss">Rejeter</string>
     <string name="mChg_name">Journal des modifications</string>
@@ -295,7 +275,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mParts_name">Parties d\'URI</string>
     <string name="mChg_desc">Avertit lorsque l’application a été mise à jour.</string>
     <string name="mChg_updated">L’application a été mise à jour.</string>
-    <string name="mChg_current">Version actuelle : %s</string>
+    <string name="mChg_current">Version actuelle : %s</string>
     <string name="mChg_view">Afficher les modifications</string>
     <string name="mDrawer_name">Tiroir</string>
     <string name="btn_backupRestore">Sauvegarder / Restaurer</string>
@@ -310,15 +290,10 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mOpen_rejected">Masquer l\'application si l\'URL a été rejetée (une application demande immédiatement à ouvrir la même URL que celle avec laquelle elle a été ouverte). N\'affecte pas le partage.</string>
     <string name="mOpen_iconSize">Taille de l\'icône</string>
     <string name="mD_show">Charger les données de débogage</string>
-    <string name="mParts_desc">Ce module montre toutes les parties de l\'url décodée : schéma, autorité, chemins, requêtes et fragment.
-\nEn cliquant sur une partie, elle sera définie comme la nouvelle url, ce qui est utile par exemple si l\'une des requêtes ou l\'un des chemins était une url de redirection encodée.
-\nSi vous cliquez longuement sur une partie, elle sera copiée dans le presse-papiers.
-\nVous pouvez également cliquer sur le bouton \"X\" pour en supprimer certaines.
-\nIl s\'agit d\'une version avancée du module \'Queries Remover\'.</string>
+    <string name="mParts_desc">Ce module montre toutes les parties de l\'url décodée : schéma, autorité, chemins, requêtes et fragment. \nEn cliquant sur une partie, elle sera définie comme la nouvelle url, ce qui est utile par exemple si l\'une des requêtes ou l\'un des chemins était une url de redirection encodée. \nSi vous cliquez longuement sur une partie, elle sera copiée dans le presse-papiers. \nVous pouvez également cliquer sur le bouton \"X\" pour en supprimer certaines. \nIl s\'agit d\'une version avancée du module \'Queries Remover\'.</string>
     <string name="btn_delete">Supprimer</string>
-    <string name="bkp_description">Choisissez quels éléments doivent être sauvegardés/restaurés.
-\nLors de la restauration, si la sauvegarde a été créée sans éléments, les éléments existants seront conservés.</string>
-    <string name="bkp_data">Données : Données standard de l\'application. Des choses comme les modules activés, les configurations json, etc. Ne comprendra pas les secrets ni le cache.</string>
+    <string name="bkp_description">Choisissez quels éléments doivent être sauvegardés/restaurés. \nLors de la restauration, si la sauvegarde a été créée sans éléments, les éléments existants seront conservés.</string>
+    <string name="bkp_data">Données : Données standard de l\'application. Des choses comme les modules activés, les configurations json, etc. Ne comprendra pas les secrets ni le cache.</string>
     <string name="bkp_data_prefs">Préférences : Données sauvegardées en tant que préférences.</string>
     <string name="bkp_secrets">Secrets : Données considérées comme \"secrètes\", comme la clé api de VirusTotal ou le registre.</string>
     <string name="bck_ignoreNewer">Autoriser les sauvegardes créées à partir de versions plus récentes de l\'application.</string>
@@ -340,10 +315,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="bck_backupError">Impossible de créer une sauvegarde, essayez de choisir un autre emplacement pour le fichier.</string>
     <string name="bck_restoreConfirm">Remplacer les éléments</string>
     <string name="bck_restoreError">Impossible de restaurer la sauvegarde. S\'agit-il d\'un fichier valide ?</string>
-    <string name="mFlag_desc">[Fonctionnalité bêta] Il s\'agit d\'un module avancé, qui vous permet de modifier les drapeaux d\'intention lors de l\'ouverture d\'une autre application.
-\nCe module affichera une liste de drapeaux, vous pouvez changer si le drapeau est activé ou non en appuyant sur l\'icône. Il y a aussi un menu de débordement pour cacher les drapeaux, c\'est juste visuel, les drapeaux utiliseront toujours l\'état assigné.
-\nLes drapeaux ont deux indicateurs de couleur à côté de la case à cocher. Celui de gauche indique la valeur reçue de l\'intention, celui de droite indique l\'état défini par le module lui-même. Le rouge signifie que le drapeau n\'est pas activé et le vert qu\'il l\'est. En outre, l\'indicateur de préférence peut être gris, ce qui signifie que l\'état a été réglé sur automatique.
-\nLe bouton ci-dessous vous permet de modifier l\'état par défaut et la visibilité des drapeaux.</string>
+    <string name="mFlag_desc">[Fonctionnalité bêta] Il s\'agit d\'un module avancé, qui vous permet de modifier les drapeaux d\'intention lors de l\'ouverture d\'une autre application. \nCe module affichera une liste de drapeaux, vous pouvez changer si le drapeau est activé ou non en appuyant sur l\'icône. Il y a aussi un menu de débordement pour cacher les drapeaux, c\'est juste visuel, les drapeaux utiliseront toujours l\'état assigné. \nLes drapeaux ont deux indicateurs de couleur à côté de la case à cocher. Celui de gauche indique la valeur reçue de l\'intention, celui de droite indique l\'état défini par le module lui-même. Le rouge signifie que le drapeau n\'est pas activé et le vert qu\'il l\'est. En outre, l\'indicateur de préférence peut être gris, ce qui signifie que l\'état a été réglé sur automatique. \nLe bouton ci-dessous vous permet de modifier l\'état par défaut et la visibilité des drapeaux.</string>
     <string name="a_automations">Automatisations</string>
     <string name="auto_desc">Avec les automatisations, vous pouvez effectuer des actions de module en fonction du déclencheur. Vous pouvez les automatisations ici, ou tous les désactiver en cliquant sur le bouton ci-dessous.</string>
     <string name="auto_enabled">Activer la fonction d\'automatisation</string>
@@ -369,7 +341,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mWebhook_success">Envoi au webhook réussi</string>
     <string name="auto_drawer">Ouvrera le tiroir. Équivalent à appuyer sur le bouton du tiroir s\'il est replié.</string>
     <string name="mWebhook_body_hint">Corps du Webhook</string>
-    <string name="auto_available_prefix">Actions d\'automatisation disponibles (clés) :</string>
+    <string name="auto_available_prefix">Actions d\'automatisation disponibles (clés) :</string>
     <string name="auto_available_disabled">Ce module est désactivé, les automatisations ne fonctionneront pas</string>
     <string name="auto_open">Ouvre l\'URL, si aucun \'args\' n\'est pas renseigné, la première application disponible (équivaut à appuyer sur le bouton \'ouvrir\'). Si \'arg\': \'package\' et/ou \'component\' sont renseignés, ils seront utilisé.</string>
     <string name="auto_share">Partage l\'url. Cela équivaut à appuyer sur le bouton \'partager\'.</string>

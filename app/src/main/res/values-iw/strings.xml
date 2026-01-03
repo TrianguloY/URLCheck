@@ -20,10 +20,10 @@
     <string name="a_about">על אודות</string>
     <!-- about -->
     <string name="txt_about">אפליקציה שנוצרה על ידי %1$s.\n\n תרומות: %2$s.\n תרגומים: %3$s.</string>
-    <string name="link_blog">"הבלוג של %s"</string>
+    <string name="link_blog">הבלוג של %s</string>
     <!-- configuration -->
     <string name="txt_conf">רשימת מודולים: אתה יכול להפעיל או לבטל אותם, גם לבדוק את התיאור והתצורה שלו.</string>
-    <string name="toast_cantEnable">"לא ניתן להפעיל את המודול: %s"</string>
+    <string name="toast_cantEnable">לא ניתן להפעיל את המודול: %s</string>
     <string name="menu_resetOrder">אפס סדר</string>
     <!-- generic -->
     <string name="toast_noApp">לא ניתן לפתוח את האפליקציה</string>
@@ -89,7 +89,7 @@
     <string name="mVT_goodUrl">אף אחד מהמנועים %1$d לא זיהה את כתובת האתר (נכון לתאריך %2$s)</string>
     <string name="mVT_warningUrl">אזהרה, מנועי %1$d/%2$d זיהו את כתובת האתר (נכון לתאריך %3$s)</string>
     <string name="mVT_badUrl">זָהִיר! %1$d/%2$d מנועים זיהו את כתובת האתר (נכון לתאריך %3$s)</string>
-    <string name="mVT_error">"לא ניתן להתחבר ל-VirusTotal. ודא שמפתח ה-API חוקי או נסה שוב מאוחר יותר."</string>
+    <string name="mVT_error">לא ניתן להתחבר ל-VirusTotal. ודא שמפתח ה-API חוקי או נסה שוב מאוחר יותר.</string>
     <string name="mD_name">מודול ניפוי באגים/סמן</string>
     <string name="mD_desc">אם תסדרו מחדש את המודולים, מודולים חדשים שיתווספו בעדכונים עתידיים ימוקמו מעל מודול זה.\n\nאם תפעילו אפשרות זו, היא תציג נתוני ניפוי שגיאות פנימיים (כגון URI של הכוונה המקורית), שימושיים למפתחים.\n\nניתן ללחוץ לחיצה כדי לבחור טקסט.</string>
     <string name="mD_ctabs">הצג הודעות ניפוי באגים משירות הכרטיסיות המותאמות אישית</string>
@@ -110,7 +110,7 @@
     <string name="mClear_cleared">- נוקה</string>
     <string name="mClear_noRules">אין כללים תואמים</string>
     <string name="mClear_auto">החל אוטומטית</string>
-    <string name="mClear_toggleReferral">"הפעל שיווק הפניות (פרמטרי הפניה לא יימחקו)"</string>
+    <string name="mClear_toggleReferral">הפעל שיווק הפניות (פרמטרי הפניה לא יימחקו)</string>
     <string name="mClear_toggleVerbose">אפשר מידע מילולי עבור תהליך ההתאמה</string>
     <string name="mClear_error">לא ניתן היה לבדוק את הכלל</string>
     <string name="mClear_updater">מעדכן</string>

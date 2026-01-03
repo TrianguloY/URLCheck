@@ -19,10 +19,7 @@
     <string name="a_settings">Configurações</string>
     <string name="link_privacy">Política de privacidade</string>
     <string name="locale">Português Brasileiro</string>
-    <string name="txt_about">Aplicativo criado por %1$s.
-\n
-\nContribuições: %2$s.
-\nTraduções: %3$s.</string>
+    <string name="txt_about">Aplicativo criado por %1$s. \n \nContribuições: %2$s. \nTraduções: %3$s.</string>
     <string name="desc_down">Mover para baixo</string>
     <string name="none">Nenhum</string>
     <string name="share">Compartilhar</string>
@@ -92,8 +89,7 @@
     <string name="txt_conf">Aqui estão todos os módulos disponíveis, onde você pode checar suas descrições e configurações. Você também pode reordenar, mudar a visibilidade e ativar/desativar eles.</string>
     <string name="mOpen_incognito">Modo anônimo:</string>
     <string name="mOpen_incognitoDesc">Ativar/desativar modo anônimo (apenas Firefox)</string>
-    <string name="txt_tutorial3">Selecione o aplicativo como navegador padrão para interceptar os links abertos.
-\n(Não é necessário se os links são redirecionados usando a função de compartilhar.)</string>
+    <string name="txt_tutorial3">Selecione o aplicativo como navegador padrão para interceptar os links abertos. \n(Não é necessário se os links são redirecionados usando a função de compartilhar.)</string>
     <string name="mPttrn_userContent">Lista de outros padrões úteis criados por usuários: %s</string>
     <string name="mOpen_perDomain">Ordenar diferentes domínios independentemente</string>
     <string name="mOpen_tabsDesc">Ativar/desativar abas customizadas</string>
@@ -114,11 +110,7 @@
     <string name="mVT_warningUrl">Aviso, %1$d/%2$d mecanismos detectaram a URL (na data %3$s)</string>
     <string name="mD_name">Módulo de Depuração/Marcador</string>
     <string name="mD_ctabs">Mostrar mensagens de depuração do serviço de abas customizadas</string>
-    <string name="mD_desc">Caso você reordene os módulos, os novos adicionados em atualizações futuras serão colocados acima desse.
-\n
-\nSe você habilitar isso, ele exibirá alguns dados de depuração interno (como a uri da intenção original), útil para desenvolvedores.
-\n
-\nVocê pode segurar para selecionar o texto.</string>
+    <string name="mD_desc">Caso você reordene os módulos, os novos adicionados em atualizações futuras serão colocados acima desse. \n \nSe você habilitar isso, ele exibirá alguns dados de depuração interno (como a uri da intenção original), útil para desenvolvedores. \n \nVocê pode segurar para selecionar o texto.</string>
     <string name="mClear_name">Limpador de URL</string>
     <string name="mClear_desc">Esse módulo remove rastreamento, referência e outros parâmetros inúteis da URL. Ele também permite redirecionamentos comuns de URL offline.</string>
     <string name="mClear_matches">Corresponde %s</string>
@@ -141,28 +133,12 @@
     <string name="mClear_auto">Aplicar automaticamente</string>
     <string name="mClear_noRules">Sem regras correspondentes</string>
     <string name="mClear_toggleReferral">Permitir parâmetros de referência de marketing (não serão limpados)</string>
-    <string name="txt_tutorial4">Os módulos são a forma com que o app interage com as URLs.
-\nCada um dos módulos tem uma função específica. Geralmente para apresentar informação sobre a URL, or permitir sua modificação.
-\nLeia sobre elas e as configure como necessário.
-\n
-\nImportante: Todas as ações são manuais por padrão. O app não modificará nada nem se conectará a Internet a não ser que você permita especificamente, mas algumas ações podem ser aplicadas automaticamente, se desejado.
-\n
-\nAbra a lista de módulos a partir da tela principal ou tocando no botão abaixo.</string>
-    <string name="mPttrn_desc">Este módulo verifica a URL com padrões de expressões regulares que alertam, sugerem ou aplicam substituições. Você pode modificar ou criar seus próprios padrões, ou mesmo usar padrões criados por usuários.
-\nOs padrões embutidos incluem:
-\n- Alerta quando contém caracteres não-ASCII, como letras gregas. Isso pode ser usado para phishing: googĺe.com vs google.com
-\n- Sugere substituir ‘http’ por ‘https’
-\n- Sugere substituir Youtube, Reddit ou Twitter por alternativas que respeitam a privacidade [desativadas por padrão]</string>
+    <string name="txt_tutorial4">Os módulos são a forma com que o app interage com as URLs. \nCada um dos módulos tem uma função específica. Geralmente para apresentar informação sobre a URL, or permitir sua modificação. \nLeia sobre elas e as configure como necessário. \n \nImportante: Todas as ações são manuais por padrão. O app não modificará nada nem se conectará a Internet a não ser que você permita especificamente, mas algumas ações podem ser aplicadas automaticamente, se desejado. \n \nAbra a lista de módulos a partir da tela principal ou tocando no botão abaixo.</string>
+    <string name="mPttrn_desc">Este módulo verifica a URL com padrões de expressões regulares que alertam, sugerem ou aplicam substituições. Você pode modificar ou criar seus próprios padrões, ou mesmo usar padrões criados por usuários. \nOs padrões embutidos incluem: \n- Alerta quando contém caracteres não-ASCII, como letras gregas. Isso pode ser usado para phishing: googĺe.com vs google.com \n- Sugere substituir ‘http’ por ‘https’ \n- Sugere substituir Youtube, Reddit ou Twitter por alternativas que respeitam a privacidade [desativadas por padrão]</string>
     <string name="mVT_desc">Quando este módulo está habilitado, você pode verificar a URL usando o VirusTotal e conferir o relatório. É necessário uma chave da API do VirusTotal para que isso funcione, você pode obter uma registrando-se para uma conta gratuita aqui: %s .</string>
     <string name="mVT_badUrl">Cuidado! %1$d/%2$d mecanismos detectaram a URL (na data %3$s)</string>
     <string name="mClear_toggleVerbose">Ativar informações detalhadas para o processo de correspondência</string>
-    <string name="txt_tutorial5">Isso é tudo. Aqui vão algumas dicas que podem ser úteis:
-\n
-\nQuando um aplicativo não fornece uma maneira de abrir ou compartilhar uma URL, mas oferece uma maneira de fazer o outro, você pode resolver o problema usando este aplicativo. Você também pode copiar a URL para a área de transferência pressionando o botão de compartilhar por um longo tempo.
-\n
-\nExistem algumas URLs cujo único propósito é redirecioná-lo para outra URL. Se a URL final puder ser aberta em um aplicativo, você pode evitar abri-la em um navegador.
-\n
-\nEspero que você ache o aplicativo útil! E não hesite em sugerir funções, relatar bugs ou até propor mudanças. Encontre todos os links relevantes na tela “Sobre”.</string>
+    <string name="txt_tutorial5">Isso é tudo. Aqui vão algumas dicas que podem ser úteis: \n \nQuando um aplicativo não fornece uma maneira de abrir ou compartilhar uma URL, mas oferece uma maneira de fazer o outro, você pode resolver o problema usando este aplicativo. Você também pode copiar a URL para a área de transferência pressionando o botão de compartilhar por um longo tempo. \n \nExistem algumas URLs cujo único propósito é redirecioná-lo para outra URL. Se a URL final puder ser aberta em um aplicativo, você pode evitar abri-la em um navegador. \n \nEspero que você ache o aplicativo útil! E não hesite em sugerir funções, relatar bugs ou até propor mudanças. Encontre todos os links relevantes na tela “Sobre”.</string>
     <string name="mRemove_found">%d parâmetros encontrados</string>
     <string name="mRemove_all">Remover todos</string>
     <string name="mRemove_found1">1 parâmetro encontrado</string>
@@ -193,11 +169,7 @@
     <string name="mUnshort_name">Desencurtador</string>
     <string name="mClear_error">Não foi possível verificar a regra</string>
     <string name="mOpen_closeCopy">Fechar diálogo após copiar</string>
-    <string name="mRemove_desc">[OBSOLETO] Com este módulo você pode remover parâmetros da URL.
-\nPressione o botão para remover todos ou pressione a seta para remover um de cada vez.
-\nObrigado a PabloOQ pela ideia e implementação original!
-\n
-\nEste módulo foi descontinuado em favor do módulo \'Partes da URI\'</string>
+    <string name="mRemove_desc">[OBSOLETO] Com este módulo você pode remover parâmetros da URL. \nPressione o botão para remover todos ou pressione a seta para remover um de cada vez. \nObrigado a PabloOQ pela ideia e implementação original! \n \nEste módulo foi descontinuado em favor do módulo \'Partes da URI\'</string>
     <string name="mHosts_name">Rotulador de hosts</string>
     <string name="mHosts_buildProgress">Construindo catálogo</string>
     <string name="mUnshort_notFound">Nenhum redirecionamento encontrado</string>
@@ -205,34 +177,18 @@
     <string name="mParts_empty">(vazio)</string>
     <string name="mParts_copy">Parte copiada para área de transferência</string>
     <string name="mStatus_desc">Ao pressionar o botão de verificação, uma solicitação de rede será feita para consultar e exibir o código de status do site. Se o resultado for um redirecionamento, você poderá visualizar a URL de destino. O conteúdo da URL é obtido (GET), mas não avaliado, portanto redirecionamentos baseados em JavaScript não serão detectados.</string>
-    <string name="mClear_editor">Regras do catálogo: Devem seguir o formato de %s.
-\nObserve que qualquer modificação no objeto principal \'providers\' será substituída se o catálogo for atualizado, automaticamente ou manualmente. Portanto, crie suas regras pessoais eu um outro objeto (qualquer nome).</string>
+    <string name="mClear_editor">Regras do catálogo: Devem seguir o formato de %s. \nObserve que qualquer modificação no objeto principal \'providers\' será substituída se o catálogo for atualizado, automaticamente ou manualmente. Portanto, crie suas regras pessoais eu um outro objeto (qualquer nome).</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_buildTitle">Construir catálogo de hosts</string>
     <string name="mFlag_editFlags">Editar valor padrão de marcadores</string>
     <string name="mHosts_build">Construir</string>
     <string name="mHosts_noLabel">sem rótulo</string>
     <string name="mHosts_built">Catálogo construido: %d hosts</string>
-    <string name="mUnshort_desc">Este módulo desencurta links enviando-os para %s, que os avalia em seus servidores e salva o redirecionamento para futuras petições. Evite desencurtar links com dados privados ou confidenciais.
-\nA API é limitada a 10 solicitações por hora para novas verificações. A resposta do módulo mostrará quantas petições você tem pendentes.</string>
-    <string name="mOpen_desc">Contém os seguintes botões (da esquerda para a direita):
-\n- Abas customizadas: Alterne para ativar/desativar as abas customizadas. Quando ativado, o navegador deve abrir em um modo \'lite\'.
-\n- Modo anônimo: Apenas para Firefox. Se ativado, o navegador deve abrir no modo anônimo.
-\n- Botão Abrir: Pressione o nome do aplicativo para abrir o link nele. Se um link puder ser aberto com vários aplicativos, uma seta será exibida para seleção.
-\n- Botão Copiar: Pressione o botão para copiar o link para a área de transferência.
-\n- Botão Compartilhar: Pressione o botão para compartilhar o link.</string>
-    <string name="mHosts_editor">Configuração de hosts. Formato: Lista de objetos onde a chave é o rótulo dos hosts e o conteúdo inclui os seguintes valores opcionais:
-\n- file: Link de um arquivo de hosts remoto para download. Todos os hosts válidos presentes serão adicionados.
-\n- hosts: Lista de hosts brutos (strings) a serem adicionados.
-\n- color: A cor do rótulo. Uma string de cores do Android (#AARRGGBB, #RRGGBB ou um nome de cor válido). O padrão é um vermelho de \'perigo\'.
-\n- replace: Se falso, os hosts existentes não serão substituídos. Nota que os objetos são avaliados de cima para baixo. Verdadeiro por padrão.
-\n- enabled: Se falso, todo o objeto será ignorado. Verdadeiro por padrão.</string>
+    <string name="mUnshort_desc">Este módulo desencurta links enviando-os para %s, que os avalia em seus servidores e salva o redirecionamento para futuras petições. Evite desencurtar links com dados privados ou confidenciais. \nA API é limitada a 10 solicitações por hora para novas verificações. A resposta do módulo mostrará quantas petições você tem pendentes.</string>
+    <string name="mOpen_desc">Contém os seguintes botões (da esquerda para a direita): \n- Abas customizadas: Alterne para ativar/desativar as abas customizadas. Quando ativado, o navegador deve abrir em um modo \'lite\'. \n- Modo anônimo: Apenas para Firefox. Se ativado, o navegador deve abrir no modo anônimo. \n- Botão Abrir: Pressione o nome do aplicativo para abrir o link nele. Se um link puder ser aberto com vários aplicativos, uma seta será exibida para seleção. \n- Botão Copiar: Pressione o botão para copiar o link para a área de transferência. \n- Botão Compartilhar: Pressione o botão para compartilhar o link.</string>
+    <string name="mHosts_editor">Configuração de hosts. Formato: Lista de objetos onde a chave é o rótulo dos hosts e o conteúdo inclui os seguintes valores opcionais: \n- file: Link de um arquivo de hosts remoto para download. Todos os hosts válidos presentes serão adicionados. \n- hosts: Lista de hosts brutos (strings) a serem adicionados. \n- color: A cor do rótulo. Uma string de cores do Android (#AARRGGBB, #RRGGBB ou um nome de cor válido). O padrão é um vermelho de \'perigo\'. \n- replace: Se falso, os hosts existentes não serão substituídos. Nota que os objetos são avaliados de cima para baixo. Verdadeiro por padrão. \n- enabled: Se falso, todo o objeto será ignorado. Verdadeiro por padrão.</string>
     <string name="mPttrn_editor">Aqui você pode editar ou adicionar novos padrões. Formato: \n- \'encode\': booleano: defina como true para codificar a URL antes de checar o regex. \n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado. \n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado. \n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Em uma lista, um elemento aleatório é escolhido. \n- \'decode\': booleano: defina como true para decodificar a URL substítuida. \n- \'automatic\': booleano: defina como true para aplicar automaticamente o padrão. \n- \'enabled\': booleano: defina como false para desativar o padrão. \nNota: se você editar os padrões, novos padrões integrados de atualizações não serão adicionados automaticamente (pode restaurá-los com a opção de redefinição).</string>
-    <string name="mParts_desc">Este módulo mostra todas as partes da url decodificadas: esquema, autoridade, caminhos, parâmetros e fragmento.
-\nAo clicar em uma parte, ela será definida como a nova URL, útil, por exemplo, se uma das consultas ou caminhos for uma URL codificada de redirecionamento.
-\nAo segurar uma parte, ela será copiada para a área de transferência.
-\nVocê também pode clicar no botão \'X\' para remover alguns deles.
-\nEsta é uma versão avançada do módulo \'Queries Remover\'.</string>
+    <string name="mParts_desc">Este módulo mostra todas as partes da url decodificadas: esquema, autoridade, caminhos, parâmetros e fragmento. \nAo clicar em uma parte, ela será definida como a nova URL, útil, por exemplo, se uma das consultas ou caminhos for uma URL codificada de redirecionamento. \nAo segurar uma parte, ela será copiada para a área de transferência. \nVocê também pode clicar no botão \'X\' para remover alguns deles. \nEsta é uma versão avançada do módulo \'Queries Remover\'.</string>
     <string name="mStatus_ioerror">Erro de rede ao tentar verificar a URL: %s</string>
     <string name="mUnshort_tm">API gratuita de Unshorten.me</string>
     <string name="mHosts_buildDownload">Baixando \'%1$s\' hosts de %2$s…</string>

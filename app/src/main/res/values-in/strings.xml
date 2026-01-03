@@ -25,10 +25,7 @@
     <string name="menu_resetOrder">Atur ulang urutan</string>
     <string name="btn_setBrowser">Setel sebagai peramban bawaan</string>
     <string name="btn_androidSettings">Pengaturan aplikasi Android</string>
-    <string name="txt_about">Aplikasi dibuat oleh %1$s.
-\n
-\nKontributor: %2$s.
-\nPenerjemah: %3$s.</string>
+    <string name="txt_about">Aplikasi dibuat oleh %1$s. \n \nKontributor: %2$s. \nPenerjemah: %3$s.</string>
     <string name="txt_locale">Lokal:</string>
     <string name="txt_info">Aplikasi ini bertindak sebagai perantara saat hendak membuka tautan URL. Ketika tautan dibuka melalui aplikasi ini, sebuah jendela dialog berisi informasi mengenai tautan tersebut akan ditampilkan. Tekan tombol modul di bawah ini untuk memeriksa dan mengatur semua modul yang tersedia.</string>
     <string name="desc_up">Geser ke atas</string>
@@ -50,11 +47,7 @@
     <string name="mPttrn_regexfix">Perbaiki grup regex yang opsional (nonaktifkan jika regex tidak bekerja dengan baik)</string>
     <string name="mPttrn_http">Link HTTP. Pertimbangkan untuk beralih ke HTTPS.</string>
     <string name="mStatus_check">Cek status</string>
-    <string name="mD_desc">Jika Anda mengubah urutan modul, modul baru yang ditambahkan pada pembaruan selanjutnya akan diletakkan di atas modul ini.
-\n
-\nJika diaktifkan, beberapa data awakutu internal (misalnya uri tujuan aslinya) akan ditampikan, berguna untuk pengembang aplikasi.
-\n
-\nAnda bisa tekan tahan untuk menyeleksi teks.</string>
+    <string name="mD_desc">Jika Anda mengubah urutan modul, modul baru yang ditambahkan pada pembaruan selanjutnya akan diletakkan di atas modul ini. \n \nJika diaktifkan, beberapa data awakutu internal (misalnya uri tujuan aslinya) akan ditampikan, berguna untuk pengembang aplikasi. \n \nAnda bisa tekan tahan untuk menyeleksi teks.</string>
     <string name="next">Selanjutnya</string>
     <string name="txt_tutorial5">Selesai. Berikut beberapa tips yang dapat berguna bagi Anda: \n \nKetika sebuah aplikasi tertentu tidak menyediakan cara untuk membuka atau membagikan sebuah tautan URL, Anda dapat mengatasinya menggunakan aplikasi ini. Selain itu, Anda dapat menylain URL ke papan klip dengan cara menahan tombol \'Bagikan\'. \n \nBeberapa tautan tertentu hanya berfungsi untuk mengarahkan Anda dari satu tautan URL ke tautan URL lainnya. Jika tautan URL terakhir ternyata bisa dibuka di aplikasi tersebut, Anda tidak perlu membuka URL tersebut di peramban. \n \nSemoga Anda terbantu dengan aplikasi ini! Jangan ragu menyarankan fitur, melaporkan kutu, atau bahkan mengajukan beberapa perubahan kepada kami. Temukan semua tautan terkait di laman \"Tentang Kami\".</string>
     <string name="mPttrn_userContent">Daftar pola bermanfaat buatan user lainnya: %s</string>
@@ -73,11 +66,7 @@
     <string name="mClear_tm">Katalog bawaan disalin dari ClearURLs: %s</string>
     <string name="back">Kembali</string>
     <string name="hidden">Tersembunyi</string>
-    <string name="mPttrn_desc">Modul ini bertugas untuk mengecek url menggunakan pola regex yang akan memberi peringatan, saran ataupun menerapkan perubahan tertentu. Anda bisa membuat atau memodifikasi pola milik Anda sendiri, atau bahkan menggunakan pola dari pengguna lain.
-\nPola bawaan menyediakan beberapa hal berikut:
-\n- Memberi peringatan ketika mengandung karakter non-ascii, misalnya huruf latin Yunani. Huruf tersebut bisa disalahgunakan untuk penipuan: googĺe.com vs google.com
-\n- Menyarankan untuk beralih dari \'http\' ke \'https\'
-\n- Menyarankan untuk beralih dari Youtube, Reddit atau Twitter ke alternatif lain yang ramah privasi [nonaktif secara bawaan]</string>
+    <string name="mPttrn_desc">Modul ini bertugas untuk mengecek url menggunakan pola regex yang akan memberi peringatan, saran ataupun menerapkan perubahan tertentu. Anda bisa membuat atau memodifikasi pola milik Anda sendiri, atau bahkan menggunakan pola dari pengguna lain. \nPola bawaan menyediakan beberapa hal berikut: \n- Memberi peringatan ketika mengandung karakter non-ascii, misalnya huruf latin Yunani. Huruf tersebut bisa disalahgunakan untuk penipuan: googĺe.com vs google.com \n- Menyarankan untuk beralih dari \'http\' ke \'https\' \n- Menyarankan untuk beralih dari Youtube, Reddit atau Twitter ke alternatif lain yang ramah privasi [nonaktif secara bawaan]</string>
     <string name="mOpen_noapps">Tidak ada aplikasi</string>
     <string name="mPttrn_ascii">Peringatan! Karakter Non-ASCII ditemukan.</string>
     <string name="mVT_cancel">Batal</string>
@@ -86,12 +75,7 @@
     <string name="mStatus_redir">Dialihkan ke %s</string>
     <string name="mStatus_ioerror">Galat jaringan ketika melakukan pengecekan URL: %s</string>
     <string name="mStatus_error">Galat internal ketika melakukan pengecekan URL: %s</string>
-    <string name="mOpen_desc">Terdiri atas tombol-tombol berikut (dari kiri ke kanan):
-\n- Tombol Tab Tersuai: alihkan untuk mengaktifkan/menonaktifkan fitur tab tersuai (custom tab). Ketika diaktifkan, peramban terkait akan terbuka dalam mode \'ringan\' (lite mode).
-\n- Tombol Inkognito: khusus Firefox. Alihkan untuk mengaktifkan/menonaktifkan mode inkognito. Ketika diaktifkan, peramban terkait akan terbuka dalam mode inkognito.
-\n- Tombol Buka: Tekan nama aplikasinya untuk membuka tautan di aplikasi tersebut. Jika suatu tautan bisa dibuka di beberapa aplikasi, sebuah simbol panah akan ditampilkan agar Anda bisa memilihnya.
-\n- Tombol Salin: Tekan tombol ini untuk menyalin tautan ke papan klip.
-\n- Tombol Bagikan: Tekan tombol ini untuk membagikan tautan.</string>
+    <string name="mOpen_desc">Terdiri atas tombol-tombol berikut (dari kiri ke kanan): \n- Tombol Tab Tersuai: alihkan untuk mengaktifkan/menonaktifkan fitur tab tersuai (custom tab). Ketika diaktifkan, peramban terkait akan terbuka dalam mode \'ringan\' (lite mode). \n- Tombol Inkognito: khusus Firefox. Alihkan untuk mengaktifkan/menonaktifkan mode inkognito. Ketika diaktifkan, peramban terkait akan terbuka dalam mode inkognito. \n- Tombol Buka: Tekan nama aplikasinya untuk membuka tautan di aplikasi tersebut. Jika suatu tautan bisa dibuka di beberapa aplikasi, sebuah simbol panah akan ditampilkan agar Anda bisa memilihnya. \n- Tombol Salin: Tekan tombol ini untuk menyalin tautan ke papan klip. \n- Tombol Bagikan: Tekan tombol ini untuk membagikan tautan.</string>
     <string name="mOpen_with">Buka dengan %s</string>
     <string name="mHist_desc">Dengan modul ini, Anda dapat melihat dan mengembalikan perubahan URL yang telah diedit oleh modul lain ataupun secara manual.</string>
     <string name="mPttrn_editor">Di sini Anda bisa mengubah atau menambahkan pola baru. Format: \n- \'encode\': boolean: ubah ke \'true\' untuk mengenkode url sebelum pengecekan regex dilakukan. \n- \'regex\': string: sebuah regex java valid untuk dicocokkan dengan url, jika cocok, pola akan dijalankan. \n- \'excludeRegex\': string: jika disertakan, sebuah regex java valid untuk dicocokkan dengan url, jika cocok, pola tidak akan dijalankan. \n- \'replacement\': string|list: jika diertakan, tombol \'perbaiki\' akan menjalankan \'url=url.replaceAll(regex,replacement)\'. Jika berupa list, penggantinya akan dipilih secara acak dari element list terkait. \n- \'decode\': boolean: ubah ke \'true\' untuk mendekode url yang telah digantikan. \n- \'automatic\': boolean: ubah ke \'true\' untuk menerapkan pola secara otomatis. \n- \'enabled\': boolean: ubah ke \'false\' untuk menonaktifkan pola. \nCatatan: Jika Anda mengubah suatu pola, pola bawaan baru yang berasal dari pembaruan aplikasi tidak akan ditambahkan secara otomatis (Anda bisa memulihkannya melalui opsi \'reset\').</string>
@@ -141,14 +125,9 @@
     <string name="alwaysOff">Selalu nonaktif</string>
     <string name="mOpen_perDomain">Urutkan domain yang berbeda secara terpisah</string>
     <string name="mClear_exception">- diabaikan karena eksepsi %s</string>
-    <string name="mRemove_desc">[USANG] Dengan modul ini Anda bisa menghilangkan kueri di URL.
-\nTekan tombol untuk menghilangkan semua kueri atau tekan panah untuk menghilangkan kueri satu per satu.
-\nTerima kasih kepada PabloOQ atas ide dan implementasi modul ini.
-\n
-\nModul ini telah usang dan telah digantikan dengan modul \'Potongan uri\'</string>
+    <string name="mRemove_desc">[USANG] Dengan modul ini Anda bisa menghilangkan kueri di URL. \nTekan tombol untuk menghilangkan semua kueri atau tekan panah untuk menghilangkan kueri satu per satu. \nTerima kasih kepada PabloOQ atas ide dan implementasi modul ini. \n \nModul ini telah usang dan telah digantikan dengan modul \'Potongan uri\'</string>
     <string name="mClear_cleared">- Sudah bersih</string>
-    <string name="mClear_editor">Kriteria katalog: Wajib mengikuti format dari %s.
-\nPerlu diketahui bahwa semua modifikasi yang terjadi di objek induk \'providers\' akan ditimpa jika katalog diperbarui baik secara otomatis ataupun manual melalui jendela dialog pemutakhir. Untuk mempertahankan kriteria pribadi, setel di objek induk yang berbeda (apapun namanya).</string>
+    <string name="mClear_editor">Kriteria katalog: Wajib mengikuti format dari %s. \nPerlu diketahui bahwa semua modifikasi yang terjadi di objek induk \'providers\' akan ditimpa jika katalog diperbarui baik secara otomatis ataupun manual melalui jendela dialog pemutakhir. Untuk mempertahankan kriteria pribadi, setel di objek induk yang berbeda (apapun namanya).</string>
     <string name="mLog_unlimited">Tidak terbatas</string>
     <string name="mHosts_built">Pangkalan data telah dibuat ulang: %d host</string>
     <string name="mHosts_buildInit">Menginisialisasi</string>
@@ -159,12 +138,7 @@
     <string name="mHosts_parseError">Tidak bisa mengurai host URL</string>
     <string name="mClear_lastUpdate">Pembaruan terakhir:</string>
     <string name="mUnshort_error">Galat peladen: %s</string>
-    <string name="mHosts_editor">Konfigurasi host. Format: Kumpulan berbagai objek, di mana key-nya adalah label host. Sedangkan kontennya berisi nilai opsional berikut:
-\n- file: Sebuah url berkas host jarak jauh untuk diunduh. Semua host valid yang tersedia akan ditambahkan.
-\n- hosts: Daftar host mentah (string) untuk ditambahkan.
-\n- color: Warna label. Sebuah string warna Android (#AARRGGBB, #RRGGBB atau nama warna yang valid). Nilai bawaan: red \'danger\' (merah bahaya).
-\n- replace: jika bernilai false, host yang sudah ada tidak akan diganti. Perlu diketahui bahwa objek dievaluasi dari atas ke bawah. Nilai bawaan: true.
-\n- enabled: jika bernilai false, keseluruhan dari objek ini akan dilewati. Nilai bawaan: true.</string>
+    <string name="mHosts_editor">Konfigurasi host. Format: Kumpulan berbagai objek, di mana key-nya adalah label host. Sedangkan kontennya berisi nilai opsional berikut: \n- file: Sebuah url berkas host jarak jauh untuk diunduh. Semua host valid yang tersedia akan ditambahkan. \n- hosts: Daftar host mentah (string) untuk ditambahkan. \n- color: Warna label. Sebuah string warna Android (#AARRGGBB, #RRGGBB atau nama warna yang valid). Nilai bawaan: red \'danger\' (merah bahaya). \n- replace: jika bernilai false, host yang sudah ada tidak akan diganti. Perlu diketahui bahwa objek dievaluasi dari atas ke bawah. Nilai bawaan: true. \n- enabled: jika bernilai false, keseluruhan dari objek ini akan dilewati. Nilai bawaan: true.</string>
     <string name="mRemove_name">Penghilang Kueri</string>
     <string name="mClear_rawRule">- konten tidak bermanfaat ditemukan</string>
     <string name="mClear_hashMismatch">Hash tidak cocok, file tersebut kemungkinan besar telah diutak-atik. Jika Anda ingin mengabaikan pengecekan ini, hapus URL hash-nya</string>
@@ -175,14 +149,10 @@
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_name">Penanda host</string>
     <string name="mHosts_gambling">perjudian</string>
-    <string name="mHosts_buildDesc">Tindakan ini akan menghapus pangkalan data host saat ini dan akan dibuat ulang dengan konfigurasi yang berlaku saat ini, dan mengunduh file host dari internet jika diperlukan. Tindakan ini memerlukan waktu beberapa detik. Lanjutkan\?</string>
+    <string name="mHosts_buildDesc">Tindakan ini akan menghapus pangkalan data host saat ini dan akan dibuat ulang dengan konfigurasi yang berlaku saat ini, dan mengunduh file host dari internet jika diperlukan. Tindakan ini memerlukan waktu beberapa detik. Lanjutkan?</string>
     <string name="mClear_hashHint">Tidak ada pengecekan hash</string>
     <string name="mParts_name">Potongan uri</string>
-    <string name="mParts_desc">Modul ini menunjukkan semua potongan url yang telah didekode: skema, otoritas, lintasan, kueri, dan fragmen.
-\nDengan menekan potongan terkait, ia akan disetel sebagai url yang baru. Ini akan berguna misalnya jika salah satu kueri atau lintasan adalah url pengalihan dalam bentuk enkode.
-\nDengan menekan lama potongan terkait, ia akan disalin ke papan klip.
-\nAnda juga bisa menekan tombol \'X\' untuk menghilangkan beberapa diantaranya.
-\nModul ini merupakan versi lanjutan dari modul \'Penghilang Kueri\'.</string>
+    <string name="mParts_desc">Modul ini menunjukkan semua potongan url yang telah didekode: skema, otoritas, lintasan, kueri, dan fragmen. \nDengan menekan potongan terkait, ia akan disetel sebagai url yang baru. Ini akan berguna misalnya jika salah satu kueri atau lintasan adalah url pengalihan dalam bentuk enkode. \nDengan menekan lama potongan terkait, ia akan disalin ke papan klip. \nAnda juga bisa menekan tombol \'X\' untuk menghilangkan beberapa diantaranya. \nModul ini merupakan versi lanjutan dari modul \'Penghilang Kueri\'.</string>
     <string name="mHosts_uninitialized">Pangkalan data host belum diinisialisasi. Tekan untuk membuat ulang</string>
     <string name="mHosts_buildSave">Menyimpan…</string>
     <string name="mRemove_all">Hapus semua</string>
@@ -193,8 +163,7 @@
     <string name="mClear_rule">- parameter tidak bermanfaat ditemukan</string>
     <string name="mLog_limit">Jumlah maksimum percobaan untuk disimpan. Nilai yang disarankan: 100. Kosongkan untuk nilai tak terbatas</string>
     <string name="mClear_forcedRedirection">- pengalihan paksa ditemukan</string>
-    <string name="mUnshort_desc">Modul ini akan mengurai tautan singkat dengan cara mengirimnya ke %s, yang akan dievaluasi di peladen mereka, kemudian hasil pengalihan tautan tersebut akan disimpan untuk digunakan kembali. Hindari mengurai tautan yang mengandung data sensitif atau data pribadi.
-\nApi mereka membatasi 10 permintaan per jam untuk pengecekan baru. Respons modul ini akan menunjukkan kuota permintaan yang tersisa.</string>
+    <string name="mUnshort_desc">Modul ini akan mengurai tautan singkat dengan cara mengirimnya ke %s, yang akan dievaluasi di peladen mereka, kemudian hasil pengalihan tautan tersebut akan disimpan untuk digunakan kembali. Hindari mengurai tautan yang mengandung data sensitif atau data pribadi. \nApi mereka membatasi 10 permintaan per jam untuk pengecekan baru. Respons modul ini akan menunjukkan kuota permintaan yang tersisa.</string>
     <string name="mHosts_build">Buat ulang</string>
     <string name="mRemove_one">Hapus %s</string>
     <string name="mFlag_editFlags">Ubah nilai penanda bawaan</string>
@@ -219,10 +188,7 @@
     <string name="mHosts_buildClear">Menghapus…</string>
     <string name="mParts_empty">(kosong)</string>
     <string name="mRemove_found">%d kueri ditemukan</string>
-    <string name="mFlag_desc">[Fitur beta] Ini adalah modul lanjutan. Dengan modul ini, Anda dapat mengubah penanda ketika membuka aplikasi lain.
-\nModul ini akan menampilkan daftar penanda yang tersedia yang dapat diatur dengan cara menekan ikon terkait. Menu luapan juga tersedia untuk menyembunyikan penanda yang diinginkan. Menu tersebut hanyalah visual semata, penanda tetap akan menggunakan nilai yang telah ditentukan.
-\nPenanda memiliki dua indikator warna yang berada tepat di sebelah kotak centang: sebelah kiri menunjukkan nilai yang diterima, sedangkan yang kanan mengindikasikan nilai yang telah disetel oleh modul itu sendiri. Warna merah artinya penanda tidak disetel, sedangkan warna hijau berarti penanda telah disetel. Selain itu, indikator preferensi juga bisa berwarna abu-abu, artinya nilai telah disetel ke otomatis.
-\nAnda dapat mengubah nilai bawaan dan visibilitas penanda dengan tombol di bawah ini.</string>
+    <string name="mFlag_desc">[Fitur beta] Ini adalah modul lanjutan. Dengan modul ini, Anda dapat mengubah penanda ketika membuka aplikasi lain. \nModul ini akan menampilkan daftar penanda yang tersedia yang dapat diatur dengan cara menekan ikon terkait. Menu luapan juga tersedia untuk menyembunyikan penanda yang diinginkan. Menu tersebut hanyalah visual semata, penanda tetap akan menggunakan nilai yang telah ditentukan. \nPenanda memiliki dua indikator warna yang berada tepat di sebelah kotak centang: sebelah kiri menunjukkan nilai yang diterima, sedangkan yang kanan mengindikasikan nilai yang telah disetel oleh modul itu sendiri. Warna merah artinya penanda tidak disetel, sedangkan warna hijau berarti penanda telah disetel. Selain itu, indikator preferensi juga bisa berwarna abu-abu, artinya nilai telah disetel ke otomatis. \nAnda dapat mengubah nilai bawaan dan visibilitas penanda dengan tombol di bawah ini.</string>
     <string name="mUnshort_checking">Mengecek…</string>
     <string name="mClear_autoUpdate">Perbarui secara berkala</string>
     <string name="mClear_updateNow">Perbarui sekarang</string>

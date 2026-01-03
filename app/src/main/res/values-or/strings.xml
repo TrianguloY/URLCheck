@@ -23,8 +23,5 @@
     <string name="mClear_lastUpdate">ଗତ ଅଦ୍ୟତନ:</string>
     <string name="defaultOn">ଡିଫଲ୍ଟ ଭାଵରେ ସକ୍ଷମ</string>
     <string name="link_changelog">ପରିବର୍ତ୍ତନ ପୋଥି</string>
-    <string name="txt_about">%1$s ଦ୍ୱାରା ନିର୍ମିତ ଆପ୍।
-\n
-\nଯୋଗଦାତା: %2$s।
-\nଅନୁବାଦ: %3$s।</string>
+    <string name="txt_about">%1$s ଦ୍ୱାରା ନିର୍ମିତ ଆପ୍। \n \nଯୋଗଦାତା: %2$s। \nଅନୁବାଦ: %3$s।</string>
 </resources>

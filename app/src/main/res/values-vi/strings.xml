@@ -5,10 +5,7 @@
     <string name="a_modules">Mô-đun</string>
     <string name="a_settings">Thiết đặt</string>
     <string name="a_about">Giới thiệu</string>
-    <string name="txt_about">Ứng dụng được tạo bởi %1$s.
-\n
-\nĐóng góp: %2$s.
-\nBản dịch: %3$s.</string>
+    <string name="txt_about">Ứng dụng được tạo bởi %1$s. \n \nĐóng góp: %2$s. \nBản dịch: %3$s.</string>
     <string name="link_changelog">Nhật ký thay đổi</string>
     <string name="link_source">Mã nguồn</string>
     <string name="link_privacy">Chính sách bảo mật</string>
@@ -36,8 +33,7 @@
     <string name="bkp_data_prefs">Tùy chọn: Dữ liệu được lưu dưới dạng tùy chọn.</string>
     <string name="bkp_data_files">Tệp: Dữ liệu được lưu dưới dạng tệp.</string>
     <string name="tutorial">Hướng dẫn</string>
-    <string name="txt_tutorial3">Đặt ứng dụng làm trình duyệt web mặc định để chặn các URL khi mở chúng.
-\n(Không cần thiết nếu URL được chuyển hướng bằng chức năng “Chia sẻ”.)</string>
+    <string name="txt_tutorial3">Đặt ứng dụng làm trình duyệt web mặc định để chặn các URL khi mở chúng. \n(Không cần thiết nếu URL được chuyển hướng bằng chức năng “Chia sẻ”.)</string>
     <string name="btn_tutorialSkip">Bỏ qua hướng dẫn</string>
     <string name="btn_tutorialEnd">Kết thúc phần hướng dẫn</string>
     <string name="toast_noBrowser">Không mở được trình duyệt web</string>
@@ -53,46 +49,15 @@
     <string name="txt_conf">Dưới đây là tất cả các mô-đun có sẵn, nơi bạn có thể kiểm tra mô tả và thiết đặt của chúng. Bạn cũng có thể sắp xếp lại, chuyển đổi chế độ hiển thị tiêu đề và bật/tắt chúng.</string>
     <string name="menu_toggleDecorations">Chuyển đổi tất cả các tiêu đề</string>
     <string name="btn_tutorialSettings">Lặp lại hướng dẫn</string>
-    <string name="txt_tutorial1">Cảm ơn bạn đã tải xuống ứng dụng!
-\n
-\nĐây là phần hướng dẫn, nếu bạn muốn bỏ qua, bạn có thể thực hiện bằng nút bên dưới. Bạn luôn có thể quay lại hướng dẫn này từ thực đơn thiết đặt.</string>
+    <string name="txt_tutorial1">Cảm ơn bạn đã tải xuống ứng dụng! \n \nĐây là phần hướng dẫn, nếu bạn muốn bỏ qua, bạn có thể thực hiện bằng nút bên dưới. Bạn luôn có thể quay lại hướng dẫn này từ thực đơn thiết đặt.</string>
     <string name="txt_tutorial2">Ứng dụng đóng vai trò trung gian khi mở hoặc chia sẻ liên kết url. Khi một url được gửi đến ứng dụng, bạn có thể tương tác với nó thông qua các mô-đun. Sau đó, bạn có thể mở liên kết (trong ứng dụng bạn muốn), chia sẻ hoặc sao chép liên kết đó vào clipboard.</string>
-    <string name="txt_tutorial4">Mô-đun là cách ứng dụng tương tác với các URL.
-\nMỗi mô-đun có một chức năng cụ thể. Thông thường để trình bày thông tin về URL hoặc cho phép sửa đổi nó.
-\nĐọc về chúng và thiết lập chúng khi cần thiết.
-\n
-\nQuan trọng: Tất cả các hành động đều được thực hiện thủ công theo mặc định. Ứng dụng sẽ không sửa đổi bất cứ điều gì cũng như không kết nối với Internet trừ khi bạn cho phép cụ thể, nhưng một số hành động có thể được tự động áp dụng nếu muốn.
-\n
-\nMở danh sách mô-đun từ màn hình chính hoặc bằng cách nhấn vào nút bên dưới.</string>
-    <string name="txt_tutorial5">Đó là tất cả. Dưới đây là một số lời khuyên có thể hữu ích:
-\n
-\nKhi một ứng dụng không cung cấp cho bạn cách mở hoặc chia sẻ url, nhưng nó cung cấp cho bạn cách thực hiện điều khác, bạn có thể giải quyết vấn đề bằng ứng dụng này. Bạn cũng có thể sao chép url vào khay nhớ tạm bằng cách nhấn và giữ nút chia sẻ.
-\n
-\nCó một số url có mục đích duy nhất là chuyển hướng bạn đến một url khác. Nếu url cuối cùng có thể mở được trong ứng dụng thì bạn có thể tránh mở nó trong trình duyệt.
-\n
-\nHy vọng bạn thấy ứng dụng này hữu ích! Và đừng ngần ngại đề xuất các tính năng, báo cáo lỗi hoặc thậm chí đề xuất các thay đổi. Tìm tất cả các liên kết có liên quan trên màn hình giới thiệu.</string>
-    <string name="mOpen_desc">Chứa các nút sau (trái sang phải):
-\n- Nút Tab tùy chỉnh: bật/tắt tính năng tab tùy chỉnh. Khi được bật, trình duyệt sẽ được mở ở chế độ \'nhẹ\'.
-\n- Nút ẩn danh: Chỉ dành cho Firefox. Chuyển đổi để bật/tắt chế độ ẩn danh. Khi được bật, trình duyệt sẽ được mở ở chế độ ẩn danh.
-\n- Nút mở: Nhấn vào tên ứng dụng để mở link trên ứng dụng đó. Nếu một liên kết có thể được mở bằng nhiều ứng dụng, một mũi tên sẽ hiển thị để bạn chọn.
-\n- Nút Sao chép: Nhấn nút để sao chép link vào clipboard.
-\n- Nút Chia sẻ: Nhấn nút để chia sẻ link.</string>
+    <string name="txt_tutorial4">Mô-đun là cách ứng dụng tương tác với các URL. \nMỗi mô-đun có một chức năng cụ thể. Thông thường để trình bày thông tin về URL hoặc cho phép sửa đổi nó. \nĐọc về chúng và thiết lập chúng khi cần thiết. \n \nQuan trọng: Tất cả các hành động đều được thực hiện thủ công theo mặc định. Ứng dụng sẽ không sửa đổi bất cứ điều gì cũng như không kết nối với Internet trừ khi bạn cho phép cụ thể, nhưng một số hành động có thể được tự động áp dụng nếu muốn. \n \nMở danh sách mô-đun từ màn hình chính hoặc bằng cách nhấn vào nút bên dưới.</string>
+    <string name="txt_tutorial5">Đó là tất cả. Dưới đây là một số lời khuyên có thể hữu ích: \n \nKhi một ứng dụng không cung cấp cho bạn cách mở hoặc chia sẻ url, nhưng nó cung cấp cho bạn cách thực hiện điều khác, bạn có thể giải quyết vấn đề bằng ứng dụng này. Bạn cũng có thể sao chép url vào khay nhớ tạm bằng cách nhấn và giữ nút chia sẻ. \n \nCó một số url có mục đích duy nhất là chuyển hướng bạn đến một url khác. Nếu url cuối cùng có thể mở được trong ứng dụng thì bạn có thể tránh mở nó trong trình duyệt. \n \nHy vọng bạn thấy ứng dụng này hữu ích! Và đừng ngần ngại đề xuất các tính năng, báo cáo lỗi hoặc thậm chí đề xuất các thay đổi. Tìm tất cả các liên kết có liên quan trên màn hình giới thiệu.</string>
+    <string name="mOpen_desc">Chứa các nút sau (trái sang phải): \n- Nút Tab tùy chỉnh: bật/tắt tính năng tab tùy chỉnh. Khi được bật, trình duyệt sẽ được mở ở chế độ \'nhẹ\'. \n- Nút ẩn danh: Chỉ dành cho Firefox. Chuyển đổi để bật/tắt chế độ ẩn danh. Khi được bật, trình duyệt sẽ được mở ở chế độ ẩn danh. \n- Nút mở: Nhấn vào tên ứng dụng để mở link trên ứng dụng đó. Nếu một liên kết có thể được mở bằng nhiều ứng dụng, một mũi tên sẽ hiển thị để bạn chọn. \n- Nút Sao chép: Nhấn nút để sao chép link vào clipboard. \n- Nút Chia sẻ: Nhấn nút để chia sẻ link.</string>
     <string name="toast_cantEnable">Không thể bật mô-đun: %s</string>
-    <string name="mPttrn_desc">Mô-đun này kiểm tra url bằng các mẫu biểu thức chính quy để cảnh báo, gợi ý hoặc áp dụng các thay thế. Bạn có thể sửa đổi hoặc tạo các mẫu của riêng mình hoặc thậm chí sử dụng các mẫu do người dùng tạo.
-\nCác mẫu tích hợp bao gồm:
-\n- Cảnh báo khi chứa các ký tự không phải mã ascii như chữ cái Hy Lạp. Điều này có thể được sử dụng để lừa đảo: googĺe.com vs google.com
-\n- Đề nghị thay \'http\' bằng \'https\'
-\n- Đề xuất thay thế Youtube, Reddit hoặc Twitter bằng các lựa chọn thay thế thân thiện với quyền riêng tư [bị tắt theo mặc định]</string>
-    <string name="mHosts_editor">Cấu hình máy chủ. Định dạng: Danh sách các đối tượng trong đó khóa là nhãn máy chủ và nội dung bao gồm các giá trị tùy chọn sau:
-\n- file: Một url của tập tin máy chủ từ xa để tải xuống. Tất cả các máy chủ hợp lệ có mặt sẽ được thêm vào.
-\n- máy chủ: Danh sách máy chủ thô (chuỗi) cần thêm.
-\n- color: Màu của nhãn. Chuỗi màu Android (#AARRGGBB, #RRGGBB hoặc tên màu hợp lệ). Mặc định là màu đỏ \'nguy hiểm\'.
-\n- thay thế: nếu máy chủ hiện có sai sẽ không được thay thế. Lưu ý rằng các đối tượng được đánh giá từ trên xuống dưới. Đúng theo mặc định.
-\n- đã bật: nếu sai toàn bộ đối tượng này sẽ bị bỏ qua. Đúng theo mặc định.</string>
-    <string name="mFlag_desc">[Tính năng Beta] Đây là mô-đun nâng cao, nó cho phép bạn chỉnh sửa cờ ý định khi mở một ứng dụng khác.
-\nMô-đun này sẽ hiển thị danh sách các cờ, bạn có thể thay đổi xem cờ có được đặt hay không bằng cách nhấn vào biểu tượng. Ngoài ra còn có menu tràn để ẩn cờ trong đó, nó chỉ mang tính trực quan, cờ vẫn sẽ sử dụng trạng thái được chỉ định.
-\nCác cờ sẽ có hai chỉ báo màu bên cạnh hộp kiểm. Phần bên trái hiển thị giá trị nhận được từ ý định, phần bên phải biểu thị trạng thái do chính mô-đun đặt. Màu đỏ có nghĩa là cờ chưa được đặt và màu xanh lá cây có nghĩa là cờ đã được đặt. Ngoài ra, chỉ báo tùy chọn có thể có màu xám, điều này có nghĩa là trạng thái được đặt thành tự động.
-\nVới nút bên dưới, bạn có thể chỉnh sửa trạng thái mặc định và mức độ hiển thị của cờ.</string>
+    <string name="mPttrn_desc">Mô-đun này kiểm tra url bằng các mẫu biểu thức chính quy để cảnh báo, gợi ý hoặc áp dụng các thay thế. Bạn có thể sửa đổi hoặc tạo các mẫu của riêng mình hoặc thậm chí sử dụng các mẫu do người dùng tạo. \nCác mẫu tích hợp bao gồm: \n- Cảnh báo khi chứa các ký tự không phải mã ascii như chữ cái Hy Lạp. Điều này có thể được sử dụng để lừa đảo: googĺe.com vs google.com \n- Đề nghị thay \'http\' bằng \'https\' \n- Đề xuất thay thế Youtube, Reddit hoặc Twitter bằng các lựa chọn thay thế thân thiện với quyền riêng tư [bị tắt theo mặc định]</string>
+    <string name="mHosts_editor">Cấu hình máy chủ. Định dạng: Danh sách các đối tượng trong đó khóa là nhãn máy chủ và nội dung bao gồm các giá trị tùy chọn sau: \n- file: Một url của tập tin máy chủ từ xa để tải xuống. Tất cả các máy chủ hợp lệ có mặt sẽ được thêm vào. \n- máy chủ: Danh sách máy chủ thô (chuỗi) cần thêm. \n- color: Màu của nhãn. Chuỗi màu Android (#AARRGGBB, #RRGGBB hoặc tên màu hợp lệ). Mặc định là màu đỏ \'nguy hiểm\'. \n- thay thế: nếu máy chủ hiện có sai sẽ không được thay thế. Lưu ý rằng các đối tượng được đánh giá từ trên xuống dưới. Đúng theo mặc định. \n- đã bật: nếu sai toàn bộ đối tượng này sẽ bị bỏ qua. Đúng theo mặc định.</string>
+    <string name="mFlag_desc">[Tính năng Beta] Đây là mô-đun nâng cao, nó cho phép bạn chỉnh sửa cờ ý định khi mở một ứng dụng khác. \nMô-đun này sẽ hiển thị danh sách các cờ, bạn có thể thay đổi xem cờ có được đặt hay không bằng cách nhấn vào biểu tượng. Ngoài ra còn có menu tràn để ẩn cờ trong đó, nó chỉ mang tính trực quan, cờ vẫn sẽ sử dụng trạng thái được chỉ định. \nCác cờ sẽ có hai chỉ báo màu bên cạnh hộp kiểm. Phần bên trái hiển thị giá trị nhận được từ ý định, phần bên phải biểu thị trạng thái do chính mô-đun đặt. Màu đỏ có nghĩa là cờ chưa được đặt và màu xanh lá cây có nghĩa là cờ đã được đặt. Ngoài ra, chỉ báo tùy chọn có thể có màu xám, điều này có nghĩa là trạng thái được đặt thành tự động. \nVới nút bên dưới, bạn có thể chỉnh sửa trạng thái mặc định và mức độ hiển thị của cờ.</string>
     <string name="btn_delete">Xóa</string>
     <string name="bkp_secrets">Bí mật: Dữ liệu được coi là \'bí mật\', như khóa api VirusTotal hoặc nhật ký.</string>
     <string name="bjp_cache">Bộ đệm: Dữ liệu có thể dễ dàng tải xuống/tạo, như cơ sở dữ liệu máy chủ. Kích hoạt tùy chọn này có thể làm tăng đáng kể kích thước bản sao lưu.</string>
@@ -117,19 +82,14 @@
     <string name="mVT_badUrl">Cẩn thận! Công cụ %1$d/%2$d đã phát hiện thấy URL (kể từ ngày %3$s)</string>
     <string name="mVT_error">Không thể kết nối với VirusTotal. Đảm bảo khóa API hợp lệ hoặc thử lại sau.</string>
     <string name="mD_name">Mô-đun gỡ lỗi/đánh dấu</string>
-    <string name="mD_desc">Nếu bạn sắp xếp lại các mô-đun, những mô-đun mới được thêm vào trong các bản cập nhật trong tương lai sẽ được đặt phía trên mô-đun này.
-\n
-\nNếu bạn bật tính năng này, nó sẽ hiển thị một số dữ liệu gỡ lỗi nội bộ (như uri mục đích ban đầu), hữu ích cho các nhà phát triển.
-\n
-\nBạn có thể giữ để chọn văn bản.</string>
+    <string name="mD_desc">Nếu bạn sắp xếp lại các mô-đun, những mô-đun mới được thêm vào trong các bản cập nhật trong tương lai sẽ được đặt phía trên mô-đun này. \n \nNếu bạn bật tính năng này, nó sẽ hiển thị một số dữ liệu gỡ lỗi nội bộ (như uri mục đích ban đầu), hữu ích cho các nhà phát triển. \n \nBạn có thể giữ để chọn văn bản.</string>
     <string name="mD_ctabs">Hiển thị thông báo gỡ lỗi từ dịch vụ tab tùy chỉnh</string>
     <string name="mHist_name">Lịch sử</string>
     <string name="mClear_desc">Mô-đun này loại bỏ theo dõi, liên kết giới thiệu và các tham số vô dụng khác khỏi URL. Nó cũng cho phép chuyển hướng URL ngoại tuyến phổ biến.</string>
     <string name="mClear_clear">Áp dụng</string>
     <string name="mClear_name">Trình dọn dẹp URL</string>
     <string name="link_blog">%s\'s blog</string>
-    <string name="bkp_description">Chọn những phần tử cần sao lưu/khôi phục.
-\nKhi khôi phục, nếu bản sao lưu được tạo mà không có nó thì bản sao lưu hiện có sẽ được giữ lại.</string>
+    <string name="bkp_description">Chọn những phần tử cần sao lưu/khôi phục. \nKhi khôi phục, nếu bản sao lưu được tạo mà không có nó thì bản sao lưu hiện có sẽ được giữ lại.</string>
     <string name="bck_chooseFile">Chọn tệp sao lưu</string>
     <string name="bck_backupOk">Đã tạo bản sao lưu</string>
     <string name="bck_backupError">Không thể tạo bản sao lưu, hãy thử chọn một vị trí khác cho tệp.</string>
@@ -149,10 +109,8 @@
     <string name="save">Lưu</string>
     <string name="toast_noApp">Không thể mở ứng dụng</string>
     <string name="bck_deleteTitle">Xóa các phần tử</string>
-    <string name="bck_deleteMessage">CẢNH BÁO! Điều này sẽ xóa tất cả các phần tử đã chọn.
-\nBạn có thực sự muốn tiếp tục không?</string>
-    <string name="bck_restoreMessage">CẢNH BÁO! Điều này sẽ thay thế các phần tử đã chọn từ bản sao lưu.
-\nBạn có thực sự muốn tiếp tục không?</string>
+    <string name="bck_deleteMessage">CẢNH BÁO! Điều này sẽ xóa tất cả các phần tử đã chọn. \nBạn có thực sự muốn tiếp tục không?</string>
+    <string name="bck_restoreMessage">CẢNH BÁO! Điều này sẽ thay thế các phần tử đã chọn từ bản sao lưu. \nBạn có thực sự muốn tiếp tục không?</string>
     <string name="bck_deleteConfirm">Xóa các phần tử</string>
     <string name="next">Kế tiếp</string>
     <string name="noLinks">Không phát hiện thấy liên kết nào</string>
@@ -226,8 +184,7 @@
     <string name="mHosts_name">Trình gắn nhãn máy chủ</string>
     <string name="mHosts_desc">Mô-đun này gắn nhãn các máy chủ, được định cấu hình bằng cách chỉ định chúng theo cách thủ công hoặc bằng cách sử dụng tệp giống như máy chủ từ xa. Bạn có thể sử dụng nó để cảnh báo về các trang web nguy hiểm hoặc đặc biệt. Cấu hình dựng sẵn chỉ định máy chủ của StevenBlack (phần mềm quảng cáo/phần mềm độc hại, tin giả, cờ bạc và nội dung người lớn) từ %s</string>
     <string name="mHosts_buildDesc">Thao tác này sẽ xóa cơ sở dữ liệu máy chủ hiện tại và xây dựng nó với cấu hình hiện tại, tải xuống các tệp máy chủ từ internet nếu được yêu cầu. Hành động này có thể mất vài giây. Tiếp tục?</string>
-    <string name="mUnshort_desc">Mô-đun này sẽ giải rút ngắn các liên kết bằng cách gửi chúng đến %s, nơi đánh giá chúng trên máy chủ của họ và lưu chuyển hướng cho các yêu cầu trong tương lai. Tránh giải rút ngắn các liên kết có dữ liệu riêng tư hoặc nhạy cảm.
-\nAPI của họ bị giới hạn tốc độ ở 10 yêu cầu mỗi giờ đối với các lần kiểm tra mới. Phản hồi của mô-đun sẽ hiển thị số lượng yêu cầu bạn đang chờ xử lý.</string>
+    <string name="mUnshort_desc">Mô-đun này sẽ giải rút ngắn các liên kết bằng cách gửi chúng đến %s, nơi đánh giá chúng trên máy chủ của họ và lưu chuyển hướng cho các yêu cầu trong tương lai. Tránh giải rút ngắn các liên kết có dữ liệu riêng tư hoặc nhạy cảm. \nAPI của họ bị giới hạn tốc độ ở 10 yêu cầu mỗi giờ đối với các lần kiểm tra mới. Phản hồi của mô-đun sẽ hiển thị số lượng yêu cầu bạn đang chờ xử lý.</string>
     <string name="mClear_hashDesc">URL của danh mục tệp băm. Nếu bị bỏ qua, nội dung tải xuống sẽ không được kiểm tra xem liệu nó có bị giả mạo/sửa đổi (không khuyến nghị)</string>
     <string name="mClear_matches">Phù hợp %s</string>
     <string name="mClear_blocked">- ĐÃ CHẶN!</string>
@@ -245,14 +202,9 @@
     <string name="mClear_hashHint">Không kiểm tra băm</string>
     <string name="mClear_updateNow">Cập nhật ngay</string>
     <string name="mClear_restore">Khôi phục đường dẫn ClearURLs</string>
-    <string name="mClear_editor">Quy tắc danh mục: Chúng phải tuân theo định dạng từ %s.
-\nLưu ý rằng mọi sửa đổi đối với đối tượng gốc \'nhà cung cấp\' sẽ bị ghi đè nếu danh mục được cập nhật tự động hoặc thủ công từ hộp thoại trình cập nhật. Để có các quy tắc cá nhân, hãy đặt chúng trong một đối tượng cha khác (bất kỳ tên nào).</string>
+    <string name="mClear_editor">Quy tắc danh mục: Chúng phải tuân theo định dạng từ %s. \nLưu ý rằng mọi sửa đổi đối với đối tượng gốc \'nhà cung cấp\' sẽ bị ghi đè nếu danh mục được cập nhật tự động hoặc thủ công từ hộp thoại trình cập nhật. Để có các quy tắc cá nhân, hãy đặt chúng trong một đối tượng cha khác (bất kỳ tên nào).</string>
     <string name="mRemove_name">Máy xóa truy vấn</string>
-    <string name="mRemove_desc">[KHÔNG DÙNG NỮA] Với mô-đun này, bạn có thể xóa truy vấn khỏi URL.
-\nNhấn nút để xóa tất cả hoặc nhấn mũi tên để xóa từng cái một.
-\nCảm ơn PabloOQ vì ý tưởng và cách triển khai ban đầu!
-\n
-\nMô-đun này không còn được dùng nữa để thay thế bằng mô-đun \'Các phần Uri\'</string>
+    <string name="mRemove_desc">[KHÔNG DÙNG NỮA] Với mô-đun này, bạn có thể xóa truy vấn khỏi URL. \nNhấn nút để xóa tất cả hoặc nhấn mũi tên để xóa từng cái một. \nCảm ơn PabloOQ vì ý tưởng và cách triển khai ban đầu! \n \nMô-đun này không còn được dùng nữa để thay thế bằng mô-đun \'Các phần Uri\'</string>
     <string name="mRemove_noQueries">Không có truy vấn</string>
     <string name="mRemove_one">Loại bỏ %s</string>
     <string name="mRemove_all">Loại bỏ hết</string>
@@ -286,11 +238,7 @@
     <string name="mParts_name">Các phần Uri</string>
     <string name="mUnshort_name">Máy giải rút ngắn</string>
     <string name="mUnshort_ok">Đã giải rút ngắn</string>
-    <string name="mParts_desc">Mô-đun này hiển thị tất cả các phần của url được giải mã: lược đồ, quyền hạn, đường dẫn, truy vấn và đoạn.
-\nBằng cách nhấp vào một phần, nó sẽ được đặt làm url mới, chẳng hạn như hữu ích nếu một trong các truy vấn hoặc đường dẫn là url chuyển hướng được mã hóa.
-\nBằng cách nhấp chuột dài vào một phần, nó sẽ được sao chép vào bảng nhớ tạm.
-\nBạn cũng có thể nhấp vào nút \'X\' để xóa một số trong số chúng.
-\nĐây là phiên bản nâng cao của mô-đun \'Xóa truy vấn\'.</string>
+    <string name="mParts_desc">Mô-đun này hiển thị tất cả các phần của url được giải mã: lược đồ, quyền hạn, đường dẫn, truy vấn và đoạn. \nBằng cách nhấp vào một phần, nó sẽ được đặt làm url mới, chẳng hạn như hữu ích nếu một trong các truy vấn hoặc đường dẫn là url chuyển hướng được mã hóa. \nBằng cách nhấp chuột dài vào một phần, nó sẽ được sao chép vào bảng nhớ tạm. \nBạn cũng có thể nhấp vào nút \'X\' để xóa một số trong số chúng. \nĐây là phiên bản nâng cao của mô-đun \'Xóa truy vấn\'.</string>
     <string name="mChg_current">Phiên bản hiện tại: %s</string>
     <string name="mParts_empty">(trống)</string>
     <string name="mParts_copy">Đã sao chép một phần vào clipboard</string>

@@ -24,10 +24,7 @@
     <!--
         about
     -->
-    <string name="txt_about">"Uygulama %1$s tarafından geliştirilmiştir.
-
-Geliştiriciler: %2$s.
-Çeviriler: %3$s."</string>
+    <string name="txt_about">Uygulama %1$s tarafından geliştirilmiştir.\n\nGeliştiriciler: %2$s.\nÇeviriler: %3$s.</string>
     <string name="link_blog">%s\'un blog sayfası</string>
     <string name="link_changelog">Değişiklikler</string>
     <string name="link_source">Kaynak Kodu</string>
@@ -61,26 +58,11 @@ Geliştiriciler: %2$s.
         tutorial
     -->
     <string name="tutorial">Öğretici</string>
-    <string name="txt_tutorial1">"Uygylamayı indirdiğiniz için teşekkürler!
-
-Bu öğreticiyi aşağıdaki butonu kullanarak atlayabilirsiniz. Bu öğreticiye istediğiniz zaman ayarlar menüsünden geri dönebilirsiniz."</string>
+    <string name="txt_tutorial1">Uygylamayı indirdiğiniz için teşekkürler!\n\nBu öğreticiyi aşağıdaki butonu kullanarak atlayabilirsiniz. Bu öğreticiye istediğiniz zaman ayarlar menüsünden geri dönebilirsiniz.</string>
     <string name="txt_tutorial2">Uygulama, url bağlantılarını açarken veya paylaşırken aracı görevi görür. Uygulamaya bir url gönderildiğinde, modüller aracılığıyla onunla etkileşim kurabilirsiniz. Bundan sonra bağlantıyı (istediğiniz uygulamada) açabilir, paylaşabilir veya panoya kopyalayabilirsiniz.</string>
-    <string name="txt_tutorial3">Uygulamayı, URL\'leri açarken engellemek için varsayılan web tarayıcısı olarak ayarlayın.
-\n(“Paylaş” işlevi kullanılarak URL\'ler yeniden yönlendiriliyorsa gerekli değildir.)</string>
-    <string name="txt_tutorial4">Modüller, uygulamanın URL\'lerle nasıl etkileşime girdiğine ilişkindir.
-\nModüllerin her birinin belirli bir işlevi vardır. Genellikle URL hakkında bilgi sunmak veya değiştirilmesine izin vermek için kullanılır.
-\nOnlar hakkında bilgi edinin ve gerektiği gibi ayarlayın.
-\n
-\nÖnemli: Varsayılan olarak tüm eylemler manueldir. Özellikle izin vermediğiniz sürece uygulama hiçbir şeyi değiştirmeyecek veya İnternet\'e bağlanmayacaktır, ancak istenirse bazı işlemler otomatik olarak uygulanabilir.
-\n
-\nAna ekrandan veya aşağıdaki butona dokunarak modül listesini açın.</string>
-    <string name="txt_tutorial5">"Hepsi bu kadar. Yararlı olabilecek bazı ipuçları:
-
-Bir uygulama size bir url'yi açma veya paylaşma yolu sunmuyorsa, ancak diğerini yapmanız için bir yol veriyorsa, bu uygulamayı kullanarak sorunu çözebilirsiniz. Ayrıca, paylaş butonuna uzun basarak URL'yi panoya kopyalayabilirsiniz.
-
-Tek amacı sizi başka bir url'ye yönlendirmek olan bazı url'ler vardır. Nihai url bir uygulamada açılabiliyorsa, onu bir tarayıcıda açmaktan kaçınabilirsiniz.
-
-Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları bildirmekten ve hatta değişiklik önermekten çekinmeyin. Hakkında ekranında ilgili tüm bağlantıları bulabilirsiniz."</string>
+    <string name="txt_tutorial3">Uygulamayı, URL\'leri açarken engellemek için varsayılan web tarayıcısı olarak ayarlayın. \n(“Paylaş” işlevi kullanılarak URL\'ler yeniden yönlendiriliyorsa gerekli değildir.)</string>
+    <string name="txt_tutorial4">Modüller, uygulamanın URL\'lerle nasıl etkileşime girdiğine ilişkindir. \nModüllerin her birinin belirli bir işlevi vardır. Genellikle URL hakkında bilgi sunmak veya değiştirilmesine izin vermek için kullanılır. \nOnlar hakkında bilgi edinin ve gerektiği gibi ayarlayın. \n \nÖnemli: Varsayılan olarak tüm eylemler manueldir. Özellikle izin vermediğiniz sürece uygulama hiçbir şeyi değiştirmeyecek veya İnternet\'e bağlanmayacaktır, ancak istenirse bazı işlemler otomatik olarak uygulanabilir. \n \nAna ekrandan veya aşağıdaki butona dokunarak modül listesini açın.</string>
+    <string name="txt_tutorial5">Hepsi bu kadar. Yararlı olabilecek bazı ipuçları:\n\nBir uygulama size bir url\'yi açma veya paylaşma yolu sunmuyorsa, ancak diğerini yapmanız için bir yol veriyorsa, bu uygulamayı kullanarak sorunu çözebilirsiniz. Ayrıca, paylaş butonuna uzun basarak URL\'yi panoya kopyalayabilirsiniz.\n\nTek amacı sizi başka bir url\'ye yönlendirmek olan bazı url\'ler vardır. Nihai url bir uygulamada açılabiliyorsa, onu bir tarayıcıda açmaktan kaçınabilirsiniz.\n\nUmarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları bildirmekten ve hatta değişiklik önermekten çekinmeyin. Hakkında ekranında ilgili tüm bağlantıları bulabilirsiniz.</string>
     <string name="btn_tutorialSkip">Öğreticiyi geç</string>
     <string name="btn_tutorialEnd">Öğreticiyi bitir</string>
     <!--
@@ -112,11 +94,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
         modules
     -->
     <string name="mPttrn_name">Kalıp denetleyicisi</string>
-    <string name="mPttrn_desc">Bu modül, değiştirmeleri uyaran, öneren veya uygulayan normal ifade kalıplarıyla url\'yi kontrol eder. Kendi kalıplarınızı değiştirebilir veya oluşturabilir, hatta kullanıcılar tarafından oluşturulanları kullanabilirsiniz.
-\nDahili modeller şunları içerir:
-\n- Yunan harfleri gibi ascii olmayan karakterler içerdiğinde uyarı. Bu, kimlik avı için kullanılabilir: googĺe.com vs google.com
-\n- \'http\'nin \'https\' ile değiştirilmesini öner
-\n- Youtube, Reddit veya Twitter\'ı gizlilik dostu alternatiflerle değiştirmeyi öner [varsayılan olarak devre dışıdır]</string>
+    <string name="mPttrn_desc">Bu modül, değiştirmeleri uyaran, öneren veya uygulayan normal ifade kalıplarıyla url\'yi kontrol eder. Kendi kalıplarınızı değiştirebilir veya oluşturabilir, hatta kullanıcılar tarafından oluşturulanları kullanabilirsiniz. \nDahili modeller şunları içerir: \n- Yunan harfleri gibi ascii olmayan karakterler içerdiğinde uyarı. Bu, kimlik avı için kullanılabilir: googĺe.com vs google.com \n- \'http\'nin \'https\' ile değiştirilmesini öner \n- Youtube, Reddit veya Twitter\'ı gizlilik dostu alternatiflerle değiştirmeyi öner [varsayılan olarak devre dışıdır]</string>
     <string name="mPttrn_userContent">Kullanıcılar tarafından oluşturulan diğer faydalı modellerin listesi: %s</string>
     <string name="mPttrn_fix">Uygula</string>
     <string name="mPttrn_fixed">Uygulandı - %s</string>
@@ -128,12 +106,7 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mPttrn_editor">Burada yeni kalıpları düzenleyebilir veya ekleyebilirsiniz. Biçim:\n- \'regex\': string: tüm kalıbın eşleşmesi için eşleşmesi gereken geçerli bir java regex\'i.\n- \'excludeRegex\': string: sağlanırsa, tüm kalıbın eşleşmesi için eşleşmemesi gereken geçerli bir java normal ifadesi.\n- \'replacement\': string|list: sağlanırsa, \'düzelt\' butonu \'url=url.replaceAll(regex,replacement)\' işlevini çalıştırır. Eğer listeyse, değiştirme ondan rastgele bir öğe olacaktır.\n- \'automatic\': boolean: kalıbı otomatik olarak uygulamak için true değerine ayarlayın.\n- \'enabled\': boolean: kalıbı devre dışı bırakmak için false değerine ayarlayın.\nNot: kalıpları düzenlerseniz, uygulama güncellemelerinden yeni yerleşik kalıplar otomatik olarak eklenmeyecektir (sıfırlama seçeneğiyle bunları geri yükleyebilirsiniz).</string>
     <!-- -->
     <string name="mOpen_name">Aç ve paylaş</string>
-    <string name="mOpen_desc">Aşağıdaki düğmeleri içerir (soldan sağa):
-\n- Özel Sekmeler düğmesi: özel sekme özelliğini etkinleştirmek/devre dışı bırakmak için geçiş yapar. Etkinleştirildiğinde, tarayıcı \'hafif\' modda açılmalıdır.
-\n- Gizli düğmesi: Yalnızca Firefox için. Gizli modu etkinleştirmek/devre dışı bırakmak için geçiş yapın. Etkinleştirildiğinde, tarayıcı gizli olarak açılmalıdır.
-\n- Aç düğmesi: Bağlantıyı o uygulamada açmak için uygulama adına basın. Bir bağlantı birden fazla uygulama ile açılabiliyorsa, seçim yapmanızı sağlamak için bir ok gösterilecektir.
-\n- Kopyala düğmesi: Bağlantıyı panoya kopyalamak için düğmeye basın.
-\n- Paylaş düğmesi: Bağlantıyı paylaşmak için düğmeye basın.</string>
+    <string name="mOpen_desc">Aşağıdaki düğmeleri içerir (soldan sağa): \n- Özel Sekmeler düğmesi: özel sekme özelliğini etkinleştirmek/devre dışı bırakmak için geçiş yapar. Etkinleştirildiğinde, tarayıcı \'hafif\' modda açılmalıdır. \n- Gizli düğmesi: Yalnızca Firefox için. Gizli modu etkinleştirmek/devre dışı bırakmak için geçiş yapın. Etkinleştirildiğinde, tarayıcı gizli olarak açılmalıdır. \n- Aç düğmesi: Bağlantıyı o uygulamada açmak için uygulama adına basın. Bir bağlantı birden fazla uygulama ile açılabiliyorsa, seçim yapmanızı sağlamak için bir ok gösterilecektir. \n- Kopyala düğmesi: Bağlantıyı panoya kopyalamak için düğmeye basın. \n- Paylaş düğmesi: Bağlantıyı paylaşmak için düğmeye basın.</string>
     <string name="mOpen_ctabs">Özel sekmeler:</string>
     <string name="defaultOn">Varsayılan olarak etkin</string>
     <string name="defaultOff">Varsayılan olarak devre dışı bırakıldı</string>
@@ -233,15 +206,10 @@ Umarım uygulamayı yararlı bulursunuz! Ve özellikler önermekten, hataları b
     <string name="mClear_hashError">Sağlama öğesi alınamıyor, URL\'nin geçerli olduğundan ve etkin bir bağlantınız olduğundan emin olun</string>
     <string name="mClear_hashMismatch">Hash\'ler eşleşmiyor, dosya değiştirilmiş olabilir. Kontrolü atlamak istiyorsanız hash URL\'sini kaldırın</string>
     <string name="mClear_restore">ClearUrl dosyalarını geri yükle</string>
-    <string name="mClear_editor">"Katalog kuralları: Şu formatı takip etmelidirler: %s.
-Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncellenirse, 'sağlayıcılar' üst nesnesinde yapılan tüm değişikliklerin üzerine yazılacağını unutmayın. Kişisel kurallara sahip olmak için onları farklı bir üst nesneye (herhangi bir ad) ayarlayın."</string>
+    <string name="mClear_editor">Katalog kuralları: Şu formatı takip etmelidirler: %s.\nKatalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncellenirse, \'sağlayıcılar\' üst nesnesinde yapılan tüm değişikliklerin üzerine yazılacağını unutmayın. Kişisel kurallara sahip olmak için onları farklı bir üst nesneye (herhangi bir ad) ayarlayın.</string>
     <!-- -->
     <string name="mRemove_name">Sorguları Kaldır</string>
-    <string name="mRemove_desc">[KALDIRILDI] Bu modül ile URL\'den sorguları kaldırabilirsiniz.
-\nHepsini kaldırmak için butona basın veya tek seferde bir tane kaldırmak için ok butonuna basın.
-\nFikir ve orijinal uygulama için PabloOQ\'a teşekkürler!
-\n
-\n\'URI parçaları\' bu modülün yerini aldığı için bu modül kaldırılmıştır</string>
+    <string name="mRemove_desc">[KALDIRILDI] Bu modül ile URL\'den sorguları kaldırabilirsiniz. \nHepsini kaldırmak için butona basın veya tek seferde bir tane kaldırmak için ok butonuna basın. \nFikir ve orijinal uygulama için PabloOQ\'a teşekkürler! \n \n\'URI parçaları\' bu modülün yerini aldığı için bu modül kaldırılmıştır</string>
     <string name="mRemove_found1">1 sorgu bulundu</string>
     <string name="mRemove_found">%d sorgu bulundu</string>
     <string name="mRemove_noQueries">Sorgu yok</string>
@@ -266,18 +234,13 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="mHosts_build">Yapı</string>
     <string name="mHosts_uninitialized">Hosts veritabanı başlatılmamış. oluşturmak için basın</string>
     <string name="mHosts_parseError">URL host ayrıştırılamıyor</string>
-    <string name="mHosts_editor">Host yapılandırması. Format: Anahtarın hosts etiketi olduğu ve içeriğin aşağıdaki isteğe bağlı değerleri içerdiği nesnelerin listesi:
-\n- dosya: İndirilecek bir hosts dosyasının url\'si. Mevcut tüm geçerli hosts dosyası eklenecektir.
-\n- hosts: Eklenecek ham hosts (dizeler) listesi.
-\n- renk: Etiketin rengi. Bir Android renk dizisi (#AARRGGBB, #RRGGBB veya geçerli bir renk adı). Varsayılan olarak \'tehlike\' kırmızısına döner.
-\n- değiştir: yanlışsa mevcut hosts değiştirilmez. Nesnelerin yukarıdan aşağıya değerlendirildiğini unutmayın. Varsayılan olarak açıktır.
-\n- etkin: kapalı ise, bu nesnenin tamamı atlanacaktır. Varsayılan olarak açıktır.</string>
+    <string name="mHosts_editor">Host yapılandırması. Format: Anahtarın hosts etiketi olduğu ve içeriğin aşağıdaki isteğe bağlı değerleri içerdiği nesnelerin listesi: \n- dosya: İndirilecek bir hosts dosyasının url\'si. Mevcut tüm geçerli hosts dosyası eklenecektir. \n- hosts: Eklenecek ham hosts (dizeler) listesi. \n- renk: Etiketin rengi. Bir Android renk dizisi (#AARRGGBB, #RRGGBB veya geçerli bir renk adı). Varsayılan olarak \'tehlike\' kırmızısına döner. \n- değiştir: yanlışsa mevcut hosts değiştirilmez. Nesnelerin yukarıdan aşağıya değerlendirildiğini unutmayın. Varsayılan olarak açıktır. \n- etkin: kapalı ise, bu nesnenin tamamı atlanacaktır. Varsayılan olarak açıktır.</string>
     <string name="mHosts_buildTitle">Hosts veritabanı oluşturun</string>
     <string name="mHosts_buildDesc">Bu, mevcut hosts veritabanını temizleyecek ve mevcut yapılandırmayla oluşturacak ve gerekirse hosts dosyalarını internetten indirecektir. Bu işlem birkaç saniye sürebilir. Devam?</string>
     <string name="mHosts_buildProgress">Katalog oluşturuluyor</string>
     <string name="mHosts_buildInit">Başlatılıyor</string>
     <string name="mHosts_buildClear">Temizleniyor…</string>
-    <string name="mHosts_buildDownload">"'%1$s' hosts dosyası şuradan indiriliyor: %2$s…"</string>
+    <string name="mHosts_buildDownload">\'%1$s\' hosts dosyası şuradan indiriliyor: %2$s…</string>
     <string name="mHosts_buildSave">Kaydediliyor…</string>
     <string name="mHosts_built">Veritabanı oluşturuldu: %d hosts</string>
     <!-- -->
@@ -293,16 +256,10 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="mUnshort_ok">Kısaltılmamış</string>
     <!-- -->
     <string name="mFlags_name">İşaretler düzenleyici</string>
-    <string name="mFlag_desc">[Beta özelliği] Bu gelişmiş bir modüldür, başka bir uygulamayı açarken amaç bayraklarını düzenlemenizi sağlar.
-\nBu modül bayrakların bir listesini gösterecektir, simgeye dokunarak bayrağın ayarlanıp ayarlanmadığını değiştirebilirsiniz. Orada bayrakları gizlemek için bir taşma menüsü de vardır, bu sadece görseldir, bayraklar hala atanmış durumu kullanacaktır.
-\nBayraklar, onay kutusunun yanında iki renk göstergesine sahip olacaktır. Soldaki, amaçtan alınan değeri gösterir, sağdaki ise modülün kendisi tarafından ayarlanan durumu gösterir. Kırmızı, bayrağın ayarlanmadığı, yeşil ise ayarlandığı anlamına gelir. Ek olarak tercih göstergesi gri olabilir, bu da durumun otomatik olarak ayarlandığı anlamına gelir.
-\nAşağıdaki düğme ile varsayılan durumu ve bayrakların görünürlüğünü düzenleyebilirsiniz.</string>
+    <string name="mFlag_desc">[Beta özelliği] Bu gelişmiş bir modüldür, başka bir uygulamayı açarken amaç bayraklarını düzenlemenizi sağlar. \nBu modül bayrakların bir listesini gösterecektir, simgeye dokunarak bayrağın ayarlanıp ayarlanmadığını değiştirebilirsiniz. Orada bayrakları gizlemek için bir taşma menüsü de vardır, bu sadece görseldir, bayraklar hala atanmış durumu kullanacaktır. \nBayraklar, onay kutusunun yanında iki renk göstergesine sahip olacaktır. Soldaki, amaçtan alınan değeri gösterir, sağdaki ise modülün kendisi tarafından ayarlanan durumu gösterir. Kırmızı, bayrağın ayarlanmadığı, yeşil ise ayarlandığı anlamına gelir. Ek olarak tercih göstergesi gri olabilir, bu da durumun otomatik olarak ayarlandığı anlamına gelir. \nAşağıdaki düğme ile varsayılan durumu ve bayrakların görünürlüğünü düzenleyebilirsiniz.</string>
     <string name="mOpen_incognito">Gizli mod:</string>
     <string name="mOpen_incognitoDesc">Gizli modu aç / kapat (yalnızca Firefox için)</string>
-    <string name="mParts_desc">Bu modül, kodu çözülen URL\'nin tüm parçalarını gösterir: şema, yetki, yollar, sorgular ve parça.
-\nBir parçaya tıkladığınızda tıkladığınız parça yeni URL olarak ayarlanacaktır, örneğin sorgulardan veya yollardan biri kodlanmış bir yeniden yönlendirme URL\'si ise kullanışlıdır.
-\nAyrıca bazılarını kaldırmak için \'X\' düğmesine tıklayabilirsiniz.
-\nBu, \'Sorgu Kaldırıcı\' modülünün gelişmiş bir sürümüdür.</string>
+    <string name="mParts_desc">Bu modül, kodu çözülen URL\'nin tüm parçalarını gösterir: şema, yetki, yollar, sorgular ve parça. \nBir parçaya tıkladığınızda tıkladığınız parça yeni URL olarak ayarlanacaktır, örneğin sorgulardan veya yollardan biri kodlanmış bir yeniden yönlendirme URL\'si ise kullanışlıdır. \nAyrıca bazılarını kaldırmak için \'X\' düğmesine tıklayabilirsiniz. \nBu, \'Sorgu Kaldırıcı\' modülünün gelişmiş bir sürümüdür.</string>
     <string name="mFlag_editFlags">Varsayılan bayrak değerlerini düzenle</string>
     <string name="mOpen_closeCopy">Kopyaladıktan sonra iletişim kutusunu kapat</string>
     <string name="mOpen_mergeCopy">Kopyala ve Paylaş düğmelerini birleştir (kopyalamak için uzun basın)</string>
