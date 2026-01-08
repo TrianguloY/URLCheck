@@ -58,7 +58,7 @@ public class PatternCatalog extends JsonCatalog {
                         .put("enabled", false)
                 )
                 .put("Twitter ➔ Nitter", new JSONObject()
-                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?(twitter|x)\\.com/(.*)")
+                        .put("regex", "^https?://(?:[a-z0-9-]+\\.)*?(?:twitter|x)\\.com/(.*)")
                         .put("replacement", "https://nitter.net/$1")
                         .put("enabled", false)
                 )
