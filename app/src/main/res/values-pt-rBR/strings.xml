@@ -281,4 +281,14 @@
     <string name="auto_enabled">Habilitar recurso de automações</string>
     <string name="auto_error_toast">Mostrar toast se a automação falhar</string>
     <string name="auto_notFound">Nenhuma automação com a chave \'%s\' está disponível. Certifique-se de que ela seja válida e que o módulo necessário esteja ativo.</string>
+    <string name="txt_width">Largura da caixa de diálogo:\nAviso! Valores pequenos podem ocultar elementos da tela.</string>
+    <string name="spin_fullWidth">Completo</string>
+    <string name="spin_dynamicWidth">Dinâmico</string>
+    <string name="txt_processText">Sincronizar URL com texto editável (quando o aplicativo é aberto ao tocar longamente no texto em uma caixa de texto de entrada)</string>
+    <string name="format">Formatar</string>
+    <string name="discard">Descartar</string>
+    <string name="json_info">Mostrar informações</string>
+    <string name="json_ignore">O conteúdo não é Json válido. Deseja descartá-lo e fechar o editor?</string>
+    <string name="json_discard_close">Descartar e fechar</string>
+    <string name="json_save">Existem alterações não salvas. Deseja salvá-las ou descartá-las?</string>
 </resources>
