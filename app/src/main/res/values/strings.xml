@@ -202,6 +202,13 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_clear">"Will clear the url. Equivalent of pressing the 'Clear' button. Note that the module itself contains an auto setting that will also clear all urls more efficiently, and should be preferred."</string>
     <string name="auto_drawer">"Will open the drawer. Equivalent of pressing the drawer button if collapsed."</string>
     <string name="auto_toast">Display a toast with a fixed text. The text must be provided as an \'args\' named \'text\'.</string>
+    <string name="trigg_available_prefix">Available triggers (keys):</string>
+    <string name="trigg_available_disabled">"This module is disabled, triggers won't fire"</string>
+    <string name="trigg_url">Default trigger: the url changed.</string>
+    <string name="trigg_scan_good">The scan finished and the result has no detections.</string>
+    <string name="trigg_scan_warn">The scan finished and the result has few detections.</string>
+    <string name="trigg_scan_bad">The scan finished and the result has several detections.</string>
+    <string name="trigg_scan_error">The scan failed.</string>
     <!--
         modules
     -->

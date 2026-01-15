@@ -19,9 +19,11 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.companions.VirusTotalUtility;
+import com.trianguloy.urlchecker.modules.companions.VirusTotalUtility.InternalResponse;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
 import java.util.List;
@@ -63,6 +65,11 @@ public class VirusTotalModule extends AModuleData {
     @Override
     public List<AutomationRules.Automation<AModuleDialog>> getAutomations() {
         return (List<AutomationRules.Automation<AModuleDialog>>) (List<?>) VirusTotalDialog.AUTOMATIONS;
+    }
+
+    @Override
+    public List<AutomationRules.Trigger> getTriggers() {
+        return JavaUtils.mapEach(List.of(VirusTotalDialog.Triggers.values()), t -> t.trigger);
     }
 }
 
@@ -138,16 +145,33 @@ class VirusTotalConfig extends AModuleConfig {
 
 class VirusTotalDialog extends AModuleDialog {
 
+    private static final int LIMIT_WARN = 1;
+    private static final int LIMIT_BAD = 3;
+
     static final List<AutomationRules.Automation<VirusTotalDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>("scan", R.string.auto_scan, VirusTotalDialog::scanOrCancel)
     );
+
+    enum Triggers {
+        TRIGGER_GOOD("scan-good", R.string.trigg_scan_good),
+        TRIGGER_WARN("scan-warn", R.string.trigg_scan_warn),
+        TRIGGER_BAD("scan-bad", R.string.trigg_scan_bad),
+        TRIGGER_ERROR("scan-error", R.string.trigg_scan_error),
+        ;
+
+        final AutomationRules.Trigger trigger;
+
+        Triggers(String key, int description) {
+            this.trigger = new AutomationRules.Trigger(key, description);
+        }
+    }
 
     private static final int RETRY_TIMEOUT = 5000;
     private Button btn_scan;
     private TextView txt_result;
 
     private boolean scanning = false;
-    private VirusTotalUtility.InternalResponse result = null;
+    private InternalResponse result = null;
 
     private final StringPref api_key;
 
@@ -201,7 +225,7 @@ class VirusTotalDialog extends AModuleDialog {
 
     /** Manages the scanning in the background */
     private void _scanUrl() {
-        VirusTotalUtility.InternalResponse response;
+        InternalResponse response;
         while (scanning) {
             // asks for the report
             response = VirusTotalUtility.scanUrl(getUrl(), api_key.get(), getActivity());
@@ -210,7 +234,10 @@ class VirusTotalDialog extends AModuleDialog {
             if (response != null) {
                 result = response;
                 scanning = false;
-                getActivity().runOnUiThread(this::updateUI);
+                getActivity().runOnUiThread(() -> {
+                    updateUI();
+                    trigger(result);
+                });
                 return;
             }
 
@@ -222,6 +249,15 @@ class VirusTotalDialog extends AModuleDialog {
             }
         }
 
+    }
+
+    /** Triggers based ont he result obtained. */
+    private void trigger(InternalResponse result) {
+        getActivity().triggerChange((
+                result.error != null ? Triggers.TRIGGER_ERROR
+                        : result.detectionsPositive >= LIMIT_BAD ? Triggers.TRIGGER_BAD
+                        : result.detectionsPositive >= LIMIT_WARN ? Triggers.TRIGGER_WARN
+                        : Triggers.TRIGGER_GOOD).trigger);
     }
 
     /** Updates the ui */
@@ -247,10 +283,10 @@ class VirusTotalDialog extends AModuleDialog {
                 } else {
                     // valid result
                     btn_scan.setEnabled(false);
-                    if (result.detectionsPositive > 2) {
+                    if (result.detectionsPositive >= LIMIT_BAD) {
                         // more that two bad detection, bad url
                         setResult(getActivity().getString(R.string.mVT_badUrl, result.detectionsPositive, result.detectionsTotal, result.date), R.color.bad);
-                    } else if (result.detectionsPositive > 0) {
+                    } else if (result.detectionsPositive >= LIMIT_WARN) {
                         // 1 or 2 bad detections, warning
                         setResult(getActivity().getString(R.string.mVT_warningUrl, result.detectionsPositive, result.detectionsTotal, result.date), R.color.warning);
                     } else {

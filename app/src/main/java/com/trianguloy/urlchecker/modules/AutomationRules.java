@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules;
 
+import static com.trianguloy.urlchecker.dialogs.MainDialog.TRIGGER_URL;
 import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.valueOrDefault;
 
 import android.app.Activity;
@@ -19,6 +20,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /** The automation rules, plus some automation related things (maybe consider splitting into other classes) */
 public class AutomationRules extends JsonCatalog {
@@ -31,6 +33,10 @@ public class AutomationRules extends JsonCatalog {
         public Automation(String key, int description, Consumer<T> action) {
             this(key, description, (dialog, ignoredArgs) -> action.accept(dialog));
         }
+    }
+
+    /** Represents a trigger that a module can fire. */
+    public record Trigger(String key, int description) {
     }
 
     /** Represents an automation that matched a url */
@@ -57,7 +63,9 @@ public class AutomationRules extends JsonCatalog {
     public AutomationRules(Activity cntx) {
         super(cntx, "automations", cntx.getString(R.string.auto_editor)
                 + "\n\n- - - - - - - - - -\n\n"
-                + getAvailableAutomations(cntx));
+                + getAvailableAutomations(cntx)
+                + "\n\n- - - - - - - - - -\n\n"
+                + getAvailableTriggers(cntx));
 
         automationsEnabledPref = AutomationRules.AUTOMATIONS_ENABLED_PREF(cntx);
         automationsShowErrorToast = AutomationRules.AUTOMATIONS_ERROR_TOAST_PREF(cntx);
@@ -85,7 +93,7 @@ public class AutomationRules extends JsonCatalog {
     }
 
     /** Returns the automations that matched a specific [urlData] */
-    public List<MatchedAutomation> check(UrlData urlData, Activity cntx) {
+    public List<MatchedAutomation> check(UrlData urlData, Trigger trigger, Activity cntx) {
         var matches = new ArrayList<MatchedAutomation>();
 
         var catalog = getCatalog();
@@ -93,6 +101,13 @@ public class AutomationRules extends JsonCatalog {
             try {
                 var automation = catalog.getJSONObject(key);
                 if (!automation.optBoolean("enabled", true)) continue;
+
+                // match any trigger
+                if (automation.has("trigger")
+                        ? !JavaUtils.anyMatch(JavaUtils.parseArrayOrElement(automation.get("trigger"), String.class), trigger.key()::equals)
+                        : !Objects.equals(trigger.key(), TRIGGER_URL.key())) {
+                    continue;
+                }
 
                 // match at least one referrer, if any
                 var referrer = AndroidUtils.getReferrer(cntx);
@@ -137,6 +152,30 @@ public class AutomationRules extends JsonCatalog {
             for (var automation : automations) {
                 stringBuilder.append("- \"").append(automation.key()).append("\": ")
                         .append(cntx.getString(automation.description())).append("\n");
+            }
+        }
+
+        return stringBuilder.toString();
+    }
+
+    /** Generates the list of available trigger keys, as text. */
+    private static String getAvailableTriggers(Context cntx) {
+        var stringBuilder = new StringBuilder(cntx.getString(R.string.trigg_available_prefix)).append("\n");
+
+        stringBuilder.append("\n").append("- \"").append(TRIGGER_URL.key()).append("\": ")
+                .append(cntx.getString(TRIGGER_URL.description())).append("\n");
+
+        for (var module : ModuleManager.getModules(true, cntx)) {
+            var triggers = module.getTriggers();
+            if (triggers.isEmpty()) continue;
+
+            stringBuilder.append("\n").append(cntx.getString(module.getName())).append(":\n");
+            if (!ModuleManager.getEnabledPrefOfModule(module, cntx).get()) {
+                stringBuilder.append("⚠ ").append(cntx.getString(R.string.trigg_available_disabled)).append(" ⚠\n");
+            }
+            for (var trigger : triggers) {
+                stringBuilder.append("- \"").append(trigger.key()).append("\": ")
+                        .append(cntx.getString(trigger.description())).append("\n");
             }
         }
 

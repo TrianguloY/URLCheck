@@ -41,4 +41,11 @@ public abstract class AModuleData {
         // implementation notes: due to how java manages generics, you may need to add an unchecked cast
         // return (List<AutomationRules.Automation<AModuleDialog>>) (List<?>) AUTOMATIONS;
     }
+
+    /** Returns the list of automations this module can provide */
+    public List<AutomationRules.Trigger> getTriggers() {
+        return Collections.emptyList();
+        // implementation notes: due to how java manages generics, you may need to add an unchecked cast
+        // return (List<AutomationRules.Trigger>) (List<?>) TRIGGERS;
+    }
 }

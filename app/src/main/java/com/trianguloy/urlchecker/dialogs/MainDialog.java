@@ -51,6 +51,8 @@ public class MainDialog extends Activity {
     /** Maximum number of updates to avoid loops */
     private static final int MAX_UPDATES = 100;
 
+    public static final AutomationRules.Trigger TRIGGER_URL = new AutomationRules.Trigger("url", R.string.trigg_url); // the default trigger
+
     // ------------------- helpers -------------------
 
     private AutomationRules automationRules;
@@ -152,27 +154,7 @@ public class MainDialog extends Activity {
 
             // fifth run automations
             // bug: you can't run automations that modify the url, maybe it's time to implement a proper url queue
-            if (automationRules.automationsEnabledPref.get()) {
-                for (var matchedAutomation : automationRules.check(urlData, this)) {
-                    for (var automationKey : matchedAutomation.actions()) {
-                        var action = automations.get(automationKey);
-                        if (action == null) {
-                            if (automationRules.automationsShowErrorToast.get()) {
-                                Toast.makeText(this, getString(R.string.auto_notFound, automationKey), Toast.LENGTH_LONG).show();
-                            }
-                        } else {
-                            try {
-                                action.accept(matchedAutomation.args());
-                            } catch (Exception e) {
-                                AndroidUtils.assertError("Exception while running automation " + automationKey, e);
-                            }
-                        }
-                    }
-                    if (matchedAutomation.stop()) {
-                        break;
-                    }
-                }
-            }
+            triggerChange(TRIGGER_URL);
 
             break;
         }
@@ -186,6 +168,35 @@ public class MainDialog extends Activity {
 
         // end, reset
         updating = 0;
+    }
+
+    /** Triggers a change (currently to run automations) with a custom [trigger] */
+    public void triggerChange(AutomationRules.Trigger trigger) {
+        if (automationRules.automationsEnabledPref.get()) {
+            for (var matchedAutomation : automationRules.check(urlData, trigger, this)) {
+                for (var automationKey : matchedAutomation.actions()) {
+                    // for each automation
+                    var action = automations.get(automationKey);
+                    // show toast if action doesn't exists (and toast is enabled)
+                    if (action == null) {
+                        if (automationRules.automationsShowErrorToast.get()) {
+                            Toast.makeText(this, getString(R.string.auto_notFound, automationKey), Toast.LENGTH_LONG).show();
+                        }
+                        continue;
+                    }
+                    // run automation
+                    try {
+                        action.accept(matchedAutomation.args());
+                    } catch (Exception e) {
+                        AndroidUtils.assertError("Exception while running automation " + automationKey, e);
+                    }
+                }
+                // stop automations if requested
+                if (matchedAutomation.stop()) {
+                    break;
+                }
+            }
+        }
     }
 
     /** Returns the current url data. Please don't modify it */
