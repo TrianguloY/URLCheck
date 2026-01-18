@@ -310,4 +310,7 @@
     <string name="mVt_categories">வகைகள்:</string>
     <string name="mVt_detections">கண்டறிதல்கள்:</string>
     <string name="mHosts_tm">%s இலிருந்து ச்டீவன் பிளாக் ஓச்ட்கள்</string>
+    <string name="json_bigger">எழுத்துரு அளவை அதிகரி</string>
+    <string name="json_smaller">எழுத்துரு அளவைக் குறை</string>
+    <string name="auto_userContent">பயனர் உருவாக்கிய பிற பயனுள்ள தானியங்குகளின் பட்டியல்: %s</string>
 </resources>

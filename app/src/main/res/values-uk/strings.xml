@@ -363,4 +363,7 @@
     <string name="mVt_categories">Категорії:</string>
     <string name="mVt_detections">Виявлення:</string>
     <string name="mHosts_tm">Ведучі StevenBlack з %s</string>
+    <string name="json_bigger">Збільшити розмір шрифту</string>
+    <string name="json_smaller">Зменшити розмір шрифту</string>
+    <string name="auto_userContent">Список інших корисних автоматизацій, створених користувачами: %s</string>
 </resources>
