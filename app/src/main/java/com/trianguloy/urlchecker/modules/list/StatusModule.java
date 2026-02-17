@@ -2,11 +2,14 @@ package com.trianguloy.urlchecker.modules.list;
 
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
@@ -18,8 +21,10 @@ import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -34,6 +39,10 @@ public class StatusModule extends AModuleData {
 
     public static BoolPref AUTOREDIR_PREF(Context cntx) {
         return new BoolPref("statusCode_autoRedir", false, cntx);
+    }
+
+    public static StringPref USERAGENT_PREF(Context cntx) {
+        return new StringPref("statusCode_useragent", "", cntx);
     }
 
     @Override
@@ -63,6 +72,13 @@ public class StatusModule extends AModuleData {
 }
 
 class StatusConfig extends AModuleConfig {
+    private static final List<Pair<Integer, String>> USERAGENTS = List.of(
+            Pair.create(R.string.mStatus_ua_android, "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Mobile Safari/537.3"),
+            Pair.create(R.string.mStatus_ua_windows, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.3"),
+            Pair.create(R.string.mStatus_ua_mac, "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.10 Safari/605.1.1"),
+            Pair.create(R.string.mStatus_ua_iphone, "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3.1 Mobile/15E148 Safari/604."),
+            Pair.create(R.string.mStatus_ua_default, "")
+    );
 
     public StatusConfig(ModulesActivity cntx) {
         super(cntx);
@@ -75,7 +91,20 @@ class StatusConfig extends AModuleConfig {
 
     @Override
     public void onInitialize(View views) {
+        // autoredirect
         StatusModule.AUTOREDIR_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.autoredirect));
+
+        // useragent
+        var userAgentView = views.<EditText>findViewById(R.id.useragent);
+        StatusModule.USERAGENT_PREF(getActivity()).attachToEditText(userAgentView);
+
+        var choose_useragent = views.findViewById(R.id.set_useragent);
+        AndroidUtils.longTapForDescription(choose_useragent);
+        choose_useragent.setOnClickListener(view -> new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.mStatus_ua_choose)
+                .setItems(JavaUtils.mapEach(USERAGENTS, p -> getActivity().getString(p.first)).toArray(new CharSequence[0]),
+                        (dialogInterface, i) -> userAgentView.setText(USERAGENTS.get(i).second))
+                .show());
     }
 }
 
@@ -95,6 +124,7 @@ class StatusDialog extends AModuleDialog {
     private Thread thread = null;
 
     private BoolPref autoRedir;
+    private StringPref userAgent;
 
     public StatusDialog(MainDialog dialog) {
         super(dialog);
@@ -122,6 +152,7 @@ class StatusDialog extends AModuleDialog {
         redirect.setMovementMethod(LinkMovementMethod.getInstance());
 
         autoRedir = StatusModule.AUTOREDIR_PREF(getActivity());
+        userAgent = StatusModule.USERAGENT_PREF(getActivity());
     }
 
     @Override
@@ -174,6 +205,9 @@ class StatusDialog extends AModuleDialog {
             conn = (HttpURLConnection) new URL(url).openConnection();
             conn.setInstanceFollowRedirects(false);   // Make the logic below easier to detect redirections
             conn.setConnectTimeout(HttpUtils.CONNECT_TIMEOUT);
+            if (!userAgent.get().isEmpty()) {
+                conn.setRequestProperty("User-Agent", userAgent.get());
+            }
             var responseCode = conn.getResponseCode();
             Log.d("RESPONSE_CODE", url + ": " + responseCode);
 

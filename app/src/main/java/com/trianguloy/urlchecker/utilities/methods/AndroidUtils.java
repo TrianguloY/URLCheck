@@ -181,7 +181,7 @@ public interface AndroidUtils {
         view.setOnLongClickListener(v -> {
             var contentDescription = v.getContentDescription();
             if (contentDescription == null) {
-                AndroidUtils.assertError("No content description for view " + view);
+                AndroidUtils.assertError("No content description for view " + v);
             } else {
                 Toast.makeText(v.getContext(), contentDescription, Toast.LENGTH_SHORT).show();
             }

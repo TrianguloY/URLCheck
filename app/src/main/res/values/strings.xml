@@ -259,6 +259,13 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_tabsDesc">Toggle Custom Tabs feature</string>
     <string name="mOpen_incognitoDesc">Toggle incognito mode (for Firefox only)</string>
     <!-- -->
+    <string name="mStatus_useragent">Useragent:</string>
+    <string name="mStatus_ua_choose">Choose a predefined useragent</string>
+    <string name="mStatus_ua_default">(device default)</string>
+    <string name="mStatus_ua_android">Android</string>
+    <string name="mStatus_ua_windows">Windows</string>
+    <string name="mStatus_ua_mac">Mac</string>
+    <string name="mStatus_ua_iphone">iPhone</string>
     <string name="mStatus_name">Status code</string>
     <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
     <string name="mStatus_ioerror">Network error while trying to check the URL: %s</string>

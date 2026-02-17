@@ -197,6 +197,13 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mOpen_noapps">Sin aplicaciones</string>
     <string name="mOpen_tabsDesc">"Activa/desactiva 'custom tabs'"</string>
     <!-- -->
+    <string name="mStatus_useragent">Useragent:</string>
+    <string name="mStatus_ua_choose">Elige un useragent predefinido</string>
+    <string name="mStatus_ua_default">(por defecto)</string>
+    <string name="mStatus_ua_android">Android</string>
+    <string name="mStatus_ua_windows">Windows</string>
+    <string name="mStatus_ua_mac">Mac</string>
+    <string name="mStatus_ua_iphone">iPhone</string>
     <string name="mStatus_name">Código de estado</string>
     <string name="mStatus_desc">Al pulsar sobre el botón de verificación, se realizará una solicitud a la red para recuperar y mostrar el código de estado de la página. Si el resultado es una redirección, podrás ver la URL de destino. El contenido de la URL se obtiene (GET), pero no se evalúa, por lo que no se detectarán las redirecciones basadas en JavaScript.</string>
     <string name="mStatus_ioerror">Error de red al intentar comprobar la URL: %s</string>

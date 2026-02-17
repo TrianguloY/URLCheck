@@ -14,6 +14,42 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="@string/mStatus_useragent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/useragent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/mStatus_ua_default"
+            android:inputType="textMultiLine" />
+
+        <ImageButton
+            android:id="@+id/set_useragent"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/mStatus_ua_choose"
+            android:src="@drawable/list" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
     <Switch
         android:id="@+id/autoredirect"
         android:layout_width="match_parent"
