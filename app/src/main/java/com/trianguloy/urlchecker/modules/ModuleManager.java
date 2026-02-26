@@ -18,6 +18,7 @@ import com.trianguloy.urlchecker.modules.list.TextInputModule;
 import com.trianguloy.urlchecker.modules.list.UnshortenModule;
 import com.trianguloy.urlchecker.modules.list.UriPartsModule;
 import com.trianguloy.urlchecker.modules.list.VirusTotalModule;
+import com.trianguloy.urlchecker.modules.list.RedirectModule;
 import com.trianguloy.urlchecker.modules.list.WebhookModule;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
@@ -48,6 +49,7 @@ public class ModuleManager {
         modules.add(new PatternModule());
         modules.add(new HostsModule());
         modules.add(new WebhookModule());
+        modules.add(new RedirectModule());
         // new modules should preferably be added directly above this line
         modules.add(new FlagsModule());
         modules.add(new DebugModule());

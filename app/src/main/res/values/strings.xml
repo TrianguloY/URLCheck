@@ -451,6 +451,16 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mWebhook_templates">Templates</string>
     <string name="mWebhook_test">Test webhook</string>
     <!-- -->
+    <string name="mRedir_name">Redirector</string>
+    <string name="mRedir_desc">Redirect URLs by replacing the host. For each rule, when a URL\'s host matches the \"from\" field, a button appears to swap it with the \"to\" host. Enable \"Auto\" to apply the redirect automatically.</string>
+    <string name="mRedir_apply">Redirect</string>
+    <string name="mRedir_match">Redirect to %s</string>
+    <string name="mRedir_add">Add rule</string>
+    <string name="mRedir_from">From host</string>
+    <string name="mRedir_to">To host</string>
+    <string name="mRedir_auto">Auto</string>
+    <string name="mRedir_delete">✕</string>
+    <!-- -->
     <string name="mDrawer_name">Drawer</string>
     <string name="mDrawer_desc">All modules below this will be hidden in a drawer. The modules will still work, but will be hidden until you open the drawer. Here you can place modules you rarely use, to avoid clutter.</string>
     <!-- -->
