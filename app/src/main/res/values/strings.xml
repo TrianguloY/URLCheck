@@ -452,9 +452,8 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mWebhook_test">Test webhook</string>
     <!-- -->
     <string name="mRedir_name">Redirector</string>
-    <string name="mRedir_desc">Redirect URLs by replacing the host. For each rule, when a URL\'s host matches the \"from\" field, a button appears to swap it with the \"to\" host. Enable \"Auto\" to apply the redirect automatically.</string>
+    <string name="mRedir_desc">Simplified version of the Pattern checker module, implemented by coderj001.\nRedirect URLs by replacing the host. For each rule, when a URL\'s host matches the \"from\" field, a button appears to swap it with the \"to\" host. Enable \"Auto\" to apply the redirect automatically.</string>
     <string name="mRedir_apply">Redirect</string>
-    <string name="mRedir_match">Redirect to %s</string>
     <string name="mRedir_add">Add rule</string>
     <string name="mRedir_from">From host</string>
     <string name="mRedir_to">To host</string>

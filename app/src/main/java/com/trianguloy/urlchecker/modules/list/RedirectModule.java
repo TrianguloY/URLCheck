@@ -22,8 +22,12 @@ import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
-/** Redirects URLs by replacing the host according to user-defined rules */
+/**
+ * Redirects URLs by replacing the host according to user-defined rules.
+ * Implementation by coderj001.
+ */
 public class RedirectModule extends AModuleData {
 
     static final String RULES_PREF = "redirect_rules";
@@ -66,11 +70,8 @@ class RedirectDialog extends AModuleDialog {
 
     private final ListStringPref rulesPref;
     private LinearLayout box;
-    private TextView status;
 
-    // pending non-auto redirect: [newUrl, toHost]
-    private String pendingNewUrl;
-    private String pendingToHost;
+    private final List<PendingRedirect> pending = new ArrayList<>();
 
     public RedirectDialog(MainDialog dialog) {
         super(dialog);
@@ -84,14 +85,12 @@ class RedirectDialog extends AModuleDialog {
 
     @Override
     public void onInitialize(View views) {
-        status = views.findViewById(R.id.status);
         box = views.findViewById(R.id.box);
     }
 
     @Override
     public void onPrepareUrl(UrlData urlData) {
-        pendingNewUrl = null;
-        pendingToHost = null;
+        pending.clear();
     }
 
     @Override
@@ -101,7 +100,7 @@ class RedirectDialog extends AModuleDialog {
         if (host == null) return;
 
         for (String rule : rulesPref.get()) {
-            String[] parts = rule.split("\\|", 3);
+            String[] parts = rule.split(Pattern.quote(RedirectModule.FIELD_SEP), 3);
             if (parts.length < 3) continue;
             String from = parts[0].trim();
             String to = parts[1].trim();
@@ -112,12 +111,10 @@ class RedirectDialog extends AModuleDialog {
             String newUrl = uri.buildUpon().authority(to).build().toString();
 
             if (auto) {
-                setNewUrl.apply(new UrlData(newUrl));
+                if (setNewUrl.apply(new UrlData(newUrl))) return;
             } else {
-                pendingNewUrl = newUrl;
-                pendingToHost = to;
+                pending.add(new PendingRedirect(newUrl, to));
             }
-            return;
         }
     }
 
@@ -125,20 +122,30 @@ class RedirectDialog extends AModuleDialog {
     public void onDisplayUrl(UrlData urlData) {
         box.removeAllViews();
 
-        if (pendingNewUrl != null) {
+        if (!pending.isEmpty()) {
             setVisibility(true);
-            status.setText(getActivity().getString(R.string.mRedir_match, pendingToHost));
-
-            View row = LayoutInflater.from(getActivity()).inflate(R.layout.button_text, box, false);
-            Button btn = row.findViewById(R.id.button);
-            TextView txt = row.findViewById(R.id.text);
-            btn.setText(R.string.mRedir_apply);
-            txt.setText(pendingToHost);
-            String urlToApply = pendingNewUrl;
-            btn.setOnClickListener(v -> setUrl(urlToApply));
-            box.addView(row);
+            for (PendingRedirect pendingRedirect : pending) {
+                View row = LayoutInflater.from(getActivity()).inflate(R.layout.button_text, box, false);
+                Button btn = row.findViewById(R.id.button);
+                TextView txt = row.findViewById(R.id.text);
+                btn.setText(R.string.mRedir_apply);
+                txt.setText(pendingRedirect.toHost);
+                String urlToApply = pendingRedirect.newUrl;
+                btn.setOnClickListener(v -> setUrl(urlToApply));
+                box.addView(row);
+            }
         } else {
             setVisibility(false);
+        }
+    }
+
+    private static class PendingRedirect {
+        final String newUrl;
+        final String toHost;
+
+        PendingRedirect(String newUrl, String toHost) {
+            this.newUrl = newUrl;
+            this.toHost = toHost;
         }
     }
 }
@@ -166,7 +173,7 @@ class RedirectConfig extends AModuleConfig {
         views.findViewById(R.id.add).setOnClickListener(v -> addRule("", "", false));
 
         for (String rule : rulesPref.get()) {
-            String[] parts = rule.split("\\|", 3);
+            String[] parts = rule.split(Pattern.quote(RedirectModule.FIELD_SEP), 3);
             String from = parts.length > 0 ? parts[0] : "";
             String to = parts.length > 1 ? parts[1] : "";
             boolean auto = parts.length > 2 && Boolean.parseBoolean(parts[2]);
@@ -209,7 +216,7 @@ class RedirectConfig extends AModuleConfig {
             String to = ((EditText) row.findViewById(R.id.to)).getText().toString().trim();
             boolean auto = ((CheckBox) row.findViewById(R.id.auto)).isChecked();
             if (!from.isEmpty() || !to.isEmpty()) {
-                rules.add(from + "|" + to + "|" + auto);
+                rules.add(from + RedirectModule.FIELD_SEP + to + RedirectModule.FIELD_SEP + auto);
             }
         }
         rulesPref.set(rules);

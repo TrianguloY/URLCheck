@@ -49,8 +49,8 @@ public class ModuleManager {
         modules.add(new PatternModule());
         modules.add(new HostsModule());
         modules.add(new WebhookModule());
+        // new modules enabled by default should preferably be added directly above this line
         modules.add(new RedirectModule());
-        // new modules should preferably be added directly above this line
         modules.add(new FlagsModule());
         modules.add(new DebugModule());
 
