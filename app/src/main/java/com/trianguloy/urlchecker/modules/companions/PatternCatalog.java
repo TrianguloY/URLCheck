@@ -84,7 +84,7 @@ public class PatternCatalog extends JsonCatalog {
                         .put("enabled", false)
                 )
 
-                // excludeRegex example
+                // excludeRegex example. Consider replacing with another service that allows all urls
                 .put("URL ➔ Songlink", new JSONObject()
                         .put("regex", "^https?://(?:www\\.)?(open\\.spotify\\.com|music\\.apple\\.com|(?:music\\.)?youtube\\.com/watch|youtu\\.be|soundcloud\\.com|tidal\\.com|deezer\\.com|[^/]*\\.bandcamp\\.com|music\\.amazon\\.com)")
                         .put("excludeRegex", "^https://song\\.link/")
