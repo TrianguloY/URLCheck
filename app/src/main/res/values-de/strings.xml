@@ -344,7 +344,7 @@
     <string name="auto_rule_webhook">Alles an den Webhook senden</string>
     <string name="auto_rule_bitly">bit.ly ent-kürzen</string>
     <string name="txt_processText">Synchronisierung der URL mit editierbarem Text (wenn die App durch langes Tippen auf ein Eingabefeld geöffnet wird)</string>
-    <string name="txt_width">Dialogbreite:\nWarnung: Kleine Werte können Bildschirmelemente verstecken.</string>
+    <string name="txt_width">Dialogbreite (0 für automatisch):\nWarnung: Kleine Werte können Bildschirmelemente verstecken.</string>
     <string name="spin_fullWidth">Voll</string>
     <string name="spin_dynamicWidth">Dynamisch</string>
     <string name="auto_rule_toast">Beispielhinweis</string>
