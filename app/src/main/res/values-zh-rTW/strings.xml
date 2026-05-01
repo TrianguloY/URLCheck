@@ -256,4 +256,6 @@
     <string name="discard">丟棄</string>
     <string name="json_info">顯示資訊</string>
     <string name="json_save_error">無法儲存: %s</string>
+    <string name="a_automations">自動化</string>
+    <string name="auto_enabled">啟用自動化功能</string>
 </resources>
