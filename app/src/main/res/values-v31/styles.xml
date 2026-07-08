@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ActivityThemeDark"
+        parent="android:Theme.DeviceDefault">
+        <item name="android:colorAccent">@android:color/system_accent1_200</item>
+        <item name="colorAccent">@android:color/system_accent1_200</item>
+        <item name="android:colorControlActivated">@android:color/system_accent1_200</item>
+        <item name="android:colorControlHighlight">@android:color/system_accent1_700</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_900</item>
+        <item name="android:windowBackground">@android:color/system_neutral1_900</item>
+        <item name="android:statusBarColor">@android:color/system_neutral1_900</item>
+        <item name="android:windowLightStatusBar">?android:attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?android:attr/isLightTheme</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+    </style>
+
+    <style name="ActivityThemeDayNight"
+        parent="android:Theme.DeviceDefault.DayNight">
+        <item name="android:colorAccent">@color/dynamic_accent</item>
+        <item name="colorAccent">@color/dynamic_accent</item>
+        <item name="android:colorControlActivated">@color/dynamic_accent</item>
+        <item name="android:colorControlHighlight">@color/dynamic_control_highlight</item>
+        <item name="android:colorBackground">@color/dynamic_background</item>
+        <item name="android:windowBackground">@color/dynamic_background</item>
+        <item name="android:statusBarColor">@color/dynamic_background</item>
+        <item name="android:windowLightStatusBar">?android:attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?android:attr/isLightTheme</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+    </style>
+
+    <style name="ActivityThemeLight"
+        parent="android:Theme.DeviceDefault.Light">
+        <item name="android:colorAccent">@android:color/system_accent1_600</item>
+        <item name="colorAccent">@android:color/system_accent1_600</item>
+        <item name="android:colorControlActivated">@android:color/system_accent1_600</item>
+        <item name="android:colorControlHighlight">@android:color/system_accent1_100</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_50</item>
+        <item name="android:windowBackground">@android:color/system_neutral1_50</item>
+        <item name="android:statusBarColor">@android:color/system_neutral1_50</item>
+        <item name="android:windowLightStatusBar">?android:attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?android:attr/isLightTheme</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+    </style>
+
+    <style name="DialogThemeDark"
+        parent="android:Theme.DeviceDefault.Dialog">
+        <item name="android:colorAccent">@android:color/system_accent1_200</item>
+        <item name="colorAccent">@android:color/system_accent1_200</item>
+        <item name="android:colorControlActivated">@android:color/system_accent1_200</item>
+        <item name="android:colorControlHighlight">@android:color/system_accent1_700</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_900</item>
+        <item name="android:windowBackground">@android:color/system_neutral1_900</item>
+        <item name="android:statusBarColor">@android:color/system_neutral1_900</item>
+        <item name="android:windowLightStatusBar">?android:attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?android:attr/isLightTheme</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+    </style>
+
+    <style name="DialogThemeLight"
+        parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="android:colorAccent">@android:color/system_accent1_600</item>
+        <item name="colorAccent">@android:color/system_accent1_600</item>
+        <item name="android:colorControlActivated">@android:color/system_accent1_600</item>
+        <item name="android:colorControlHighlight">@android:color/system_accent1_100</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_50</item>
+        <item name="android:windowBackground">@android:color/system_neutral1_50</item>
+        <item name="android:statusBarColor">@android:color/system_neutral1_50</item>
+        <item name="android:windowLightStatusBar">?android:attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?android:attr/isLightTheme</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+    </style>
+</resources>
