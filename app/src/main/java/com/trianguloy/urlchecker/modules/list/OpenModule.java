@@ -93,7 +93,9 @@ class OpenDialog extends AModuleDialog {
                         packageName.isEmpty() ? null : packageName);
             }),
             new AutomationRules.Automation<>("share", R.string.auto_share, (dialog, args) ->
-                    dialog.shareUtility.shareUrl(args.optString("package", null))),
+                    dialog.shareUtility.shareUrl(
+                            args.optString("package", null),
+                            args.optString("component", null))),
             new AutomationRules.Automation<>("copy", R.string.auto_copy, dialog ->
                     dialog.shareUtility.copyUrl()),
             new AutomationRules.Automation<>("ctabs", R.string.auto_ctabs, dialog ->
