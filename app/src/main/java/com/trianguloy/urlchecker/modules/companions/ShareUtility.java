@@ -75,19 +75,27 @@ public interface ShareUtility {
 
         /** Shares the url as text */
         public void shareUrl() {
+            shareUrl(null);
+        }
+
+        /** Shares the url as text, optionally to a specific app package (for automation rules) */
+        public void shareUrl(String packageName) {
             // create send intent
             var sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, mainDialog.getUrlData().url);
             sendIntent.setType("text/plain");
 
-            // share intent
-            var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
-            PackageUtils.startActivity(
-                    chooser,
-                    R.string.mOpen_noapps,
-                    mainDialog
-            );
+            if (packageName != null && !packageName.isEmpty()) {
+                // direct to a specific app
+                sendIntent.setPackage(packageName);
+                PackageUtils.startActivity(sendIntent, R.string.mOpen_noapps, mainDialog);
+            } else {
+                // show system chooser
+                var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
+                PackageUtils.startActivity(chooser, R.string.mOpen_noapps, mainDialog);
+            }
+
             if (closeSharePref.get()) {
                 mainDialog.finish();
             }
