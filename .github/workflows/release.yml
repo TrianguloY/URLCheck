@@ -27,7 +27,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v6.2.0
 
       - name: Create release store file
         run: |
