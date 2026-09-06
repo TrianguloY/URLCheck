@@ -1,0 +1,7 @@
+V 1.1
+- Novo módulo “Clear Url”: utiliza o dicionário Clear Url para remover URLs de referência e outros parâmetros de URL desnecessários.
+- Novo módulo “Histórico”: reverte alterações feitas por qualquer módulo.
+- O módulo “Redirect” foi substituído pelo “Status”: obtém o código de status da página, mas ainda permite o redirecionamento.
+- Melhoria no módulo “Pattern”: pressione “Fix” para converter http em https
+- Novo módulo “Debug”: para desenvolvedores (exibe a URI de intenção e as mensagens do ctabs)
+- Organização da interface do usuário.

@@ -394,4 +394,21 @@ Katalog, güncelleyici iletişim kutusundan otomatik veya manuel olarak güncell
     <string name="auto_rule_bitly">Bit.ly linklerini çöz</string>
     <string name="auto_ctabs">Ctabs\'ı etkinleştirir. Devre dışı bırakılmışsa \'ctabs\' düğmesine basmaya eşdeğerdir (gizli olsa bile).</string>
     <string name="auto_incognito">Gizli modu etkinleştirir. Devre dışı bırakılmışsa (gizli olsa bile) \'gizli\' düğmesine basmaya eşdeğerdir.</string>
+    <string name="txt_width">Diyalog penceresi genişliği (otomatik için 0):\nUyarı! Düşük değerler ekranda ki öğeleri gizleyebilir.</string>
+    <string name="spin_fullWidth">Tam Genişlik</string>
+    <string name="spin_dynamicWidth">Dinamik</string>
+    <string name="txt_processText">Düzenlenebilir metin içeren url\'yi senkronize et (uygulama, bir metin giriş kutusundaki metne uzun basılarak açıldığında)</string>
+    <string name="format">Format</string>
+    <string name="discard">Sil</string>
+    <string name="json_info">Bilgileri göster</string>
+    <string name="json_ignore">İçerik geçerli bir Json değil. İçeriği silip düzenleyiciyi kapatmak istiyor musunuz?</string>
+    <string name="json_discard_close">Sil ve kapat</string>
+    <string name="json_save">Kaydedilmemiş değişiklikler var, bunları kaydetmek mi yoksa iptal etmek mi istersiniz?</string>
+    <string name="json_save_error">Kaydedilemedi: %s</string>
+    <string name="json_format_error">İçerik geçerli bir Json olmadığı için ayrıştırılamıyor.</string>
+    <string name="json_discard">Uyarı, bu işlem, düzenleyicideki içeriği kaydedilmiş json dosyasıyla değiştirecektir. Yapılan tüm değişiklikler kaybolacaktır. Devam etmek istiyor musunuz?</string>
+    <string name="json_reset">Uyarı: Bu işlem, düzenleyici içeriğini yerleşik json dosyasıyla değiştirecektir. Düzenleyicide yapılan tüm değişiklikler kaybolacak, ancak kaydedilmiş içerik manuel olarak kaydedilmedikçe değiştirilmeyecektir. Devam etmek istiyor musunuz?</string>
+    <string name="json_bigger">Yazı fontunu büyüt</string>
+    <string name="json_smaller">Yazı fontunu küçült</string>
+    <string name="auto_userContent">Kullanıcılar tarafından oluşturulan diğer faydalı otomasyonların listesi: %s</string>
 </resources>

@@ -250,7 +250,7 @@
     <string name="bck_secrets">Секреты: данные, считающиеся «секретными», например ключ API VirusTotal или журнал.</string>
     <string name="bck_ignoreNewer">Разрешить резервные копии, созданные в более новых версиях приложения.</string>
     <string name="bck_newer">Отменено. Резервная копия была создана в более новой версии приложения.</string>
-    <string name="txt_width">Ширина диалога:\nВнимание! Небольшие значения могут скрывать элементы экрана.</string>
+    <string name="txt_width">Ширина диалогового окна (0 — автоматически)\nВнимание! Малые значения могут привести к скрытию элементов экрана.</string>
     <string name="spin_fullWidth">Полная</string>
     <string name="spin_dynamicWidth">Динамическая</string>
     <string name="json_ignore">Содержимое не является действительным JSON. Вы хотите отказаться и закрыть редактор?</string>
