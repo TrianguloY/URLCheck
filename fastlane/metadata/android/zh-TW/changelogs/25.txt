@@ -1,0 +1,11 @@
+V 2.12
+- 新增：在 Firefox 隱私分頁開啟
+- 新增：加強分享與複製按鈕
+- 新增：編碼與解碼 pattern 參數
+- 改進：在偵錯模組上顯示來源
+- 改進：將展開的群組保留在 URI 部件
+- 改進：按住URI部件可複製到剪貼簿
+- 修理：null optional groups on Android <=10
+- 修理：自分享的文字中解析出連結
+- 修理：原版捷徑現在應該能用了
+- 修理：minor crash on Unshorten module

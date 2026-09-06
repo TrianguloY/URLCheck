@@ -1,0 +1,10 @@
+V 2.8
+- 應用程式更名「Url Checker」→ 「URLCheck」
+- 新增日文翻譯。鳴謝 404potato！
+- 新增 Pattern Checker 範例並改善
+- 新增設定：依域名排序 App
+- 新增設定：分享後關閉
+- 新增設定：隱藏來源 App (referrer)
+- 允許關閉所有模組
+- Improved About activity
+- Internal tooling improvements

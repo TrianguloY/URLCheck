@@ -1,0 +1,2 @@
+V 2.2
+- Novo módulo “Removedor de parâmetros”: remove todos os parâmetros do URL. Agradecemos ao PabloOQ pela ideia e pela implementação original!

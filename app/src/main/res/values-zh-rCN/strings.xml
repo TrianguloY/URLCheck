@@ -258,7 +258,7 @@
     <string name="mHosts_built">数据库构建: %d 主机</string>
     <string name="mUnshort_name">短链接解析器</string>
     <string name="mUnshort_unshort">解析短链接</string>
-    <string name="mUnshort_desc">此模块将通过将网址链接发送到%s 来解析短链接，它们将在其服务器上对该链接进行检查，并为将来的请求保存重定向。避免那些含有私人或敏感数据的短链接。 \n此API的限制为每小时10个新检查的请求。该模块响应将显示还您有多少请求待处理。</string>
+    <string name="mUnshort_desc">此模块将通过将网址链接发送到 %s 来解析短链接，它们将在其服务器上对该链接进行检查，并为将来的请求保存重定向。避免那些含有私人或敏感数据的短链接。 \n免费 API 的限制为每小时 10 个新检查的请求。该模块响应将显示还您有多少请求待处理。如有需要，您可以提供有效 Token 供模块使用经过认证的端点，可能会更加稳定，API 限制与速率也会有所不同。</string>
     <string name="mUnshort_checking">检查中…</string>
     <string name="mUnshort_error">服务器错误: %s</string>
     <string name="mUnshort_internal">内部错误 (%s)</string>
@@ -369,7 +369,7 @@
     <string name="txt_processText">URL 与可编辑文本同步（当通过文本输入框的长按选中文本打开应用时）</string>
     <string name="spin_fullWidth">全宽</string>
     <string name="spin_dynamicWidth">动态</string>
-    <string name="txt_width">对话框宽度：\n警告！过小的值可能会隐藏屏幕元素。</string>
+    <string name="txt_width">对话框宽度（0 为自动）：\n警告！过小的值可能会隐藏屏幕元素。</string>
     <string name="json_reset">警告，将使用内置 JSON 替换编辑器内容。这会导致丢失所有的修改，但已保存的内容除非手动保存则不会被修改。确定要继续吗？</string>
     <string name="auto_available_prefix">可用自动化动作（键名）：</string>
     <string name="auto_notFound">无法找到键名为「%s」的自动化。请确保动作是有效的并且所需模块已激活。</string>
@@ -398,4 +398,8 @@
     <string name="mVt_votes">票数：</string>
     <string name="mVt_detections">检测结果：</string>
     <string name="mHosts_tm">来自 %s 的 StevenBlack 的主机</string>
+    <string name="json_bigger">增大字体大小</string>
+    <string name="json_smaller">减小字体大小</string>
+    <string name="auto_userContent">其他用户创建的有用自动化：%s</string>
+    <string name="mUnshort_token">令牌</string>
 </resources>
