@@ -83,11 +83,6 @@ public class ModulesActivity extends Activity {
                 resetOrder();
                 yield true;
             }
-            case R.id.menu_decorations -> {
-                // toggle decorations entry
-                toggleAllDecorations();
-                yield true;
-            }
             case R.id.menu_pins -> {
                 // toggle pins entry
                 toggleAllPins();
@@ -142,16 +137,6 @@ public class ModulesActivity extends Activity {
         final TextView title = parent.findViewById(R.id.label);
         title.setText(getString(R.string.dd, getString(module.getName())));
         AndroidUtils.setAsClickable(title);
-
-        // configure decorations toggle
-        var decorationsPref = ModuleManager.getDecorationsPrefOfModule(module, this);
-        var toggleDecorations = parent.<ImageView>findViewById(R.id.decorations);
-        AndroidUtils.toggleableListener(
-                toggleDecorations,
-                v -> decorationsPref.toggle(),
-                v -> v.setImageResource(decorationsPref.get() ? R.drawable.t : R.drawable.t_slash)
-        );
-        AndroidUtils.longTapForDescription(toggleDecorations);
 
         // configure pinned toggle
         var pinnedPref = ModuleManager.getPinnedPrefOfModule(module, this);
@@ -242,11 +227,6 @@ public class ModulesActivity extends Activity {
             list.addView(view);
         }
         updateMovableButtons();
-    }
-
-    /** Clicks all the decorations switches (effectively toggling them) */
-    private void toggleAllDecorations() {
-        toggleAll(R.id.decorations, module -> ModuleManager.getDecorationsPrefOfModule(module, this));
     }
 
     /** Clicks all the pin switches (effectively toggling them) */

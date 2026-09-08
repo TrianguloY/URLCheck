@@ -3,7 +3,6 @@
     <string name="a_settings">Настройки</string>
     <string name="desc_down">Вниз</string>
     <string name="txt_info">Это приложение выступает в качестве посредника при открытии URL-ссылок. Диалоговое окно с некоторой информацией о ссылке отображается, если открывается этим приложением. Нажмите на кнопку ниже, чтобы проверить и настроить все доступные модули.</string>
-    <string name="desc_decorations">Показать/скрыть заголовок</string>
     <string name="dismiss">Отклонить</string>
     <string name="invalid">Неверный</string>
     <string name="close">Закрыть</string>
@@ -62,7 +61,6 @@
     <string name="txt_tutorial2">Это приложение играет роль посредника при открытии URL-ссылок. Как только ссылка отправлена в приложение, вы сможете взаимодействовать с ней при помощи модулей. После этого вы можете открыть ссылку (в желаемом приложении), поделиться ей или скопировать в буфер обмена.</string>
     <string name="locale">Русский</string>
     <string name="spin_lightTheme">Светлая</string>
-    <string name="menu_toggleDecorations">Включить/выключить все заголовки</string>
     <string name="toast_noBrowser">Невозможно открыть веб-браузер</string>
     <string name="link_source">Исходный код</string>
     <string name="txt_tutorial4">Модули — это то, как приложение взаимодействует с URL.

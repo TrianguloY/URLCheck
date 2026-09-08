@@ -197,6 +197,27 @@ public interface AndroidUtils {
             }
             return true;
         });
+        // API 26+ also shows it on hover, for mouse and stylus. A long press still shows the
+        // toast: the platform only falls back to the tooltip when no listener handles it
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            view.setTooltipText(view.getContentDescription());
+        }
+    }
+
+    /**
+     * Attaches {@link #longTapForDescription} to every descendant of [root] that has a
+     * content description, so each button explains itself without needing a module title
+     * above it. Views that already have a long click listener are left alone.
+     */
+    static void longTapForDescriptions(View root) {
+        if (root instanceof ViewGroup group) {
+            for (var i = 0; i < group.getChildCount(); i++) {
+                longTapForDescriptions(group.getChildAt(i));
+            }
+        }
+        if (root.getContentDescription() != null && root.hasOnClickListeners() && !root.isLongClickable()) {
+            longTapForDescription(root);
+        }
     }
 
     /** Sets the text and the visibility of a textview (visible iff there is text) */

@@ -38,11 +38,9 @@ Translations: %3$s."</string>
     <string name="txt_conf">Here are all the available modules, where you can check their description and settings. You can also reorder, toggle the title visibility and enable/disable them.</string>
     <string name="toast_cantEnable">"Can't enable the module: %s"</string>
     <string name="menu_resetOrder">Reset order</string>
-    <string name="menu_toggleDecorations">Toggle all titles</string>
     <string name="menu_togglePins">Toggle all pins</string>
     <string name="desc_up">Move up</string>
     <string name="desc_down">Move down</string>
-    <string name="desc_decorations">Show/hide title</string>
     <string name="desc_pinned">Keep the module visible when unused</string>
     <string name="desc_enable">Enable/disable module</string>
     <!--

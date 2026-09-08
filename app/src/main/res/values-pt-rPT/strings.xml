@@ -38,10 +38,8 @@ Translations: %3$s."</string>
     <string name="txt_conf">Lista de módulos: pode ativá-los ou desativá-los, verifique também sua descrição e configuração.</string>
     <string name="toast_cantEnable">Não é possível habilitar o módulo: %s</string>
     <string name="menu_resetOrder">Redefinir ordem</string>
-    <string name="menu_toggleDecorations">Alternar todos os títulos</string>
     <string name="desc_up">Subir</string>
     <string name="desc_down">Descer</string>
-    <string name="desc_decorations">Mostrar/esconder título</string>
     <string name="desc_enable">Ativar/desativar módulo</string>
     <!--
         settings

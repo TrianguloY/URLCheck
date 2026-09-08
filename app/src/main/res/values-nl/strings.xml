@@ -123,14 +123,12 @@
     <string name="mOpen_mergeCopy">Voeg de knoppen Kopiëren en Delen samen (lang indrukken om te kopiëren)</string>
     <string name="mClear_clear">Toepassen</string>
     <string name="mOpen_incognito">Incognito modus:</string>
-    <string name="desc_decorations">Titel tonen/verbergen</string>
     <string name="mVT_error">Kan geen verbinding maken met VirusTotal. Zorg ervoor dat de API-sleutel geldig is, of probeer het later opnieuw.</string>
     <string name="auto">Automatisch</string>
     <string name="mInput_name">Voer tekst in</string>
     <string name="txt_tutorial2">De app fungeert als tussenpersoon bij het openen of delen van url-links. Zodra een URL naar de app is verzonden, kunt u ermee communiceren via de modules. Daarna kunt u de link openen (in de gewenste app), delen of naar het klembord kopiëren.</string>
     <string name="locale">Nederlands</string>
     <string name="spin_lightTheme">Licht</string>
-    <string name="menu_toggleDecorations">Schakel alle titels in</string>
     <string name="mPttrn_ok">Geen overeenkomende patronen</string>
     <string name="toast_noBrowser">Kan de webbrowser niet openen</string>
     <string name="link_source">Broncode</string>

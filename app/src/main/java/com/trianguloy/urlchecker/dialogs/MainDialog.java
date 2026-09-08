@@ -321,21 +321,8 @@ public class MainDialog extends Activity {
                 // separator if necessary
                 if (ll_main.getChildCount() != 0) views.add(addSeparator(ll));
 
-                ViewGroup parent;
-                // set module block
-                if (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()) {
-                    // init decorations
-                    var block = Inflater.inflate(R.layout.dialog_module, ll);
-                    var title = block.<TextView>findViewById(R.id.title);
-                    title.setText(getString(R.string.dd, getString(moduleData.getName())));
-                    parent = block.findViewById(R.id.mod);
-                } else {
-                    // no decorations
-                    parent = ll;
-                }
-
                 // set module content
-                child = Inflater.inflate(layoutId, parent);
+                child = Inflater.inflate(layoutId, ll);
                 views.add(child);
             }
 
@@ -343,17 +330,19 @@ public class MainDialog extends Activity {
             modules.put(module, views);
             module.onInitialize(child);
 
+            // every button carries its own label, which replaces the module title that
+            // used to be drawn above each block
+            if (child != null) AndroidUtils.longTapForDescriptions(child);
+
             // A pinned module keeps its views visible, so drop them from the list the
             // visibility is applied to. This happens after onInitialize on purpose: a
             // module that hides itself while setting up (the changelog when there is no
             // update, for instance) has nothing to show, and pinning it would leave an
-            // empty section with dead buttons behind. Decorations behave the same way.
+            // empty section with dead buttons behind.
             // The drawer is never pinned: it hides itself when it holds nothing, and pinning
             // it would leave a toggle that opens an empty drawer.
-            if (isVisible(views)
-                    && (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()
-                    || (!(moduleData instanceof DrawerModule)
-                    && ModuleManager.getPinnedPrefOfModule(moduleData, this).get()))) {
+            if (isVisible(views) && !(moduleData instanceof DrawerModule)
+                    && ModuleManager.getPinnedPrefOfModule(moduleData, this).get()) {
                 views.clear();
             }
             if (automationRules.automationsEnabledPref.get()) {

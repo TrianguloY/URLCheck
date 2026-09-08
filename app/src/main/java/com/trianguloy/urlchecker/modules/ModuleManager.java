@@ -83,15 +83,6 @@ public class ModuleManager {
     }
 
 
-    // ------------------- decorations -------------------
-
-    private static final String DECORATIONS_PREF_SUFFIX = "_decorate";
-
-    /** Returns a preference to indicate if decorations are shown or not for a specific module */
-    public static BoolPref getDecorationsPrefOfModule(AModuleData module, Context cntx) {
-        return new BoolPref(module.getId() + DECORATIONS_PREF_SUFFIX, false, cntx);
-    }
-
 
     // ------------------- pinned -------------------
 

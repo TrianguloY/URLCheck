@@ -143,7 +143,6 @@
     <string name="save">Зберегти</string>
     <string name="reset">Скинути</string>
     <string name="desc_down">Вниз</string>
-    <string name="desc_decorations">Показати/приховати заголовок</string>
     <string name="desc_enable">Увімкнути/вимкнути модуль</string>
     <string name="btn_setBrowser">Встановити як переглядач за умовчанням</string>
     <string name="toast_defaultSet">Тепер програма є переглядачем за умовчанням</string>
@@ -158,7 +157,6 @@
     <string name="canceled">Скасовано</string>
     <string name="mOpen_noReferrer">Приховати вихідну програму (реферер)</string>
     <string name="btn_tutorialSkip">Пропустити підручник</string>
-    <string name="menu_toggleDecorations">Перемкнути всі заголовки</string>
     <string name="btn_tutorialSettings">Повторіть урок</string>
     <string name="mOpen_ctabs">Спеціальні вкладки:</string>
     <string name="btn_backupRestore">Резервне копіювання / відновлення</string>
