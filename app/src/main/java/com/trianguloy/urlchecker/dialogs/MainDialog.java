@@ -205,6 +205,14 @@ public class MainDialog extends Activity {
         }
     }
 
+    /** Whether any of [views] is currently shown */
+    private static boolean isVisible(List<View> views) {
+        for (var view : views) {
+            if (view.getVisibility() == View.VISIBLE) return true;
+        }
+        return false;
+    }
+
     // ------------------- initialize -------------------
 
     private LinearLayout ll_main;
@@ -331,15 +339,20 @@ public class MainDialog extends Activity {
                 views.add(child);
             }
 
-            // remove views when decorator pref is enabled, to avoid setting the visibility
-            // consider changing to a different flag
-            if (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()) {
-                views.clear();
-            }
-
             // init
             modules.put(module, views);
             module.onInitialize(child);
+
+            // A pinned module keeps its views visible, so drop them from the list the
+            // visibility is applied to. This happens after onInitialize on purpose: a
+            // module that hides itself while setting up (the changelog when there is no
+            // update, for instance) has nothing to show, and pinning it would leave an
+            // empty section with dead buttons behind. Decorations behave the same way.
+            if (isVisible(views)
+                    && (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()
+                    || ModuleManager.getPinnedPrefOfModule(moduleData, this).get())) {
+                views.clear();
+            }
             if (automationRules.automationsEnabledPref.get()) {
                 for (var automation : moduleData.getAutomations()) {
                     if (BuildConfig.DEBUG && automations.containsKey(automation.key())) {
