@@ -6,4 +6,7 @@
     <item
         android:id="@+id/menu_decorations"
         android:title="@string/menu_toggleDecorations" />
+    <item
+        android:id="@+id/menu_pins"
+        android:title="@string/menu_togglePins" />
 </menu>
