@@ -13,13 +13,30 @@
         android:id="@+id/rules_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" />
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/add"
-        style="?android:attr/buttonBarButtonStyle"
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/mRedir_add" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mRedir_add" />
+
+        <Button
+            android:id="@+id/json"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/json_editor" />
+    </LinearLayout>
 
 </LinearLayout>
