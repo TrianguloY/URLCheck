@@ -455,6 +455,10 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <!-- -->
     <string name="mRedir_name">Redirector</string>
     <string name="mRedir_desc">Simplified version of the Pattern checker module, implemented by coderj001.\nRedirect URLs by replacing the host. For each rule, when a URL\'s host matches the \"from\" field, a button appears to swap it with the \"to\" host. Enable \"Auto\" to apply the redirect automatically.</string>
+    <string name="mRedir_json">"Redirect json configuration. Format: List of objects where the key is the rule label and the value has the following properties:
+- 'from': string: full domain to match (if empty the rule will be ignored)
+- 'to': string: full domain that will be replaced (if empty the rule will be ignored)
+- 'auto': boolean: if true will be applied automatically (false by default)"</string>
     <string name="mRedir_apply">Redirect</string>
     <string name="mRedir_add">Add rule</string>
     <string name="mRedir_from">From host</string>

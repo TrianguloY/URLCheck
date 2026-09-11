@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.utilities.generics;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.JsonReader;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.JsonEditorInterface;
@@ -10,6 +11,8 @@ import com.trianguloy.urlchecker.utilities.wrappers.InternalFile;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.StringReader;
 
 /** Represents a generic catalog */
 public abstract class JsonCatalog implements JsonEditorInterface {

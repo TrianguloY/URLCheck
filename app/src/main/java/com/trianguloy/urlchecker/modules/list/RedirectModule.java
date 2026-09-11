@@ -1,7 +1,5 @@
 package com.trianguloy.urlchecker.modules.list;
 
-import static com.trianguloy.urlchecker.modules.list.RedirectModule.*;
-
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,31 +15,24 @@ import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
+import com.trianguloy.urlchecker.modules.companions.RedirectCatalog;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
+import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
-import org.w3c.dom.Text;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  * Redirects URLs by replacing the host according to user-defined rules.
  * Base implementation by coderj001.
  */
 public class RedirectModule extends AModuleData {
-
-    static final String RULES_PREF = "redirect_rules";
-    static final String SEPARATOR = "\n";
-    static final String FIELD_SEP = "|";
-
-    static ListStringPref RULES_PREF(android.content.Context cntx) {
-        return new ListStringPref(RULES_PREF, SEPARATOR, Collections.emptyList(), cntx);
-    }
 
     @Override
     public String getId() {
@@ -73,14 +64,14 @@ public class RedirectModule extends AModuleData {
 
 class RedirectDialog extends AModuleDialog {
 
-    private final ListStringPref rulesPref;
+    private final RedirectCatalog catalog;
     private LinearLayout box;
 
     private final List<PendingRedirect> pending = new ArrayList<>();
 
     public RedirectDialog(MainDialog dialog) {
         super(dialog);
-        rulesPref = RULES_PREF(dialog);
+        catalog = new RedirectCatalog(dialog);
     }
 
     @Override
@@ -104,21 +95,25 @@ class RedirectDialog extends AModuleDialog {
         var host = uri.getHost();
         if (host == null) return;
 
-        for (var rule : rulesPref.get()) {
-            var parts = rule.split(Pattern.quote(FIELD_SEP), 3);
-            if (parts.length < 3) continue;
-            var from = parts[0].trim();
-            var to = parts[1].trim();
-            var auto = Boolean.parseBoolean(parts[2].trim());
+        var rules = catalog.getCatalog();
+        for (var key : JavaUtils.toList(rules.keys())) {
+            try {
+                var data = rules.getJSONObject(key);
+                var from = data.optString("from");
+                var to = data.optString("to");
+                if (from.isEmpty() || to.isEmpty()) continue;
 
-            if (!from.equalsIgnoreCase(host)) continue;
+                if (!from.equalsIgnoreCase(host)) continue;
 
-            var newUrl = uri.buildUpon().authority(to).build().toString();
+                var newUrl = uri.buildUpon().authority(to).build().toString();
 
-            if (auto) {
-                if (setNewUrl.apply(new UrlData(newUrl))) return;
-            } else {
-                pending.add(new PendingRedirect(newUrl, to));
+                if (data.optBoolean("auto")) {
+                    if (setNewUrl.apply(new UrlData(newUrl))) return;
+                } else {
+                    pending.add(new PendingRedirect(newUrl, to));
+                }
+            } catch (JSONException e) {
+                AndroidUtils.assertError("Invalid rule", e);
             }
         }
     }
@@ -152,12 +147,12 @@ class RedirectDialog extends AModuleDialog {
 
 class RedirectConfig extends AModuleConfig {
 
-    private final ListStringPref rulesPref;
+    private final RedirectCatalog catalog;
     private LinearLayout rulesContainer;
 
     public RedirectConfig(ModulesActivity activity) {
         super(activity);
-        rulesPref = RULES_PREF(activity);
+        catalog = new RedirectCatalog(activity);
     }
 
     @Override
@@ -168,23 +163,32 @@ class RedirectConfig extends AModuleConfig {
     @Override
     public void onInitialize(View views) {
         rulesContainer = views.findViewById(R.id.rules_container);
-        views.findViewById(R.id.add).setOnClickListener(v -> addRule("", "", false));
+        views.findViewById(R.id.add).setOnClickListener(v -> addRule("Name", "", "", false));
+        views.findViewById(R.id.json).setOnClickListener(v -> catalog.showEditor());
 
-        for (var rule : rulesPref.get()) {
-            var parts = rule.split(Pattern.quote(FIELD_SEP), 3);
-            var from = parts.length > 0 ? parts[0] : "";
-            var to = parts.length > 1 ? parts[1] : "";
-            var auto = parts.length > 2 && Boolean.parseBoolean(parts[2]);
-            addRule(from, to, auto);
+        var rules = catalog.getCatalog();
+        for (var name : JavaUtils.toList(rules.keys())) {
+            try {
+                var data = rules.getJSONObject(name);
+                addRule(
+                        name,
+                        data.optString("from"),
+                        data.optString("to"),
+                        data.optBoolean("auto"));
+            } catch (JSONException e) {
+                AndroidUtils.assertError("Invalid rule", e);
+            }
         }
     }
 
-    private void addRule(String from, String to, boolean auto) {
+    private void addRule(String name, String from, String to, boolean auto) {
         var row = LayoutInflater.from(getActivity()).inflate(R.layout.config_redirect_row, rulesContainer, false);
+        var nameEdit = row.<EditText>findViewById(R.id.name);
         var fromEdit = row.<EditText>findViewById(R.id.from);
         var toEdit = row.<EditText>findViewById(R.id.to);
         var autoCheck = row.<CheckBox>findViewById(R.id.auto);
 
+        nameEdit.setText(name);
         fromEdit.setText(from);
         toEdit.setText(to);
         autoCheck.setChecked(auto);
@@ -195,6 +199,7 @@ class RedirectConfig extends AModuleConfig {
                 saveRules();
             }
         };
+        nameEdit.addTextChangedListener(watcher);
         fromEdit.addTextChangedListener(watcher);
         toEdit.addTextChangedListener(watcher);
         autoCheck.setOnCheckedChangeListener((b, checked) -> saveRules());
@@ -208,16 +213,24 @@ class RedirectConfig extends AModuleConfig {
     }
 
     private void saveRules() {
-        var rules = new ArrayList<String>();
+        var rules = new JSONObject();
         for (var i = 0; i < rulesContainer.getChildCount(); i++) {
-            var row = rulesContainer.getChildAt(i);
-            var from = row.<EditText>findViewById(R.id.from).getText().toString().trim();
-            var to = row.<EditText>findViewById(R.id.to).getText().toString().trim();
-            var auto = row.<CheckBox>findViewById(R.id.auto).isChecked();
-            if (!from.isEmpty() || !to.isEmpty()) {
-                rules.add(from + FIELD_SEP + to + FIELD_SEP + auto);
+            try {
+                var row = rulesContainer.getChildAt(i);
+                var name = row.<EditText>findViewById(R.id.name).getText().toString().trim();
+                var from = row.<EditText>findViewById(R.id.from).getText().toString().trim();
+                var to = row.<EditText>findViewById(R.id.to).getText().toString().trim();
+                var auto = row.<CheckBox>findViewById(R.id.auto).isChecked();
+                if (!from.isEmpty() || !to.isEmpty()) {
+                    rules.put(name, new JSONObject()
+                            .put("from", from)
+                            .put("to", to)
+                            .put("auto", auto));
+                }
+            } catch (JSONException e) {
+                AndroidUtils.assertError("Invalid rule", e);
             }
         }
-        rulesPref.set(rules);
+        catalog.save(rules);
     }
 }
