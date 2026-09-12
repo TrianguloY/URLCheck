@@ -16,6 +16,7 @@ import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.companions.RedirectCatalog;
+import com.trianguloy.urlchecker.modules.companions.RedirectVisualEditor;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
@@ -148,7 +149,6 @@ class RedirectDialog extends AModuleDialog {
 class RedirectConfig extends AModuleConfig {
 
     private final RedirectCatalog catalog;
-    private LinearLayout rulesContainer;
 
     public RedirectConfig(ModulesActivity activity) {
         super(activity);
@@ -162,75 +162,8 @@ class RedirectConfig extends AModuleConfig {
 
     @Override
     public void onInitialize(View views) {
-        rulesContainer = views.findViewById(R.id.rules_container);
-        views.findViewById(R.id.add).setOnClickListener(v -> addRule("Name", "", "", false));
+        views.findViewById(R.id.add).setOnClickListener(v -> new RedirectVisualEditor(getActivity()).showEditor());
         views.findViewById(R.id.json).setOnClickListener(v -> catalog.showEditor());
-
-        var rules = catalog.getCatalog();
-        for (var name : JavaUtils.toList(rules.keys())) {
-            try {
-                var data = rules.getJSONObject(name);
-                addRule(
-                        name,
-                        data.optString("from"),
-                        data.optString("to"),
-                        data.optBoolean("auto"));
-            } catch (JSONException e) {
-                AndroidUtils.assertError("Invalid rule", e);
-            }
-        }
     }
 
-    private void addRule(String name, String from, String to, boolean auto) {
-        var row = LayoutInflater.from(getActivity()).inflate(R.layout.config_redirect_row, rulesContainer, false);
-        var nameEdit = row.<EditText>findViewById(R.id.name);
-        var fromEdit = row.<EditText>findViewById(R.id.from);
-        var toEdit = row.<EditText>findViewById(R.id.to);
-        var autoCheck = row.<CheckBox>findViewById(R.id.auto);
-
-        nameEdit.setText(name);
-        fromEdit.setText(from);
-        toEdit.setText(to);
-        autoCheck.setChecked(auto);
-
-        var watcher = new DefaultTextWatcher() {
-            @Override
-            public void afterTextChanged(android.text.Editable s) {
-                saveRules();
-            }
-        };
-        nameEdit.addTextChangedListener(watcher);
-        fromEdit.addTextChangedListener(watcher);
-        toEdit.addTextChangedListener(watcher);
-        autoCheck.setOnCheckedChangeListener((b, checked) -> saveRules());
-
-        row.findViewById(R.id.delete).setOnClickListener(v -> {
-            rulesContainer.removeView(row);
-            saveRules();
-        });
-
-        rulesContainer.addView(row);
-    }
-
-    private void saveRules() {
-        var rules = new JSONObject();
-        for (var i = 0; i < rulesContainer.getChildCount(); i++) {
-            try {
-                var row = rulesContainer.getChildAt(i);
-                var name = row.<EditText>findViewById(R.id.name).getText().toString().trim();
-                var from = row.<EditText>findViewById(R.id.from).getText().toString().trim();
-                var to = row.<EditText>findViewById(R.id.to).getText().toString().trim();
-                var auto = row.<CheckBox>findViewById(R.id.auto).isChecked();
-                if (!from.isEmpty() || !to.isEmpty()) {
-                    rules.put(name, new JSONObject()
-                            .put("from", from)
-                            .put("to", to)
-                            .put("auto", auto));
-                }
-            } catch (JSONException e) {
-                AndroidUtils.assertError("Invalid rule", e);
-            }
-        }
-        catalog.save(rules);
-    }
 }
