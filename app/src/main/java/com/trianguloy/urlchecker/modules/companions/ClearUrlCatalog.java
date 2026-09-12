@@ -235,7 +235,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         // prepare more dialog
-        // these are configured here to allow auto-closing the dialog when they are pressed
+        // these are configured here to avoid auto-closing the dialog when they are pressed
         Button updateNow = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         updateNow.setOnClickListener(v -> {
             // updates the rules
