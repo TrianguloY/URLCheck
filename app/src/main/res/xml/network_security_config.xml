@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Since API 24 only the system CA store is trusted by default, which breaks connections through
+self-signed or corporate (MDM-installed) certificate authorities. Trusting the user store too
+restores that. On API < 24 this file is ignored, the user store is already trusted there.
+
+Note that cleartextTrafficPermitted must be repeated here: the manifest usesCleartextTraffic
+attribute is ignored on API 24+ once this config exists, and the default for targetSdk 28+ is false.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
