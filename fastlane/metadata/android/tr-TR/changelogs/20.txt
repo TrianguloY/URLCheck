@@ -1,0 +1,8 @@
+V 2.9
+- Yeni modül: Hosts etiketleyici
+- Modül başlıklarını gizle (isteğe bağlı açılıp kapatılabilir)
+- Yeni ayarlar bölümü
+    - Varsayılan tarayıcı olarak ayarla
+    - Temayı değiştir
+    - Dili değiştir
+-Stil ve kodlar üzerinde ince ayarlar yapıldı ve temizlendi

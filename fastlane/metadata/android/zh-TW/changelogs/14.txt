@@ -1,0 +1,5 @@
+V 2.5
+- 進階 JSON 編輯器（for ClearURLs and Patterns）
+- The ClearURLs database can now be updated
+- 新增西班牙語翻譯
+- 調整設計與用字

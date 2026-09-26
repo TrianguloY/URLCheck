@@ -1,0 +1,10 @@
+V 2.11
+- Novo módulo: Editar sinalizadores
+- Novo módulo: Partes da URI
+- Nova config.: campo excludeRegex no módulo Verificador de Padrões
+- Alteração: os módulos agora ficam ocultos quando não estão em uso
+- Correção: os aplicativos abertos não apareciam nos recentes
+- Correção: os atalhos padrão não estavam disponíveis
+- Correção: o teclado estava obstruindo o diálogo
+- Correção: o módulo de status não estava funcionando corretamente
+- Traduções: novas e atualizações do symbuzzer e do Weblate

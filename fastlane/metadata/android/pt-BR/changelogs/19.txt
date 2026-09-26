@@ -1,0 +1,10 @@
+V 2.8
+- O nome do aplicativo foi alterado de “Url Checker” para “URLCheck”
+- Nova tradução para o japonês. Agradecimentos ao 404potato!
+- Novos exemplos e melhorias no Verificador de padrões
+- Nova configuração para classificar aplicativos por domínio
+- Nova configuração para fechar o aplicativo após o compartilhamento
+- Nova configuração para ocultar o aplicativo de origem (referenciador)
+- Agora é possível desativar todos os módulos
+- Melhorias na seção “Sobre”
+- Melhorias nas ferramentas

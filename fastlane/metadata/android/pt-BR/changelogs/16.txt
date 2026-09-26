@@ -1,0 +1,10 @@
+V 2.7
+- Melhoria na classificação dos aplicativos do módulo “Abrir”
+- Melhoria no atualizador do catálogo ClearURL
+- Adicionadas configurações do CTabs
+- Algumas melhorias para o Android 13
+- Correção de problemas com a classificação dos módulos
+- Correção de links que não abriam
+- Correções e ajustes nas strings
+- Correções e ajustes nos estilos
+- Várias melhorias internas

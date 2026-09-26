@@ -1,0 +1,10 @@
+V 3.3
+-Yeni: Ayarlanabilir diyalog genişliği
+-Yeni: 'referrer' ve 'stop' otomasyonları
+-Yeni: Uzun basışla metni aç ve değiştir
+-Yeni: Yaygın url intent'lerini açma desteği (ArtikusHG'ye teşekkürler!)
+-Yeni: song.link örnek deseni (shalva-an'a teşekkürler!)
+-İyileştirme: Otomasyonlarda çoklu eylem desteği
+-İyileştirme: Otomasyon ve desenlerde 'regex' artık isteğe bağlı
+-Düzeltme: Bazı uygulamalarda özel sekmelerin çalışmaması (Google arama gibi)
+-Kaldırıldı: 'clear' otomasyonu (çalışmıyordu)
