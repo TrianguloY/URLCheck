@@ -120,7 +120,7 @@
     <string name="mOpen_ctabs">Пользовательские вкладки:</string>
     <string name="mVT_warningUrl">Внимание, %1$d/%2$d поисковых систем распознали URL (на момент %3$s)</string>
     <string name="mOpen_closeOpen">Закрыть диалоговое окно после открытия ссылки</string>
-    <string name="mD_ctabs">Показывать сообщения отладки из службы Пользовательских вкладок</string>
+    <string name="mD_ctabs">Показывать сообщения отладки из службы Пользовательских вкладок (даже если модуль отключён).</string>
     <string name="mVT_goodUrl">Ни одна из %1$d поисковых систем не распознала URL (на момент %2$s)</string>
     <string name="mVT_apiKey">API ключ</string>
     <string name="mStatus_unknownCode">%d: Неизвестный код состояния</string>
@@ -250,7 +250,7 @@
     <string name="bck_secrets">Секреты: данные, считающиеся «секретными», например ключ API VirusTotal или журнал.</string>
     <string name="bck_ignoreNewer">Разрешить резервные копии, созданные в более новых версиях приложения.</string>
     <string name="bck_newer">Отменено. Резервная копия была создана в более новой версии приложения.</string>
-    <string name="txt_width">Ширина диалога:\nВнимание! Небольшие значения могут скрывать элементы экрана.</string>
+    <string name="txt_width">Ширина диалогового окна (0 — автоматически)\nВнимание! Малые значения могут привести к скрытию элементов экрана.</string>
     <string name="spin_fullWidth">Полная</string>
     <string name="spin_dynamicWidth">Динамическая</string>
     <string name="json_ignore">Содержимое не является действительным JSON. Вы хотите отказаться и закрыть редактор?</string>
@@ -333,4 +333,5 @@
     <string name="json_smaller">Уменьшить размер шрифта</string>
     <string name="auto_userContent">Список других полезных автоматизаций, созданных пользователями: %s</string>
     <string name="mUnshort_token">Токен</string>
+    <string name="mD_toastError">Пытаться показывать всплывающее уведомление при устранимой внутренней ошибке (даже если модуль отключён).</string>
 </resources>

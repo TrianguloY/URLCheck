@@ -1,0 +1,7 @@
+V 1.1
+- Yeni “Clear Url” modülü: Yönlendirme ve gereksiz Url parametrelerini temizler
+- Yeni 'History' modülü: Herhangi bir modülden yapılan değişiklikleri geri alır.
+- 'Redirect' modülü, 'Status' modülüyle değiştirildi: Sayfanın durum kodunu alır, yönlendirmeye izin vermeye devam eder.
+- 'Pattern' modülü iyileştirildi: 'Fix' düğmesine basarak http'yi https'ye dönüştürün
+- Yeni 'Debug' modülü: Geliştiriciler için (intent uri'sini ve ctabs mesajlarını görüntüler)
+- Arayüz düzenlemesi.

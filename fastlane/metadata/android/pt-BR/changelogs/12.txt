@@ -1,0 +1,4 @@
+V 2.4
+- Adicionada a tradução para o francês. Agradecimentos a Ilithy!
+- Adicionada a tradução para o ucraniano. Agradecimentos a Idris!
+- Tema escuro/claro automático

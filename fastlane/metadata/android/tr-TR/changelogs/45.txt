@@ -1,0 +1,10 @@
+V 3.4
+İyileştirme: VirusTotal entegrasyonu yeniden yazıldı: v3 api’si ve daha fazla ayrıntı gösteriliyor (oylama üçüncüsü)
+İyileştirme: open otomasyonunda bileşen/paket desteği
+İyileştirme: Desenlerde 'regex' ve 'excludeRegex' dize listesi
+İyileştirme: Webhook gövdesi için $REFERRER$
+İyileştirme: enter ile url editText'i kapatma
+Yeni: otomasyonlarda excludeRegex
+Yeni: Toast otomasyon örneği
+Düzeltme: bold host'un host-only url'lerde çalışmaması
+Düzeltme: json editor'de tıklanamayan bağlantılar

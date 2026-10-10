@@ -1,0 +1,7 @@
+V 1.1
+- 新模組「Clear Url」：使用 Clear Url 字典清除網址中的推薦來源及其他無用的網址參數。
+- 新模組「History」：還原任何模組所做的變更。
+- 將模組「Redirect」替換為「Status」：取得頁面的狀態碼，同時仍允許重新導向。
+- 改進「Pattern」模組：按下「Fix」即可將 http 轉換為 https
+- 新模組「Debug」：供開發人員使用（顯示 intent uri 和 ctabs 訊息）
+- UI 清理。

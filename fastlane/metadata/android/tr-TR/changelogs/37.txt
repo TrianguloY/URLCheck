@@ -1,0 +1,5 @@
+V 3.0
+- Yeni: Otomasyon (oylama birincisi)
+- Değişiklik: Metin girişi düzenleme modu artık bir açılır pencere olarak çalışıyor
+- Düzeltme: Uri ayrıştırıcısı artık iki kez kod çözme işlemi yapmıyor
+- İyileştirme: Ana ekran simgeleri güncellendi
