@@ -55,7 +55,7 @@ Translations: %3$s."</string>
     <string name="txt_theme">Theme:</string>
     <string name="spin_darkTheme">Dark</string>
     <string name="spin_lightTheme">Light</string>
-    <string name="txt_width">Dialog width:\nWarning! Small values may hide screen elements.</string>
+    <string name="txt_width">Dialog width (0 for automatic):\nWarning! Small values may hide screen elements.</string>
     <string name="spin_fullWidth">Full</string>
     <string name="spin_dynamicWidth">Dynamic</string>
     <string name="txt_locale">Locale:</string>
@@ -317,7 +317,8 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
 If you enable this it will display some internal debug data (like original intent uri), useful for developers.
 
 You can hold to select text."</string>
-    <string name="mD_ctabs">Show debug messages from the custom tabs service</string>
+    <string name="mD_ctabs">Show debug messages from the custom tabs service (even if module is disabled).</string>
+    <string name="mD_toastError">Try to show toast on recoverable internal error (even if module is disabled).</string>
     <string name="mD_show">Load debug data</string>
     <!-- -->
     <string name="mHist_name">History</string>
