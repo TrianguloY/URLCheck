@@ -227,6 +227,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mInput_name">Texto de entrada</string>
     <string name="mInput_desc">Muestra la URL actual. Pulsa para editarla.</string>
+    <string name="mInput_monospace">Usar un tipo de fuente monoespaciada para ayudar a diferenciar caracteres similares.</string>
     <!-- -->
     <string name="mVT_name">Escáneador de la URL</string>
     <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>

@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.modules.list;
 
 import static android.graphics.Typeface.BOLD;
 import static android.graphics.Typeface.ITALIC;
+import static android.graphics.Typeface.MONOSPACE;
 import static android.text.InputType.TYPE_TEXT_VARIATION_URI;
 import static android.view.KeyEvent.ACTION_DOWN;
 import static android.view.KeyEvent.KEYCODE_ENTER;
@@ -10,6 +11,7 @@ import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE;
 import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -24,12 +26,16 @@ import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
-import com.trianguloy.urlchecker.modules.DescriptionConfig;
 import com.trianguloy.urlchecker.url.UrlData;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 /** This module shows the current url and allows manual editing */
 public class TextInputModule extends AModuleData {
+
+    public static GenericPref.BoolPref MONOSPACE_PREF(Context cntx) {
+        return new GenericPref.BoolPref("text_monospace", true, cntx);
+    }
 
     @Override
     public String getId() {
@@ -48,13 +54,14 @@ public class TextInputModule extends AModuleData {
 
     @Override
     public AModuleConfig getConfig(ModulesActivity cntx) {
-        return new DescriptionConfig(R.string.mInput_desc);
+        return new TextInputConfig(cntx);
     }
 }
 
 class TextInputDialog extends AModuleDialog {
 
     private TextView txt_url;
+    private GenericPref.BoolPref monospacePref;
 
     public TextInputDialog(MainDialog dialog) {
         super(dialog);
@@ -67,7 +74,12 @@ class TextInputDialog extends AModuleDialog {
 
     @Override
     public void onInitialize(View views) {
+        monospacePref = TextInputModule.MONOSPACE_PREF(getActivity());
+
         txt_url = views.findViewById(R.id.url);
+        if (monospacePref.get()) {
+            txt_url.setTypeface(MONOSPACE);
+        }
 
         // Show fullscreen editor with the cursor in the clicked position when clicked
         AndroidUtils.setOnClickWithPositionListener(txt_url, cursor -> showEditor(txt_url.getOffsetForPosition(cursor.first, cursor.second)));
@@ -90,6 +102,7 @@ class TextInputDialog extends AModuleDialog {
         editText.setImeOptions(IME_ACTION_DONE);
         editText.setInputType(TYPE_TEXT_VARIATION_URI);
         editText.setSingleLine(false);
+        if (monospacePref.get()) editText.setTypeface(MONOSPACE);
         if (position >= 0) editText.setSelection(position);
         else editText.setSelection(0, editText.length());
         editText.requestFocus();
@@ -159,5 +172,22 @@ class TextInputDialog extends AModuleDialog {
         }
 
         return str;
+    }
+}
+
+class TextInputConfig extends AModuleConfig {
+
+    public TextInputConfig(ModulesActivity cntx) {
+        super(cntx);
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.config_text;
+    }
+
+    @Override
+    public void onInitialize(View views) {
+        TextInputModule.MONOSPACE_PREF(getActivity()).attachToSwitch(views.findViewById(R.id.chk_monospace));
     }
 }

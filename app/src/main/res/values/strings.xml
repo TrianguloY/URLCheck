@@ -289,6 +289,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <!-- -->
     <string name="mInput_name">Input text</string>
     <string name="mInput_desc">Displays the current URL. Press it to enter edit mode.</string>
+    <string name="mInput_monospace">Use a monospace font to help differentiate similar-looking characters.</string>
     <!-- -->
     <string name="mVT_name">URL Scanner</string>
     <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: %s .</string>
