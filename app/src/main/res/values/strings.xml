@@ -466,7 +466,8 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mSkip_skip">Skip</string>
     <string name="mSkip_found1">1 redirection found</string>
     <string name="mSkip_found">%d redirections found</string>
-    <string name="mSkip_skipped">- Redirection skipped</string>
+    <string name="mSkip_skipped1">1 redirection skipped</string>
+    <string name="mSkip_skipped">%d redirections skipped</string>
     <string name="mSkip_none">No redirections</string>
     <string name="mSkip_auto">Auto-apply</string>
 </resources>
