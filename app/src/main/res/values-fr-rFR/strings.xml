@@ -98,6 +98,8 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
         json
     -->
     <string name="json_editor">Éditeur Json</string>
+    <string name="json_bigger">Augmenter la taille de la police</string>
+    <string name="json_smaller">Diminuer la taille de la police</string>
     <!--
         shortcuts
     -->
@@ -261,6 +263,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mHosts_built">Base de données construite : %d hôtes</string>
     <!-- -->
     <string name="mUnshort_name">Déraccourcisseur</string>
+    <string name="mUnshort_token">Jeton</string>
     <string name="mUnshort_unshort">Déraccourcir</string>
     <string name="mUnshort_desc">Ce module déraccourcira les liens en les envoyant à %s, qui les évaluera sur leurs serveurs et enregistrera la redirection pour les requêtes futures. Évitez de transmettre des liens contenant des données privées ou sensibles. \nLeur API est limitée à 10 requêtes par heure pour les nouveaux contrôles. La réponse du module indiquera le nombre de requêtes que vous avez en attente.</string>
     <string name="mUnshort_tm">API gratuite fournie par Unshorten.me</string>
@@ -348,6 +351,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="auto_enabled">Activer la fonction d\'automatisation</string>
     <string name="auto_error_toast">Affiche un message flottant si l\'automatisme échou</string>
     <string name="auto_notFound">Aucun automatisme avec la clef \'%s\' n\'est disponible. Assurez-vous qu\'elle soit valide ou que le module associé est activé.</string>
+    <string name="auto_userContent">Liste d\'autres automatisations utiles créées par des utilisateurs : %s</string>
     <string name="mWebhook_test">Tester le webhook</string>
     <string name="mUnshort_to">Déraccourcit en %s</string>
     <string name="auto_checkStatus">Exécutera la vérification du statut. Cela équivaut à appuyer sur le bouton \'Vérifier\'.</string>
@@ -403,4 +407,13 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mVt_votes">Votes :</string>
     <string name="mVt_categories">Catégories :</string>
     <string name="auto_toast">Afficher un toast avec un texte fixe. Ce texte doit fournir comme un \'args\' appelé \'texte\'.</string>
+    <string name="mSkip_name">Contournement de redirection</string>
+    <string name="mSkip_desc">Ce module contourne les redirections intégrées aux paramètres de l’URL (par exemple \'?url=https%3A%2F%2Fexample.com\'), hors ligne. Il gère les valeurs brutes, encodées en URL, en base64 et en json.</string>
+    <string name="mSkip_skip">Contourner</string>
+    <string name="mSkip_found1">1 redirection trouvée</string>
+    <string name="mSkip_found">%d redirections trouvées</string>
+    <string name="mSkip_skipped1">1 redirection contournée</string>
+    <string name="mSkip_skipped">%d redirections contournées</string>
+    <string name="mSkip_none">Aucune redirection</string>
+    <string name="mSkip_auto">Appliquer automatiquement</string>
 </resources>
