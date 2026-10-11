@@ -97,7 +97,7 @@ class SkipRedirectDialog extends AModuleDialog {
         skip = views.findViewById(R.id.button);
         skip.setText(R.string.mSkip_skip);
         skip.setOnClickListener(v -> {
-            if (target != null) setUrl(new UrlData(target).putData(SKIPPED, SKIPPED));
+            if (target != null) setUrl(new UrlData(target).putData(SKIPPED, String.valueOf(steps)));
         });
     }
 
@@ -113,7 +113,7 @@ class SkipRedirectDialog extends AModuleDialog {
         steps = result.steps.size();
 
         // apply automatically if required
-        if (auto.get() && setNewUrl.apply(new UrlData(target).putData(SKIPPED, SKIPPED))) return;
+        if (auto.get() && setNewUrl.apply(new UrlData(target).putData(SKIPPED, String.valueOf(steps)))) return;
     }
 
     @Override
@@ -127,8 +127,11 @@ class SkipRedirectDialog extends AModuleDialog {
             AndroidUtils.setRoundedColor(R.color.warning, info);
             setVisibility(true);
         } else if (urlData.getData(SKIPPED) != null) {
-            // already skipped
-            info.setText(R.string.mSkip_skipped);
+            // already skipped, keep showing how many were skipped
+            var skippedCount = parseCount(urlData.getData(SKIPPED));
+            info.setText(skippedCount == 1
+                    ? getActivity().getString(R.string.mSkip_skipped1)
+                    : getActivity().getString(R.string.mSkip_skipped, skippedCount));
             skip.setEnabled(false);
             AndroidUtils.setRoundedColor(R.color.good, info);
             setVisibility(true);
@@ -138,6 +141,14 @@ class SkipRedirectDialog extends AModuleDialog {
             skip.setEnabled(false);
             AndroidUtils.clearRoundedColor(info);
             setVisibility(false);
+        }
+    }
+
+    private static int parseCount(String value) {
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            return 1;
         }
     }
 }

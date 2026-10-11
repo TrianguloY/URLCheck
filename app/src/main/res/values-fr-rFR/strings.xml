@@ -412,7 +412,8 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mSkip_skip">Contourner</string>
     <string name="mSkip_found1">1 redirection trouvée</string>
     <string name="mSkip_found">%d redirections trouvées</string>
-    <string name="mSkip_skipped">- Redirection contournée</string>
+    <string name="mSkip_skipped1">1 redirection contournée</string>
+    <string name="mSkip_skipped">%d redirections contournées</string>
     <string name="mSkip_none">Aucune redirection</string>
     <string name="mSkip_auto">Appliquer automatiquement</string>
 </resources>
