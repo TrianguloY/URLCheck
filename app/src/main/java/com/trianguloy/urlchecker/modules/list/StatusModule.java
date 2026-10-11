@@ -21,10 +21,15 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A module that checks the page status code by performing a GET request
@@ -192,12 +197,31 @@ class StatusDialog extends AModuleDialog {
                 message = getActivity().getString(R.string.mStatus_unknownCode, responseCode);
             }
 
-            // redirection
+            // redirection - check standard 3xx redirects with Location header
             var location = conn.getHeaderField("Location");
-            if (location != null) {
+            if (location != null && !location.isEmpty()) {
                 // this should be removed, the uri needs to be kept encoded
-                // location = URLDecoder.decode(location, sUTF-8);
-                redirectionUrl = new URL(new URL(url), location).toExternalForm(); // Deal with relative URLs
+                // location = URLDecoder.decode(location, "UTF-8");
+                redirectionUrl = resolveUrl(url, location); // Deal with relative URLs
+            } else if (responseCode == 200) {
+                // Check for redirects in HTML content (meta refresh or JavaScript)
+                try {
+                    String bodyString = readResponseBody(conn);
+                    
+                    // A. Check for HTML meta refresh tag
+                    String metaUrl = extractMetaRefreshUrl(bodyString);
+                    if (metaUrl != null && !metaUrl.isEmpty()) {
+                        redirectionUrl = resolveUrl(url, metaUrl);
+                    } else {
+                        // B. Check for JavaScript redirect
+                        String jsUrl = extractJavaScriptUrl(bodyString);
+                        if (jsUrl != null && !jsUrl.isEmpty()) {
+                            redirectionUrl = resolveUrl(url, jsUrl);
+                        }
+                    }
+                } catch (Exception e) {
+                    Log.d("STATUS", "Error reading response body: " + e.getMessage());
+                }
             }
         } catch (IOException e) {
             // io error
@@ -235,6 +259,92 @@ class StatusDialog extends AModuleDialog {
             }
 
         });
+    }
+
+    /** Reads the response body from the HTTP connection */
+    private String readResponseBody(HttpURLConnection conn) throws IOException {
+        StringBuilder bodyBuilder = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                bodyBuilder.append(line).append("\n");
+            }
+        }
+        return bodyBuilder.toString();
+    }
+
+    /** Extracts URL from HTML meta refresh tag */
+    private String extractMetaRefreshUrl(String html) {
+        Pattern pattern = Pattern.compile(
+                "<meta[^>]*http-equiv\\s*=\\s*[\"']?refresh[\"']?[^>]*url\\s*=\\s*[\"']?([^\"'>\\s]+)[\"']?",
+                Pattern.CASE_INSENSITIVE
+        );
+        Matcher matcher = pattern.matcher(html);
+        return matcher.find() ? matcher.group(1) : null;
+    }
+
+    /** Extracts URL from JavaScript window.location redirect */
+    private String extractJavaScriptUrl(String html) {
+        // 1. Extract script tags first for safer parsing
+        Pattern scriptPattern = Pattern.compile("<script[^>]*>(.*?)</script>", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Matcher scriptMatcher = scriptPattern.matcher(html);
+
+        while (scriptMatcher.find()) {
+            String scriptContent = scriptMatcher.group(1).trim();
+
+            // 2. Match window.location expressions
+            Pattern locPattern = Pattern.compile(
+                    "window\\.location(?:\\.href)?\\s*=\\s*(?:decodeURIComponent\\()?([a-zA-Z0-9_\"'/.:?=~%-]+)\\)?\\s*;?",
+                    Pattern.CASE_INSENSITIVE
+            );
+            Matcher locMatcher = locPattern.matcher(scriptContent);
+
+            if (locMatcher.find()) {
+                String rightHandSide = locMatcher.group(1).trim();
+
+                // Case A: String literal with quotes (e.g., "https://...")
+                if ((rightHandSide.startsWith("\"") && rightHandSide.endsWith("\"")) ||
+                    (rightHandSide.startsWith("'") && rightHandSide.endsWith("'"))) {
+                    return rightHandSide.substring(1, rightHandSide.length() - 1);
+                }
+
+                // Case B: Variable reference (e.g., URI) - find its definition
+                String varName = rightHandSide;
+                Pattern varPattern = Pattern.compile(
+                        "(?:var|let|const)?\\s*" + Pattern.quote(varName) + "\\s*=\\s*[\"']([^\"']+)[\"']",
+                        Pattern.CASE_INSENSITIVE
+                );
+                Matcher varMatcher = varPattern.matcher(scriptContent);
+                if (varMatcher.find()) {
+                    String encodedUrl = varMatcher.group(1);
+                    try {
+                        // Decode URL-encoded strings
+                        return URLDecoder.decode(encodedUrl, "UTF-8");
+                    } catch (Exception e) {
+                        Log.d("STATUS", "Error decoding URL: " + e.getMessage());
+                        return encodedUrl;
+                    }
+                }
+
+                // Case C: Fallback - check if it looks like a URL
+                if (rightHandSide.startsWith("http://") || rightHandSide.startsWith("https://")) {
+                    return rightHandSide;
+                }
+            }
+        }
+        return null;
+    }
+
+    /** Resolves relative URLs to absolute URLs */
+    private String resolveUrl(String baseUrl, String relativeUrl) {
+        try {
+            URL base = new URL(baseUrl);
+            URL resolved = new URL(base, relativeUrl);
+            return resolved.toExternalForm();
+        } catch (Exception e) {
+            Log.d("STATUS", "Error resolving URL: " + e.getMessage());
+            return relativeUrl;
+        }
     }
 
     /** Updates the redirect textview */
