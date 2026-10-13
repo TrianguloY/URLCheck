@@ -348,9 +348,12 @@ public class MainDialog extends Activity {
             // module that hides itself while setting up (the changelog when there is no
             // update, for instance) has nothing to show, and pinning it would leave an
             // empty section with dead buttons behind. Decorations behave the same way.
+            // The drawer is never pinned: it hides itself when it holds nothing, and pinning
+            // it would leave a toggle that opens an empty drawer.
             if (isVisible(views)
                     && (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()
-                    || ModuleManager.getPinnedPrefOfModule(moduleData, this).get())) {
+                    || (!(moduleData instanceof DrawerModule)
+                    && ModuleManager.getPinnedPrefOfModule(moduleData, this).get()))) {
                 views.clear();
             }
             if (automationRules.automationsEnabledPref.get()) {
