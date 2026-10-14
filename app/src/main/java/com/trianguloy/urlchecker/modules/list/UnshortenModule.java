@@ -4,6 +4,7 @@ import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -104,6 +105,11 @@ class UnshortenDialog extends AModuleDialog {
 
     private Thread thread = null;
 
+    /** The result shown for the current url, kept when the dialog is recreated */
+    private String shownText = null;
+    private int shownColor = 0;
+    private String shownLink = null;
+
     public UnshortenDialog(MainDialog dialog) {
         super(dialog);
         token = UnshortenModule.TOKEN_PREF(dialog);
@@ -139,6 +145,20 @@ class UnshortenDialog extends AModuleDialog {
         unshort.setEnabled(true);
         info.setText("");
         AndroidUtils.clearRoundedColor(info);
+        shownText = null;
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putString("text", shownText);
+        state.putInt("color", shownColor);
+        state.putString("link", shownLink);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var text = state.getString("text");
+        if (text != null) showInfo(text, state.getInt("color"), state.getString("link"));
     }
 
     /** Unshorts the current url */
@@ -147,6 +167,7 @@ class UnshortenDialog extends AModuleDialog {
         unshort.setEnabled(false);
         info.setText(R.string.mUnshort_checking);
         AndroidUtils.clearRoundedColor(info);
+        shownText = null;
 
         thread = new Thread(() -> _check(disableUpdates));
         thread.start();
@@ -166,18 +187,14 @@ class UnshortenDialog extends AModuleDialog {
             if (!result.success()) {
                 // server error, maybe too many checks
                 getActivity().runOnUiThread(() -> {
-                    info.setText(getActivity().getString(R.string.mUnshort_error, result.error()));
-                    AndroidUtils.setRoundedColor(R.color.warning, info);
+                    showInfo(getActivity().getString(R.string.mUnshort_error, result.error()), R.color.warning, null);
                     // allow retries
                     unshort.setEnabled(true);
                 });
             } else if (Objects.equals(result.finalUrl(), getUrl())) {
                 // same, nothing to replace
                 getActivity().runOnUiThread(() -> {
-                    info.setText(getActivity().getString(R.string.mUnshort_notFound));
-                    if (result.remainingCalls() <= result.usageLimit() / 2)
-                        info.append(" (" + getActivity().getString(R.string.mUnshort_pending, result.remainingCalls(), result.usageLimit()) + ")");
-                    AndroidUtils.clearRoundedColor(info);
+                    showInfo(getActivity().getString(R.string.mUnshort_notFound) + pending(result), 0, null);
                 });
             } else {
                 // correct, replace
@@ -185,14 +202,12 @@ class UnshortenDialog extends AModuleDialog {
 
                     if (!disableUpdates) {
                         // unshort to new url
-                        unshortTo(result.finalUrl());
+                        setUrl(new UrlData(result.finalUrl()).dontTriggerOwn());
+                        showInfo(getActivity().getString(R.string.mUnshort_ok) + pending(result), R.color.good, null);
                     } else {
                         // show unshorted url
-                        info.setText(AndroidUtils.underlineUrl(getActivity().getString(R.string.mUnshort_to, MARKER), result.finalUrl(), this::unshortTo));
+                        showInfo(getActivity().getString(R.string.mUnshort_to, MARKER) + pending(result), 0, result.finalUrl());
                     }
-
-                    if (result.remainingCalls() <= result.usageLimit() / 2)
-                        info.append(" (" + getActivity().getString(R.string.mUnshort_pending, result.remainingCalls(), result.usageLimit()) + ")");
 
                     // a short url can be unshorted to another short url
                     unshort.setEnabled(true);
@@ -210,8 +225,7 @@ class UnshortenDialog extends AModuleDialog {
             }
 
             getActivity().runOnUiThread(() -> {
-                info.setText(getActivity().getString(R.string.mUnshort_internal, e.getMessage()));
-                AndroidUtils.setRoundedColor(R.color.bad, info);
+                showInfo(getActivity().getString(R.string.mUnshort_internal, e.getMessage()), R.color.bad, null);
                 unshort.setEnabled(true);
             });
         }
@@ -221,8 +235,24 @@ class UnshortenDialog extends AModuleDialog {
     /** Unshorts to another url */
     private void unshortTo(String url) {
         setUrl(new UrlData(url).dontTriggerOwn());
-        info.setText(getActivity().getString(R.string.mUnshort_ok));
-        AndroidUtils.setRoundedColor(R.color.good, info);
+        showInfo(getActivity().getString(R.string.mUnshort_ok), R.color.good, null);
+    }
+
+    /** The remaining calls, if few are left */
+    private String pending(UnshortenUtility.UnshortenResult result) {
+        return result.remainingCalls() <= result.usageLimit() / 2
+                ? " (" + getActivity().getString(R.string.mUnshort_pending, result.remainingCalls(), result.usageLimit()) + ")"
+                : "";
+    }
+
+    /** Shows a result, with an optional link in place of the marker and an optional color */
+    private void showInfo(String text, int color, String link) {
+        shownText = text;
+        shownColor = color;
+        shownLink = link;
+        info.setText(link == null ? text : AndroidUtils.underlineUrl(text, link, this::unshortTo));
+        if (color != 0) AndroidUtils.setRoundedColor(color, info);
+        else AndroidUtils.clearRoundedColor(info);
     }
 
 }
