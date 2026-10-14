@@ -122,6 +122,7 @@ class PatternDialog extends AModuleDialog {
             try {
                 var data = patterns.optJSONObject(pattern);
                 var message = new Message(pattern);
+                if (data != null) message.button = data.optString("button", null);
 
                 // enabled?
                 if (data == null) continue;
@@ -236,11 +237,14 @@ class PatternDialog extends AModuleDialog {
         );
         AndroidUtils.setRoundedColor(message.matches ? R.color.warning : R.color.good, text);
 
-        // button
+        // button, only when there is something to replace
         Button fix = row.findViewById(R.id.button);
-        fix.setText(R.string.mPttrn_fix);
-        fix.setEnabled(message.newUrl != null);
-        if (message.newUrl != null) fix.setOnClickListener(v -> setUrl(new UrlData(message.newUrl).putData(APPLIED + message.pattern, message.pattern)));
+        if (message.newUrl == null) {
+            fix.setVisibility(View.GONE);
+            return;
+        }
+        fix.setText(message.button != null ? message.button : getActivity().getString(R.string.mPttrn_fix));
+        fix.setOnClickListener(v -> setUrl(new UrlData(message.newUrl).putData(APPLIED + message.pattern, message.pattern)));
     }
 
     /** DataClass for pattern messages */
@@ -248,6 +252,7 @@ class PatternDialog extends AModuleDialog {
         final String pattern;
         public boolean matches = false;
         String newUrl = null;
+        String button = null;
 
         public Message(String pattern) {
             this.pattern = pattern;
