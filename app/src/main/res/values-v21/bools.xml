@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The open dialog is shown in recents, and its entry is removed when it closes (autoRemoveFromRecents) -->
+    <bool name="dialog_excludeFromRecents">false</bool>
+</resources>

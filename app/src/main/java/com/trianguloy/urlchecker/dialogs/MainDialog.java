@@ -234,38 +234,7 @@ public class MainDialog extends Activity {
         automationRules = new AutomationRules(this);
 
         // load url (or urls)
-        var links = getOpenUrl();
-        switch (links.size()) {
-            case 0:
-                // no links, invalid
-                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
-                finish();
-                break;
-            case 1:
-                // 1 link, just that
-
-                // initialize
-                initializeModules();
-
-                // show
-                onNewUrl(new UrlData(links.iterator().next()));
-                break;
-            default:
-                // multiple links, choose
-                var links_array = links.toArray(new String[0]);
-                new AlertDialog.Builder(this)
-                        .setItems(links_array, (dialog, which) -> {
-
-                            // initialize
-                            initializeModules();
-
-                            // show
-                            onNewUrl(new UrlData(links_array[which]));
-                            dialog.dismiss();
-                        })
-                        .setOnCancelListener(o -> finish())
-                        .show();
-        }
+        openLinks(getOpenUrl());
     }
 
     /** Initializes the modules */
@@ -383,6 +352,52 @@ public class MainDialog extends Activity {
             var uri = intent.getData();
             if (uri == null) return Collections.emptySet();
             return Collections.singleton(uri.toString());
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // The dialog is a single instance that stays open in the background (and in recents) until closed.
+        // A new url replaces the current one, as if a new dialog was opened.
+        setIntent(intent);
+        var links = getOpenUrl();
+        if (links.isEmpty()) Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
+        else openLinks(links);
+    }
+
+    /** Shows the url, or lets the user choose one if there are several. Without any, the dialog closes */
+    private void openLinks(Set<String> links) {
+        switch (links.size()) {
+            case 0:
+                // no links, invalid
+                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+            case 1:
+                // 1 link, just that
+
+                // initialize
+                initializeModules();
+
+                // show
+                onNewUrl(new UrlData(links.iterator().next()));
+                break;
+            default:
+                // multiple links, choose
+                var links_array = links.toArray(new String[0]);
+                new AlertDialog.Builder(this)
+                        .setItems(links_array, (dialog, which) -> {
+
+                            // initialize
+                            initializeModules();
+
+                            // show
+                            onNewUrl(new UrlData(links_array[which]));
+                            dialog.dismiss();
+                        })
+                        .setOnCancelListener(o -> finish())
+                        .show();
         }
     }
 

@@ -31,13 +31,14 @@
         <activity android:name=".activities.JsonEditorActivity" />
         <activity
             android:name=".dialogs.MainDialog"
+            android:autoRemoveFromRecents="true"
             android:clearTaskOnLaunch="true"
-            android:excludeFromRecents="true"
+            android:excludeFromRecents="@bool/dialog_excludeFromRecents"
             android:exported="true"
             android:launchMode="singleInstance"
-            android:noHistory="true"
             android:taskAffinity="com.trianguloy.urlchecker.dialog"
-            android:theme="@android:style/Theme.DeviceDefault.Dialog">
+            android:theme="@android:style/Theme.DeviceDefault.Dialog"
+            tools:targetApi="lollipop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
