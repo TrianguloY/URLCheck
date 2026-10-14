@@ -244,6 +244,9 @@ class PatternDialog extends AModuleDialog {
         // button, only when there is something to replace
         Button fix = row.findViewById(R.id.button);
         if (message.newUrl == null) {
+            // keep the row as high as the ones with a button
+            fix.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+            row.setMinimumHeight(fix.getMeasuredHeight());
             fix.setVisibility(View.GONE);
             return;
         }
