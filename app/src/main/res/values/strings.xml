@@ -219,7 +219,7 @@ Built-in patterns include:
     <string name="mPttrn_fixed">Applied - %s</string>
     <string name="mPttrn_ascii">Warning! Non-ASCII characters found.</string>
     <string name="mPttrn_upperDomain">Warning! Upper case letter in domain.</string>
-    <string name="mPttrn_http">HTTP link. Consider using HTTPS.</string>
+    <string name="mPttrn_http">Unencrypted HTTP link.</string>
     <string name="mPttrn_noSchemeHttp">Missing HTTP scheme.</string>
     <string name="mPttrn_noSchemeHttps">Missing HTTPS scheme.</string>
     <string name="mPttrn_wrongSchemaHttp">Invalid http scheme capitalization.</string>
@@ -227,6 +227,10 @@ Built-in patterns include:
     <string name="mPttrn_httpFix">Use HTTPS</string>
     <string name="mPttrn_noSchemeHttpFix">Add http://</string>
     <string name="mPttrn_noSchemeHttpsFix">Add https://</string>
+    <string name="mPttrn_httpApplied">Applied – encrypted HTTPS link.</string>
+    <string name="mPttrn_noSchemeHttpApplied">Applied – http:// added.</string>
+    <string name="mPttrn_noSchemeHttpsApplied">Applied – https:// added.</string>
+    <string name="mPttrn_wrongSchemaApplied">Applied – scheme written in lower case.</string>
     <string name="mPttrn_ok">No matching patterns</string>
     <string name="mPttrn_editor">"Here you can edit or add new pattern. Format:
 - 'encode': boolean: set to true to encode the url before checking regex.
@@ -234,6 +238,7 @@ Built-in patterns include:
 - 'excludeRegex': string|list: if provided, a valid java regex that the url must not match, otherwise the pattern is skipped. If list, and at least one regex matches, the pattern will be skipped.
 - 'replacement': string|list: if provided, the 'fix' button will run 'url=url.replaceAll(regex,replacement)' [if regex was list, the first pattern to match will be used]. If list, replacement will be a random element from it.
 - 'button': string: if provided, the text of that button (instead of 'Replace').
+- 'applied': string: if provided, the text shown once the pattern was applied (instead of 'Applied - &lt;name&gt;').
 - 'decode': boolean: set to true to decode the replaced url.
 - 'automatic': boolean: set to true to automatically apply the pattern.
 - 'enabled': boolean: set to false to disable the pattern.
@@ -377,7 +382,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mRemove_found">%d queries found</string>
     <string name="mRemove_noQueries">No queries</string>
     <string name="mRemove_all">Remove all queries</string>
-    <string name="mRemove_one">Remove %s</string>
+    <string name="mRemove_one">Remove \"%s\"</string>
     <string name="mRemove_empty">Remove unnamed query</string>
     <!-- -->
     <string name="mLog_name">Log</string>

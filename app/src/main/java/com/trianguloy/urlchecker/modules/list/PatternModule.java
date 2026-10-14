@@ -208,8 +208,12 @@ class PatternDialog extends AModuleDialog {
         box.removeAllViews();
 
         // add applied + matching
+        var patterns = catalog.getCatalog();
         for (var entry : urlData.getDataByPrefix(APPLIED)) {
-            addMessage(true, new Message(entry));
+            var message = new Message(entry);
+            var data = patterns.optJSONObject(entry);
+            if (data != null) message.applied = data.optString("applied", null);
+            addMessage(true, message);
         }
         for (var message : messages) {
             addMessage(false, message);
@@ -231,9 +235,9 @@ class PatternDialog extends AModuleDialog {
 
         // text
         TextView text = row.findViewById(R.id.text);
-        text.setText(applied
-                ? getActivity().getString(R.string.mPttrn_fixed, message.pattern)
-                : message.pattern
+        text.setText(!applied ? message.pattern
+                : message.applied != null ? message.applied
+                : getActivity().getString(R.string.mPttrn_fixed, message.pattern)
         );
         AndroidUtils.setRoundedColor(message.matches ? R.color.warning : R.color.good, text);
 
@@ -253,6 +257,7 @@ class PatternDialog extends AModuleDialog {
         public boolean matches = false;
         String newUrl = null;
         String button = null;
+        String applied = null;
 
         public Message(String pattern) {
             this.pattern = pattern;
