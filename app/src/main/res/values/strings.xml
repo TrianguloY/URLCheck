@@ -215,21 +215,30 @@ Built-in patterns include:
 - Suggest replacing Youtube, Reddit or Twitter with privacy-friendly alternatives [disabled by default]"</string>
     <string name="mPttrn_regexfix">Fix optional regex groups (disable if regex is not working correctly)</string>
     <string name="mPttrn_userContent">List of other useful user-created patterns: %s</string>
-    <string name="mPttrn_fix">Apply</string>
+    <string name="mPttrn_fix">Replace</string>
     <string name="mPttrn_fixed">Applied - %s</string>
     <string name="mPttrn_ascii">Warning! Non-ASCII characters found.</string>
     <string name="mPttrn_upperDomain">Warning! Upper case letter in domain.</string>
-    <string name="mPttrn_http">HTTP link. Consider using HTTPS.</string>
+    <string name="mPttrn_http">Unencrypted HTTP link.</string>
     <string name="mPttrn_noSchemeHttp">Missing HTTP scheme.</string>
     <string name="mPttrn_noSchemeHttps">Missing HTTPS scheme.</string>
     <string name="mPttrn_wrongSchemaHttp">Invalid http scheme capitalization.</string>
     <string name="mPttrn_wrongSchemaHttps">Invalid https scheme capitalization.</string>
+    <string name="mPttrn_httpFix">Use HTTPS</string>
+    <string name="mPttrn_noSchemeHttpFix">Add http://</string>
+    <string name="mPttrn_noSchemeHttpsFix">Add https://</string>
+    <string name="mPttrn_httpApplied">Applied – encrypted HTTPS link.</string>
+    <string name="mPttrn_noSchemeHttpApplied">Applied – http:// added.</string>
+    <string name="mPttrn_noSchemeHttpsApplied">Applied – https:// added.</string>
+    <string name="mPttrn_wrongSchemaApplied">Applied – scheme written in lower case.</string>
     <string name="mPttrn_ok">No matching patterns</string>
     <string name="mPttrn_editor">"Here you can edit or add new pattern. Format:
 - 'encode': boolean: set to true to encode the url before checking regex.
 - 'regex': string|list: a valid java regex that the url must match, otherwise the pattern is skipped. If list, at least one regex must match. If omitted, the full url will match.
 - 'excludeRegex': string|list: if provided, a valid java regex that the url must not match, otherwise the pattern is skipped. If list, and at least one regex matches, the pattern will be skipped.
 - 'replacement': string|list: if provided, the 'fix' button will run 'url=url.replaceAll(regex,replacement)' [if regex was list, the first pattern to match will be used]. If list, replacement will be a random element from it.
+- 'button': string: if provided, the text of that button (instead of 'Replace').
+- 'applied': string: if provided, the text shown once the pattern was applied (instead of 'Applied - &lt;name&gt;').
 - 'decode': boolean: set to true to decode the replaced url.
 - 'automatic': boolean: set to true to automatically apply the pattern.
 - 'enabled': boolean: set to false to disable the pattern.
@@ -300,7 +309,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mVT_noKey">Missing API key</string>
     <string name="mVT_validKey">Valid key from user: %s</string>
     <string name="mVT_tm">VirusTotal™ is a trademark of Google, Inc.</string>
-    <string name="mVT_scan">Scan</string>
+    <string name="mVT_scan">Check on VirusTotal</string>
     <string name="mVT_cancel">Cancel</string>
     <string name="mVT_scanning">Scanning…</string>
     <string name="mVT_goodUrl">None of the %1$d engines detected the URL (as of date %2$s)</string>
@@ -330,7 +339,7 @@ You can hold to select text."</string>
     <string name="mClear_name">URL Cleaner</string>
     <string name="mClear_desc">This module removes tracking, referrer and other useless parameters from the URL. It also allows for common offline URL redirections.</string>
     <string name="mClear_tm">Built-in catalog copied from ClearURLs: %s</string>
-    <string name="mClear_clear">Apply</string>
+    <string name="mClear_clear">Clean URL</string>
     <string name="mClear_matches">Matches %s</string>
     <string name="mClear_blocked">- BLOCKED!</string>
     <string name="mClear_exception">- ignored due to exception %s</string>
@@ -372,9 +381,9 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mRemove_found1">1 query found</string>
     <string name="mRemove_found">%d queries found</string>
     <string name="mRemove_noQueries">No queries</string>
-    <string name="mRemove_all">Remove all</string>
-    <string name="mRemove_one">Remove %s</string>
-    <string name="mRemove_empty">Remove empty</string>
+    <string name="mRemove_all">Remove all queries</string>
+    <string name="mRemove_one">Remove \"%s\"</string>
+    <string name="mRemove_empty">Remove unnamed query</string>
     <!-- -->
     <string name="mLog_name">Log</string>
     <string name="mLog_desc">This module logs all checked URLs. You can view, clear or edit the full log here, no visual indication will appear on the main dialog. To disable logging, just disable the module.</string>
@@ -394,7 +403,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mHosts_gambling">gambling</string>
     <string name="mHosts_adult">adult content</string>
     <string name="mHosts_build">Build</string>
-    <string name="mHosts_uninitialized">Hosts database uninitialized. Press to build</string>
+    <string name="mHosts_uninitialized">Hosts database not built yet. Tap to download the lists</string>
     <string name="mHosts_parseError">Can not parse URL host</string>
     <string name="mHosts_editor">"Hosts configuration. Format: List of objects where the key is the hosts label and the content includes the following optional values:
 - file: An url of a remote hosts-file to download. All valid hosts present will be added. The lines should follow the hosts syntax: 'ip host [alias…]', but those with only 'host' are valid too.
@@ -412,7 +421,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mHosts_built">Database built: %d hosts</string>
     <!-- -->
     <string name="mUnshort_name">Unshortener</string>
-    <string name="mUnshort_unshort">Unshort</string>
+    <string name="mUnshort_unshort">Unshorten via unshorten.me</string>
     <string name="mUnshort_desc">"This module will unshort links by sending them to %s, which evaluates them on their servers and save the redirection for future requests. Avoid unshortening links with private or sensitive data.
 Their free api is rate limited to 10 requests per hour for new checks. The module response will show how many requests you have pending, if needed.
 If you provide a valid token the module will use the authenticated endpoint instead, which may be more stable and have different limitations or rates."</string>
