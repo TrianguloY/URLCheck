@@ -432,6 +432,7 @@ This module will show a list of flags, you can change if the flag is set or not 
 The flags will have two color indicators next to the checkbox. The left one shows the value received from the intent, the right one indicates the state set by the module itself. Red means the flag is not set and green means the flag is set. Additionally the preference indicator can be grey, this means that the state was set to auto.
 With the button below you can edit the default state and the visibility of the flags."</string>
     <string name="mFlag_editFlags">Edit default flag values</string>
+    <string name="mFlag_search">Search flags</string>
     <!-- -->
     <string name="mParts_name">Uri parts</string>
     <string name="mParts_desc">"This module shows all parts of the url decoded: scheme, authority, paths, queries and fragment.
