@@ -7,6 +7,8 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -79,13 +81,67 @@ public interface AndroidUtils {
     /** Sets the background color (raw color) of a view using a rounded box drawable */
     static void setRawRoundedColor(int color, View view) {
         var drawable = view.getContext().getResources().getDrawable(R.drawable.round_box);
-        drawable.setColorFilter(color, PorterDuff.Mode.SRC);
+        // the label colors are semi-transparent, so the color the user sees depends on the
+        // window background behind them: composite them over it to know that color
+        var background = flattenOverBackground(color, view.getContext());
+        drawable.setColorFilter(background, PorterDuff.Mode.SRC);
         view.setBackground(drawable);
+
+        // the text color comes from the theme and is not chosen for the label color, so it
+        // can be hard to read on it. Keep the theme color for clearRoundedColor
+        if (view instanceof TextView textView) {
+            if (textView.getTag(R.id.themeTextColor) == null) {
+                textView.setTag(R.id.themeTextColor, textView.getTextColors());
+            }
+            textView.setTextColor(contrastingTextColor(background));
+        }
+    }
+
+    /** Returns black or white, whichever reads better on top of [background] */
+    static int contrastingTextColor(int background) {
+        // relative luminance, https://www.w3.org/TR/WCAG21/#dfn-relative-luminance
+        var luminance = 0.2126 * toLinear(Color.red(background))
+                + 0.7152 * toLinear(Color.green(background))
+                + 0.0722 * toLinear(Color.blue(background));
+        // both contrast ratios are equal at this luminance
+        return luminance > 0.1791 ? Color.BLACK : Color.WHITE;
+    }
+
+    private static double toLinear(int component) {
+        var value = component / 255d;
+        return value <= 0.03928 ? value / 12.92 : Math.pow((value + 0.055) / 1.055, 2.4);
+    }
+
+    /** Composites a (possibly semi-transparent) color over the window background */
+    static int flattenOverBackground(int color, Context cntx) {
+        var alpha = Color.alpha(color);
+        if (alpha == 255) return color;
+
+        var resolved = new TypedValue();
+        if (!cntx.getTheme().resolveAttribute(android.R.attr.colorBackground, resolved, true)) {
+            return color;
+        }
+        var background = resolved.resourceId != 0
+                ? cntx.getResources().getColor(resolved.resourceId)
+                : resolved.data;
+
+        var ratio = alpha / 255f;
+        return Color.rgb(
+                Math.round(Color.red(color) * ratio + Color.red(background) * (1 - ratio)),
+                Math.round(Color.green(color) * ratio + Color.green(background) * (1 - ratio)),
+                Math.round(Color.blue(color) * ratio + Color.blue(background) * (1 - ratio))
+        );
     }
 
     /** Clears the background color of a view */
     static void clearRoundedColor(View view) {
         view.setBackground(null);
+        // give back the text color setRawRoundedColor replaced, or it stays black/white
+        if (view instanceof TextView textView
+                && textView.getTag(R.id.themeTextColor) instanceof ColorStateList themeColor) {
+            textView.setTextColor(themeColor);
+            textView.setTag(R.id.themeTextColor, null);
+        }
     }
 
     /** Makes the text of a textview display as a link (which does nothing when clicked) */
