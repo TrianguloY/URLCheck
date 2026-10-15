@@ -1,0 +1,4 @@
+V 3.3.1
+- Yeni: Otomasyonlarda birden fazla yönlendiriciye izin verilmesi
+- Düzeltme: İlk otomasyon dışındaki otomasyonların çalışmaması sorunu giderildi
+- Düzeltme: Örnek desenlerde kaçış karakteri eklenmemiş noktalar

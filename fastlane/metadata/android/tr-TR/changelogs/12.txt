@@ -1,0 +1,4 @@
+V 2.4
+- Fransızca çeviri eklendi. Ilithy’e teşekkürler!
+- Ukraynaca çeviri eklendi. Idris’e teşekkürler!
+- Otomatik koyu/açık tema

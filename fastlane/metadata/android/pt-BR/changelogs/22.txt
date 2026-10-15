@@ -1,0 +1,7 @@
+V 2.10
+- Nova tela de tutorial
+- Novo módulo: Desencurtador
+- Novos recursos e melhorias no módulo de status
+- Novo atalho e bloco para abrir links da área de transferência
+- Nova tradução para o chinês. Muito obrigado ao Seviche CC!
+- Correções visuais

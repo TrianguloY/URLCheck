@@ -55,7 +55,7 @@ Traduceri: %3$s."</string>
     <string name="txt_theme">Temă:</string>
     <string name="spin_darkTheme">Întunecată</string>
     <string name="spin_lightTheme">Luminoasă</string>
-    <string name="txt_width">Lățime dialog:\nAtenție! Valorile mici pot ascunde elemente ale ecranului.</string>
+    <string name="txt_width">Lățime dialog (0 este automatic):\nAtenție! Valorile mici pot ascunde elemente ale ecranului.</string>
     <string name="spin_fullWidth">Completă</string>
     <string name="spin_dynamicWidth">Dinamică</string>
     <string name="txt_locale">Limbă:</string>
@@ -453,4 +453,7 @@ Aceasta este o versiune avansată a modulului 'Eliminare interogări'."</string>
     <string name="mChg_updated">Aplicația a fost actualizată.</string>
     <string name="mChg_current">Versiunea curentă: %s</string>
     <string name="mChg_view">Vezi modificările</string>
+    <string name="json_bigger">Crește mărimea fontului</string>
+    <string name="json_smaller">Scade mărimea fontului</string>
+    <string name="auto_userContent">O listă de alte creații automatice: %s</string>
 </resources>

@@ -1,0 +1,8 @@
+V 2.6
+- Cores!
+- Melhorias no módulo “Removedor de parâmetros”
+- Melhorias no módulo “Verificador de padrões”
+- Novo módulo: Log
+- Nova tradução para o turco. Agradecimentos a Metezd!
+- Nova tradução para o hebraico. Agradecimentos a Nhman Mazuz!
+- Pequenos ajustes e correções
