@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
 import android.app.AlertDialog;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -97,6 +98,9 @@ class HistoryDialog extends AModuleDialog {
 
     @Override
     public void onPrepareUrl(UrlData urlData) {
+        // a restored url is already the current entry of the restored history
+        if (getActivity().isRestoring()) return;
+
         // clear newer entries
         if (index + 1 < history.size())
             history.subList(index + 1, history.size()).clear();
@@ -109,6 +113,22 @@ class HistoryDialog extends AModuleDialog {
     @Override
     public void onDisplayUrl(UrlData urlData) {
         // update
+        updateUI();
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putStringArrayList("history", new ArrayList<>(history));
+        state.putInt("index", index);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var saved = state.getStringArrayList("history");
+        if (saved == null) return;
+        history.clear();
+        history.addAll(saved);
+        index = state.getInt("index", history.size() - 1);
         updateUI();
     }
 

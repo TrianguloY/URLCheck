@@ -14,6 +14,7 @@ import com.trianguloy.urlchecker.utilities.wrappers.Connection;
 
 import org.json.JSONException;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -44,7 +45,7 @@ public class VirusTotalUtility {
         }
     }
 
-    static public class InternalResponse {
+    static public class InternalResponse implements Serializable {
         public String error;
         public int detectionsPositive;
         public int detectionsTotal;
