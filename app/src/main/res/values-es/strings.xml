@@ -36,10 +36,8 @@ Traducciones: %3$s."</string>
     <string name="txt_conf">Aquí se encuentran todos los módulos disponibles, con su descripción y configuración. También los puedes reordenar, mostrar/ocultar los títulos y activarlos o desactivarlos.</string>
     <string name="toast_cantEnable">No se puede habilitar el módulo: %s</string>
     <string name="menu_resetOrder">Reiniciar orden</string>
-    <string name="menu_toggleDecorations">Alternar los títulos</string>
     <string name="desc_up">Subir</string>
     <string name="desc_down">Bajar</string>
-    <string name="desc_decorations">Mostrar/ocultar título</string>
     <string name="desc_enable">Activar/desactivar módulo</string>
     <!--
         settings

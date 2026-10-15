@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.modules.ModuleManager;
 import com.trianguloy.urlchecker.activities.TutorialActivity;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
@@ -75,6 +76,25 @@ public class VersionManager {
 
         // --- run migrations --- //
         var prefs = GenericPref.getPrefs(cntx);
+
+        // module titles -> pin. Showing a module's title used to be the only way to keep
+        // it from hiding itself when unused, so anyone who turned it on wanted the module
+        // to stay. The titles are gone now, carry that intent over to the pin flag.
+        try {
+            if (!prefs.getBoolean("titlesMigratedToPins", false)) {
+                var editor = prefs.edit();
+                for (var module : ModuleManager.getModules(true, cntx)) {
+                    var old = module.getId() + "_decorate";
+                    if (prefs.getBoolean(old, false)) {
+                        editor.putBoolean(module.getId() + "_pinned", true);
+                    }
+                    editor.remove(old);
+                }
+                editor.putBoolean("titlesMigratedToPins", true).apply();
+            }
+        } catch (Exception e) {
+            AndroidUtils.assertError("Unable to migrate module titles to pins", e);
+        }
 
         // status module auto-check -> automation
         try {

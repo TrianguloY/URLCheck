@@ -4,6 +4,6 @@
         android:id="@+id/menu_reset"
         android:title="@string/menu_resetOrder" />
     <item
-        android:id="@+id/menu_decorations"
-        android:title="@string/menu_toggleDecorations" />
+        android:id="@+id/menu_pins"
+        android:title="@string/menu_togglePins" />
 </menu>

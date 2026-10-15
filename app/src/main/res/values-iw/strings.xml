@@ -140,8 +140,6 @@
     <string name="desc_up">הזז למעלה</string>
     <string name="link_changelog">יומן שינויים</string>
     <string name="desc_down">הזז למטה</string>
-    <string name="menu_toggleDecorations">החלף את כל הכותרות</string>
-    <string name="desc_decorations">הצג/הסתר כותרת</string>
     <string name="desc_enable">הפעלה/השבתה של מודול</string>
     <string name="txt_openLinks">פתיחת קישורים באפליקציה זו: במהלך השנים אנדרואיד שינתה את אופן התצורה שלה, וזה שונה בין גרסאות. מצא למטה את כל ההגדרות הזמינות עבור המכשיר שלך, אם קישורים לא נפתחים באפליקציה זו נסה את כולן.</string>
     <string name="btn_setBrowser">הגדר כדפדפן ברירת מחדל</string>
