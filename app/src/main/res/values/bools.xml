@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Below Android 5 the dialog can't remove its closed entry from recents (autoRemoveFromRecents), so it stays out of recents there -->
+    <bool name="dialog_excludeFromRecents">true</bool>
+</resources>
