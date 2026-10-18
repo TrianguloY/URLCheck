@@ -13,29 +13,22 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/overflowButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end|center_vertical"
-        android:orientation="horizontal">
+        android:drawableTint="?android:attr/colorAccent"
+        android:gravity="center_vertical"
+        android:minHeight="25dp"
+        android:text="@string/mFlag_search" />
 
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autofillHints="intentFlag"
-            android:hint="@android:string/search_go"
-            android:inputType="text" />
-
-        <ImageView
-            android:id="@+id/overflowButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/smallPadding"
-            android:src="@drawable/arrow_down"
-            android:tint="?attr/colorAccent" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="intentFlag"
+        android:hint="@android:string/search_go"
+        android:inputType="text" />
 
     <LinearLayout
         android:id="@+id/hiddenFlags"
