@@ -92,6 +92,16 @@ public class ModuleManager {
         return new BoolPref(module.getId() + DECORATIONS_PREF_SUFFIX, false, cntx);
     }
 
+
+    // ------------------- pinned -------------------
+
+    private static final String PINNED_PREF_SUFFIX = "_pinned";
+
+    /** Returns a preference to indicate if a specific module stays visible when unused */
+    public static BoolPref getPinnedPrefOfModule(AModuleData module, Context cntx) {
+        return new BoolPref(module.getId() + PINNED_PREF_SUFFIX, false, cntx);
+    }
+
     /* ------------------- getter ------------------- */
 
     /**
