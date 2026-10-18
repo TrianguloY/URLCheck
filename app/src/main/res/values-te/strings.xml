@@ -16,7 +16,6 @@
     <string name="toast_cantEnable">మాడ్యూల్‌ని ప్రారంభించలేకపోయాను: %s</string>
     <string name="desc_up">పైకి</string>
     <string name="desc_down">కిందికి</string>
-    <string name="desc_decorations">శీర్షికను చూపు/దాచు</string>
     <string name="btn_setBrowser">డిఫాల్ట్ బ్రౌజర్‌గా సెట్ చేయండి</string>
     <string name="toast_defaultSet">యాప్ ఇప్పుడు డిఫాల్ట్ వెబ్ బ్రౌజర్</string>
     <string name="btn_configureBrowser">డిఫాల్ట్ వెబ్ బ్రౌజర్</string>
@@ -24,7 +23,6 @@
     <string name="btn_androidSettings">Android యాప్ సెట్టింగ్‌లు</string>
     <string name="txt_theme">థీమ్:</string>
     <string name="translators">సత్య</string>
-    <string name="menu_toggleDecorations">అన్ని శీర్షికలను టోగుల్ చేయండి</string>
     <string name="spin_lightTheme">లైట్</string>
     <string name="menu_resetOrder">క్రమాన్ని రీసెట్ చేయండి</string>
     <string name="desc_enable">మాడ్యూల్‌ను ప్రారంభించు/నిలిపివేయి</string>

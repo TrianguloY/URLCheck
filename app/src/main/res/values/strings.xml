@@ -38,10 +38,10 @@ Translations: %3$s."</string>
     <string name="txt_conf">Here are all the available modules, where you can check their description and settings. You can also reorder, toggle the title visibility and enable/disable them.</string>
     <string name="toast_cantEnable">"Can't enable the module: %s"</string>
     <string name="menu_resetOrder">Reset order</string>
-    <string name="menu_toggleDecorations">Toggle all titles</string>
+    <string name="menu_togglePins">Toggle all pins</string>
     <string name="desc_up">Move up</string>
     <string name="desc_down">Move down</string>
-    <string name="desc_decorations">Show/hide title</string>
+    <string name="desc_pinned">Keep the module visible when unused</string>
     <string name="desc_enable">Enable/disable module</string>
     <!--
         settings
@@ -267,6 +267,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_noapps">No apps</string>
     <string name="mOpen_tabsDesc">Toggle Custom Tabs feature</string>
     <string name="mOpen_incognitoDesc">Toggle incognito mode (for Firefox only)</string>
+    <string name="mOpen_withDesc">Choose another app</string>
     <!-- -->
     <string name="mStatus_name">Status code</string>
     <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
@@ -333,6 +334,11 @@ You can hold to select text."</string>
     <!-- -->
     <string name="mHist_name">History</string>
     <string name="mHist_desc">When the URL is edited, either manually or by other modules, this one allows you to view and revert changes.</string>
+    <string name="mHist_first">First URL</string>
+    <string name="mHist_back">Previous URL</string>
+    <string name="mHist_list">Show all URLs</string>
+    <string name="mHist_forward">Next URL</string>
+    <string name="mHist_last">Last URL</string>
     <!-- -->
     <string name="mClear_name">URL Cleaner</string>
     <string name="mClear_desc">This module removes tracking, referrer and other useless parameters from the URL. It also allows for common offline URL redirections.</string>
@@ -439,6 +445,9 @@ This module will show a list of flags, you can change if the flag is set or not 
 The flags will have two color indicators next to the checkbox. The left one shows the value received from the intent, the right one indicates the state set by the module itself. Red means the flag is not set and green means the flag is set. Additionally the preference indicator can be grey, this means that the state was set to auto.
 With the button below you can edit the default state and the visibility of the flags."</string>
     <string name="mFlag_editFlags">Edit default flag values</string>
+    <string name="mFlag_stateDesc">Toggle flag state</string>
+    <string name="mFlag_showDesc">Show/hide this flag</string>
+    <string name="mFlag_overflowDesc">Show/hide the hidden flags</string>
     <!-- -->
     <string name="mParts_name">Uri parts</string>
     <string name="mParts_desc">"This module shows all parts of the url decoded: scheme, authority, paths, queries and fragment.
@@ -464,6 +473,7 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <!-- -->
     <string name="mDrawer_name">Drawer</string>
     <string name="mDrawer_desc">All modules below this will be hidden in a drawer. The modules will still work, but will be hidden until you open the drawer. Here you can place modules you rarely use, to avoid clutter.</string>
+    <string name="mDrawer_toggleDesc">Show/hide the drawer modules</string>
     <!-- -->
     <string name="mChg_name">Changelog</string>
     <string name="mChg_desc">Will notify when the app was updated.</string>

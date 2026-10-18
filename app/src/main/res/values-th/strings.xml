@@ -19,10 +19,8 @@
     <string name="link_source">ซอร์สโค้ด</string>
     <string name="link_privacy">นโยบายความเป็นส่วนตัว</string>
     <string name="txt_conf">โมดูลทั้งหมดที่มี คุณสามารถตรวจสอบคำอธิบายและการตั้งค่าได้ นอกจากนี้ คุณยังสามารถเรียงลำดับใหม่ สลับการแสดงชื่อเรื่อง และเปิด/ปิดการใช้งานได้</string>
-    <string name="menu_toggleDecorations">สลับชื่อเรื่องทั้งหมด</string>
     <string name="desc_up">ย้ายขึ้น</string>
     <string name="desc_down">ย้ายลง</string>
-    <string name="desc_decorations">แสดง/ซ่อน ชื่อเรื่อง</string>
     <string name="desc_enable">เปิดใช้งาน/ปิดใช้งานโมดูล</string>
     <string name="btn_setBrowser">ตั้งเป็นเบราว์เซอร์เริ่มต้น</string>
     <string name="toast_defaultSet">แอปนี้เป็นเว็บเบราว์เซอร์เริ่มต้นแล้ว</string>

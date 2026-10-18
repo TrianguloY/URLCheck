@@ -15,10 +15,8 @@
     <string name="link_source">原始碼</string>
     <string name="toast_cantEnable">無法啟用模組: %s</string>
     <string name="menu_resetOrder">重設排序</string>
-    <string name="menu_toggleDecorations">反轉標題顯示狀態</string>
     <string name="desc_up">上移</string>
     <string name="desc_down">下移</string>
-    <string name="desc_decorations">切換標題顯示與否</string>
     <string name="desc_enable">切換模組啟用與否</string>
     <string name="btn_setBrowser">設為預設瀏覽器</string>
     <string name="toast_defaultSet">此應用程式現在是預設網路瀏覽器</string>
