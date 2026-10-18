@@ -72,6 +72,11 @@ public class CTabs {
         button.setImageResource(state ? R.drawable.ctabs_on : R.drawable.ctabs_off);
     }
 
+    /** Returns the current state */
+    public boolean getState() {
+        return state;
+    }
+
     /** applies the setting to a given intent */
     public void apply(Intent intent) {
         if (state && !intent.hasExtra(CTabs.EXTRA)) {
