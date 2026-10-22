@@ -8,7 +8,6 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.ArrayMap;
@@ -32,6 +31,7 @@ import com.trianguloy.urlchecker.modules.companions.VersionManager;
 import com.trianguloy.urlchecker.modules.list.DrawerModule;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
+import com.trianguloy.urlchecker.utilities.URLBlocklist;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
@@ -44,7 +44,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -378,9 +377,10 @@ public class MainDialog extends Activity {
         setResult(RESULT_CANCELED);
 
         var incoming = getOpenUrl(intent);
+        var blockedDomains = new URLBlocklist(this).getDomains();
         var allowed = new ArrayList<String>();
         for (var url : incoming) {
-            if (!isBlockedUrl(url)) allowed.add(url);
+            if (!URLBlocklist.isBlocked(url, blockedDomains)) allowed.add(url);
         }
         // Originally empty input retains the existing invalid-input behavior.
         if (!incoming.isEmpty() && allowed.isEmpty()) finish();
@@ -441,23 +441,6 @@ public class MainDialog extends Activity {
         dismissUrlChooser();
         modules.clear();
         super.onDestroy();
-    }
-
-    /** Compare only the host; normalization is for checking, never URL processing. */
-    private static boolean isBlockedUrl(String url) {
-        var candidate = url.trim();
-        if (candidate.startsWith("//")) candidate = "https:" + candidate;
-        else if (!candidate.matches("(?s)^[A-Za-z][A-Za-z0-9+.-]*://.*")) {
-            // Do not interpret relative paths or non-web schemes as hostnames.
-            if (candidate.startsWith("/")
-                    || candidate.matches("^[A-Za-z][A-Za-z0-9+.-]*:(?![0-9]+(?:[/?#]|$)).*")) return false;
-            candidate = "https://" + candidate;
-        }
-        var host = Uri.parse(candidate).getHost();
-        if (host == null) return false;
-        host = host.toLowerCase(Locale.ROOT);
-        if (host.endsWith(".")) host = host.substring(0, host.length() - 1);
-        return host.equals("iltalehti.fi") || host.endsWith(".iltalehti.fi");
     }
 
     /** Initializes the modules */

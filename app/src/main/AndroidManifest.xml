@@ -27,6 +27,9 @@
         <activity android:name=".activities.AutomationActivity" />
         <activity android:name=".activities.ModulesActivity" />
         <activity android:name=".activities.SettingsActivity" />
+        <activity
+            android:name=".activities.URLBlocklistActivity"
+            android:exported="false" />
         <activity android:name=".activities.TutorialActivity" />
         <activity android:name=".activities.JsonEditorActivity" />
         <activity

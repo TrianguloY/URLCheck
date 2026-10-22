@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="a_urlBlocklist">URLBlocklist</string>
+    <string name="blocklist_description">Listed domains and all their subdomains are blocked when opening incoming links. Changes are saved immediately.</string>
+    <string name="blocklist_hint">Domain or HTTP/HTTPS URL</string>
+    <string name="blocklist_add">Add</string>
+    <string name="blocklist_remove">Remove</string>
+    <string name="blocklist_removeDomain">Remove %1$s</string>
+    <string name="blocklist_empty">No blocked domains.</string>
+    <string name="blocklist_invalid">Enter a valid domain or HTTP/HTTPS URL.</string>
+    <string name="blocklist_duplicate">This domain is already listed.</string>
+    <string name="blocklist_corrupted">Some saved rules could not be read and are inactive. Adding or removing a domain will replace the damaged list with the rules shown here.</string>
     <!--
         Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
