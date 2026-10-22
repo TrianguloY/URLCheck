@@ -11,6 +11,16 @@
     -->
     <queries>
         <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
             <action android:name="*" />
         </intent>
     </queries>
@@ -27,6 +37,9 @@
         <activity android:name=".activities.AutomationActivity" />
         <activity android:name=".activities.ModulesActivity" />
         <activity android:name=".activities.SettingsActivity" />
+        <activity
+            android:name=".activities.DirectOpenActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.URLBlocklistActivity"
             android:exported="false" />

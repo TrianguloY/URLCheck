@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="a_directOpen">Direct Open</string>
+    <string name="direct_open_enable">Enable Direct Open</string>
+    <string name="direct_open_description">Open allowed incoming links in the selected browser without the URLCheck dialog. URLBlocklist is checked first. Normal modules, automations, and their browser settings are bypassed. Redirects inside the browser are not checked.</string>
+    <string name="direct_open_no_browsers">No eligible external browsers found. Install or enable a browser supporting HTTP and HTTPS.</string>
+    <string name="direct_open_select_browser">Select a browser below before enabling Direct Open.</string>
+    <string name="direct_open_selected">The checked browser will receive allowed links.</string>
+    <string name="direct_open_unavailable">The saved browser is unavailable. Select another browser before enabling Direct Open.</string>
+    <string name="direct_open_choose">Select %1$s</string>
+    <string name="direct_open_failed">Direct Open could not launch the selected browser. Check the browser selection in Direct Open settings. The link is shown here instead; automations are paused for this request.</string>
     <string name="a_urlBlocklist">URLBlocklist</string>
     <string name="blocklist_description">Listed domains and all their subdomains are blocked when opening incoming links. Changes are saved immediately.</string>
     <string name="blocklist_hint">Domain or HTTP/HTTPS URL</string>

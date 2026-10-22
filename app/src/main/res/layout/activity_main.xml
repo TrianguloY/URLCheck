@@ -113,12 +113,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/smallPadding"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/hide"
+                android:drawableStart="@drawable/warning"
                 android:drawablePadding="@dimen/smallPadding"
                 android:onClick="openURLBlocklist"
                 android:paddingLeft="@dimen/padding"
                 android:paddingRight="@dimen/padding"
                 android:text="@string/a_urlBlocklist" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smallPadding"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/next"
+                android:drawablePadding="@dimen/smallPadding"
+                android:onClick="openDirectOpen"
+                android:paddingLeft="@dimen/padding"
+                android:paddingRight="@dimen/padding"
+                android:text="@string/a_directOpen" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
