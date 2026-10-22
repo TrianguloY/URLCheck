@@ -8,6 +8,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.ArrayMap;
@@ -43,6 +44,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -81,10 +83,17 @@ public class MainDialog extends Activity {
     private static final String STATE_DATA_VALUES = "data.values";
     private static final String STATE_MODULE = "module.";
 
+    private AlertDialog urlChooser;
+    private int requestGeneration = 0;
+    private boolean awaitingSelection = false;
+
     // ------------------- module functions -------------------
 
     /** Something wants to set a new url. */
     public void onNewUrl(UrlData newUrlData) {
+        // A previous request's background work must not replace the current URL.
+        if (isFinishing() || isDestroyed() || awaitingSelection
+                || (newUrlData.trigger != null && !modules.containsKey(newUrlData.trigger))) return;
         // mark as next if nothing else yet
         if (updating != 0) {
             AndroidUtils.assertError("Don't call onNewUrl while updating, use the onModifyUrl 'setNewUrl' callback");
@@ -212,7 +221,7 @@ public class MainDialog extends Activity {
     public void setModuleVisibility(AModuleDialog module, boolean visible) {
         var views = modules.get(module);
         if (views == null) {
-            AndroidUtils.assertError("Module " + module + " is not found in the list.");
+            // A retired module may still have an asynchronous callback pending.
             return;
         }
         for (var view : views) {
@@ -236,6 +245,66 @@ public class MainDialog extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // recreated after a configuration change (theme, language, font size, rotation): continue
+        // with the url and module state the user had instead of starting over from the intent
+        var restoredUrl = savedInstanceState == null ? null : savedInstanceState.getString(STATE_URL);
+        if (restoredUrl != null) {
+            AndroidSettings.setTheme(this, true);
+            LocaleUtils.setLocale(this);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.dialog_main);
+            setFinishOnTouchOutside(true);
+
+            // mark as seen if required
+            VersionManager.check(this);
+
+            // get views
+            ll_main = findViewById(R.id.main);
+            ll_drawer = findViewById(R.id.drawer);
+            ll_drawer.setVisibility(View.GONE);
+
+            // set width
+            AndroidUtils.setActivityWidth(WIDTH_PREF(this).get(), this);
+
+            // set gravity
+            AndroidUtils.setActivityGravity(
+                    GravityPref.VERTICAL_PREF(this).get().getConstant()
+                            | GravityPref.HORIZONTAL_PREF(this).get().getConstant()
+                    , this);
+
+            // load helpers
+            automationRules = new AutomationRules(this);
+
+            initializeModules();
+            var restored = new UrlData(restoredUrl);
+            if (savedInstanceState.getBoolean(STATE_DISABLE_UPDATES)) restored.disableUpdates();
+            var keys = savedInstanceState.getStringArrayList(STATE_DATA_KEYS);
+            var values = savedInstanceState.getStringArrayList(STATE_DATA_VALUES);
+            for (int i = 0; keys != null && values != null && i < keys.size(); i++) {
+                restored.putData(keys.get(i), values.get(i));
+            }
+
+            awaitingSelection = false;
+            restoring = true;
+            onNewUrl(restored);
+            // after showing the url, which resets what modules display
+            for (var module : modules.keySet()) {
+                var state = savedInstanceState.getBundle(STATE_MODULE + module.getClass().getName());
+                if (state == null) continue;
+                try {
+                    module.onRestoreState(state);
+                } catch (Exception e) {
+                    AndroidUtils.assertError("Exception in onRestoreState for module " + module.getClass().getName(), e);
+                }
+            }
+            restoring = false;
+            return;
+        }
+
+        var links = getAllowedUrls(getIntent());
+        if (isFinishing()) return;
+
         AndroidSettings.setTheme(this, true);
         LocaleUtils.setLocale(this);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -262,43 +331,13 @@ public class MainDialog extends Activity {
         // load helpers
         automationRules = new AutomationRules(this);
 
-        // recreated after a configuration change (theme, language, font size, rotation): continue
-        // with the url and module state the user had instead of starting over from the intent
-        var restoredUrl = savedInstanceState == null ? null : savedInstanceState.getString(STATE_URL);
-        if (restoredUrl != null) {
-            initializeModules();
-            var restored = new UrlData(restoredUrl);
-            if (savedInstanceState.getBoolean(STATE_DISABLE_UPDATES)) restored.disableUpdates();
-            var keys = savedInstanceState.getStringArrayList(STATE_DATA_KEYS);
-            var values = savedInstanceState.getStringArrayList(STATE_DATA_VALUES);
-            for (int i = 0; keys != null && values != null && i < keys.size(); i++) {
-                restored.putData(keys.get(i), values.get(i));
-            }
-
-            restoring = true;
-            onNewUrl(restored);
-            // after showing the url, which resets what modules display
-            for (var module : modules.keySet()) {
-                var state = savedInstanceState.getBundle(STATE_MODULE + module.getClass().getName());
-                if (state == null) continue;
-                try {
-                    module.onRestoreState(state);
-                } catch (Exception e) {
-                    AndroidUtils.assertError("Exception in onRestoreState for module " + module.getClass().getName(), e);
-                }
-            }
-            restoring = false;
-            return;
-        }
-
-        // load url (or urls)
-        openLinks(getOpenUrl());
+        showIncomingUrls(links);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        if (urlData.url.isEmpty()) return; // still choosing between several links
+        if (awaitingSelection || urlData.url.isEmpty()) return; // still choosing between several links
         outState.putString(STATE_URL, urlData.url);
         outState.putBoolean(STATE_DISABLE_UPDATES, urlData.disableUpdates);
         var data = urlData.getAllData();
@@ -313,6 +352,112 @@ public class MainDialog extends Activity {
             }
             if (!state.isEmpty()) outState.putBundle(STATE_MODULE + module.getClass().getName(), state);
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (isFinishing() || isDestroyed()) return;
+        // The dialog is a single instance that stays open in the background (and in recents) until closed.
+        // A new url replaces the current one, as if a new dialog was opened.
+        setIntent(intent);
+        var links = getAllowedUrls(intent);
+        if (isFinishing()) return;
+        showIncomingUrls(links);
+    }
+
+    /** Retires the previous request and filters before any UI or module work. */
+    private List<String> getAllowedUrls(Intent intent) {
+        requestGeneration++;
+        awaitingSelection = true;
+        dismissUrlChooser();
+        modules.clear();
+        automations.clear();
+        globalData.clear();
+        urlData = new UrlData("");
+        setResult(RESULT_CANCELED);
+
+        var incoming = getOpenUrl(intent);
+        var allowed = new ArrayList<String>();
+        for (var url : incoming) {
+            if (!isBlockedUrl(url)) allowed.add(url);
+        }
+        // Originally empty input retains the existing invalid-input behavior.
+        if (!incoming.isEmpty() && allowed.isEmpty()) finish();
+        return allowed;
+    }
+
+    private void showIncomingUrls(List<String> links) {
+        ll_main.removeAllViews();
+        ll_drawer.removeAllViews();
+        ll_drawer.setVisibility(View.GONE);
+        final int generation = requestGeneration;
+        switch (links.size()) {
+            case 0:
+                // no links, invalid
+                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+            case 1:
+                // 1 link, just that
+
+                selectIncomingUrl(links.get(0), generation);
+                break;
+            default:
+                // multiple links, choose
+                var links_array = links.toArray(new String[0]);
+                urlChooser = new AlertDialog.Builder(this)
+                        .setItems(links_array, (dialog, which) -> {
+                            dialog.dismiss();
+                            selectIncomingUrl(links_array[which], generation);
+                        })
+                        .setOnCancelListener(o -> {
+                            if (generation == requestGeneration) finish();
+                        })
+                        .show();
+        }
+    }
+
+    private void selectIncomingUrl(String url, int generation) {
+        if (generation != requestGeneration || !awaitingSelection
+                || isFinishing() || isDestroyed()) return;
+        dismissUrlChooser();
+        initializeModules();
+        awaitingSelection = false;
+        onNewUrl(new UrlData(url));
+    }
+
+    private void dismissUrlChooser() {
+        if (urlChooser == null) return;
+        urlChooser.setOnCancelListener(null);
+        urlChooser.dismiss();
+        urlChooser = null;
+    }
+
+    @Override
+    protected void onDestroy() {
+        requestGeneration++;
+        awaitingSelection = true;
+        dismissUrlChooser();
+        modules.clear();
+        super.onDestroy();
+    }
+
+    /** Compare only the host; normalization is for checking, never URL processing. */
+    private static boolean isBlockedUrl(String url) {
+        var candidate = url.trim();
+        if (candidate.startsWith("//")) candidate = "https:" + candidate;
+        else if (!candidate.matches("(?s)^[A-Za-z][A-Za-z0-9+.-]*://.*")) {
+            // Do not interpret relative paths or non-web schemes as hostnames.
+            if (candidate.startsWith("/")
+                    || candidate.matches("^[A-Za-z][A-Za-z0-9+.-]*:(?![0-9]+(?:[/?#]|$)).*")) return false;
+            candidate = "https://" + candidate;
+        }
+        var host = Uri.parse(candidate).getHost();
+        if (host == null) return false;
+        host = host.toLowerCase(Locale.ROOT);
+        if (host.endsWith(".")) host = host.substring(0, host.length() - 1);
+        return host.equals("iltalehti.fi") || host.endsWith(".iltalehti.fi");
     }
 
     /** Initializes the modules */
@@ -415,13 +560,11 @@ public class MainDialog extends Activity {
     }
 
     /** Returns the url that this activity was opened with (intent uri or sent text) */
-    private Set<String> getOpenUrl() {
-        // get the intent
-        var intent = getIntent();
+    private Set<String> getOpenUrl(Intent intent) {
         if (intent == null) return Collections.emptySet();
 
         // check the action
-        var action = getIntent().getAction();
+        var action = intent.getAction();
         if (Intent.ACTION_SEND.equals(action)) {
             // sent text. Note: EXTRA_TEXT may be a styled CharSequence (html, for example),
             // and getStringExtra returns null for those
@@ -432,59 +575,13 @@ public class MainDialog extends Activity {
             return links;
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Intent.ACTION_PROCESS_TEXT.equals(action)) {
             // process text
-            var text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
+            var text = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
             return text == null ? Collections.emptySet() : Set.of(text.toString());
         } else {
             // other, check data
             var uri = intent.getData();
             if (uri == null) return Collections.emptySet();
             return Collections.singleton(uri.toString());
-        }
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        // The dialog is a single instance that stays open in the background (and in recents) until closed.
-        // A new url replaces the current one, as if a new dialog was opened.
-        setIntent(intent);
-        var links = getOpenUrl();
-        if (links.isEmpty()) Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
-        else openLinks(links);
-    }
-
-    /** Shows the url, or lets the user choose one if there are several. Without any, the dialog closes */
-    private void openLinks(Set<String> links) {
-        switch (links.size()) {
-            case 0:
-                // no links, invalid
-                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
-                finish();
-                break;
-            case 1:
-                // 1 link, just that
-
-                // initialize
-                initializeModules();
-
-                // show
-                onNewUrl(new UrlData(links.iterator().next()));
-                break;
-            default:
-                // multiple links, choose
-                var links_array = links.toArray(new String[0]);
-                new AlertDialog.Builder(this)
-                        .setItems(links_array, (dialog, which) -> {
-
-                            // initialize
-                            initializeModules();
-
-                            // show
-                            onNewUrl(new UrlData(links_array[which]));
-                            dialog.dismiss();
-                        })
-                        .setOnCancelListener(o -> finish())
-                        .show();
         }
     }
 
