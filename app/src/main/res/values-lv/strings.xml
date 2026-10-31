@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="txt_theme">Izskats:</string>
+    <string name="txt_theme">Motīvs:</string>
     <string name="mStatus_recheck">Pārbaudīt</string>
     <string name="txt_locale">Valoda:</string>
     <string name="mChg_name">Izmaiņu žurnāls</string>
@@ -73,4 +73,32 @@
     <string name="json_save_error">Nevar saglabāt: %s</string>
     <string name="mClear_blocked">- BLOĶĒTS!</string>
     <string name="mInput_name">Teksta ievade</string>
+    <string name="mVt_title">Virsraksts:</string>
+    <string name="mOpen_share">Kopīgot</string>
+    <string name="mVT_checkKey">Pārbaudīt</string>
+    <string name="mWebhook_templates">Veidnes</string>
+    <string name="invalid">Nederīgs</string>
+    <string name="clear">Notīrīt</string>
+    <string name="auto">Automātiski</string>
+    <string name="share">Kopīgot</string>
+    <string name="back">Atpakaļ</string>
+    <string name="mHosts_info">Resursdators:</string>
+    <string name="mLog_name">Žurnāls</string>
+    <string name="mUnshort_token">Pilnvara</string>
+    <string name="mStatus_check">Pārbaudīt statusu</string>
+    <string name="alwaysOn">Vienmēr ieslēgts</string>
+    <string name="alwaysOff">Vienmēr izslēgts</string>
+    <string name="bck_backupOk">Dublējums izveidots</string>
+    <string name="bck_restoreTitle">Atjaunot dublējumu</string>
+    <string name="bck_restoreOk">Dublējums atjaunots</string>
+    <string name="mVt_finalUrl">Gala URL adrese:</string>
+    <string name="mClear_urlHint">Kataloga URL adrese</string>
+    <string name="desc_decorations">Rādīt/slēpt virsrakstu</string>
+    <string name="mLog_empty">Nav datu</string>
+    <string name="mRemove_empty">Noņemt tukšos</string>
+    <string name="link_blog">%s emuārs</string>
+    <string name="mStatus_name">Statusa kods</string>
+    <string name="json_bigger">Palielināt fonta izmēru</string>
+    <string name="json_smaller">Samazināt fonta izmēru</string>
+    <string name="btn_backupRestore">Dublēšana / Atjaunošana</string>
 </resources>

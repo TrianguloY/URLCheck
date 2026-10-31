@@ -1,0 +1,6 @@
+V 2.15
+- Yeni: Animasyonlar (devre dışı bırakılabilir)
+- Düzeltme: Reddedilenleri daha iyi tespit etme ve bu denetimi devre dışı bırakabilme özelliği
+- Düzeltme: Özel sekmeler artık daha fazla durumda çalışıyor (bağlantıların açılmaması sorunu)
+- Düzeltme: Uri parçaları modülündeki emojiler ve diğer standart dışı karakterler
+- İyileştirme: Bir modül etkinleştirilemediğinde gösterilen hata mesajı iyileştirildi

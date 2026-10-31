@@ -1,0 +1,10 @@
+V 2.8
+- Uygulamanın adı 'Url Checker'dan 'URLCheck' olarak değiştirildi
+- Yeni Japonca çeviri. 404potato’ya teşekkürler!
+- Yeni Pattern Checker örnekleri ve iyileştirmeler
+- Uygulamaları domain bazında sıralamaya yarayan yeni ayar
+- Paylaşımdan sonra uygulamayı kapatmaya yarayan yeni ayar
+- Kaynak uygulamayı (referrer) gizlemeye yarayan yeni ayar
+- Tüm modülleri devre dışı bırakma özelliği
+- 'Hakkında' bölümünde iyileştirmeler
+- Dahili araçlarda iyileştirmeler

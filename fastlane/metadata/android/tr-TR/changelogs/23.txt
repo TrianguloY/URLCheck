@@ -1,6 +1,6 @@
 V 2.11
 - Yeni modül: Bayrakları Düzenle
-- Yeni modül: URI Parçaları (Sorgu Silici'nin yerine)
+- Yeni modül: Uri Parçaları (Sorgu Silici'nin yerine)
 - Yeni ayar: Kalıp Denetleyicisi modülünde excludeRegex alanı
 - Değişiklik: modüller kullanılmadıklarında artık gizliler
 - Düzeltme: açılan uygulamalar son açılanlarda gözükmüyordu

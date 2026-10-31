@@ -1,0 +1,23 @@
+Este aplicativo atua como um intermediário ao abrir links de URL. Ao fazer isso, é exibida uma janela contendo informações sobre o URL, permitindo que você também faça alterações nele.
+É especialmente útil quando você precisa abrir um link externo a partir de um e-mail, de um aplicativo de rede social ou de outras fontes.
+
+O URLCheck foi desenvolvido pela TrianguloY, originalmente para uso pessoal. É um software de código aberto (sob a licença CC BY 4.0), livre, sem anúncios nem rastreadores, de tamanho reduzido e que utiliza o mínimo de permissões necessárias (apenas a permissão de acesso à internet, para verificações de módulos que só serão realizadas quando o usuário as solicitar). O código-fonte também está disponível no GitHub, caso você queira sugerir alterações, fazer modificações ou propor uma nova tradução: https://github.com/TrianguloY/URLCheck
+
+O aplicativo possui uma estrutura modular; você pode ativar/desativar e reordenar módulos individuais, que incluem:
+
+* Texto de entrada: Exibe o URL atual, que pode ser editada manualmente. Não pode ser desativada.
+* Histórico: Visualiza e reverte qualquer alteração feita por outros módulos, incluindo edições do usuário (função típica de desfazer/refazer)
+* Registro: Mantém um registro de todos os URLs verificados, que você pode visualizar, editar, copiar, limpar...
+* Código de status: Ao pressionar o botão, será feita uma solicitação de rede para recuperar esse URL, e o código de status será exibido (ok, erro de servidor, não encontrado...). Além disso, se corresponder a um redirecionamento, pressione a mensagem para verificar o novo URL. O URL é buscado, mas não avaliado; portanto, redirecionamentos baseados em JavaScript não serão detectados.
+* Verificador de URLs: Permite que você verifique o URL usando o VirusTotal e analise o relatório. É necessária uma chave API pessoal gratuita do VirusTotal para que funcione. VirusTotal™ é uma marca registrada da Google, Inc.
+* Limpador de URLs: usa o catálogo do ClearURLs para remover parâmetros de referência e parâmetros inúteis da URL. Também permite lidar com redirecionamentos comuns de URLs off-line. Catálogo integrado de https://docs.clearurls.xyz/latest/specs/rules/
+* Desencurtador: usa https://unshorten.me/ para desencurtar URLs remotamente.
+* Removedor de parâmetros: exibe os parâmetros individuais do URL decodificados, que você pode remover ou verificar.
+* Módulo de padrões: verifica o URL com padrões de expressões regulares que alertam, sugerem ou aplicam substituições. Você pode modificar ou criar seus próprios padrões, ou até mesmo usar aqueles criados por outros usuários.
+Os padrões embutidos incluem:
+    - Aviso quando contiver caracteres não ASCII, como letras gregas. Isso pode ser usado para phishing: googĺe.com vs google.com
+    - Sugere substituir ‘http’ por ‘https’
+    - Sugere substituir o YouTube, o Reddit ou o Twitter por alternativas que respeitem a privacidade [desativado por padrão]
+* Verificador de hosts: este módulo identifica hosts, configurados seja especificando-os manualmente, seja usando um arquivo remoto do tipo “hosts”. Você pode usá-lo para alertar sobre sites perigosos ou especiais. A configuração integrada especifica os hosts de StevenBlack (adware/malware, notícias falsas, jogos de azar e conteúdo adulto) de https://github.com/StevenBlack/hosts
+* Módulo de depuração: exibe o URI da intenção e, opcionalmente, informações sobre o serviço ctabs (abas personalizadas). Destinado a desenvolvedores.
+* Módulo “Abrir”: contém os botões “Abrir” e “Compartilhar”. Se um link puder ser aberto com vários aplicativos, uma seta será exibida para que você escolha. Não pode ser desativado.
