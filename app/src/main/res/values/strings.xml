@@ -448,6 +448,14 @@ You can also click the 'X' button to remove some of them.
 This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mParts_empty">(empty)</string>
     <string name="mParts_copy">Part copied to clipboard</string>
+    <string name="mParts_domain">Domain</string>
+    <string name="mParts_scheme">scheme</string>
+    <string name="mParts_userInfo">user info</string>
+    <string name="mParts_host">host</string>
+    <string name="mParts_port">port</string>
+    <string name="mParts_paths">Paths</string>
+    <string name="mParts_parameters">Parameters</string>
+    <string name="mParts_fragment">Fragment</string>
     <!-- -->
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_desc">This module sends URLs to a configured webhook endpoint. Each URL is sent with a timestamp, allowing you to collect and process URLs on your own server.\nThanks to anoop-b for the idea and base implementation!\n\nConfigure your webhook URL and body below to start sending URLs.\nFor the body, you can use the placeholders $URL$, $TIMESTAMP$ and $REFERRER$.</string>
