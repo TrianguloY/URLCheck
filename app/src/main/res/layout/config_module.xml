@@ -73,6 +73,15 @@
             android:contentDescription="@string/desc_decorations"
             android:src="@drawable/t" />
 
+        <ImageButton
+            android:id="@+id/pinned"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/desc_pinned"
+            android:src="@drawable/pin" />
+
         <Switch
             android:id="@+id/enable"
             android:layout_width="wrap_content"
