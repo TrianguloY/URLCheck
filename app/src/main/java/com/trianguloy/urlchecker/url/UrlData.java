@@ -3,8 +3,10 @@ package com.trianguloy.urlchecker.url;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Manages an url and extra data associated with it
@@ -55,6 +57,11 @@ public class UrlData {
     /** gets a key-value data, those set on this update or previous automatic ones */
     public String getData(String key) {
         return extraData.get(key);
+    }
+
+    /** gets all key-value data, in insertion order */
+    public Map<String, String> getAllData() {
+        return Collections.unmodifiableMap(extraData);
     }
 
     /** Returns all entries with a given prefix, in insertion order */

@@ -61,6 +61,11 @@ public class Incognito {
         button.setImageResource(state ? R.drawable.incognito : R.drawable.no_incognito);
     }
 
+    /** Returns the current state */
+    public boolean getState() {
+        return state;
+    }
+
     /** applies the setting to a given intent */
     public void apply(Intent intent) {
         intent.putExtra(FIREFOX_EXTRA, state);

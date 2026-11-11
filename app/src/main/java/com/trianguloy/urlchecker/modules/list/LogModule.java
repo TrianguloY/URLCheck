@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.modules.list;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
 import android.view.WindowManager;
@@ -61,6 +62,7 @@ class LogDialog extends AModuleDialog {
 
     private final StringPref log;
     private final IntPref limit;
+    private boolean dateLogged = false;
 
     public LogDialog(MainDialog dialog) {
         super(dialog);
@@ -75,14 +77,32 @@ class LogDialog extends AModuleDialog {
 
     @Override
     public void onInitialize(View views) {
-        // new instance, log date
-        addLine("--- " + DateFormat.getDateTimeInstance().format(new Date()) + " ---");
+        // the date of a new instance is logged with its first url, see onPrepareUrl
     }
 
     @Override
     public void onPrepareUrl(UrlData urlData) {
+        // a restored url was logged before the dialog was recreated
+        if (getActivity().isRestoring()) return;
+
+        // new instance, log date
+        if (!dateLogged) {
+            addLine("--- " + DateFormat.getDateTimeInstance().format(new Date()) + " ---");
+            dateLogged = true;
+        }
+
         // new url, log it
         addLine("> " + urlData.url);
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putBoolean("dateLogged", dateLogged);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        dateLogged = state.getBoolean("dateLogged");
     }
 
     private void addLine(String line) {

@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -82,6 +83,16 @@ class DrawerDialog extends AModuleDialog {
                 R.drawable.arrow_down : R.drawable.arrow_right);
         buttonR.setImageResource(visible ?
                 R.drawable.arrow_down : R.drawable.arrow_right);
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putBoolean("open", getActivity().isDrawerVisible());
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        setDrawerVisibility(state.getBoolean("open"));
     }
 
     @Override
