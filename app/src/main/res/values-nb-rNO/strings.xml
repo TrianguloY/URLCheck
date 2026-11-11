@@ -83,13 +83,11 @@
     <string name="mHosts_buildDownload">Laster ned «%1$s» verter fra %2$s …</string>
     <string name="mUnshort_checking">Sjekker …</string>
     <string name="mUnshort_internal">Intern feil (%s)</string>
-    <string name="desc_decorations">Vis/skjul navn</string>
     <string name="btn_linksSettings">Åpne støttede lenker</string>
     <string name="txt_conf">Her er alle de tilgjengelige modulene, der du kan sjekke beskrivelse og respektive innstillinger. Du kan også endre rekkefølge, veksle navnesynlighet og skru dem på/av.</string>
     <string name="toast_cantEnable">Kan ikke skru på modulen: %s</string>
     <string name="none">Ingen</string>
     <string name="link_changelog">Endringslogg</string>
-    <string name="menu_toggleDecorations">Veksle alle titler</string>
     <string name="spin_lightTheme">Lys</string>
     <string name="btn_tutorialSettings">Gjenta veiledning</string>
     <string name="share">Del</string>

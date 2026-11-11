@@ -32,10 +32,8 @@
     <string name="txt_conf">这里是所有可用的模块，您可以在这里检查它们的相关描述和设置。您还可以重新排序、切换标题可见性以及启用或禁用它们。</string>
     <string name="toast_cantEnable">"无法启用模块: %s"</string>
     <string name="menu_resetOrder">重置顺序</string>
-    <string name="menu_toggleDecorations">切换所有标题的可见性</string>
     <string name="desc_up">上移</string>
     <string name="desc_down">下移</string>
-    <string name="desc_decorations">显示/隐藏标题</string>
     <string name="desc_enable">启用/禁用模块</string>
     <!-- settings -->
     <string name="txt_openLinks">在此应用上打开链接：多年来，Android 配置方式已发生许多变化，不同版本之间也存在差异。如果链接无法在URLCheck上打开，请尝试在您的设备中检查以下可用设置。</string>

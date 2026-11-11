@@ -35,10 +35,8 @@
     <string name="txt_conf">Voici tous les modules disponibles, où vous pouvez vérifier leur description et leurs paramètres. Vous pouvez également réorganiser, changer la visibilité de leur titre et les activer/désactiver.</string>
     <string name="toast_cantEnable">Impossible d\'activer le module : %s</string>
     <string name="menu_resetOrder">Réinitialiser l\'ordre</string>
-    <string name="menu_toggleDecorations">Inverser l\'état d\'affichage du tîtres de tout les modules</string>
     <string name="desc_up">Monter</string>
     <string name="desc_down">Descendre</string>
-    <string name="desc_decorations">Bascule l\'état d\'affichage du tîtres du module</string>
     <string name="desc_enable">Activer/désactiver le module</string>
     <!--
         settings

@@ -16,10 +16,8 @@
     <string name="link_privacy">Ochrana osobních údajů</string>
     <string name="toast_cantEnable">Nemohu povolit modul: %s</string>
     <string name="menu_resetOrder">Obnovit pořadí</string>
-    <string name="menu_toggleDecorations">(Ne)zobrazovat všechny nadpisy</string>
     <string name="desc_up">Přesunout výše</string>
     <string name="desc_down">Přesunout níže</string>
-    <string name="desc_decorations">Zobrazit/skrýt nadpis</string>
     <string name="desc_enable">Zapnout/Vypnout modul</string>
     <string name="btn_setBrowser">Nastavit jako výchozí prohlížeč</string>
     <string name="toast_defaultSet">Aplikace je nyní výchozím webovým prohlížečem</string>

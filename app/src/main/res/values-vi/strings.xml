@@ -26,7 +26,6 @@
     <string name="spin_lightTheme">Sáng</string>
     <string name="desc_up">Đi lên</string>
     <string name="desc_down">Đi xuống</string>
-    <string name="desc_decorations">Hiển thị/ẩn tiêu đề</string>
     <string name="txt_locale">Ngôn ngữ:</string>
     <string name="txt_animation">Bật hoạt ảnh</string>
     <string name="btn_backupRestore">Sao lưu / Khôi phục</string>
@@ -51,7 +50,6 @@
     <string name="translators">ngocanhtve</string>
     <string name="txt_info">Ứng dụng này hoạt động như một trung gian khi mở các liên kết URL được nhấp vào. Hộp thoại có một số thông tin về liên kết sẽ hiển thị khi chọn ứng dụng này để mở. Nhấn nút mô-đun bên dưới để kiểm tra và cấu hình tất cả các mô-đun có sẵn.</string>
     <string name="txt_conf">Dưới đây là tất cả các mô-đun có sẵn, nơi bạn có thể kiểm tra mô tả và thiết đặt của chúng. Bạn cũng có thể sắp xếp lại, chuyển đổi chế độ hiển thị tiêu đề và bật/tắt chúng.</string>
-    <string name="menu_toggleDecorations">Chuyển đổi tất cả các tiêu đề</string>
     <string name="btn_tutorialSettings">Lặp lại hướng dẫn</string>
     <string name="txt_tutorial1">Cảm ơn bạn đã tải xuống ứng dụng!
 \n

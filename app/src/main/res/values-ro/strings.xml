@@ -38,10 +38,8 @@ Traduceri: %3$s."</string>
     <string name="txt_conf">Aici sunt toate modulele disponibile, unde poți verifica descrierea și setările acestora. De asemenea, poți reordona, comuta vizibilitatea titlului și le poți activa/dezactiva.</string>
     <string name="toast_cantEnable">"Nu se poate activa modulul: %s"</string>
     <string name="menu_resetOrder">Resetează ordinea</string>
-    <string name="menu_toggleDecorations">Comută toate titlurile</string>
     <string name="desc_up">Mută sus</string>
     <string name="desc_down">Mută jos</string>
-    <string name="desc_decorations">Afișează/ascunde titlul</string>
     <string name="desc_enable">Activează/dezactivează modulul</string>
     <!--
         settings

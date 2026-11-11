@@ -15,10 +15,8 @@
     <string name="link_privacy">Politika privatnosti</string>
     <string name="toast_cantEnable">Nije moguće omogućiti modul: %s</string>
     <string name="menu_resetOrder">Resetuj redosled</string>
-    <string name="menu_toggleDecorations">Uključi sve naslove</string>
     <string name="desc_up">Pomeri gore</string>
     <string name="desc_down">Pomeri dole</string>
-    <string name="desc_decorations">Prikaži/sakrij naslov</string>
     <string name="desc_enable">Omogućite/onemogućite modul</string>
     <string name="btn_setBrowser">Postavi kao podrazumevani pretraživač</string>
     <string name="toast_defaultSet">Aplikacija je sada podrazumevani veb pretraživač</string>

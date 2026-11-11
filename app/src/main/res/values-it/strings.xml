@@ -32,10 +32,8 @@ Traduzioni: %3$s."</string>
     <string name="txt_conf">Qui puoi vedere tutti i moduli disponibili, la loro descrizione, ed impostazioni. Puoi anche re-ordinarli, ed abilitarli o disabilitarli.</string>
     <string name="toast_cantEnable">Impossibile abilitare il modulo: %s</string>
     <string name="menu_resetOrder">Ripristina ordine</string>
-    <string name="menu_toggleDecorations">Inverti tutti</string>
     <string name="desc_up">Muovi su</string>
     <string name="desc_down">Muovi giù</string>
-    <string name="desc_decorations">Mostra/nascondi titoli</string>
     <string name="desc_enable">Attiva/disattiva modulo</string>
     <!-- settings -->
     <string name="txt_openLinks">"Aprire i link in quest'app: Durante gli anni, il modo per configurare l'apertura dei link nelle app è cambiato. Trovi qui in basso tutte le impostazioni disponibili al riguardo per il tuo dispositivo, se i link non vengono aperti in quest'app, dai un'occhiata a tutti."</string>

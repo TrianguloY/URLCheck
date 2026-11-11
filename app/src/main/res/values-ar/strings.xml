@@ -17,10 +17,8 @@
     <string name="link_privacy">سياسة الخصوصية</string>
     <string name="toast_cantEnable">لا يمكن تمكين الوحدة: %s</string>
     <string name="menu_resetOrder">إعادة الترتيب</string>
-    <string name="menu_toggleDecorations">عكس حالة العرض لعناوين جميع الوحدات</string>
     <string name="desc_up">حرّك للأعلى</string>
     <string name="desc_down">حرّك للأسفل</string>
-    <string name="desc_decorations">إظهار/إخفاء العنوان</string>
     <string name="desc_enable">تمكين/تعطيل الوحدة</string>
     <string name="btn_configureBrowser">متصفح الويب الافتراضي</string>
     <string name="btn_linksSettings">فتح الروابط المدعومة</string>

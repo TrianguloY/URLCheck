@@ -7,7 +7,7 @@
 \nÜbersetzungen: %3$s.</string>
     <string name="link_changelog">Änderungen</string>
     <string name="desc_down">Nach unten</string>
-    <string name="desc_decorations">Titel anzeigen/ausblenden</string>
+    <string name="desc_pinned">Modul dauerhaft einblenden</string>
     <string name="desc_enable">Modul aktivieren/deaktivieren</string>
     <string name="btn_configureBrowser">Standard-Webbrowser</string>
     <string name="btn_linksSettings">Unterstützte Links öffnen</string>
@@ -54,7 +54,7 @@
     <string name="close">Schließen</string>
     <string name="translators">T</string>
     <string name="txt_info">Diese App fungiert als Zwischenschritt beim Öffnen angeklickter Links. Wenn diese App zum Öffnen ausgewählt wurde, wird ein Dialog mit einigen Informationen über den Link angezeigt. Über den Module-Button unten können Sie alle verfügbaren Module prüfen und konfigurieren.</string>
-    <string name="menu_toggleDecorations">Alle Titel umschalten</string>
+    <string name="menu_togglePins">Alle Anheftungen umschalten</string>
     <string name="mPttrn_name">Muster (RegEx)</string>
     <string name="mOpen_name">Öffnen und Teilen</string>
     <string name="mOpen_ctabs">Benutzerdefinierte Tabs:</string>
