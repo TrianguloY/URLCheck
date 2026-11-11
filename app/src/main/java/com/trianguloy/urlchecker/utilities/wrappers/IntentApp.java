@@ -70,21 +70,25 @@ public class IntentApp {
 
     /** Returns the drawable, cached */
     public Drawable getIcon(Context activity, Size size) {
-        var dim = switch (size) {
+        // in dp, so it looks the same on any screen density. NORMAL matches the visible
+        // size of the icons next to it: 24dp icons, but their glyph is about 20dp
+        var dp = switch (size) {
             case NONE -> 0;
-            case SMALL -> 25;
-            case NORMAL -> 50;
-            case BIG -> 75;
+            case SMALL -> 10;
+            case NORMAL -> 20;
+            case BIG -> 30;
         };
-        if (dim == 0) return null;
+        if (dp == 0) return null;
+        var dim = Math.round(dp * activity.getResources().getDisplayMetrics().density);
 
         var component = getComponent();
         if (!iconsCache.containsKey(component)) {
-            var icon = resolveInfo.loadIcon(activity.getPackageManager());
-            icon.setBounds(0, 0, dim, dim);
-            iconsCache.put(component, icon);
+            iconsCache.put(component, resolveInfo.loadIcon(activity.getPackageManager()));
         }
-        return iconsCache.get(component);
+        // set the bounds each time, the size may have changed since it was cached
+        var icon = iconsCache.get(component);
+        icon.setBounds(0, 0, dim, dim);
+        return icon;
     }
 
     @Override
