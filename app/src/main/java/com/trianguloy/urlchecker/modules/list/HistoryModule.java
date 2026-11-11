@@ -118,7 +118,9 @@ class HistoryDialog extends AModuleDialog {
     private void updateUI() {
         AndroidUtils.setEnabled(first, index > 0); // at least something to go back
         AndroidUtils.setEnabled(back, index > 0); // at least something to go back
-        list.setEnabled(!history.isEmpty()); // at least something
+        // same rule as the arrows: with just the current url there is nothing to list,
+        // and AndroidUtils.setEnabled also dims it, so it doesn't look usable when it isn't
+        AndroidUtils.setEnabled(list, history.size() > 1);
         AndroidUtils.setEnabled(forward, index < history.size() - 1); // at least something to go forward
         AndroidUtils.setEnabled(last, index < history.size() - 1); // at least something to go forward
 
