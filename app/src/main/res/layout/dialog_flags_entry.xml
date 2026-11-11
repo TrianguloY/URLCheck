@@ -7,6 +7,7 @@
     <ImageButton
         android:id="@+id/state"
         style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/mFlag_stateDesc"
         android:layout_width="@dimen/square_button"
         android:layout_height="@dimen/square_button"
         android:layout_weight="0"

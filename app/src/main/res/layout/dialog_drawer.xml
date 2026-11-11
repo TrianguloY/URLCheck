@@ -12,6 +12,7 @@
     android:layout_marginBottom="@dimen/smallPadding"
     android:background="@drawable/round_box"
     android:backgroundTint="?attr/colorAccent"
+    android:contentDescription="@string/mDrawer_toggleDesc"
     android:gravity="center|center_vertical"
     android:weightSum="2">
 
@@ -20,6 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:importantForAccessibility="no"
         android:src="@drawable/arrow_down"
         android:tint="?attr/colorAccent" />
 
@@ -28,6 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:importantForAccessibility="no"
         android:scaleX="-1"
         android:src="@drawable/arrow_down"
         android:tint="?attr/colorAccent" />
