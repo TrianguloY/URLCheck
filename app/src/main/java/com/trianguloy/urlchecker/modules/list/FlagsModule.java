@@ -80,7 +80,7 @@ class FlagsDialog extends AModuleDialog {
     private ViewGroup shownFlagsVG;
     private EditText searchInput;
     private ViewGroup hiddenFlagsVG;
-    private ImageView overflowButton;
+    private TextView overflowButton;
 
     private JSONObject groups;
 
@@ -103,8 +103,9 @@ class FlagsDialog extends AModuleDialog {
         searchInput = views.findViewById(R.id.search);
         hiddenFlagsVG = views.findViewById(R.id.hiddenFlags);
 
-        // Button to open the `box` with the hidden flags (more indicator)
+        // Collapsible title that opens the search and the hidden flags, like the uri parts groups
         overflowButton = views.findViewById(R.id.overflowButton);
+        AndroidUtils.setAsClickable(overflowButton);
 
         // Hide hidden flags
         hiddenFlagsVG.setVisibility(View.GONE);
@@ -194,11 +195,9 @@ class FlagsDialog extends AModuleDialog {
     }
 
     void updateMoreIndicator() {
-        if (hiddenFlagsVG.getChildCount() == 0) {
-            overflowButton.setImageDrawable(null);
-        } else {
-            overflowButton.setImageResource(hiddenFlagsVG.getVisibility() == View.VISIBLE ? R.drawable.arrow_down : R.drawable.arrow_right);
-        }
+        // nothing to search when every flag is shown
+        overflowButton.setVisibility(hiddenFlagsVG.getChildCount() == 0 ? View.GONE : View.VISIBLE);
+        overflowButton.setCompoundDrawablesRelativeWithIntrinsicBounds(hiddenFlagsVG.getVisibility() == View.VISIBLE ? R.drawable.arrow_down : R.drawable.arrow_right, 0, 0, 0);
     }
 
     /**
