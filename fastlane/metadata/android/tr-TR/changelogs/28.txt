@@ -1,0 +1,6 @@
+V 2.13
+- Yeni modül: drawer. Modülleri açılıp kapatılabilen bir menü altında gizler.
+- Yeni modül: changelog. Uygulama güncellendiğinde bildirim gönderir.
+- İyileştirme: Günlük girişlerinin sayısını sınırlandırır.
+- İyileştirme: Ctabs ve özel düğmeler için eksik olan 'gizli' durumu eklendi.
+- İyileştirme: Daha fazla geçerli url'yi açma desteği.

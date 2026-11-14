@@ -1,0 +1,10 @@
+V 2.7
+- Modül uygulamalarının sıralanması iyileştirildi
+- ClearURL katalog güncelleyicisi iyileştirildi
+- CTabs ayarları eklendi
+- Android 13 ile ilgili bazı iyileştirmeler
+- Modül sıralamasıyla ilgili sorunlar giderildi
+- Bazı bağlantıların açılmaması sorunu giderildi
+- Metinlerde düzeltmeler ve ince ayarlar yapıldı
+- Stillerde düzeltmeler ve ince ayarlar yapıldı
+- Çeşitli dahili iyileştirmeler

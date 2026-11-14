@@ -1,0 +1,4 @@
+V 2.14
+- Novidade: tela de backup/restauração
+- Removido o suporte ao Android 4.3 e versões anteriores
+- Atualizadas as versões internas

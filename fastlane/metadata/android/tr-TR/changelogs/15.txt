@@ -1,0 +1,8 @@
+V 2.6
+-Renkler!
+-Sorgu temizleyici modülü iyileştirildi
+-Desen denetleyici modülü iyileştirildi
+-Yeni modül: Log
+-Yeni Türkçe çeviri. Metezd'e teşekkürler!
+-Yeni İbranice çeviri. Nhman Mazuz'a teşekkürler!
+-Küçük ince ayarlar ve hata düzeltmeleri
