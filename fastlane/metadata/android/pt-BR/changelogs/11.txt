@@ -1,0 +1,6 @@
+V 2.3
+- Permite reordenar módulos
+- O módulo “Limpador de URL” pode ser configurado para ser aplicado automaticamente
+- O módulo “Removedor de parâmetros” permite remover parâmetros individuais
+- Adicionada tradução para o português europeu. Agradecimentos ao Tiago Carmo!
+- Alguns ajustes e correções
