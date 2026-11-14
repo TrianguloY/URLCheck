@@ -1,0 +1,8 @@
+V 2.17
+-İyileştirme: Metin Girişi modülü görünümü
+-İyileştirme: Hosts modülü artık alt alan adlarını da denetliyor
+-Düzeltme: Geçersiz metin çözülürken oluşan çökmeler
+-Düzeltme: Bozuk sorgulardan kaynaklanan çökmeler
+-Düzeltme: ClearUrl kataloğundaki geçersiz lastUpdate değeri
+-Düzeltme: Arka planda modül anahtarlarının sıfırlanması
+-Düzeltme: Url parçalarının iki kez çözülmesi

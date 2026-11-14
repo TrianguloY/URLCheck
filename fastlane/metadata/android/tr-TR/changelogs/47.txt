@@ -1,0 +1,5 @@
+3.5
+- İyileştirme: Unshorten modülünde token kullanımına izin verilmesi
+- İyileştirme: Json düzenleyicisi (monospace ve yazı tipi boyutu)
+- İyileştirme: Varsayılan şablonlar (Rickroll, twitter, eddrit, farside)
+- Dahili: Çeviri düzeltmeleri ve güncellemeleri

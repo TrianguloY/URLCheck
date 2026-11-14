@@ -1,0 +1,4 @@
+V 2.1
+- ClearUrl modülünde düzeltmeler ve iyileştirmeler yapıldı
+- Bazı metinler ve mesajlar iyileştirildi
+- Stil, daha kompakt hale getirilmek üzere düzenlendi

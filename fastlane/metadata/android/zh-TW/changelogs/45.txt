@@ -1,0 +1,10 @@
+V 3.4
+- 改善：重寫 VirusTotal 整合：使用 api v3 並顯示更多詳細資訊（投票第三名）
+- 改善：允許在開啟自動化中指定 app 元件和／或套件
+- 改善：允許在「regex」和「excludeRegex」中使用字串清單作為模式
+- 改善：webhook body 支援 $REFERRER$
+- 改善：按下 enter 時關閉 url 編輯欄位
+- 新增：自動化支援 excludeRegex
+- 新增：Toast 自動化範例
+- 修正：僅含主機的 URL 無法以粗體顯示主機
+- 修正：JSON 編輯器中的連結無法點擊

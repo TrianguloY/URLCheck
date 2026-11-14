@@ -1,0 +1,4 @@
+V 2.13.1
+- Yeni: Reddedilen url’leri gizlemek için özel mantık. Kaynak uygulamanın gizlenmesi özelliği artık varsayılan olarak devre dışı.
+- Düzeltme: 'Açma/paylaşma işlemi hiçbir şey yapmıyor' hatasına yönelik üçüncü deneme.
+- Düzeltme: Durum modülü artık konumu çözmüyor.

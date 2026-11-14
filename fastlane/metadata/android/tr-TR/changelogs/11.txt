@@ -1,0 +1,6 @@
+V 2.3
+- Modüllerin sırasının değiştirilmesine izin verilir
+- Url’leri temizle modülü, otomatik olarak uygulanacak şekilde yapılandırılabilir
+- Sorguları kaldır modülü, tek tek sorguları kaldırabilir
+- Avrupa Portekizcesi çevirisi eklendi. Tiago Carmo’ya teşekkürler!
+- Bazı ince ayarlar ve düzeltmeler

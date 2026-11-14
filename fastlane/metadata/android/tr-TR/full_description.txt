@@ -1,7 +1,7 @@
 Bu uygulama, URL bağlantılarını açarken bir aracı görevi görür. Bunu yaptığınızda, URL hakkındaki bilgileri içeren bir pencere açılır ve üzerinde değişiklik yapmanıza da olanak tanır.
 Özellikle bir e-postadan, bir sosyal medya uygulamasından veya diğerlerinden harici bir bağlantı açmanız gerektiğinde kullanışlıdır.
 
-URLCheck TrianguloY tarafından kişisel kullanım için geliştirilmiştir. Açık kaynak kodludur (CC BY 4.0 lisansı altında), ücretsizdir, herhangi bir reklam veya izleyici içermez, hafif boyutludur ve gerektiği kadar az izin kullanır (yalnızca kullanıcı talep ettiğinde gerçekleştirilecek modül kontrolleri için yalnızca internet izni). Değişiklik önermek, değişiklik yapmak veya yeni bir çeviri sunmak istiyorsanız, kaynak kodu GitHub'da da mevcuttur: https://github.com/TrianguloY/URLCheck
+URLCheck TrianguloY tarafından kişisel kullanım için geliştirilmiştir. Açık kaynak kodludur (CC BY 4.0 lisansı altında), ücretsizdir, herhangi bir reklam veya izleyici içermez, hafif boyutludur ve gerektiği kadar az izin kullanır (yalnızca kullanıcı talep ettiğinde gerçekleştirilecek modül kontrolleri için yalnızca internet izni). Değişiklik önermek, değişiklik yapmak veya yeni bir çeviri sunmak istiyorsanız, kaynak kodu GitHub'da mevcuttur: https://github.com/TrianguloY/URLCheck
 
 Uygulama modüler bir kurulumla yapılandırılmıştır, modülleri tek tek etkinleştirebilir/devre dışı bırakabilir ve yeniden sıralayabilirsiniz:
 

@@ -1,0 +1,4 @@
+V 2.14
+- Yeni: Yedekleme/geri yükleme ekranı
+- Android 4.3 ve altı sürümler için destek kaldırıldı
+- Dahili sürümler güncellendi

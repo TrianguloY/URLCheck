@@ -7,10 +7,7 @@
     <string name="a_about">حول التطبيق</string>
     <string name="translators">Magdy Elgendy</string>
     <string name="locale">العربية</string>
-    <string name="txt_about">تم إنشاء التطبيق بواسطة %1$s.
-\n
-\nالمساهمون: %2$s.
-\nالمترجمون: %3$s.</string>
+    <string name="txt_about">أُنشئ التطبيق بواسطة %1$s.\n\nالمساهمون: %2$s.\nالمترجمون: %3$s.</string>
     <string name="link_blog">مدونة %s</string>
     <string name="link_changelog">سجل التغييرات</string>
     <string name="link_source">رمز المصدر</string>
@@ -56,7 +53,7 @@
 \n
 \nهذا هو الدليل التعليمي، إذا كنت ترغب في تخطيه يمكنك ذلك بالزر بالأسفل. يمكنك دائمًا العودة إلى الدليل التعليمي من قائمة الإعدادات.</string>
     <string name="txt_conf">فيما يلي جميع الوحدات المتاحة، حيث يمكنك التحقق من الوصف والإعدادات الخاصة بها. يمكنك أيضًا إعادة ترتيب وتبديل رؤية العنوان وتمكينها/تعطيلها.</string>
-    <string name="txt_openLinks">فتح الروابط من خلال هذا التطبيق: على مر السنين، غيّر Android طريقة التمكين والضبط، ويختلف بين الإصدارات المختلفة. تجد بالأسفل جميع الإعدادات المتاحة لجهازك، إذا لم يتم فتح الروابط على هذا التطبيق، فجرّبها جميعًا.</string>
+    <string name="txt_openLinks">فتح الروابط من خلال هذا التطبيق: على مر السنين، غيّر أندرويد طريقة إعداد ذلك، وتختلف بحسب الإصدارات. تجد بالأسفل جميع الإعدادات المتاحة لجهازك، إذا لم تُفتح الروابط على هذا التطبيق، فجرّبها جميعًا.</string>
     <string name="btn_setBrowser">تعيين كمتصفح افتراضي</string>
     <string name="toast_defaultSet">التطبيق الأن هو المتصفح الافتراضي للويب</string>
     <string name="bck_description">اختر العناصر التي سيتم نسخها احتياطيًا/استعادتها.
@@ -69,7 +66,7 @@
 \nهل ترغب حقًا في المتابعة؟</string>
     <string name="bck_deleteError">تعذر حذف العناصر</string>
     <string name="bck_backupError">تعذر إنشاء النسخ الاحتياطي، حاول اختيار موقع مختلف للملف.</string>
-    <string name="txt_tutorial2">يعمل التطبيق كوسيط عند فتح روابط URL أو مشاركتها. بمجرد إرسال URL إلى التطبيق، يمكنك التفاعل معه من خلال الوحدات. بعد ذلك، يمكنك فتح الرابط (في التطبيق الذي تريده)، مشاركته، أو نسخه إلى الحافظة.</string>
+    <string name="txt_tutorial2">يعمل التطبيق كوسيط عند فتح روابط أو مشاركتها. بمجرد إرسال رابط إلى التطبيق، يمكنك التفاعل معه من خلال الوحدات. بعد ذلك، يمكنك فتح الرابط (في التطبيق الذي تريده)، مشاركته، أو نسخه إلى الحافظة.</string>
     <string name="toast_noApp">لا يمكن فتح التطبيق</string>
     <string name="toast_noBrowser">لا يمكن فتح متصفح الويب</string>
     <string name="invalid">غير صالح</string>
@@ -104,7 +101,7 @@
     <string name="mOpen_closeOpen">إغلاق النافذة المنبثقة بعد الفتح</string>
     <string name="mOpen_closeShare">إغلاق النافذة المنبثقة بعد المشاركة</string>
     <string name="mOpen_closeCopy">إغلاق النافذة المنبثقة بعد النسخ</string>
-    <string name="mOpen_perDomain">فرز اسماء الدومين أو النطاق المختلفة بشكل مستقل</string>
+    <string name="mOpen_perDomain">فرز النطاقات المختلفة بشكل مستقل</string>
     <string name="mOpen_noReferrer">إخفاء التطبيق المصدر (المُرجع)</string>
     <string name="mOpen_rejected">إخفاء التطبيق إذا تم رفض عنوان URL (تطلب التطبيق على الفور فتح نفس عنوان URL الذي تم فتحه به). هذا لا يؤثر على المشاركة.</string>
     <string name="mOpen_mergeCopy">دمج أزرار النسخ والمشاركة (الضغط المطوّل للنسخ)</string>
@@ -123,20 +120,20 @@
     <string name="mStatus_redir">يعيد التوجيه إلى %s</string>
     <string name="mStatus_autoRedirect">استبدال عناوين URL الموجهة تلقائيًا</string>
     <string name="mInput_name">نص الإدخال</string>
-    <string name="mInput_desc">يعرض العنوان الحالي للرابط URL، والذي يمكن تحريره يدويًا.</string>
+    <string name="mInput_desc">يعرض الرابط الحالي، انقر عليه للتعديل.</string>
     <string name="mVT_name">فحص الروابط</string>
     <string name="mVT_apiKey">مفتاح API</string>
     <string name="mVT_noKey">مفتاح API مفقود</string>
     <string name="mVT_tm">VirusTotal™ هي علامة تجارية لشركة Google، Inc.</string>
     <string name="mVT_scan">فحص</string>
     <string name="mVT_cancel">إلغاء</string>
-    <string name="mVT_scanning">جاري الفحص…</string>
+    <string name="mVT_scanning">جارٍ الفحص…</string>
     <string name="mVT_badUrl">حذار! اكتشف %1$d/%2$d من محركات البحث عنوان الويب (اعتبارًا من تاريخ %3$s)</string>
     <string name="mVT_warningUrl">تحذير، اكتشف %1$d/%2$d من محركات البحث عنوان الويب (اعتبارًا من تاريخ %3$s)</string>
     <string name="mVT_goodUrl">لم يتم اكتشاف أي من محركات %1$d عنوان الويب (اعتبارًا من تاريخ %2$s)</string>
-    <string name="mVT_error">لا يمكن الاتصال بـ VirusTotal. تأكد من أن مفتاح API صالح، أو حاول مرة أخرى لاحقًا.</string>
+    <string name="mVT_error">لا يمكن الاتصال بـ VirusTotal. تأكد من أن مفتاح API صالح وأنك متصل بالانترنت، أو حاول مرة أخرى لاحقًا.</string>
     <string name="mD_name">وحدة تصحيح الأخطاء/العلامة</string>
-    <string name="mD_ctabs">عرض رسائل التصحيح من خدمة علامات التبويب المخصصة</string>
+    <string name="mD_ctabs">عرض رسائل التصحيح من خدمة علامات التبويب المخصصة (حتى لو كانت الوحدة معطلة).</string>
     <string name="mHist_name">السجل</string>
     <string name="mHist_desc">عند تحرير عنوان URL، سواء يدويًا أو من قبل وحدات أخرى، تتيح لك هذه الوحدة عرض التغييرات والتراجع عنها.</string>
     <string name="mClear_name">منظف العناوين URL</string>
@@ -149,13 +146,7 @@
 \nمهم: جميع الإجراءات يتم تنفيذها يدويًا بشكل افتراضي. لن يقوم التطبيق بتعديل أي شيء أو الاتصال بالإنترنت ما لم تسمح بذلك بشكل صريح، ولكن يمكن تطبيق بعض الإجراءات تلقائيًا إذا رغبت في ذلك.
 \n
 \nافتح قائمة الوحدات من الشاشة الرئيسية، أو بالنقر على الزر بالأسفل.</string>
-    <string name="txt_tutorial5">هذا كل شيء. إليك بعض النصائح التي قد تكون مفيدة:
-\n
-\nعندما لا يوفر التطبيق وسيلة لفتح أو مشاركة رابط URL، لكن يوفر لك وسيلة للقيام بالإجراء الآخر، يمكنك حل المشكلة باستخدام هذا التطبيق. يمكنك أيضًا نسخ عنوان الويب إلى الحافظة عن طريق الضغط المطول على زر المشاركة.
-\n
-\nهناك بعض عناوين الويب التي تهدف فقط إلى توجيهك إلى عنوان URL آخر. إذا كان بإمكان فتح العنوان النهائي في تطبيق، فيمكنك تجنب فتحه في متصفح الويب.
-\n
-\nآمل أن تجد التطبيق مفيدًا! ولا تتردد في اقتراح ميزات، أو الإبلاغ عن الأخطاء، أو حتى اقتراح التغييرات. يمكنك العثور على جميع الروابط ذات الصلة على شاشة حول التطبيق.</string>
+    <string name="txt_tutorial5">هذا كل شيء. إليك بعض النصائح التي قد تكون مفيدة:\n\nعندما لا يوفر التطبيق وسيلة لفتح أو مشاركة رابط، لكن يوفر لك وسيلة للقيام بالإجراء الآخر، يمكنك حل المشكلة باستخدام هذا التطبيق. يمكنك أيضًا نسخ رابط إلى الحافظة عن طريق الضغط المطول على زر المشاركة.\n\nهناك بعض الروابط التي تهدف فقط إلى توجيهك إلى رابط آخر. إذا كان بإمكان فتح الرابط النهائي في تطبيق، فيمكنك تجنب فتحه في متصفح الويب.\n\nآمل أن تجد التطبيق مفيدًا! ولا تتردد في اقتراح ميزات، أو الإبلاغ عن الأخطاء، أو حتى اقتراح التغييرات. يمكنك العثور على جميع الروابط ذات الصلة على شاشة حول التطبيق.</string>
     <string name="btn_tutorialSkip">تخطي الدليل التعليمي</string>
     <string name="btn_tutorialEnd">إنهاء الدليل التعليمي</string>
     <string name="reset">إعادة الضبط</string>
@@ -205,8 +196,8 @@
     <string name="mClear_toggleVerbose">تمكين معلومات مفصلة لعملية التطابق</string>
     <string name="mClear_error">تعذر التحقق من القاعدة</string>
     <string name="mClear_updater">المُحدّث</string>
-    <string name="mClear_sourceDesc">عنوان URL لكتالوج ملف JSON مع القواعد:</string>
-    <string name="mClear_urlHint">عنوان URL للكتالوج</string>
+    <string name="mClear_sourceDesc">رابط لكتالوج ملف Json مع القواعد:</string>
+    <string name="mClear_urlHint">رابط للكتالوج</string>
     <string name="mClear_hashHint">عدم فحص التجزئة hash</string>
     <string name="mClear_hashDesc">عنوان URL لملف التجزئة hash الخاص بالكتالوج. إذا تم حذفه، فلن يتم التحقق من التنزيل لمعرفة ما إذا كان قد تم العبث به أو تعديله (غير مُوصى به)</string>
     <string name="mClear_updateNow">تحديث الآن</string>
@@ -216,7 +207,7 @@
     <string name="mClear_updated">تم تحديث الكتالوج</string>
     <string name="mClear_upToDate">الكتالوج محدّث</string>
     <string name="mClear_urlError">تعذر جلب القواعد، تأكد من أن عنوان URL صالح وأن لديك اتصالاً نشطًا</string>
-    <string name="mClear_hashError">تعذر جلب التجزئة hash، تأكد من أن عنوان URL صالح وأن لديك اتصالاً نشطًا</string>
+    <string name="mClear_hashError">تعذر جلب التجزئة، تأكد من أن الرابط صالح ووجود اتصال نشط</string>
     <string name="mClear_restore">استعادة مسارات ClearURLs</string>
     <string name="mRemove_name">مزيل الاستعلامات Queries</string>
     <string name="mRemove_desc">[مهمل] بهذه الوحدة يمكنك إزالة الاستعلامات من عنوان URL.
@@ -240,7 +231,7 @@
     <string name="mLog_limit">الحد الأقصى لعدد الإدخالات للاحتفاظ بها. القيمة الموصى بها: 100. اتركها فارغة لعدد غير محدود</string>
     <string name="mLog_unlimited">غير محدود</string>
     <string name="mHosts_name">مُصنّف المضيفين Hosts</string>
-    <string name="mLog_desc">هذه الوحدة تسجل جميع عناوين URL المُفحَصة. يمكنك عرض، مسح أو تحرير السجل الكامل هنا، لن تظهر أي إشارة بصرية على النافذة الرئيسية. لتعطيل التسجيل، ما عليك سوى تعطيل الوحدة.</string>
+    <string name="mLog_desc">هذه الوحدة تسجل جميع الروابط المحقَقة. يمكنك عرض، مسح أو تحرير السجل الكامل هنا، لن تظهر أي إشارة بصرية على النافذة الرئيسية. لتعطيل التسجيل، ما عليك سوى تعطيل الوحدة.</string>
     <string name="mHosts_malware">إعلان(adware)/برمجيات خبيثة(malware)</string>
     <string name="mHosts_info">مضيف(Host):</string>
     <string name="mHosts_noLabel">بدون تصنيف</string>
@@ -260,10 +251,10 @@
     <string name="mUnshort_name">موسع الروابط</string>
     <string name="mUnshort_unshort">إلغاء تقصير الروابط</string>
     <string name="mUnshort_tm">واجهة(API) unshorten.me المجانية بواسطة Unshorten.me</string>
-    <string name="mUnshort_checking">جاري الفحص…</string>
+    <string name="mUnshort_checking">جارٍ التحقق…</string>
     <string name="mUnshort_error">خطأ في الخادم(server): %s</string>
     <string name="mUnshort_internal">خطأ داخلي (%s)</string>
-    <string name="mUnshort_notFound">لم يتم العثور على توجيه(redirection)</string>
+    <string name="mUnshort_notFound">لم يُعثر على رابط غير مفكوك الاختصار</string>
     <string name="mUnshort_pending">قيد الانتظار: %1$d/%2$d</string>
     <string name="mUnshort_ok">تم إلغاء التقصير</string>
     <string name="mFlags_name">محرر الأعلام(flags)</string>
@@ -282,7 +273,7 @@
 \n- استبدال(replace): إذا كانت قيمتها خاطئة، فلن يتم استبدال المضيفين الحالية. لاحظ أن الكائنات تُقَيَم من الأعلى إلى الأسفل. الافتراضي هو صحيح.
 \n- ممكّن(enabled): إذا كانت قيمتها خاطئة، سيتم تخطي هذا الكائن بأكمله. الافتراضي هو صحيح.</string>
     <string name="mHosts_buildDesc">سيؤدي هذا إلى مسح قاعدة بيانات المضيفين(hosts) الحالية وبنائها مرة أخرى بالتكوين(configuration) الحالي، مع تنزيل ملفات المضيفين(hosts) من الإنترنت إذا لزم الأمر. قد يستغرق هذا الإجراء بضع ثوانٍ. هل ترغب في المتابعة؟</string>
-    <string name="mUnshort_desc">تقوم هذه الوحدة بإلغاء تقصير الروابط عن طريق إرسالها إلى %s، حيث يتم تقييمها على خوادمهم(servers) وحفظ التوجيه(redirection) للطلبات المستقبلية. تجنب إلغاء تقصير الروابط التي تحتوي على بيانات خاصة أو حساسة. \nتقتصر واجهة api الخاصة بهم على 10 طلبات في الساعة للفحوصات الجديدة. ستوضح استجابة الوحدة عدد الطلبات المعلقة التي لديك.</string>
+    <string name="mUnshort_desc">تقوم هذه الوحدة بفك اختصار الروابط عن طريق إرسالها إلى %s، حيث تُقيم على خوادمهم وحفظ التوجيه للطلبات المستقبلية. تجنب فك اختصار الروابط التي تحتوي على بيانات خاصة أو حساسة.\nتقتصر واجهة api المجانية الخاصة بهم على 10 طلبات في الساعة للفحوصات الجديدة. ستوضح استجابة الوحدة عدد الطلبات المعلقة التي لديك. عند اللزوم.\nإن قدمت رمزاً صالحاً، ستستخدم الوحدة نقطة النهاية المصادق عليها بدلاً من ذلك، والتي قد تكون أكثر استقراراً وتخضع لحدود أو معدلات مختلفة.</string>
     <string name="mFlag_desc">[ميزة تجريبية] هذه وحدة متقدمة، تتيح لك تحرير الأعلام(intent flags) عند فتح تطبيق آخر.
 \nستعرض هذه الوحدة قائمة بالأعلام، يمكنك تغيير ما إذا كان العلم مفعلاً أم لا بالنقر على الأيقونة. هناك أيضًا قائمة كاملة لإخفاء الأعلام هناك، هي مرئية فقط، وستظل الأعلام تستخدم الحالة المخصصة..
 \nسيكون للأعلام مؤشران لونيان بجوار مربع الاختيار. الأيسر يُظهر القيمة التي تم استلامها من النية(intent)، والأيمن يشير إلى الحالة التي تم تعيينها بواسطة الوحدة نفسها. اللون الأحمر يعني أن العلم(flag) غير مفعل واللون الأخضر يعني أن العلم(flag) مفعل. بالإضافة إلى ذلك، يمكن أن يكون مؤشر الخيار رماديًا، وهذا يعني أن الحالة تم تعيينها لتكون تلقائية.
@@ -300,12 +291,12 @@
     <string name="normal">عادي</string>
     <string name="big">كبير</string>
     <string name="json_discard_close">تجاهل وإغلاق</string>
-    <string name="txt_processText">مزامنة الرابط مع النص القابل للتحرير (عند فتح التطبيق بالنقر المطول على النص في مربع نص الإدخال)</string>
+    <string name="txt_processText">مزامنة الرابط مع النص القابل للتعديل (عند فتح التطبيق من خيار «فتح في URLCheck» أو ما شابه)</string>
     <string name="json_ignore">محتوى Json غير صالح. هل تريد تجاهله وإغلاق المحرر؟</string>
     <string name="json_reset">تحذير، سيؤدي هذا إلى استبدال محتوى المحرر بمحتوى json المحفوظ. ستفقد جميع التغييرات التي تم إجراؤها، ولكن لن يتم تعديل المحتوى المحفوظ ما لم يتم حفظه يدوياً. هل تريد المتابعة؟</string>
     <string name="auto_desc">باستخدام الأتمتة يمكنك تنفيذ إجراءات الوحدة النمطية بناءً على المحفزات. يمكنك تهيئة الأتمتة هنا، أو تعطيلها جميعاً باستخدام المفتاح أدناه.</string>
-    <string name="auto_editor">تكوين الأتمتة . التنسيق: قائمة من الكائنات (list of objects) حيث المفتاح (key) هو اسم أتمتة فريد (unique automation name) والمحتوى يتضمن القيم التالية:\n- \'regex\': سلسلة|قائمة (string|list): إذا كانت موجودة، يجب أن تتطابق مع تعبير عادي (regex) صالح بلغة جافا (valid java regex) يجب أن يتطابق مع الرابط لكي تعمل الأتمتة. إذا كانت قائمة، يجب أن يتطابق على الأقل تعبير عادي واحد. إذا تم حذفها، ستتطابق جميع الروابط.\n- \'referrer\': سلسلة|قائمة (string|list): إذا كانت موجودة، يجب أن يتطابق المرجع (referrer) (التطبيق الذي فتح الرابط) تمامًا مع هذه القيمة. إذا كانت قائمة، يجب أن يكون المرجع واحدًا من القيم. إذا تم حذفها، ستتطابق جميع الروابط. يمكنك استخدام وحدة التصحيح (debug module) للتحقق من القيمة الفعلية.\n- \'action\': سلسلة|قائمة (string|list)، مطلوبة (required): مفتاح الأتمتة (key of the automation) التي يجب تشغيلها. إذا كانت متعددة، ستعمل بالترتيب. تحقق أدناه للحصول على قائمة بجميع المفاتيح المتاحة (available keys).\n- \'args\': كائن (object): القيم التي قد تتطلبها الإجراء (action)، انظر وصف كل إجراء للقيم التي تقبلها.\n- \'stop\': منطقي (boolean): إذا كانت صحيحة (true)، فلن تعمل المزيد من الأتمتة للرابط الحالي. خاطئة بشكل افتراضي.\n- \'enabled\': منطقي (boolean): إذا كانت خاطئة (false)، سيتم تخطي هذه الأتمتة. صحيحة بشكل افتراضي.</string>
-    <string name="txt_width">عُرض الحوار:\nتحذير! قد تخفي القيم الصغيرة عناصر الشاشة.</string>
+    <string name="auto_editor">تكوين الأتمتة . التنسيق: قائمة من الكائنات حيث المفتاح هو اسم أتمتة فريد والمحتوى يتضمن القيم التالية:\n- \'regex\': سلسلة|قائمة: إذا كانت موجودة، يجب أن تتطابق مع تعبير عادي صالح بلغة جافا يجب أن يتطابق مع الرابط لكي تعمل الأتمتة. إذا كانت قائمة، يجب أن يتطابق على الأقل تعبير عادي واحد. إذا حُذفت، ستتطابق جميع الروابط.\n- \'excludeRegex\': سلسلة|قائمة: إذا كانت موجودة، فهو تعبير عادي صالح بلغة جافا يجب ألا يتطابق مع الرابط لكي تعمل الأتمتة. إذا كانت قائمة، فلا يجب أن يتطابق أي من التعبيرات العادية. إذا حُذفت، فلن يُستبعد أي رابط.\n- \'referrer\': سلسلة|قائمة: إذا كانت موجودة، يجب أن يتطابق المرجع (التطبيق الذي فتح الرابط) تمامًا مع هذه القيمة. إذا كانت قائمة، يجب أن يكون المرجع واحدًا من القيم. إذا حُذف، ستتطابق جميع الروابط. يمكنك استخدام وحدة التصحيح للتحقق من القيمة الفعلية.\n- \'action\': سلسلة|قائمة، مطلوبة: مفتاح الأتمتة التي يجب تشغيلها. إذا كانت متعددة، ستعمل بالترتيب. تحقق أدناه للحصول على قائمة بجميع المفاتيح المتاحة.\n- \'args\': كائن: القيم التي قد تتطلبها الإجراء، انظر وصف كل إجراء للقيم التي تقبلها. مثال: { …, \"args\": { \"text\": \"example\" } }\n- \'stop\': منطقي: إذا كانت صحيحة، فلن تعمل المزيد من الأتمتة للرابط الحالي. خاطئة بشكل افتراضي.\n- \'enabled\': منطقي: إذا كانت خاطئة، سيتم تخطي هذه الأتمتة. صحيحة بشكل افتراضي.</string>
+    <string name="txt_width">عُرض الحوار (0 للوضع التلقائي):\nتحذير! قد تخفي القيم الصغيرة عناصر الشاشة.</string>
     <string name="spin_fullWidth">كامل</string>
     <string name="spin_dynamicWidth">حيوي</string>
     <string name="format">التنسيق</string>
@@ -319,4 +310,71 @@
     <string name="auto_enabled">تفعيل ميزة الأتمتة</string>
     <string name="auto_error_toast">عرض إشعار إذا فشلت الأتمتة</string>
     <string name="auto_notFound">لا توجد أتمتة بالمفتاح \'%s\' . تأكد من أنه صالح وأن الوحدة المطلوبة نشطة.</string>
+    <string name="lbl_processUrl">فتح في URLCheck</string>
+    <string name="txt_processUrl">إضافة عنصر «فتح في URLCheck» إلى قائمة تحديد النص.</string>
+    <string name="txt_verticalPos">موضع عمودي</string>
+    <string name="spin_top">أعلى</string>
+    <string name="spin_bottom">أسفل</string>
+    <string name="txt_horizontalPos">موضع أفقي</string>
+    <string name="spin_start">يسار</string>
+    <string name="spin_end">يمين</string>
+    <string name="spin_center">وسط</string>
+    <string name="json_bigger">زيادة حجم الخط</string>
+    <string name="json_smaller">تنقيص حجم الخط</string>
+    <string name="auto_userContent">قائمة الأتمتات المفيدة الأخرى المنشأة من المستخدم: %s</string>
+    <string name="auto_available_prefix">إجراءات الأتمتة المتاحة (المفاتيح):</string>
+    <string name="auto_available_disabled">هذه الوحدة معطلة، لن تعمل الأتمتات</string>
+    <string name="auto_rule_bitly">فك اختصار bit.ly</string>
+    <string name="auto_rule_webhook">إرسال كل شيء إلى Webhook</string>
+    <string name="auto_rule_toast">مثال على إشعار منبثق</string>
+    <string name="auto_open">سيفتح عنوان الرابط. إذا لم تتوفر وسائط \'args\' متوقعة، سيُستخدم التطبيق الأول المتاح (وهو ما يعادل الضغط على زر «فتح»). وإذا توفرت الوسائط \'package\' و/أو \'component\'، فسوف يُستخدَمان بدلاً من ذلك.</string>
+    <string name="auto_share">سيشارك عنوان الرابط. وهو ما يعادل الضغط على زر «مشاركة».</string>
+    <string name="auto_copy">سينسخ عنوان الرابط. وهو ما يعادل الضغط على زر «نسخ».</string>
+    <string name="auto_ctabs">سيُفعل علامات التبويب المخصصة ctabs. وهو ما يعادل الضغط على زر «ctabs» إذا كانت معطلة (حتى لو كانت مخفية).</string>
+    <string name="auto_incognito">سيُفعل التصفح المتخفي. وهو ما يعادل الضغط على زر «التصفح المتخفي» إذا كان معطلاً (حتى لو كان مخفياً).</string>
+    <string name="auto_close">سيغلق التطبيق دون تنفيذ أي إجراء آخر.</string>
+    <string name="auto_checkStatus">سيفحص الحالة. وهو ما يعادل الضغط على زر «فحص».</string>
+    <string name="auto_unshort">سيفك اختصار الرابط. وهو ما يعادل الضغط على زر «فك اختصار».</string>
+    <string name="auto_scan">سيفحص الرابط. وهو ما يعادل الضغط على زر «فحص».</string>
+    <string name="auto_clear">سيمحو الرابط. وهو ما يعادل الضغط على زر «محو». يُرجى الملاحظة أن الوحدة تشتمل على إعداد آلي يمحو جميع الروابط بكفاءة أكبر، ويفضل استخدامه.</string>
+    <string name="auto_drawer">سيفتح اللوحة الجانبية. وهو ما يعادل الضغط على زر اللوحة الجانبية إذا كانت مطوية.</string>
+    <string name="auto_toast">يعرض إشعارا قصيراً بنص ثابت. يجب توفير النص كوسيط (args) يحمل الاسم \'text\'.</string>
+    <string name="mPttrn_upperDomain">تحذير! حرف كبير في اسم النطاق.</string>
+    <string name="mOpen_iconSize">حجم الأيقونة</string>
+    <string name="mWebhook_missing_config">رابط أو محتوى webhook مفقود</string>
+    <string name="mRedir_desc">إصدار مبسط من وحدة فحص الأنماط، الفكرة والتنفيذ الأساسي من coderj001.\nتعيد توجيه الروابط باستبدال المضيف.</string>
+    <string name="mVT_checkKey">تحقق</string>
+    <string name="mWebhook_success">أُرسل بنجاح إلى webhook</string>
+    <string name="mRedir_from">من المضيف</string>
+    <string name="mWebhook_sending">يُرسل إلى webhook…</string>
+    <string name="mVt_categories">الفئات:</string>
+    <string name="mHosts_tm">مضيفات StevenBlack من %s</string>
+    <string name="mWebhook_send">إرسال إلى Webhook</string>
+    <string name="mVT_validKey">مفتاح صالح من المستخدم: %s</string>
+    <string name="mVt_detections">الاكتشافات:</string>
+    <string name="mVt_title">العنوان:</string>
+    <string name="mWebhook_name">Webhook</string>
+    <string name="mUnshort_token">توكن</string>
+    <string name="mWebhook_body_hint">محتوى Webhook</string>
+    <string name="mWebhook_auto_send">إرسال إلى Webhook</string>
+    <string name="mWebhook_url_hint">رابط Webhook</string>
+    <string name="mWebhook_templates">القوالب</string>
+    <string name="mRedir_apply">إعادة توجيه</string>
+    <string name="mUnshort_to">يفك الاختصار إلى %s</string>
+    <string name="mInput_monospace">استخدم خطاً ثابت العرض للتمييز بين الحروف المتشابهة.</string>
+    <string name="mWebhook_test">اختبار Webhook</string>
+    <string name="mRedir_add">إضافة قاعدة</string>
+    <string name="mRedir_to">إلى المضيف</string>
+    <string name="mRedir_auto">آلي</string>
+    <string name="mVt_finalUrl">الرابط النهائي:</string>
+    <string name="mVt_reputation">السمعة:</string>
+    <string name="mVt_votes">التصويتات:</string>
+    <string name="mD_toastError">محاولة عرض إشعار قصير عند حدوث خطأ داخلي قابل للاسترداد (حتى لو كانت الوحدة معطلة).</string>
+    <string name="mD_show">تحميل بيانات تصحيح الأخطاء</string>
+    <string name="mWebhook_desc">ترسل هذه الوحدة الروابط إلى نقطة نهاية Webhook مُعَدّة، وترفق مع كل رابط طابعاً زمنياً لتجمع الروابط وتعالجها على خادمك الخاص.\nالشكر لـ anoop-b على الفكرة والتنفيذ!\n\nاضبط رابط Webhook ومحتواه أدناه لبدء إرسال الروابط.\nيمكنك استخدام العناصر النائبة $URL$, $TIMESTAMP$ و $REFERRER$ في المحتوى.</string>
+    <string name="mWebhook_error">فشل الإرسال إلى Webhook</string>
+    <string name="mRedir_name">معيد التوجيه</string>
+    <string name="visual_editor">محرر مرئي</string>
+    <string name="mRedir_editor">لكل قاعدة، عند مطابقة مضيف الرابط لحقل «من» تماماً، يظهر زر لاستبداله بمضيف «إلى». فعّل «آلي» لتطبيق إعادة التوجيه تلقائياً.</string>
+    <string name="mRedir_json">ضبط JSON لإعادة التوجيه. التنسيق: قائمة كائنات، حيث المفتاح هو تسمية القاعدة والقيمة تحمل الخصائص الآتية:\n- «من»: نص يمثّل النطاق الكامل للمطابقة بلا تعبيرات نمطية (تُتجاهل القاعدة إن كان فارغاً)\n- «إلى»: نص يمثّل النطاق الكامل المستبدل (تُتجاهل القاعدة إن كان فارغاً)\n- «آلي»: قيمة منطقية لتطبيق التوجيه تلقائياً إن كانت صحيحة (خطأ افتراضياً)</string>
 </resources>

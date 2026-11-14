@@ -1,0 +1,8 @@
+V 2.9
+- Novo módulo: Rotulador de hosts
+- Ocultar títulos dos módulos (opção ativável/desativável)
+- Nova atividade de configurações
+    - Definir como navegador padrão
+    - Alterar tema
+    - Alterar localização
+- Ajustes e otimização de estilos e código
