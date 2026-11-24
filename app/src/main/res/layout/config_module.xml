@@ -28,6 +28,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:importantForAccessibility="no"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="3dp"
@@ -58,6 +59,7 @@
             android:tint="?attr/colorAccent" />
 
         <ImageView
+            android:importantForAccessibility="no"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="3dp"
