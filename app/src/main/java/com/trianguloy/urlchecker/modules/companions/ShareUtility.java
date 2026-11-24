@@ -4,13 +4,17 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.View;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
+import com.trianguloy.urlchecker.modules.list.OpenModule;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
+
+import java.util.ArrayList;
 
 /**
  * The share functionality.
@@ -98,11 +102,32 @@ public interface ShareUtility {
             } else {
                 // show system chooser
                 var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
+                hideDeniedApp(sendIntent, chooser);
                 PackageUtils.startActivity(chooser, R.string.mOpen_noapps, mainDialog);
             }
 
             if (closeSharePref.get()) {
                 mainDialog.finish();
+            }
+        }
+
+        /**
+         * Excludes the app chosen as denied in the open module from the system chooser.
+         * EXTRA_EXCLUDE_COMPONENTS needs API 24+, on older versions the denied app is still listed.
+         */
+        private void hideDeniedApp(Intent sendIntent, Intent chooser) {
+            var denied = OpenModule.DENYLIST_PREF(mainDialog).get();
+            String deniedPackage = denied == null ? null : denied.getPackageName();
+            if (deniedPackage == null || Build.VERSION.SDK_INT < Build.VERSION_CODES.N) return;
+
+            var excluded = new ArrayList<ComponentName>();
+            for (var info : mainDialog.getPackageManager().queryIntentActivities(sendIntent, 0)) {
+                if (deniedPackage.equals(info.activityInfo.packageName)) {
+                    excluded.add(new ComponentName(info.activityInfo.packageName, info.activityInfo.name));
+                }
+            }
+            if (!excluded.isEmpty()) {
+                chooser.putExtra(Intent.EXTRA_EXCLUDE_COMPONENTS, excluded.toArray(new ComponentName[0]));
             }
         }
 
