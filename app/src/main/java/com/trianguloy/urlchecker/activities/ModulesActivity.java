@@ -134,7 +134,7 @@ public class ModulesActivity extends Activity {
 
         // configure label
         final TextView title = parent.findViewById(R.id.label);
-        title.setText(getString(R.string.dd, getString(module.getName())));
+        title.setText(getString(R.string.dd, module.getName(this)));
         AndroidUtils.setAsClickable(title);
 
         // configure decorations toggle

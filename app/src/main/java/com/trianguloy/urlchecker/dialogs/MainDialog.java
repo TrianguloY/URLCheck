@@ -326,7 +326,7 @@ public class MainDialog extends Activity {
                     // init decorations
                     var block = Inflater.inflate(R.layout.dialog_module, ll);
                     var title = block.<TextView>findViewById(R.id.title);
-                    title.setText(getString(R.string.dd, getString(moduleData.getName())));
+                    title.setText(getString(R.string.dd, moduleData.getName(this)));
                     parent = block.findViewById(R.id.mod);
                 } else {
                     // no decorations
