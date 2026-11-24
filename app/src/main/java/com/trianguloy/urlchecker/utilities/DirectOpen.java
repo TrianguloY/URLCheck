@@ -18,7 +18,7 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
@@ -53,7 +53,7 @@ public class DirectOpen {
             var app = info.activityInfo.applicationInfo;
             browsers.add(new Browser(packageName, pm.getApplicationLabel(app), pm.getApplicationIcon(app)));
         }
-        browsers.sort(Comparator.comparing(browser -> browser.label().toString(), String.CASE_INSENSITIVE_ORDER));
+        Collections.sort(browsers, (a, b) -> String.CASE_INSENSITIVE_ORDER.compare(a.label().toString(), b.label().toString()));
         return browsers;
     }
 

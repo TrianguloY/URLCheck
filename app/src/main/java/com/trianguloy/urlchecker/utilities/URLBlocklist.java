@@ -71,7 +71,12 @@ public class URLBlocklist {
     public static String normalize(String input) {
         if (input == null) return null;
         var candidate = input.trim();
-        if (candidate.isEmpty() || candidate.codePoints().anyMatch(Character::isWhitespace)) return null;
+        if (candidate.isEmpty()) return null;
+        for (int i = 0; i < candidate.length(); ) {
+            int cp = Character.codePointAt(candidate, i);
+            if (Character.isWhitespace(cp)) return null;
+            i += Character.charCount(cp);
+        }
         if (candidate.startsWith("//")) candidate = "https:" + candidate;
         else if (!candidate.matches("(?s)^[A-Za-z][A-Za-z0-9+.-]*://.*")) {
             if (candidate.startsWith("/")
