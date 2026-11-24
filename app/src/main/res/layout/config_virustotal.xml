@@ -12,6 +12,12 @@
         android:linksClickable="true"
         android:text="@string/mVT_desc" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/api_key"
+        android:text="@string/mVT_apiKey" />
+
     <EditText
         android:id="@+id/api_key"
         android:layout_width="match_parent"

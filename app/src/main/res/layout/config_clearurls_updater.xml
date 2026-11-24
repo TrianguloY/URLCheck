@@ -8,6 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@id/catalog_URL"
         android:text="@string/mClear_sourceDesc" />
 
     <EditText
@@ -22,6 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@id/hash_URL"
         android:text="@string/mClear_hashDesc" />
 
     <EditText

@@ -8,6 +8,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/search"
+            android:text="@string/mFlag_search" />
+
         <EditText
             android:id="@+id/search"
             android:layout_width="match_parent"
