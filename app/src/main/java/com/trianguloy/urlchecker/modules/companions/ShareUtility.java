@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules.companions;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
@@ -75,19 +76,31 @@ public interface ShareUtility {
 
         /** Shares the url as text */
         public void shareUrl() {
+            shareUrl(null, null);
+        }
+
+        /** Shares the url as text, optionally to a specific app (for automation rules) */
+        public void shareUrl(String packageName, String componentStr) {
             // create send intent
             var sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, mainDialog.getUrlData().url);
             sendIntent.setType("text/plain");
 
-            // share intent
-            var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
-            PackageUtils.startActivity(
-                    chooser,
-                    R.string.mOpen_noapps,
-                    mainDialog
-            );
+            if (componentStr != null && !componentStr.isEmpty()) {
+                // direct to a specific component (skips app's internal chooser)
+                sendIntent.setComponent(ComponentName.unflattenFromString(componentStr));
+                PackageUtils.startActivity(sendIntent, R.string.mOpen_noapps, mainDialog);
+            } else if (packageName != null && !packageName.isEmpty()) {
+                // direct to a specific app package
+                sendIntent.setPackage(packageName);
+                PackageUtils.startActivity(sendIntent, R.string.mOpen_noapps, mainDialog);
+            } else {
+                // show system chooser
+                var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
+                PackageUtils.startActivity(chooser, R.string.mOpen_noapps, mainDialog);
+            }
+
             if (closeSharePref.get()) {
                 mainDialog.finish();
             }
