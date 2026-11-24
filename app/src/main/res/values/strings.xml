@@ -281,10 +281,10 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_withDesc">Choose another app</string>
     <!-- -->
     <string name="mStatus_name">Status code</string>
-    <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
+    <string name="mStatus_desc">Pressing the button connects directly to the remote site (HTTP GET) to check its status code and any redirections. Avoid using this on untrusted links. The page content is not evaluated, so JavaScript-based redirections won\'t be detected.</string>
     <string name="mStatus_ioerror">Network error while trying to check the URL: %s</string>
     <string name="mStatus_error">Internal error while trying to check the URL: %s</string>
-    <string name="mStatus_check">Check status</string>
+    <string name="mStatus_check">Check status (connects to site)</string>
     <string name="mStatus_recheck">Check</string>
     <string name="mStatus_checking">Checking…</string>
     <string-array name="mStatus_codes">
