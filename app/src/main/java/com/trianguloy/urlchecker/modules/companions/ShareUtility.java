@@ -117,7 +117,7 @@ public interface ShareUtility {
          */
         private void hideDeniedApp(Intent sendIntent, Intent chooser) {
             var denied = OpenModule.DENYLIST_PREF(mainDialog).get();
-            var deniedPackage = denied == null ? null : denied.getPackageName();
+            String deniedPackage = denied == null ? null : denied.getPackageName();
             if (deniedPackage == null || Build.VERSION.SDK_INT < Build.VERSION_CODES.N) return;
 
             var excluded = new ArrayList<ComponentName>();

@@ -26,7 +26,6 @@ import com.trianguloy.urlchecker.modules.companions.ShareUtility;
 import com.trianguloy.urlchecker.modules.companions.Size;
 import com.trianguloy.urlchecker.modules.companions.DenylistOption;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.EnumerationPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -61,8 +60,8 @@ public class OpenModule extends AModuleData {
      * Right now only denies chrome, edge, firefox, opera, and brave.
      * Could implement something in future for more apps
      */
-    public static GenericPref.Enumeration<DenylistOption> DENYLIST_PREF(Context cntx) {
-        return new GenericPref.Enumeration<>("open_denylist", DenylistOption.NONE, DenylistOption.class, cntx);
+    public static EnumerationPref<DenylistOption> DENYLIST_PREF(Context cntx) {
+        return new EnumerationPref<>("open_denylist", DenylistOption.NONE, DenylistOption.class, cntx);
     }
 
     @Override
