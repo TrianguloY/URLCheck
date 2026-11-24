@@ -10,6 +10,12 @@
         android:layout_height="wrap_content"
         android:text="@string/mWebhook_desc" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/webhook_url"
+        android:text="@string/mWebhook_url_hint" />
+
     <EditText
         android:id="@+id/webhook_url"
         android:layout_width="match_parent"
@@ -17,6 +23,12 @@
         android:autofillHints="url,webhook"
         android:hint="@string/mWebhook_url_hint"
         android:inputType="textUri" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/webhook_body"
+        android:text="@string/mWebhook_body_hint" />
 
     <LinearLayout
         android:layout_width="match_parent"

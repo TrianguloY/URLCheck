@@ -12,6 +12,12 @@
         android:linksClickable="true"
         android:text="@string/mUnshort_desc" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/token"
+        android:text="@string/mUnshort_token" />
+
     <EditText
         android:id="@+id/token"
         android:layout_width="match_parent"

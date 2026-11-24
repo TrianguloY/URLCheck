@@ -8,16 +8,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="bottom"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/name"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="text" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/name"
+                android:text="@string/mRedir_ruleName" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/mRedir_ruleName"
+                android:inputType="text" />
+        </LinearLayout>
 
         <CheckBox
             android:id="@+id/auto"
@@ -37,16 +50,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="bottom"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/from"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/mRedir_from"
-            android:inputType="textUri"
-            android:singleLine="true" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/from"
+                android:text="@string/mRedir_from" />
+
+            <EditText
+                android:id="@+id/from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mRedir_from"
+                android:inputType="textUri"
+                android:singleLine="true" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,14 +80,26 @@
             android:paddingHorizontal="4dp"
             android:text="➔" />
 
-        <EditText
-            android:id="@+id/to"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/mRedir_to"
-            android:inputType="textUri"
-            android:singleLine="true" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/to"
+                android:text="@string/mRedir_to" />
+
+            <EditText
+                android:id="@+id/to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mRedir_to"
+                android:inputType="textUri"
+                android:singleLine="true" />
+        </LinearLayout>
 
     </LinearLayout>
 
