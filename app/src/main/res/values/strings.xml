@@ -485,4 +485,13 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mChg_current">Current version: %s</string>
     <string name="mChg_view">View changes</string>
 
+
+    <!-- custom modules -->
+    <string name="mCustom_name">Custom modules</string>
+    <string name="mCustom_editor">Custom modules. Each key is a module id, each value has a \'name\', an optional \'description\', \'enabled\', \'regex\' and \'excludeRegex\', and a list of \'actions\' of type \'replace\' or \'request\'. Check the documentation for all the details.</string>
+    <string name="mCustom_moduleDesc">Custom module \'%s\'.</string>
+    <string name="mCustom_sendsTo">⚠ Sends URLs to: %s</string>
+    <string name="mCustom_applied">Applied: %s</string>
+    <string name="mCustom_requesting">…</string>
+    <string name="mCustom_notFound">No result</string>
 </resources>
