@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.view.View;
+import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
@@ -91,9 +92,17 @@ public interface ShareUtility {
             sendIntent.putExtra(Intent.EXTRA_TEXT, mainDialog.getUrlData().url);
             sendIntent.setType("text/plain");
 
-            if (componentStr != null && !componentStr.isEmpty()) {
+            var component = componentStr == null || componentStr.isEmpty() ? null : ComponentName.unflattenFromString(componentStr);
+            var self = mainDialog.getPackageName();
+            if ((component != null && self.equals(component.getPackageName())) || (component == null && self.equals(packageName))) {
+                // sharing to this app reruns its automations, which may share again
+                Toast.makeText(mainDialog, R.string.toast_noApp, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (component != null) {
                 // direct to a specific component (skips app's internal chooser)
-                sendIntent.setComponent(ComponentName.unflattenFromString(componentStr));
+                sendIntent.setComponent(component);
                 PackageUtils.startActivity(sendIntent, R.string.mOpen_noapps, mainDialog);
             } else if (packageName != null && !packageName.isEmpty()) {
                 // direct to a specific app package

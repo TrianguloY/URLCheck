@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.ModulesActivity;
@@ -275,6 +276,13 @@ class OpenDialog extends AModuleDialog {
 
     /** Opens the url in a specific app given by component and/or package */
     private void openUrl(ComponentName component, String packageName) {
+
+        // never target this app: an implicit or self intent reopens it (a loop when it is the default browser)
+        var self = getActivity().getPackageName();
+        if (component == null ? packageName == null || self.equals(packageName) : self.equals(component.getPackageName())) {
+            Toast.makeText(getActivity(), R.string.toast_noApp, Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // open
         var intent = new Intent(getActivity().getIntent());
