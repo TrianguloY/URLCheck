@@ -27,3 +27,9 @@
 - `alpha.yml` (`Build alpha apk`, manual) expects an existing `alpha` release; on the fork it fails at the upload step and leaves an `alpha` tag.
 - Pushing a tag before the workflows are registered/enabled on a fresh fork does nothing; see [playbook.md](playbook.md).
 - The `assets-updater.yml` cron (weekly) will keep opening `updated data.minify.json` PRs on the fork; merge or disable as wanted.
+
+## Releases
+| Version | Date | APK SHA-256 | Notes |
+|---|---|---|---|
+| v4.0.0 (versionCode 48) | 2026-11-24 | `B8F225C049207BA09240A20AED7598C723A49498BE67E44B44CA2F5ACB4E5C9D` | first fork release: upstream PR merges, new signing key |
+| v4.0.1 (versionCode 49) | 2026-11-24 | `FEAFA5A8A005E1D19238271CF5B4D595EDEE02D209FA5C34E813742C7A08C7A2` | skip redirect module, deny browser, meta-refresh/JS redirect detection, dialog state restore, never open URLCheck from itself, status-check warning, text-field labels; signer certificate unchanged |
