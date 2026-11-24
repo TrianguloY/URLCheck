@@ -86,17 +86,17 @@ class UriPartsDialog extends AModuleDialog {
 
         // domain elements
         if (uri.getAuthority() != null || uri.getScheme() != null) {
-            var domain = addGroup("Domain", -1, null);
-            addPart("scheme", uri.getScheme(), domain, null);
-            addPart("user info", uri.getUserInfo(), domain, null);
-            addPart("host", uri.getHost(), domain, null);
-            addPart("port", uri.getPort() != -1 ? String.valueOf(uri.getPort()) : null, domain, null);
+            var domain = addGroup(getActivity().getString(R.string.mParts_domain), -1, null);
+            addPart(getActivity().getString(R.string.mParts_scheme), uri.getScheme(), domain, null);
+            addPart(getActivity().getString(R.string.mParts_userInfo), uri.getUserInfo(), domain, null);
+            addPart(getActivity().getString(R.string.mParts_host), uri.getHost(), domain, null);
+            addPart(getActivity().getString(R.string.mParts_port), uri.getPort() != -1 ? String.valueOf(uri.getPort()) : null, domain, null);
         }
 
         // paths
         var pathSegments = uri.getPathSegments();
         if (!pathSegments.isEmpty()) {
-            var paths = addGroup("Paths", pathSegments.size(), uri.buildUpon().path(null));
+            var paths = addGroup(getActivity().getString(R.string.mParts_paths), pathSegments.size(), uri.buildUpon().path(null));
             for (var i = 0; i < pathSegments.size(); i++) {
                 int removeI = i;
                 // append the path
@@ -115,7 +115,7 @@ class UriPartsDialog extends AModuleDialog {
         // query parameters
         var parameters = urlQuerySanitizer.getParameterList();
         if (!parameters.isEmpty()) {
-            var queries = addGroup("Parameters", parameters.size(), uri.buildUpon().query(null));
+            var queries = addGroup(getActivity().getString(R.string.mParts_parameters), parameters.size(), uri.buildUpon().query(null));
             for (var i = 0; i < parameters.size(); i++) {
                 int removeI = i;
                 // append the parameter
@@ -133,7 +133,7 @@ class UriPartsDialog extends AModuleDialog {
 
         // fragment
         if (uri.getFragment() != null) {
-            var fragment = addGroup("Fragment", -1, uri.buildUpon().fragment(null));
+            var fragment = addGroup(getActivity().getString(R.string.mParts_fragment), -1, uri.buildUpon().fragment(null));
             addPart("#", uri.getFragment(), fragment, null);
         }
 
