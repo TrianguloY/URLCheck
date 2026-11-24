@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.modules.list;
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -101,6 +102,10 @@ class StatusDialog extends AModuleDialog {
 
     private BoolPref autoRedir;
 
+    /** The result shown for the current url, kept when the dialog is recreated */
+    private String shownMessage = null;
+    private String shownRedirect = null;
+
     public StatusDialog(MainDialog dialog) {
         super(dialog);
     }
@@ -146,6 +151,22 @@ class StatusDialog extends AModuleDialog {
         AndroidUtils.setHideableText(previous, urlData.getData(PREVIOUS));
         AndroidUtils.setHideableText(info, null);
         updateRedirect(null);
+        shownMessage = null;
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putString("message", shownMessage);
+        state.putString("redirect", shownRedirect);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var message = state.getString("message");
+        if (message == null) return;
+        shownMessage = message;
+        AndroidUtils.setHideableText(info, message);
+        updateRedirect(state.getString("redirect"));
     }
 
     /** Starts the checking process */
@@ -155,6 +176,7 @@ class StatusDialog extends AModuleDialog {
         check.setText(R.string.mStatus_recheck);
         AndroidUtils.setHideableText(info, getActivity().getString(R.string.mStatus_checking));
         updateRedirect(null);
+        shownMessage = null;
 
         // check in background
         thread = new Thread(() -> _check(disableUpdates));
@@ -247,6 +269,7 @@ class StatusDialog extends AModuleDialog {
         var finalMessage = message;
         var finalRedirectionUrl = redirectionUrl;
         getActivity().runOnUiThread(() -> {
+            shownMessage = finalMessage;
             info.setText(finalMessage);
             check.setEnabled(true);
 
@@ -349,6 +372,7 @@ class StatusDialog extends AModuleDialog {
 
     /** Updates the redirect textview */
     private void updateRedirect(String redirectionUrl) {
+        shownRedirect = redirectionUrl;
         if (redirectionUrl == null) {
             AndroidUtils.setHideableText(redirect, null);
             return;

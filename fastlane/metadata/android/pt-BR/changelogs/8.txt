@@ -1,0 +1,3 @@
+V 2.0
+- Atualização de estilo
+- Catálogo da Clear Url atualizado

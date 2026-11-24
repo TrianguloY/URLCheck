@@ -2,10 +2,13 @@ package com.trianguloy.urlchecker.utilities.methods;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Application;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -23,16 +26,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.modules.list.DebugModule;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /** Generic Android utilities */
 public interface AndroidUtils {
@@ -53,12 +58,21 @@ public interface AndroidUtils {
 
     /** In debug mode, throws an AssertionError, in production just logs it and continues. */
     static void assertError(String detailMessage, Throwable cause) {
+        // Regardless of settings, log the error
         Log.d("ASSERT_ERROR", detailMessage, cause);
-        if (BuildConfig.DEBUG) {
-            // in debug mode, throw exception
-            throw new AssertionError(detailMessage, cause);
+
+        try {
+            // if enabled, show toast
+            var cntx = (Application) Class.forName("android.app.ActivityThread")
+                    .getMethod("currentApplication")
+                    .invoke(null, (Object[]) null);
+            if (DebugModule.ERRORTOAST_PREF(cntx).get()) {
+                Toast.makeText(cntx, "ERROR: " + detailMessage, Toast.LENGTH_LONG).show();
+            }
+        } catch (final Throwable e) {
+            // ignore if can't show toast, but at least log it
+            Log.d("ASSERT_ERROR_TOAST", "Can't show toast", e);
         }
-        // non-debug, just discard
     }
 
     /** Sets the background color (resource id) of a view using a rounded box drawable */
@@ -69,13 +83,67 @@ public interface AndroidUtils {
     /** Sets the background color (raw color) of a view using a rounded box drawable */
     static void setRawRoundedColor(int color, View view) {
         var drawable = view.getContext().getResources().getDrawable(R.drawable.round_box);
-        drawable.setColorFilter(color, PorterDuff.Mode.SRC);
+        // the label colors are semi-transparent, so the color the user sees depends on the
+        // window background behind them: composite them over it to know that color
+        var background = flattenOverBackground(color, view.getContext());
+        drawable.setColorFilter(background, PorterDuff.Mode.SRC);
         view.setBackground(drawable);
+
+        // the text color comes from the theme and is not chosen for the label color, so it
+        // can be hard to read on it. Keep the theme color for clearRoundedColor
+        if (view instanceof TextView textView) {
+            if (textView.getTag(R.id.themeTextColor) == null) {
+                textView.setTag(R.id.themeTextColor, textView.getTextColors());
+            }
+            textView.setTextColor(contrastingTextColor(background));
+        }
+    }
+
+    /** Returns black or white, whichever reads better on top of [background] */
+    static int contrastingTextColor(int background) {
+        // relative luminance, https://www.w3.org/TR/WCAG21/#dfn-relative-luminance
+        var luminance = 0.2126 * toLinear(Color.red(background))
+                + 0.7152 * toLinear(Color.green(background))
+                + 0.0722 * toLinear(Color.blue(background));
+        // both contrast ratios are equal at this luminance
+        return luminance > 0.1791 ? Color.BLACK : Color.WHITE;
+    }
+
+    private static double toLinear(int component) {
+        var value = component / 255d;
+        return value <= 0.03928 ? value / 12.92 : Math.pow((value + 0.055) / 1.055, 2.4);
+    }
+
+    /** Composites a (possibly semi-transparent) color over the window background */
+    static int flattenOverBackground(int color, Context cntx) {
+        var alpha = Color.alpha(color);
+        if (alpha == 255) return color;
+
+        var resolved = new TypedValue();
+        if (!cntx.getTheme().resolveAttribute(android.R.attr.colorBackground, resolved, true)) {
+            return color;
+        }
+        var background = resolved.resourceId != 0
+                ? cntx.getResources().getColor(resolved.resourceId)
+                : resolved.data;
+
+        var ratio = alpha / 255f;
+        return Color.rgb(
+                Math.round(Color.red(color) * ratio + Color.red(background) * (1 - ratio)),
+                Math.round(Color.green(color) * ratio + Color.green(background) * (1 - ratio)),
+                Math.round(Color.blue(color) * ratio + Color.blue(background) * (1 - ratio))
+        );
     }
 
     /** Clears the background color of a view */
     static void clearRoundedColor(View view) {
         view.setBackground(null);
+        // give back the text color setRawRoundedColor replaced, or it stays black/white
+        if (view instanceof TextView textView
+                && textView.getTag(R.id.themeTextColor) instanceof ColorStateList themeColor) {
+            textView.setTextColor(themeColor);
+            textView.setTag(R.id.themeTextColor, null);
+        }
     }
 
     /** Makes the text of a textview display as a link (which does nothing when clicked) */
@@ -205,11 +273,38 @@ public interface AndroidUtils {
         menuItem.getIcon().setColorFilter(cntx.getResources().getColor(resolvedAttr.resourceId), PorterDuff.Mode.SRC_IN);
     }
 
+    /**
+     * Matches urls with an RFC 3986 IP-literal host, like "http://[::1]/".
+     * [Patterns.WEB_URL] can't match them, its host part only allows registered names and IPv4.
+     */
+    Pattern IP_LITERAL_URL = Pattern.compile(
+            "(?i:[a-z][a-z0-9+.\\-]*)://" // scheme
+                    + "(?:\\S*@)?" // optional userinfo
+                    + "\\[[0-9a-fA-F:.]+(?:%25\\S*?)?\\]" // IP-literal, with optional zone id
+                    + "(?::\\d{1,5})?" // optional port
+                    + "(?:[/?#]\\S*)?"); // optional path, query and fragment
+
     /** Returns all the unique links found on a given text */
     static Set<String> getLinksFromText(CharSequence text) {
         var links = new HashSet<String>();
+
+        // ip-literal (ipv6) urls first, they are invisible to Patterns.WEB_URL
+        var ipLiteralRanges = new ArrayList<int[]>();
+        var ipLiteralMatcher = IP_LITERAL_URL.matcher(text);
+        while (ipLiteralMatcher.find()) {
+            ipLiteralRanges.add(new int[]{ipLiteralMatcher.start(), ipLiteralMatcher.end()});
+            links.add(ipLiteralMatcher.group());
+        }
+
         var matcher = Patterns.WEB_URL.matcher(text);
-        while (matcher.find()) links.add(matcher.group());
+        matching:
+        while (matcher.find()) {
+            // skip matches contained in an ip-literal, like the ipv4 part of "[::ffff:1.2.3.4]"
+            for (var range : ipLiteralRanges) {
+                if (matcher.start() >= range[0] && matcher.end() <= range[1]) continue matching;
+            }
+            links.add(matcher.group());
+        }
         return links;
     }
 
@@ -285,6 +380,13 @@ public interface AndroidUtils {
             cntx.getWindowManager().getDefaultDisplay().getMetrics(metrics);
             params.width = metrics.widthPixels * width / 100;
         }
+        cntx.getWindow().setAttributes(params);
+    }
+
+    /** Sets the gravity of an activity. */
+    static void setActivityGravity(int gravity, Activity cntx) {
+        var params = cntx.getWindow().getAttributes();
+        params.gravity = gravity;
         cntx.getWindow().setAttributes(params);
     }
 

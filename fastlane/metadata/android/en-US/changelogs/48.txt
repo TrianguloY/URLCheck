@@ -1,0 +1,7 @@
+V 4.0.0
+- New: Pin modules so they stay visible when unused
+- New: Share automation accepts package/component arguments
+- Improve: Detect IPv6 links; accept text/html shares
+- Improve: Clearer action buttons, labels and contrast; content descriptions for accessibility
+- Improve: Dialog stays in recents; browser icon sized in dp; ClearURLs redirect checks
+- Internal: Translations update (Weblate)

@@ -39,9 +39,11 @@ Translations: %3$s."</string>
     <string name="toast_cantEnable">"Can't enable the module: %s"</string>
     <string name="menu_resetOrder">Reset order</string>
     <string name="menu_toggleDecorations">Toggle all titles</string>
+    <string name="menu_togglePins">Toggle all pins</string>
     <string name="desc_up">Move up</string>
     <string name="desc_down">Move down</string>
     <string name="desc_decorations">Show/hide title</string>
+    <string name="desc_pinned">Keep the module visible when unused</string>
     <string name="desc_enable">Enable/disable module</string>
     <!--
         settings
@@ -60,9 +62,18 @@ Translations: %3$s."</string>
     <string name="spin_dynamicWidth">Dynamic</string>
     <string name="txt_locale">Locale:</string>
     <string name="txt_animation">Enable animations</string>
-    <string name="txt_processText">Sync url with editable text (when the app is opened by long tapping text on an input textbox)</string>
+    <string name="lbl_processUrl">Open in URLCheck</string>
+    <string name="txt_processUrl">Add an \'Open in URLCheck\' entry on text selection menu.</string>
+    <string name="txt_processText">Sync url with editable text (when the app is opened from \'Open in URLCheck\' or similar)</string>
     <string name="btn_tutorialSettings">Repeat tutorial</string>
     <string name="btn_backupRestore">Backup / Restore</string>
+    <string name="txt_verticalPos">Vertical position</string>
+    <string name="spin_top">Top</string>
+    <string name="spin_bottom">Bottom</string>
+    <string name="txt_horizontalPos">Horizontal position</string>
+    <string name="spin_start">Left</string><!-- for rtl locales this should say 'right' -->
+    <string name="spin_end">Right</string><!-- for rtl locales this should say 'left' -->
+    <string name="spin_center">Center</string>
     <!--
         Backup / Restore
     -->
@@ -213,21 +224,30 @@ Built-in patterns include:
 - Suggest replacing Youtube, Reddit or Twitter with privacy-friendly alternatives [disabled by default]"</string>
     <string name="mPttrn_regexfix">Fix optional regex groups (disable if regex is not working correctly)</string>
     <string name="mPttrn_userContent">List of other useful user-created patterns: %s</string>
-    <string name="mPttrn_fix">Apply</string>
+    <string name="mPttrn_fix">Replace</string>
     <string name="mPttrn_fixed">Applied - %s</string>
     <string name="mPttrn_ascii">Warning! Non-ASCII characters found.</string>
     <string name="mPttrn_upperDomain">Warning! Upper case letter in domain.</string>
-    <string name="mPttrn_http">HTTP link. Consider using HTTPS.</string>
+    <string name="mPttrn_http">Unencrypted HTTP link.</string>
     <string name="mPttrn_noSchemeHttp">Missing HTTP scheme.</string>
     <string name="mPttrn_noSchemeHttps">Missing HTTPS scheme.</string>
     <string name="mPttrn_wrongSchemaHttp">Invalid http scheme capitalization.</string>
     <string name="mPttrn_wrongSchemaHttps">Invalid https scheme capitalization.</string>
+    <string name="mPttrn_httpFix">Use HTTPS</string>
+    <string name="mPttrn_noSchemeHttpFix">Add http://</string>
+    <string name="mPttrn_noSchemeHttpsFix">Add https://</string>
+    <string name="mPttrn_httpApplied">Applied – encrypted HTTPS link.</string>
+    <string name="mPttrn_noSchemeHttpApplied">Applied – http:// added.</string>
+    <string name="mPttrn_noSchemeHttpsApplied">Applied – https:// added.</string>
+    <string name="mPttrn_wrongSchemaApplied">Applied – scheme written in lower case.</string>
     <string name="mPttrn_ok">No matching patterns</string>
     <string name="mPttrn_editor">"Here you can edit or add new pattern. Format:
 - 'encode': boolean: set to true to encode the url before checking regex.
 - 'regex': string|list: a valid java regex that the url must match, otherwise the pattern is skipped. If list, at least one regex must match. If omitted, the full url will match.
 - 'excludeRegex': string|list: if provided, a valid java regex that the url must not match, otherwise the pattern is skipped. If list, and at least one regex matches, the pattern will be skipped.
 - 'replacement': string|list: if provided, the 'fix' button will run 'url=url.replaceAll(regex,replacement)' [if regex was list, the first pattern to match will be used]. If list, replacement will be a random element from it.
+- 'button': string: if provided, the text of that button (instead of 'Replace').
+- 'applied': string: if provided, the text shown once the pattern was applied (instead of 'Applied - &lt;name&gt;').
 - 'decode': boolean: set to true to decode the replaced url.
 - 'automatic': boolean: set to true to automatically apply the pattern.
 - 'enabled': boolean: set to false to disable the pattern.
@@ -258,6 +278,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mOpen_noapps">No apps</string>
     <string name="mOpen_tabsDesc">Toggle Custom Tabs feature</string>
     <string name="mOpen_incognitoDesc">Toggle incognito mode (for Firefox only)</string>
+    <string name="mOpen_withDesc">Choose another app</string>
     <!-- -->
     <string name="mStatus_name">Status code</string>
     <string name="mStatus_desc">By pressing the check button, a network request will be made to retrieve and display the site status code. If the result is a redirection, you will be able to view the destination URL. The URL content is obtained (GET), but not evaluated, so redirections based on JavaScript won\'t be detected.</string>
@@ -289,6 +310,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <!-- -->
     <string name="mInput_name">Input text</string>
     <string name="mInput_desc">Displays the current URL. Press it to enter edit mode.</string>
+    <string name="mInput_monospace">Use a monospace font to help differentiate similar-looking characters.</string>
     <!-- -->
     <string name="mVT_name">URL Scanner</string>
     <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: %s .</string>
@@ -297,7 +319,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mVT_noKey">Missing API key</string>
     <string name="mVT_validKey">Valid key from user: %s</string>
     <string name="mVT_tm">VirusTotal™ is a trademark of Google, Inc.</string>
-    <string name="mVT_scan">Scan</string>
+    <string name="mVT_scan">Check on VirusTotal</string>
     <string name="mVT_cancel">Cancel</string>
     <string name="mVT_scanning">Scanning…</string>
     <string name="mVT_goodUrl">None of the %1$d engines detected the URL (as of date %2$s)</string>
@@ -317,16 +339,22 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
 If you enable this it will display some internal debug data (like original intent uri), useful for developers.
 
 You can hold to select text."</string>
-    <string name="mD_ctabs">Show debug messages from the custom tabs service</string>
+    <string name="mD_ctabs">Show debug messages from the custom tabs service (even if module is disabled).</string>
+    <string name="mD_toastError">Try to show toast on recoverable internal error (even if module is disabled).</string>
     <string name="mD_show">Load debug data</string>
     <!-- -->
     <string name="mHist_name">History</string>
     <string name="mHist_desc">When the URL is edited, either manually or by other modules, this one allows you to view and revert changes.</string>
+    <string name="mHist_first">First URL</string>
+    <string name="mHist_back">Previous URL</string>
+    <string name="mHist_list">Show all URLs</string>
+    <string name="mHist_forward">Next URL</string>
+    <string name="mHist_last">Last URL</string>
     <!-- -->
     <string name="mClear_name">URL Cleaner</string>
     <string name="mClear_desc">This module removes tracking, referrer and other useless parameters from the URL. It also allows for common offline URL redirections.</string>
     <string name="mClear_tm">Built-in catalog copied from ClearURLs: %s</string>
-    <string name="mClear_clear">Apply</string>
+    <string name="mClear_clear">Clean URL</string>
     <string name="mClear_matches">Matches %s</string>
     <string name="mClear_blocked">- BLOCKED!</string>
     <string name="mClear_exception">- ignored due to exception %s</string>
@@ -335,6 +363,7 @@ You can hold to select text."</string>
     <string name="mClear_referral">- referral found</string>
     <string name="mClear_forcedRedirection">- forced redirection found</string>
     <string name="mClear_redirection">- redirection found</string>
+    <string name="mClear_ignoredRedirection">- redirection ignored, it does not lead to a web url</string>
     <string name="mClear_cleared">- Cleared</string>
     <string name="mClear_noRules">No matching rules</string>
     <string name="mClear_auto">Auto-apply</string>
@@ -368,9 +397,9 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mRemove_found1">1 query found</string>
     <string name="mRemove_found">%d queries found</string>
     <string name="mRemove_noQueries">No queries</string>
-    <string name="mRemove_all">Remove all</string>
-    <string name="mRemove_one">Remove %s</string>
-    <string name="mRemove_empty">Remove empty</string>
+    <string name="mRemove_all">Remove all queries</string>
+    <string name="mRemove_one">Remove \"%s\"</string>
+    <string name="mRemove_empty">Remove unnamed query</string>
     <!-- -->
     <string name="mLog_name">Log</string>
     <string name="mLog_desc">This module logs all checked URLs. You can view, clear or edit the full log here, no visual indication will appear on the main dialog. To disable logging, just disable the module.</string>
@@ -390,7 +419,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mHosts_gambling">gambling</string>
     <string name="mHosts_adult">adult content</string>
     <string name="mHosts_build">Build</string>
-    <string name="mHosts_uninitialized">Hosts database uninitialized. Press to build</string>
+    <string name="mHosts_uninitialized">Hosts database not built yet. Tap to download the lists</string>
     <string name="mHosts_parseError">Can not parse URL host</string>
     <string name="mHosts_editor">"Hosts configuration. Format: List of objects where the key is the hosts label and the content includes the following optional values:
 - file: An url of a remote hosts-file to download. All valid hosts present will be added. The lines should follow the hosts syntax: 'ip host [alias…]', but those with only 'host' are valid too.
@@ -408,7 +437,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mHosts_built">Database built: %d hosts</string>
     <!-- -->
     <string name="mUnshort_name">Unshortener</string>
-    <string name="mUnshort_unshort">Unshort</string>
+    <string name="mUnshort_unshort">Unshorten via unshorten.me</string>
     <string name="mUnshort_desc">"This module will unshort links by sending them to %s, which evaluates them on their servers and save the redirection for future requests. Avoid unshortening links with private or sensitive data.
 Their free api is rate limited to 10 requests per hour for new checks. The module response will show how many requests you have pending, if needed.
 If you provide a valid token the module will use the authenticated endpoint instead, which may be more stable and have different limitations or rates."</string>
@@ -428,6 +457,9 @@ This module will show a list of flags, you can change if the flag is set or not 
 The flags will have two color indicators next to the checkbox. The left one shows the value received from the intent, the right one indicates the state set by the module itself. Red means the flag is not set and green means the flag is set. Additionally the preference indicator can be grey, this means that the state was set to auto.
 With the button below you can edit the default state and the visibility of the flags."</string>
     <string name="mFlag_editFlags">Edit default flag values</string>
+    <string name="mFlag_search">Search flags</string>
+    <string name="mFlag_stateDesc">Toggle flag state</string>
+    <string name="mFlag_showDesc">Show/hide this flag</string>
     <!-- -->
     <string name="mParts_name">Uri parts</string>
     <string name="mParts_desc">"This module shows all parts of the url decoded: scheme, authority, paths, queries and fragment.
@@ -437,6 +469,14 @@ You can also click the 'X' button to remove some of them.
 This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mParts_empty">(empty)</string>
     <string name="mParts_copy">Part copied to clipboard</string>
+    <string name="mParts_domain">Domain</string>
+    <string name="mParts_scheme">scheme</string>
+    <string name="mParts_userInfo">user info</string>
+    <string name="mParts_host">host</string>
+    <string name="mParts_port">port</string>
+    <string name="mParts_paths">Paths</string>
+    <string name="mParts_parameters">Parameters</string>
+    <string name="mParts_fragment">Fragment</string>
     <!-- -->
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_desc">This module sends URLs to a configured webhook endpoint. Each URL is sent with a timestamp, allowing you to collect and process URLs on your own server.\nThanks to anoop-b for the idea and base implementation!\n\nConfigure your webhook URL and body below to start sending URLs.\nFor the body, you can use the placeholders $URL$, $TIMESTAMP$ and $REFERRER$.</string>
@@ -451,8 +491,23 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mWebhook_templates">Templates</string>
     <string name="mWebhook_test">Test webhook</string>
     <!-- -->
+    <string name="mRedir_name">Redirector</string>
+    <string name="mRedir_desc">Simplified version of the Pattern checker module, base implementation and idea by coderj001.\nRedirect URLs by replacing the host.</string>
+    <string name="visual_editor">Visual editor</string>
+    <string name="mRedir_editor">For each rule, when a URL\'s host matches exactly the \"from\" field, a button appears to swap it with the \"to\" host. Enable \"Auto\" to apply the redirect automatically.</string>
+    <string name="mRedir_json">"Redirect json configuration. Format: List of objects where the key is the rule label and the value has the following properties:
+- 'from': string: full domain to match, no regex (if empty the rule will be ignored)
+- 'to': string: full domain that will be replaced (if empty the rule will be ignored)
+- 'auto': boolean: if true will be applied automatically (false by default)"</string>
+    <string name="mRedir_apply">Redirect</string>
+    <string name="mRedir_add">Add rule</string>
+    <string name="mRedir_from">From host</string>
+    <string name="mRedir_to">To host</string>
+    <string name="mRedir_auto">Auto</string>
+    <!-- -->
     <string name="mDrawer_name">Drawer</string>
     <string name="mDrawer_desc">All modules below this will be hidden in a drawer. The modules will still work, but will be hidden until you open the drawer. Here you can place modules you rarely use, to avoid clutter.</string>
+    <string name="mDrawer_toggleDesc">Show/hide the drawer modules</string>
     <!-- -->
     <string name="mChg_name">Changelog</string>
     <string name="mChg_desc">Will notify when the app was updated.</string>

@@ -1,0 +1,5 @@
+V 3.5
+- Peningkatan: Izinkan token pada modul Pengurai URL singkat
+- Peningkatan: Editor JSON (monospace dan ukuran font)
+- Peningkatan: Pola bawaan (Rickroll, Twitter, Reddit, farside)
+- Internal: Perbaikan & pembaruan terjemahan

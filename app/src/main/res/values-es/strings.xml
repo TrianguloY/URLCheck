@@ -58,7 +58,16 @@ Traducciones: %3$s."</string>
     <string name="spin_dynamicWidth">Dinámico</string>
     <string name="txt_locale">Idioma:</string>
     <string name="txt_animation">Activar animaciones</string>
-    <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre al mantener pulsado texto en un cuadro de entrada)</string>
+    <string name="lbl_processUrl">Abrir en URLCheck</string>
+    <string name="txt_processUrl">Añadir opción \'Abrir en URLCheck\' al seleccionar texto.</string>
+    <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre mediante \'Abrir en URLCheck\' o similar)</string>
+    <string name="txt_verticalPos">Posición vertical</string>
+    <string name="spin_top">Arriba</string>
+    <string name="spin_bottom">Abajo</string>
+    <string name="txt_horizontalPos">Posición horizontal</string>
+    <string name="spin_start">Izquierda</string>
+    <string name="spin_end">Derecha</string>
+    <string name="spin_center">Centro</string>
     <!--
         generic
     -->
@@ -136,7 +145,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="auto_open">"Abrirá el enlace. Si no se proporcionan 'args' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los 'args': 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
     <string name="auto_share">"Compartirá el enlace. Equivalente a pulsar el botón de compartir."</string>
-    <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
+    <string name="auto_copy">Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de \'copiar\'.</string>
     <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_ctabs">"Activará el modo de custom tabs. Equivalente a pulsar el boton de 'custom tabs' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_checkStatus">Ejecutará la comprobación del estado. Equivalente a pulsar el botón de \'comprobar\'.</string>
@@ -227,6 +236,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mInput_name">Texto de entrada</string>
     <string name="mInput_desc">Muestra la URL actual. Pulsa para editarla.</string>
+    <string name="mInput_monospace">Usar un tipo de fuente monoespaciada para ayudar a diferenciar caracteres similares.</string>
     <!-- -->
     <string name="mVT_name">Escáneador de la URL</string>
     <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>
@@ -255,7 +265,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
 \nSi habilitas esta opción, se mostrarán algunos datos de depuración internos (como la uri de la intención original), útil para los desarrolladores.
 \n
 \nPuede mantener pulsado para seleccionar el texto.</string>
-    <string name="mD_ctabs">Mostrar mensajes de debug del servicio custom tabs</string>
+    <string name="mD_ctabs">Mostrar mensajes de debug del servicio custom tabs (incluso si el módulo está desactivado).</string>
+    <string name="mD_toastError">Intentar mostrar mensaje en errores internos (incluso si el módulo está desactivado).</string>
     <string name="mD_show">Cargar datos de depuración</string>
     <!-- -->
     <string name="mHist_name">Historial</string>
