@@ -22,13 +22,14 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -201,6 +202,7 @@ class StatusDialog extends AModuleDialog {
             conn = (HttpURLConnection) new URL(url).openConnection();
             conn.setInstanceFollowRedirects(false);   // Make the logic below easier to detect redirections
             conn.setConnectTimeout(HttpUtils.CONNECT_TIMEOUT);
+            conn.setReadTimeout(HttpUtils.CONNECT_TIMEOUT);
             var responseCode = conn.getResponseCode();
             Log.d("RESPONSE_CODE", url + ": " + responseCode);
 
@@ -229,16 +231,17 @@ class StatusDialog extends AModuleDialog {
                 // Check for redirects in HTML content (meta refresh or JavaScript)
                 try {
                     String bodyString = readResponseBody(conn);
-                    
-                    // A. Check for HTML meta refresh tag
-                    String metaUrl = extractMetaRefreshUrl(bodyString);
-                    if (metaUrl != null && !metaUrl.isEmpty()) {
-                        redirectionUrl = resolveUrl(url, metaUrl);
-                    } else {
-                        // B. Check for JavaScript redirect
-                        String jsUrl = extractJavaScriptUrl(bodyString);
-                        if (jsUrl != null && !jsUrl.isEmpty()) {
-                            redirectionUrl = resolveUrl(url, jsUrl);
+                    if (!bodyString.isEmpty()) {
+                        // A. Check for HTML meta refresh tag
+                        String metaUrl = extractMetaRefreshUrl(bodyString);
+                        if (metaUrl != null && !metaUrl.isEmpty()) {
+                            redirectionUrl = resolveHtmlRedirectUrl(url, metaUrl);
+                        } else {
+                            // B. Check for JavaScript redirect
+                            String jsUrl = extractJavaScriptUrl(bodyString);
+                            if (jsUrl != null && !jsUrl.isEmpty()) {
+                                redirectionUrl = resolveHtmlRedirectUrl(url, jsUrl);
+                            }
                         }
                     }
                 } catch (Exception e) {
@@ -284,13 +287,39 @@ class StatusDialog extends AModuleDialog {
         });
     }
 
-    /** Reads the response body from the HTTP connection */
+    private static final int MAX_BODY_CHARS = 64 * 1024;
+    private static final Pattern META_REFRESH_PATTERN = Pattern.compile(
+            "<meta[^>]*http-equiv\\s*=\\s*[\"']?refresh[\"']?[^>]*url\\s*=\\s*[\"']?([^\"'>\\s]+)[\"']?",
+            Pattern.CASE_INSENSITIVE
+    );
+    private static final Pattern SCRIPT_PATTERN = Pattern.compile(
+            "<script[^>]*>(.*?)</script>",
+            Pattern.CASE_INSENSITIVE | Pattern.DOTALL
+    );
+    private static final Pattern WINDOW_LOC_PATTERN = Pattern.compile(
+            "window\\.location(?:\\.href)?\\s*=\\s*(?:decodeURIComponent\\()?([a-zA-Z0-9_\"'/.:?=~%-]+)\\)?\\s*;?",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    /** Reads up to MAX_BODY_CHARS of an HTML response body from the HTTP connection */
     private String readResponseBody(HttpURLConnection conn) throws IOException {
+        var contentType = conn.getContentType();
+        if (contentType != null) {
+            var lower = contentType.toLowerCase(Locale.ROOT);
+            if (!lower.contains("text/html") && !lower.contains("application/xhtml")) {
+                return "";
+            }
+        }
         StringBuilder bodyBuilder = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                bodyBuilder.append(line).append("\n");
+        try (InputStreamReader reader = new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8)) {
+            char[] buffer = new char[4096];
+            int totalRead = 0;
+            while (totalRead < MAX_BODY_CHARS) {
+                int toRead = Math.min(buffer.length, MAX_BODY_CHARS - totalRead);
+                int n = reader.read(buffer, 0, toRead);
+                if (n == -1) break;
+                bodyBuilder.append(buffer, 0, n);
+                totalRead += n;
             }
         }
         return bodyBuilder.toString();
@@ -298,29 +327,20 @@ class StatusDialog extends AModuleDialog {
 
     /** Extracts URL from HTML meta refresh tag */
     private String extractMetaRefreshUrl(String html) {
-        Pattern pattern = Pattern.compile(
-                "<meta[^>]*http-equiv\\s*=\\s*[\"']?refresh[\"']?[^>]*url\\s*=\\s*[\"']?([^\"'>\\s]+)[\"']?",
-                Pattern.CASE_INSENSITIVE
-        );
-        Matcher matcher = pattern.matcher(html);
+        Matcher matcher = META_REFRESH_PATTERN.matcher(html);
         return matcher.find() ? matcher.group(1) : null;
     }
 
     /** Extracts URL from JavaScript window.location redirect */
     private String extractJavaScriptUrl(String html) {
         // 1. Extract script tags first for safer parsing
-        Pattern scriptPattern = Pattern.compile("<script[^>]*>(.*?)</script>", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
-        Matcher scriptMatcher = scriptPattern.matcher(html);
+        Matcher scriptMatcher = SCRIPT_PATTERN.matcher(html);
 
         while (scriptMatcher.find()) {
             String scriptContent = scriptMatcher.group(1).trim();
 
             // 2. Match window.location expressions
-            Pattern locPattern = Pattern.compile(
-                    "window\\.location(?:\\.href)?\\s*=\\s*(?:decodeURIComponent\\()?([a-zA-Z0-9_\"'/.:?=~%-]+)\\)?\\s*;?",
-                    Pattern.CASE_INSENSITIVE
-            );
-            Matcher locMatcher = locPattern.matcher(scriptContent);
+            Matcher locMatcher = WINDOW_LOC_PATTERN.matcher(scriptContent);
 
             if (locMatcher.find()) {
                 String rightHandSide = locMatcher.group(1).trim();
@@ -367,6 +387,22 @@ class StatusDialog extends AModuleDialog {
         } catch (Exception e) {
             Log.d("STATUS", "Error resolving URL: " + e.getMessage());
             return relativeUrl;
+        }
+    }
+
+    /** Resolves an HTML/JS redirect URL and restricts it to http/https schemes */
+    private String resolveHtmlRedirectUrl(String baseUrl, String relativeUrl) {
+        try {
+            URL base = new URL(baseUrl);
+            URL resolved = new URL(base, relativeUrl);
+            var protocol = resolved.getProtocol().toLowerCase(Locale.ROOT);
+            if (!"http".equals(protocol) && !"https".equals(protocol)) {
+                return null;
+            }
+            return resolved.toExternalForm();
+        } catch (Exception e) {
+            Log.d("STATUS", "Error resolving HTML redirect URL: " + e.getMessage());
+            return null;
         }
     }
 
