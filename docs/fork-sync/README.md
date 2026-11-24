@@ -14,6 +14,7 @@ Everything learned and done while syncing this fork with `TrianguloY/URLCheck` o
 | [pull-request-status.md](pull-request-status.md) | What happened to every mirrored/new PR (merged, skipped, why) and merge policy |
 | [release-and-signing.md](release-and-signing.md) | How the signed release is produced, the signing setup (no secrets), verification, how to cut the next release |
 | [link-interception.md](link-interception.md) | How to make links from other apps (e.g. Google app) open in URLCheck: what is a phone setting, what is code, known limits |
+| [tools/](tools/) | Python helpers to inspect and validate a settings backup (`.ucbckp`) without the app; usage in [threads/settings-backup-updater.md](threads/settings-backup-updater.md) |
 | [threads/](threads/) | One report per work thread (issue fixer, PR fixer/merger, fork scanner, settings-backup updater, link interception) with findings, decisions and open questions |
 
 ## Quick facts
