@@ -1,0 +1,8 @@
+V 4.0.1
+- New: Skip redirect module
+- New: Deny a browser in open/share
+- New: Redirect detection also follows meta refresh and JavaScript redirects
+- Improve: Dialog state kept on theme/language/orientation change
+- Improve: URLCheck is never offered or opened as its own target
+- Improve: Clearer status check warning; persistent labels for text fields
+- Internal: fastlane description lengths, French translation
