@@ -1,0 +1,2 @@
+V 4.0.2
+- Fix: apps that open links in custom tabs (Google app and others) now keep URLCheck instead of falling back to Chrome
