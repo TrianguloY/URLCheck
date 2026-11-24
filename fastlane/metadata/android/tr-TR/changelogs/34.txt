@@ -1,0 +1,5 @@
+V 2.16
+- İyileştirme: Aynı uygulama için birden fazla etkinliği algılama
+- İyileştirme: İlk uygulama simgesini gösterme
+- İyileştirme: Uygulanan desenleri sırayla görüntüleme
+- Hata ayıklama: Sorgu sonuçlarını hata ayıklama modülüne dahil etme

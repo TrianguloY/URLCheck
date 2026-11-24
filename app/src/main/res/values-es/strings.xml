@@ -145,7 +145,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="auto_open">"Abrirá el enlace. Si no se proporcionan 'args' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los 'args': 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
     <string name="auto_share">"Compartirá el enlace. Equivalente a pulsar el botón de compartir."</string>
-    <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
+    <string name="auto_copy">Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de \'copiar\'.</string>
     <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_ctabs">"Activará el modo de custom tabs. Equivalente a pulsar el boton de 'custom tabs' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_checkStatus">Ejecutará la comprobación del estado. Equivalente a pulsar el botón de \'comprobar\'.</string>
