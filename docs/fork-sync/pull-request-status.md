@@ -40,8 +40,9 @@ Snapshot refreshed 2026-11-24 22:45 (UTC+2) by the PR fixer/merger thread from `
 | [#50](https://github.com/Daniel-OS01/URLCheck/pull/50) | Add persistent TextView labels and labelFor to EditText fields | merged |
 | [#51](https://github.com/Daniel-OS01/URLCheck/pull/51) | [link-interception] Never open or share to URLCheck itself from automations | merged |
 | [#52](https://github.com/Daniel-OS01/URLCheck/pull/52) | [link-interception] Add URLBlocklist and Direct Open browser forwarding (oooppet/URLCheck) | merged |
-| [#53](https://github.com/Daniel-OS01/URLCheck/pull/53) | docs: fork-sync knowledge base | open (docs, merged by the parent thread) |
-| [#54](https://github.com/Daniel-OS01/URLCheck/pull/54) | docs: add issues-fixer thread report | open (docs, contains #53) |
+| [#53](https://github.com/Daniel-OS01/URLCheck/pull/53) | docs: fork-sync knowledge base | merged |
+| [#54](https://github.com/Daniel-OS01/URLCheck/pull/54) | docs: add issues-fixer thread report | merged |
+| [#55](https://github.com/Daniel-OS01/URLCheck/pull/55) | docs: add PR fixer/merger thread report | this PR |
 
 ## Final state and reasons (after the PR fixer/merger thread)
 | PR | State | Reason |
