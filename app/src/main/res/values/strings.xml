@@ -346,6 +346,7 @@ You can hold to select text."</string>
     <string name="mClear_referral">- referral found</string>
     <string name="mClear_forcedRedirection">- forced redirection found</string>
     <string name="mClear_redirection">- redirection found</string>
+    <string name="mClear_ignoredRedirection">- redirection ignored, it does not lead to a web url</string>
     <string name="mClear_cleared">- Cleared</string>
     <string name="mClear_noRules">No matching rules</string>
     <string name="mClear_auto">Auto-apply</string>
