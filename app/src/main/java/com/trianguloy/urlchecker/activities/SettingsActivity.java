@@ -22,6 +22,7 @@ import android.widget.Switch;
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.fragments.BrowserButtonsFragment;
 import com.trianguloy.urlchecker.fragments.ResultCodeInjector;
+import com.trianguloy.urlchecker.modules.companions.GravityPref;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.IntPref;
@@ -121,6 +122,10 @@ public class SettingsActivity extends Activity {
                                 : seekBarValue == 100 ? WindowManager.LayoutParams.MATCH_PARENT
                                 : seekBarValue
         );
+
+        // vertical and horizontal placements
+        GravityPref.VERTICAL_PREF(this).attachToSpinner(findViewById(R.id.verticalPos),null);
+        GravityPref.HORIZONTAL_PREF(this).attachToSpinner(findViewById(R.id.horizontalPos),null);
 
     }
 

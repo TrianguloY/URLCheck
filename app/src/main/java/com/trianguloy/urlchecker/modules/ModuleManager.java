@@ -18,6 +18,7 @@ import com.trianguloy.urlchecker.modules.list.TextInputModule;
 import com.trianguloy.urlchecker.modules.list.UnshortenModule;
 import com.trianguloy.urlchecker.modules.list.UriPartsModule;
 import com.trianguloy.urlchecker.modules.list.VirusTotalModule;
+import com.trianguloy.urlchecker.modules.list.RedirectModule;
 import com.trianguloy.urlchecker.modules.list.WebhookModule;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
@@ -48,7 +49,8 @@ public class ModuleManager {
         modules.add(new PatternModule());
         modules.add(new HostsModule());
         modules.add(new WebhookModule());
-        // new modules should preferably be added directly above this line
+        // new modules enabled by default should preferably be added directly above this line
+        modules.add(new RedirectModule());
         modules.add(new FlagsModule());
         modules.add(new DebugModule());
 
@@ -90,6 +92,16 @@ public class ModuleManager {
     /** Returns a preference to indicate if decorations are shown or not for a specific module */
     public static BoolPref getDecorationsPrefOfModule(AModuleData module, Context cntx) {
         return new BoolPref(module.getId() + DECORATIONS_PREF_SUFFIX, false, cntx);
+    }
+
+
+    // ------------------- pinned -------------------
+
+    private static final String PINNED_PREF_SUFFIX = "_pinned";
+
+    /** Returns a preference to indicate if a specific module stays visible when unused */
+    public static BoolPref getPinnedPrefOfModule(AModuleData module, Context cntx) {
+        return new BoolPref(module.getId() + PINNED_PREF_SUFFIX, false, cntx);
     }
 
     /* ------------------- getter ------------------- */

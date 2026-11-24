@@ -17,6 +17,7 @@
         android:orientation="vertical">
 
         <ImageButton
+            android:contentDescription="@string/a_about"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@android:color/transparent"

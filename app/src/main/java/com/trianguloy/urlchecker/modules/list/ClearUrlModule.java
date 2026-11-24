@@ -116,6 +116,13 @@ class ClearUrlDialog extends AModuleDialog {
 
     public static final String CLEARED = "clearUrl.cleared";
 
+    /**
+     * What a redirection may lead to: an http(s) url, or a domain without scheme (as the catalog sometimes extracts).
+     * Anything else (javascript:, data:, a bare value from a too broad rule...) is not followed.
+     * No repeated groups: java recurses per repetition, a long host would overflow the stack.
+     */
+    private static final Pattern WEB_TARGET = Pattern.compile("^(?:https?://.+|[^\\s/?#:@.][^\\s/?#:@]*\\.[^\\s/?#:@]+(?::\\d+)?(?:[/?#].*)?)$", Pattern.CASE_INSENSITIVE);
+
     private final BoolPref allowReferral;
     private final BoolPref verbose;
     private final BoolPref auto;
@@ -202,6 +209,15 @@ class ClearUrlDialog extends AModuleDialog {
                         Matcher matcher = Pattern.compile(redirection).matcher(cleared);
                         if (matcher.find() && matcher.groupCount() >= 1) {
                             // redirection found
+                            String target = matcher.group(1) == null ? null : decodeURIComponent(matcher.group(1));
+                            if (target == null || !WEB_TARGET.matcher(target).matches()) {
+                                // not a web url (javascript:, a bare value...), a too broad rule, ignore it
+                                if (verbose.get()) {
+                                    data.addInfo(R.string.mClear_ignoredRedirection);
+                                    data.addDetails(redirection);
+                                }
+                                continue;
+                            }
                             if (providerData.optBoolean("forceRedirection", false)) {
                                 // maybe do something special?
                                 data.addInfo(R.string.mClear_forcedRedirection);
@@ -209,7 +225,7 @@ class ClearUrlDialog extends AModuleDialog {
                                 data.addInfo(R.string.mClear_redirection);
                             }
                             if (verbose.get()) data.addDetails(redirection);
-                            cleared = decodeURIComponent(matcher.group(1)); // can't be null, checked in the if
+                            cleared = target;
                             data.setColor(R.color.warning);
                             continue whileProvider;
                         }

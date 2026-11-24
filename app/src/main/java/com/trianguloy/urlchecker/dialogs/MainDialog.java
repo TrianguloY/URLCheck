@@ -26,6 +26,7 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.ModuleManager;
+import com.trianguloy.urlchecker.modules.companions.GravityPref;
 import com.trianguloy.urlchecker.modules.companions.VersionManager;
 import com.trianguloy.urlchecker.modules.list.DrawerModule;
 import com.trianguloy.urlchecker.url.UrlData;
@@ -205,6 +206,14 @@ public class MainDialog extends Activity {
         }
     }
 
+    /** Whether any of [views] is currently shown */
+    private static boolean isVisible(List<View> views) {
+        for (var view : views) {
+            if (view.getVisibility() == View.VISIBLE) return true;
+        }
+        return false;
+    }
+
     // ------------------- initialize -------------------
 
     private LinearLayout ll_main;
@@ -230,42 +239,17 @@ public class MainDialog extends Activity {
         // set width
         AndroidUtils.setActivityWidth(WIDTH_PREF(this).get(), this);
 
+        // set gravity
+        AndroidUtils.setActivityGravity(
+                GravityPref.VERTICAL_PREF(this).get().getConstant()
+                        | GravityPref.HORIZONTAL_PREF(this).get().getConstant()
+                , this);
+
         // load helpers
         automationRules = new AutomationRules(this);
 
         // load url (or urls)
-        var links = getOpenUrl();
-        switch (links.size()) {
-            case 0:
-                // no links, invalid
-                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
-                finish();
-                break;
-            case 1:
-                // 1 link, just that
-
-                // initialize
-                initializeModules();
-
-                // show
-                onNewUrl(new UrlData(links.iterator().next()));
-                break;
-            default:
-                // multiple links, choose
-                var links_array = links.toArray(new String[0]);
-                new AlertDialog.Builder(this)
-                        .setItems(links_array, (dialog, which) -> {
-
-                            // initialize
-                            initializeModules();
-
-                            // show
-                            onNewUrl(new UrlData(links_array[which]));
-                            dialog.dismiss();
-                        })
-                        .setOnCancelListener(o -> finish())
-                        .show();
-        }
+        openLinks(getOpenUrl());
     }
 
     /** Initializes the modules */
@@ -331,15 +315,23 @@ public class MainDialog extends Activity {
                 views.add(child);
             }
 
-            // remove views when decorator pref is enabled, to avoid setting the visibility
-            // consider changing to a different flag
-            if (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()) {
-                views.clear();
-            }
-
             // init
             modules.put(module, views);
             module.onInitialize(child);
+
+            // A pinned module keeps its views visible, so drop them from the list the
+            // visibility is applied to. This happens after onInitialize on purpose: a
+            // module that hides itself while setting up (the changelog when there is no
+            // update, for instance) has nothing to show, and pinning it would leave an
+            // empty section with dead buttons behind. Decorations behave the same way.
+            // The drawer is never pinned: it hides itself when it holds nothing, and pinning
+            // it would leave a toggle that opens an empty drawer.
+            if (isVisible(views)
+                    && (ModuleManager.getDecorationsPrefOfModule(moduleData, this).get()
+                    || (!(moduleData instanceof DrawerModule)
+                    && ModuleManager.getPinnedPrefOfModule(moduleData, this).get()))) {
+                views.clear();
+            }
             if (automationRules.automationsEnabledPref.get()) {
                 for (var automation : moduleData.getAutomations()) {
                     if (BuildConfig.DEBUG && automations.containsKey(automation.key())) {
@@ -368,11 +360,12 @@ public class MainDialog extends Activity {
         // check the action
         var action = getIntent().getAction();
         if (Intent.ACTION_SEND.equals(action)) {
-            // sent text
-            var sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+            // sent text. Note: EXTRA_TEXT may be a styled CharSequence (html, for example),
+            // and getStringExtra returns null for those
+            var sharedText = intent.getCharSequenceExtra(Intent.EXTRA_TEXT);
             if (sharedText == null) return Collections.emptySet();
             var links = AndroidUtils.getLinksFromText(sharedText);
-            if (links.isEmpty()) links.add(sharedText.trim()); // no links? just use the whole text, the user requested the app so...
+            if (links.isEmpty()) links.add(sharedText.toString().trim()); // no links? just use the whole text, the user requested the app so...
             return links;
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Intent.ACTION_PROCESS_TEXT.equals(action)) {
             // process text
@@ -383,6 +376,52 @@ public class MainDialog extends Activity {
             var uri = intent.getData();
             if (uri == null) return Collections.emptySet();
             return Collections.singleton(uri.toString());
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // The dialog is a single instance that stays open in the background (and in recents) until closed.
+        // A new url replaces the current one, as if a new dialog was opened.
+        setIntent(intent);
+        var links = getOpenUrl();
+        if (links.isEmpty()) Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
+        else openLinks(links);
+    }
+
+    /** Shows the url, or lets the user choose one if there are several. Without any, the dialog closes */
+    private void openLinks(Set<String> links) {
+        switch (links.size()) {
+            case 0:
+                // no links, invalid
+                Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+            case 1:
+                // 1 link, just that
+
+                // initialize
+                initializeModules();
+
+                // show
+                onNewUrl(new UrlData(links.iterator().next()));
+                break;
+            default:
+                // multiple links, choose
+                var links_array = links.toArray(new String[0]);
+                new AlertDialog.Builder(this)
+                        .setItems(links_array, (dialog, which) -> {
+
+                            // initialize
+                            initializeModules();
+
+                            // show
+                            onNewUrl(new UrlData(links_array[which]));
+                            dialog.dismiss();
+                        })
+                        .setOnCancelListener(o -> finish())
+                        .show();
         }
     }
 

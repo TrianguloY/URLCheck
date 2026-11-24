@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".activities.SettingsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="@dimen/smallPadding"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/smallPadding">
 
         <Button
             style="?android:attr/buttonBarButtonStyle"
@@ -87,7 +87,45 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:max="100"
-            android:padding="@dimen/smallPadding" />
+            android:paddingStart="@dimen/smallPadding"
+            android:paddingTop="@dimen/smallPadding"
+            android:paddingEnd="@dimen/smallPadding"
+            android:paddingBottom="@dimen/padding" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_verticalPos" />
+
+            <Spinner
+                android:id="@+id/verticalPos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_horizontalPos" />
+
+            <Spinner
+                android:id="@+id/horizontalPos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false" />
+        </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
