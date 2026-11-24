@@ -35,7 +35,7 @@ public class URLBlocklist {
             corrupted = true;
             return new ArrayList<>();
         }
-        if (saved == null) return new ArrayList<>(List.of("iltalehti.fi"));
+        if (saved == null) return new ArrayList<>();
         var domains = new TreeSet<String>();
         try {
             var array = new JSONArray(saved);
