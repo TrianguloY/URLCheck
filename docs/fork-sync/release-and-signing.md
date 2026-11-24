@@ -33,3 +33,4 @@
 |---|---|---|---|
 | v4.0.0 (versionCode 48) | 2026-11-24 | `B8F225C049207BA09240A20AED7598C723A49498BE67E44B44CA2F5ACB4E5C9D` | first fork release: upstream PR merges, new signing key |
 | v4.0.1 (versionCode 49) | 2026-11-24 | `FEAFA5A8A005E1D19238271CF5B4D595EDEE02D209FA5C34E813742C7A08C7A2` | skip redirect module, deny browser, meta-refresh/JS redirect detection, dialog state restore, never open URLCheck from itself, status-check warning, text-field labels; signer certificate unchanged |
+| v4.0.2 (versionCode 50) | 2026-11-24 | `80BBE9E478F87B034208445B25DD18E1EAE7D2FA3E171A09E24A6BF0D6D28FBA` | custom tabs service answers clients (Google app no longer falls back to Chrome), fork PR #60; signer certificate unchanged |
