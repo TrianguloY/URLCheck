@@ -42,7 +42,9 @@ Snapshot refreshed 2026-11-24 22:45 (UTC+2) by the PR fixer/merger thread from `
 | [#52](https://github.com/Daniel-OS01/URLCheck/pull/52) | [link-interception] Add URLBlocklist and Direct Open browser forwarding (oooppet/URLCheck) | merged |
 | [#53](https://github.com/Daniel-OS01/URLCheck/pull/53) | docs: fork-sync knowledge base | merged |
 | [#54](https://github.com/Daniel-OS01/URLCheck/pull/54) | docs: add issues-fixer thread report | merged |
-| [#55](https://github.com/Daniel-OS01/URLCheck/pull/55) | docs: add PR fixer/merger thread report | this PR |
+| [#55](https://github.com/Daniel-OS01/URLCheck/pull/55) | docs: add PR fixer/merger thread report | merged |
+| [#56](https://github.com/Daniel-OS01/URLCheck/pull/56) | docs: settings-backup updater report and generic validation tools | merged |
+| [#57](https://github.com/Daniel-OS01/URLCheck/pull/57) | docs: add fork-scanner and link-interception thread reports | merged |
 
 ## Final state and reasons (after the PR fixer/merger thread)
 | PR | State | Reason |
