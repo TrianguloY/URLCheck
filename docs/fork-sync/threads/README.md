@@ -4,10 +4,10 @@ One file per work thread. Each file must contain: purpose and scope, what was ex
 
 | File | Thread | Status |
 |---|---|---|
-| [issues-fixer.md](issues-fixer.md) | Fix easy open issues | pending report |
-| [pr-fixer-merger.md](pr-fixer-merger.md) | Fix and merge open PRs | pending report |
-| [fork-scanner.md](fork-scanner.md) | Second, deeper fork scan | pending report |
-| [settings-backup-updater.md](settings-backup-updater.md) | Update the settings backup to the 4.0.0 format (general findings only; the backup itself stays local) | pending report |
-| [link-interception-findings.md](link-interception-findings.md) | Link interception research (from any thread) | pending report |
+| [issues-fixer.md](issues-fixer.md) | Fix easy open issues | done |
+| [pr-fixer-merger.md](pr-fixer-merger.md) | Fix and merge open PRs | done |
+| `fork-scanner.md` | Second, deeper fork scan | pending report |
+| `settings-backup-updater.md` | Update the settings backup to the 4.0.0 format (general findings only; the backup itself stays local) | pending report |
+| `link-interception-findings.md` | Link interception research (from any thread) | pending report |
 
-(Rows say "pending report" until the thread adds its file.)
+(Rows say "pending report", with the file name unlinked, until the thread adds its file; turn the name into a link in the same PR.)

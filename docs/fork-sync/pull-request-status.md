@@ -1,6 +1,6 @@
 # Pull request status
 
-Snapshot generated 2026-11-24 22:30 (UTC+2) from `gh pr list -R Daniel-OS01/URLCheck --state all`. Refresh with that command; the reasons below are the durable part.
+Snapshot refreshed 2026-11-24 22:45 (UTC+2) by the PR fixer/merger thread from `gh pr list -R Daniel-OS01/URLCheck --state all`. Refresh with that command; the reasons below are the durable part. Per-PR fixes and merge SHAs: [threads/pr-fixer-merger.md](threads/pr-fixer-merger.md).
 
 ## Merge policy (used throughout)
 - Merge only if: not a draft, `Validate gradle build test` green, no conflicts, relevant.
@@ -39,7 +39,24 @@ Snapshot generated 2026-11-24 22:30 (UTC+2) from `gh pr list -R Daniel-OS01/URLC
 | [#49](https://github.com/Daniel-OS01/URLCheck/pull/49) | Clarify that Check status connects directly to the remote site | merged |
 | [#50](https://github.com/Daniel-OS01/URLCheck/pull/50) | Add persistent TextView labels and labelFor to EditText fields | merged |
 | [#51](https://github.com/Daniel-OS01/URLCheck/pull/51) | [link-interception] Never open or share to URLCheck itself from automations | merged |
-| [#52](https://github.com/Daniel-OS01/URLCheck/pull/52) | [link-interception] Add URLBlocklist and Direct Open browser forwarding (oooppet/URLCheck) | open |
+| [#52](https://github.com/Daniel-OS01/URLCheck/pull/52) | [link-interception] Add URLBlocklist and Direct Open browser forwarding (oooppet/URLCheck) | merged |
+| [#53](https://github.com/Daniel-OS01/URLCheck/pull/53) | docs: fork-sync knowledge base | merged |
+| [#54](https://github.com/Daniel-OS01/URLCheck/pull/54) | docs: add issues-fixer thread report | merged |
+| [#55](https://github.com/Daniel-OS01/URLCheck/pull/55) | docs: add PR fixer/merger thread report | this PR |
+
+## Final state and reasons (after the PR fixer/merger thread)
+| PR | State | Reason |
+|---|---|---|
+| #26 | merged `7abeead` | draft was complete; marked ready |
+| #42 | merged `be93032` | `strings.xml` conflict resolved; recursion capped with `MAX_DEPTH = 10` in `SkipRedirectUtility` |
+| #43 | merged `bd30b6e` | hardened first: 64 KB body read, html Content-Type only, read timeout, http/https redirect targets only |
+| #45 | merged `3d8c759` | rebuilt on top of #47's `ShareUtility`, compile errors fixed; on Android < 7 the denied app still shows in the share chooser |
+| #48, #49, #50 | merged `60cf889`, `d81dda4`, `68737e7` | small fixes from the issue fixer thread, green |
+| #51 | merged `5bdfbc8` | loop guard: automations can no longer open or share to URLCheck itself |
+| #52 | merged `a2dc6e7` | minSdk 19 lint errors fixed by the fork-scan thread; reviewed: opt-in, never targets URLCheck itself |
+| #24 | open | custom modules send URLs to user-configured servers; hardened (http/https, method allowlist, 64 KB request, 256 KB response, no redirects) and green, but needs Daniel's decision and a device test |
+| #36 | open (draft) | removes module titles: design decision for Daniel; conflicts with master |
+| #46 | open (draft) | large untested refactor, far behind master, conflicts |
 
 ## Why PRs were skipped or held in round 1
 | Fork PR | Reason |
