@@ -1,0 +1,2 @@
+V 2.2
+- Yeni modül 'Sorguları Kaldır modülü': url’den tüm sorguları kaldırır. Bu fikir ve ilk uygulamayı gerçekleştiren PabloOQ’ya teşekkürler!

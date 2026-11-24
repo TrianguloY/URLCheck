@@ -15,6 +15,7 @@
 
         <TextView
             android:id="@+id/label"
+            android:hyphenationFrequency="normal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,6 +28,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:importantForAccessibility="no"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="3dp"
@@ -57,6 +59,7 @@
             android:tint="?attr/colorAccent" />
 
         <ImageView
+            android:importantForAccessibility="no"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="3dp"
@@ -72,6 +75,15 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/desc_decorations"
             android:src="@drawable/t" />
+
+        <ImageButton
+            android:id="@+id/pinned"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/desc_pinned"
+            android:src="@drawable/pin" />
 
         <Switch
             android:id="@+id/enable"

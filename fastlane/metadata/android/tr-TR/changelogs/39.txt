@@ -1,0 +1,4 @@
+V 3.2
+- İyileştirme: geliştirilmiş JSON düzenleyicisi (oylama ikincisi)
+- Yeni: Varsayılan alan adında büyük harf deseni (Bakr-Ali'ye teşekkürler!)
+- Düzeltme: ‘reddedilen’ url'ler açılan uygulamayı gizliyor

@@ -78,16 +78,19 @@ public class SkipRedirectUtility {
 
     // ------------------- public api -------------------
 
+    /** Maximum recursion depth to prevent cycles/stack overflow */
+    private static final int MAX_DEPTH = 10;
+
     /** Follows all the embedded redirections of [url] and returns the final one */
     public static Result skip(String url) {
         var steps = new ArrayList<String>();
-        return new Result(skip(url, steps), steps);
+        return new Result(skip(url, steps, 0), steps);
     }
 
     // ------------------- redirect skipping -------------------
 
-    private static String skip(String url, List<String> steps) {
-        if (url == null) return url;
+    private static String skip(String url, List<String> steps, int depth) {
+        if (url == null || depth >= MAX_DEPTH) return url;
 
         var originalOrigin = originOf(url);
         var lastValid = url;
@@ -103,10 +106,10 @@ public class SkipRedirectUtility {
                 steps.add(param);
                 if (!originOf(decodedRedirect).equalsIgnoreCase(originalOrigin)) {
                     // different origin: this is the redirection, continue from there
-                    return skip(decodedRedirect, steps);
+                    return skip(decodedRedirect, steps, depth + 1);
                 } else {
                     // same origin: keep it as candidate, but keep looking
-                    lastValid = skip(decodedRedirect, steps);
+                    lastValid = skip(decodedRedirect, steps, depth + 1);
                 }
             }
         }

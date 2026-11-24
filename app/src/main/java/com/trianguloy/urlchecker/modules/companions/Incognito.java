@@ -13,8 +13,8 @@ import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 public class Incognito {
 
     public static final String FIREFOX_EXTRA = "private_browsing_mode";
-    // for Chrome with custom tabs (even though it doesn't work for now)
-    public static final String CHROME_EXTRA = "com.google.android.apps.chrome.EXTRA_OPEN_NEW_INCOGNITO_TAB";
+    // for Chrome with custom tabs (even if it doesn't work for standard browsing)
+    public static final String CHROME_EXTRA = "androidx.browser.customtabs.extra.ENABLE_EPHEMERAL_BROWSING";
 
     public static EnumerationPref<OnOffConfig> PREF(Context cntx) {
         return new EnumerationPref<>("open_incognito", OnOffConfig.AUTO, OnOffConfig.class, cntx);
@@ -59,6 +59,11 @@ public class Incognito {
     public void setState(boolean state) {
         this.state = state;
         button.setImageResource(state ? R.drawable.incognito : R.drawable.no_incognito);
+    }
+
+    /** Returns the current state */
+    public boolean getState() {
+        return state;
     }
 
     /** applies the setting to a given intent */

@@ -1,0 +1,4 @@
+V 2.1
+- Corrigir e aprimorar o módulo ClearUrl
+- Aprimorar alguns textos e mensagens
+- Ajustar o estilo para torná-lo mais compacto

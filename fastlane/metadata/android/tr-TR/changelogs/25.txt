@@ -1,0 +1,11 @@
+V 2.12
+-Yeni: Firefox'u gizli modda açma
+-Yeni: Gelişmiş paylaş ve kopyala düğmeleri
+-Yeni: Desen parametrelerini kodlama/çözme
+-İyileştirme: Hata ayıklamada kaynak uygulama gösterimi
+-İyileştirme: Uri parçalarında açık grupları koruma
+-İyileştirme: Uri parçalarını uzun basarak kopyalama
+-Düzeltme: Android <=10'da boş (null) grup hatası
+-Düzeltme: Paylaşılan metinden bağlantı ayıklama
+-Düzeltme: Eski kısayolların çalışmaması
+-Düzeltme: Unshorten modülünde çökme sorunu

@@ -1,0 +1,5 @@
+V 3.4.1
+- Peningkatan: Terjemahan diperbarui
+- Perbaikan: Laporkan kesalahan alih-alih menghapus elemen JSON ekstra di editor
+- Perbaikan: Menghindari beberapa kesalahan saat menggunakan layanan http
+- Internal: Beberapa pembaruan dan perubahan kecil

@@ -1,0 +1,2 @@
+V 2.2
+- 新模組 'Remove queries module': removes all queries from the url. 感謝 PabloOQ 提供點子和原創的初步實作！

@@ -19,6 +19,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/ActivityThemeDark"
         android:usesCleartextTraffic="true">
@@ -30,13 +31,14 @@
         <activity android:name=".activities.JsonEditorActivity" />
         <activity
             android:name=".dialogs.MainDialog"
+            android:autoRemoveFromRecents="true"
             android:clearTaskOnLaunch="true"
-            android:excludeFromRecents="true"
+            android:excludeFromRecents="@bool/dialog_excludeFromRecents"
             android:exported="true"
             android:launchMode="singleInstance"
-            android:noHistory="true"
             android:taskAffinity="com.trianguloy.urlchecker.dialog"
-            android:theme="@android:style/Theme.DeviceDefault.Dialog">
+            android:theme="@android:style/Theme.DeviceDefault.Dialog"
+            tools:targetApi="lollipop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -137,6 +139,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="text/plain" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="application/xhtml+xml" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -144,13 +148,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.APP_BROWSER" />
             </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".processUrl"
+            android:exported="true"
+            android:label="@string/lbl_processUrl"
+            android:targetActivity=".dialogs.MainDialog">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
             </intent-filter>
-        </activity>
+        </activity-alias>
+
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">
@@ -191,7 +203,6 @@
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="file" />
                 <data android:scheme="content" />

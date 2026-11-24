@@ -1,0 +1,5 @@
+V 3.4.1
+- İyileştirme: Çeviriler güncellendi
+- Düzeltme: Düzenleyicide fazladan json öğelerini silmek yerine hata bildirimi yapılmasına geçildi
+- Düzeltme: Http hizmetleri kullanılırken ortaya çıkan bazı hatalar önlendi
+- Dahili: Çeşitli güncellemeler ve küçük değişiklikler
