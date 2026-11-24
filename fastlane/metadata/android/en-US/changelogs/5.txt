@@ -1,0 +1,7 @@
+V 1.1
+- New module 'Clear Url': Uses the Clear Url dictionary to clear urls from referral and other useless url parameters.
+- New module 'History': Revert changes from any module.
+- Replaced module 'Redirect' with 'Status': Fetch the status code of the page, still allows for redirection.
+- Improved 'Pattern' module: Press 'Fix' to convert http to https
+- New module 'Debug': For developers (display the intent uri and ctabs messages)
+- UI cleanup.

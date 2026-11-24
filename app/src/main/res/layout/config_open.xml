@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="Deny Browser" />
+            android:text="@string/mOpen_denylist" />
 
         <Spinner
             android:id="@+id/denylist_pref"

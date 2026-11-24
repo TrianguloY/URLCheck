@@ -1,0 +1,7 @@
+V 1.1
+- Nouveau module 'Nettoyer l'url': utilise le dictionnaire Clear Url pour effacer les URL de référence et d'autres paramètres d'URL inutiles.
+- Nouveau module "Historique": Annulez les modifications de n'importe quel module.
+- Remplacement du module 'Redirection' par 'État': Récupère le code de statut de la page, permet toujours la redirection.
+- Module 'Style' amélioré: Appuyez sur 'Fix' pour convertir http en https
+- Nouveau module 'Deboggage' : Pour les développeurs (affichage des messages intent uri et ctabs)
+- Nettoyage de l'interface utilisateur.

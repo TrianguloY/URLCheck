@@ -1,7 +1,13 @@
 package com.trianguloy.urlchecker.activities;
 
+import static android.util.TypedValue.COMPLEX_UNIT_SP;
+import static android.window.OnBackInvokedDispatcher.PRIORITY_DEFAULT;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +18,7 @@ import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.FloatPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 
@@ -24,6 +31,12 @@ import java.util.Objects;
 /** Activity for editing a json */
 public class JsonEditorActivity extends Activity {
 
+
+    /** The editor size pref */
+    public static FloatPref EDITOR_SIZE(float defaultValue, Context cntx) {
+        return new FloatPref("jsonPref_size", defaultValue, cntx);
+    }
+
     public static final String EXTRA_CLASS = "data";
 
     private static final int INDENT_SPACES = 2;
@@ -31,6 +44,7 @@ public class JsonEditorActivity extends Activity {
     private JsonEditorInterface provider;
     private TextView editor;
     private ViewGroup info;
+    private FloatPref editorSizePref;
 
     // ------------------- listeners -------------------
 
@@ -43,6 +57,9 @@ public class JsonEditorActivity extends Activity {
         setTitle(R.string.json_editor);
         AndroidUtils.configureUp(this);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(PRIORITY_DEFAULT, this::onBackPressed);
+        }
 
         try {
             // this is a bit dangerous
@@ -61,6 +78,8 @@ public class JsonEditorActivity extends Activity {
         editor = findViewById(R.id.data);
         editor.setText(noFailToString(provider.getJson()));
 
+        editorSizePref = EDITOR_SIZE(editor.getTextSize() / getResources().getDisplayMetrics().scaledDensity, this);
+        editor.setTextSize(COMPLEX_UNIT_SP, editorSizePref.get());
     }
 
     @Override
@@ -88,6 +107,9 @@ public class JsonEditorActivity extends Activity {
                 item.setChecked(!item.isChecked());
                 info.setVisibility(item.isChecked() ? View.VISIBLE : View.GONE);
             }
+            // font size
+            case R.id.menu_bigger -> changeFontSize(2);
+            case R.id.menu_smaller -> changeFontSize(-2);
 
             default -> {
                 return super.onOptionsItemSelected(item);
@@ -96,6 +118,7 @@ public class JsonEditorActivity extends Activity {
         return true;
     }
 
+    @SuppressLint("GestureBackNavigation")
     @Override
     public void onBackPressed() {
         // validate
@@ -195,6 +218,13 @@ public class JsonEditorActivity extends Activity {
                     .setPositiveButton(android.R.string.ok, null)
                     .show();
         }
+    }
+
+    /** Changes the editor size by a given amount (can be negative). */
+    private void changeFontSize(int delta) {
+        var newSize = (editor.getTextSize() / getResources().getDisplayMetrics().scaledDensity) + delta;
+        editor.setTextSize(newSize);
+        editorSizePref.set(newSize);
     }
 
     /* ------------------- utils ------------------- */

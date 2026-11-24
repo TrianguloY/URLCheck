@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".activities.BackupActivity">
 
     <LinearLayout
@@ -16,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/bkp_description" />
+            android:text="@string/bck_description" />
 
         <Switch
             android:id="@+id/chk_data"
@@ -25,7 +26,7 @@
             android:button="@android:color/transparent"
             android:checked="true"
             android:padding="@dimen/smallPadding"
-            android:text="@string/bkp_data" />
+            android:text="@string/bck_data" />
 
         <Switch
             android:id="@+id/chk_data_prefs"
@@ -34,7 +35,7 @@
             android:layout_marginStart="@dimen/padding"
             android:checked="true"
             android:padding="@dimen/smallPadding"
-            android:text="@string/bkp_data_prefs"
+            android:text="@string/bck_data_prefs"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -45,7 +46,7 @@
             android:layout_marginStart="@dimen/padding"
             android:checked="true"
             android:padding="@dimen/smallPadding"
-            android:text="@string/bkp_data_files"
+            android:text="@string/bck_data_files"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -55,14 +56,14 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:padding="@dimen/smallPadding"
-            android:text="@string/bkp_secrets" />
+            android:text="@string/bck_secrets" />
 
         <Switch
             android:id="@+id/chk_cache"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/smallPadding"
-            android:text="@string/bjp_cache" />
+            android:text="@string/bck_cache" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="backup"
-                android:text="@string/btn_backup" />
+                android:text="@string/bck_backup" />
 
             <Button
                 android:id="@+id/btn_restore"
@@ -85,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="restore"
-                android:text="@string/btn_restore" />
+                android:text="@string/bck_restore" />
 
             <Button
                 android:id="@+id/btn_delete"
@@ -94,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="delete"
-                android:text="@string/btn_delete"
+                android:text="@string/bck_delete"
                 android:visibility="gone"
                 tools:visibility="visible" />
         </LinearLayout>

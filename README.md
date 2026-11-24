@@ -71,14 +71,14 @@ to remove trackers, affiliate links, unnecessary elements, check Hosts, facilita
 
 <!-- ---------- Screenshots ---------- -->
 <div style="display: flex;">
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/1-title.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/2-dialog.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/3-dialog.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/4-modules.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/5-modules.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/6-modules.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/7-modules.png" width=30%>
-  <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/8-settings.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1-title.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2-dialog.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3-dialog.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4-modules.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5-modules.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6-modules.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7-modules.png" width=30%>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/8-settings.png" width=30%>
 </div>
 
 </div>
@@ -104,11 +104,11 @@ See [CONTRIBUTING](docs/CONTRIBUTING.md) for code or translation details and tip
 
 [![Weblate (translation details)](https://hosted.weblate.org/widgets/urlcheck/-/multi-auto.svg)](https://hosted.weblate.org/engage/urlcheck/)
 
-<a href="https://star-history.com/#TrianguloY/URLCheck&Date">
+<a href="https://star-history.dera.page/#TrianguloY/URLCheck&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=TrianguloY/URLCheck&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=TrianguloY/URLCheck&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=TrianguloY/URLCheck&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=TrianguloY/URLCheck&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=TrianguloY/URLCheck&type=Date" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=TrianguloY/URLCheck&type=Date" />
  </picture>
 </a>
 

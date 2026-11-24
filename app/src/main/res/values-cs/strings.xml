@@ -156,8 +156,7 @@
 \nPodržením pak vyberete text.</string>
     <string name="mHist_desc">Když je adresa URL upravena, ať už ručně, nebo pomocí jiných modulů, je tímto modulem možno zobrazit a vrátit změny.</string>
     <string name="mClear_desc">Tento modul odstraňuje z adresy URL sledování, referrer (doporučitel) a další zbytečné parametry. Umožňuje také běžná offline přesměrování URL.</string>
-    <string name="mUnshort_desc">Tento modul rozbalí odkazy odesláním na %s, který je vyhodnotí na svých serverech a uloží přesměrování pro budoucí žádosti. Vyhněte se zkracování odkazů se soukromými nebo citlivými daty.
-\nJejich rozhraní API je omezeno na 10 žádostí za hodinu, pokud ještě nebyl zkontrolován. Odpověď modulu ukáže, kolik žádostí máte nevyřízených.</string>
+    <string name="mUnshort_desc">Tento modul rozbalí odkazy odesláním na %s, který je vyhodnotí na svých serverech a uloží přesměrování pro budoucí žádosti. Vyhněte se zkracování odkazů se soukromými nebo citlivými daty. \nJejich rozhraní API je omezeno na 10 žádostí za hodinu, pokud ještě nebyl zkontrolován. Odpověď modulu ukáže, kolik žádostí máte nevyřízených.</string>
     <string name="mFlag_desc">[Funkce beta] Toto je pokročilý modul, který vám umožňuje upravovat \'intent flag\' při otevírání jiné aplikace.
 \nTento modul zobrazí seznam příznaků, klepnutím na ikonu můžete změnit, zda je příznak nastaven nebo ne. K dispozici je také rozbalovací nabídka pro skrytí příznaků, je pouze vizuální, příznaky budou stále používat přiřazený stav.
 \nPříznaky budou mít vedle zaškrtávacího políčka dva barevné indikátory. Levý ukazuje hodnotu přijatou ze záměru (\'intent\'), pravý ukazuje stav nastavený modulem samotným. Červená znamená, že příznak není nastaven a zelená znamená, že je. Indikátor preference může být navíc šedý, to znamená, že stav byl nastaven na auto.

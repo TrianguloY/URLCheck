@@ -1,0 +1,4 @@
+V 3.2
+- Mejora: editor json mejorado (voto segundo lugar)
+- Nuevo: patrón por defecto mayúsculas-en-dominio (gracias Bakr-Ali!)
+- Arreglo: enlaces 'rechazados' ocultan la aplicación abierta

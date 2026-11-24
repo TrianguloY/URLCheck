@@ -1,0 +1,4 @@
+V 2.1
+- Fixed and improved ClearUrl module
+- Improved some texts and messages
+- Tweaked style to be more compact

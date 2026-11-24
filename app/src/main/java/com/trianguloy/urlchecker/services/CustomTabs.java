@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 
 /**
  * Empty service for fake custom tabs.
@@ -17,8 +17,8 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
  */
 public class CustomTabs extends Service {
 
-    public static GenericPref.Bool SHOWTOAST_PREF(Context cntx) {
-        return new GenericPref.Bool("ctabs_toast", false, cntx);
+    public static BoolPref SHOWTOAST_PREF(Context cntx) {
+        return new BoolPref("ctabs_toast", false, cntx);
     }
 
     @Override

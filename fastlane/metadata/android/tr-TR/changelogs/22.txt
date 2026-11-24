@@ -1,0 +1,7 @@
+V 2.10
+- Yeni eğitim ekranı
+- Yeni modül: Unshortener
+- Durum modülüne yeni özellikler ve geliştirmeler
+- Pano linkleri için yeni kısayol ve buton
+- Yeni Çince çeviri. Seviche CC'e çok teşekkürler!
+- Görsel düzeltmeler

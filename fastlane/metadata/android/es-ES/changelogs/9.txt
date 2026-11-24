@@ -1,0 +1,4 @@
+V 2.1
+- Arreglado y mejorado el módulo de ClearURLs
+- Mejorados algunos textos y mensajes
+- Modificado el estilo para ser más compacto

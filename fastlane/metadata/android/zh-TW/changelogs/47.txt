@@ -1,0 +1,5 @@
+V 3.5
+- 改善：允許 Unshorten 模組使用 token
+- 改善：Json 編輯器（等寬字體和字型大小）
+- 改善：預設模式（Rickroll、twitter、eddrit、farside）
+- 內部：翻譯修正與更新

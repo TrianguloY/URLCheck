@@ -6,21 +6,21 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.trianguloy.urlchecker.R;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.EnumerationPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 /** Manages the incognito feature */
 public class Incognito {
 
     public static final String FIREFOX_EXTRA = "private_browsing_mode";
-    // for Chrome with custom tabs (even though it doesn't work for now)
-    public static final String CHROME_EXTRA = "com.google.android.apps.chrome.EXTRA_OPEN_NEW_INCOGNITO_TAB";
+    // for Chrome with custom tabs (even if it doesn't work for standard browsing)
+    public static final String CHROME_EXTRA = "androidx.browser.customtabs.extra.ENABLE_EPHEMERAL_BROWSING";
 
-    public static GenericPref.Enumeration<OnOffConfig> PREF(Context cntx) {
-        return new GenericPref.Enumeration<>("open_incognito", OnOffConfig.AUTO, OnOffConfig.class, cntx);
+    public static EnumerationPref<OnOffConfig> PREF(Context cntx) {
+        return new EnumerationPref<>("open_incognito", OnOffConfig.AUTO, OnOffConfig.class, cntx);
     }
 
-    private final GenericPref.Enumeration<OnOffConfig> pref;
+    private final EnumerationPref<OnOffConfig> pref;
     private boolean state = false;
     private ImageButton button;
 
@@ -59,6 +59,11 @@ public class Incognito {
     public void setState(boolean state) {
         this.state = state;
         button.setImageResource(state ? R.drawable.incognito : R.drawable.no_incognito);
+    }
+
+    /** Returns the current state */
+    public boolean getState() {
+        return state;
     }
 
     /** applies the setting to a given intent */

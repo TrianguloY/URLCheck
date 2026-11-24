@@ -1,0 +1,5 @@
+V 3.5
+- Mejora: Permitir token en el modulo Desacortador
+- Mejora: Editor de json (monoespaciado, y tamaño de fuente)
+- Mejora: Patrones por defecto (Rickroll, twitter, eddrit, farside)
+- Interno: Arreglos y actualizaciones de las traducciones

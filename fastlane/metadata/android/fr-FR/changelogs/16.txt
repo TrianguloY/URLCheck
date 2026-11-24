@@ -1,0 +1,10 @@
+V 2.7
+- Amélioration du tri des applications du module "Ouvrir et Partager"
+- Mise à jour du catalogue ClearURL améliorée
+- Ajout des paramètres CTabs
+- Diverses améliorations pour Android 13
+- Correction de problèmes avec le tri des modules
+- Correction de certains liens qui ne s'ouvrent pas
+- Corrections et ajustements des textes
+- Corrections et ajustements des styles
+- Diverses améliorations internes

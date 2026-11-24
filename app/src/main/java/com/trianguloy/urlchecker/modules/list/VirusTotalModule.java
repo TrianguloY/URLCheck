@@ -5,9 +5,11 @@ import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getString
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -20,7 +22,7 @@ import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.companions.VirusTotalUtility;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
@@ -31,8 +33,8 @@ public class VirusTotalModule extends AModuleData {
 
     public static final String PREF = "api_key";
 
-    static GenericPref.Str API_PREF(Context cntx) {
-        return new GenericPref.Str(PREF, "", cntx);
+    static StringPref API_PREF(Context cntx) {
+        return new StringPref(PREF, "", cntx);
     }
 
     @Override
@@ -68,7 +70,7 @@ public class VirusTotalModule extends AModuleData {
 
 class VirusTotalConfig extends AModuleConfig {
 
-    final GenericPref.Str api_key;
+    final StringPref api_key;
 
     public VirusTotalConfig(ModulesActivity cntx) {
         super(cntx);
@@ -88,7 +90,7 @@ class VirusTotalConfig extends AModuleConfig {
 
     @Override
     public void onInitialize(View views) {
-        var edit_key = views.<TextView>findViewById(R.id.api_key);
+        var edit_key = views.<EditText>findViewById(R.id.api_key);
         var test = views.<Button>findViewById(R.id.test);
         var result = views.<TextView>findViewById(R.id.result);
         var testing = views.<ProgressBar>findViewById(R.id.testing);
@@ -149,7 +151,7 @@ class VirusTotalDialog extends AModuleDialog {
     private boolean scanning = false;
     private VirusTotalUtility.InternalResponse result = null;
 
-    private final GenericPref.Str api_key;
+    private final StringPref api_key;
 
     public VirusTotalDialog(MainDialog dialog) {
         super(dialog);
@@ -180,6 +182,20 @@ class VirusTotalDialog extends AModuleDialog {
         // TODO: cancel on onPrepare
         scanning = false;
         result = null;
+        updateUI();
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        // a scan still running is not continued
+        if (!scanning && result != null) state.putSerializable("result", result);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var saved = (VirusTotalUtility.InternalResponse) state.getSerializable("result");
+        if (saved == null) return;
+        result = saved;
         updateUI();
     }
 

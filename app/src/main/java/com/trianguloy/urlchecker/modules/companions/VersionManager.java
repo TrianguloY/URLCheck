@@ -8,6 +8,7 @@ import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.TutorialActivity;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 import org.json.JSONObject;
@@ -20,10 +21,10 @@ import java.util.regex.Pattern;
 /** Manages the app version, to notify of updates */
 public class VersionManager {
 
-    private final GenericPref.Str lastVersion;
+    private final StringPref lastVersion;
 
-    public static GenericPref.Str LASTVERSION_PREF(Context cntx) {
-        return new GenericPref.Str("changelog_lastVersion", null, cntx);
+    public static StringPref LASTVERSION_PREF(Context cntx) {
+        return new StringPref("changelog_lastVersion", null, cntx);
     }
 
     /* ------------------- static ------------------- */

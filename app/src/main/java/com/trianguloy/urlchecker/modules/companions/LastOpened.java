@@ -3,7 +3,8 @@ package com.trianguloy.urlchecker.modules.companions;
 import android.content.ComponentName;
 import android.content.Context;
 
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.IntPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
@@ -16,8 +17,8 @@ import java.util.List;
 /** Manages a list of last opened apps, for priority purposes */
 public class LastOpened {
 
-    public static GenericPref.Bool PERDOMAIN_PREF(Context cntx) {
-        return new GenericPref.Bool("lastOpen_perDomain", false, cntx);
+    public static BoolPref PERDOMAIN_PREF(Context cntx) {
+        return new BoolPref("lastOpen_perDomain", false, cntx);
     }
 
     /* ------------------- data ------------------- */
@@ -27,7 +28,7 @@ public class LastOpened {
 
     /** The prefix for the savedPrefs */
     private static final String PREFIX = "opened %s %s";
-    private final GenericPref.Bool perDomainPref;
+    private final BoolPref perDomainPref;
     private final Context cntx;
 
     /* ------------------- public ------------------- */
@@ -65,7 +66,7 @@ public class LastOpened {
         }
 
         // update preference (we subtract because negative means preferred)
-        GenericPref.Int pref = getPref(prefer, other, url);
+        IntPref pref = getPref(prefer, other, url);
         pref.set(JavaUtils.clamp(-MAX, pref.get() - amount, MAX));
     }
 
@@ -84,13 +85,13 @@ public class LastOpened {
     }
 
     /** The preference between two components. ([left] must be lexicographically less than [right]) */
-    private GenericPref.Int getPref(ComponentName left, ComponentName right, String url) {
+    private IntPref getPref(ComponentName left, ComponentName right, String url) {
         String prefName = String.format(PREFIX, left.flattenToShortString(), right.flattenToShortString());
         if (perDomainPref.get()) {
             prefName = getDomain(url) + " " + prefName;
         }
 
-        return new GenericPref.Int(prefName, 0, cntx);
+        return new IntPref(prefName, 0, cntx);
     }
 
     /**

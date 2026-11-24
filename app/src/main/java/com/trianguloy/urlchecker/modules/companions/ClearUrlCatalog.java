@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.JsonEditorInterface;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.LongPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
@@ -42,12 +44,12 @@ public class ClearUrlCatalog implements JsonEditorInterface {
 
     /* ------------------- prefs ------------------- */
 
-    private final GenericPref.Str catalogURL;
-    private final GenericPref.Str hashURL;
-    private final GenericPref.Bool autoUpdate;
-    private final GenericPref.Lng lastUpdate;
-    private final GenericPref.Lng lastCheck;
-    private final GenericPref.Bool lastAuto;
+    private final StringPref catalogURL;
+    private final StringPref hashURL;
+    private final BoolPref autoUpdate;
+    private final LongPref lastUpdate;
+    private final LongPref lastCheck;
+    private final BoolPref lastAuto;
 
     /* ------------------- constructor ------------------- */
 
@@ -57,12 +59,12 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         this.cntx = cntx;
         custom = new InternalFile("clearUrlCatalog", cntx);
         builtIn = new AssetFile("data.minify.json", cntx);
-        catalogURL = new GenericPref.Str("clearurl_catalogURL", "https://rules2.clearurls.xyz/data.minify.json", cntx);
-        hashURL = new GenericPref.Str("clearurl_hashURL", "https://rules2.clearurls.xyz/rules.minify.hash", cntx);
-        autoUpdate = new GenericPref.Bool("clearurl_autoUpdate", false, cntx);
-        lastUpdate = new GenericPref.Lng("clearurl_lastUpdate", /*data.minify.json-timestamp*/1754183829000L/*data.minify.json-timestamp*/, cntx);
-        lastCheck = new GenericPref.Lng("clearurl_lastCheck", -1L, cntx);
-        lastAuto = new GenericPref.Bool("clearurl_lastAuto", false, cntx);
+        catalogURL = new StringPref("clearurl_catalogURL", "https://rules2.clearurls.xyz/data.minify.json", cntx);
+        hashURL = new StringPref("clearurl_hashURL", "https://rules2.clearurls.xyz/rules.minify.hash", cntx);
+        autoUpdate = new BoolPref("clearurl_autoUpdate", false, cntx);
+        lastUpdate = new LongPref("clearurl_lastUpdate", /*data.minify.json-timestamp*/1795306183000L/*data.minify.json-timestamp*/, cntx);
+        lastCheck = new LongPref("clearurl_lastCheck", -1L, cntx);
+        lastAuto = new BoolPref("clearurl_lastAuto", false, cntx);
 
         updateIfNecessary();
     }
@@ -233,7 +235,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         // prepare more dialog
-        // these are configured here to allow auto-closing the dialog when they are pressed
+        // these are configured here to avoid auto-closing the dialog when they are pressed
         Button updateNow = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         updateNow.setOnClickListener(v -> {
             // updates the rules

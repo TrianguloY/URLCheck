@@ -1,19 +1,22 @@
 package com.trianguloy.urlchecker.activities;
 
+import static android.window.OnBackInvokedDispatcher.PRIORITY_DEFAULT;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
-//import com.trianguloy.urlchecker.fragments.BrowserButtonsFragment;
 import com.trianguloy.urlchecker.fragments.BrowserButtonsFragment;
 import com.trianguloy.urlchecker.fragments.ResultCodeInjector;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.DoubleEvent;
@@ -27,12 +30,12 @@ public class TutorialActivity extends Activity {
 
     private Button prevButton;
     private Button nextButton;
-    private GenericPref.Bool tutorialDone;
+    private BoolPref tutorialDone;
     private FixedViewFlipper flipper;
     private TextView pageIndexText;
 
-    public static GenericPref.Bool DONE(Context cntx) {
-        return new GenericPref.Bool("tutorial_done", false, cntx);
+    public static BoolPref DONE(Context cntx) {
+        return new BoolPref("tutorial_done", false, cntx);
     }
 
     @Override
@@ -42,6 +45,10 @@ public class TutorialActivity extends Activity {
         LocaleUtils.setLocale(this);
         setContentView(R.layout.activity_tutorial);
         setTitle(R.string.tutorial);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(PRIORITY_DEFAULT, this::onBackPressed);
+        }
 
         tutorialDone = DONE(this);
 
@@ -72,6 +79,7 @@ public class TutorialActivity extends Activity {
 
     /* ------------------- buttons ------------------- */
 
+    @SuppressLint("GestureBackNavigation")
     @Override
     public void onBackPressed() {
         prev(null);

@@ -1,0 +1,5 @@
+V 3.4.1
+- Improve: Updated translations
+- Fix: Report error instead of deleting extra json elements in the editor
+- Fix: Avoid some errors when using http services
+- Internal: Several updates and minor changes

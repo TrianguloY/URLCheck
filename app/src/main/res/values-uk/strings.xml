@@ -163,8 +163,8 @@
     <string name="mOpen_ctabs">Спеціальні вкладки:</string>
     <string name="btn_backupRestore">Резервне копіювання / відновлення</string>
     <string name="bck_mn_advanced">Показати додаткові параметри</string>
-    <string name="btn_backup">Резервне копіювання</string>
-    <string name="bkp_data">Дані: стандартні дані програми. Такі речі, як увімкнені модулі, конфігурації json тощо. Не включатимуть секрети та кеш.</string>
+    <string name="bck_backup">Резервне копіювання</string>
+    <string name="bck_data">Дані: стандартні дані програми. Такі речі, як увімкнені модулі, конфігурації json тощо. Не включатимуть секрети та кеш.</string>
     <string name="bck_restoreDelete">Видаліть елементи перед відновленням. Зауважте, що параметри та деякі файли зі значеннями за замовчуванням можуть не існувати, тому вимикання цього параметра призведе до об’єднання існуючих елементів із резервними в неочікуваний спосіб. Вимкніть, якщо знаєте, що робите.</string>
     <string name="bck_restoreMessage">УВАГА! Це замінить вибрані елементи з резервної копії.\nВи дійсно хочете продовжити?</string>
     <string name="bck_deleteMessage">УВАГА! Це призведе до видалення всіх вибраних елементів.\nВи дійсно хочете продовжити?</string>
@@ -176,7 +176,7 @@
     <string name="mPttrn_fix">Застосувати</string>
     <string name="mOpen_closeOpen">Закрити діалогове вікно після відкриття</string>
     <string name="small">Маленький</string>
-    <string name="normal">нормальний</string>
+    <string name="normal">Нормальний</string>
     <string name="big">Великий</string>
     <string name="json_editor">Json редактор</string>
     <string name="mPttrn_regexfix">Виправте додаткові групи регулярних виразів (вимкніть, якщо регулярні вирази не працюють належним чином)</string>
@@ -194,9 +194,9 @@
     <string name="none">Жодного</string>
     <string name="auto_close">Закриє програму, більше нічого не роблячи.</string>
     <string name="auto_clear">Очистить URL-адресу. Еквівалент натискання кнопки «Очистити». Зауважте, що сам модуль містить автоматичне налаштування, яке також очищатиме всі URL-адреси ефективніше, тому йому слід надавати перевагу.</string>
-    <string name="bkp_description">Виберіть елементи для резервного копіювання/відновлення.\nПри відновленні, якщо резервна копія була створена без нього, існуючі будуть збережені.</string>
+    <string name="bck_description">Виберіть елементи для резервного копіювання/відновлення.\nПри відновленні, якщо резервна копія була створена без нього, існуючі будуть збережені.</string>
     <string name="bck_backupError">Не вдається створити резервну копію, спробуйте вибрати інше розташування для файлу.</string>
-    <string name="bjp_cache">Кеш: дані, які можна легко завантажити/згенерувати, наприклад база даних хостів. Увімкнення цієї опції може значно збільшити розмір резервної копії.</string>
+    <string name="bck_cache">Кеш: дані, які можна легко завантажити/згенерувати, наприклад база даних хостів. Увімкнення цієї опції може значно збільшити розмір резервної копії.</string>
     <string name="bck_deleteTitle">Видалити елементи</string>
     <string name="txt_tutorial1">Дякуємо за завантаження програми!\n\nЦе підручник, якщо ви хочете його пропустити, ви можете зробити це за допомогою кнопки нижче. Ви завжди можете повернутися до цього посібника з меню налаштувань.</string>
     <string name="txt_tutorial2">Додаток діє як посередник під час відкриття або обміну URL-посиланнями. Коли URL-адреса буде надіслана додатку, ви зможете взаємодіяти з ним за допомогою модулів. Після цього ви можете відкрити посилання (у потрібній програмі), поділитися ним або скопіювати в буфер обміну.</string>
@@ -216,11 +216,11 @@
     <string name="auto_drawer">Відкриє шухляду. Еквівалент натискання кнопки шухляди, якщо вона згорнута.</string>
     <string name="auto_scan">Сканує URL-адресу. Еквівалент натискання кнопки «Сканувати».</string>
     <string name="txt_animation">Увімкнути анімацію</string>
-    <string name="btn_restore">Відновити</string>
-    <string name="btn_delete">Видалити</string>
-    <string name="bkp_data_prefs">Параметри: Дані зберігаються як параметри.</string>
-    <string name="bkp_data_files">Файли: дані, збережені у вигляді файлів.</string>
-    <string name="bkp_secrets">Секрети: дані, які вважаються «секретними», як-от ключ API VirusTotal або журнал.</string>
+    <string name="bck_restore">Відновити</string>
+    <string name="bck_delete">Видалити</string>
+    <string name="bck_data_prefs">Параметри: Дані зберігаються як параметри.</string>
+    <string name="bck_data_files">Файли: дані, збережені у вигляді файлів.</string>
+    <string name="bck_secrets">Секрети: дані, які вважаються «секретними», як-от ключ API VirusTotal або журнал.</string>
     <string name="bck_ignoreNewer">Дозволити резервне копіювання, створене з новіших версій програми.</string>
     <string name="bck_newer">Скасовано. Резервну копію було створено з новою версією програми.</string>
     <string name="bck_chooseFile">Виберіть файл резервної копії</string>
@@ -362,4 +362,8 @@
     <string name="mVt_votes">Голоси:</string>
     <string name="mVt_categories">Категорії:</string>
     <string name="mVt_detections">Виявлення:</string>
+    <string name="mHosts_tm">Ведучі StevenBlack з %s</string>
+    <string name="json_bigger">Збільшити розмір шрифту</string>
+    <string name="json_smaller">Зменшити розмір шрифту</string>
+    <string name="auto_userContent">Список інших корисних автоматизацій, створених користувачами: %s</string>
 </resources>

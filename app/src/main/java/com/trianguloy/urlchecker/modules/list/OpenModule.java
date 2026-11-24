@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ import com.trianguloy.urlchecker.modules.companions.Size;
 import com.trianguloy.urlchecker.modules.companions.DenylistOption;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.EnumerationPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
@@ -38,20 +41,20 @@ import java.util.Objects;
 /** This module contains an open and share buttons */
 public class OpenModule extends AModuleData {
 
-    public static GenericPref.Bool CLOSEOPEN_PREF(Context cntx) {
-        return new GenericPref.Bool("open_closeopen", true, cntx);
+    public static BoolPref CLOSEOPEN_PREF(Context cntx) {
+        return new BoolPref("open_closeopen", true, cntx);
     }
 
-    public static GenericPref.Bool NOREFERRER_PREF(Context cntx) {
-        return new GenericPref.Bool("open_noReferrer", false, cntx);
+    public static BoolPref NOREFERRER_PREF(Context cntx) {
+        return new BoolPref("open_noReferrer", false, cntx);
     }
 
-    public static GenericPref.Bool REJECTED_PREF(Context cntx) {
-        return new GenericPref.Bool("open_rejected", true, cntx);
+    public static BoolPref REJECTED_PREF(Context cntx) {
+        return new BoolPref("open_rejected", true, cntx);
     }
 
-    public static GenericPref.Enumeration<Size> ICONSIZE_PREF(Context cntx) {
-        return new GenericPref.Enumeration<>("open_iconsize", Size.NORMAL, Size.class, cntx);
+    public static EnumerationPref<Size> ICONSIZE_PREF(Context cntx) {
+        return new EnumerationPref<>("open_iconsize", Size.NORMAL, Size.class, cntx);
     }
 
     /** Preference: Which app should be denied
@@ -100,8 +103,10 @@ class OpenDialog extends AModuleDialog {
                         component.isEmpty() ? null : ComponentName.unflattenFromString(component),
                         packageName.isEmpty() ? null : packageName);
             }),
-            new AutomationRules.Automation<>("share", R.string.auto_share, dialog ->
-                    dialog.shareUtility.shareUrl()),
+            new AutomationRules.Automation<>("share", R.string.auto_share, (dialog, args) ->
+                    dialog.shareUtility.shareUrl(
+                            args.optString("package", null),
+                            args.optString("component", null))),
             new AutomationRules.Automation<>("copy", R.string.auto_copy, dialog ->
                     dialog.shareUtility.copyUrl()),
             new AutomationRules.Automation<>("ctabs", R.string.auto_ctabs, dialog ->
@@ -111,10 +116,10 @@ class OpenDialog extends AModuleDialog {
             new AutomationRules.Automation<>("close", R.string.auto_close, dialog -> dialog.getActivity().finish())
     );
 
-    private final GenericPref.Bool closeOpenPref;
-    private final GenericPref.Bool noReferrerPref;
-    private final GenericPref.Bool rejectedPref;
-    private final GenericPref.Enumeration<Size> iconSizePref;
+    private final BoolPref closeOpenPref;
+    private final BoolPref noReferrerPref;
+    private final BoolPref rejectedPref;
+    private final EnumerationPref<Size> iconSizePref;
 
     private final LastOpened lastOpened;
     private final CTabs cTabs;
@@ -145,6 +150,18 @@ class OpenDialog extends AModuleDialog {
     @Override
     public int getLayoutId() {
         return R.layout.dialog_open;
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putBoolean("ctabs", cTabs.getState());
+        state.putBoolean("incognito", incognito.getState());
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        cTabs.setState(state.getBoolean("ctabs"));
+        incognito.setState(state.getBoolean("incognito"));
     }
 
     @Override

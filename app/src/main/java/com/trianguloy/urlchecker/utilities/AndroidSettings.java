@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.fragments.ResultCodeInjector;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.EnumerationPref;
 
 public interface AndroidSettings {
 
@@ -41,8 +41,8 @@ public interface AndroidSettings {
     }
 
     /** The theme pref */
-    static GenericPref.Enumeration<Theme> THEME_PREF(Context cntx) {
-        return new GenericPref.Enumeration<>("dayNight", Theme.DEFAULT, Theme.class, cntx);
+    static EnumerationPref<Theme> THEME_PREF(Context cntx) {
+        return new EnumerationPref<>("dayNight", Theme.DEFAULT, Theme.class, cntx);
     }
 
     /** Sets the theme (light/dark mode) to an activity */

@@ -1,0 +1,7 @@
+V 2.10
+- Nueva pantalla tutorial
+- Nuevo módulo: Desacortador
+- Nuevas funcionalidades y mejoras al módulo de código de estado
+- Nuevo atajo y ajuste rápido para abrir enlaces en el portapapeles
+- Nueva traducción al chino. ¡Gracias a Seviche CC!
+- Arreglos visuales

@@ -1,0 +1,4 @@
+V 2.13.1
+- Nuevo: Lógica especial para ocultar enlaces rechazados. Ocultar origen se ha deshabilitado por defecto.
+- Arreglo: Tercer intento para arreglar el problema 'abrir/compartir no hace nada'.
+- Arreglo: Módulo del código de estado ya no decodifica la redirección.

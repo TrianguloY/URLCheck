@@ -1,39 +1,36 @@
 package com.trianguloy.urlchecker.modules.companions;
 
-
-import java.util.List;
-import java.util.ArrayList;
-
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.View;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.modules.list.OpenModule;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
-import com.trianguloy.urlchecker.modules.list.OpenModule;
+
+import java.util.ArrayList;
 
 /**
  * The share functionality.
  * Currently in the OpenDialog, but may be moved to an independent dialog in the future.
  */
 public interface ShareUtility {
-    static GenericPref.Bool CLOSESHARE_PREF(Context cntx) {
-        return new GenericPref.Bool("open_closeshare", true, cntx);
+    static BoolPref CLOSESHARE_PREF(Context cntx) {
+        return new BoolPref("open_closeshare", true, cntx);
     }
 
-    static GenericPref.Bool CLOSECOPY_PREF(Context cntx) {
-        return new GenericPref.Bool("open_closecopy", false, cntx);
+    static BoolPref CLOSECOPY_PREF(Context cntx) {
+        return new BoolPref("open_closecopy", false, cntx);
     }
 
-    static GenericPref.Bool MERGECOPY_PREF(Context cntx) {
-        return new GenericPref.Bool("open_mergeCopy", false, cntx);
+    static BoolPref MERGECOPY_PREF(Context cntx) {
+        return new BoolPref("open_mergeCopy", false, cntx);
     }
 
     /** The onInitialize of an AModuleConfig */
@@ -47,9 +44,9 @@ public interface ShareUtility {
     class Dialog {
 
         private final MainDialog mainDialog;
-        private final GenericPref.Bool closeSharePref;
-        private final GenericPref.Bool closeCopyPref;
-        private final GenericPref.Bool mergeCopyPref;
+        private final BoolPref closeSharePref;
+        private final BoolPref closeCopyPref;
+        private final BoolPref mergeCopyPref;
 
         public Dialog(MainDialog mainDialog) {
             this.mainDialog = mainDialog;
@@ -83,54 +80,54 @@ public interface ShareUtility {
 
         /** Shares the url as text */
         public void shareUrl() {
+            shareUrl(null, null);
+        }
 
-            // creates send intent
-            Intent baseIntent = new Intent(Intent.ACTION_SEND);
-            baseIntent.putExtra(Intent.EXTRA_TEXT, mainDialog.getUrlData().url);
-            baseIntent.setType("text/plain");
+        /** Shares the url as text, optionally to a specific app (for automation rules) */
+        public void shareUrl(String packageName, String componentStr) {
+            // create send intent
+            var sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, mainDialog.getUrlData().url);
+            sendIntent.setType("text/plain");
 
-
-            DenylistOption deny = OpenModule.DENYLIST_PREF(mainDialog).get();
-            String packageToRemove = deny != null ? deny.getPackageName() : null;
-
-            // Gets the denied preference and applied it
-            PackageManager pm = mainDialog.getPackageManager();
-            List<ResolveInfo> resolveInfos = pm.queryIntentActivities(baseIntent, 0);
-
-            // Shows specific apps based on user preference
-            List<Intent> targetedIntents = new ArrayList<>();
-            for (ResolveInfo ri : resolveInfos) {
-                String packageName = ri.activityInfo.packageName;
-                if (packageToRemove != null && packageName.equals(packageToRemove)) {
-                    continue; // skip denied app (doesn't add it)
-                }
-
-                Intent targeted = new Intent(baseIntent);
-                targeted.setPackage(packageName);
-                targeted.setClassName(packageName, ri.activityInfo.name);
-                targetedIntents.add(targeted);
+            if (componentStr != null && !componentStr.isEmpty()) {
+                // direct to a specific component (skips app's internal chooser)
+                sendIntent.setComponent(ComponentName.unflattenFromString(componentStr));
+                PackageUtils.startActivity(sendIntent, R.string.mOpen_noapps, mainDialog);
+            } else if (packageName != null && !packageName.isEmpty()) {
+                // direct to a specific app package
+                sendIntent.setPackage(packageName);
+                PackageUtils.startActivity(sendIntent, R.string.mOpen_noapps, mainDialog);
+            } else {
+                // show system chooser
+                var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
+                hideDeniedApp(sendIntent, chooser);
+                PackageUtils.startActivity(chooser, R.string.mOpen_noapps, mainDialog);
             }
-
-            //If nothing is shown, it shows toast
-            if (targetedIntents.isEmpty()) {
-                Toast.makeText(mainDialog, R.string.mOpen_noapps, Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            //Build chooser so we can provide the denied list
-            Intent chooser = Intent.createChooser(targetedIntents.remove(0),
-                    mainDialog.getString(R.string.mOpen_share));
-
-            // add the rest of the filtered as EXTRA_INITIAL_INTENTS
-            if (!targetedIntents.isEmpty()) {
-                chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS,
-                        targetedIntents.toArray(new Intent[0]));
-            }
-
-            PackageUtils.startActivity(chooser, R.string.mOpen_noapps, mainDialog);
 
             if (closeSharePref.get()) {
                 mainDialog.finish();
+            }
+        }
+
+        /**
+         * Excludes the app chosen as denied in the open module from the system chooser.
+         * EXTRA_EXCLUDE_COMPONENTS needs API 24+, on older versions the denied app is still listed.
+         */
+        private void hideDeniedApp(Intent sendIntent, Intent chooser) {
+            var denied = OpenModule.DENYLIST_PREF(mainDialog).get();
+            var deniedPackage = denied == null ? null : denied.getPackageName();
+            if (deniedPackage == null || Build.VERSION.SDK_INT < Build.VERSION_CODES.N) return;
+
+            var excluded = new ArrayList<ComponentName>();
+            for (var info : mainDialog.getPackageManager().queryIntentActivities(sendIntent, 0)) {
+                if (deniedPackage.equals(info.activityInfo.packageName)) {
+                    excluded.add(new ComponentName(info.activityInfo.packageName, info.activityInfo.name));
+                }
+            }
+            if (!excluded.isEmpty()) {
+                chooser.putExtra(Intent.EXTRA_EXCLUDE_COMPONENTS, excluded.toArray(new ComponentName[0]));
             }
         }
 

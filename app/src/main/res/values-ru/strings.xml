@@ -120,7 +120,7 @@
     <string name="mOpen_ctabs">Пользовательские вкладки:</string>
     <string name="mVT_warningUrl">Внимание, %1$d/%2$d поисковых систем распознали URL (на момент %3$s)</string>
     <string name="mOpen_closeOpen">Закрыть диалоговое окно после открытия ссылки</string>
-    <string name="mD_ctabs">Показывать сообщения отладки из службы Пользовательских вкладок</string>
+    <string name="mD_ctabs">Показывать сообщения отладки из службы Пользовательских вкладок (даже если модуль отключён).</string>
     <string name="mVT_goodUrl">Ни одна из %1$d поисковых систем не распознала URL (на момент %2$s)</string>
     <string name="mVT_apiKey">API ключ</string>
     <string name="mStatus_unknownCode">%d: Неизвестный код состояния</string>
@@ -195,8 +195,7 @@
     <string name="mRemove_empty">Удалить пустые</string>
     <string name="mClear_urlError">Не удалось получить правила, удостоверьтесь что URL правильный, а интернет соединение активно</string>
     <string name="mLog_limit">Максимальное количество записей. Рекомендуемое значение: 100. Оставьте пустым для неограниченного числа</string>
-    <string name="mUnshort_desc">Этот модуль позволяет раскоротить ссылки, отправляя их на %s, который оценивает их на своих серверах и сохраняет конечный адрес перенаправления для будущих запросов. Избегайте раскорачивания ссылок с личными или конфинденциальными данными!
-\nИх API ограничено до 10 запросов/час для новых ссылок. Ответ модуля покажет, сколько запросов к API у вас осталось.</string>
+    <string name="mUnshort_desc">Этот модуль позволяет расшифровывать ссылки, отправляя их на %s, который обрабатывает их на своих серверах и сохраняет перенаправление для будущих запросов. Избегайте расшифровки ссылок с конфиденциальными или важными данными.\nБесплатный API имеет ограничение по количеству — 10 запросов в час для новых проверок. В ответе модуля будет указано количество ожидающих запросов, если это необходимо.\nЕсли вы предоставите действующий токен, модуль будет использовать аутентифицированную конечную точку, которая может быть более стабильной и иметь другие ограничения или скорости.</string>
     <string name="mHosts_build">Построить</string>
     <string name="mRemove_one">Удалить %s</string>
     <string name="mFlag_editFlags">Изменить значения флагов по умолчанию</string>
@@ -235,23 +234,23 @@
     <string name="mUnshort_name">Удлинитель</string>
     <string name="btn_backupRestore">Резервное копирование / Восстановление</string>
     <string name="bck_mn_advanced">Показать расширенные настройки</string>
-    <string name="btn_backup">Резервное копирование</string>
-    <string name="btn_delete">Удалить</string>
+    <string name="bck_backup">Резервное копирование</string>
+    <string name="bck_delete">Удалить</string>
     <string name="txt_animation">Включить анимации</string>
-    <string name="btn_restore">Восстановить</string>
-    <string name="bkp_description">Выберите элементы для бэкапа/восстановления.
+    <string name="bck_restore">Восстановить</string>
+    <string name="bck_description">Выберите элементы для бэкапа/восстановления.
 \nПри восстановлении, если бэкап был создан без него, существующие будут сохранены.</string>
     <string name="bck_deleteTitle">Удалить элементы</string>
-    <string name="bjp_cache">Кэш: данные, которые можно легко загрузить/сгенерировать, например база данных хостов. Включение этой опции может значительно увеличить размер резервной копии.</string>
+    <string name="bck_cache">Кэш: данные, которые можно легко загрузить/сгенерировать, например база данных хостов. Включение этой опции может значительно увеличить размер резервной копии.</string>
     <string name="bck_chooseFile">Выберите файл бэкапа</string>
-    <string name="bkp_data">Данные: стандартные данные приложения. Такие как включенные модули, JSON-конфигурации и т.д. Не будет содержать секреты и кэш.</string>
+    <string name="bck_data">Данные: стандартные данные приложения. Такие как включенные модули, JSON-конфигурации и т.д. Не будет содержать секреты и кэш.</string>
     <string name="bck_restoreTitle">Восстановить бэкап</string>
     <string name="bck_backupOk">Бэкап создан</string>
-    <string name="bkp_data_files">Файлы: данные, сохраненные в виде файлов.</string>
-    <string name="bkp_secrets">Секреты: данные, считающиеся «секретными», например ключ API VirusTotal или журнал.</string>
+    <string name="bck_data_files">Файлы: данные, сохраненные в виде файлов.</string>
+    <string name="bck_secrets">Секреты: данные, считающиеся «секретными», например ключ API VirusTotal или журнал.</string>
     <string name="bck_ignoreNewer">Разрешить резервные копии, созданные в более новых версиях приложения.</string>
     <string name="bck_newer">Отменено. Резервная копия была создана в более новой версии приложения.</string>
-    <string name="txt_width">Ширина диалога:\nВнимание! Небольшие значения могут скрывать элементы экрана.</string>
+    <string name="txt_width">Ширина диалогового окна (0 — автоматически)\nВнимание! Малые значения могут привести к скрытию элементов экрана.</string>
     <string name="spin_fullWidth">Полная</string>
     <string name="spin_dynamicWidth">Динамическая</string>
     <string name="json_ignore">Содержимое не является действительным JSON. Вы хотите отказаться и закрыть редактор?</string>
@@ -259,7 +258,7 @@
     <string name="json_info">Показатьинформацию</string>
     <string name="json_discard_close">Отклонить и закрыть</string>
     <string name="discard">Отклонить</string>
-    <string name="txt_processText">Подогнать URL с редактируемым текстом (когда приложение открывается от долгого нажатия текста на поле ввода)</string>
+    <string name="txt_processText">Синхронизация URL с редактируемым текстом (при открытии приложения из меню \'Открыть в URLCheck\' или аналогичного)</string>
     <string name="auto_clear">Очистит URL. Эквивалент нажатия кнопки «Очистить». Обратите внимание, что сам модуль содержит авто настройку, которая также будет более эффективно очищать все URL, и должен быть предпочтительной.</string>
     <string name="auto_rule_bitly">Развернуть ссылку bit.ly</string>
     <string name="auto_open">Откроет URL. Если не переданы требуемые аргументы \'args\', будет использовано первое доступное приложение (аналогично нажатию кнопки \"Открыть\"). Если переданы аргументы \'args\': \'package\' и/или \'component\', они будут использованы вместо этого.</string>
@@ -278,7 +277,7 @@
     <string name="mUnshort_to">Удлиняет до %s</string>
     <string name="auto_unshort">Запустит процесс отмены укорачивания. Эквивалент нажатия кнопки \'Удлинить\'.</string>
     <string name="auto_drawer">Откроет панель. Эквивалент нажатия кнопки \'ящик\', если она свернута.</string>
-    <string name="bkp_data_prefs">Настройки: Данные сохранены как настройки.</string>
+    <string name="bck_data_prefs">Настройки: Данные сохранены как настройки.</string>
     <string name="bck_restoreError">Невозможно восстановить бэкап. Это корректный файл?</string>
     <string name="json_save_error">Невозможно сохранить: %s</string>
     <string name="json_reset">Предупреждение: это заменит содержимое редактора встроенным JSON. Все изменения в редакторе будут потеряны, но сохранённое содержимое не будет изменено, если не будет сохранено вручную. Вы хотите продолжить?</string>
@@ -329,4 +328,13 @@
     <string name="mVt_votes">Голоса:</string>
     <string name="mVt_categories">Категории:</string>
     <string name="mVt_detections">Обнаружения:</string>
+    <string name="mHosts_tm">Список хостов Стивена Блека (StevenBlack) из %s</string>
+    <string name="json_bigger">Увеличить размер шрифта</string>
+    <string name="json_smaller">Уменьшить размер шрифта</string>
+    <string name="auto_userContent">Список других полезных автоматизаций, созданных пользователями: %s</string>
+    <string name="mUnshort_token">Токен</string>
+    <string name="mD_toastError">Пытаться показывать всплывающее уведомление при устранимой внутренней ошибке (даже если модуль отключён).</string>
+    <string name="lbl_processUrl">Открыть в URLCheck</string>
+    <string name="txt_processUrl">Добавить пункт \'Открыть в URLCheck\' в меню, появляющееся при выделении текста.</string>
+    <string name="mInput_monospace">Используйте моноширинный шрифт для различения похожих символов.</string>
 </resources>

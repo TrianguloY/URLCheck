@@ -24,8 +24,8 @@
     <string name="toast_defaultSet">Aplikacija je sada podrazumevani veb pretraživač</string>
     <string name="btn_configureBrowser">Podrazumevani veb pretraživač</string>
     <string name="txt_theme">Teme:</string>
-    <string name="bkp_data_files">Datoteke: Podaci sačuvani kao datoteke.</string>
-    <string name="bkp_secrets">Tajne: Podaci koji se smatraju „tajnim“, poput VirusTotal api ključa ili evidencije.</string>
+    <string name="bck_data_files">Datoteke: Podaci sačuvani kao datoteke.</string>
+    <string name="bck_secrets">Tajne: Podaci koji se smatraju „tajnim“, poput VirusTotal api ključa ili evidencije.</string>
     <string name="bck_deleteConfirm">Izbrišite elemente</string>
     <string name="bck_deleteOk">Elementi su izbrisani</string>
     <string name="bck_deleteError">Nije moguće izbrisati elemente</string>
@@ -145,17 +145,17 @@
     <string name="btn_tutorialSettings">Ponovi tutorijal</string>
     <string name="btn_backupRestore">Pravljenje rezervne kopije / vraćanje u prethodno stanje</string>
     <string name="bck_mn_advanced">Prikaži napredne opcije</string>
-    <string name="btn_backup">Rezervna kopija</string>
-    <string name="btn_restore">Vrati u prethodno stanje</string>
-    <string name="bjp_cache">Keš memorija: Podaci koji se lako mogu preuzeti/generisati, poput baze podataka hostova. Omogućavanje ove opcije može značajno povećati veličinu rezervne kopije.</string>
+    <string name="bck_backup">Rezervna kopija</string>
+    <string name="bck_restore">Vrati u prethodno stanje</string>
+    <string name="bck_cache">Keš memorija: Podaci koji se lako mogu preuzeti/generisati, poput baze podataka hostova. Omogućavanje ove opcije može značajno povećati veličinu rezervne kopije.</string>
     <string name="btn_androidSettings">Podešavanja Android aplikacije</string>
     <string name="spin_lightTheme">Svetla</string>
     <string name="txt_locale">Lokalne:</string>
-    <string name="btn_delete">Izbriši</string>
-    <string name="bkp_data">Podaci: Standardni podaci aplikacije. Stvari kao što su omogućeni moduli, json konfiguracije, itd. Neće uključivati tajne niti keš memoriju.</string>
-    <string name="bkp_data_prefs">Preference: Podaci sačuvani kao preference.</string>
+    <string name="bck_delete">Izbriši</string>
+    <string name="bck_data">Podaci: Standardni podaci aplikacije. Stvari kao što su omogućeni moduli, json konfiguracije, itd. Neće uključivati tajne niti keš memoriju.</string>
+    <string name="bck_data_prefs">Preference: Podaci sačuvani kao preference.</string>
     <string name="bck_restoreDelete">Obrišite elemente pre vraćanja. Imajte na umu da postavke i neke datoteke sa podrazumevanim vrednostima možda ne postoje, pa će onemogućavanje ove opcije spojiti postojeće elemente sa rezervnim na neočekivane načine. Onemogućite ako znate šta radite.</string>
-    <string name="bkp_description">Izaberite koje elemente želite da napravite rezervnu kopiju/vratite.
+    <string name="bck_description">Izaberite koje elemente želite da napravite rezervnu kopiju/vratite.
 \nPrilikom vraćanja, ako je rezervna kopija napravljena bez nje, postojeće će biti sačuvane.</string>
     <string name="toast_noApp">Nije moguće otvoriti aplikaciju</string>
     <string name="bck_ignoreNewer">Dozvolite rezervne kopije napravljene od novijih verzija aplikacije.</string>
@@ -281,8 +281,7 @@
 \n- omogućeno: ako je netačno, ceo ovaj objekat će biti preskočen. Podrazumevano tačno.</string>
     <string name="mHosts_buildDesc">Ovo će obrisati trenutnu bazu podataka hostova i izgraditi je sa trenutnom konfiguracijom, preuzimajući datoteke hostova sa interneta ako je potrebno. Ova radnja može potrajati nekoliko sekundi. Nastaviti?</string>
     <string name="mHosts_buildSave">Čuvanje…</string>
-    <string name="mUnshort_desc">Ovaj modul će poništiti kratke veze tako što će ih poslati na %s, koji ih procenjuje na svojim serverima i čuva preusmeravanje za buduće zahteve. Izbegavajte ukidanje veza sa privatnim ili osetljivim podacima.
-\nNjihov API je ograničen na 10 zahteva na sat za nove provere. Odgovor modula će pokazati koliko zahteva imate na čekanju.</string>
+    <string name="mUnshort_desc">Ovaj modul će poništiti kratke veze tako što će ih poslati na %s, koji ih procenjuje na svojim serverima i čuva preusmeravanje za buduće zahteve. Izbegavajte ukidanje veza sa privatnim ili osetljivim podacima. \nNjihov API je ograničen na 10 zahteva na sat za nove provere. Odgovor modula će pokazati koliko zahteva imate na čekanju.</string>
     <string name="mUnshort_error">Greška servera: %s</string>
     <string name="mUnshort_internal">Interna greška (%s)</string>
     <string name="mFlag_editFlags">Uredite podrazumevane vrednosti zastava</string>

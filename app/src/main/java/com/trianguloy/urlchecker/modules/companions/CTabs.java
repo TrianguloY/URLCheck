@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.trianguloy.urlchecker.R;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.EnumerationPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 /**
@@ -23,14 +23,14 @@ public class CTabs {
     private static final String EXTRA_OPTOUT = "android.support.customtabs.extra.user_opt_out";
 
     /** CTabs preference */
-    public static GenericPref.Enumeration<OnOffConfig> PREF(Context cntx) {
-        return new GenericPref.Enumeration<>("open_ctabs", OnOffConfig.AUTO, OnOffConfig.class, cntx);
+    public static EnumerationPref<OnOffConfig> PREF(Context cntx) {
+        return new EnumerationPref<>("open_ctabs", OnOffConfig.AUTO, OnOffConfig.class, cntx);
     }
 
 
     /* ------------------- state ------------------- */
 
-    private final GenericPref.Enumeration<OnOffConfig> pref;
+    private final EnumerationPref<OnOffConfig> pref;
     private boolean state = false;
     private ImageButton button;
 
@@ -70,6 +70,11 @@ public class CTabs {
     public void setState(boolean state) {
         this.state = state;
         button.setImageResource(state ? R.drawable.ctabs_on : R.drawable.ctabs_off);
+    }
+
+    /** Returns the current state */
+    public boolean getState() {
+        return state;
     }
 
     /** applies the setting to a given intent */

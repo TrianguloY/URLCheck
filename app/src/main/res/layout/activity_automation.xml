@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:clipToPadding="false"
+    android:fitsSystemWindows="true"
     tools:context=".activities.AutomationActivity">
 
     <LinearLayout
@@ -15,6 +16,7 @@
 
         <ImageView
             android:id="@+id/icon"
+            android:importantForAccessibility="no"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:src="@drawable/automation" />
@@ -44,6 +46,13 @@
             android:layout_height="wrap_content"
             android:onClick="openJsonEditor"
             android:text="@string/json_editor" />
+
+        <TextView
+            android:id="@+id/user_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="@string/auto_userContent" />
 
     </LinearLayout>
 </ScrollView>

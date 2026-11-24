@@ -120,8 +120,8 @@ public abstract class GenericPref<T> {
     // ------------------- Implementations -------------------
 
     /** An Int preference */
-    static public class Int extends GenericPref<Integer> {
-        public Int(String prefName, Integer defaultValue, Context cntx) {
+    static public class IntPref extends GenericPref<Integer> {
+        public IntPref(String prefName, Integer defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
         }
 
@@ -163,8 +163,8 @@ public abstract class GenericPref<T> {
     }
 
     /** A Long preference */
-    static public class Lng extends GenericPref<Long> {
-        public Lng(String prefName, Long defaultValue, Context cntx) {
+    static public class LongPref extends GenericPref<Long> {
+        public LongPref(String prefName, Long defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
         }
 
@@ -179,9 +179,26 @@ public abstract class GenericPref<T> {
         }
     }
 
+    /** A Float preference */
+    static public class FloatPref extends GenericPref<Float> {
+        public FloatPref(String prefName, Float defaultValue, Context cntx) {
+            super(prefName, defaultValue, cntx);
+        }
+
+        @Override
+        public Float get() {
+            return prefs.getFloat(prefName, defaultValue);
+        }
+
+        @Override
+        protected void save(Float value) {
+            prefs.edit().putFloat(prefName, value).apply();
+        }
+    }
+
     /** A boolean preference */
-    static public class Bool extends GenericPref<Boolean> {
-        public Bool(String prefName, Boolean defaultValue, Context cntx) {
+    static public class BoolPref extends GenericPref<Boolean> {
+        public BoolPref(String prefName, Boolean defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
         }
 
@@ -208,8 +225,8 @@ public abstract class GenericPref<T> {
     }
 
     /** A string preference */
-    static public class Str extends GenericPref<String> {
-        public Str(String prefName, String defaultValue, Context cntx) {
+    static public class StringPref extends GenericPref<String> {
+        public StringPref(String prefName, String defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
         }
 
@@ -246,16 +263,16 @@ public abstract class GenericPref<T> {
      * Saved as string concatenated with separator
      * Optionally limit the number of entries
      */
-    static public class LstStr extends GenericPref<List<String>> {
+    static public class ListStringPref extends GenericPref<List<String>> {
 
         final String separator;
         final int limit;
 
-        public LstStr(String prefName, String separator, List<String> defaultValue, Context cntx) {
+        public ListStringPref(String prefName, String separator, List<String> defaultValue, Context cntx) {
             this(prefName, separator, 0, defaultValue, cntx);
         }
 
-        public LstStr(String prefName, String separator, int limit, List<String> defaultValue, Context cntx) {
+        public ListStringPref(String prefName, String separator, int limit, List<String> defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
             this.separator = separator;
             this.limit = limit;
@@ -288,10 +305,10 @@ public abstract class GenericPref<T> {
     }
 
     /** A list of options (enumeration) preference */
-    static public class Enumeration<T extends Enum<T> & Enums.IdEnum & Enums.StringEnum> extends GenericPref<T> {
+    static public class EnumerationPref<T extends Enum<T> & Enums.IdEnum & Enums.StringEnum> extends GenericPref<T> {
         private final Class<T> type;
 
-        public Enumeration(String prefName, T defaultValue, Class<T> type, Context cntx) {
+        public EnumerationPref(String prefName, T defaultValue, Class<T> type, Context cntx) {
             super(prefName, defaultValue, cntx);
             this.type = type;
         }

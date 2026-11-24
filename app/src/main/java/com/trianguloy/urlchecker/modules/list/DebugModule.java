@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.modules.list;
 import static java.util.Objects.requireNonNullElse;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -20,6 +21,7 @@ import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.services.CustomTabs;
 import com.trianguloy.urlchecker.url.UrlData;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 
@@ -32,6 +34,10 @@ import java.util.List;
  */
 public class DebugModule extends AModuleData {
     public static final String ID = "debug";
+
+    public static GenericPref.BoolPref ERRORTOAST_PREF(Context cntx) {
+        return new GenericPref.BoolPref("debug_errortoast", false, cntx);
+    }
 
     @Override
     public String getId() {
@@ -153,5 +159,7 @@ class DebugConfig extends AModuleConfig {
     public void onInitialize(View views) {
         CustomTabs.SHOWTOAST_PREF(getActivity())
                 .attachToSwitch(views.findViewById(R.id.chk_ctabs));
+        DebugModule.ERRORTOAST_PREF(getActivity())
+                .attachToSwitch(views.findViewById(R.id.chk_errortoast));
     }
 }

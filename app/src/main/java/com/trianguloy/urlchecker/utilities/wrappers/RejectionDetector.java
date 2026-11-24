@@ -3,7 +3,7 @@ package com.trianguloy.urlchecker.utilities.wrappers;
 import android.app.Activity;
 import android.content.ComponentName;
 
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 
 import java.util.Collections;
@@ -17,11 +17,11 @@ import java.util.Objects;
 public class RejectionDetector {
 
     private static final long TIMEFRAME = 5000;
-    private final GenericPref.LstStr rejectLast; // [openedTimeMillis, component, url]
+    private final ListStringPref rejectLast; // [openedTimeMillis, component, url]
     private final Activity cntx;
 
     public RejectionDetector(Activity cntx) {
-        rejectLast = new GenericPref.LstStr("reject_last", "\n", 3, Collections.emptyList(), cntx);
+        rejectLast = new ListStringPref("reject_last", "\n", 3, Collections.emptyList(), cntx);
         this.cntx = cntx;
     }
 

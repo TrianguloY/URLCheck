@@ -6,13 +6,13 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 
 /** Animations-related functionality */
 public interface Animations {
 
-    static GenericPref.Bool ANIMATIONS(Context cntx) {
-        return new GenericPref.Bool("animations", true, cntx);
+    static BoolPref ANIMATIONS(Context cntx) {
+        return new BoolPref("animations", true, cntx);
     }
 
     /** Enables animations on all views from this activity */

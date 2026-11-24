@@ -1,0 +1,7 @@
+V 1.1
+- Nuevo módulo 'Limpieza de Urls': Utiliza el catálogo de ClearURLs para limpiar los enlaces de parámetros de seguimiento o inútiles.
+- Nuevo módulo 'Historial': Deshaz cambios realizados por cualquier otro módulo
+- Reemplazado el módulo 'Redirección' con 'Estado': Obten el código de estado de cualquier página, sigue detectando redirecciones.
+- Mejorado el módulo de patrones: Pulsa en 'arreglar' para convertir http a https
+- Nuevo módulo 'debug': Para desarrolladores (muestra el intent uri y mensajes de ctabs)
+- Limpieza de la interfaz.

@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.modules.list;
 
 import static com.trianguloy.urlchecker.utilities.methods.UrlUtils.decode;
 
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -125,12 +126,14 @@ class RemoveQueriesDialog extends AModuleDialog {
                 var finalI = i;
                 button.setOnClickListener(v -> setUrl(parts.getUrlWithoutQuery(finalI)));
 
-                // text that displays the query value and sets it
+                // text that displays the query value, and sets it as the url if it is a link (like ?url=https://...)
                 var queryValue = parts.getQueryValue(i);
                 var text = button_text.<TextView>findViewById(R.id.text);
                 text.setText(queryValue);
-                AndroidUtils.setAsClickable(text);
-                text.setOnClickListener(v -> setUrl(queryValue));
+                if (queryValue != null && Patterns.WEB_URL.matcher(queryValue).matches()) {
+                    AndroidUtils.setAsClickable(text);
+                    text.setOnClickListener(v -> setUrl(queryValue));
+                }
             }
         }
 

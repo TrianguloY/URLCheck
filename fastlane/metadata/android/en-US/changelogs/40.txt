@@ -1,0 +1,10 @@
+V 3.3
+- New: Configurable dialog width
+- New: Automations: 'referrer' and 'stop'
+- New: Open&replace text on long-click
+- New: Register the app to open some common url intents (thanks ArtikusHG!)
+- New: Sample pattern song.link (thanks shalva-an!)
+- Improve: Automations: Allow multiple actions
+- Improve: Automations and patterns: 'regex' is now optional
+- Fix: Custom tabs not working when opening from some apps (like Google search)
+- Remove: 'clear' automation (wasn't working)

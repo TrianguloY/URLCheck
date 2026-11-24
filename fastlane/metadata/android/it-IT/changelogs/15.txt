@@ -1,0 +1,8 @@
+V 2.6
+- Colori!
+- Modulo di rimozione query migliorato
+- Modulo di controllo pattern migliorato
+- Nuovo modulo: Log
+- Nuova traduzione in turco. Grazie a Metezd!
+- Nuova traduzione in ebraico. Grazie a Nhman Mazuz!
+- Piccoli ritocchi e correzioni

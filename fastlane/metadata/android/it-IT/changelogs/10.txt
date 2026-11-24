@@ -1,0 +1,2 @@
+V 2.2
+- Nuovo modulo 'Rimozione query': rimuove tutte le query dall'URL. Grazie a PabloOQ per l’idea e l’implementazione originale!

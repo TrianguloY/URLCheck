@@ -24,4 +24,12 @@
         android:checkable="true"
         android:checked="true"
         android:title="@string/json_info" />
+    <item
+        android:id="@+id/menu_bigger"
+        android:showAsAction="ifRoom"
+        android:title="@string/json_bigger" />
+    <item
+        android:id="@+id/menu_smaller"
+        android:showAsAction="ifRoom"
+        android:title="@string/json_smaller" />
 </menu>

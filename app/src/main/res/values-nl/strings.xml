@@ -223,8 +223,7 @@
     <string name="mRemove_empty">Verwijder leeg</string>
     <string name="mClear_urlError">Kan de regels niet ophalen. Controleer of de URL geldig is en of u een actieve verbinding heeft</string>
     <string name="mLog_limit">Maximaal aantal te behouden vermeldingen. Aanbevolen waarde: 100. Stel leeg in voor onbeperkt</string>
-    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar %s te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens.
-\nHun API is beperkt tot 10 verzoeken per uur voor nieuwe cheques. Het moduleantwoord laat zien hoeveel verzoeken u in behandeling heeft.</string>
+    <string name="mUnshort_desc">Deze module ontkoppelt links door ze naar %s te sturen, die ze op hun servers evalueert en de omleiding opslaat voor toekomstige verzoeken. Vermijd het verkorten van koppelingen met privé- of gevoelige gegevens. \nHun API is beperkt tot 10 verzoeken per uur voor nieuwe cheques. Het moduleantwoord laat zien hoeveel verzoeken u in behandeling heeft.</string>
     <string name="mHosts_build">Build</string>
     <string name="mRemove_one">Verwijder %s</string>
     <string name="mFlag_editFlags">Standaardvlagwaarden bewerken</string>
@@ -264,10 +263,10 @@
     <string name="mClear_hashError">Kan de hash niet ophalen. Zorg ervoor dat de URL geldig is en dat u een actieve verbinding heeft</string>
     <string name="mClear_lastCheck">Laatste controle:</string>
     <string name="btn_backupRestore">Back-up/herstellen</string>
-    <string name="btn_delete">Verwijderen</string>
-    <string name="bkp_description">Kies welke elementen je wil back-uppen of herstellen.
+    <string name="bck_delete">Verwijderen</string>
+    <string name="bck_description">Kies welke elementen je wil back-uppen of herstellen.
 \nAls je een element herstelt en er een back-up van is gemaakt, wordt die behouden.</string>
-    <string name="bkp_data_prefs">Voorkeuren: gegevens die zijn opgeslagen als voorkeuren.</string>
+    <string name="bck_data_prefs">Voorkeuren: gegevens die zijn opgeslagen als voorkeuren.</string>
     <string name="bck_restoreTitle">Back-up herstellen</string>
     <string name="bck_backupError">Back-up maken mislukt. Kies een andere locatie voor het bestand.</string>
     <string name="bck_restoreMessage">PAS OP! Hiermee worden de gekozen elementen van de back-up vervangen.
@@ -282,17 +281,17 @@
     <string name="bck_deleteOk">Elementen gewist</string>
     <string name="txt_animation">Animaties activeren</string>
     <string name="bck_mn_advanced">Geavanceerde opties weergeven</string>
-    <string name="btn_backup">Back-up</string>
-    <string name="btn_restore">Herstellen</string>
-    <string name="bkp_data">Gegevens: standaardappgegevens. Denk aan geactiveerde modules, json-configs, etc. Bevat geen geheimen of cache.</string>
-    <string name="bjp_cache">Cache: gegevens die makkelijk kunnen worden gedownload of gegenereerd, zoals de hostdatabase. Als je deze optie activeert, vergroot dat de back-upgrootte aanzienlijk.</string>
+    <string name="bck_backup">Back-up</string>
+    <string name="bck_restore">Herstellen</string>
+    <string name="bck_data">Gegevens: standaardappgegevens. Denk aan geactiveerde modules, json-configs, etc. Bevat geen geheimen of cache.</string>
+    <string name="bck_cache">Cache: gegevens die makkelijk kunnen worden gedownload of gegenereerd, zoals de hostdatabase. Als je deze optie activeert, vergroot dat de back-upgrootte aanzienlijk.</string>
     <string name="bck_restoreDelete">Verwijder elementen voordat je ze herstelt. Voorkeuren en bepaalde bestanden met standaardwaarden bestaan mogelijk niet, dus als je deze optie uitzet worden de bestaande elementen met de back-upelementen samengesmolten. Dat kan onverwachte resultaten opleveren, dus zet deze optie alleen uit als je weet waar je mee bezig bent.</string>
     <string name="bck_deleteError">Elementen wissen mislukt</string>
     <string name="noLinks">Geen links gevonden</string>
     <string name="mVT_noKey">API-key mist</string>
     <string name="mOpen_rejected">Verberg de app als een url is geweigerd (een app vraagt direct om dezelfde url te openen waarmee deze zojuist was geopend). Heeft geen effect op delen.</string>
-    <string name="bkp_data_files">Bestanden: gegevens die zijn opgeslagen als bestanden.</string>
-    <string name="bkp_secrets">Geheimen: Gegevens die als \'geheim\' worden gezien, zoals de api-key van VirusTotal of het log.</string>
+    <string name="bck_data_files">Bestanden: gegevens die zijn opgeslagen als bestanden.</string>
+    <string name="bck_secrets">Geheimen: Gegevens die als \'geheim\' worden gezien, zoals de api-key van VirusTotal of het log.</string>
     <string name="bck_ignoreNewer">Hiermee is het mogelijk om back-ups te maken van nieuwere appversies.</string>
     <string name="bck_newer">Geannuleerd. De back-up is gemaakt met een nieuwere appversie.</string>
     <string name="bck_chooseFile">Kies het back-upbestand</string>

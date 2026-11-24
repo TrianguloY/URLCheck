@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.modules.list;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.text.Editable;
 import android.util.Pair;
 import android.view.View;
@@ -18,7 +19,7 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.Connection;
@@ -39,12 +40,12 @@ public class WebhookModule extends AModuleData {
 
     public static final String URL_PREF = "webhook_url";
 
-    public static GenericPref.Str WEBHOOK_URL_PREF(Context cntx) {
-        return new GenericPref.Str(URL_PREF, "", cntx);
+    public static StringPref WEBHOOK_URL_PREF(Context cntx) {
+        return new StringPref(URL_PREF, "", cntx);
     }
 
-    public static GenericPref.Str WEBHOOK_BODY_PREF(Context cntx) {
-        return new GenericPref.Str("webhook_body", WebhookConfig.DEFAULT, cntx);
+    public static StringPref WEBHOOK_BODY_PREF(Context cntx) {
+        return new StringPref("webhook_body", WebhookConfig.DEFAULT, cntx);
     }
 
     @Override
@@ -82,10 +83,13 @@ class WebhookDialog extends AModuleDialog {
 
     private static final Executor executor = Executors.newSingleThreadExecutor();
 
-    private final GenericPref.Str webhookUrl;
-    private final GenericPref.Str webhookBody;
+    private final StringPref webhookUrl;
+    private final StringPref webhookBody;
     private TextView statusText;
     private Button statusButton;
+
+    /** Whether the current url was sent (null if not sent), kept when the dialog is recreated */
+    private Boolean shownResult = null;
 
     static final List<AutomationRules.Automation<WebhookDialog>> AUTOMATIONS = List.of(
             new AutomationRules.Automation<>(
@@ -119,22 +123,40 @@ class WebhookDialog extends AModuleDialog {
     public void onDisplayUrl(UrlData urlData) {
         statusText.setText("");
         AndroidUtils.clearRoundedColor(statusText);
+        shownResult = null;
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        if (shownResult != null) state.putBoolean("sent", shownResult);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        if (state.containsKey("sent")) showResult(state.getBoolean("sent"));
     }
 
     private void sendToWebhook() {
         statusText.setText(R.string.mWebhook_sending);
         statusButton.setEnabled(false);
+        shownResult = null;
 
         executor.execute(() -> {
             var sent = send(webhookUrl.get(), getUrl(), AndroidUtils.getReferrer(getActivity()), webhookBody.get());
             getActivity().runOnUiThread(() -> {
-                statusText.setText(sent ? R.string.mWebhook_success : R.string.mWebhook_error);
-                if (!sent) {
-                    AndroidUtils.setRoundedColor(R.color.bad, statusText);
-                }
+                showResult(sent);
                 statusButton.setEnabled(true);
             });
         });
+    }
+
+    /** Shows whether the url was sent */
+    private void showResult(boolean sent) {
+        shownResult = sent;
+        statusText.setText(sent ? R.string.mWebhook_success : R.string.mWebhook_error);
+        if (!sent) {
+            AndroidUtils.setRoundedColor(R.color.bad, statusText);
+        }
     }
 
     /** Performs the send action */
@@ -222,8 +244,8 @@ class WebhookConfig extends AModuleConfig {
                     }""")
     );
 
-    private final GenericPref.Str webhookUrl;
-    private final GenericPref.Str webhookBody;
+    private final StringPref webhookUrl;
+    private final StringPref webhookBody;
 
     public WebhookConfig(ModulesActivity activity) {
         super(activity);

@@ -5,7 +5,7 @@ import android.os.Build;
 import android.view.View;
 import android.widget.Switch;
 
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 
 import java.util.regex.Matcher;
 
@@ -19,11 +19,11 @@ public class RegexFix {
     /** Android 11 and up have already the fix, disable in those cases */
     public static final boolean IS_ANDROID_FIXED = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R;
 
-    private final GenericPref.Bool pttrn_regexfix;
+    private final BoolPref pttrn_regexfix;
 
     public RegexFix(Context cntx) {
         // fix enabled by default
-        pttrn_regexfix = new GenericPref.Bool("pttrn_regexfix", true, cntx);
+        pttrn_regexfix = new BoolPref("pttrn_regexfix", true, cntx);
     }
 
     /** Attach the setting to a given switch view (or disabled if not needed) */
@@ -123,7 +123,7 @@ public class RegexFix {
         }
     }
 
-    /** @noinspection UnusedReturnValue*/
+    /** @noinspection UnusedReturnValue */
     private static StringBuffer appendTail(String text, StringBuffer sb, int appendPos) {
         // Copied from https://android.googlesource.com/platform/libcore/+/refs/heads/android13-release/ojluni/src/main/java/java/util/regex/Matcher.java#796
         int to = text.length();

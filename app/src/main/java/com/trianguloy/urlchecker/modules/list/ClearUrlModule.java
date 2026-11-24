@@ -18,7 +18,7 @@ import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.companions.ClearUrlCatalog;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 
@@ -34,16 +34,16 @@ import java.util.regex.Pattern;
 /** This module clears the url using the ClearUrl catalog */
 public class ClearUrlModule extends AModuleData {
 
-    public static GenericPref.Bool REFERRAL_PREF(Context cntx) {
-        return new GenericPref.Bool("clearurl_referral", false, cntx);
+    public static BoolPref REFERRAL_PREF(Context cntx) {
+        return new BoolPref("clearurl_referral", false, cntx);
     }
 
-    public static GenericPref.Bool VERBOSE_PREF(Context cntx) {
-        return new GenericPref.Bool("clearurl_verbose", false, cntx);
+    public static BoolPref VERBOSE_PREF(Context cntx) {
+        return new BoolPref("clearurl_verbose", false, cntx);
     }
 
-    public static GenericPref.Bool AUTO_PREF(Context cntx) {
-        return new GenericPref.Bool("clearurl_auto", false, cntx);
+    public static BoolPref AUTO_PREF(Context cntx) {
+        return new BoolPref("clearurl_auto", false, cntx);
     }
 
     @Override
@@ -74,9 +74,9 @@ public class ClearUrlModule extends AModuleData {
 
 class ClearUrlConfig extends AModuleConfig {
 
-    private final GenericPref.Bool allowReferral;
-    private final GenericPref.Bool verbose;
-    private final GenericPref.Bool auto;
+    private final BoolPref allowReferral;
+    private final BoolPref verbose;
+    private final BoolPref auto;
 
     private final ClearUrlCatalog catalog;
 
@@ -116,9 +116,16 @@ class ClearUrlDialog extends AModuleDialog {
 
     public static final String CLEARED = "clearUrl.cleared";
 
-    private final GenericPref.Bool allowReferral;
-    private final GenericPref.Bool verbose;
-    private final GenericPref.Bool auto;
+    /**
+     * What a redirection may lead to: an http(s) url, or a domain without scheme (as the catalog sometimes extracts).
+     * Anything else (javascript:, data:, a bare value from a too broad rule...) is not followed.
+     * No repeated groups: java recurses per repetition, a long host would overflow the stack.
+     */
+    private static final Pattern WEB_TARGET = Pattern.compile("^(?:https?://.+|[^\\s/?#:@.][^\\s/?#:@]*\\.[^\\s/?#:@]+(?::\\d+)?(?:[/?#].*)?)$", Pattern.CASE_INSENSITIVE);
+
+    private final BoolPref allowReferral;
+    private final BoolPref verbose;
+    private final BoolPref auto;
 
     private final List<Pair<String, JSONObject>> rules;
     private TextView info;
@@ -202,6 +209,15 @@ class ClearUrlDialog extends AModuleDialog {
                         Matcher matcher = Pattern.compile(redirection).matcher(cleared);
                         if (matcher.find() && matcher.groupCount() >= 1) {
                             // redirection found
+                            String target = matcher.group(1) == null ? null : decodeURIComponent(matcher.group(1));
+                            if (target == null || !WEB_TARGET.matcher(target).matches()) {
+                                // not a web url (javascript:, a bare value...), a too broad rule, ignore it
+                                if (verbose.get()) {
+                                    data.addInfo(R.string.mClear_ignoredRedirection);
+                                    data.addDetails(redirection);
+                                }
+                                continue;
+                            }
                             if (providerData.optBoolean("forceRedirection", false)) {
                                 // maybe do something special?
                                 data.addInfo(R.string.mClear_forcedRedirection);
@@ -209,7 +225,7 @@ class ClearUrlDialog extends AModuleDialog {
                                 data.addInfo(R.string.mClear_redirection);
                             }
                             if (verbose.get()) data.addDetails(redirection);
-                            cleared = decodeURIComponent(matcher.group(1)); // can't be null, checked in the if
+                            cleared = target;
                             data.setColor(R.color.warning);
                             continue whileProvider;
                         }

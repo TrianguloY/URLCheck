@@ -1,0 +1,11 @@
+V 2.12
+- New: open Firefox in incognito
+- New: enhance share & copy buttons
+- New: encode and decode pattern parameters
+- Improvement: show referrer on the debug module
+- Improvement: keep expanded groups on Uri parts
+- Improvement: long tap uri parts to copy to clipboard
+- Fix: null optional groups on Android <=10
+- Fix: extract links from shared text
+- Fix: legacy shortcuts should work now
+- Fix: minor crash on Unshorten module

@@ -6,6 +6,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:weightSum="5"
+    android:fitsSystemWindows="true"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
@@ -16,6 +17,7 @@
         android:orientation="vertical">
 
         <ImageButton
+            android:contentDescription="@string/a_about"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@android:color/transparent"

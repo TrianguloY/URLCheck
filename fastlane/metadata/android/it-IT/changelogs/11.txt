@@ -1,0 +1,6 @@
+V 2.3
+- Consentire il riordino dei moduli
+- Il modulo "Cancella URL" può essere configurato per l’applicazione automatica
+- Il modulo "Rimuovi query" può rimuovere singole query
+- Aggiunta la traduzione in portoghese. Grazie a Tiago Carmo!
+- Alcune modifiche e correzioni

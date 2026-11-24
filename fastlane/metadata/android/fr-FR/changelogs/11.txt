@@ -1,0 +1,6 @@
+V 2.3
+- Autorise la réorganisation des modules.
+- Le module 'Nettoyer l'url' peut être configuré pour s'appliquer automatiquement.
+- Le module de suppression des requêtes permet la suppression des requêtes individuellement.
+- Ajout de la traduction en Portugais Européen. Merci à Tiago Carmo!
+- Quelques ajustements et corrections.

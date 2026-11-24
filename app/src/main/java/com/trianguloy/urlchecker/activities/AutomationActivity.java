@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
+import android.widget.TextView;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.modules.AutomationRules;
@@ -29,12 +30,18 @@ public class AutomationActivity extends Activity {
         setTitle(R.string.a_automations);
         AndroidUtils.configureUp(this);
 
+        // init rules
         rules = new AutomationRules(this);
-
         rules.automationsEnabledPref.attachToSwitch(findViewById(R.id.auto_enabled));
         rules.automationsShowErrorToast.attachToSwitch(findViewById(R.id.auto_error_toast));
 
-        // smaller easter egg
+        // set link
+        ((TextView) findViewById(R.id.user_content)).setText(getString(
+                R.string.auto_userContent,
+                "https://github.com/TrianguloY/URLCheck/wiki/Automations"
+        ));
+
+        // small easter egg
         findViewById(R.id.icon).setOnClickListener(icon -> {
             var anim = ValueAnimator.ofFloat(0, 360);
             anim.addUpdateListener(valueAnimator -> icon.setRotation((float) valueAnimator.getAnimatedValue()));

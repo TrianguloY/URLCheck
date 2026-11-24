@@ -15,8 +15,10 @@ import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.ModuleManager;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
@@ -34,7 +36,7 @@ public class ModulesActivity extends Activity {
 
     private LinearLayout list;
     private final Map<AModuleConfig, Switch> switches = new HashMap<>();
-    private GenericPref.LstStr order;
+    private ListStringPref order;
 
     // ------------------- listeners -------------------
 
@@ -86,6 +88,11 @@ public class ModulesActivity extends Activity {
                 toggleAllDecorations();
                 yield true;
             }
+            case R.id.menu_pins -> {
+                // toggle pins entry
+                toggleAllPins();
+                yield true;
+            }
 
             default -> super.onOptionsItemSelected(item);
         };
@@ -106,7 +113,7 @@ public class ModulesActivity extends Activity {
         // configure enable toggle
         Switch toggleEnable = parent.findViewById(R.id.enable);
         AndroidUtils.longTapForDescription(toggleEnable);
-        final GenericPref.Bool enabled_pref = ModuleManager.getEnabledPrefOfModule(module, this);
+        final BoolPref enabled_pref = ModuleManager.getEnabledPrefOfModule(module, this);
         toggleEnable.setChecked(enabled_pref.get());
         toggleEnable.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -145,6 +152,16 @@ public class ModulesActivity extends Activity {
                 v -> v.setImageResource(decorationsPref.get() ? R.drawable.t : R.drawable.t_slash)
         );
         AndroidUtils.longTapForDescription(toggleDecorations);
+
+        // configure pinned toggle
+        var pinnedPref = ModuleManager.getPinnedPrefOfModule(module, this);
+        var togglePinned = parent.<ImageView>findViewById(R.id.pinned);
+        AndroidUtils.toggleableListener(
+                togglePinned,
+                v -> pinnedPref.toggle(),
+                v -> v.setImageResource(pinnedPref.get() ? R.drawable.pin : R.drawable.pin_slash)
+        );
+        AndroidUtils.longTapForDescription(togglePinned);
 
         // configuration of the module
         var child = Inflater.inflate(config.getLayoutId(), parent.findViewById(R.id.box));
@@ -229,8 +246,40 @@ public class ModulesActivity extends Activity {
 
     /** Clicks all the decorations switches (effectively toggling them) */
     private void toggleAllDecorations() {
-        for (int i = 0; i < list.getChildCount(); i++) {
-            list.getChildAt(i).findViewById(R.id.decorations).performClick();
+        toggleAll(R.id.decorations, module -> ModuleManager.getDecorationsPrefOfModule(module, this));
+    }
+
+    /** Clicks all the pin switches (effectively toggling them) */
+    private void toggleAllPins() {
+        toggleAll(R.id.pinned, module -> ModuleManager.getPinnedPrefOfModule(module, this));
+    }
+
+    /**
+     * Sets every toggle with [viewId] to the same value instead of inverting each one
+     * separately: if any is still off they all turn on, otherwise they all turn off.
+     * That way pressing it twice is a no-op, which flipping each one is not.
+     */
+    private void toggleAll(int viewId, PrefGetter pref) {
+        var modules = ModuleManager.getModules(true, this);
+        var anyDisabled = false;
+        for (var module : modules) {
+            if (!pref.get(module).get()) {
+                anyDisabled = true;
+                break;
+            }
         }
+
+        for (var i = 0; i < list.getChildCount(); i++) {
+            var child = list.getChildAt(i);
+            for (var module : modules) {
+                if (!module.getId().equals(child.getTag())) continue;
+                if (pref.get(module).get() != anyDisabled) child.findViewById(viewId).performClick();
+            }
+        }
+    }
+
+    /** java.util.function.Function requires api 24, this doesn't */
+    private interface PrefGetter {
+        BoolPref get(AModuleData module);
     }
 }

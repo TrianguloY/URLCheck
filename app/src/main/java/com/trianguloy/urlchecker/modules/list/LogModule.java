@@ -2,6 +2,7 @@ package com.trianguloy.urlchecker.modules.list;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,7 +17,8 @@ import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.IntPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
 import java.text.DateFormat;
@@ -27,12 +29,12 @@ public class LogModule extends AModuleData {
 
     public static final String PREF = "log_data";
 
-    public static GenericPref.Str LOG_DATA(Context cntx) {
-        return new GenericPref.Str(PREF, "", cntx);
+    public static StringPref LOG_DATA(Context cntx) {
+        return new StringPref(PREF, "", cntx);
     }
 
-    public static GenericPref.Int LOG_LIMIT(Context cntx) {
-        return new GenericPref.Int("log_limit", 0, cntx); // 0 means unlimited
+    public static IntPref LOG_LIMIT(Context cntx) {
+        return new IntPref("log_limit", 0, cntx); // 0 means unlimited
     }
 
     @Override
@@ -58,8 +60,9 @@ public class LogModule extends AModuleData {
 
 class LogDialog extends AModuleDialog {
 
-    private final GenericPref.Str log;
-    private final GenericPref.Int limit;
+    private final StringPref log;
+    private final IntPref limit;
+    private boolean dateLogged = false;
 
     public LogDialog(MainDialog dialog) {
         super(dialog);
@@ -74,14 +77,32 @@ class LogDialog extends AModuleDialog {
 
     @Override
     public void onInitialize(View views) {
-        // new instance, log date
-        addLine("--- " + DateFormat.getDateTimeInstance().format(new Date()) + " ---");
+        // the date of a new instance is logged with its first url, see onPrepareUrl
     }
 
     @Override
     public void onPrepareUrl(UrlData urlData) {
+        // a restored url was logged before the dialog was recreated
+        if (getActivity().isRestoring()) return;
+
+        // new instance, log date
+        if (!dateLogged) {
+            addLine("--- " + DateFormat.getDateTimeInstance().format(new Date()) + " ---");
+            dateLogged = true;
+        }
+
         // new url, log it
         addLine("> " + urlData.url);
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putBoolean("dateLogged", dateLogged);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        dateLogged = state.getBoolean("dateLogged");
     }
 
     private void addLine(String line) {
@@ -95,7 +116,7 @@ class LogDialog extends AModuleDialog {
 
 class LogConfig extends AModuleConfig {
 
-    private final GenericPref.Str log;
+    private final StringPref log;
 
     public LogConfig(ModulesActivity activity) {
         super(activity);

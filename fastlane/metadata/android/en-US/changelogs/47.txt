@@ -1,0 +1,5 @@
+V 3.5
+- Improve: Allow token on Unshorten module
+- Improve: Json editor (monospace and font size)
+- Improve: Default patterns (Rickroll, twitter, eddrit, farside)
+- Internal: Translations fixes and updates

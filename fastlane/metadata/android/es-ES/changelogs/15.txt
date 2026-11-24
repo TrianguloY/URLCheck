@@ -1,0 +1,8 @@
+V 2.6
+- Colores!
+- Mejorado el módulo de eliminador de parámetros
+- Mejorado el módulo de comprobador de patrones
+- Nuevo módulo: Log
+- Nueva traducción al Turco. ¡Gracias a Metezd!
+- Nueva traducción al Hebreo. ¡Gracias a Nhman Mazuz!
+- Cambios y mejoras menores

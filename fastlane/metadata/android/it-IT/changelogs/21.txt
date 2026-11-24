@@ -1,0 +1,3 @@
+V 2.9.1
+- Nuova traduzione in italiano. Grazie dperruso!
+- Corretti alcuni errori poco frequenti nell'apertura di link

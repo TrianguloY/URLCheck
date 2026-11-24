@@ -53,12 +53,21 @@ Traducciones: %3$s."</string>
     <string name="txt_theme">Tema:</string>
     <string name="spin_darkTheme">Oscuro</string>
     <string name="spin_lightTheme">Claro</string>
-    <string name="txt_width">Ancho del cuadro de diálogo:\n¡Cuidado! Valores pequeños podrían ocultar elementos de la pantalla.</string>
+    <string name="txt_width">Ancho del cuadro de diálogo (0 para automático):\n¡Cuidado! Valores pequeños podrían ocultar elementos de la pantalla.</string>
     <string name="spin_fullWidth">Completo</string>
     <string name="spin_dynamicWidth">Dinámico</string>
     <string name="txt_locale">Idioma:</string>
     <string name="txt_animation">Activar animaciones</string>
-    <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre al mantener pulsado texto en un cuadro de entrada)</string>
+    <string name="lbl_processUrl">Abrir en URLCheck</string>
+    <string name="txt_processUrl">Añadir opción \'Abrir en URLCheck\' al seleccionar texto.</string>
+    <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre mediante \'Abrir en URLCheck\' o similar)</string>
+    <string name="txt_verticalPos">Posición vertical</string>
+    <string name="spin_top">Arriba</string>
+    <string name="spin_bottom">Abajo</string>
+    <string name="txt_horizontalPos">Posición horizontal</string>
+    <string name="spin_start">Izquierda</string>
+    <string name="spin_end">Derecha</string>
+    <string name="spin_center">Centro</string>
     <!--
         generic
     -->
@@ -115,6 +124,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="json_format_error">El contenido no es Json válido, no se puede validar.</string>
     <string name="json_discard">Cuidado, esto reemplazará el contenido del editor con el json guardado. Todos los cambios realizados se perderán. Quieres continuar?</string>
     <string name="json_reset">Cuidado, esto reemplazará el contenido del editor con el json por defecto. Todos los cambios realizados se perderán, aunque el contenido guardado no se modificará a no ser que se guarde manualmente. Quieres continuar?</string>
+    <string name="json_bigger">Aumentar tamaño de letra</string>
+    <string name="json_smaller">Disminuir tammaño de letra</string>
     <!--
         shortcuts
     -->
@@ -124,6 +135,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     -->
     <string name="a_automations">Automatizaciones</string>
     <string name="auto_desc">Con automatizaciones, puedes realizar acciones basadas en estados. Puedes configurar las automatizaciones aquí, o deshabilitarlas completamente usando el boton de debajo.</string>
+    <string name="auto_userContent">Listado de otras automatizaciones útiles creadas por usuarios: %s</string>
     <string name="auto_enabled">Activar automatizaciones</string>
     <string name="auto_error_toast">Mostrar aviso si alguna automatización falla</string>
     <string name="auto_notFound">"No hay ninguna automatización disponible con clave '%s'. Asegúrate de que es válida y el módulo que la incluye está activo."</string>
@@ -133,7 +145,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="auto_open">"Abrirá el enlace. Si no se proporcionan 'args' esperados, se usará la primera aplicación disponible (equivalente a pulsar el boton 'abrir'). Si los 'args': 'package' y/o 'component' se proporcionan, se usarán esos en su lugar."</string>
     <string name="auto_share">"Compartirá el enlace. Equivalente a pulsar el botón de compartir."</string>
-    <string name="auto_copy">"Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de 'copiar'"</string>
+    <string name="auto_copy">Copiará el enlace en el portapapeles. Equivalente a pulsar el boton de \'copiar\'.</string>
     <string name="auto_incognito">"Activará el modo incógnito. Equivalente a pulsar el boton de 'incógnito' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_ctabs">"Activará el modo de custom tabs. Equivalente a pulsar el boton de 'custom tabs' cuando está desactivado (incluso si está oculto)."</string>
     <string name="auto_checkStatus">Ejecutará la comprobación del estado. Equivalente a pulsar el botón de \'comprobar\'.</string>
@@ -224,6 +236,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mInput_name">Texto de entrada</string>
     <string name="mInput_desc">Muestra la URL actual. Pulsa para editarla.</string>
+    <string name="mInput_monospace">Usar un tipo de fuente monoespaciada para ayudar a diferenciar caracteres similares.</string>
     <!-- -->
     <string name="mVT_name">Escáneador de la URL</string>
     <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>
@@ -252,7 +265,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
 \nSi habilitas esta opción, se mostrarán algunos datos de depuración internos (como la uri de la intención original), útil para los desarrolladores.
 \n
 \nPuede mantener pulsado para seleccionar el texto.</string>
-    <string name="mD_ctabs">Mostrar mensajes de debug del servicio custom tabs</string>
+    <string name="mD_ctabs">Mostrar mensajes de debug del servicio custom tabs (incluso si el módulo está desactivado).</string>
+    <string name="mD_toastError">Intentar mostrar mensaje en errores internos (incluso si el módulo está desactivado).</string>
     <string name="mD_show">Cargar datos de depuración</string>
     <!-- -->
     <string name="mHist_name">Historial</string>
@@ -341,7 +355,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mUnshort_name">Desacortador</string>
     <string name="mUnshort_unshort">Desacortar</string>
-    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a %s, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
+    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a %s, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API gratuita tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes, si hace falta.\nSi proporcionas un token válido el módulo usará el endpoint autenticado, que puede ser más estable y tener diferentes limitaciones al gratuito.</string>
+    <string name="mUnshort_token">Token</string>
     <string name="mUnshort_tm">API gratuita de Unshorten.me</string>
     <string name="mUnshort_checking">Comprobando…</string>
     <string name="mUnshort_error">Error de servidor: %s</string>
@@ -387,15 +402,15 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mChg_view">Ver los cambios</string>
     <string name="btn_backupRestore">Copia de seguridad y restauración</string>
     <string name="bck_mn_advanced">Mostrar opciones avanzadas</string>
-    <string name="btn_backup">Hacer copia</string>
-    <string name="btn_restore">Restaurar</string>
-    <string name="btn_delete">Borrar</string>
-    <string name="bkp_description">Elige los elementos para hacer copia/restaurar.\nAl restaurar, si la copia se creó sin ellos, los existentes se mantendrán.</string>
-    <string name="bkp_data">Ajustes: Ajustes generales de la aplicación. Por ejemplo módulos habilitados, configuración json, etc. No incluye secretos ni caché.</string>
-    <string name="bkp_data_prefs">Preferencias: Ajustes guardados como preferencias (preferences).</string>
-    <string name="bkp_data_files">Archivos: Ajustes guardados como ficheros.</string>
-    <string name="bkp_secrets">Secretos: Ajustes considerados \'secretos\', como la clave de VirusTotal o el registro (log).</string>
-    <string name="bjp_cache">Caché: Datos que pueden ser fácilmente descargados/generados, como la base de datos del etiquetador de hosts. Activar esta opción puede aumentar el tamaño de la copia notablemente.</string>
+    <string name="bck_backup">Hacer copia</string>
+    <string name="bck_restore">Restaurar</string>
+    <string name="bck_delete">Borrar</string>
+    <string name="bck_description">Elige los elementos para hacer copia/restaurar.\nAl restaurar, si la copia se creó sin ellos, los existentes se mantendrán.</string>
+    <string name="bck_data">Ajustes: Ajustes generales de la aplicación. Por ejemplo módulos habilitados, configuración json, etc. No incluye secretos ni caché.</string>
+    <string name="bck_data_prefs">Preferencias: Ajustes guardados como preferencias (preferences).</string>
+    <string name="bck_data_files">Archivos: Ajustes guardados como ficheros.</string>
+    <string name="bck_secrets">Secretos: Ajustes considerados \'secretos\', como la clave de VirusTotal o el registro (log).</string>
+    <string name="bck_cache">Caché: Datos que pueden ser fácilmente descargados/generados, como la base de datos del etiquetador de hosts. Activar esta opción puede aumentar el tamaño de la copia notablemente.</string>
     <string name="bck_restoreDelete">Borrar elementos antes de restaurar. Ten en cuenta que las preferencias y algunos ficheros con valores por defecto pueden no existir, con lo que deshabilitando esta opción combinarán los elementos existentes con los de la copia de formas inesperadas. Deshabilitalo sólo si sabes lo que estás haciendo.</string>
     <string name="bck_ignoreNewer">Permitir copias creadas en versiones más recientes de la aplicación.</string>
     <string name="bck_newer">Cancelado. La copia fue creada con una versión más reciente de la aplicación.</string>

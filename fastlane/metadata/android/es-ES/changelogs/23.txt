@@ -1,0 +1,10 @@
+V 2.11
+- Nuevo módulo: Editor de flags
+- Nuevo módulo: Partes de la URI (substituto de Eliminador de parámetros)
+- Nueva configuración: excludeRegex en módulo Verificador de patrones
+- Cambio: los módulos sin uso se ocultan
+- Arreglo: aplicaciones no se mostraban en recientes
+- Arreglo: atajos estándar no estaban disponibles
+- Arreglo: teclado ocultaba la ventana
+- Arreglo: Código de estado no funcionaba correctamente
+- Traducciones: Nuevas y actualizaciones de symbuzzer y otros en Weblate

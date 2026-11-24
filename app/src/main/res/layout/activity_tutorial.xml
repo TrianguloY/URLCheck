@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".activities.TutorialActivity">
 
     <ViewFlipper
@@ -28,6 +29,7 @@
                 android:padding="@dimen/padding">
 
                 <ImageView
+                    android:importantForAccessibility="no"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:scaleType="fitCenter"
@@ -81,6 +83,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:importantForAccessibility="no"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -95,6 +98,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:importantForAccessibility="no"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:src="@android:drawable/ic_menu_send" />
@@ -106,6 +110,7 @@
                             android:text="@string/mOpen_open" />
 
                         <ImageView
+                            android:importantForAccessibility="no"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="@dimen/smallPadding"
@@ -119,6 +124,7 @@
                     </LinearLayout>
 
                     <ImageView
+                        android:importantForAccessibility="no"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -134,6 +140,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:importantForAccessibility="no"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:src="@android:drawable/ic_menu_send" />
@@ -145,6 +152,7 @@
                             android:text="@string/mOpen_open" />
 
                         <ImageView
+                            android:importantForAccessibility="no"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="@dimen/smallPadding"
@@ -158,6 +166,7 @@
                     </LinearLayout>
 
                     <ImageView
+                        android:importantForAccessibility="no"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

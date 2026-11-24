@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.modules.list;
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -17,14 +18,20 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A module that checks the page status code by performing a GET request
@@ -32,8 +39,8 @@ import java.util.List;
  */
 public class StatusModule extends AModuleData {
 
-    public static GenericPref.Bool AUTOREDIR_PREF(Context cntx) {
-        return new GenericPref.Bool("statusCode_autoRedir", false, cntx);
+    public static BoolPref AUTOREDIR_PREF(Context cntx) {
+        return new BoolPref("statusCode_autoRedir", false, cntx);
     }
 
     @Override
@@ -94,7 +101,11 @@ class StatusDialog extends AModuleDialog {
 
     private Thread thread = null;
 
-    private GenericPref.Bool autoRedir;
+    private BoolPref autoRedir;
+
+    /** The result shown for the current url, kept when the dialog is recreated */
+    private String shownMessage = null;
+    private String shownRedirect = null;
 
     public StatusDialog(MainDialog dialog) {
         super(dialog);
@@ -141,6 +152,22 @@ class StatusDialog extends AModuleDialog {
         AndroidUtils.setHideableText(previous, urlData.getData(PREVIOUS));
         AndroidUtils.setHideableText(info, null);
         updateRedirect(null);
+        shownMessage = null;
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putString("message", shownMessage);
+        state.putString("redirect", shownRedirect);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var message = state.getString("message");
+        if (message == null) return;
+        shownMessage = message;
+        AndroidUtils.setHideableText(info, message);
+        updateRedirect(state.getString("redirect"));
     }
 
     /** Starts the checking process */
@@ -150,6 +177,7 @@ class StatusDialog extends AModuleDialog {
         check.setText(R.string.mStatus_recheck);
         AndroidUtils.setHideableText(info, getActivity().getString(R.string.mStatus_checking));
         updateRedirect(null);
+        shownMessage = null;
 
         // check in background
         thread = new Thread(() -> _check(disableUpdates));
@@ -174,6 +202,7 @@ class StatusDialog extends AModuleDialog {
             conn = (HttpURLConnection) new URL(url).openConnection();
             conn.setInstanceFollowRedirects(false);   // Make the logic below easier to detect redirections
             conn.setConnectTimeout(HttpUtils.CONNECT_TIMEOUT);
+            conn.setReadTimeout(HttpUtils.CONNECT_TIMEOUT);
             var responseCode = conn.getResponseCode();
             Log.d("RESPONSE_CODE", url + ": " + responseCode);
 
@@ -192,12 +221,32 @@ class StatusDialog extends AModuleDialog {
                 message = getActivity().getString(R.string.mStatus_unknownCode, responseCode);
             }
 
-            // redirection
+            // redirection - check standard 3xx redirects with Location header
             var location = conn.getHeaderField("Location");
-            if (location != null) {
+            if (location != null && !location.isEmpty()) {
                 // this should be removed, the uri needs to be kept encoded
-                // location = URLDecoder.decode(location, sUTF-8);
-                redirectionUrl = new URL(new URL(url), location).toExternalForm(); // Deal with relative URLs
+                // location = URLDecoder.decode(location, "UTF-8");
+                redirectionUrl = resolveUrl(url, location); // Deal with relative URLs
+            } else if (responseCode == 200) {
+                // Check for redirects in HTML content (meta refresh or JavaScript)
+                try {
+                    String bodyString = readResponseBody(conn);
+                    if (!bodyString.isEmpty()) {
+                        // A. Check for HTML meta refresh tag
+                        String metaUrl = extractMetaRefreshUrl(bodyString);
+                        if (metaUrl != null && !metaUrl.isEmpty()) {
+                            redirectionUrl = resolveHtmlRedirectUrl(url, metaUrl);
+                        } else {
+                            // B. Check for JavaScript redirect
+                            String jsUrl = extractJavaScriptUrl(bodyString);
+                            if (jsUrl != null && !jsUrl.isEmpty()) {
+                                redirectionUrl = resolveHtmlRedirectUrl(url, jsUrl);
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    Log.d("STATUS", "Error reading response body: " + e.getMessage());
+                }
             }
         } catch (IOException e) {
             // io error
@@ -223,6 +272,7 @@ class StatusDialog extends AModuleDialog {
         var finalMessage = message;
         var finalRedirectionUrl = redirectionUrl;
         getActivity().runOnUiThread(() -> {
+            shownMessage = finalMessage;
             info.setText(finalMessage);
             check.setEnabled(true);
 
@@ -237,8 +287,128 @@ class StatusDialog extends AModuleDialog {
         });
     }
 
+    private static final int MAX_BODY_CHARS = 64 * 1024;
+    private static final Pattern META_REFRESH_PATTERN = Pattern.compile(
+            "<meta[^>]*http-equiv\\s*=\\s*[\"']?refresh[\"']?[^>]*url\\s*=\\s*[\"']?([^\"'>\\s]+)[\"']?",
+            Pattern.CASE_INSENSITIVE
+    );
+    private static final Pattern SCRIPT_PATTERN = Pattern.compile(
+            "<script[^>]*>(.*?)</script>",
+            Pattern.CASE_INSENSITIVE | Pattern.DOTALL
+    );
+    private static final Pattern WINDOW_LOC_PATTERN = Pattern.compile(
+            "window\\.location(?:\\.href)?\\s*=\\s*(?:decodeURIComponent\\()?([a-zA-Z0-9_\"'/.:?=~%-]+)\\)?\\s*;?",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    /** Reads up to MAX_BODY_CHARS of an HTML response body from the HTTP connection */
+    private String readResponseBody(HttpURLConnection conn) throws IOException {
+        var contentType = conn.getContentType();
+        if (contentType != null) {
+            var lower = contentType.toLowerCase(Locale.ROOT);
+            if (!lower.contains("text/html") && !lower.contains("application/xhtml")) {
+                return "";
+            }
+        }
+        StringBuilder bodyBuilder = new StringBuilder();
+        try (InputStreamReader reader = new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8)) {
+            char[] buffer = new char[4096];
+            int totalRead = 0;
+            while (totalRead < MAX_BODY_CHARS) {
+                int toRead = Math.min(buffer.length, MAX_BODY_CHARS - totalRead);
+                int n = reader.read(buffer, 0, toRead);
+                if (n == -1) break;
+                bodyBuilder.append(buffer, 0, n);
+                totalRead += n;
+            }
+        }
+        return bodyBuilder.toString();
+    }
+
+    /** Extracts URL from HTML meta refresh tag */
+    private String extractMetaRefreshUrl(String html) {
+        Matcher matcher = META_REFRESH_PATTERN.matcher(html);
+        return matcher.find() ? matcher.group(1) : null;
+    }
+
+    /** Extracts URL from JavaScript window.location redirect */
+    private String extractJavaScriptUrl(String html) {
+        // 1. Extract script tags first for safer parsing
+        Matcher scriptMatcher = SCRIPT_PATTERN.matcher(html);
+
+        while (scriptMatcher.find()) {
+            String scriptContent = scriptMatcher.group(1).trim();
+
+            // 2. Match window.location expressions
+            Matcher locMatcher = WINDOW_LOC_PATTERN.matcher(scriptContent);
+
+            if (locMatcher.find()) {
+                String rightHandSide = locMatcher.group(1).trim();
+
+                // Case A: String literal with quotes (e.g., "https://...")
+                if ((rightHandSide.startsWith("\"") && rightHandSide.endsWith("\"")) ||
+                    (rightHandSide.startsWith("'") && rightHandSide.endsWith("'"))) {
+                    return rightHandSide.substring(1, rightHandSide.length() - 1);
+                }
+
+                // Case B: Variable reference (e.g., URI) - find its definition
+                String varName = rightHandSide;
+                Pattern varPattern = Pattern.compile(
+                        "(?:var|let|const)?\\s*" + Pattern.quote(varName) + "\\s*=\\s*[\"']([^\"']+)[\"']",
+                        Pattern.CASE_INSENSITIVE
+                );
+                Matcher varMatcher = varPattern.matcher(scriptContent);
+                if (varMatcher.find()) {
+                    String encodedUrl = varMatcher.group(1);
+                    try {
+                        // Decode URL-encoded strings
+                        return URLDecoder.decode(encodedUrl, "UTF-8");
+                    } catch (Exception e) {
+                        Log.d("STATUS", "Error decoding URL: " + e.getMessage());
+                        return encodedUrl;
+                    }
+                }
+
+                // Case C: Fallback - check if it looks like a URL
+                if (rightHandSide.startsWith("http://") || rightHandSide.startsWith("https://")) {
+                    return rightHandSide;
+                }
+            }
+        }
+        return null;
+    }
+
+    /** Resolves relative URLs to absolute URLs */
+    private String resolveUrl(String baseUrl, String relativeUrl) {
+        try {
+            URL base = new URL(baseUrl);
+            URL resolved = new URL(base, relativeUrl);
+            return resolved.toExternalForm();
+        } catch (Exception e) {
+            Log.d("STATUS", "Error resolving URL: " + e.getMessage());
+            return relativeUrl;
+        }
+    }
+
+    /** Resolves an HTML/JS redirect URL and restricts it to http/https schemes */
+    private String resolveHtmlRedirectUrl(String baseUrl, String relativeUrl) {
+        try {
+            URL base = new URL(baseUrl);
+            URL resolved = new URL(base, relativeUrl);
+            var protocol = resolved.getProtocol().toLowerCase(Locale.ROOT);
+            if (!"http".equals(protocol) && !"https".equals(protocol)) {
+                return null;
+            }
+            return resolved.toExternalForm();
+        } catch (Exception e) {
+            Log.d("STATUS", "Error resolving HTML redirect URL: " + e.getMessage());
+            return null;
+        }
+    }
+
     /** Updates the redirect textview */
     private void updateRedirect(String redirectionUrl) {
+        shownRedirect = redirectionUrl;
         if (redirectionUrl == null) {
             AndroidUtils.setHideableText(redirect, null);
             return;

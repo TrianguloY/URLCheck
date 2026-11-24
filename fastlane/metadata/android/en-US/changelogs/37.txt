@@ -1,0 +1,5 @@
+V 3.0
+- New: Automation (vote winner)
+- Change: Text input edit mode is now a popup
+- Fix: Uri parser should no longer decode twice
+- Improve: Updated main screen icons

@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:clipToPadding="false"
+    android:fitsSystemWindows="true"
     tools:context=".activities.AboutActivity">
 
     <LinearLayout
@@ -15,6 +16,7 @@
 
         <ImageButton
             android:id="@+id/trianguloy"
+            android:contentDescription="@string/trianguloy"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@android:color/transparent"

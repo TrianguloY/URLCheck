@@ -18,8 +18,10 @@ import com.trianguloy.urlchecker.modules.list.TextInputModule;
 import com.trianguloy.urlchecker.modules.list.UnshortenModule;
 import com.trianguloy.urlchecker.modules.list.UriPartsModule;
 import com.trianguloy.urlchecker.modules.list.VirusTotalModule;
+import com.trianguloy.urlchecker.modules.list.RedirectModule;
 import com.trianguloy.urlchecker.modules.list.WebhookModule;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -47,7 +49,8 @@ public class ModuleManager {
         modules.add(new PatternModule());
         modules.add(new HostsModule());
         modules.add(new WebhookModule());
-        // new modules should preferably be added directly above this line
+        // new modules enabled by default should preferably be added directly above this line
+        modules.add(new RedirectModule());
         modules.add(new FlagsModule());
         modules.add(new DebugModule());
 
@@ -61,14 +64,14 @@ public class ModuleManager {
     /* ------------------- order ------------------- */
 
     /** Order of the modules */
-    public static GenericPref.LstStr ORDER_PREF(Context cntx) {
+    public static ListStringPref ORDER_PREF(Context cntx) {
         // default is just the defined order (but in reverse)
         List<String> ids = new ArrayList<>(modules.size());
         for (AModuleData module : modules) {
             ids.add(0, module.getId());
         }
         // return
-        return new GenericPref.LstStr("order", ";", ids, cntx);
+        return new ListStringPref("order", ";", ids, cntx);
     }
 
 
@@ -77,8 +80,8 @@ public class ModuleManager {
     private static final String ENABLED_PREF_SUFFIX = "_en";
 
     /** Returns a preference to indicate if a specific module is enabled or not */
-    public static GenericPref.Bool getEnabledPrefOfModule(AModuleData module, Context cntx) {
-        return new GenericPref.Bool(module.getId() + ENABLED_PREF_SUFFIX, module.isEnabledByDefault(), cntx);
+    public static BoolPref getEnabledPrefOfModule(AModuleData module, Context cntx) {
+        return new BoolPref(module.getId() + ENABLED_PREF_SUFFIX, module.isEnabledByDefault(), cntx);
     }
 
 
@@ -87,8 +90,18 @@ public class ModuleManager {
     private static final String DECORATIONS_PREF_SUFFIX = "_decorate";
 
     /** Returns a preference to indicate if decorations are shown or not for a specific module */
-    public static GenericPref.Bool getDecorationsPrefOfModule(AModuleData module, Context cntx) {
-        return new GenericPref.Bool(module.getId() + DECORATIONS_PREF_SUFFIX, false, cntx);
+    public static BoolPref getDecorationsPrefOfModule(AModuleData module, Context cntx) {
+        return new BoolPref(module.getId() + DECORATIONS_PREF_SUFFIX, false, cntx);
+    }
+
+
+    // ------------------- pinned -------------------
+
+    private static final String PINNED_PREF_SUFFIX = "_pinned";
+
+    /** Returns a preference to indicate if a specific module stays visible when unused */
+    public static BoolPref getPinnedPrefOfModule(AModuleData module, Context cntx) {
+        return new BoolPref(module.getId() + PINNED_PREF_SUFFIX, false, cntx);
     }
 
     /* ------------------- getter ------------------- */

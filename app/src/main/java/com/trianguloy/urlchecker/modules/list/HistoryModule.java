@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
 import android.app.AlertDialog;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -97,6 +98,9 @@ class HistoryDialog extends AModuleDialog {
 
     @Override
     public void onPrepareUrl(UrlData urlData) {
+        // a restored url is already the current entry of the restored history
+        if (getActivity().isRestoring()) return;
+
         // clear newer entries
         if (index + 1 < history.size())
             history.subList(index + 1, history.size()).clear();
@@ -112,13 +116,31 @@ class HistoryDialog extends AModuleDialog {
         updateUI();
     }
 
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putStringArrayList("history", new ArrayList<>(history));
+        state.putInt("index", index);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var saved = state.getStringArrayList("history");
+        if (saved == null) return;
+        history.clear();
+        history.addAll(saved);
+        index = state.getInt("index", history.size() - 1);
+        updateUI();
+    }
+
     /* ------------------- internal ------------------- */
 
     /** updated the UI with the internal data (buttons visibility) */
     private void updateUI() {
         AndroidUtils.setEnabled(first, index > 0); // at least something to go back
         AndroidUtils.setEnabled(back, index > 0); // at least something to go back
-        list.setEnabled(!history.isEmpty()); // at least something
+        // same rule as the arrows: with just the current url there is nothing to list,
+        // and AndroidUtils.setEnabled also dims it, so it doesn't look usable when it isn't
+        AndroidUtils.setEnabled(list, history.size() > 1);
         AndroidUtils.setEnabled(forward, index < history.size() - 1); // at least something to go forward
         AndroidUtils.setEnabled(last, index < history.size() - 1); // at least something to go forward
 

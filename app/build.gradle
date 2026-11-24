@@ -1,24 +1,25 @@
+import groovy.xml.XmlParser
+
 plugins {
     id 'com.android.application'
-    id 'com.github.triplet.play' version '3.10.1'
 }
 
 android {
     namespace 'com.trianguloy.urlchecker'
     defaultConfig {
         applicationId "com.trianguloy.urlchecker"
-        compileSdk 34
+        compileSdkVersion 36
         minSdkVersion 19
-        targetSdkVersion 34
-        versionCode 45
-        versionName "3.4"
+        targetSdkVersion 36
+        versionCode 48
+        versionName "4.0.0"
     }
 
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         alpha {
             initWith(buildTypes.debug)
@@ -62,11 +63,6 @@ android {
         // Disables dependency metadata when building Android App Bundles.
         includeInBundle = false
     }
-}
-
-play {
-    track.set("beta")
-    releaseName.set(android.defaultConfig.versionName + " (" + android.defaultConfig.versionCode + ")")
 }
 
 dependencies {
@@ -122,7 +118,7 @@ android {
         // generate string resource with all translators
         def translators = translations.stream() // for all translations
                 .map { file("$folder.path/$it/strings.xml") } // get the xml file
-                .map { new XmlParser().parse(it).find { it.@name == "translators" }?.text() ?: "" } // extract translators
+                .map { new XmlParser().parse(it).find { it.attribute("name") == "translators" }?.text() ?: "" } // extract translators
                 .filter { it != "" } // filter empty
                 .flatMap { it.split(';').stream() } // split multiple
                 .map { it.strip() } // trim

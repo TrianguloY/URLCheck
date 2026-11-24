@@ -1,0 +1,8 @@
+V 2.9
+- Nuovo modulo: "Hosts Labeler"
+- Nascondi titoli dei moduli (può essere attivato/disattivato)
+- Nuova schermata impostazioni
+	- Imposta come browser predefinito
+	- Cambia tema
+	- Cambia lingua
+- Stili e codice ottimizzati e puliti

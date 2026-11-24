@@ -8,15 +8,18 @@ import android.util.Log;
 
 import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.StringPref;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 /** Utilities related to translations */
 public interface LocaleUtils {
+
+    String DEFAULT_LOCALE_TAG = "en";
 
     /** Returns a locale for the given tag (language[-country[-variant]]) */
     static Locale parseLocale(String locale) {
@@ -41,8 +44,8 @@ public interface LocaleUtils {
     }
 
     /** The locale pref */
-    static GenericPref.Str LOCALE_PREF(Context cntx) {
-        return new GenericPref.Str("locale", "", cntx);
+    static StringPref LOCALE_PREF(Context cntx) {
+        return new StringPref("locale", "", cntx);
     }
 
     /** Sets the locale to an activity */
@@ -78,14 +81,21 @@ public interface LocaleUtils {
     static List<AvailableLocale> getLocales(Context cntx) {
         // check each locale
         var available = new ArrayList<AvailableLocale>();
+
+        // add default
+        var defaultLocaleName = getStringForLocale(R.string.locale, parseLocale(DEFAULT_LOCALE_TAG), cntx);
+        available.add(new AvailableLocale(DEFAULT_LOCALE_TAG, defaultLocaleName));
+
         for (var tag : BuildConfig.LOCALES) {
+            if (Objects.equals(tag, DEFAULT_LOCALE_TAG)) continue;
+
             var locale = parseLocale(tag);
 
             // check if available on this device (with split apks the device may not have the translation downloaded)
             var localeName = getStringForLocale(R.string.locale, locale, cntx);
-            if (available.isEmpty() || !available.get(0).name.equals(localeName)) {
-                // either english (first one) or a translation exists
-                // note that translations may not exists because PlayStore only installs locales configured by the user
+            if (!Objects.equals(defaultLocaleName, localeName)) {
+                // a translation exists
+                // note that translations may not exist because PlayStore only installs locales configured by the user
                 available.add(new AvailableLocale(tag, localeName));
             } else {
                 if (BuildConfig.DEBUG) Log.d("LOCALE", "Locale " + tag + " is not present");

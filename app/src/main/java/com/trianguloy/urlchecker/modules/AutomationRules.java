@@ -7,7 +7,7 @@ import android.content.Context;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.url.UrlData;
-import com.trianguloy.urlchecker.utilities.generics.GenericPref;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.JsonCatalog;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
@@ -40,19 +40,19 @@ public class AutomationRules extends JsonCatalog {
     /* ------------------- static ------------------- */
 
     /** Preference: automations availability */
-    public static GenericPref.Bool AUTOMATIONS_ENABLED_PREF(Context cntx) {
-        return new GenericPref.Bool("auto_enabled", true, cntx);
+    public static BoolPref AUTOMATIONS_ENABLED_PREF(Context cntx) {
+        return new BoolPref("auto_enabled", true, cntx);
     }
 
     /** Preference: show error when automations fail */
-    public static GenericPref.Bool AUTOMATIONS_ERROR_TOAST_PREF(Context cntx) {
-        return new GenericPref.Bool("auto_error_toast", false, cntx);
+    public static BoolPref AUTOMATIONS_ERROR_TOAST_PREF(Context cntx) {
+        return new BoolPref("auto_error_toast", false, cntx);
     }
 
     /* ------------------- class ------------------- */
 
-    public final GenericPref.Bool automationsEnabledPref;
-    public final GenericPref.Bool automationsShowErrorToast;
+    public final BoolPref automationsEnabledPref;
+    public final BoolPref automationsShowErrorToast;
 
     public AutomationRules(Activity cntx) {
         super(cntx, "automations", cntx.getString(R.string.auto_editor)

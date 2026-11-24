@@ -1,0 +1,7 @@
+V 2.10
+- Nouvel écran didactique
+- Nouveau module: Déraccourcisseur
+- Nouvelles fonctionnalités et améliorations apportées au module de statut
+- Nouveau raccourci et tuile pour ouvrir les liens du presse-papiers
+- Nouvelle traduction en chinois. Un grand merci à Seviche CC !
+- Correctifs visuels

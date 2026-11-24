@@ -1,0 +1,4 @@
+V 2.14
+- New: Backup/restore screen
+- Removed support for Android 4.3 and below
+- Updated internal versions
