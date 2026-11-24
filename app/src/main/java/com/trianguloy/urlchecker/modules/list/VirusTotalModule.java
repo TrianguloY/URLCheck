@@ -5,6 +5,7 @@ import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getString
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
@@ -181,6 +182,20 @@ class VirusTotalDialog extends AModuleDialog {
         // TODO: cancel on onPrepare
         scanning = false;
         result = null;
+        updateUI();
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        // a scan still running is not continued
+        if (!scanning && result != null) state.putSerializable("result", result);
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        var saved = (VirusTotalUtility.InternalResponse) state.getSerializable("result");
+        if (saved == null) return;
+        result = saved;
         updateUI();
     }
 
