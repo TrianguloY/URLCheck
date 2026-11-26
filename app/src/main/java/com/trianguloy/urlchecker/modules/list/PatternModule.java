@@ -122,6 +122,7 @@ class PatternDialog extends AModuleDialog {
             try {
                 var data = patterns.optJSONObject(pattern);
                 var message = new Message(pattern);
+                if (data != null) message.button = data.optString("button", null);
 
                 // enabled?
                 if (data == null) continue;
@@ -207,8 +208,12 @@ class PatternDialog extends AModuleDialog {
         box.removeAllViews();
 
         // add applied + matching
+        var patterns = catalog.getCatalog();
         for (var entry : urlData.getDataByPrefix(APPLIED)) {
-            addMessage(true, new Message(entry));
+            var message = new Message(entry);
+            var data = patterns.optJSONObject(entry);
+            if (data != null) message.applied = data.optString("applied", null);
+            addMessage(true, message);
         }
         for (var message : messages) {
             addMessage(false, message);
@@ -230,17 +235,23 @@ class PatternDialog extends AModuleDialog {
 
         // text
         TextView text = row.findViewById(R.id.text);
-        text.setText(applied
-                ? getActivity().getString(R.string.mPttrn_fixed, message.pattern)
-                : message.pattern
+        text.setText(!applied ? message.pattern
+                : message.applied != null ? message.applied
+                : getActivity().getString(R.string.mPttrn_fixed, message.pattern)
         );
         AndroidUtils.setRoundedColor(message.matches ? R.color.warning : R.color.good, text);
 
-        // button
+        // button, only when there is something to replace
         Button fix = row.findViewById(R.id.button);
-        fix.setText(R.string.mPttrn_fix);
-        fix.setEnabled(message.newUrl != null);
-        if (message.newUrl != null) fix.setOnClickListener(v -> setUrl(new UrlData(message.newUrl).putData(APPLIED + message.pattern, message.pattern)));
+        if (message.newUrl == null) {
+            // keep the row as high as the ones with a button
+            fix.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+            row.setMinimumHeight(fix.getMeasuredHeight());
+            fix.setVisibility(View.GONE);
+            return;
+        }
+        fix.setText(message.button != null ? message.button : getActivity().getString(R.string.mPttrn_fix));
+        fix.setOnClickListener(v -> setUrl(new UrlData(message.newUrl).putData(APPLIED + message.pattern, message.pattern)));
     }
 
     /** DataClass for pattern messages */
@@ -248,6 +259,8 @@ class PatternDialog extends AModuleDialog {
         final String pattern;
         public boolean matches = false;
         String newUrl = null;
+        String button = null;
+        String applied = null;
 
         public Message(String pattern) {
             this.pattern = pattern;
