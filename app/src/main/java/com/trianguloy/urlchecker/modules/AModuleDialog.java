@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
+import android.os.Bundle;
+
 import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.fragments.Fragment;
 import com.trianguloy.urlchecker.url.UrlData;
@@ -40,6 +42,17 @@ public abstract class AModuleDialog implements Fragment {
 
     /** Last call for any update a module may need (like the drawer module needing to know how many modules are visible). */
     public void onFinishUrl() {
+    }
+
+    /**
+     * Save what the user changed in this module. The dialog is recreated on configuration changes
+     * (theme, language, font size, rotation) and gives it back to {@link #onRestoreState}.
+     */
+    public void onSaveState(Bundle state) {
+    }
+
+    /** Restore what {@link #onSaveState} saved. Called after the url was shown again, which resets what a module displays. */
+    public void onRestoreState(Bundle state) {
     }
 
     // ------------------- utilities -------------------

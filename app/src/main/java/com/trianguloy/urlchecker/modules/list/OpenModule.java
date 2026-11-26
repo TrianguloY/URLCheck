@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -137,6 +138,18 @@ class OpenDialog extends AModuleDialog {
     @Override
     public int getLayoutId() {
         return R.layout.dialog_open;
+    }
+
+    @Override
+    public void onSaveState(Bundle state) {
+        state.putBoolean("ctabs", cTabs.getState());
+        state.putBoolean("incognito", incognito.getState());
+    }
+
+    @Override
+    public void onRestoreState(Bundle state) {
+        cTabs.setState(state.getBoolean("ctabs"));
+        incognito.setState(state.getBoolean("incognito"));
     }
 
     @Override

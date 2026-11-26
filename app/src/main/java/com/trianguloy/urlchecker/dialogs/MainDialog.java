@@ -73,6 +73,14 @@ public class MainDialog extends Activity {
     /** Currently in the process of updating. */
     private int updating = 0;
 
+    /** Set while the url is shown again after the dialog was recreated, see {@link #onSaveInstanceState} */
+    private boolean restoring = false;
+    private static final String STATE_URL = "url";
+    private static final String STATE_DISABLE_UPDATES = "disableUpdates";
+    private static final String STATE_DATA_KEYS = "data.keys";
+    private static final String STATE_DATA_VALUES = "data.values";
+    private static final String STATE_MODULE = "module.";
+
     // ------------------- module functions -------------------
 
     /** Something wants to set a new url. */
@@ -153,7 +161,8 @@ public class MainDialog extends Activity {
 
             // fifth run automations
             // bug: you can't run automations that modify the url, maybe it's time to implement a proper url queue
-            if (automationRules.automationsEnabledPref.get()) {
+            // (not for a restored url, they already ran for it before the dialog was recreated)
+            if (automationRules.automationsEnabledPref.get() && !restoring) {
                 for (var matchedAutomation : automationRules.check(urlData, this)) {
                     for (var automationKey : matchedAutomation.actions()) {
                         var action = automations.get(automationKey);
@@ -192,6 +201,11 @@ public class MainDialog extends Activity {
     /** Returns the current url data. Please don't modify it */
     public UrlData getUrlData() {
         return urlData;
+    }
+
+    /** True while the url is shown again after the dialog was recreated (theme, language, rotation...) */
+    public boolean isRestoring() {
+        return restoring;
     }
 
     /** Changes a module visibility */
@@ -240,6 +254,35 @@ public class MainDialog extends Activity {
         // load helpers
         automationRules = new AutomationRules(this);
 
+        // recreated after a configuration change (theme, language, font size, rotation): continue
+        // with the url and module state the user had instead of starting over from the intent
+        var restoredUrl = savedInstanceState == null ? null : savedInstanceState.getString(STATE_URL);
+        if (restoredUrl != null) {
+            initializeModules();
+            var restored = new UrlData(restoredUrl);
+            if (savedInstanceState.getBoolean(STATE_DISABLE_UPDATES)) restored.disableUpdates();
+            var keys = savedInstanceState.getStringArrayList(STATE_DATA_KEYS);
+            var values = savedInstanceState.getStringArrayList(STATE_DATA_VALUES);
+            for (int i = 0; keys != null && values != null && i < keys.size(); i++) {
+                restored.putData(keys.get(i), values.get(i));
+            }
+
+            restoring = true;
+            onNewUrl(restored);
+            // after showing the url, which resets what modules display
+            for (var module : modules.keySet()) {
+                var state = savedInstanceState.getBundle(STATE_MODULE + module.getClass().getName());
+                if (state == null) continue;
+                try {
+                    module.onRestoreState(state);
+                } catch (Exception e) {
+                    AndroidUtils.assertError("Exception in onRestoreState for module " + module.getClass().getName(), e);
+                }
+            }
+            restoring = false;
+            return;
+        }
+
         // load url (or urls)
         var links = getOpenUrl();
         switch (links.size()) {
@@ -272,6 +315,26 @@ public class MainDialog extends Activity {
                         })
                         .setOnCancelListener(o -> finish())
                         .show();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (urlData.url.isEmpty()) return; // still choosing between several links
+        outState.putString(STATE_URL, urlData.url);
+        outState.putBoolean(STATE_DISABLE_UPDATES, urlData.disableUpdates);
+        var data = urlData.getAllData();
+        outState.putStringArrayList(STATE_DATA_KEYS, new ArrayList<>(data.keySet()));
+        outState.putStringArrayList(STATE_DATA_VALUES, new ArrayList<>(data.values()));
+        for (var module : modules.keySet()) {
+            var state = new Bundle();
+            try {
+                module.onSaveState(state);
+            } catch (Exception e) {
+                AndroidUtils.assertError("Exception in onSaveState for module " + module.getClass().getName(), e);
+            }
+            if (!state.isEmpty()) outState.putBundle(STATE_MODULE + module.getClass().getName(), state);
         }
     }
 
