@@ -31,7 +31,6 @@ import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -221,34 +220,20 @@ public interface AndroidUtils {
      * Matches urls with an RFC 3986 IP-literal host, like "http://[::1]/".
      * [Patterns.WEB_URL] can't match them, its host part only allows registered names and IPv4.
      */
-    Pattern IP_LITERAL_URL = Pattern.compile(
-            "(?i:[a-z][a-z0-9+.\\-]*)://" // scheme
+    String IP_LITERAL_URL_RAW_PATTERN =
+            "[a-zA-Z][a-zA-Z0-9+.\\-]*://" // scheme
                     + "(?:\\S*@)?" // optional userinfo
-                    + "\\[[0-9a-fA-F:.]+(?:%25\\S*?)?\\]" // IP-literal, with optional zone id
+                    + "\\[[0-9a-fA-F:.]+(?:%25\\S*?)?]" // IP-literal, with optional zone id
                     + "(?::\\d{1,5})?" // optional port
-                    + "(?:[/?#]\\S*)?"); // optional path, query and fragment
+                    + "(?:[/?#]\\S*)?"; // optional path, query and fragment
+
+    Pattern EVERY_URL_PATTERN = Pattern.compile("(" + IP_LITERAL_URL_RAW_PATTERN + ")|(" + Patterns.WEB_URL.pattern() + ")");
 
     /** Returns all the unique links found on a given text */
     static Set<String> getLinksFromText(CharSequence text) {
         var links = new HashSet<String>();
-
-        // ip-literal (ipv6) urls first, they are invisible to Patterns.WEB_URL
-        var ipLiteralRanges = new ArrayList<int[]>();
-        var ipLiteralMatcher = IP_LITERAL_URL.matcher(text);
-        while (ipLiteralMatcher.find()) {
-            ipLiteralRanges.add(new int[]{ipLiteralMatcher.start(), ipLiteralMatcher.end()});
-            links.add(ipLiteralMatcher.group());
-        }
-
-        var matcher = Patterns.WEB_URL.matcher(text);
-        matching:
-        while (matcher.find()) {
-            // skip matches contained in an ip-literal, like the ipv4 part of "[::ffff:1.2.3.4]"
-            for (var range : ipLiteralRanges) {
-                if (matcher.start() >= range[0] && matcher.end() <= range[1]) continue matching;
-            }
-            links.add(matcher.group());
-        }
+        var matcher = EVERY_URL_PATTERN.matcher(text);
+        while (matcher.find()) links.add(matcher.group());
         return links;
     }
 
