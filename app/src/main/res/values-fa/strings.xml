@@ -48,10 +48,8 @@
     <string name="txt_conf">در اینجا همه ماژول‌های موجود هستند که می‌توانید توضیحات و تنظیمات آنها را بررسی کنید. همچنین می‌توانید آنها را بازچینش کنید، نمایش عنوان را تغییر دهید و آنها را فعال یا غیرفعال کنید.</string>
     <string name="toast_cantEnable">نمی‌توان ماژول را فعال کرد: %s</string>
     <string name="menu_resetOrder">بازنشانی ترتیب</string>
-    <string name="menu_toggleDecorations">تغییر نمایش همه عنوان‌ها</string>
     <string name="desc_up">انتقال به بالا</string>
     <string name="desc_down">انتقال به پایین</string>
-    <string name="desc_decorations">نمایش/پنهان کردن عنوان</string>
     <string name="desc_enable">فعال/غیرفعال کردن ماژول</string>
     <string name="txt_openLinks">باز کردن پیوندها در این برنامه: در طول سال‌ها، اندروید روش پیکربندی این ویژگی را تغییر داده و در نسخه‌های مختلف متفاوت است. در زیر همه تنظیمات موجود برای دستگاه شما آورده شده است؛ اگر پیوندها در این برنامه باز نمی‌شوند، همه آنها را امتحان کنید.</string>
     <string name="btn_setBrowser">تنظیم به‌عنوان مرورگر پیش‌فرض</string>

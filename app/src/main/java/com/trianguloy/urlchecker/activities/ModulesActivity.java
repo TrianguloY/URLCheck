@@ -15,6 +15,7 @@ import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.ModuleManager;
+import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
@@ -82,9 +83,9 @@ public class ModulesActivity extends Activity {
                 resetOrder();
                 yield true;
             }
-            case R.id.menu_decorations -> {
-                // toggle decorations entry
-                toggleAllDecorations();
+            case R.id.menu_pins -> {
+                // toggle pins entry
+                toggleAllPins();
                 yield true;
             }
 
@@ -137,15 +138,15 @@ public class ModulesActivity extends Activity {
         title.setText(getString(R.string.dd, getString(module.getName())));
         AndroidUtils.setAsClickable(title);
 
-        // configure decorations toggle
-        var decorationsPref = ModuleManager.getDecorationsPrefOfModule(module, this);
-        var toggleDecorations = parent.<ImageView>findViewById(R.id.decorations);
+        // configure pinned toggle
+        var pinnedPref = ModuleManager.getPinnedPrefOfModule(module, this);
+        var togglePinned = parent.<ImageView>findViewById(R.id.pinned);
         AndroidUtils.toggleableListener(
-                toggleDecorations,
-                v -> decorationsPref.toggle(),
-                v -> v.setImageResource(decorationsPref.get() ? R.drawable.t : R.drawable.t_slash)
+                togglePinned,
+                v -> pinnedPref.toggle(),
+                v -> v.setImageResource(pinnedPref.get() ? R.drawable.pin : R.drawable.pin_slash)
         );
-        AndroidUtils.longTapForDescription(toggleDecorations);
+        AndroidUtils.longTapForDescription(togglePinned);
 
         // configuration of the module
         var child = Inflater.inflate(config.getLayoutId(), parent.findViewById(R.id.box));
@@ -228,10 +229,37 @@ public class ModulesActivity extends Activity {
         updateMovableButtons();
     }
 
-    /** Clicks all the decorations switches (effectively toggling them) */
-    private void toggleAllDecorations() {
-        for (int i = 0; i < list.getChildCount(); i++) {
-            list.getChildAt(i).findViewById(R.id.decorations).performClick();
+    /** Clicks all the pin switches (effectively toggling them) */
+    private void toggleAllPins() {
+        toggleAll(R.id.pinned, module -> ModuleManager.getPinnedPrefOfModule(module, this));
+    }
+
+    /**
+     * Sets every toggle with [viewId] to the same value instead of inverting each one
+     * separately: if any is still off they all turn on, otherwise they all turn off.
+     * That way pressing it twice is a no-op, which flipping each one is not.
+     */
+    private void toggleAll(int viewId, PrefGetter pref) {
+        var modules = ModuleManager.getModules(true, this);
+        var anyDisabled = false;
+        for (var module : modules) {
+            if (!pref.get(module).get()) {
+                anyDisabled = true;
+                break;
+            }
         }
+
+        for (var i = 0; i < list.getChildCount(); i++) {
+            var child = list.getChildAt(i);
+            for (var module : modules) {
+                if (!module.getId().equals(child.getTag())) continue;
+                if (pref.get(module).get() != anyDisabled) child.findViewById(viewId).performClick();
+            }
+        }
+    }
+
+    /** java.util.function.Function requires api 24, this doesn't */
+    private interface PrefGetter {
+        BoolPref get(AModuleData module);
     }
 }

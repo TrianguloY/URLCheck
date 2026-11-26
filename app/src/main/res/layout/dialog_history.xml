@@ -9,6 +9,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:contentDescription="@string/mHist_first"
         android:minHeight="0dp"
         android:src="@drawable/first"
         android:tint="?attr/colorAccent" />
@@ -19,6 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:contentDescription="@string/mHist_back"
         android:minHeight="0dp"
         android:src="@drawable/back"
         android:tint="?attr/colorAccent" />
@@ -29,6 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:contentDescription="@string/mHist_list"
         android:minHeight="0dp"
         android:src="@drawable/history"
         android:tint="?attr/colorAccent" />
@@ -39,6 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:contentDescription="@string/mHist_forward"
         android:minHeight="0dp"
         android:src="@drawable/next"
         android:tint="?attr/colorAccent" />
@@ -49,6 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:contentDescription="@string/mHist_last"
         android:minHeight="0dp"
         android:src="@drawable/last"
         android:tint="?attr/colorAccent" />

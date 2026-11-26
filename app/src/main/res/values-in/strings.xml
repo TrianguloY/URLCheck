@@ -32,11 +32,9 @@
     <string name="txt_locale">Lokal:</string>
     <string name="txt_info">Aplikasi ini bertindak sebagai perantara saat hendak membuka tautan URL. Ketika tautan dibuka melalui aplikasi ini, sebuah jendela dialog berisi informasi mengenai tautan tersebut akan ditampilkan. Tekan tombol modul di bawah ini untuk memeriksa dan mengatur semua modul yang tersedia.</string>
     <string name="desc_up">Geser ke atas</string>
-    <string name="desc_decorations">Tampilkan/sembunyikan judul</string>
     <string name="txt_tutorial2">Aplikasi ini bertindak sebagai perantara, baik ketika membuka maupun ketika berbagi tautan URL. Setelah URL dikirim ke aplikasi ini, Anda dapat berinteraksi dengan URL terkait melalui modul yang tersedia. Setelahnya, Anda dapat membuka (di aplikasi yang Anda inginkan), membagikan, atau menyalin tautan tersebut ke papan klip.</string>
     <string name="locale">Bahasa Indonesia</string>
     <string name="spin_lightTheme">Terang</string>
-    <string name="menu_toggleDecorations">Alih semua judul</string>
     <string name="link_source">Kode sumber</string>
     <string name="txt_tutorial4">Modul berfungsi sebagai pengatur perilaku aplikasi ketika berinteraksi dengan URL. \nMasing-masing modul memiliki fungsi khusus yang spesifik. Biasanya sebagai penampil info dan pemodifikasi URL terkait. \nSilahkan baca informasi terkait modul-modul ini dan atur sesuai kebutuhan. \n \nPenting: Secara bawaan, semua tindakan terkait dilakukan secara manual. Aplikasi ini tidak akan memodifikasi apa pun atau terhubung ke internet kecuali secara spesifik Anda memberikan izin aplikasi. Meski begitu, beberapa tindakan bisa dilakukan secara otomatis sesuai keinginan Anda. \n \nSilakan buka daftar modul pada laman utama atau tekan tombol di bawah ini.</string>
     <string name="mVT_scanning">Memindai…</string>

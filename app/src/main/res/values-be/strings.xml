@@ -15,10 +15,8 @@
     <string name="txt_conf">Тут усе даступныя модулі, вы можаце праглядзець іх апісанні і налады. Вы таксама можаце змяніць парадак, пераключыць бачнасць загалоўкаў і ўключыць/выключыць іх.</string>
     <string name="toast_cantEnable">Не ўдалося ўключыць модуль: %s</string>
     <string name="menu_resetOrder">Скінуць парадак</string>
-    <string name="menu_toggleDecorations">Пераключыць усе загалоўкі</string>
     <string name="desc_up">Уверх</string>
     <string name="desc_down">Уніз</string>
-    <string name="desc_decorations">Паказаць/схаваць загаловак</string>
     <string name="desc_enable">Уключыць/выключыць модуль</string>
     <string name="txt_openLinks">Адкрыццё спасылак у гэтай праграме: на працягу шмат год на Android мянялі спосаб яго канфігурацыі, і яно адрозніваецца ў залежнасці ад версіі. Ніжэй знайдзіце ўсе даступныя налады для вашай прылады, калі спасылкі не адкрываюцца праз гэту праграму, паспрабуйце іх усіх.</string>
     <string name="btn_setBrowser">Задаць як прадвызначаны браўзер</string>

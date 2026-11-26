@@ -38,7 +38,6 @@
     <string name="save">Salvar</string>
     <string name="back">Voltar</string>
     <string name="alwaysOn">Sempre ativado</string>
-    <string name="desc_decorations">Exibir/ocultar título</string>
     <string name="desc_up">Mover para cima</string>
     <string name="reset">Redefinir</string>
     <string name="clear">Limpar</string>
@@ -84,7 +83,6 @@
     <string name="translators">Murilogs1910</string>
     <string name="txt_info">Esse aplicativo age como intermediário ao abrir links. Um diálogo com algumas informações sobre o link são apresentadas ao escolher esse app para abrir um link. Pressione o botão módulos abaixo para checar e configurar todos os módulos disponíveis.</string>
     <string name="link_blog">Blog do %s</string>
-    <string name="menu_toggleDecorations">Alternar todos os títulos</string>
     <string name="txt_openLinks">Abra os links neste aplicativo: Ao longo dos anos, o Android mudou a forma de configurar, variando entre as diferentes versões. Encontre abaixo todas as configurações disponíveis para o seu dispositivo. Se os links não estiverem sendo abertos neste aplicativo, tente todas elas.</string>
     <string name="toast_defaultSet">O aplicativo agora é o navegador padrão</string>
     <string name="txt_tutorial1">Obrigado por baixar o app! \n \nEste é o tutorial, se você quiser você pode pulá-lo com o botão abaixo. Você sempre pode voltar para esse tutorial através das configurações.</string>
