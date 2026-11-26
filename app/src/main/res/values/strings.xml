@@ -447,7 +447,7 @@ With the button below you can edit the default state and the visibility of the f
     <string name="mFlag_editFlags">Edit default flag values</string>
     <string name="mFlag_stateDesc">Toggle flag state</string>
     <string name="mFlag_showDesc">Show/hide flag</string>
-    <string name="mFlag_search">Search flags</string>
+    <string name="mFlag_all">All flags</string>
     <!-- -->
     <string name="mParts_name">Uri parts</string>
     <string name="mParts_desc">"This module shows all parts of the url decoded: scheme, authority, paths, queries and fragment.

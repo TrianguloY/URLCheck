@@ -20,7 +20,7 @@
         android:drawableTint="?android:attr/colorAccent"
         android:gravity="center_vertical"
         android:minHeight="25dp"
-        android:text="@string/mFlag_search" />
+        android:text="@string/mFlag_all" />
 
     <EditText
         android:id="@+id/search"
