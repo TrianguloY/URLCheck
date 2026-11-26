@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.util.Pair;
 
 import com.trianguloy.urlchecker.modules.companions.Size;
 
@@ -45,7 +46,7 @@ public class IntentApp {
 
     private final ResolveInfo resolveInfo;
     private static final Map<ComponentName, CharSequence> labelsCache = new HashMap<>();
-    private static final Map<ComponentName, Drawable> iconsCache = new HashMap<>();
+    private static final Map<Pair<ComponentName, Integer>, Drawable> iconsCache = new HashMap<>();
 
     private IntentApp(ResolveInfo resolveInfo) {
         this.resolveInfo = resolveInfo;
@@ -79,16 +80,15 @@ public class IntentApp {
             case BIG -> 30;
         };
         if (dp == 0) return null;
-        var dim = Math.round(dp * activity.getResources().getDisplayMetrics().density);
 
-        var component = getComponent();
-        if (!iconsCache.containsKey(component)) {
-            iconsCache.put(component, resolveInfo.loadIcon(activity.getPackageManager()));
+        var cacheKey = Pair.create(getComponent(), dp);
+        if (!iconsCache.containsKey(cacheKey)) {
+            var dim = Math.round(dp * activity.getResources().getDisplayMetrics().density);
+            var icon = resolveInfo.loadIcon(activity.getPackageManager());
+            icon.setBounds(0, 0, dim, dim);
+            iconsCache.put(cacheKey, icon);
         }
-        // set the bounds each time, the size may have changed since it was cached
-        var icon = iconsCache.get(component);
-        icon.setBounds(0, 0, dim, dim);
-        return icon;
+        return iconsCache.get(cacheKey);
     }
 
     @Override
