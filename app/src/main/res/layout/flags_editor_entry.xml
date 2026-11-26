@@ -24,6 +24,7 @@
     <ImageButton
         android:id="@+id/show"
         style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/mFlag_showDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="0dp"
