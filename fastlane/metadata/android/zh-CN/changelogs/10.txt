@@ -1,2 +1,2 @@
 V 2.2
-- New module 'Remove queries module': removes all queries from the url. Thanks to PabloOQ for the idea and original implementation!
+- 新模块 'Remove queries module': 移除所有的URL查询选项. 感谢PabloOQ的想法和原创性实现!

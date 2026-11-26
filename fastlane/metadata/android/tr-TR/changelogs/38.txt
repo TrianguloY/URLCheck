@@ -1,0 +1,6 @@
+V 3.1
+- Yeni modül: Webhook. anoop-b’ye teşekkürler!
+- Yeni otomasyonlar: temizle ve kapat
+- İyileştirme: Otomasyonlarda birden fazla regex'e izin verilmesi
+- İyileştirme: Geçmiş modülünün stilinde ince ayar yapıldı
+- Düzeltme: Giriş modülünü kullandıktan sonra otomatik güncellemelerin devre dışı bırakılması
