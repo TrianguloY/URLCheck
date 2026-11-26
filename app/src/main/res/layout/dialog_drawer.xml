@@ -15,7 +15,7 @@
     android:contentDescription="@string/mDrawer_toggleDesc"
     android:gravity="center|center_vertical"
     android:weightSum="2">
-
+    <!-- contentDescription added in the parent to avoid duplicating -->
     <ImageView
         android:id="@+id/drawerL"
         android:layout_width="0dp"

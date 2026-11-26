@@ -439,8 +439,8 @@ The flags will have two color indicators next to the checkbox. The left one show
 With the button below you can edit the default state and the visibility of the flags."</string>
     <string name="mFlag_editFlags">Edit default flag values</string>
     <string name="mFlag_stateDesc">Toggle flag state</string>
-    <string name="mFlag_showDesc">Show/hide this flag</string>
-    <string name="mFlag_overflowDesc">Show/hide the hidden flags</string>
+    <string name="mFlag_showDesc">Show/hide flag</string>
+    <string name="mFlag_overflowDesc">Show/hide hidden flags</string>
     <!-- -->
     <string name="mParts_name">Uri parts</string>
     <string name="mParts_desc">"This module shows all parts of the url decoded: scheme, authority, paths, queries and fragment.
