@@ -34,6 +34,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /** Generic Android utilities */
 public interface AndroidUtils {
@@ -215,10 +216,23 @@ public interface AndroidUtils {
         menuItem.getIcon().setColorFilter(cntx.getResources().getColor(resolvedAttr.resourceId), PorterDuff.Mode.SRC_IN);
     }
 
+    /**
+     * Matches urls with an RFC 3986 IP-literal host, like "http://[::1]/".
+     * [Patterns.WEB_URL] can't match them, its host part only allows registered names and IPv4.
+     */
+    String IP_LITERAL_URL_RAW_PATTERN =
+            "[a-zA-Z][a-zA-Z0-9+.\\-]*://" // scheme
+                    + "(?:\\S*@)?" // optional userinfo
+                    + "\\[[0-9a-fA-F:.]+(?:%25\\S*?)?]" // IP-literal, with optional zone id
+                    + "(?::\\d{1,5})?" // optional port
+                    + "(?:[/?#]\\S*)?"; // optional path, query and fragment
+
+    Pattern EVERY_URL_PATTERN = Pattern.compile("(" + IP_LITERAL_URL_RAW_PATTERN + ")|(" + Patterns.WEB_URL.pattern() + ")");
+
     /** Returns all the unique links found on a given text */
     static Set<String> getLinksFromText(CharSequence text) {
         var links = new HashSet<String>();
-        var matcher = Patterns.WEB_URL.matcher(text);
+        var matcher = EVERY_URL_PATTERN.matcher(text);
         while (matcher.find()) links.add(matcher.group());
         return links;
     }
@@ -295,6 +309,13 @@ public interface AndroidUtils {
             cntx.getWindowManager().getDefaultDisplay().getMetrics(metrics);
             params.width = metrics.widthPixels * width / 100;
         }
+        cntx.getWindow().setAttributes(params);
+    }
+
+    /** Sets the gravity of an activity. */
+    static void setActivityGravity(int gravity, Activity cntx) {
+        var params = cntx.getWindow().getAttributes();
+        params.gravity = gravity;
         cntx.getWindow().setAttributes(params);
     }
 

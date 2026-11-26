@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.util.Pair;
 
 import com.trianguloy.urlchecker.modules.companions.Size;
 
@@ -45,7 +46,7 @@ public class IntentApp {
 
     private final ResolveInfo resolveInfo;
     private static final Map<ComponentName, CharSequence> labelsCache = new HashMap<>();
-    private static final Map<ComponentName, Drawable> iconsCache = new HashMap<>();
+    private static final Map<Pair<ComponentName, Integer>, Drawable> iconsCache = new HashMap<>();
 
     private IntentApp(ResolveInfo resolveInfo) {
         this.resolveInfo = resolveInfo;
@@ -70,21 +71,24 @@ public class IntentApp {
 
     /** Returns the drawable, cached */
     public Drawable getIcon(Context activity, Size size) {
-        var dim = switch (size) {
+        // in dp, so it looks the same on any screen density. NORMAL matches the visible
+        // size of the icons next to it: 24dp icons, but their glyph is about 20dp
+        var dp = switch (size) {
             case NONE -> 0;
-            case SMALL -> 25;
-            case NORMAL -> 50;
-            case BIG -> 75;
+            case SMALL -> 10;
+            case NORMAL -> 20;
+            case BIG -> 30;
         };
-        if (dim == 0) return null;
+        if (dp == 0) return null;
 
-        var component = getComponent();
-        if (!iconsCache.containsKey(component)) {
+        var cacheKey = Pair.create(getComponent(), dp);
+        if (!iconsCache.containsKey(cacheKey)) {
+            var dim = Math.round(dp * activity.getResources().getDisplayMetrics().density);
             var icon = resolveInfo.loadIcon(activity.getPackageManager());
             icon.setBounds(0, 0, dim, dim);
-            iconsCache.put(component, icon);
+            iconsCache.put(cacheKey, icon);
         }
-        return iconsCache.get(component);
+        return iconsCache.get(cacheKey);
     }
 
     @Override

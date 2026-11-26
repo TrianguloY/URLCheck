@@ -26,6 +26,7 @@ import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
 import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.modules.ModuleManager;
+import com.trianguloy.urlchecker.modules.companions.GravityPref;
 import com.trianguloy.urlchecker.modules.companions.VersionManager;
 import com.trianguloy.urlchecker.modules.list.DrawerModule;
 import com.trianguloy.urlchecker.url.UrlData;
@@ -230,6 +231,12 @@ public class MainDialog extends Activity {
         // set width
         AndroidUtils.setActivityWidth(WIDTH_PREF(this).get(), this);
 
+        // set gravity
+        AndroidUtils.setActivityGravity(
+                GravityPref.VERTICAL_PREF(this).get().getConstant()
+                        | GravityPref.HORIZONTAL_PREF(this).get().getConstant()
+                , this);
+
         // load helpers
         automationRules = new AutomationRules(this);
 
@@ -368,11 +375,12 @@ public class MainDialog extends Activity {
         // check the action
         var action = getIntent().getAction();
         if (Intent.ACTION_SEND.equals(action)) {
-            // sent text
-            var sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+            // sent text. Note: EXTRA_TEXT may be a styled CharSequence (html, for example),
+            // and getStringExtra returns null for those
+            var sharedText = intent.getCharSequenceExtra(Intent.EXTRA_TEXT);
             if (sharedText == null) return Collections.emptySet();
             var links = AndroidUtils.getLinksFromText(sharedText);
-            if (links.isEmpty()) links.add(sharedText.trim()); // no links? just use the whole text, the user requested the app so...
+            if (links.isEmpty()) links.add(sharedText.toString().trim()); // no links? just use the whole text, the user requested the app so...
             return links;
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Intent.ACTION_PROCESS_TEXT.equals(action)) {
             // process text

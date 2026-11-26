@@ -62,7 +62,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         catalogURL = new StringPref("clearurl_catalogURL", "https://rules2.clearurls.xyz/data.minify.json", cntx);
         hashURL = new StringPref("clearurl_hashURL", "https://rules2.clearurls.xyz/rules.minify.hash", cntx);
         autoUpdate = new BoolPref("clearurl_autoUpdate", false, cntx);
-        lastUpdate = new LongPref("clearurl_lastUpdate", /*data.minify.json-timestamp*/1774748874000L/*data.minify.json-timestamp*/, cntx);
+        lastUpdate = new LongPref("clearurl_lastUpdate", /*data.minify.json-timestamp*/1794096597000L/*data.minify.json-timestamp*/, cntx);
         lastCheck = new LongPref("clearurl_lastCheck", -1L, cntx);
         lastAuto = new BoolPref("clearurl_lastAuto", false, cntx);
 
@@ -235,7 +235,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         // prepare more dialog
-        // these are configured here to allow auto-closing the dialog when they are pressed
+        // these are configured here to avoid auto-closing the dialog when they are pressed
         Button updateNow = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         updateNow.setOnClickListener(v -> {
             // updates the rules

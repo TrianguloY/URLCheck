@@ -61,6 +61,13 @@ Traducciones: %3$s."</string>
     <string name="lbl_processUrl">Abrir en URLCheck</string>
     <string name="txt_processUrl">Añadir opción \'Abrir en URLCheck\' al seleccionar texto.</string>
     <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre mediante \'Abrir en URLCheck\' o similar)</string>
+    <string name="txt_verticalPos">Posición vertical</string>
+    <string name="spin_top">Arriba</string>
+    <string name="spin_bottom">Abajo</string>
+    <string name="txt_horizontalPos">Posición horizontal</string>
+    <string name="spin_start">Izquierda</string>
+    <string name="spin_end">Derecha</string>
+    <string name="spin_center">Centro</string>
     <!--
         generic
     -->
