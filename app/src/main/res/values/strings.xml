@@ -485,4 +485,20 @@ This is an advanced version of the 'Queries Remover' module."</string>
     <string name="mChg_current">Current version: %s</string>
     <string name="mChg_view">View changes</string>
 
+
+    <!-- custom modules -->
+    <string name="mCustom_name">Custom modules</string>
+    <string name="mCustom_desc">Adds your own modules, defined in JSON, without modifying the app. Each custom module appears in this list as a separate module that can be enabled, disabled and reordered.\nWhile this module is disabled, no custom module is loaded.\n\nWarning: \'request\' actions send the URL to the configured servers, only import modules you trust.\n\nModules and documentation: %s</string>
+    <string name="mCustom_editor">Custom modules. Each key is a module id, each value has a \'name\', an optional \'description\', \'enabled\', \'regex\' and \'excludeRegex\', and a list of \'actions\' of type \'replace\' or \'request\'. Check the documentation for all the details.</string>
+    <string name="mCustom_moduleDesc">Custom module \'%s\'.</string>
+    <string name="mCustom_sendsTo">⚠ Sends URLs to: %s</string>
+    <string name="mCustom_import">Import from URL</string>
+    <string name="mCustom_import_hint">https://example.com/module.json</string>
+    <string name="mCustom_import_error">Unable to import: %s</string>
+    <string name="mCustom_import_confirm">Import these modules?\n\n%s</string>
+    <string name="mCustom_import_replaces">" (replaces existing)"</string>
+    <string name="mCustom_imported">Modules imported</string>
+    <string name="mCustom_applied">Applied: %s</string>
+    <string name="mCustom_requesting">…</string>
+    <string name="mCustom_notFound">No result</string>
 </resources>

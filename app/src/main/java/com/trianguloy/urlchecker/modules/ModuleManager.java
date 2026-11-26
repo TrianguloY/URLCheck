@@ -3,7 +3,10 @@ package com.trianguloy.urlchecker.modules;
 import android.content.Context;
 
 import com.trianguloy.urlchecker.modules.list.ChangeLogModule;
+import com.trianguloy.urlchecker.modules.companions.CustomModulesCatalog;
 import com.trianguloy.urlchecker.modules.list.ClearUrlModule;
+import com.trianguloy.urlchecker.modules.list.CustomModule;
+import com.trianguloy.urlchecker.modules.list.CustomModulesModule;
 import com.trianguloy.urlchecker.modules.list.DebugModule;
 import com.trianguloy.urlchecker.modules.list.DrawerModule;
 import com.trianguloy.urlchecker.modules.list.FlagsModule;
@@ -22,6 +25,7 @@ import com.trianguloy.urlchecker.modules.list.RedirectModule;
 import com.trianguloy.urlchecker.modules.list.WebhookModule;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.BoolPref;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref.ListStringPref;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,6 +55,7 @@ public class ModuleManager {
         modules.add(new WebhookModule());
         // new modules enabled by default should preferably be added directly above this line
         modules.add(new RedirectModule());
+        modules.add(new CustomModulesModule());
         modules.add(new FlagsModule());
         modules.add(new DebugModule());
 
@@ -106,8 +111,8 @@ public class ModuleManager {
     public static List<AModuleData> getModules(boolean includeDisabled, Context cntx) {
         List<AModuleData> availableModules = new ArrayList<>();
 
-        // check each module
-        for (AModuleData module : modules) {
+        // check each module (built-in + custom ones)
+        for (AModuleData module : getAllModules(cntx)) {
             if (includeDisabled || getEnabledPrefOfModule(module, cntx).get()) {
                 // enabled, add
                 availableModules.add(module);
@@ -124,6 +129,36 @@ public class ModuleManager {
         });
 
         return availableModules;
+    }
+
+    /** Returns the built-in modules, plus the custom ones if the custom modules manager is enabled */
+    private static List<AModuleData> getAllModules(Context cntx) {
+        var all = new ArrayList<>(modules);
+        if (!isCustomModulesEnabled(cntx)) return all;
+
+        var catalog = CustomModulesCatalog.load(cntx);
+        for (var key : JavaUtils.toList(catalog.keys())) {
+            var definition = catalog.optJSONObject(key);
+            if (CustomModulesCatalog.validateModule(definition) != null) continue; // invalid, skip
+            all.add(new CustomModule(key, definition));
+        }
+        return all;
+    }
+
+    /** Returns whether custom modules are loaded */
+    private static boolean isCustomModulesEnabled(Context cntx) {
+        for (var module : modules) {
+            if (module instanceof CustomModulesModule) return getEnabledPrefOfModule(module, cntx).get();
+        }
+        return false;
+    }
+
+    /**
+     * Returns a string that changes whenever the list of custom modules changes
+     * (used to know when the modules list needs to be reloaded).
+     */
+    public static String getCustomModulesSignature(Context cntx) {
+        return isCustomModulesEnabled(cntx) ? CustomModulesCatalog.load(cntx).toString() : "";
     }
 
     /** returns all the modules ids in the order they should be */

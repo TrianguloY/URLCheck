@@ -36,6 +36,7 @@ public class ModulesActivity extends Activity {
     private LinearLayout list;
     private final Map<AModuleConfig, Switch> switches = new HashMap<>();
     private ListStringPref order;
+    private String customModulesSignature;
 
     // ------------------- listeners -------------------
 
@@ -52,12 +53,27 @@ public class ModulesActivity extends Activity {
         order = ModuleManager.ORDER_PREF(this);
 
         // initialize modules
+        customModulesSignature = ModuleManager.getCustomModulesSignature(this);
         for (AModuleData module : ModuleManager.getModules(true, this)) {
             initModule(module);
         }
 
         // init buttons
         updateMovableButtons();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        // custom modules may have been edited (in the json editor), reload them
+        reloadIfCustomModulesChanged();
+    }
+
+    /** Recreates the activity if the list of custom modules changed */
+    private void reloadIfCustomModulesChanged() {
+        if (!ModuleManager.getCustomModulesSignature(this).equals(customModulesSignature)) {
+            list.post(this::recreate);
+        }
     }
 
     // method to inflate the options menu when
@@ -120,6 +136,8 @@ public class ModulesActivity extends Activity {
                 }
             }
             enabled_pref.set(isChecked);
+            // the custom modules manager adds/removes modules
+            reloadIfCustomModulesChanged();
         });
         switches.put(config, toggleEnable);
 
@@ -134,7 +152,7 @@ public class ModulesActivity extends Activity {
 
         // configure label
         final TextView title = parent.findViewById(R.id.label);
-        title.setText(getString(R.string.dd, getString(module.getName())));
+        title.setText(getString(R.string.dd, module.getName(this)));
         AndroidUtils.setAsClickable(title);
 
         // configure decorations toggle

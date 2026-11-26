@@ -130,7 +130,7 @@ public class AutomationRules extends JsonCatalog {
             var automations = module.getAutomations();
             if (automations.isEmpty()) continue;
 
-            stringBuilder.append("\n").append(cntx.getString(module.getName())).append(":\n");
+            stringBuilder.append("\n").append(module.getName(cntx)).append(":\n");
             if (!ModuleManager.getEnabledPrefOfModule(module, cntx).get()) {
                 stringBuilder.append("⚠ ").append(cntx.getString(R.string.auto_available_disabled)).append(" ⚠\n");
             }

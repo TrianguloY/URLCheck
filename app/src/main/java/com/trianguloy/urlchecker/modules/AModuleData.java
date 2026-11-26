@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
+import android.content.Context;
+
 import com.trianguloy.urlchecker.activities.ModulesActivity;
 import com.trianguloy.urlchecker.dialogs.MainDialog;
 
@@ -13,6 +15,14 @@ public abstract class AModuleData {
 
     /** @return the user visible name of this module */
     public abstract int getName();
+
+    /**
+     * @return the user visible name of this module, as text.
+     * By default it is the {@link #getName()} resource, but modules whose name is not a resource (like user-defined ones) can override this.
+     */
+    public String getName(Context cntx) {
+        return cntx.getString(getName());
+    }
 
     /** @return whether this module should be enabled by default */
     public boolean isEnabledByDefault() {
